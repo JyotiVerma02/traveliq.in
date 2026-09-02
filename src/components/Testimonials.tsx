@@ -31,21 +31,21 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-20 lg:py-28 border-b border-slate-200/60">
+    <section className="bg-white py-20 lg:py-28 border-b border-sky-100">
       <div className="container mx-auto px-4 sm:px-6">
         
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-100/60 px-3.5 py-1.5 rounded-full border border-emerald-200">
-            Testimonial
+          <span className="text-xs font-bold uppercase tracking-widest text-[#1685e8] bg-sky-100/70 px-3.5 py-1.5 rounded-full border border-sky-200">
+            Testimonials
           </span>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-tight">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-slate-900 leading-tight uppercase">
             Agent Testimonials
           </h2>
 
           <p className="mt-2 text-base text-slate-600 font-semibold">
-            Latest Reviews
+            Latest Reviews from TravelIQ Agent Network
           </p>
         </div>
 
@@ -54,11 +54,11 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="flex flex-col justify-between rounded-[32px] border border-slate-200/80 bg-[#f8fafc] p-7 shadow-xs transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:bg-white hover:shadow-xl shadow-emerald-500/5"
+              className="flex flex-col justify-between rounded-[32px] border border-sky-100 bg-[#f8fbff] p-7 shadow-xs transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:bg-white hover:shadow-xl shadow-blue-500/5"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-emerald-500 text-sm font-bold tracking-widest">{t.rating}</span>
+                  <span className="text-[#1685e8] text-sm font-bold tracking-widest">{t.rating}</span>
                 </div>
 
                 <p className="mt-5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
@@ -66,8 +66,8 @@ export default function Testimonials() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-200/60 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-white font-bold text-sm">
+              <div className="mt-8 pt-6 border-t border-sky-100 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1685e8] text-white font-bold text-sm shadow-sm">
                   {t.name.charAt(0)}
                 </div>
                 <div>

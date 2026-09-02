@@ -52,16 +52,16 @@ export default function Services() {
         
         {/* Section Heading matching reference image */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200/60">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#1685e8] bg-sky-50 px-3.5 py-1.5 rounded-full border border-sky-200/80">
             Our Core Offerings
           </span>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-tight">
-            Integrated Travel Services to Empower Your Business
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-slate-900 leading-tight uppercase">
+            Best Travel Services in India
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-            TravelIQ delivers complete travel technology solutions for Air tickets, Railway reservations, Bus tickets, Hotel bookings, Tour packages &amp; VISA assistance.
+          <p className="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
+            TravelIQ is the leading provider for Air tickets, Railway reservations, Bus Tickets, Hotel Bookings, Tour Packages &amp; IRCTC agent services.
           </p>
         </div>
 
@@ -71,21 +71,21 @@ export default function Services() {
             <Link
               key={service.title}
               href={service.href}
-              className="group relative flex flex-col justify-between rounded-[32px] border border-slate-200/80 bg-[#f8fafc] p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-300 hover:bg-white hover:shadow-xl hover:shadow-emerald-500/10"
+              className="group relative flex flex-col justify-between rounded-[32px] border border-sky-100 bg-[#f8fbff] p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10"
             >
               <div>
                 {/* Top Row: Icon Badge & Status Pill */}
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-2xl shadow-xs border border-slate-100 group-hover:bg-emerald-50 group-hover:scale-110 transition-transform">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-2xl shadow-xs border border-sky-100 group-hover:bg-sky-50 group-hover:scale-110 transition-transform">
                     {service.icon}
                   </div>
-                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-100/60 px-3 py-1 rounded-full border border-emerald-200/50">
+                  <span className="text-[11px] font-bold text-[#1685e8] bg-sky-100/80 px-3 py-1 rounded-full border border-sky-200">
                     {service.badge}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-6 text-xl sm:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-emerald-950 transition">
+                <h3 className="mt-6 text-xl sm:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-[#1685e8] transition">
                   {service.title}
                 </h3>
 
@@ -96,7 +96,7 @@ export default function Services() {
               </div>
 
               {/* Bottom Action Link */}
-              <div className="mt-8 flex items-center gap-2 text-xs font-bold text-slate-900 group-hover:text-emerald-600 transition">
+              <div className="mt-8 flex items-center gap-2 text-xs font-bold text-slate-900 group-hover:text-[#1685e8] transition">
                 <span>Explore Details</span>
                 <span className="transition-transform group-hover:translate-x-1.5">→</span>
               </div>

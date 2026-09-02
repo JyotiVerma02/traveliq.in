@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 const faqs = [
   {
     number: "01.",
@@ -36,37 +32,30 @@ const faqs = [
 ];
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
-
   return (
-    <section className="bg-white py-20 lg:py-28 border-b border-slate-100">
+    <section className="border-b border-slate-100 bg-white py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6">
-        
-        {/* Top Title & Header Row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12">
+        <div className="flex flex-col justify-between gap-6 pb-12 md:flex-row md:items-end">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200/60">
+            <span className="rounded-full border border-emerald-200/60 bg-emerald-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-emerald-600">
               Help &amp; FAQs
             </span>
 
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-tight max-w-2xl">
+            <h2 className="mt-4 max-w-2xl text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-[42px]">
               Control All Your Bookings &amp; Learn Best TravelIQ Features
             </h2>
           </div>
 
           <a
             href="/contact-us/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-slate-900 border border-slate-300 rounded-full px-5 py-2.5 transition hover:bg-slate-900 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-xs font-bold text-slate-900 transition hover:bg-slate-900 hover:text-white"
           >
             <span>See More FAQs</span>
             <span>→</span>
           </a>
         </div>
 
-        {/* 2 Column Layout matching reference image */}
-        <div className="grid gap-12 lg:grid-cols-12 items-start mt-4">
-          
-          {/* Left Column Image Box */}
+        <div className="mt-4 grid items-start gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 shadow-lg">
               <img
@@ -74,11 +63,10 @@ export default function FaqSection() {
                 alt="TravelIQ Agent Support Team"
                 className="h-[420px] w-full object-cover"
               />
-              
-              {/* Overlay Stat Pill */}
-              <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/95 backdrop-blur-md p-4 shadow-lg border border-slate-200/80">
+
+              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-slate-200/80 bg-white/95 p-4 shadow-lg backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 font-bold">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 font-bold text-emerald-700">
                     💬
                   </div>
                   <div>
@@ -90,52 +78,27 @@ export default function FaqSection() {
             </div>
           </div>
 
-          {/* Right Column Numbered FAQ List matching reference image 01, 02, 03... */}
-          <div className="lg:col-span-7 space-y-4">
-            {faqs.map((faq, idx) => {
-              const isOpen = openIndex === idx;
-              return (
-                <div
-                  key={faq.number}
-                  className={`rounded-2xl border transition-all duration-200 ${
-                    isOpen
-                      ? "border-emerald-300 bg-emerald-50/30 p-6 shadow-xs"
-                      : "border-slate-200/80 bg-white p-5 hover:border-slate-300"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                    className="flex w-full items-center justify-between text-left focus:outline-none"
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm font-bold text-slate-400 font-mono">
-                        {faq.number}
-                      </span>
-                      <span className="text-base sm:text-lg font-bold text-slate-900">
-                        {faq.question}
-                      </span>
-                    </div>
+          <div className="space-y-4 lg:col-span-7">
+            {faqs.map((faq, index) => (
+              <details key={faq.number} className="faq-item" open={index === 0}>
+                <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-4 text-left focus:outline-none">
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-sm font-bold text-slate-400">{faq.number}</span>
+                    <span className="text-base font-bold text-slate-900 sm:text-lg">{faq.question}</span>
+                  </div>
 
-                    <span className={`text-slate-400 text-lg transition-transform ${isOpen ? "rotate-45" : ""}`}>
-                      +
-                    </span>
-                  </button>
+                  <span className="faq-plus text-lg text-slate-400">+</span>
+                </summary>
 
-                  {isOpen && (
-                    <div className="mt-4 pt-4 border-t border-slate-200/60 pl-9">
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
+                <div className="mt-4 border-t border-slate-200/60 pt-4 pl-9">
+                  <p className="text-xs font-normal leading-relaxed text-slate-600 sm:text-sm">
+                    {faq.answer}
+                  </p>
                 </div>
-              );
-            })}
+              </details>
+            ))}
           </div>
-
         </div>
-
       </div>
     </section>
   );

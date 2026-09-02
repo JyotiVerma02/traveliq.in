@@ -7,17 +7,17 @@ export default function WhyWeBetter() {
   ];
 
   return (
-    <section className="bg-[#f8fafc] py-20 lg:py-28 border-y border-slate-200/60">
+    <section className="bg-[#f4f9ff] py-20 lg:py-28 border-y border-sky-100">
       <div className="container mx-auto px-4 sm:px-6">
         
         {/* Header matching traveliq.in homepage */}
         <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-100/60 px-3.5 py-1.5 rounded-full border border-emerald-200">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#1685e8] bg-sky-100/70 px-3.5 py-1.5 rounded-full border border-sky-200">
             Why We Better
           </span>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-slate-900 leading-tight">
-            TraveliQ – Your Own Travel Intelligence
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-slate-900 leading-tight uppercase">
+            TravelIQ – Your Own Travel Intelligence
           </h2>
         </div>
 
@@ -40,7 +40,7 @@ export default function WhyWeBetter() {
                 href="https://b2b.traveliq.in"
                 target="_blank"
                 rel="noreferrer"
-                className="font-bold text-emerald-700 underline hover:text-emerald-900"
+                className="font-bold text-[#1685e8] underline hover:text-[#0d76d4]"
               >
                 https://b2b.traveliq.in
               </a>
@@ -55,7 +55,7 @@ export default function WhyWeBetter() {
               <p className="font-bold text-slate-900 mb-2">
                 TraveliQ is available in many states &amp; dominions in India, such as:
               </p>
-              <p className="bg-emerald-50/70 p-4 rounded-2xl border border-emerald-100/80 text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <p className="bg-sky-50/80 p-4 rounded-2xl border border-sky-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
                 Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh, Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra, Manipur, Meghalaya, Mizoram, Nagaland, Odisha, Punjab, Rajasthan, Sikkim, Tamil Nadu, Telangana, Uttar Pradesh, Uttarakhand, West Bengal are the states where TraveliQ is most active.
               </p>
             </div>
@@ -76,12 +76,12 @@ export default function WhyWeBetter() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center gap-3.5 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs transition duration-200 hover:-translate-y-1 hover:border-emerald-300 hover:bg-emerald-50/30"
+                  className="group flex items-center gap-3.5 rounded-2xl border border-sky-100 bg-white p-4 shadow-xs transition duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100/70 text-lg">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100/80 text-lg">
                     {item.icon}
                   </span>
-                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition">
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#1685e8] transition">
                     {item.title}
                   </span>
                 </a>
@@ -89,8 +89,8 @@ export default function WhyWeBetter() {
             </div>
 
             {/* Visual Card from traveliq.in */}
-            <div className="rounded-[32px] border border-emerald-100 bg-white p-6 shadow-lg shadow-emerald-500/5 text-center">
-              <span className="text-[11px] font-bold text-emerald-700 bg-emerald-100/60 px-3 py-1 rounded-full border border-emerald-200/50 uppercase tracking-wider">
+            <div className="rounded-[32px] border border-sky-100 bg-white p-6 shadow-lg shadow-blue-500/5 text-center">
+              <span className="text-[11px] font-bold text-[#1685e8] bg-sky-50 px-3 py-1 rounded-full border border-sky-200/80 uppercase tracking-wider">
                 Corporate HQ • Gurugram
               </span>
               <h3 className="mt-4 text-xl font-bold text-slate-900">
@@ -101,9 +101,9 @@ export default function WhyWeBetter() {
               </p>
               
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-center gap-4 text-xs font-bold text-slate-800">
-                <span className="flex items-center gap-1 text-emerald-600">✓ IATA Accredited</span>
+                <span className="flex items-center gap-1 text-[#1685e8]">✓ IATA Accredited</span>
                 <span>•</span>
-                <span className="flex items-center gap-1 text-emerald-600">✓ 150k+ Agents</span>
+                <span className="flex items-center gap-1 text-[#1685e8]">✓ 150k+ Agents</span>
               </div>
             </div>
 

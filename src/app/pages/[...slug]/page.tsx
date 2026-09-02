@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/wordpress";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 interface PageProps {
   params: Promise<{
@@ -66,26 +68,30 @@ export default async function WordPressPostPage({
   }
 
   return (
-    <main className="bg-white">
-      <article className="mx-auto max-w-5xl px-6 py-16">
-        <p className="text-sm text-gray-500">
-          {new Date(post.date).toLocaleDateString("en-IN")}
-        </p>
+    <>
+      <Header />
+      <main className="bg-[#f6f9fe] min-h-screen py-12">
+        <article className="mx-auto max-w-5xl px-6 py-12 bg-white rounded-3xl border border-sky-100 shadow-sm">
+          <p className="text-sm font-semibold text-[#1685e8]">
+            {new Date(post.date).toLocaleDateString("en-IN")}
+          </p>
 
-        <h1
-          className="mt-3 text-4xl font-bold leading-tight text-gray-900"
-          dangerouslySetInnerHTML={{
-            __html: post.title.rendered,
-          }}
-        />
+          <h1
+            className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl"
+            dangerouslySetInnerHTML={{
+              __html: post.title.rendered,
+            }}
+          />
 
-        <div
-          className="wp-content mt-10"
-          dangerouslySetInnerHTML={{
-            __html: post.content.rendered,
-          }}
-        />
-      </article>
-    </main>
+          <div
+            className="wp-content mt-8 text-slate-700 leading-relaxed"
+            dangerouslySetInnerHTML={{
+              __html: post.content.rendered,
+            }}
+          />
+        </article>
+      </main>
+      <Footer />
+    </>
   );
 }

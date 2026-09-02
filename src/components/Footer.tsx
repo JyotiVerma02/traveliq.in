@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Company Brand Column */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="bg-white rounded-xl p-2 inline-block">
+              <div className=" rounded-md p-2 inline-block">
                 <Image
                   src="/logo.png"
                   alt="TravelIQ Logo"
@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
 
             <div className="pt-2 flex items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-emerald-950 px-3 py-1 text-xs font-bold text-emerald-400 border border-emerald-800/60">
+              <span className="inline-flex items-center rounded-full bg-sky-950 px-3 py-1 text-xs font-bold text-sky-400 border border-sky-800/60">
                 IATA Accredited
               </span>
               <span className="inline-flex items-center rounded-full bg-slate-900 px-3 py-1 text-xs font-bold text-slate-300 border border-slate-800">
@@ -44,22 +44,22 @@ export default function Footer() {
 
             <ul className="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-400">
               <li>
-                <Link href="/" className="hover:text-emerald-400 transition">Home</Link>
+                <Link href="/" className="hover:text-[#1685e8] transition">Home</Link>
               </li>
               <li>
-                <Link href="/about-travel-iq/" className="hover:text-emerald-400 transition">About Us</Link>
+                <Link href="/about-travel-iq/" className="hover:text-[#1685e8] transition">About Us</Link>
               </li>
               <li>
-                <Link href="/our-services/" className="hover:text-emerald-400 transition">Our Services</Link>
+                <Link href="/our-services/" className="hover:text-[#1685e8] transition">Our Services</Link>
               </li>
               <li>
-                <Link href="/video-gallery/" className="hover:text-emerald-400 transition">Video Gallery</Link>
+                <Link href="/video-gallery/" className="hover:text-[#1685e8] transition">Video Gallery</Link>
               </li>
               <li>
-                <Link href="/contact-us/" className="hover:text-emerald-400 transition">Contact Us</Link>
+                <Link href="/contact-us/" className="hover:text-[#1685e8] transition">Contact Us</Link>
               </li>
               <li>
-                <Link href="/pay-now/" className="hover:text-emerald-400 transition">Pay us</Link>
+                <Link href="/pay-now/" className="hover:text-[#1685e8] transition">Pay us</Link>
               </li>
             </ul>
           </div>
@@ -71,12 +71,12 @@ export default function Footer() {
             </h3>
 
             <ul className="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-400">
-              <li><Link href="/pages/services/online-air-ticket-booking" className="hover:text-emerald-400 transition">Air Ticket Booking</Link></li>
-              <li><Link href="/pages/services/railway-reservations" className="hover:text-emerald-400 transition">Railway Reservation</Link></li>
-              <li><Link href="/pages/services/online-hotel-booking" className="hover:text-emerald-400 transition">Hotel Booking</Link></li>
-              <li><Link href="/pages/services/bus-ticket-booking" className="hover:text-emerald-400 transition">Bus Ticket Booking</Link></li>
-              <li><Link href="/pages/services/irctc-domestic-packages" className="hover:text-emerald-400 transition">IRCTC Domestic Packages</Link></li>
-              <li><Link href="/pages/services/irctc-tour-packages" className="hover:text-emerald-400 transition">Tour Packages</Link></li>
+              <li><Link href="/pages/services/online-air-ticket-booking" className="hover:text-[#1685e8] transition">Air Ticket Booking</Link></li>
+              <li><Link href="/pages/services/railway-reservations" className="hover:text-[#1685e8] transition">Railway Reservation</Link></li>
+              <li><Link href="/pages/services/online-hotel-booking" className="hover:text-[#1685e8] transition">Hotel Booking</Link></li>
+              <li><Link href="/pages/services/bus-ticket-booking" className="hover:text-[#1685e8] transition">Bus Ticket Booking</Link></li>
+              <li><Link href="/pages/services/irctc-domestic-packages" className="hover:text-[#1685e8] transition">IRCTC Domestic Packages</Link></li>
+              <li><Link href="/pages/services/irctc-tour-packages" className="hover:text-[#1685e8] transition">Tour Packages</Link></li>
             </ul>
           </div>
 
@@ -89,9 +89,9 @@ export default function Footer() {
             <div className="mt-4 space-y-3 text-xs sm:text-sm text-slate-400">
               <p className="font-semibold text-white">Travel IQ - Your Own Travel Intelligence</p>
               <p>Unit no 820, 8th Floor, JMD Megapolis, Sohna Road, Sector 48, Gurugram, HARYANA 122018, INDIA</p>
-              <p>Email: <a href="mailto:support@traveliq.in" className="text-emerald-400 hover:underline">support@traveliq.in</a></p>
-              <p>Phone: <a href="tel:+917835025000" className="text-emerald-400 hover:underline">+91 7835025000</a> / <a href="tel:+917835025025" className="text-emerald-400 hover:underline">+91 7835025025</a></p>
-              <p>B2B Portal: <a href="https://b2b.traveliq.in" target="_blank" rel="noreferrer" className="text-emerald-400 hover:underline">b2b.traveliq.in</a></p>
+              <p>Email: <a href="mailto:support@traveliq.in" className="text-[#1685e8] hover:underline">support@traveliq.in</a></p>
+              <p>Phone: <a href="tel:+917835025000" className="text-[#1685e8] hover:underline">+91 7835025000</a> / <a href="tel:+917835025025" className="text-[#1685e8] hover:underline">+91 7835025025</a></p>
+              <p>B2B Portal: <a href="https://b2b.traveliq.in" target="_blank" rel="noreferrer" className="text-[#1685e8] hover:underline">b2b.traveliq.in</a></p>
             </div>
           </div>
 

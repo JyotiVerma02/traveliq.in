@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         hostname: "traveliq.in",
         pathname: "/wp-content/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };

@@ -19,9 +19,9 @@ export default function PartnerLogos() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center gap-2 text-slate-700 font-extrabold text-base sm:text-lg tracking-tight select-none hover:text-emerald-600 transition"
+              className="flex items-center gap-2 text-slate-700 font-extrabold text-base sm:text-lg tracking-tight select-none hover:text-[#1685e8] transition"
             >
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="h-2 w-2 rounded-full bg-[#1685e8]" />
               <span>{partner.text}</span>
             </div>
           ))}

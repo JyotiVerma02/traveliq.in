@@ -1,137 +1,150 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 const navigation = [
-  { name: "Find Services", href: "/our-services/", hasDropdown: true },
-  { name: "IRCTC Agent ID", href: "/irctc-agent-registration/" },
-  { name: "Why TravelIQ", href: "/about-travel-iq/" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about-travel-iq/" },
+  { name: "Services", href: "/our-services/" },
   { name: "Video Gallery", href: "/video-gallery/" },
-  { name: "Contact Us", href: "/contact-us/" },
+  { name: "Contact", href: "/contact-us/" },
+  { name: "Pay Us", href: "/pay-now/" },
 ];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#dcfce7]/85 border-b border-emerald-200/50 transition-all">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6">
-        
-        {/* Brand Logo */}
-        <Link href="/" aria-label="TravelIQ Home" className="flex items-center gap-2.5 group">
-          <div className="relative flex items-center justify-center rounded-xl bg-white/90 p-2 shadow-xs border border-emerald-200/60 transition group-hover:bg-white">
-            <Image
-              src="/logo.png"
-              alt="TravelIQ Logo"
-              width={160}
-              height={42}
-              priority
-              className="h-9 w-auto object-contain"
-            />
-          </div>
+    <header className="sticky top-0 z-50 w-full border-b border-sky-100 bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex h-[84px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+        {/* Logo */}
+        <Link
+          href="/"
+          aria-label="TravelIQ Home"
+          className="flex shrink-0 items-center"
+        >
+          <Image
+            src="/logo.png"
+            alt="TravelIQ"
+            width={180}
+            height={55}
+            priority
+            className="h-auto w-[155px] sm:w-[175px]"
+          />
         </Link>
 
-        {/* Center Navigation Links - Reference Pill style */}
-        <nav aria-label="Main navigation" className="hidden items-center gap-1 rounded-full border border-slate-200/70 bg-white/90 px-4 py-1.5 text-xs font-semibold text-slate-700 shadow-xs lg:flex">
+        {/* Desktop Navigation */}
+        <nav
+          aria-label="Main navigation"
+          className="hidden items-center gap-1.5 lg:flex"
+        >
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-emerald-50 hover:text-emerald-700"
+              className="whitespace-nowrap rounded-full px-4.5 py-2.5 text-[15px] font-semibold text-slate-700 transition-all hover:bg-sky-50 hover:text-[#1685e8]"
             >
               {item.name}
-              {item.hasDropdown && (
-                <svg
-                  className="h-3 w-3 text-slate-400 transition-transform group-hover:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                </svg>
-              )}
             </Link>
           ))}
         </nav>
 
-        {/* Right CTA Action Buttons - Dark & Green Pill Buttons */}
-        <div className="hidden items-center gap-3 sm:flex">
+        {/* Desktop Buttons */}
+        <div className="hidden items-center gap-3.5 lg:flex">
+
+          {/* Agent Login */}
           <a
             href="https://b2b.traveliq.in"
             target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-bold text-slate-800 transition hover:bg-slate-50 hover:border-slate-300"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap rounded-4xl border border-slate-200 bg-white px-6 py-3 text-[14px] font-semibold text-slate-800 transition-all hover:border-[#1685e8] hover:bg-sky-50 hover:text-[#1685e8]"
           >
             Agent Login
           </a>
 
+          {/* Book Trip */}
           <Link
             href="/irctc-agent-registration/"
-            className="rounded-full bg-slate-900 px-5 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-emerald-600 hover:shadow-emerald-500/25"
+            className="whitespace-nowrap rounded-4xl bg-[#1685e8] px-7 py-3 text-[14px] font-bold uppercase tracking-wider text-white shadow-md shadow-blue-500/20 transition-all hover:-translate-y-0.5 hover:bg-[#0d76d4] hover:shadow-blue-500/35"
           >
-            Get Agent ID
+            Book Trip
           </Link>
-          
+
+          {/* WhatsApp */}
           <a
             href="https://wa.me/917835025025"
             target="_blank"
-            rel="noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm shadow-emerald-500/30 transition hover:scale-105 hover:bg-emerald-600"
-            aria-label="Chat on WhatsApp"
-            title="Chat with Specialist"
+            rel="noopener noreferrer"
+            aria-label="Chat with TravelIQ on WhatsApp"
+            title="Chat with TravelIQ on WhatsApp"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm transition-transform hover:scale-105"
           >
-            <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className="h-[22px] w-[22px] fill-current"
+              aria-hidden="true"
+            >
+              <path d="M12.04 2C6.58 2 2.14 6.44 2.14 11.9c0 1.75.46 3.46 1.33 4.97L2 22l5.28-1.39a9.86 9.86 0 0 0 4.76 1.22h.01c5.45 0 9.89-4.44 9.89-9.9C21.94 6.44 17.5 2 12.04 2zm5.79 14.2c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.96-.31-1.65-.61-2.91-1.25-4.8-4.17-4.95-4.36-.15-.2-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.49.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.37 1.45.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.65-.15.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.71-.17 1.39z" />
             </svg>
           </a>
         </div>
 
-        {/* Mobile menu toggle */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <Link
-            href="/irctc-agent-registration/"
-            className="rounded-full bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow-xs"
-          >
-            Join Us
-          </Link>
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700"
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? "✕" : "☰"}
-          </button>
-        </div>
-      </div>
+        {/* Mobile Navigation */}
+        <details className="relative lg:hidden">
+          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700">
+            <span className="text-2xl leading-none">☰</span>
+          </summary>
 
-      {/* Mobile Menu dropdown */}
-      {mobileMenuOpen && (
-        <div className="border-b border-emerald-100 bg-white px-4 pt-2 pb-6 lg:hidden shadow-lg">
-          <div className="flex flex-col space-y-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700"
+          <div className="absolute right-0 top-14 z-50 w-[290px] rounded-2xl border border-sky-100 bg-white p-5 shadow-xl">
+
+            {/* Mobile Links */}
+            <nav className="flex flex-col gap-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="whitespace-nowrap rounded-lg px-4 py-3.5 text-[15px] font-semibold text-slate-700 transition-colors hover:bg-sky-50 hover:text-[#1685e8]"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Mobile Buttons */}
+            <div className="mt-4 space-y-2.5 border-t border-slate-100 pt-4">
+
+              {/* Agent Login */}
+              <a
+                href="https://b2b.traveliq.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block whitespace-nowrap rounded-full border border-slate-300 px-4 py-3 text-center text-[14px] font-semibold text-slate-800 transition-colors hover:border-[#1685e8] hover:bg-sky-50"
               >
-                {item.name}
+                Agent Login
+              </a>
+
+              {/* Book Trip */}
+              <Link
+                href="/irctc-agent-registration/"
+                className="block whitespace-nowrap rounded-full bg-[#1685e8] px-4 py-3 text-center text-[14px] font-bold uppercase tracking-wider text-white"
+              >
+                Book Trip
               </Link>
-            ))}
-            <a
-              href="https://b2b.traveliq.in"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 block w-full rounded-full border border-slate-300 py-2.5 text-center text-xs font-bold text-slate-800"
-            >
-              Agent Login
-            </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/917835025025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block whitespace-nowrap rounded-full bg-[#25D366] px-4 py-3 text-center text-[14px] font-semibold text-white"
+              >
+                WhatsApp Us
+              </a>
+
+            </div>
           </div>
-        </div>
-      )}
+        </details>
+
+      </div>
     </header>
   );
 }

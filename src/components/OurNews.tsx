@@ -45,13 +45,17 @@ export default function OurNews() {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200/60">
-            Latest Updates
+          <span className="text-xs font-bold uppercase tracking-widest text-[#1685e8] bg-sky-50 px-3.5 py-1.5 rounded-full border border-sky-200/80">
+            Our News
           </span>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-tight">
-            News, Articles &amp; Travel Guides
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-slate-900 leading-tight uppercase">
+            News &amp; Articles
           </h2>
+
+          <p className="mt-2 text-base font-semibold text-slate-600">
+            Latest Updates from TravelIQ
+          </p>
         </div>
 
         {/* News Grid */}
@@ -59,7 +63,7 @@ export default function OurNews() {
           {news.map((item) => (
             <article
               key={item.title}
-              className="group flex flex-col justify-between overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-xs transition duration-300 hover:-translate-y-1.5 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/5"
+              className="group flex flex-col justify-between overflow-hidden rounded-[28px] border border-sky-100 bg-white shadow-xs transition duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-xl hover:shadow-blue-500/5"
             >
               <div>
                 <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
@@ -74,7 +78,7 @@ export default function OurNews() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="line-clamp-2 text-base font-bold leading-snug text-slate-900 group-hover:text-emerald-700 transition">
+                  <h3 className="line-clamp-2 text-base font-bold leading-snug text-slate-900 group-hover:text-[#1685e8] transition">
                     {item.title}
                   </h3>
 
@@ -87,7 +91,7 @@ export default function OurNews() {
               <div className="p-6 pt-0">
                 <a
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 group-hover:text-emerald-600 transition"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 group-hover:text-[#1685e8] transition"
                 >
                   <span>Read Article</span>
                   <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -101,7 +105,7 @@ export default function OurNews() {
         <div className="mt-12 text-center">
           <a
             href="/pages/social/"
-            className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-3 text-xs font-bold text-slate-800 shadow-xs transition hover:bg-slate-900 hover:text-white hover:border-slate-900"
+            className="inline-flex items-center justify-center rounded-full border border-sky-200 bg-white px-7 py-3 text-xs font-bold text-slate-800 shadow-xs transition hover:bg-[#1685e8] hover:text-white hover:border-[#1685e8]"
           >
             View All News Articles
           </a>
