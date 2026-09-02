@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,15 +27,28 @@ export const metadata: Metadata = {
     "hotel booking",
     "travel services",
   ],
+  openGraph: {
+    title: "TravelIQ | Travel Services & IRCTC Agent Services",
+    description:
+      "TravelIQ provides railway reservation, flight booking, hotel booking, bus ticket booking, tour packages and IRCTC agent services.",
+    type: "website",
+    url: "https://traveliq.in",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${roboto.variable} ${playfairDisplay.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#f0f7ff] text-slate-900 selection:bg-blue-100 selection:text-blue-900">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#ffffff] font-sans text-slate-900 selection:bg-[#fff1eb] selection:text-[#10407A]">
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

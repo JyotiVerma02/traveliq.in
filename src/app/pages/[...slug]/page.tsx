@@ -72,7 +72,7 @@ export default async function WordPressPostPage({
       <Header />
       <main className="bg-[#f6f9fe] min-h-screen py-12">
         <article className="mx-auto max-w-5xl px-6 py-12 bg-white rounded-3xl border border-sky-100 shadow-sm">
-          <p className="text-sm font-semibold text-[#1685e8]">
+          <p className="text-sm font-semibold text-[#10407A]">
             {new Date(post.date).toLocaleDateString("en-IN")}
           </p>
 

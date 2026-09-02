@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -62,22 +60,20 @@ const upcomingServices = [
 
 export default function ServicesPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen bg-[#f6f9fe]">
+    <main className="min-h-screen bg-[#f6f9fe]">
         {/* Header Banner */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#cbf2ff]/70 via-[#eaf8ff]/50 to-[#f6f9fe] py-12 sm:py-16">
+        <section className="relative overflow-hidden bg-[#edf5ff] py-12 sm:py-16">
           <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-4 flex items-center gap-2 text-sm font-medium text-slate-500">
-              <Link href="/" className="transition hover:text-[#1685e8]">
+              <Link href="/" className="transition hover:text-[#10407A]">
                 Home
               </Link>
               <span>/</span>
-              <span className="text-[#1685e8]">Services</span>
+              <span className="text-[#10407A]">Services</span>
             </div>
 
             <div className="mx-auto max-w-4xl text-center space-y-3">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#1685e8]">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#10407A]">
                 Our Services
               </span>
               <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
@@ -100,7 +96,7 @@ export default function ServicesPage() {
               {services.map((service, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl border border-sky-100 bg-white p-6 sm:p-8 shadow-xs transition hover:-translate-y-1 hover:border-[#1685e8]/30 hover:shadow-md flex flex-col justify-between"
+                  className="rounded-xl border border-sky-100 bg-white p-6 sm:p-8 shadow-xs transition hover:-translate-y-1 hover:border-[#10407A]/30 hover:shadow-md flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-sky-50 text-2xl">
@@ -123,7 +119,7 @@ export default function ServicesPage() {
         <section className="bg-white py-10 sm:py-14 border-y border-slate-100">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center space-y-2">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#1685e8]">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#10407A]">
                 Upcoming Services
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -154,7 +150,7 @@ export default function ServicesPage() {
         {/* CTA Banner */}
         <section className="py-10 sm:py-14">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-xl bg-gradient-to-r from-[#1685e8] to-[#075ca8] p-8 sm:p-12 text-white shadow-md">
+            <div className="rounded-xl bg-[#10407A] p-8 sm:p-12 text-white shadow-md">
               <div className="mx-auto max-w-3xl text-center space-y-4">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-sky-200">
                   Touch with us for a better Solution.
@@ -179,8 +175,6 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+    </main>
   );
 }

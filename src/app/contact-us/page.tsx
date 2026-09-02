@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 
@@ -12,28 +10,26 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen bg-[#f6f9fe]">
+    <main className="min-h-screen bg-[#f6f9fe]">
         {/* Header Banner */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#cbf2ff]/70 via-[#eaf8ff]/50 to-[#f6f9fe] py-12 sm:py-16">
+        <section className="relative overflow-hidden bg-[#edf5ff] py-12 sm:py-16">
           <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-4 flex items-center gap-2 text-sm font-medium text-slate-500">
-              <Link href="/" className="transition hover:text-[#1685e8]">
+              <Link href="/" className="transition hover:text-[#10407A]">
                 Home
               </Link>
               <span>/</span>
-              <span className="text-[#1685e8]">Contact Us</span>
+              <span className="text-[#10407A]">Contact Us</span>
             </div>
 
             <div className="mx-auto max-w-3xl text-center space-y-2">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#1685e8]">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#10407A]">
                 Contact Details Travel IQ
               </span>
               <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
                 Touch with us via our chat support
               </h1>
-              <h2 className="text-2xl font-bold text-[#1685e8]">
+              <h2 className="text-2xl font-bold text-[#10407A]">
                 TravelIQ Chat Support
               </h2>
               <p className="text-base text-slate-600">If you have any query</p>
@@ -67,7 +63,7 @@ export default function ContactPage() {
 
               {/* Phone */}
               <div className="rounded-xl border border-sky-100 bg-white p-6 text-center shadow-xs">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-[#1685e8]">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-[#10407A]">
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
@@ -77,7 +73,7 @@ export default function ContactPage() {
                 </h3>
                 <a
                   href="tel:+917835025030"
-                  className="mt-1 block text-base font-bold text-[#1685e8] hover:underline"
+                  className="mt-1 block text-base font-bold text-[#10407A] hover:underline"
                 >
                   +91-7835025030
                 </a>
@@ -100,7 +96,7 @@ export default function ContactPage() {
 
               {/* Email */}
               <div className="rounded-xl border border-sky-100 bg-white p-6 text-center shadow-xs">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-sky-100 text-[#1685e8]">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-sky-100 text-[#10407A]">
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -110,7 +106,7 @@ export default function ContactPage() {
                 </h3>
                 <a
                   href="mailto:support@traveliq.in"
-                  className="mt-1 block text-base font-bold text-[#1685e8] hover:underline"
+                  className="mt-1 block text-base font-bold text-[#10407A] hover:underline"
                 >
                   support@traveliq.in
                 </a>
@@ -126,7 +122,7 @@ export default function ContactPage() {
               {/* Form Column */}
               <div className="lg:col-span-7 space-y-4">
                 <div className="space-y-1">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#1685e8]">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#10407A]">
                     Contact Us
                   </span>
                   <h2 className="text-3xl font-bold text-slate-900">Get In Touch</h2>
@@ -147,7 +143,7 @@ export default function ContactPage() {
                       href="https://facebook.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#1685e8] hover:text-white transition"
+                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#10407A] hover:text-white transition"
                     >
                       Facebook-f
                     </a>
@@ -155,7 +151,7 @@ export default function ContactPage() {
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#1685e8] hover:text-white transition"
+                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#10407A] hover:text-white transition"
                     >
                       Twitter
                     </a>
@@ -163,7 +159,7 @@ export default function ContactPage() {
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#1685e8] hover:text-white transition"
+                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#10407A] hover:text-white transition"
                     >
                       Instagram
                     </a>
@@ -171,7 +167,7 @@ export default function ContactPage() {
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#1685e8] hover:text-white transition"
+                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#10407A] hover:text-white transition"
                     >
                       Linkedin-in
                     </a>
@@ -179,7 +175,7 @@ export default function ContactPage() {
                       href="https://pinterest.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#1685e8] hover:text-white transition"
+                      className="rounded-full bg-slate-100 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-[#10407A] hover:text-white transition"
                     >
                       Pinterest
                     </a>
@@ -203,8 +199,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+    </main>
   );
 }

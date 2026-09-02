@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,18 +10,16 @@ export const metadata: Metadata = {
 
 export default function PayNowPage() {
   return (
-    <>
-      <Header />
-      <main className="bg-[#f6f9fe] flex-1">
+    <main className="bg-[#f6f9fe] flex-1">
         {/* Header Banner */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#cbf2ff]/70 via-[#eaf8ff]/50 to-[#f6f9fe] py-6 sm:py-8">
+        <section className="relative overflow-hidden bg-[#edf5ff] py-6 sm:py-8">
           <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-500">
-              <Link href="/" className="transition hover:text-[#1685e8]">
+              <Link href="/" className="transition hover:text-[#10407A]">
                 Home
               </Link>
               <span>/</span>
-              <span className="text-[#1685e8]">Pay Now</span>
+              <span className="text-[#10407A]">Pay Now</span>
             </div>
 
             <div className="mx-auto max-w-4xl text-center space-y-1.5">
@@ -48,7 +44,7 @@ export default function PayNowPage() {
                   
                   {/* Left Column: Account Details Box */}
                   <div className="lg:col-span-7">
-                    <div className="relative h-full overflow-hidden rounded-md border border-slate-300 bg-gradient-to-r from-[#d9dadc] via-[#d9dadc] to-[#ff5722] p-4 sm:p-5 shadow-xs flex flex-col justify-between">
+                    <div className="relative h-full overflow-hidden rounded-md border border-slate-300 bg-[#e4e5e7] p-4 sm:p-5 shadow-xs flex flex-col justify-between">
                       
                       <div>
                         {/* Header Box inside Account Details */}
@@ -109,7 +105,7 @@ export default function PayNowPage() {
                         priority
                         className="object-cover transition-transform duration-700 hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-slate-950/35" />
                       <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-bold bg-slate-900/70 backdrop-blur-xs p-2.5 rounded-xs border border-white/20">
                         ⚡ Instant Online Settlement &amp; Receipt Generation
                       </div>
@@ -122,8 +118,6 @@ export default function PayNowPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+    </main>
   );
 }

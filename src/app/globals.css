@@ -1,48 +1,49 @@
 @import "tailwindcss";
 
 /* =========================================================
-   TRAVEL IQ — FRESH BLUE / WHITE TRAVEL THEME
+   TRAVEL IQ — ORANGE / NAVY BLUE / WHITE BRAND THEME
    ========================================================= */
 
 :root {
   /* ---------- Core Colors ---------- */
 
-  --background: #f6f9fe;
+  --background: #ffffff;
   --foreground: #08090b;
 
   --white: #ffffff;
-  --blue: #1685e8;
-  --blue-hover: #0874d5;
-  --blue-dark: #075ca8;
 
-  --sky: #cbf2ff;
-  --sky-soft: #eaf8ff;
-  --sky-light: #f2faff;
+  /* Navy Blue shades */
+  --navy: #10407A;
+  --navy-hover: #071F3D;
+  --navy-dark: #071f3d;
+  --navy-light: #1a5499;
+  --navy-muted: rgba(16, 64, 122, 0.08);
+
+  /* Orange brand palette */
+  --orange-brand: #D9471D;
+  --orange: #EE5326;
+  --orange-hover: #C63D16;
+  --orange-deep: #C63D16;
+  --orange-light: #FF7043;
+  --orange-highlight: #FF7043;
+  --orange-muted: rgba(238, 83, 38, 0.08);
+  --orange-soft: #FFF1EB;
+  --orange-pale: #FFF8F5;
+
+  /* White/neutral shades */
+  --off-white: #fffaf8;
+  --warm-white: #fff8f5;
 
   --text-primary: #08090b;
-  --text-secondary: #46515c;
-  --text-muted: #71808c;
+  --text-secondary: #10407A;
+  --text-muted: #5a6a80;
 
-  --border: rgba(22, 133, 232, 0.12);
+  --border: rgba(238, 83, 38, 0.14);
+  --border-navy: rgba(16, 64, 122, 0.14);
 
   /* ---------- Typography ---------- */
-
-  --font-sans:
-    var(--font-roboto),
-    "Roboto",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Helvetica,
-    Arial,
-    sans-serif;
-
-  --font-display:
-    var(--font-playfair),
-    "Playfair Display",
-    Georgia,
-    "Times New Roman",
-    serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* ---------- Radius ---------- */
 
@@ -64,13 +65,30 @@
 
   --color-white: var(--white);
 
-  --color-blue: var(--blue);
-  --color-blue-hover: var(--blue-hover);
-  --color-blue-dark: var(--blue-dark);
+  --color-navy: var(--navy);
+  --color-navy-hover: var(--navy-hover);
+  --color-navy-dark: var(--navy-dark);
+  --color-navy-light: var(--navy-light);
 
-  --color-sky: var(--sky);
-  --color-sky-soft: var(--sky-soft);
-  --color-sky-light: var(--sky-light);
+  --color-orange-brand: var(--orange-brand);
+  --color-orange: var(--orange);
+  --color-orange-hover: var(--orange-hover);
+  --color-orange-deep: var(--orange-deep);
+  --color-orange-light: var(--orange-light);
+  --color-orange-highlight: var(--orange-highlight);
+  --color-orange-soft: var(--orange-soft);
+  --color-orange-pale: var(--orange-pale);
+
+  /* Legacy aliases */
+  --color-blue: var(--navy);
+  --color-blue-hover: var(--navy-hover);
+  --color-blue-dark: var(--navy-dark);
+  --color-coral: var(--orange);
+  --color-coral-hover: var(--orange-hover);
+
+  --color-sky: rgba(16, 64, 122, 0.12);
+  --color-sky-soft: var(--warm-white);
+  --color-sky-light: var(--off-white);
 
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
@@ -94,10 +112,11 @@ body {
   margin: 0;
   padding: 0;
 
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff;
+  color: #08090b;
 
   font-family: var(--font-sans);
+  font-weight: 400;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,6 +126,71 @@ body {
 
 body {
   min-height: 100vh;
+  letter-spacing: -0.01em;
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) scale(1.03);
+  }
+}
+
+@keyframes floatSlowDelay {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 14px, 0) scale(1.02);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 10s ease-in-out infinite;
+}
+
+.animate-float-slow-delay {
+  animation: floatSlowDelay 12s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease-out both;
+}
+/* Gradient border animation */
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-x {
+  background-size: 300% 300%;
+  animation: gradient-x 4s ease-in-out infinite;
+}
+
+/* Optional: Floating animation for the container */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero-float {
+  animation: float-slow 4s ease-in-out infinite;
 }
 
 
@@ -121,15 +205,28 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: var(--text-primary);
+  color: #08090b;
   font-family: var(--font-sans);
   font-weight: 700;
   letter-spacing: -0.045em;
 }
 
+h1,
+.hero-title {
+  font-weight: 800;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
 p {
   margin: 0;
-  color: var(--text-secondary);
+  color: #4a5568;
   line-height: 1.7;
 }
 
@@ -138,12 +235,47 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus-visible {
+  color: var(--orange-brand);
+}
 
-/* Elegant editorial / travel headings */
+a[href*="wa.me"],
+a[href*="wa.me"]:hover,
+a[href*="wa.me"]:focus-visible {
+  background-color: #25d366 !important;
+  color: #ffffff !important;
+  border-color: #25d366 !important;
+}
 
+a[href*="wa.me"] svg,
+a[href*="wa.me"] path,
+a[href*="wa.me"] span,
+a[href*="wa.me"] div {
+  color: #ffffff !important;
+}
+
+a[href*="wa.me"] svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+a[href*="wa.me"] svg path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+a[href][class*="bg-[#EE5326]"]:hover,
+a[href][class*="bg-[#EE5326]"]:focus-visible,
+a[href][class*="bg-[#D9471D]"]:hover,
+a[href][class*="bg-[#D9471D]"]:focus-visible {
+  color: #ffffff !important;
+}
+
+/* Sans-serif heading utility */
 .font-display {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.035em;
 }
 
@@ -176,32 +308,17 @@ a {
    ========================================================= */
 
 .page-blue-bg {
-  background:
-    radial-gradient(
-      80% 70% at 50% 0%,
-      rgba(203, 242, 255, 0.95) 0%,
-      rgba(234, 248, 255, 0.85) 42%,
-      rgba(246, 249, 254, 0.95) 72%,
-      #ffffff 100%
-    );
+  background: var(--warm-white);
 }
 
 
 /* =========================================================
-   HERO — REFERENCE IMAGE STYLE
+   HERO — ORANGE/NAVY BRAND STYLE
    ========================================================= */
 
 .hero-blue-bg {
   position: relative;
-
-  background:
-    radial-gradient(
-      90% 100% at 50% 0%,
-      #cbf2ff 0%,
-      #d9f4ff 35%,
-      #eaf8ff 65%,
-      #f6f9fe 100%
-    );
+  background: var(--warm-white);
 }
 
 
@@ -211,19 +328,7 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 18% 25%,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.45) 25%,
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at 82% 20%,
-      rgba(22, 133, 232, 0.10) 0%,
-      transparent 48%
-    );
+  background: rgba(238, 83, 38, 0.04);
 }
 
 
@@ -232,22 +337,22 @@ a {
    ========================================================= */
 
 .travel-panel {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.94);
 
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(238, 83, 38, 0.16);
 
   border-radius: var(--radius-xl);
 
   box-shadow:
-    0 20px 70px rgba(55, 120, 160, 0.10),
-    0 5px 20px rgba(55, 120, 160, 0.05);
+    0 20px 70px rgba(16, 64, 122, 0.10),
+    0 5px 20px rgba(16, 64, 122, 0.05);
 
   backdrop-filter: blur(18px);
 }
 
 
 /* =========================================================
-   BLUE BUTTONS
+   NAVY BUTTONS
    ========================================================= */
 
 .btn-blue {
@@ -258,7 +363,7 @@ a {
   min-height: 48px;
   padding: 0 24px;
 
-  background: var(--blue);
+  background: var(--navy);
   color: #ffffff;
 
   border: none;
@@ -277,12 +382,12 @@ a {
 }
 
 .btn-blue:hover {
-  background: var(--blue-hover);
+  background: var(--navy-hover);
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 25px rgba(22, 133, 232, 0.22);
+    0 10px 25px rgba(16, 64, 122, 0.28);
 }
 
 
@@ -296,10 +401,10 @@ a {
   min-height: 48px;
   padding: 0 24px;
 
-  background: rgba(255, 255, 255, 0.75);
-  color: var(--blue);
+  background: rgba(255, 255, 255, 0.90);
+  color: var(--navy);
 
-  border: 1px solid rgba(22, 133, 232, 0.28);
+  border: 1px solid rgba(16, 64, 122, 0.30);
   border-radius: 999px;
 
   font-size: 14px;
@@ -309,10 +414,10 @@ a {
 }
 
 .btn-blue-outline:hover {
-  background: var(--blue);
+  background: var(--navy);
   color: #ffffff;
 
-  border-color: var(--blue);
+  border-color: var(--navy);
 }
 
 
@@ -348,7 +453,7 @@ a {
   overflow: hidden;
 
   box-shadow:
-    0 20px 50px rgba(35, 100, 140, 0.15);
+    0 20px 50px rgba(16, 64, 122, 0.20);
 }
 
 
@@ -362,10 +467,10 @@ a {
 
   border-radius: var(--radius-lg);
 
-  background: var(--sky-soft);
+  background: var(--warm-white);
 
   box-shadow:
-    0 15px 40px rgba(40, 100, 135, 0.10);
+    0 15px 40px rgba(16, 64, 122, 0.10);
 }
 
 .travel-image-card img {
@@ -389,7 +494,7 @@ a {
   width: min(1200px, 90vw);
   height: 600px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(191, 219, 254, 0.7), rgba(224, 242, 254, 0.15), transparent 70%);
+  background: rgba(238, 83, 38, 0.09);
   filter: blur(48px);
   pointer-events: none;
   animation: hero-glow 8s ease-in-out infinite;
@@ -409,7 +514,7 @@ a {
   right: 3rem;
   width: 16rem;
   height: 16rem;
-  background: rgba(147, 197, 253, 0.35);
+  background: rgba(238, 83, 38, 0.28);
 }
 
 .hero-orb-two {
@@ -417,7 +522,7 @@ a {
   left: 2.5rem;
   width: 18rem;
   height: 18rem;
-  background: rgba(186, 230, 253, 0.3);
+  background: rgba(16, 64, 122, 0.20);
   animation-delay: 2s;
 }
 
@@ -426,7 +531,7 @@ a {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background: #1685e8;
+  background: #EE5326;
   animation: live-pulse 1.5s ease-in-out infinite;
 }
 
@@ -439,7 +544,7 @@ a {
   width: 0.375rem;
   height: 2rem;
   margin-left: 0.25rem;
-  background: #1685e8;
+  background: #EE5326;
   animation: cursor-blink 1s step-end infinite;
   vertical-align: middle;
 }
@@ -455,7 +560,7 @@ a {
 
 .hero-card-raise:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(22, 133, 232, 0.12);
+  box-shadow: 0 18px 40px rgba(16, 64, 122, 0.16);
 }
 
 .hero-float {
@@ -470,7 +575,7 @@ a {
   position: absolute;
   width: 3rem;
   height: 3rem;
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.50);
   border-style: solid;
   border-width: 0;
   opacity: 0.9;
@@ -508,9 +613,13 @@ a {
   border-bottom-right-radius: 0.75rem;
 }
 
+/* =========================================================
+   FAQ ITEMS
+   ========================================================= */
+
 .faq-item {
   display: block;
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  border: 1px solid rgba(16, 64, 122, 0.15);
   border-radius: 1.25rem;
   background: white;
   padding: 1.25rem 1.25rem 1.1rem;
@@ -518,13 +627,13 @@ a {
 }
 
 .faq-item[open] {
-  border-color: rgba(16, 185, 129, 0.4);
-  background: rgba(236, 253, 245, 0.3);
-  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.08);
+  border-color: rgba(238, 83, 38, 0.35);
+  background: rgba(255, 244, 239, 0.40);
+  box-shadow: 0 0 0 1px rgba(238, 83, 38, 0.08);
 }
 
 .faq-item:hover {
-  border-color: rgba(148, 163, 184, 0.6);
+  border-color: rgba(16, 64, 122, 0.30);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -541,14 +650,14 @@ a {
    ========================================================= */
 
 .travel-card {
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.94);
 
-  border: 1px solid rgba(22, 133, 232, 0.10);
+  border: 1px solid rgba(16, 64, 122, 0.10);
 
   border-radius: var(--radius-lg);
 
   box-shadow:
-    0 10px 35px rgba(40, 100, 135, 0.06);
+    0 10px 35px rgba(16, 64, 122, 0.06);
 
   transition:
     transform 0.3s ease,
@@ -559,34 +668,28 @@ a {
 .travel-card:hover {
   transform: translateY(-6px);
 
-  border-color: rgba(22, 133, 232, 0.20);
+  border-color: rgba(238, 83, 38, 0.22);
 
   box-shadow:
-    0 20px 45px rgba(40, 100, 135, 0.12);
+    0 20px 45px rgba(16, 64, 122, 0.12);
 }
 
 
 /* =========================================================
-   SOFT BLUE CARD
+   WARM CARD BG
    ========================================================= */
 
 .card-blue-gradient {
-  background:
-    linear-gradient(
-      145deg,
-      #f5fbff 0%,
-      #eaf8ff 55%,
-      #ffffff 100%
-    );
+  background: var(--warm-white);
 }
 
 .card-blue-border {
-  border: 1px solid rgba(22, 133, 232, 0.12);
+  border: 1px solid rgba(238, 83, 38, 0.14);
 }
 
 
 /* =========================================================
-   BLUE BADGE / LABEL
+   ORANGE BADGE / LABEL
    ========================================================= */
 
 .blue-badge {
@@ -595,13 +698,13 @@ a {
 
   padding: 7px 13px;
 
-  background: rgba(22, 133, 232, 0.07);
+  background: rgba(238, 83, 38, 0.08);
 
-  border: 1px solid rgba(22, 133, 232, 0.16);
+  border: 1px solid rgba(238, 83, 38, 0.20);
 
   border-radius: 999px;
 
-  color: var(--blue);
+  color: #EE5326;
 
   font-size: 11px;
   font-weight: 700;
@@ -620,7 +723,7 @@ a {
   align-items: center;
   gap: 8px;
 
-  color: var(--blue);
+  color: #EE5326;
 
   font-size: 11px;
   font-weight: 800;
@@ -635,7 +738,7 @@ a {
   width: 28px;
   height: 1px;
 
-  background: var(--blue);
+  background: #EE5326;
 }
 
 
@@ -659,11 +762,11 @@ a {
 
 
 /* =========================================================
-   BLUE TEXT
+   NAVY TEXT
    ========================================================= */
 
 .text-travel-blue {
-  color: var(--blue);
+  color: var(--navy);
 }
 
 
@@ -672,20 +775,20 @@ a {
    ========================================================= */
 
 .travel-nav {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.97);
 
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(16, 64, 122, 0.10);
 
   backdrop-filter: blur(18px);
 
   box-shadow:
-    0 8px 30px rgba(50, 110, 145, 0.06);
+    0 8px 30px rgba(16, 64, 122, 0.08);
 }
 
 .travel-nav-link {
   position: relative;
 
-  color: #2f3942;
+  color: #10407A;
 
   font-size: 14px;
   font-weight: 500;
@@ -694,7 +797,7 @@ a {
 }
 
 .travel-nav-link:hover {
-  color: var(--blue);
+  color: #EE5326;
 }
 
 
@@ -703,14 +806,14 @@ a {
    ========================================================= */
 
 .floating-blue-card {
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.96);
 
-  border: 1px solid rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(238, 83, 38, 0.16);
 
   border-radius: var(--radius-lg);
 
   box-shadow:
-    0 20px 50px rgba(30, 100, 145, 0.12);
+    0 20px 50px rgba(16, 64, 122, 0.12);
 
   backdrop-filter: blur(16px);
 }
@@ -723,14 +826,7 @@ a {
 .travel-divider {
   width: 100%;
   height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(22, 133, 232, 0.15),
-      transparent
-    );
+  background: rgba(16, 64, 122, 0.12);
 }
 
 
@@ -739,7 +835,7 @@ a {
    ========================================================= */
 
 ::selection {
-  background: rgba(22, 133, 232, 0.18);
+  background: rgba(238, 83, 38, 0.18);
   color: #08090b;
 }
 
@@ -753,16 +849,16 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f2faff;
+  background: #fff8f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b5dff3;
+  background: rgba(238, 83, 38, 0.35);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--blue);
+  background: #EE5326;
 }
 
 

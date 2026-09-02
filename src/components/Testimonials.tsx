@@ -31,54 +31,63 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-20 lg:py-28 border-b border-sky-100">
-      <div className="container mx-auto px-4 sm:px-6">
-        
+    <section className="relative overflow-hidden bg-[#fff9f5] py-20 lg:py-28">
+      {/* Soft ambient glows – orange + subtle blue */}
+      <div className="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-[#EE5326]/[0.06] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-10 left-0 h-72 w-72 rounded-full bg-[#10407A]/[0.05] blur-3xl" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-64 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#10407A]/[0.03] blur-3xl" />
+
+      <div className="container relative mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#1685e8] bg-sky-100/70 px-3.5 py-1.5 rounded-full border border-sky-200">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#EE5326]/25 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-[#EE5326] shadow-sm shadow-[#EE5326]/10">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326] animate-pulse" />
             Testimonials
           </span>
 
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-slate-900 leading-tight uppercase">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-[#08090b] leading-tight uppercase">
             Agent Testimonials
           </h2>
 
-          <p className="mt-2 text-base text-slate-600 font-semibold">
+          <p className="mt-3 text-base font-semibold text-[#EE5326]">
             Latest Reviews from TravelIQ Agent Network
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="flex flex-col justify-between rounded-[32px] border border-sky-100 bg-[#f8fbff] p-7 shadow-xs transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:bg-white hover:shadow-xl shadow-blue-500/5"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-[#EE5326]/12 bg-white p-6 shadow-sm shadow-[#EE5326]/[0.04] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#EE5326]/30 hover:shadow-xl hover:shadow-[#EE5326]/10"
             >
+              {/* Top accent line on hover */}
+              <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#EE5326] via-[#ff7a45] to-[#EE5326] transition-transform duration-300 group-hover:scale-x-100" />
+
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-[#1685e8] text-sm font-bold tracking-widest">{t.rating}</span>
+                  <span className="text-sm font-bold tracking-widest text-[#EE5326]">
+                    {t.rating}
+                  </span>
                 </div>
 
-                <p className="mt-5 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                <p className="mt-5 text-xs sm:text-sm leading-relaxed text-[#5c534e]">
                   &ldquo;{t.message}&rdquo;
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-sky-100 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1685e8] text-white font-bold text-sm shadow-sm">
+              <div className="mt-8 flex items-center gap-3 border-t border-[#EE5326]/10 pt-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#EE5326] to-[#ff7a45] text-sm font-bold text-white shadow-md shadow-[#EE5326]/25">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">{t.name}</h3>
-                  <p className="text-xs font-medium text-slate-500">{t.role}</p>
+                  <h3 className="text-sm font-bold text-[#08090b]">{t.name}</h3>
+                  <p className="text-xs font-medium text-[#8a7f78]">{t.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

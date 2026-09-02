@@ -40,20 +40,20 @@ const news = [
 
 export default function OurNews() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-[#fff8f5] py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#1685e8] bg-sky-50 px-3.5 py-1.5 rounded-full border border-sky-200/80">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#EE5326] bg-[#fff4ef] px-3.5 py-1.5 rounded-full border border-[#EE5326]/20">
             Our News
           </span>
 
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-slate-900 leading-tight uppercase">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-[#08090b] leading-tight uppercase">
             News &amp; Articles
           </h2>
 
-          <p className="mt-2 text-base font-semibold text-slate-600">
+          <p className="mt-2 text-base font-semibold text-[#10407A]">
             Latest Updates from TravelIQ
           </p>
         </div>
@@ -63,26 +63,26 @@ export default function OurNews() {
           {news.map((item) => (
             <article
               key={item.title}
-              className="group flex flex-col justify-between overflow-hidden rounded-[28px] border border-sky-100 bg-white shadow-xs transition duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-xl hover:shadow-blue-500/5"
+              className="group flex flex-col justify-between overflow-hidden rounded-[28px] border border-[#10407A]/10 bg-white shadow-xs transition duration-300 hover:-translate-y-1.5 hover:border-[#EE5326]/25 hover:shadow-xl hover:shadow-[#EE5326]/8"
             >
               <div>
-                <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
+                <div className="aspect-[16/10] overflow-hidden bg-[#fff8f5] relative">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold text-slate-700 shadow-xs">
+                  <span className="absolute top-3 left-3 rounded-full bg-white/92 backdrop-blur-md px-3 py-1 text-[10px] font-bold text-[#10407A] shadow-xs">
                     {item.date}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="line-clamp-2 text-base font-bold leading-snug text-slate-900 group-hover:text-[#1685e8] transition">
+                  <h3 className="line-clamp-2 text-base font-bold leading-snug text-[#08090b] group-hover:text-[#EE5326] transition">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2.5 line-clamp-3 text-xs text-slate-600 leading-relaxed font-normal">
+                  <p className="mt-2.5 line-clamp-3 text-xs text-[#4a5568] leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export default function OurNews() {
               <div className="p-6 pt-0">
                 <a
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 group-hover:text-[#1685e8] transition"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#10407A] group-hover:text-[#EE5326] transition"
                 >
                   <span>Read Article</span>
                   <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -105,7 +105,7 @@ export default function OurNews() {
         <div className="mt-12 text-center">
           <a
             href="/pages/social/"
-            className="inline-flex items-center justify-center rounded-full border border-sky-200 bg-white px-7 py-3 text-xs font-bold text-slate-800 shadow-xs transition hover:bg-[#1685e8] hover:text-white hover:border-[#1685e8]"
+            className="inline-flex items-center justify-center rounded-full border border-[#10407A]/20 bg-white px-7 py-3 text-xs font-bold text-[#10407A] shadow-xs transition hover:bg-[#EE5326] hover:text-white hover:border-[#EE5326]"
           >
             View All News Articles
           </a>
