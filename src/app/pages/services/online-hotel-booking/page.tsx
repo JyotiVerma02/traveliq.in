@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import ServiceDetail from "@/components/ServiceDetail";
+export const metadata: Metadata = { title: "Hotel Booking", description: "Online hotel booking in India and abroad with TravelIQ." };
+export default function Page() { return <ServiceDetail title="Hotel Booking" intro="TraveliQ provides a diverse selection of luxury, deluxe, and budget hotels. Choose to stay in luxury and comfort with the best hotel booking discounts available." sections={[{ heading: "Advantages of online hotel booking", body: "In a few easy clicks, you may book hotels in India or internationally. Compare reviews, photos, ratings, and facilities in one spot, get fantastic deals and discounts, and reserve a suitable stay at affordable costs. We offer a wide variety of hotel bookings in both India and abroad at reasonable rates." }]} />; }

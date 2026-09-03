@@ -13,11 +13,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "TravelIQ | Travel Services & IRCTC Agent Services",
-    template: "%s | TravelIQ",
+    default: "Travel IQ - Your Own Travel Intelligence",
+    template: "%s",
   },
   description:
-    "TravelIQ provides railway reservation, flight booking, hotel booking, bus ticket booking, tour packages and IRCTC agent services.",
+    "Know More to Become an IRCTC Travel Agent",
   keywords: [
     "TravelIQ",
     "IRCTC agent",

@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import ServiceDetail from "@/components/ServiceDetail";
+export const metadata: Metadata = { title: "Bus Tickets", description: "Book bus tickets online with TravelIQ." };
+export default function Page() { return <ServiceDetail title="Bus Tickets" intro="Why wait in long queues at bus ticket counters for your next bus travel? Traveliq is a cost-effective and inexpensive internet trip booking service." sections={[{ heading: "Why should you book your bus tickets with Traveliq?", body: "Traveliq is India’s fastest-growing online ticketing platform, with services such as bus ticketing, railway ticketing, and bus leasing. Choose from Volvo, Volvo AC, AC luxury, Deluxe, Sleeper, Express, and private buses operating on a network of 12,000 bus routes. Benefits include multiple bus services, online availability, free cancellation, and 24/7 customer support." }]} />; }

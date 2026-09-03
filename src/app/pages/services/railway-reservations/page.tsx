@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import ServiceDetail from "@/components/ServiceDetail";
+export const metadata: Metadata = { title: "Railway Reservations", description: "Indian Railway Reservation System and IRCTC railway services." };
+export default function Page() { return <ServiceDetail title="Railway Reservations" intro="The Indian Railway Reservation System allows passengers to reserve their seats in advance of their journey. This facility offers a large number of windows and classifications, making it convenient for passengers." sections={[{ heading: "INDIAN RAILWAY RESERVATION SYSTEM GENERAL BOOKING", body: "A tourist can pick between general, sleeper, or AC coaches by providing a few details and making a little cost. Passengers may book their tickets either online or offline, both of which are simple. IRCTC’s Indian Railway Reservation System includes a range of quotas of reservations to cater to the needs of different kinds of passengers." }]} />; }

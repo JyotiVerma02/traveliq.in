@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import ServiceDetail from "@/components/ServiceDetail";
+export const metadata: Metadata = { title: "Air Tickets", description: "Online domestic and international air ticket booking with TravelIQ." };
+export default function Page() { return <ServiceDetail title="Air Tickets" intro="We are an IATA-accredited travel agent with a central reservation system and ticket inventory for all domestic and international airlines." sections={[{ heading: "Affordable flight booking", body: "We have established relationships with all major airlines, enabling us to provide confirmed tickets to your desired destination. Our specially negotiated rates are among the most competitive on the market. Kindly contact us to obtain the best available fare and immediate confirmation." }]} />; }

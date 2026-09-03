@@ -1,459 +1,701 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Building2,
+  Headphones,
+  Plane,
+  Train,
+  UsersRound,
+  Award,
+  Clock,
+  Globe,
+  Shield,
+  Star,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | TravelIQ",
   description:
-    "Travel IQ Services is the best Principal agent of IRCTC and an IATA accredited travel agent in INDIA, Travel IQ has started its operations in the year 2014.",
+    "Travel IQ Services is the best Principal agent of IRCTC and an IATA accredited travel agent in INDIA.",
 };
+
+const solutions: [string, string, LucideIcon][] = [
+  [
+    "AFFORDABLE PRICE",
+    "You can get affordable prices for all the travel products & services.",
+    BadgeCheck,
+  ],
+  [
+    "BEST DESTINATION",
+    "Travel IQ is offering the best destinations for your holidays.",
+    Plane,
+  ],
+  [
+    "PERSONAL SERVICE",
+    "You will get personalized services at Travel IQ Services",
+    Headphones,
+  ],
+];
+
+const stats = [
+  { number: "2014", label: "Founded", icon: Clock },
+  { number: "20K+", label: "Registered Agents", icon: UsersRound },
+  { number: "IATA", label: "Accredited", icon: Award },
+  { number: "IRCTC", label: "Principal Agent", icon: Shield },
+];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#f4f8fc] text-[#1f2d3d]">
-        {/* Breadcrumb & Hero Header - Enhanced */}
-        <section className="relative overflow-hidden py-16 sm:py-20">
-          <div className="absolute inset-0 bg-[#edf5ff]" />
-          <div className="absolute -top-24 -right-20 h-72 w-72 rounded-full bg-[#b9cbe0]/30 blur-3xl animate-float-slow" />
-          <div className="absolute -bottom-28 -left-16 h-80 w-80 rounded-full bg-[#d9c3a6]/20 blur-3xl animate-float-slow-delay" />
-          <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e7edf7]/80 blur-3xl" />
-          
-          <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <nav className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-500 animate-fade-up">
-              <Link href="/" className="transition hover:text-[#1d2d4d] hover:underline">
+    <main className="about-page overflow-hidden bg-white">
+      {/* ===== HERO SECTION ===== */}
+      <section className="about-hero relative overflow-hidden bg-[#102F52]">
+        {/* Background grid */}
+        <div className="hero-grid absolute inset-0 opacity-30" />
+
+        {/* Radial orange glow */}
+        <div className="pointer-events-none absolute -left-40 top-[-120px] h-[500px] w-[500px] rounded-full bg-orange-500/10 blur-3xl" />
+
+        <div className="pointer-events-none absolute -right-40 bottom-[-180px] h-[500px] w-[500px] rounded-full bg-orange-600/10 blur-3xl" />
+
+        <div className="hero-orbit orbit-one" />
+        <div className="hero-orbit orbit-two" />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.07fr_.93fr] lg:gap-20 lg:py-24">
+          {/* HERO CONTENT */}
+          <div className="reveal">
+            <p className="eyebrow">
+              <UsersRound size={15} />
+              About Us
+            </p>
+
+            <nav className="mb-7 mt-4 text-sm text-white/70">
+              <Link
+                href="/"
+                className="transition-colors duration-300 hover:text-orange-400"
+              >
                 Home
               </Link>
-              <span className="text-slate-300">/</span>
-              <span className="font-semibold text-[#1d2d4d]">About Us</span>
+
+              <span className="mx-2 text-white/30">/</span>
+
+              <Link
+                href="/about-travel-iq/"
+                className="text-white transition-colors duration-300 hover:text-orange-400"
+              >
+                About Us
+              </Link>
             </nav>
 
-            <div className="max-w-4xl space-y-4 animate-fade-up">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#dfe7f3] bg-white/70 px-4 py-1.5 text-xs font-bold text-[#1d2d4d] shadow-[0_8px_20px_rgba(104,125,162,0.08)] backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-[#b89d73] opacity-70 animate-ping"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#b89d73]"></span>
-                </span>
-                About TravelIQ
-              </div>
-              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#1b2438] sm:text-5xl lg:text-6xl">
-                We Are <span className="text-[#10407A]">traveliQ</span>
-              </h1>
-              <p className="text-xl font-semibold text-slate-700 sm:text-2xl">
-                Travel IQ Services is the best travel agency in INDIA
-              </p>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <span className="inline-flex items-center rounded-full border border-[#dfe7f3] bg-[#f4f8fc] px-3 py-1 text-xs font-bold text-[#2a4d71]">
+            <h1 className="max-w-2xl text-5xl font-extrabold leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl lg:text-[4.5rem]">
+              We Are
+              <br />
+              <span className="text-orange-500">TraveliQ</span>
+            </h1>
+
+            <span className="about-hero__rule mt-7 block" />
+
+            <p className="mt-7 max-w-xl text-lg font-bold leading-8 text-white">
+              Travel IQ Services is the best travel agency in INDIA
+            </p>
+
+            {/* TRUST POINTS */}
+            <div className="mt-8 grid max-w-xl grid-cols-1 border-y border-white/10 sm:grid-cols-3">
+              <div className="border-b border-white/10 py-4 sm:border-b-0 sm:border-r sm:pr-5">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-orange-400">
                   ✓ IATA Accredited
-                </span>
-                <span className="inline-flex items-center rounded-full border border-[#e5d9c8] bg-[#f7f3ee] px-3 py-1 text-xs font-bold text-[#735b3f]">
-                  ✓ IRCTC Principal Agent
-                </span>
-                <span className="inline-flex items-center rounded-full border border-[#dbe7dd] bg-[#f4faf5] px-3 py-1 text-xs font-bold text-[#476d5d]">
-                  ★ 150K+ Registered Agents
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Main Content Section */}
-        <section className="py-12 sm:py-16">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-12">
-              {/* Left Column - Content */}
-              <div className="space-y-8 lg:col-span-8">
-                {/* Main Content Card */}
-                <div className="group rounded-[28px] border border-[#e2e8f2] bg-white p-6 shadow-[0_18px_55px_rgba(54,73,101,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(54,73,101,0.12)] sm:p-8 animate-fade-up">
-                  <div className="space-y-5 text-base leading-relaxed text-slate-700">
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl text-[#8aa4bf]">✦</span>
-                      <p>
-                        Travel IQ Services is the best Principal agent of IRCTC and an IATA accredited travel agent in INDIA, Travel IQ has started its operations in the year 2014, Travel IQ has its Corporate office in Gurugram, IT city of Delhi/NCR. Since then it has been consistently showing substantial progress in the market. In 2017, within mere three years of its establishment, the company acquired recognition from IATA (International Air Transport Association), the most prestigious airline trade association which currently represents most of the total air traffic.
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl text-[#8aa4bf]">✦</span>
-                      <p>
-                        Foreseeing the digital transformation that revolutionized the travel industry, the company started its online portal under the name{" "}
-                        <a
-                          href="https://b2b.traveliq.in"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-semibold text-[#2d4d6f] transition hover:text-[#1b3552] hover:underline"
-                        >
-                          https://b2b.traveliq.in
-                        </a>{" "}
-                        in the year 2016. The portal is basically designed for online travel assistance focusing primarily on B2B module of trade. The website has more than 150000 registered agents who are considered to be some of the most experienced pros in the marketplace.
-                      </p>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl text-[#8aa4bf]">✦</span>
-                      <p>
-                        Majorly operating in states like Haryana, Uttar Pradesh and Punjab Travel IQ has become a landmark in travel industry. Since the year 2014, the company is being awarded by some of the most esteemed airlines for its outstanding provision of services. This is because the company always focuses on offering travel-related quality services to its clients and maintaining healthy relationships. Having an edge in booking flights we also provide complete assistance in booking travel packages, hotels, bus services, travel insurance, assistance in acquiring passport/visa, booking a cruise and many more.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Stats Bar */}
-                  <div className="mt-6 grid grid-cols-2 gap-4 border-t border-[#edf1f7] pt-6 sm:grid-cols-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-extrabold text-[#2d4d6f]">2014</div>
-                      <div className="text-xs text-slate-500">Founded</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-extrabold text-[#2d4d6f]">150K+</div>
-                      <div className="text-xs text-slate-500">Registered Agents</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-extrabold text-[#2d4d6f]">IATA</div>
-                      <div className="text-xs text-slate-500">Accredited</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-extrabold text-[#2d4d6f]">IRCTC</div>
-                      <div className="text-xs text-slate-500">Principal Agent</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Vision Section */}
-                <div className="group rounded-[28px] border border-[#e5eaf2] bg-[#f8fbff] p-6 shadow-[0_18px_55px_rgba(54,73,101,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(54,73,101,0.12)] sm:p-8 animate-fade-up">
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#edf3fb] text-[#34597f]">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                    </div>
-                    <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#5a6f86]">
-                      Our Vision
-                    </span>
-                  </div>
-                  <h2 className="mb-3 text-2xl font-bold text-[#1d2d4d] sm:text-3xl">
-                    Guarantee Feel Free From Pain Again
-                  </h2>
-                  <p className="text-base leading-relaxed text-slate-700">
-                    Mr. Neeraj Garg has always been a visionary who does not hesitate in thinking out of the box. The man is known for making full-proof strategies and ascertaining that they are well executed along with his great networking skills. With an utmost endeavor of keeping up with the latest technology and techniques, the company is also investing in new verticals and niche products. Rather than just being concerned about client satisfaction, we aim at making our clients happy. With the primary goal of being process driven, we focus on providing high standard services to our clients at affordable prices.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column - Sidebar */}
-              <div className="space-y-6 lg:col-span-4">
-                {/* Image Card */}
-                <div className="group overflow-hidden rounded-[28px] border border-[#e4eaf3] bg-white/80 shadow-[0_20px_55px_rgba(52,73,100,0.08)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(52,73,100,0.12)] animate-fade-up">
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src="https://traveliq.in/wp-content/uploads/2022/01/TravelIQ-Train-Ticket-Booking.jpeg"
-                      alt="TravelIQ Train Ticket Booking"
-                      width={600}
-                      height={400}
-                      className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      unoptimized
-                    />
-                    <div className="absolute inset-0 bg-[#1d2d4d]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </div>
-                  <div className="p-4">
-                    <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#7b8ca4]">Featured</span>
-                    <p className="text-sm font-semibold text-slate-700">Train Ticket Booking Services</p>
-                  </div>
-                </div>
-
-                {/* Features Cards */}
-                <div className="rounded-2xl border border-sky-100 bg-white p-6 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
-                  <h3 className="text-sm font-extrabold uppercase tracking-wider text-slate-400">
-                    Why Choose Us
-                  </h3>
-                  
-                  <div className="group/item border-b border-slate-100 pb-4 last:border-0 last:pb-0 transition-all hover:pl-2">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
-                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v1m0-1v1m0 1v1" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-slate-800">AFFORDABLE PRICE</h4>
-                        <p className="text-xs text-slate-500">You can get affordable prices for all the travel products &amp; services.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group/item border-b border-slate-100 pb-4 last:border-0 last:pb-0 transition-all duration-300 hover:pl-2">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f3f5f9] text-[#3a597f]">
-                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-slate-800">BEST DESTINATION</h4>
-                        <p className="text-xs text-slate-500">Travel IQ is offering the best destinations for your holidays.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group/item transition-all duration-300 hover:pl-2">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f5f0ea] text-[#7c654a]">
-                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h-2m2 4h-2m2-4h2m-2 4h2M3 10h2m2 4H3m2-4h2m2 4H3m8 4h2m-2 4h2M3 18h2m2 4H3" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-slate-800">PERSONAL SERVICE</h4>
-                        <p className="text-xs text-slate-500">You will get personalized services at Travel IQ Services</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Staff Card */}
-                <div className="space-y-4 rounded-[28px] border border-[#e4eaf3] bg-[#f8fbff] p-6 shadow-[0_18px_55px_rgba(54,73,101,0.08)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(54,73,101,0.12)] animate-fade-up">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#edf3fb] text-[#2d4d6f]">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#5a6f86]">Our Staff</span>
-                      <h3 className="text-xl font-bold text-[#1d2d4d]">Travel Partner</h3>
-                    </div>
-                  </div>
-                  <p className="text-sm leading-relaxed text-slate-600">
-                    Travel IQ is having the best &amp; trained staff to help our agents in doing their travel agency business.
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Link
-                      href="/our-services/"
-                      className="rounded-full bg-[#f0f4fa] px-5 py-2.5 text-xs font-semibold text-[#303e58] transition-all duration-300 hover:bg-[#e7edf8] hover:shadow-md"
-                    >
-                      View All Services
-                    </Link>
-                    <Link
-                      href="/irctc-agent-registration/"
-                      className="rounded-full bg-[#2d4d6f] px-5 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-[#27415c] hover:shadow-md"
-                    >
-                      IRCTC Agent Process
-                    </Link>
-                  </div>
-                  <div className="mt-2 flex items-center justify-between border-t border-[#eaf1f8] pt-3">
-                    <span className="text-xs font-semibold text-slate-500">Key Representative:</span>
-                    <span className="text-sm font-bold text-[#1d2d4d]">Vivek Shah</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Banner Section - Enhanced */}
-        <section className="py-12 sm:py-16">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="group relative overflow-hidden rounded-[30px] bg-[#10407A] p-8 text-white shadow-[0_28px_65px_rgba(36,58,92,0.18)] transition-all duration-500 hover:shadow-[0_32px_75px_rgba(36,58,92,0.24)] sm:p-12 animate-fade-up">
-              <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-white/8 blur-3xl" />
-              <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-[#e7d9c2]/12 blur-3xl" />
-              <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/6 blur-3xl" />
-              
-              <div className="relative z-10 mx-auto max-w-3xl space-y-5 text-center">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold text-white backdrop-blur-sm">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
-                  </span>
-                  Get in Touch
-                </div>
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
-                  Get Better Future with <span className="text-white/90">TravelIQ</span>
-                </h2>
-                <p className="mx-auto max-w-2xl text-base leading-relaxed text-sky-100 sm:text-lg">
-                  Travel IQ services can help the aspiring travel agencies to increase their business and get more clients through online promotions.
                 </p>
-                <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                  <a
-                    href="https://wa.me/917835025025"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#e9f1f5] px-8 py-3.5 text-sm font-bold text-[#233c5a] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-lg"
-                  >
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
-                    </svg>
-                    WhatsApp Us
-                  </a>
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/8 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/12"
-                  >
-                    Contact Us
-                    <span>→</span>
-                  </Link>
+              </div>
+
+              <div className="border-b border-white/10 py-4 sm:border-b-0 sm:px-5 sm:border-r">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-white">
+                  ✓ IRCTC Principal Agent
+                </p>
+              </div>
+
+              <div className="py-4 sm:pl-5">
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-orange-400">
+                  ★ 20K+ Registered Agents
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* HERO IMAGE */}
+          <div className="relative reveal-delay">
+            <div className="absolute -right-5 -top-5 h-full w-full border border-orange-500/30" />
+
+            <div className="absolute -bottom-5 -left-5 h-24 w-24 border-b-2 border-l-2 border-orange-500/40" />
+
+            <div className="hero-image-wrap relative overflow-hidden bg-white/5 shadow-2xl shadow-black/30">
+              <Image
+                src="/vande_bharat_hero.jpg"
+                alt="TravelIQ travel services"
+                width={881}
+                height={587}
+                priority
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.025]"
+              />
+
+              <div className="image-wash" />
+
+              {/* Image overlay */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#102F52]/80 to-transparent" />
+            </div>
+
+            {/* HERO PROOF */}
+            <div className="hero-proof border-l-2 border-orange-500">
+              <div className="flex h-10 w-10 items-center justify-center bg-orange-500 text-white">
+                <Train size={20} />
+              </div>
+
+              <span>
+                <b>Travel IQ Services</b>
+                <small>Your Own Travel Intelligence</small>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== STORY SECTION ===== */}
+      <section className="about-story relative overflow-hidden bg-[#F8FAFC]">
+        {/* BACKGROUND GLOWS */}
+        <div className="pointer-events-none absolute left-[-180px] top-[-150px] h-[450px] w-[450px] rounded-full bg-orange-500/[0.07] blur-3xl" />
+
+        <div className="pointer-events-none absolute bottom-[-180px] right-[-150px] h-[450px] w-[450px] rounded-full bg-[#1C487B]/[0.06] blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24">
+          {/* SECTION HEADER */}
+          <div className="mb-14 max-w-4xl">
+            <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+              <span className="h-[2px] w-9 bg-orange-500" />
+              Our Story
+            </p>
+
+            <h2 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-[#1C487B] sm:text-5xl lg:text-[3.7rem]">
+              A Journey Built on
+              <span className="text-orange-500"> Trust &amp; Travel</span>
+            </h2>
+
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-500">
+              From a vision started in 2014 to a growing network of travel
+              professionals, Travel IQ continues to build smarter solutions for
+              India's travel agents.
+            </p>
+          </div>
+
+          {/* STORY */}
+          <div className="grid gap-12 lg:grid-cols-[.30fr_1fr] lg:gap-20">
+            {/* LEFT — YEAR / TIMELINE */}
+            <div className="relative">
+              <div className="absolute left-[25px] top-0 hidden h-full w-px bg-slate-200 lg:block" />
+
+              <div className="relative lg:sticky lg:top-24">
+                {/* ICON */}
+                <div className="relative z-10 flex h-[52px] w-[52px] items-center justify-center border border-orange-500/30 bg-white text-[#1C487B] shadow-sm transition-all duration-300 hover:border-orange-500 hover:text-orange-500">
+                  <Building2 size={24} strokeWidth={1.7} />
+                </div>
+
+                {/* YEAR */}
+                <div className="mt-8">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+                    Established
+                  </p>
+
+                  <p className="mt-1 text-7xl font-black leading-none tracking-[-0.06em] text-[#1C487B] sm:text-8xl">
+                    2014
+                  </p>
+
+                  <div className="mt-6 h-[3px] w-14 bg-orange-500" />
+
+                  <p className="mt-5 max-w-[220px] text-sm leading-6 text-slate-500">
+                    Growing from a focused travel service into a trusted B2B
+                    travel partner.
+                  </p>
+                </div>
+
+                {/* SMALL STATS */}
+                <div className="mt-10 grid max-w-[250px] grid-cols-2 border-t border-slate-200 pt-6">
+                  <div>
+                    <p className="text-2xl font-extrabold text-[#1C487B]">
+                      20K+
+                    </p>
+
+                    <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-slate-400">
+                      Registered Agents
+                    </p>
+                  </div>
+
+                  <div className="border-l border-slate-200 pl-5">
+                    <p className="text-2xl font-extrabold text-[#1C487B]">
+                      2017
+                    </p>
+
+                    <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-slate-400">
+                      IATA Recognition
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT — CONTENT */}
+            <div className="relative">
+              {/* TOP LINE */}
+              <div className="mb-10 flex items-center gap-3">
+                <span className="h-2 w-2 bg-orange-500" />
+                <span className="h-px flex-1 bg-slate-200" />
+              </div>
+
+              <div className="about-copy space-y-8 text-[16px] leading-8 text-slate-600">
+                {/* PARAGRAPH 1 */}
+                <div className="group relative border-l border-slate-200 pl-7">
+                  <span className="absolute -left-[5px] top-2 h-3 w-3 border-2 border-orange-500 bg-white transition-all duration-300 group-hover:bg-orange-500" />
+
+                  <p>
+                    Travel IQ Services is the best Principal agent of IRCTC and
+                    an IATA accredited travel agent in INDIA. Travel IQ started
+                    its operations in the year 2014 and has its Corporate office
+                    in Gurugram, IT city of Delhi/NCR. Since then, it has been
+                    consistently showing substantial progress in the market.
+                  </p>
+
+                  <p className="mt-5">
+                    In 2017, within mere three years of its establishment, the
+                    company acquired recognition from IATA (International Air
+                    Transport Association), the most prestigious airline trade
+                    association which currently represents most of the total air
+                    traffic.
+                  </p>
+                </div>
+
+                {/* HIGHLIGHT */}
+                <div className="relative overflow-hidden border-l-4 border-orange-500 bg-white px-7 py-7 shadow-[0_12px_40px_rgba(28,72,123,0.06)]">
+                  <div className="pointer-events-none absolute right-[-30px] top-[-30px] h-40 w-40 rounded-full bg-orange-500/[0.06] blur-2xl" />
+
+                  <div className="relative">
+                    <div className="mb-4 h-[2px] w-8 bg-orange-500" />
+
+                    <p className="text-lg font-semibold leading-8 text-[#1C487B]">
+                      “Foreseeing the digital transformation that revolutionized
+                      the travel industry, Travel IQ stepped forward to create a
+                      stronger digital ecosystem for travel professionals.”
+                    </p>
+                  </div>
+                </div>
+
+                {/* PARAGRAPH 2 */}
+                <div className="group relative border-l border-slate-200 pl-7">
+                  <span className="absolute -left-[5px] top-2 h-3 w-3 border-2 border-orange-500 bg-white transition-all duration-300 group-hover:bg-orange-500" />
+
+                  <p>
+                    The company started its online portal under the name{" "}
+                    <a
+                      href="https://b2b.traveliq.in"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-semibold text-[#1C487B] underline decoration-orange-500/40 underline-offset-4 transition-colors hover:text-orange-500"
+                    >
+                      b2b.traveliq.in
+                    </a>{" "}
+                    in the year 2016. The portal is basically designed for
+                    online travel assistance, focusing primarily on the B2B
+                    module of trade.
+                  </p>
+
+                  <p className="mt-5">
+                    The website has more than 20,000 registered agents who are
+                    considered to be some of the most experienced professionals
+                    in the marketplace.
+                  </p>
+                </div>
+
+                {/* PARAGRAPH 3 */}
+                <div className="group relative border-l border-slate-200 pl-7">
+                  <span className="absolute -left-[5px] top-2 h-3 w-3 border-2 border-orange-500 bg-white transition-all duration-300 group-hover:bg-orange-500" />
+
+                  <p>
+                    Majorly operating in states like Haryana, Uttar Pradesh and
+                    Punjab, Travel IQ has become a landmark in the travel
+                    industry. Since the year 2014, the company has been awarded
+                    by some of the most esteemed airlines for its outstanding
+                    provision of services.
+                  </p>
+
+                  <p className="mt-5">
+                    This is because the company always focuses on offering
+                    travel-related quality services to its clients and
+                    maintaining healthy relationships.
+                  </p>
+
+                  <p className="mt-5">
+                    Having an edge in booking flights, we also provide complete
+                    assistance in booking travel packages, hotels, bus services,
+                    travel insurance, assistance in acquiring passport/visa,
+                    booking a cruise and many more.
+                  </p>
+                </div>
+              </div>
+
+              {/* BOTTOM SERVICES STRIP */}
+              <div className="mt-12 grid border-y border-slate-200 sm:grid-cols-3">
+                <div className="border-b border-slate-200 px-5 py-5 transition-colors duration-300 hover:bg-orange-50 sm:border-b-0 sm:border-r">
+                  <p className="text-xs font-bold uppercase tracking-widest text-orange-500">
+                    Flights
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-[#1C487B]">
+                    Easy Air Booking
+                  </p>
+                </div>
+
+                <div className="border-b border-slate-200 px-5 py-5 transition-colors duration-300 hover:bg-orange-50 sm:border-b-0 sm:border-r">
+                  <p className="text-xs font-bold uppercase tracking-widest text-orange-500">
+                    Hospitality
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-[#1C487B]">
+                    Hotels &amp; Packages
+                  </p>
+                </div>
+
+                <div className="px-5 py-5 transition-colors duration-300 hover:bg-orange-50">
+                  <p className="text-xs font-bold uppercase tracking-widest text-orange-500">
+                    Assistance
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold text-[#1C487B]">
+                    Visa, Insurance &amp; More
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
+      {/* ===== STATS SECTION ===== */}
+      <section className="relative overflow-hidden bg-[#1C487B]">
+        {/* Orange glow */}
+        <div className="pointer-events-none absolute -right-40 -top-40 h-[450px] w-[450px] rounded-full bg-orange-500/10 blur-3xl" />
 
-        {/* Our Staff Section - Premium Minimal */}
-<section className="py-16 sm:py-20 bg-white">
-  <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    {/* Section Header */}
-    <div className="text-center max-w-3xl mx-auto mb-14">
-      <div className="inline-flex items-center gap-2 rounded-full bg-[#10407A]/5 px-4 py-1.5 text-xs font-medium text-[#10407A] border border-[#10407A]/10 mb-4">
-        <span className="relative flex h-1.5 w-1.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10407A] opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#10407A]"></span>
-        </span>
-        Leadership Team
-      </div>
-      <h2 className="text-3xl sm:text-4xl font-bold text-slate-800">
-        Meet Our <span className="text-[#10407A]">Team</span>
-      </h2>
-      <div className="w-12 h-0.5 bg-[#10407A]/30 mx-auto mt-4" />
-      <p className="mt-4 text-base text-slate-500 leading-relaxed max-w-xl mx-auto">
-        Experienced professionals dedicated to providing exceptional travel solutions.
-      </p>
-    </div>
+        <div className="pointer-events-none absolute -left-40 bottom-[-250px] h-[400px] w-[400px] rounded-full bg-orange-500/[0.05] blur-3xl" />
 
-    {/* Staff Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      {/* Staff Member 1 - Rahul Mehta */}
-      <div className="group bg-white rounded-xl border border-slate-200/60 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-center">
-        {/* Avatar */}
-        <div className="relative mx-auto h-28 w-28">
-          <div className="relative h-full w-full rounded-full overflow-hidden bg-[#eef3f8] border-2 border-slate-200/60 group-hover:border-[#10407A]/30 transition-colors duration-300">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-3xl font-semibold text-slate-600">RM</span>
-            </div>
-            {/* Uncomment when you have actual images */}
-            {/* <Image
-              src="/images/team/rahul-mehta.jpg"
-              alt="Rahul Mehta"
-              fill
-              className="object-cover"
-            /> */}
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className={`group relative px-5 py-10 text-center transition-all duration-500 hover:bg-white/[0.035] sm:px-7 sm:py-12 ${
+                  index !== 0
+                    ? "border-t border-white/10 md:border-l md:border-t-0"
+                    : ""
+                }`}
+              >
+                <stat.icon
+                  className="mx-auto mb-4 h-7 w-7 text-orange-400 transition-transform duration-300 group-hover:-translate-y-1"
+                  strokeWidth={1.7}
+                />
+
+                <div className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                  {stat.number}
+                </div>
+
+                <div className="mt-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/50">
+                  {stat.label}
+                </div>
+
+                <div className="mx-auto mt-5 h-[2px] w-7 bg-orange-500 transition-all duration-300 group-hover:w-12" />
+              </div>
+            ))}
           </div>
         </div>
-        
-        <h3 className="mt-4 text-lg font-semibold text-slate-800">Rahul Mehta</h3>
-        <p className="text-sm font-medium text-[#10407A]">CEO &amp; Co-Founder</p>
-        
-        <p className="mt-3 text-sm text-slate-500 leading-relaxed">
-          Visionary leader with 18+ years in travel, pioneering digital transformation and building a network of 150K+ agents.
-        </p>
-        
-        {/* Social Icons */}
-        <div className="mt-4 pt-4 border-t border-slate-100 flex justify-center gap-3">
-          <a href="#" className="text-slate-400 hover:text-[#10407A] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          <a href="mailto:rahul@traveliq.in" className="text-slate-400 hover:text-[#10407A] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/917835025025" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#25D366] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+      </section>
 
-      {/* Staff Member 2 - Vivek Shah */}
-      <div className="group bg-white rounded-xl border border-slate-200/60 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-center">
-        <div className="relative mx-auto h-28 w-28">
-          <div className="relative h-full w-full rounded-full overflow-hidden bg-[#eef3f8] border-2 border-slate-200/60 group-hover:border-[#10407A]/30 transition-colors duration-300">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-3xl font-semibold text-slate-600">VS</span>
+      {/* ===== SOLUTION SECTION ===== */}
+      <section className="about-solution relative overflow-hidden bg-white">
+        {/* BACKGROUND GLOW */}
+        <div className="pointer-events-none absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-orange-500/10 blur-3xl" />
+
+        <div className="pointer-events-none absolute right-[-180px] top-[35%] h-[500px] w-[500px] rounded-full bg-[#1C487B]/[0.08] blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24">
+          {/* INTRO */}
+          <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-20">
+            {/* CONTENT */}
+            <div className="animate-[fadeUp_.8s_ease-out]">
+              <p className="section-kicker mb-5 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-orange-500">
+                <span className="h-[2px] w-8 bg-orange-500" />
+                Best Solution for Our Agent
+              </p>
+
+              <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#1C487B] sm:text-5xl lg:text-[3.9rem]">
+                Guarantee Feel Free
+                <br />
+                <span className="relative inline-block text-orange-500">
+                  From Pain Again
+                  <span className="absolute -bottom-2 left-0 h-[3px] w-1/2 bg-orange-500/30" />
+                </span>
+              </h2>
+
+              <div className="mt-8 flex items-center gap-3">
+                <span className="h-1 w-16 bg-orange-500" />
+                <span className="h-1 w-3 bg-[#1C487B]" />
+              </div>
+
+              <p className="mt-8 max-w-2xl text-[16px] leading-8 text-slate-600">
+                Mr. Neeraj Garg has always been a visionary who does not
+                hesitate in thinking out of the box. The man is known for making
+                full-proof strategies and ascertaining that they are well
+                executed along with his great networking skills. With an utmost
+                endeavor of keeping up with the latest technology and
+                techniques, the company is also investing in new verticals and
+                niche products.
+              </p>
+
+              <p className="mt-5 max-w-2xl text-[16px] leading-8 text-slate-600">
+                Rather than just being concerned about client satisfaction, we
+                aim at making our clients happy. With the primary goal of being
+                process driven, we focus on providing high standard services to
+                our clients at affordable prices.
+              </p>
+
+              {/* TRUST LINE */}
+              <div className="mt-9 flex items-center gap-4 border-l-2 border-orange-500 pl-5">
+                <div>
+                  <p className="text-sm font-bold text-[#1C487B]">
+                    Trusted Travel Solutions
+                  </p>
+
+                  <p className="mt-1 text-xs text-slate-500">
+                    Built for agents. Designed for growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* IMAGE */}
+            <div className="relative flex justify-center lg:justify-end">
+              {/* Orange glow */}
+              <div className="absolute -right-10 -top-10 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
+
+              <div className="relative w-full max-w-[430px] animate-[imageFloat_6s_ease-in-out_infinite]">
+                {/* Decorative frame */}
+                <div className="absolute -right-4 -top-4 h-full w-full border border-orange-500/30" />
+
+                <div className="absolute -bottom-4 -left-4 h-24 w-24 border-b-2 border-l-2 border-[#1C487B]/30" />
+
+                {/* IMAGE */}
+                <div className="relative overflow-hidden bg-slate-50 shadow-2xl shadow-[#1C487B]/10">
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#1C487B]/20 via-transparent to-orange-500/5" />
+
+                  <Image
+                    src="/images/TravelIQ-IRCTC-Agent-Registration-Fees-Rs-1000-Only.png.webp"
+                    alt="TravelIQ representative holding a laptop"
+                    width={520}
+                    height={650}
+                    className="relative h-auto w-full object-cover transition-transform duration-700 hover:scale-[1.025]"
+                  />
+                </div>
+
+                {/* FLOATING BADGE */}
+                <div className="absolute -bottom-6 left-5 z-20 bg-[#1C487B] px-6 py-4 shadow-xl">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-orange-400">
+                    Travel IQ
+                  </span>
+
+                  <span className="mt-1 block text-sm font-bold text-white">
+                    Your Travel Partner
+                  </span>
+                </div>
+
+                {/* ORANGE ACCENT */}
+                <div className="absolute -right-3 bottom-10 h-14 w-14 bg-orange-500/90" />
+              </div>
+            </div>
+          </div>
+
+          {/* SOLUTIONS */}
+          <div className="mt-28 border-t border-slate-200 pt-20">
+            <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+              <div>
+                <p className="section-kicker flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-orange-500">
+                  <span className="h-[2px] w-8 bg-orange-500" />
+                  Why Choose Us
+                </p>
+
+                <h3 className="mt-4 max-w-2xl text-3xl font-extrabold leading-tight text-[#1C487B] sm:text-4xl lg:text-5xl">
+                  Built Around
+                  <span className="text-orange-500"> Your Business</span>
+                </h3>
+              </div>
+
+              <p className="max-w-md text-sm leading-7 text-slate-500 lg:text-right">
+                Everything we do is focused on helping travel agents simplify
+                their operations, attract customers and grow with confidence.
+              </p>
+            </div>
+
+            {/* SOLUTION GRID */}
+            <div className="mt-12 grid border-y border-slate-200 md:grid-cols-3">
+              {solutions.map(([title, text, Icon], index) => (
+                <article
+                  key={title}
+                  className="group relative border-b border-slate-200 p-7 transition-all duration-500 hover:bg-[#1C487B] md:border-b-0 md:border-l first:md:border-l-0 lg:p-9"
+                >
+                  {/* Hover glow */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-500/[0.10] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  <div className="relative">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold tracking-[0.2em] text-orange-500">
+                        0{index + 1}
+                      </span>
+
+                      <div className="flex h-11 w-11 items-center justify-center border border-[#1C487B]/10 transition-all duration-500 group-hover:border-orange-500/30 group-hover:bg-orange-500/10">
+                        <Icon
+                          className="h-5 w-5 text-[#1C487B] transition-colors duration-300 group-hover:text-orange-500"
+                          strokeWidth={1.7}
+                        />
+                      </div>
+                    </div>
+
+                    <h3 className="mt-14 text-xl font-bold text-[#1C487B] transition-colors duration-300 group-hover:text-white">
+                      {title}
+                    </h3>
+
+                    <p className="mt-4 text-sm leading-7 text-slate-600 transition-colors duration-300 group-hover:text-white/70">
+                      {text}
+                    </p>
+
+                    <div className="mt-8 h-[2px] w-8 bg-orange-500 transition-all duration-500 group-hover:w-16" />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="relative mt-28 overflow-hidden border-y border-orange-500/20 bg-[#FFF8F2]">
+            {/* Orange glow */}
+            <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
+
+            {/* Navy glow */}
+            <div className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-[#1C487B]/[0.06] blur-3xl" />
+
+            {/* Decorative circles */}
+            <div className="pointer-events-none absolute right-10 top-8 h-40 w-40 rounded-full border border-orange-500/10" />
+
+            <div className="pointer-events-none absolute right-20 top-16 h-24 w-24 rounded-full border border-[#1C487B]/10" />
+
+            <div className="relative grid items-center gap-10 px-7 py-12 sm:px-12 sm:py-14 lg:grid-cols-[1fr_auto] lg:px-16 lg:py-16">
+              <div className="max-w-3xl">
+                <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-orange-600">
+                  <span className="h-[2px] w-8 bg-orange-500" />
+                  Touch With Us
+                </p>
+
+                <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-[#1C487B] sm:text-4xl lg:text-[2.8rem]">
+                  Get Better Future with{" "}
+                  <span className="text-orange-600">TravelIQ</span>
+                </h2>
+
+                <p className="mt-5 max-w-2xl text-[15px] leading-7 text-slate-600">
+                  Travel IQ services can help aspiring travel agencies increase
+                  their business and get more clients through online promotions.
+                </p>
+              </div>
+
+              <a
+                href="https://wa.me/917835025025"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex w-fit items-center gap-3 bg-[#1C487B] px-7 py-4 text-sm font-bold text-white shadow-lg shadow-[#1C487B]/15 transition-all duration-300 hover:bg-orange-500 hover:shadow-xl hover:shadow-orange-500/20"
+              >
+                WhatsApp Us
+
+                <ArrowRight
+                  size={17}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* STAFF / TEAM */}
+          <div className="mt-28 border-t border-slate-200 pt-20">
+            {/* CONTENT ABOVE IMAGE */}
+            <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+              <div>
+                <p className="section-kicker flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-orange-500">
+                  <span className="h-[2px] w-8 bg-orange-500" />
+                  Our Staff
+                </p>
+
+                <h2 className="mt-4 text-3xl font-extrabold leading-tight text-[#1C487B] sm:text-4xl lg:text-5xl">
+                  Meet the
+                  <span className="text-orange-500"> Travel Partner</span>
+                </h2>
+
+                <p className="mt-4 max-w-2xl leading-7 text-slate-600">
+                  Travel IQ is backed by an experienced and trained team
+                  dedicated to helping agents manage and grow their travel
+                  agency business.
+                </p>
+              </div>
+
+              <Link
+                href="/our-services/"
+                className="group inline-flex items-center gap-2 border-b-2 border-[#1C487B] pb-2 text-sm font-bold text-[#1C487B] transition-colors duration-300 hover:border-orange-500 hover:text-orange-500"
+              >
+                View All Services
+
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+
+            {/* LARGE IMAGE PLACEHOLDER */}
+            <div className="group relative mt-12 min-h-[320px] overflow-hidden bg-[#F1F5F9] sm:min-h-[420px] lg:min-h-[520px]">
+              {/* Background glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(249,115,22,0.12),transparent_45%)]" />
+
+              {/* Inner frame */}
+              <div className="absolute inset-4 border border-white/80" />
+
+              {/* Image goes here */}
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center border border-orange-500/40 bg-white/70 text-[#1C487B] shadow-sm">
+                    <Globe size={23} strokeWidth={1.5} />
+                  </div>
+
+                  <p className="text-sm font-semibold text-[#1C487B]">
+                    Staff Image
+                  </p>
+
+                  <p className="mt-1 text-xs text-slate-400">
+                    Add your full-width team image here
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom accent */}
+              <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-orange-500 via-orange-400 to-[#1C487B]" />
             </div>
           </div>
         </div>
-        
-        <h3 className="mt-4 text-lg font-semibold text-slate-800">Vivek Shah</h3>
-        <p className="text-sm font-medium text-[#10407A]">VP of Operations</p>
-        
-        <p className="mt-3 text-sm text-slate-500 leading-relaxed">
-          Operations expert with a decade of experience ensuring seamless execution and exceptional service delivery.
-        </p>
-        
-        <div className="mt-4 pt-4 border-t border-slate-100 flex justify-center gap-3">
-          <a href="#" className="text-slate-400 hover:text-[#10407A] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          <a href="mailto:vivek@traveliq.in" className="text-slate-400 hover:text-[#10407A] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/917835025025" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#25D366] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      {/* Staff Member 3 - Priya Sharma */}
-      <div className="group bg-white rounded-xl border border-slate-200/60 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-center">
-        <div className="relative mx-auto h-28 w-28">
-          <div className="relative h-full w-full rounded-full overflow-hidden bg-[#eef3f8] border-2 border-slate-200/60 group-hover:border-[#10407A]/30 transition-colors duration-300">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-3xl font-semibold text-slate-600">PS</span>
-            </div>
-          </div>
-        </div>
-        
-        <h3 className="mt-4 text-lg font-semibold text-slate-800">Priya Sharma</h3>
-        <p className="text-sm font-medium text-[#10407A]">Head of Client Relations</p>
-        
-        <p className="mt-3 text-sm text-slate-500 leading-relaxed">
-          Client satisfaction specialist focused on building lasting relationships and personalized service.
-        </p>
-        
-        <div className="mt-4 pt-4 border-t border-slate-100 flex justify-center gap-3">
-          <a href="#" className="text-slate-400 hover:text-[#10407A] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          <a href="mailto:priya@traveliq.in" className="text-slate-400 hover:text-[#10407A] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/917835025025" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#25D366] transition-colors duration-200">
-            <svg className="h-4.5 w-4.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    {/* View All Members */}
-    <div className="text-center mt-10">
-      <Link
-        href="/team/"
-        className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#10407A]/5 hover:bg-[#10407A]/10 border border-[#10407A]/20 hover:border-[#10407A]/30 rounded-full text-sm font-medium text-[#10407A] transition-all duration-200"
-      >
-        <span>View All Team Members</span>
-        <svg className="h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7m0 0l-7 7m7-7H5" />
-        </svg>
-      </Link>
-    </div>
-  </div>
-</section>
+      </section>
     </main>
   );
 }
