@@ -1,12 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type ServiceDetailProps = {
   title: string;
   intro: string;
   sections: { heading: string; body: string }[];
+  image?: string;
+  imageAlt?: string;
 };
 
-export default function ServiceDetail({ title, intro, sections }: ServiceDetailProps) {
+export default function ServiceDetail({ title, intro, sections, image, imageAlt }: ServiceDetailProps) {
   return (
     <main className="min-h-screen bg-[#f6f9fe]">
       <section className="bg-[#edf5ff] py-14 sm:py-20">
@@ -20,6 +23,23 @@ export default function ServiceDetail({ title, intro, sections }: ServiceDetailP
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-700">{intro}</p>
         </div>
       </section>
+
+      {/* Hero Image */}
+      {image && (
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 -mt-6 mb-4">
+          <div className="relative w-full overflow-hidden rounded-md shadow-md" style={{ aspectRatio: "16/7" }}>
+            <Image
+              src={image}
+              alt={imageAlt ?? title}
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 900px"
+              priority
+            />
+          </div>
+        </div>
+      )}
+
       <section className="py-12 sm:py-16">
         <div className="container mx-auto max-w-5xl space-y-8 px-4 sm:px-6 lg:px-8">
           {sections.map((section) => (
@@ -34,3 +54,4 @@ export default function ServiceDetail({ title, intro, sections }: ServiceDetailP
     </main>
   );
 }
+
