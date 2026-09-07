@@ -42,8 +42,8 @@
   --border-navy: rgba(16, 64, 122, 0.14);
 
   /* ---------- Typography ---------- */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* ---------- Radius ---------- */
 
@@ -248,27 +248,27 @@ a:focus-visible {
   color: var(--orange-brand);
 }
 
-a[href*="wa.me"],
-a[href*="wa.me"]:hover,
-a[href*="wa.me"]:focus-visible {
+a[href*="wa.me"]:not(.quick-access-link),
+a[href*="wa.me"]:not(.quick-access-link):hover,
+a[href*="wa.me"]:not(.quick-access-link):focus-visible {
   background-color: #25d366 !important;
   color: #ffffff !important;
   border-color: #25d366 !important;
 }
 
-a[href*="wa.me"] svg,
-a[href*="wa.me"] path,
-a[href*="wa.me"] span,
-a[href*="wa.me"] div {
+a[href*="wa.me"]:not(.quick-access-link) svg,
+a[href*="wa.me"]:not(.quick-access-link) path,
+a[href*="wa.me"]:not(.quick-access-link) span,
+a[href*="wa.me"]:not(.quick-access-link) div {
   color: #ffffff !important;
 }
 
-a[href*="wa.me"] svg {
+a[href*="wa.me"]:not(.quick-access-link) svg {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
 
-a[href*="wa.me"] svg path {
+a[href*="wa.me"]:not(.quick-access-link) svg path {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
@@ -309,6 +309,7 @@ a[href][class*="bg-[#D9471D]"]:focus-visible {
     width: min(100% - 64px, 1320px);
   }
 }
+
 
 
 /* =========================================================
