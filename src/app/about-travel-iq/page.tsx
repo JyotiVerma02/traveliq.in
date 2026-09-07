@@ -130,7 +130,7 @@ export default function AboutPage() {
               </div>
 
               {/* Heading */}
-              <h1 className="max-w-2xl text-[3.4rem] font-extrabold leading-[0.96] tracking-[-0.055em] text-[#10407A] sm:text-[4.3rem] lg:text-[5rem]">
+              <h1 className="max-w-2xl text-[3.4rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-[#10407A] sm:text-[4.3rem] lg:text-[5rem]">
                 The{" "}
                 <span className="relative inline-block text-[#EE5326]">
                   TravelIQ
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 Story
               </h1>
 
-              <h2 className="mt-7 max-w-xl text-xl font-bold leading-snug text-[#0B1728] sm:text-2xl">
+              <h2 className="mt-8 max-w-xl text-xl font-bold leading-snug text-[#0B1728] sm:text-2xl">
                 Travel IQ Services is the best travel agency in INDIA
               </h2>
 

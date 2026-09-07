@@ -41,7 +41,7 @@ export default function FaqSection() {
               Help &amp; FAQs
             </span>
 
-            <h2 className="mt-4 max-w-2xl text-3xl font-extrabold leading-tight tracking-tight text-[#08090b] sm:text-4xl lg:text-[42px]">
+            <h2 className="mt-5 max-w-2xl text-3xl font-extrabold leading-snug tracking-tight text-[#08090b] sm:text-4xl lg:text-[42px]">
               Control All Your Bookings &amp; Learn Best TravelIQ Features
             </h2>
           </div>

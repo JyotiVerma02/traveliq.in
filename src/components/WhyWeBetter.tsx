@@ -51,7 +51,7 @@ export default function WhyWeBetter() {
             </span>
           </div>
 
-          <h2 className="text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-[#08090b] sm:text-4xl lg:text-[48px]">
+          <h2 className="text-3xl font-semibold leading-[1.18] tracking-[-0.035em] text-[#08090b] sm:text-4xl lg:text-[48px]">
             TravelIQ —
             <span className="text-[#EE5326]">
               {" "}
@@ -59,7 +59,7 @@ export default function WhyWeBetter() {
             </span>
           </h2>
 
-          <p className="mt-5 max-w-2xl text-sm leading-6 text-[#687386] sm:text-base">
+          <p className="mt-6 max-w-2xl text-sm leading-6 text-[#687386] sm:text-base">
             A trusted travel technology and B2B platform built to simplify
             travel services for agents and customers across India.
           </p>

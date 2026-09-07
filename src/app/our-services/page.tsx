@@ -152,7 +152,7 @@ export default function ServicesPage() {
 
         <div className="pointer-events-none absolute -right-52 bottom-0 h-[450px] w-[450px] rounded-full bg-[#EEF4FA] blur-[130px]" />
 
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
           {/* Section Heading */}
           <div className="mb-12 flex flex-col justify-between gap-5 border-b border-[#10407A]/10 pb-8 sm:flex-row sm:items-end">
             <div>
@@ -182,7 +182,7 @@ export default function ServicesPage() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="group flex flex-col overflow-hidden border border-[#10407A]/10 bg-white shadow-[0_12px_40px_rgba(16,64,122,0.055)] transition-all duration-300 hover:-translate-y-1 hover:border-[#EE5326]/25 hover:shadow-[0_22px_55px_rgba(16,64,122,0.11)]"
+                className="group flex min-h-[500px] flex-col overflow-hidden border border-[#10407A]/10 bg-white shadow-[0_12px_40px_rgba(16,64,122,0.055)] transition-all duration-300 hover:-translate-y-1 hover:border-[#EE5326]/25 hover:shadow-[0_22px_55px_rgba(16,64,122,0.11)]"
               >
                 {/* Service Image */}
                 <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-[#EEF4FA]">
@@ -202,7 +202,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Service Content */}
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-7">
                   <div className="mb-3 flex items-center gap-3">
                     <span className="h-[2px] w-7 bg-[#EE5326] transition-all duration-300 group-hover:w-11" />
 
@@ -211,11 +211,11 @@ export default function ServicesPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold tracking-tight text-[#10407A] transition-colors duration-300 group-hover:text-[#EE5326]">
+                  <h3 className="text-2xl font-bold tracking-tight text-[#10407A] transition-colors duration-300 group-hover:text-[#EE5326]">
                     {service.title}
                   </h3>
 
-                  <p className="mt-3 flex-1 text-sm leading-6 text-[#526174]">
+                  <p className="mt-3 flex-1 text-base leading-7 text-[#526174]">
                     {service.description}
                   </p>
 
@@ -329,7 +329,7 @@ export default function ServicesPage() {
       {/* =========================================================
           CTA
       ========================================================= */}
-      <section className="relative overflow-hidden bg-[#071A35] py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-[#EAF3FB] py-16 sm:py-20">
         {/* Orange background glows */}
         <div className="pointer-events-none absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-[#EE5326]/6 blur-[120px]" />
 
@@ -347,11 +347,11 @@ export default function ServicesPage() {
             <span className="h-[2px] w-9 bg-[#EE5326]" />
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#10407A] sm:text-4xl">
             Build a Better Travel Business
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#526174] sm:text-base">
             Connect with TravelIQ and explore travel services designed to help
             agents expand their offerings, serve customers better and grow
             their business.

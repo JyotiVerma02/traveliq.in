@@ -96,14 +96,14 @@ export default function Hero() {
               </div>
 
               {/* Main heading */}
-              <h1 className="text-[3.3rem] font-bold leading-[0.98] tracking-[-0.045em] text-[#0B1728] sm:text-[4.4rem] lg:text-[4.2rem] xl:text-[5rem]">
+              <h1 className="text-[3.3rem] font-bold leading-[1.1] tracking-[-0.04em] text-[#0B1728] sm:text-[4.4rem] lg:text-[4.2rem] xl:text-[5rem]">
                 Your Journey.
                 <br />
                 <span className="text-[#EE5326]">Our Expertise.</span>
               </h1>
 
               {/* Supporting title */}
-              <div className="mt-7 flex gap-4">
+              <div className="mt-9 flex gap-4">
                 <div className="mt-1 h-12 w-[3px] shrink-0 bg-[#EE5326]" />
 
                 <div>
@@ -111,7 +111,7 @@ export default function Hero() {
                     Become an IRCTC Travel Agent
                   </p>
 
-                  <p className="mt-2 max-w-xl text-sm leading-6 text-[#526174] sm:text-[15px]">
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-[#526174] sm:text-[15px]">
                     Grow your travel business with an authorized IRCTC Principal
                     Agent and IATA Accredited Travel Agency.
                   </p>
@@ -129,7 +129,7 @@ export default function Hero() {
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Link
                   href="/irctc-agent-registration/"
-                  className="group inline-flex items-center gap-3 bg-[#EE5326] px-7 py-4 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-lg shadow-[#EE5326]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#D9471D]"
+                  className="group inline-flex items-center gap-3 bg-[#EE5326] px-7 py-4 text-xs font-bold uppercase tracking-[0.14em] !text-white shadow-lg shadow-[#EE5326]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#D9471D]"
                 >
                   <span>View Plans & Pricing</span>
 
@@ -222,43 +222,45 @@ export default function Hero() {
               {/* Image */}
               <div className="group relative aspect-[4/5] overflow-hidden border border-white bg-white shadow-2xl shadow-[#10407A]/15">
                 <Image
-                  src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=90"
-                  alt="Premium travel destination"
+                  src="/vande_bharat_hero.jpg"
+                  alt="Vande Bharat Express – IRCTC Railway & Air Travel by TravelIQ"
                   fill
                   priority
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ filter: "sepia(0.18) saturate(0.85) brightness(1.05) hue-rotate(-8deg)" }}
                 />
 
-                {/* Light image overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071f3d]/75 via-transparent to-transparent" />
+                {/* Subtle warm tint to blend with hero section — no dark overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#EE5326]/8 via-transparent to-[#FFF8F3]/12 pointer-events-none" />
 
-                {/* Top label */}
-                <div className="absolute left-5 top-5">
-                  <div className="border border-white/40 bg-white/15 px-3 py-2 backdrop-blur-md">
+                {/* Top label — solid navy badge, same style as IATA */}
+                <div className="absolute left-4 top-4">
+                  <div className="bg-[#10407A] px-3 py-1.5 shadow-md">
                     <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white">
                       Featured Destination
                     </p>
                   </div>
                 </div>
 
-                {/* Bottom content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="mb-4 flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
-
-                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/75">
+                {/* Bottom content — solid chip backgrounds, no dark gradient needed */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div className="mb-3 inline-flex items-center gap-2 bg-[#EE5326] px-2.5 py-1">
+                    <span className="h-1 w-1 rounded-full bg-white" />
+                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white">
                       Premium Travel
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-semibold tracking-tight text-white">
-                    Discover More.
-                  </h2>
-
-                  <p className="mt-1 text-xs leading-5 text-white/70">
-                    Travel smarter with TravelIQ.
-                  </p>
+                  <div className="bg-[#0B1728]/80 px-4 py-3 backdrop-blur-sm">
+                    <h2 className="text-xl font-bold tracking-tight text-white">
+                      Discover More.
+                    </h2>
+                    <p className="mt-0.5 text-[11px] leading-5 text-white/90">
+                      Travel smarter with TravelIQ.
+                    </p>
+                  </div>
                 </div>
+
               </div>
 
               {/* Floating 20K stat */}
@@ -271,10 +273,10 @@ export default function Hero() {
               </div>
 
               {/* IATA badge */}
-              <div className="absolute -right-3 top-10 bg-[#10407A] px-3.5 py-2.5 shadow-lg">
+              <div className="absolute -right-3 top-10 bg-[#10407A] px-3.5 py-2.5 shadow-lg border border-white/10">
                 <p className="text-xs font-bold text-white">IATA</p>
 
-                <p className="text-[7px] font-semibold uppercase tracking-wider text-white/70">
+                <p className="text-[7px] font-semibold uppercase tracking-wider text-white">
                   Accredited
                 </p>
               </div>

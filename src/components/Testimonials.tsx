@@ -62,7 +62,7 @@ export default function Testimonials() {
             </div>
 
             {/* Heading */}
-           <h2 className="max-w-3xl text-3xl font-bold leading-[1.05] tracking-[-0.04em] text-[#10407A] sm:text-4xl lg:text-[48px]">
+           <h2 className="mt-5 max-w-3xl text-3xl font-bold leading-[1.15] tracking-[-0.04em] text-[#10407A] sm:text-4xl lg:text-[48px]">
   Trusted by{" "}
   <span className="text-[#EE5326]">travel professionals.</span>
 </h2>
