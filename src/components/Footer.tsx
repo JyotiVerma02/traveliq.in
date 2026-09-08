@@ -24,7 +24,7 @@ export default function Footer() {
                 alt="TravelIQ"
                 width={170}
                 height={41}
-                className="h-auto w-[170px]"
+                className="h-auto w-42.5"
               />
             </div>
             <p className="max-w-sm text-lg font-semibold leading-snug text-white">

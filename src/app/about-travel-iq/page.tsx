@@ -101,7 +101,7 @@ const stats: {
     icon: Clock,
   },
   {
-    number: "150K+",
+    number: "20K+",
     label: "Registered Agents",
     icon: UsersRound,
   },
@@ -241,7 +241,7 @@ export default function AboutPage() {
                 {[
                   ["IATA", "Accredited"],
                   ["IRCTC", "Principal Agent"],
-                  ["150K+", "Registered Agents"],
+                  ["20K+", "Registered Agents"],
                 ].map(([title, text], index) => (
                   <div
                     key={title}
@@ -399,7 +399,7 @@ export default function AboutPage() {
                   ["2014", "Established"],
                   ["2016", "B2B Portal"],
                   ["2017", "IATA Recognition"],
-                  ["150K+", "Travel Agents"],
+                  ["20K+", "Travel Agents"],
                 ].map(([year, label]) => (
                   <div key={year} className="group relative flex gap-5">
                     <div className="relative z-10 mt-1 h-7 w-7 border border-[#EE5326]/30 bg-white p-1">
@@ -451,7 +451,7 @@ export default function AboutPage() {
               <p className="text-[16px] leading-8 text-[#526174]">
                 The portal is basically designed for online travel assistance
                 focusing primarily on B2B module of trade. The website has more
-                than 150000 registered agents who are considered to be some of
+                than 20000 registered agents who are considered to be some of
                 the most experienced pros in the marketplace.
               </p>
 
