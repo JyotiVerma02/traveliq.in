@@ -32,8 +32,9 @@ export default function Services() {
 
       const maxScrollLeft = track.scrollWidth - track.clientWidth;
       const movingRight = event.deltaY > 0;
-      const atStart = track.scrollLeft <= 12;
-      const atEnd = track.scrollLeft >= maxScrollLeft - 12;
+      const boundaryTolerance = 24;
+      const atStart = track.scrollLeft <= boundaryTolerance;
+      const atEnd = track.scrollLeft >= maxScrollLeft - boundaryTolerance;
       const canMoveRight = !atEnd;
       const canMoveLeft = !atStart;
 
@@ -51,16 +52,23 @@ export default function Services() {
       const cardStep = firstCard
         ? firstCard.getBoundingClientRect().width + 28
         : 420;
+      const targetScrollLeft = Math.max(
+        0,
+        Math.min(
+          maxScrollLeft,
+          track.scrollLeft + (movingRight ? cardStep : -cardStep),
+        ),
+      );
 
       wheelLockedRef.current = true;
-      track.scrollBy({
-        left: movingRight ? cardStep : -cardStep,
+      track.scrollTo({
+        left: targetScrollLeft,
         behavior: "smooth",
       });
 
       window.setTimeout(() => {
         wheelLockedRef.current = false;
-      }, 320);
+      }, 220);
     };
 
     section.addEventListener("wheel", handleWheel, { passive: false });

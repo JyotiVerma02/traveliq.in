@@ -153,11 +153,30 @@ export default function ServicesScroll({
 
       {/* Horizontal Scroll Cards Track */}
       <div className="mt-6 w-full">
-        <div
-          ref={scrollRef}
-          className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none px-5 sm:px-8 lg:px-16"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
+       <div
+  ref={scrollRef}
+  className="
+    flex
+    w-full
+    snap-x
+    snap-mandatory
+    gap-6
+    overflow-x-auto
+    overflow-y-hidden
+    overscroll-x-contain
+    overscroll-y-auto
+    pb-8
+    pt-2
+    scrollbar-none
+    px-5
+    sm:px-8
+    lg:px-16
+  "
+  style={{
+    scrollbarWidth: "none",
+    msOverflowStyle: "none",
+  }}
+>
           {servicesData.map((item) => (
             <Link
               key={item.title}
