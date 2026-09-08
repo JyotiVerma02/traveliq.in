@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const nav = [
   ["Home", "/"],
@@ -31,7 +31,17 @@ const services = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const normalizedPath = pathname.replace(/\/$/, "") || "/";
 
@@ -53,7 +63,11 @@ export default function Header() {
     `site-nav-link${isActive(href) ? " is-active" : ""}`;
 
   return (
-    <header className="site-header relative z-50 border-b border-[#10407A]/10 bg-white shadow-[0_3px_18px_rgba(16,64,122,0.07)]">
+    <header
+      className={`site-header relative z-50 bg-[#FFF8F3]${
+        isScrolled ? " is-scrolled" : ""
+      }`}
+    >
       {/* ================= HEADER ================= */}
       <div className="mx-auto flex h-[98px] w-full max-w-[1500px] items-center justify-between px-6 sm:px-10 lg:px-12 xl:px-16 2xl:px-20">
 

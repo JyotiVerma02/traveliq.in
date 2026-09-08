@@ -892,7 +892,42 @@ a[href][class*="bg-[#D9471D]"]:focus-visible {
 /* =========================================================
    2026 BRAND REFINEMENT — logo-led navy / ember visual system
    ========================================================= */
-.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.91); border-bottom: 1px solid rgba(16,64,122,.09); backdrop-filter: blur(18px); }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 50; width: 100%; background: radial-gradient(circle at 100% 0%, rgba(238,83,38,.055), transparent 42%), #FFF8F3; border-bottom: 0; backdrop-filter: blur(18px); }
+.site-header + main { padding-top: 98px; background: #FFF8F3; }
+.site-header,
+.site-header > div:first-child {
+  transition: max-width .3s ease, height .3s ease, padding .3s ease, background .3s ease, box-shadow .3s ease, border-radius .3s ease, margin-top .3s ease;
+}
+.site-header.is-scrolled {
+  top: 14px;
+  left: 50%;
+  right: auto;
+  width: min(calc(100% - 28px), 1240px);
+  transform: translateX(-50%);
+  border: 1px solid rgba(16,64,122,.1);
+  border-radius: 999px;
+  background: rgba(255,255,255,.9);
+  border-color: rgba(16,64,122,.1);
+  box-shadow: 0 14px 34px rgba(10,42,80,.12);
+}
+.site-header.is-scrolled > div:first-child {
+  height: 68px;
+  max-width: 1240px;
+  padding-inline: 28px;
+}
+.site-header.is-scrolled .site-nav-link {
+  padding-block: .55rem;
+}
+.site-header.is-scrolled .header-login,
+.site-header.is-scrolled .brand-button {
+  padding-block: .62rem;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 767px) {
+  .site-header + main { padding-top: 78px; }
+}
 .site-nav-link { padding: .62rem .82rem; border-radius: 999px; color: #16477f; font-size: .875rem; font-weight: 650; transition: color .2s, background .2s; }
 .site-nav-link:hover { background: #fff1eb; color: #e84e23; }
 .service-menu { position: absolute; top: calc(100% + 10px); left: 0; display: grid; width: 230px; gap: 2px; padding: 8px; border: 1px solid rgba(16,64,122,.1); border-radius: 16px; background: #fff; box-shadow: 0 18px 45px rgba(10,42,80,.14); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: .2s; }

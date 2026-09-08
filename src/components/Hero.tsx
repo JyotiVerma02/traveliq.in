@@ -26,24 +26,19 @@ const destinations = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#FFF8F3]">
+    <section className="relative overflow-hidden bg-[#FFF8F3]">
       {/* =========================================================
-          SOFT PREMIUM BACKGROUND
+          BACKGROUND
       ========================================================= */}
-      {/* Premium Light Hero Background */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        {/* Soft orange glow */}
-        <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#EE5326]/[0.055] blur-[110px]" />
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#EE5326]/[0.045] blur-[120px]" />
 
-        {/* Soft navy glow */}
-        <div className="absolute -bottom-40 -left-40 h-[450px] w-[450px] rounded-full bg-[#10407A]/[0.045] blur-[110px]" />
+        <div className="absolute -bottom-40 -left-40 h-[450px] w-[450px] rounded-full bg-[#10407A]/[0.035] blur-[120px]" />
 
-        {/* Center white light */}
-        <div className="absolute left-1/2 top-1/3 h-[450px] w-[650px] -translate-x-1/2 rounded-full bg-white/60 blur-[100px]" />
+        <div className="absolute left-1/2 top-[10%] h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-white/70 blur-[120px]" />
 
-        {/* Very subtle grid */}
         <div
-          className="absolute inset-0 opacity-[0.018]"
+          className="absolute inset-0 opacity-[0.012]"
           style={{
             backgroundImage:
               "linear-gradient(#10407A 1px, transparent 1px), linear-gradient(90deg, #10407A 1px, transparent 1px)",
@@ -52,405 +47,423 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-5 py-8 sm:px-8 lg:px-12 lg:py-12">
+      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12">
         {/* =========================================================
-            TOP INFORMATION BAR
+            TOP TRUST STRIP
         ========================================================= */}
-        <div className="mb-10 flex flex-col gap-4 border-b border-[#10407A]/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="flex h-2 w-2 rounded-full bg-[#EE5326]" />
+        <div className="flex min-h-[54px] flex-col justify-center gap-3 border-b border-[#10407A]/10 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center justify-center gap-3 sm:justify-start">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#10407A] sm:text-xs">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#10407A] sm:text-[11px]">
               IRCTC Principal Agent
             </span>
 
-            <span className="h-3 w-px bg-[#10407A]/20" />
+            <span className="h-3 w-px bg-[#10407A]/15" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#687386] sm:text-xs">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#687386] sm:text-[11px]">
               IATA Accredited
             </span>
           </div>
 
-          <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#687386] sm:text-xs">
-            <span className="text-[#EE5326]">●</span>
-            Corporate HQ — Gurugram, India
+          <div className="text-center text-[9px] font-semibold uppercase tracking-[0.15em] text-[#7A8493] sm:text-right sm:text-[10px]">
+            Corporate Headquarters · Gurugram, India
           </div>
         </div>
 
         {/* =========================================================
-            MAIN HERO GRID
+            MAIN HERO
         ========================================================= */}
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10 xl:gap-14">
-          {/* =======================================================
-              LEFT CONTENT
-          ======================================================= */}
-          <div className="lg:col-span-5">
-            <div className="max-w-2xl">
-              {/* Eyebrow */}
-              <div className="mb-6 flex items-center gap-3">
-                <span className="h-[2px] w-12 bg-[#EE5326]" />
+        <div className="mx-auto flex max-w-[1150px] flex-col items-center px-2 pb-14 pt-14 text-center sm:pb-16 sm:pt-16 lg:pb-18 lg:pt-20">
+          {/* Eyebrow */}
+          <div className="mb-5 flex items-center justify-center gap-3 sm:mb-6">
+            <span className="h-px w-8 bg-[#EE5326] sm:w-12" />
 
-                <span className="text-[11px] font-bold uppercase tracking-[0.23em] text-[#EE5326]">
-                  Travel Intelligence
-                </span>
-              </div>
+            <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-[#EE5326] sm:text-[10px]">
+              Travel Intelligence
+            </span>
 
-              {/* Main heading */}
-              <h1 className="text-[3.3rem] font-bold leading-[1.1] tracking-[-0.04em] text-[#0B1728] sm:text-[4.4rem] lg:text-[4.2rem] xl:text-[5rem]">
-                Your Journey.
-                <br />
-                <span className="text-[#EE5326]">Our Expertise.</span>
-              </h1>
-
-              {/* Supporting title */}
-              <div className="mt-9 flex gap-4">
-                <div className="mt-1 h-12 w-[3px] shrink-0 bg-[#EE5326]" />
-
-                <div>
-                  <p className="text-lg font-bold leading-snug text-[#10407A] sm:text-xl">
-                    Become an IRCTC Travel Agent
-                  </p>
-
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-[#526174] sm:text-[15px]">
-                    Grow your travel business with an authorized IRCTC Principal
-                    Agent and IATA Accredited Travel Agency.
-                  </p>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="mt-6 max-w-xl text-sm leading-6 text-[#687386] sm:text-base">
-                Access railway reservations, flight tickets, hotels, buses,
-                holiday packages and complete travel solutions through one
-                trusted platform.
-              </p>
-
-              {/* CTA */}
-              <div className="mt-9 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/irctc-agent-registration/"
-                  className="group inline-flex items-center gap-3 bg-[#EE5326] px-7 py-4 text-xs font-bold uppercase tracking-[0.14em] !text-white shadow-lg shadow-[#EE5326]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#D9471D]"
-                >
-                  <span>View Plans & Pricing</span>
-
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-
-                <a
-                  href="https://wa.me/917835025025"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center gap-3 border border-[#10407A]/20 bg-white px-6 py-4 text-xs font-bold uppercase tracking-[0.14em] text-[#10407A] shadow-sm transition-all duration-300 hover:border-[#EE5326] hover:bg-[#EE5326] hover:text-white"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 fill-current"
-                    aria-hidden="true"
-                  >
-                    <path d="M12.04 2C6.58 2 2.14 6.44 2.14 11.9c0 1.75.46 3.46 1.33 4.97L2 22l5.28-1.39a9.86 9.86 0 0 0 4.76 1.22h.01c5.45 0 9.89-4.44 9.89-9.9C21.94 6.44 17.5 2 12.04 2zm5.79 14.2c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.96-.31-1.65-.61-2.91-1.25-4.8-4.17-4.95-4.36-.15-.2-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.49.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.37 1.45.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.65-.15.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.71-.17 1.39z" />
-                  </svg>
-
-                  <span>WhatsApp</span>
-                </a>
-              </div>
-            </div>
-
-            {/* =====================================================
-                DESTINATIONS
-            ===================================================== */}
-            <div className="mt-14 border-t border-[#10407A]/10 pt-7">
-              <div className="mb-5 flex items-center justify-between">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EE5326]">
-                    Explore Travel
-                  </p>
-
-                  <p className="mt-1 text-sm font-medium text-[#526174]">
-                    Popular destinations
-                  </p>
-                </div>
-
-                <span className="text-xs font-semibold text-[#10407A]/35">
-                  04
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-x-6 gap-y-5">
-                {destinations.map((dest) => (
-                  <div
-                    key={dest.name}
-                    className="group flex cursor-pointer items-center gap-3"
-                  >
-                    <div className="relative h-14 w-[76px] shrink-0 overflow-hidden border border-[#10407A]/10 shadow-sm">
-                      <Image
-                        src={dest.img}
-                        alt={dest.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-
-                      <div className="absolute inset-0 bg-black/5 transition group-hover:bg-transparent" />
-                    </div>
-
-                    <div className="min-w-0">
-                      <p className="truncate text-[13px] font-bold text-[#0B1728] transition-colors group-hover:text-[#EE5326]">
-                        {dest.name}
-                      </p>
-
-                      <p className="mt-1 truncate text-[11px] text-[#7A8493]">
-                        {dest.location}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <span className="h-px w-8 bg-[#EE5326] sm:w-12" />
           </div>
 
-          {/* =======================================================
-              CENTER IMAGE
-          ======================================================= */}
-          <div className="relative lg:col-span-4">
-            <div className="relative mx-auto w-full max-w-[420px]">
-              {/* Orange frame accents */}
-              <div className="absolute -left-3 -top-3 h-20 w-20 border-l-2 border-t-2 border-[#EE5326]" />
+          {/* =====================================================
+              MAIN HEADING
+          ===================================================== */}
+          <h1
+            className="
+              mx-auto
+              max-w-[1050px]
+              text-[3.2rem]
+              font-black
+              leading-[0.92]
+              tracking-[-0.055em]
+              text-[#0B1728]
+              sm:text-[4.5rem]
+              md:text-[5.2rem]
+              lg:text-[6rem]
+              xl:text-[6.4rem]
+            "
+          >
+            Your Journey.
+            <br />
+            <span className="text-[#EE5326]">Our Expertise.</span>
+          </h1>
 
-              <div className="absolute -bottom-3 -right-3 h-20 w-20 border-b-2 border-r-2 border-[#EE5326]" />
+          {/* =====================================================
+              MAIN MESSAGE
+          ===================================================== */}
+          <div className="mx-auto mt-7 max-w-[760px] sm:mt-8">
+            <h2 className="text-lg font-bold tracking-[-0.025em] text-[#10407A] sm:text-xl md:text-2xl">
+              Become an IRCTC Travel Agent
+            </h2>
 
-              {/* Image */}
-              <div className="group relative aspect-[4/5] overflow-hidden border border-white bg-white shadow-2xl shadow-[#10407A]/15">
-                <Image
-                  src="/vande_bharat_hero.jpg"
-                  alt="Vande Bharat Express – IRCTC Railway & Air Travel by TravelIQ"
-                  fill
-                  priority
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ filter: "sepia(0.18) saturate(0.85) brightness(1.05) hue-rotate(-8deg)" }}
-                />
-
-                {/* Subtle warm tint to blend with hero section — no dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#EE5326]/8 via-transparent to-[#FFF8F3]/12 pointer-events-none" />
-
-                {/* Top label — solid navy badge, same style as IATA */}
-                <div className="absolute left-4 top-4">
-                  <div className="bg-[#10407A] px-3 py-1.5 shadow-md">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white">
-                      Featured Destination
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom content — solid chip backgrounds, no dark gradient needed */}
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="mb-3 inline-flex items-center gap-2 bg-[#EE5326] px-2.5 py-1">
-                    <span className="h-1 w-1 rounded-full bg-white" />
-                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white">
-                      Premium Travel
-                    </span>
-                  </div>
-
-                  <div className="bg-[#0B1728]/80 px-4 py-3 backdrop-blur-sm">
-                    <h2 className="text-xl font-bold tracking-tight text-white">
-                      Discover More.
-                    </h2>
-                    <p className="mt-0.5 text-[11px] leading-5 text-white/90">
-                      Travel smarter with TravelIQ.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Floating 20K stat */}
-              <div className="absolute -bottom-5 -left-5 border border-[#10407A]/10 bg-white px-5 py-4 shadow-xl sm:-left-8">
-                <p className="text-xl font-bold text-[#EE5326]">20K+</p>
-
-                <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] text-[#687386]">
-                  Registered Agents
-                </p>
-              </div>
-
-              {/* IATA badge */}
-              <div className="absolute -right-3 top-10 bg-[#10407A] px-3.5 py-2.5 shadow-lg border border-white/10">
-                <p className="text-xs font-bold text-white">IATA</p>
-
-                <p className="text-[7px] font-semibold uppercase tracking-wider text-white">
-                  Accredited
-                </p>
-              </div>
-            </div>
+            <p className="mx-auto mt-2.5 max-w-[680px] text-sm leading-6 text-[#526174] sm:text-[15px] sm:leading-7 md:text-base">
+              Grow your travel business with an authorized IRCTC Principal
+              Agent and IATA Accredited Travel Agency.
+            </p>
           </div>
 
-          {/* =======================================================
-              RIGHT CALLBACK FORM
-          ======================================================= */}
-          <div className="lg:col-span-3">
-            <div className="relative overflow-hidden borderborder border-[#10407A]/10 bg-white p-6 shadow-xl shadow-[#10407A]/10 sm:p-7">
-              {/* Orange top accent */}
-              <div className="absolute left-0 right-0 top-0 h-1 bg-[#EE5326]" />
+          {/* =====================================================
+              DESCRIPTION
+          ===================================================== */}
+          <p className="mx-auto mt-3.5 max-w-[720px] text-[13px] leading-6 text-[#687386] sm:text-sm sm:leading-6 md:text-[15px]">
+            Access railway reservations, flight tickets, hotels, buses,
+            holiday packages and complete travel solutions through one trusted
+            platform.
+          </p>
 
-              {/* Header */}
-              <div className="border-b border-[#10407A]/10 pb-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#EE5326]">
-                    Get Started
-                  </span>
+          {/* =====================================================
+              CTA
+          ===================================================== */}
+          <div className="mt-7 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+            <Link
+              href="/irctc-agent-registration/"
+              className="
+                group
+                inline-flex
+                h-[52px]
+                w-full
+                items-center
+                justify-center
+                gap-3
+                bg-[#EE5326]
+                px-7
+                text-[11px]
+                font-bold
+                uppercase
+                tracking-[0.15em]
+                !text-white
+                shadow-lg
+                shadow-[#EE5326]/20
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-[#D9471D]
+                sm:w-auto
+              "
+            >
+              <span>View Plans & Pricing</span>
 
-                  <span className="flex h-8 w-8 items-center justify-center border border-[#EE5326]/20 bg-[#FFF5F1] text-xs font-bold text-[#EE5326]">
-                    01
-                  </span>
-                </div>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
 
-                <h2 className="text-2xl font-bold leading-tight tracking-[-0.025em] text-[#0B1728]">
-                  Become an
-                  <span className="text-[#EE5326]"> IRCTC Agent</span>
-                </h2>
+            <a
+              href="https://wa.me/917835025025"
+              target="_blank"
+              rel="noreferrer"
+              className="
+                group
+                inline-flex
+                h-[52px]
+                w-full
+                items-center
+                justify-center
+                gap-3
+                border
+                border-[#10407A]/15
+                bg-white
+                px-7
+                text-[11px]
+                font-bold
+                uppercase
+                tracking-[0.15em]
+                text-[#10407A]
+                shadow-sm
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-[#25D366]
+                hover:bg-[#25D366]
+                hover:text-white
+                sm:w-auto
+              "
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4 fill-current"
+                aria-hidden="true"
+              >
+                <path d="M12.04 2C6.58 2 2.14 6.44 2.14 11.9c0 1.75.46 3.46 1.33 4.97L2 22l5.28-1.39a9.86 9.86 0 0 0 4.76 1.22h.01c5.45 0 9.89-4.44 9.89-9.9C21.94 6.44 17.5 2 12.04 2zm5.79 14.2c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.96-.31-1.65-.61-2.91-1.25-4.8-4.17-4.95-4.36-.15-.2-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.49.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.37 1.45.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.65-.15.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.71-.17 1.39z" />
+              </svg>
 
-                <p className="mt-3 text-xs leading-5 text-[#687386]">
-                  Request a callback and our travel specialist will guide you
-                  through the registration process.
-                </p>
-              </div>
+              WhatsApp
+            </a>
+          </div>
 
-              {/* Form */}
-              <form className="mt-6 space-y-4">
-                <div>
-                  <label
-                    htmlFor="hero-name"
-                    className="mb-2 block text-[10px] font-bold uppercase tracking-[0.15em] text-[#10407A]"
-                  >
-                    Full Name
-                  </label>
+          {/* Small reassurance */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#7A8493]">
+            <span className="flex items-center gap-1.5">
+              <span className="text-[#EE5326]">✓</span>
+              Authorized Services
+            </span>
 
-                  <input
-                    id="hero-name"
-                    type="text"
-                    required
-                    placeholder="Your full name"
-                    className="w-full border border-[#10407A]/12 bg-[#FAFBFC] px-4 py-3.5 text-sm font-medium text-[#0B1728] outline-none transition placeholder:text-[#8A94A3] focus:border-[#EE5326] focus:bg-white focus:ring-4 focus:ring-[#EE5326]/10"
-                  />
-                </div>
+            <span className="hidden h-3 w-px bg-[#10407A]/10 sm:block" />
 
-                <div>
-                  <label
-                    htmlFor="hero-phone"
-                    className="mb-2 block text-[10px] font-bold uppercase tracking-[0.15em] text-[#10407A]"
-                  >
-                    Phone Number
-                  </label>
+            <span className="flex items-center gap-1.5">
+              <span className="text-[#EE5326]">✓</span>
+              Professional Support
+            </span>
 
-                  <input
-                    id="hero-phone"
-                    type="tel"
-                    required
-                    placeholder="+91 Enter phone number"
-                    className="w-full border border-[#10407A]/12 bg-[#FAFBFC] px-4 py-3.5 text-sm font-medium text-[#0B1728] outline-none transition placeholder:text-[#8A94A3] focus:border-[#EE5326] focus:bg-white focus:ring-4 focus:ring-[#EE5326]/10"
-                  />
-                </div>
+            <span className="hidden h-3 w-px bg-[#10407A]/10 sm:block" />
 
-                <button
-                  type="submit"
-                  className="group flex w-full items-center justify-center gap-3 bg-[#10407A] py-4 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-md shadow-[#10407A]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0B315D]"
-                >
-                  <span>Request Callback</span>
-
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </button>
-
-                <a
-                  href="https://wa.me/917835025025"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex w-full items-center justify-center gap-2 border border-[#EE5326] bg-[#EE5326] py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-[#D9471D]"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 fill-current"
-                    aria-hidden="true"
-                  >
-                    <path d="M12.04 2C6.58 2 2.14 6.44 2.14 11.9c0 1.75.46 3.46 1.33 4.97L2 22l5.28-1.39a9.86 9.86 0 0 0 4.76 1.22h.01c5.45 0 9.89-4.44 9.89-9.9C21.94 6.44 17.5 2 12.04 2zm5.79 14.2c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.96-.31-1.65-.61-2.91-1.25-4.8-4.17-4.95-4.36-.15-.2-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.49.24.58.82 2.01.89 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.37 1.45.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.65-.15.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.71-.17 1.39z" />
-                  </svg>
-                  WhatsApp Us
-                </a>
-              </form>
-
-              {/* Trust */}
-              <div className="mt-6 border-t border-[#10407A]/10 pt-5">
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center bg-[#FFF4EF] text-xs font-bold text-[#EE5326]">
-                    ✓
-                  </span>
-
-                  <p className="text-[10px] leading-5 text-[#687386]">
-                    Authorized travel services backed by professional support
-                    and a growing B2B travel network.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Corporate HQ */}
-            <div className="mt-5 border-l-2 border-[#EE5326] bg-[#F8F3F0] px-5 py-4">
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#EE5326]">
-                Corporate Headquarters
-              </p>
-
-              <p className="mt-2 text-xs leading-5 text-[#526174]">
-                Unit 1004G, JMD Megapolis,
-                <br />
-                Sohna Road, Sector 48,
-                <br />
-                Gurugram, Haryana
-              </p>
-            </div>
+            <span className="flex items-center gap-1.5">
+              <span className="text-[#EE5326]">✓</span>
+              B2B Travel Network
+            </span>
           </div>
         </div>
 
         {/* =========================================================
-            TRUST BAR
+            DESTINATIONS
         ========================================================= */}
-        <div className="mt-14 border-t border-[#10407A]/10 pt-6">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="border-y border-[#10407A]/10 py-8">
+          <div className="mb-6 flex items-end justify-between gap-5">
             <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#EE5326]">
+                Explore Travel
+              </p>
+
+              <h2 className="mt-1 text-lg font-bold tracking-tight text-[#0B1728]">
+                Popular Destinations
+              </h2>
+            </div>
+
+            <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#10407A]/35">
+              04 Destinations
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {destinations.map((dest) => (
+              <div
+                key={dest.name}
+                className="
+                  group
+                  flex
+                  items-center
+                  gap-4
+                  border
+                  border-[#10407A]/8
+                  bg-white/60
+                  p-3.5
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:bg-white
+                  hover:shadow-lg
+                "
+              >
+                <div className="relative h-[62px] w-[82px] shrink-0 overflow-hidden">
+                  <Image
+                    src={dest.img}
+                    alt={dest.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-bold text-[#0B1728] transition-colors group-hover:text-[#EE5326]">
+                    {dest.name}
+                  </p>
+
+                  <p className="mt-1 truncate text-[11px] text-[#7A8493]">
+                    {dest.location}
+                  </p>
+                </div>
+
+                <span className="ml-auto text-sm text-[#10407A]/25 transition-all group-hover:translate-x-1 group-hover:text-[#EE5326]">
+                  →
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* =========================================================
+            CALLBACK SECTION
+        ========================================================= */}
+        <div className="mx-auto max-w-[1250px] py-10 lg:py-12">
+          <div className="relative overflow-hidden border border-[#10407A]/10 bg-white shadow-xl shadow-[#10407A]/8">
+            <div className="absolute inset-x-0 top-0 h-1 bg-[#EE5326]" />
+
+            <div className="p-5 pt-7 sm:p-7 lg:p-8">
+              <div className="grid gap-7 lg:grid-cols-[0.85fr_1.5fr] lg:items-center lg:gap-10">
+                {/* Intro */}
+                <div className="lg:border-r lg:border-[#10407A]/10 lg:pr-10">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EE5326]">
+                      Get Started
+                    </span>
+
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#10407A]" />
+                  </div>
+
+                  <h2 className="text-2xl font-bold leading-tight tracking-[-0.03em] text-[#0B1728] sm:text-3xl">
+                    Become an{" "}
+                    <span className="text-[#EE5326]">IRCTC Agent</span>
+                  </h2>
+
+                  <p className="mt-2 max-w-lg text-xs leading-5 text-[#687386] sm:text-sm">
+                    Leave your details and our travel specialist will help you
+                    get started.
+                  </p>
+                </div>
+
+                {/* Form */}
+                <form className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+                  <div>
+                    <label
+                      htmlFor="hero-name"
+                      className="mb-2 block text-[10px] font-bold uppercase tracking-[0.15em] text-[#10407A]"
+                    >
+                      Full Name
+                    </label>
+
+                    <input
+                      id="hero-name"
+                      type="text"
+                      required
+                      placeholder="Your full name"
+                      className="h-[52px] w-full border border-[#10407A]/12 bg-[#FAFBFC] px-4 text-sm font-medium text-[#0B1728] outline-none transition placeholder:text-[#8A94A3] focus:border-[#EE5326] focus:bg-white focus:ring-4 focus:ring-[#EE5326]/10"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="hero-phone"
+                      className="mb-2 block text-[10px] font-bold uppercase tracking-[0.15em] text-[#10407A]"
+                    >
+                      Phone Number
+                    </label>
+
+                    <input
+                      id="hero-phone"
+                      type="tel"
+                      required
+                      placeholder="+91 Enter phone number"
+                      className="h-[52px] w-full border border-[#10407A]/12 bg-[#FAFBFC] px-4 text-sm font-medium text-[#0B1728] outline-none transition placeholder:text-[#8A94A3] focus:border-[#EE5326] focus:bg-white focus:ring-4 focus:ring-[#EE5326]/10"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="group flex h-[52px] items-center justify-center gap-3 bg-[#10407A] px-7 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-md shadow-[#10407A]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0B315D]"
+                  >
+                    <span>Request Callback</span>
+
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </button>
+                </form>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-[#10407A]/10 pt-5">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold text-[#EE5326]">✓</span>
+
+                  <span className="text-[10px] font-semibold text-[#687386]">
+                    Authorized Travel Services
+                  </span>
+                </div>
+
+                <span className="hidden h-3 w-px bg-[#10407A]/10 sm:block" />
+
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold text-[#EE5326]">✓</span>
+
+                  <span className="text-[10px] font-semibold text-[#687386]">
+                    Professional Support
+                  </span>
+                </div>
+
+                <span className="hidden h-3 w-px bg-[#10407A]/10 sm:block" />
+
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold text-[#EE5326]">✓</span>
+
+                  <span className="text-[10px] font-semibold text-[#687386]">
+                    Growing B2B Network
+                  </span>
+                </div>
+
+                {/* <a
+                  href="https://wa.me/917835025025"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ml-auto text-[10px] font-bold uppercase tracking-[0.14em] text-[#EE5326] transition-colors hover:text-[#10407A]"
+                >
+                  Chat on WhatsApp →
+                </a> */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================
+            CREDIBILITY
+        ========================================================= */}
+        <div className="border-t border-[#10407A]/10 pb-8 pt-6">
+          <div className="grid grid-cols-2 divide-x divide-[#10407A]/10 sm:grid-cols-4">
+            <div className="px-4 text-center sm:text-left">
               <p className="text-2xl font-bold tracking-tight text-[#0B1728]">
                 2014
               </p>
 
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#7A8493]">
+              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.17em] text-[#7A8493]">
                 Established
               </p>
             </div>
 
-            <div>
+            <div className="px-4 text-center sm:text-left">
               <p className="text-2xl font-bold tracking-tight text-[#EE5326]">
                 20K+
               </p>
 
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#7A8493]">
+              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.17em] text-[#7A8493]">
                 Travel Agents
               </p>
             </div>
 
-            <div>
+            <div className="px-4 pt-5 text-center sm:pt-0 sm:text-left">
               <p className="text-2xl font-bold tracking-tight text-[#10407A]">
                 IATA
               </p>
 
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#7A8493]">
+              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.17em] text-[#7A8493]">
                 Accredited
               </p>
             </div>
 
-            <div>
+            <div className="px-4 pt-5 text-center sm:pt-0 sm:text-left">
               <p className="text-2xl font-bold tracking-tight text-[#0B1728]">
                 B2B
               </p>
 
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#7A8493]">
+              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.17em] text-[#7A8493]">
                 Travel Platform
               </p>
             </div>

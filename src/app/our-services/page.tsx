@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import ServicesScroll from "@/components/ServicesScroll";
 
 export const metadata: Metadata = {
   title: "Services Provided by Travel IQ | TravelIQ",
