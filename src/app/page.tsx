@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import PartnerLogos from "@/components/PartnerLogos";
 import Services from "@/components/Services";
 import WhyWeBetter from "@/components/WhyWeBetter";
 import Testimonials from "@/components/Testimonials";
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <PartnerLogos />
       <Services />
       <WhyWeBetter />
       <Testimonials />

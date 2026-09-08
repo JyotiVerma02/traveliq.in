@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
     default: "Travel IQ - Your Own Travel Intelligence",
     template: "%s",
   },
-  description:
-    "Know More to Become an IRCTC Travel Agent",
+
+  description: "Know More to Become an IRCTC Travel Agent",
+
   keywords: [
     "TravelIQ",
     "IRCTC agent",
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
     "hotel booking",
     "travel services",
   ],
+
   openGraph: {
     title: "TravelIQ | Travel Services & IRCTC Agent Services",
     description:
@@ -36,16 +39,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
       className={`${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#ffffff] font-sans text-slate-900 selection:bg-[#fff1eb] selection:text-[#10407A]">
+      <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">
         <div className="flex min-h-screen flex-col">
+          {/* ================= HEADER ================= */}
           <Header />
-          <main className="flex-1">{children}</main>
+
+          {/* ================= PAGE CONTENT ================= */}
+          {children}
+
+          {/* ================= FOOTER ================= */}
           <Footer />
         </div>
       </body>

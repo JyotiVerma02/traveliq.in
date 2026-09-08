@@ -51,7 +51,7 @@ export default function WhyWeBetter() {
             </span>
           </div>
 
-          <h2 className="text-3xl font-semibold leading-[1.18] tracking-[-0.035em] text-[#08090b] sm:text-4xl lg:text-[48px]">
+          <h2 className="text-4xl font-extrabold leading-[1.12] tracking-[-0.04em] text-[#071F3D] sm:text-5xl lg:text-[52px]">
             TravelIQ —
             <span className="text-[#EE5326]">
               {" "}

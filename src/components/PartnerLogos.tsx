@@ -9,19 +9,18 @@ export default function PartnerLogos() {
   ];
 
   return (
-    <div className="w-full bg-[#10407A] py-8 border-y border-[#10407A]">
-      <div className="container mx-auto px-4 sm:px-6">
-        <p className="text-center text-xs font-bold uppercase tracking-wider text-white/60 mb-6">
+    <div className="border-y border-[#10407A]/10 bg-[#071428] py-8">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <p className="mb-6 text-center text-[10px] font-extrabold uppercase tracking-[0.28em] text-white/45">
           Authorized &amp; Accredited Partner Ecosystem
         </p>
-        
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="flex items-center gap-2 text-white font-extrabold text-base sm:text-lg tracking-tight select-none hover:text-[#EE5326] transition"
+              className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white/90 transition hover:text-[#FF7043] sm:text-xl"
             >
-              <span className="h-2 w-2 rounded-full bg-[#EE5326]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
               <span>{partner.text}</span>
             </div>
           ))}

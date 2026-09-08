@@ -31,7 +31,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-[#FFF9F5] py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-[#FFF8F5] py-20 lg:py-28">
       {/* =========================================================
           PREMIUM BACKGROUND
       ========================================================= */}
@@ -62,7 +62,7 @@ export default function Testimonials() {
             </div>
 
             {/* Heading */}
-           <h2 className="mt-5 max-w-3xl text-3xl font-bold leading-[1.15] tracking-[-0.04em] text-[#10407A] sm:text-4xl lg:text-[48px]">
+           <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.12] tracking-[-0.04em] text-[#10407A] sm:text-5xl lg:text-[52px]">
   Trusted by{" "}
   <span className="text-[#EE5326]">travel professionals.</span>
 </h2>
@@ -106,7 +106,7 @@ export default function Testimonials() {
           {testimonials.map((t, index) => (
             <article
               key={t.name}
-              className="group relative flex min-h-[390px] flex-col justify-between overflow-hidden border border-[#10407A]/10 bg-white p-7 shadow-[0_10px_40px_rgba(16,64,122,0.06)] transition-all duration-500 hover:-translate-y-1 hover:border-[#EE5326]/25 hover:shadow-[0_18px_50px_rgba(16,64,122,0.10)]"
+              className="group relative flex min-h-[390px] flex-col justify-between overflow-hidden rounded-[24px] border border-[#10407A]/10 bg-white p-7 shadow-[0_10px_40px_rgba(16,64,122,0.06)] transition-all duration-500 hover:-translate-y-1 hover:border-[#EE5326]/25 hover:shadow-[0_18px_50px_rgba(16,64,122,0.10)]"
             >
               {/* =====================================================
           PREMIUM CORNER ACCENT

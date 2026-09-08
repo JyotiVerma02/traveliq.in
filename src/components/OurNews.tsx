@@ -40,7 +40,7 @@ const news = [
 
 export default function OurNews() {
   return (
-    <section className="bg-[#fff8f5] py-20 lg:py-28">
+    <section className="bg-[#F4F7FB] py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6">
         
         {/* Header */}
@@ -49,7 +49,7 @@ export default function OurNews() {
             Our News
           </span>
 
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-[#08090b] leading-tight uppercase">
+          <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-[#071F3D] sm:text-5xl lg:text-[48px]">
             News &amp; Articles
           </h2>
 
