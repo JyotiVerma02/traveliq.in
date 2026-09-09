@@ -154,9 +154,13 @@ export default function Services() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/our-services/" className="inline-flex items-center gap-2 rounded-full bg-[#EE5326] px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#D9471D]">
-            View All Services <ArrowRight size={16} />
-          </Link>
+        <Link
+  href="/our-services/"
+  className="inline-flex items-center gap-2 rounded-full bg-[#EE5326] px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.16em] !text-white transition hover:bg-[#D9471D]"
+>
+  <span className="!text-white">View All Services</span>
+  <ArrowRight size={16} className="!text-white" />
+</Link>
         </div>
       </div>
     </section>

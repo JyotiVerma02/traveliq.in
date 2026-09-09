@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -245,8 +246,8 @@ export default function Header() {
 
                   ${
                     isScrolled
-                      ? "w-[125px] sm:w-[140px]"
-                      : "w-[145px] sm:w-[165px] lg:w-[185px]"
+                      ? "w-[145px] sm:w-[160px]"
+                      : "w-[165px] sm:w-[185px] lg:w-[205px]"
                   }
                 `}
               />
@@ -285,9 +286,7 @@ export default function Header() {
                   ]
                 "
               >
-                {/* =================================================
-                    HOME
-                ================================================= */}
+                {/* HOME */}
 
                 <Link
                   href="/"
@@ -302,7 +301,7 @@ export default function Header() {
                     px-3.5
                     py-2
 
-                    text-[13px]
+                    text-[14px]
                     font-semibold
                     tracking-[0.03em]
 
@@ -356,9 +355,7 @@ export default function Header() {
                   )}
                 </Link>
 
-                {/* =================================================
-                    ABOUT
-                ================================================= */}
+                {/* ABOUT */}
 
                 <Link
                   href="/about-travel-iq/"
@@ -368,7 +365,7 @@ export default function Header() {
                     px-3.5
                     py-2
 
-                    text-[13px]
+                    text-[14px]
                     font-semibold
                     tracking-[0.03em]
 
@@ -403,9 +400,7 @@ export default function Header() {
                   About
                 </Link>
 
-                {/* =================================================
-                    SERVICES
-                ================================================= */}
+                {/* SERVICES */}
 
                 <div
                   className="relative"
@@ -428,7 +423,7 @@ export default function Header() {
                       px-3.5
                       py-2
 
-                      text-[13px]
+                      text-[14px]
                       font-semibold
                       tracking-[0.03em]
 
@@ -463,7 +458,7 @@ export default function Header() {
                     Services
 
                     <ChevronDown
-                      size={13}
+                      size={14}
                       strokeWidth={2.3}
                       className={`
                         transition-transform
@@ -478,9 +473,7 @@ export default function Header() {
                     />
                   </Link>
 
-                  {/* =================================================
-                      SERVICES DROPDOWN
-                  ================================================= */}
+                  {/* SERVICES DROPDOWN */}
 
                   <div
                     className={`
@@ -577,7 +570,7 @@ export default function Header() {
                           <div>
                             <p
                               className="
-                                text-[8px]
+                                text-[9px]
                                 font-black
                                 uppercase
                                 tracking-[0.25em]
@@ -590,7 +583,7 @@ export default function Header() {
                             <p
                               className="
                                 mt-1
-                                text-[15px]
+                                text-[16px]
                                 font-bold
                                 tracking-[-0.01em]
                                 text-[var(--tiq-navy)]
@@ -602,7 +595,7 @@ export default function Header() {
                             <p
                               className="
                                 mt-1
-                                text-[9px]
+                                text-[10px]
                                 font-medium
                                 tracking-[0.01em]
                                 text-[var(--tiq-muted)]
@@ -665,7 +658,7 @@ export default function Header() {
                                 px-3.5
                                 py-2.5
 
-                                text-[13px]
+                                text-[14px]
                                 font-semibold
                                 tracking-[0.015em]
 
@@ -737,7 +730,7 @@ export default function Header() {
                               </span>
 
                               <ArrowUpRight
-                                size={13}
+                                size={14}
                                 className="
                                   opacity-0
 
@@ -774,7 +767,7 @@ export default function Header() {
                           px-4
                           py-3
 
-                          text-[9px]
+                          text-[10px]
                           font-bold
 
                           uppercase
@@ -815,9 +808,7 @@ export default function Header() {
                   </div>
                 </div>
 
-                {/* =================================================
-                    VIDEO
-                ================================================= */}
+                {/* VIDEO */}
 
                 <Link
                   href="/video-gallery/"
@@ -827,7 +818,7 @@ export default function Header() {
                     px-3.5
                     py-2
 
-                    text-[13px]
+                    text-[14px]
                     font-semibold
                     tracking-[0.03em]
 
@@ -853,9 +844,7 @@ export default function Header() {
                   Video Gallery
                 </Link>
 
-                {/* =================================================
-                    CONTACT
-                ================================================= */}
+                {/* CONTACT */}
 
                 <Link
                   href="/contact-us/"
@@ -865,7 +854,7 @@ export default function Header() {
                     px-3.5
                     py-2
 
-                    text-[13px]
+                    text-[14px]
                     font-semibold
                     tracking-[0.03em]
 
@@ -891,9 +880,7 @@ export default function Header() {
                   Contact
                 </Link>
 
-                {/* =================================================
-                    PAY NOW
-                ================================================= */}
+                {/* PAY NOW */}
 
                 <Link
                   href="/pay-now/"
@@ -903,7 +890,7 @@ export default function Header() {
                     px-3.5
                     py-2
 
-                    text-[13px]
+                    text-[14px]
                     font-semibold
                     tracking-[0.03em]
 
@@ -968,7 +955,7 @@ export default function Header() {
                   px-3
                   py-2
 
-                  text-[12px]
+                  text-[13px]
                   font-semibold
                   tracking-[0.04em]
 
@@ -991,7 +978,7 @@ export default function Header() {
                 Agent Login
 
                 <ArrowUpRight
-                  size={12}
+                  size={13}
                   className="
                     transition-transform
 
@@ -1022,7 +1009,7 @@ export default function Header() {
                   px-4
                   py-2.5
 
-                  text-[10px]
+                  text-[11px]
                   font-semibold
                   tracking-[0.05em]
 
@@ -1051,7 +1038,7 @@ export default function Header() {
                 </span>
 
                 <ArrowUpRight
-                  size={13}
+                  size={14}
                   className="
                     !text-white
 
@@ -1109,8 +1096,8 @@ export default function Header() {
               >
                 <FaWhatsapp
                   className="
-                    h-[18px]
-                    w-[18px]
+                    h-[19px]
+                    w-[19px]
 
                     !text-white
 
@@ -1231,9 +1218,7 @@ export default function Header() {
                 ]
               "
             >
-              {/* =================================================
-                  MOBILE NAVIGATION
-              ================================================= */}
+              {/* MOBILE NAVIGATION */}
 
               <nav
                 className="space-y-1"
@@ -1260,7 +1245,7 @@ export default function Header() {
                       px-4
                       py-3
 
-                      text-[13px]
+                      text-[14px]
                       font-semibold
                       tracking-[0.02em]
 
@@ -1312,9 +1297,7 @@ export default function Header() {
                   </Link>
                 ))}
 
-                {/* =================================================
-                    MOBILE SERVICES
-                ================================================= */}
+                {/* MOBILE SERVICES */}
 
                 <div className="pt-1">
                   <button
@@ -1338,7 +1321,7 @@ export default function Header() {
                       px-4
                       py-3
 
-                      text-[13px]
+                      text-[14px]
                       font-semibold
                       tracking-[0.02em]
 
@@ -1424,7 +1407,7 @@ export default function Header() {
                           px-3
                           py-2.5
 
-                          text-[12px]
+                          text-[13px]
                           font-bold
                           tracking-[0.02em]
 
@@ -1469,7 +1452,7 @@ export default function Header() {
                               px-3
                               py-2.5
 
-                              text-[12px]
+                              text-[13px]
                               font-medium
                               tracking-[0.015em]
 
@@ -1512,9 +1495,7 @@ export default function Header() {
                 </div>
               </nav>
 
-              {/* =================================================
-                  MOBILE ACTIONS
-              ================================================= */}
+              {/* MOBILE ACTIONS */}
 
               <div className="mt-4 grid gap-2.5">
                 {/* MOBILE LOGIN */}
@@ -1667,9 +1648,7 @@ export default function Header() {
                 </a>
               </div>
 
-              {/* =================================================
-                  HELP CARD
-              ================================================= */}
+              {/* HELP CARD */}
 
               <div
                 className="
