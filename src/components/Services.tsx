@@ -80,10 +80,10 @@ export default function Services() {
     <section ref={servicesSectionRef} className="bg-[#F4F7FB]">
       <div className="relative w-full py-20 lg:py-28">
         <div className="mx-auto max-w-2xl px-5 text-center">
-          <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#EE5326]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#EE5326]">
             Our Services
           </p>
-          <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.04em] text-[#071F3D] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 text-4xl font-bold tracking-[-0.04em] text-[#071F3D] sm:text-5xl lg:text-6xl">
             Best travel services in <span className="text-[#EE5326]">India</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#5A6A80]">
@@ -154,7 +154,7 @@ export default function Services() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/our-services/" className="inline-flex items-center gap-2 rounded-full bg-[#EE5326] px-7 py-3.5 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white transition hover:bg-[#D9471D]">
+          <Link href="/our-services/" className="inline-flex items-center gap-2 rounded-full bg-[#EE5326] px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#D9471D]">
             View All Services <ArrowRight size={16} />
           </Link>
         </div>

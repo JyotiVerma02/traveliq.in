@@ -11,7 +11,7 @@ export default function PartnerLogos() {
   return (
     <div className="border-y border-[#10407A]/10 bg-[#071428] py-8">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <p className="mb-6 text-center text-[10px] font-extrabold uppercase tracking-[0.28em] text-white/45">
+        <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[0.28em] text-white/45">
           Authorized &amp; Accredited Partner Ecosystem
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">

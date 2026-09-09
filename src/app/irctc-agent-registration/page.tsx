@@ -21,10 +21,10 @@ export default function IrcTcAgentRegistrationPage() {
           </div>
 
           <div className="mx-auto max-w-4xl text-center space-y-3">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#10407A]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#10407A]">
               IRCTC Agent Registration
             </span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Start Your Travel Business with TravelIQ
             </h1>
             <p className="mx-auto max-w-2xl text-base text-slate-700 leading-relaxed">

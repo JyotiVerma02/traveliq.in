@@ -77,7 +77,7 @@ export default async function WordPressPostPage({
           </p>
 
           <h1
-            className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl"
+            className="mt-3 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl"
             dangerouslySetInnerHTML={{
               __html: post.title.rendered,
             }}

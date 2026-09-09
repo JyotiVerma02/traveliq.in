@@ -6,7 +6,7 @@ const news = [
   {
     title:
       "IRCTC User ID Aadhaar Link: Book up to 24 tickets in a month",
-    date: "06/06/2022",
+    date: "06/06/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/06/Untitled-1.jpg",
     description:
@@ -15,30 +15,30 @@ const news = [
   },
   {
     title: "IRCTC Executive Lounge Booking for Premium Passengers",
-    date: "16/04/2022",
+    date: "16/04/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/IRCTC-EXECUTIVE-LOUNGE-1.jpg",
     description:
       "The IRCTC Executive Lounge is a first-of-its-kind, completely air-conditioned facility where railway passengers can enjoy a premium waiting experience.",
-    href: "/pages/social/irctc-executive-lounge-2022/",
+    href: "/pages/social/irctc-executive-lounge-2026/",
   },
   {
     title: "SpiceJet Flights & Special Holiday Weekend Deals",
-    date: "08/04/2022",
+    date: "08/04/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/spicejet-post.jpg",
     description:
       "Choose SpiceJet and prepare to enhance your flying experience with comfort, speed, and convenience for long weekend domestic trips.",
-    href: "/pages/social/where-are-you-heading-this-long-weekend-april-2022/",
+    href: "/pages/social/where-are-you-heading-this-long-weekend-april-2026/",
   },
   {
     title: "World Health Day & Travel IQ Wellness Initiatives",
-    date: "07/04/2022",
+    date: "07/04/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/world-Health-Day-1-2.jpg",
     description:
       "World Health Day is observed every year to raise awareness about the importance of health, wellness, and healthy travel lifestyles.",
-    href: "/pages/social/world-health-day-7-april-2022/",
+    href: "/pages/social/world-health-day-7-april-2026/",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function OurNews() {
               px-4
               py-2
               text-[10px]
-              font-extrabold
+              font-bold
               uppercase
               tracking-[0.18em]
               text-[#EE5326]
@@ -257,7 +257,7 @@ export default function OurNews() {
               ================================================= */}
               <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
                 {/* Category */}
-                <span className="text-[9px] font-extrabold uppercase tracking-[0.18em] text-[#EE5326]">
+                <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#EE5326]">
                   TravelIQ Updates
                 </span>
 
@@ -268,7 +268,7 @@ export default function OurNews() {
                     line-clamp-2
                     min-h-[46px]
                     text-[16px]
-                    font-extrabold
+                    font-bold
                     leading-[1.45]
                     tracking-[-0.015em]
                     text-[#071F3D]
@@ -310,7 +310,7 @@ export default function OurNews() {
                       px-4
                       py-2.5
                       text-[11px]
-                      font-extrabold
+                      font-bold
                       text-[#10407A]
                       shadow-[3px_3px_8px_rgba(16,64,122,0.06),-2px_-2px_6px_rgba(255,255,255,0.9)]
                       transition-all
@@ -358,7 +358,7 @@ export default function OurNews() {
               px-6
               py-3.5
               text-xs
-              font-extrabold
+              font-bold
               text-[#10407A]
               shadow-[7px_7px_16px_rgba(16,64,122,0.09),-6px_-6px_14px_rgba(255,255,255,0.95)]
               transition-all

@@ -19,7 +19,7 @@ export default function ServiceDetail({ title, intro, sections, image, imageAlt 
             <Link href="/our-services/" className="hover:text-[#10407A]">Services</Link><span>/</span>
             <span className="text-[#10407A]">{title}</span>
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">{title}</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">{title}</h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-700">{intro}</p>
         </div>
       </section>

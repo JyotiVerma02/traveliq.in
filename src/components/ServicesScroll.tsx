@@ -117,7 +117,7 @@ export default function ServicesScroll({
             </div>
           )}
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#0B1728] sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#0B1728] sm:text-4xl lg:text-5xl">
             {titlePrefix}
             {titleHighlight && (
               <span className="text-[#EE5326]">{titleHighlight}</span>
@@ -209,7 +209,7 @@ export default function ServicesScroll({
 
               {/* Bottom Content */}
               <div className="relative z-10 space-y-3">
-                <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                <h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
                   {item.title}
                 </h3>
 

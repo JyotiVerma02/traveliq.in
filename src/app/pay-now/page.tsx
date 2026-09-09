@@ -69,14 +69,14 @@ export default function PayNowPage() {
             <div className="flex items-center justify-center gap-3">
               <span className="h-[2px] w-8 rounded-full bg-[#EE5326]" />
 
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#EE5326]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#EE5326]">
                 Secure Payment
               </span>
 
               <span className="h-[2px] w-8 rounded-full bg-[#EE5326]" />
             </div>
 
-            <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] tracking-[-0.05em] text-[#10407A] sm:text-5xl lg:text-[56px]">
+            <h1 className="mt-5 text-4xl font-bold leading-[1.08] tracking-[-0.05em] text-[#10407A] sm:text-5xl lg:text-[56px]">
               Pay Online{" "}
               <span className="text-[#EE5326]">Securely</span>
             </h1>
@@ -115,12 +115,12 @@ export default function PayNowPage() {
                     <div className="flex items-center justify-center gap-3 lg:justify-start">
                       <span className="h-[2px] w-7 rounded-full bg-[#EE5326]" />
 
-                      <span className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-[#EE5326]">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#EE5326]">
                         Bank Information
                       </span>
                     </div>
 
-                    <h2 className="mt-3 text-2xl font-extrabold tracking-[-0.04em] text-[#10407A] sm:text-3xl">
+                    <h2 className="mt-3 text-2xl font-bold tracking-[-0.04em] text-[#10407A] sm:text-3xl">
                       Travel IQ Account Details
                     </h2>
 
@@ -141,13 +141,13 @@ export default function PayNowPage() {
                       >
                         <div className="flex items-center gap-4">
                           {/* Number */}
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#FFF1EB] text-[10px] font-extrabold text-[#EE5326] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#EE5326] group-hover:text-white">
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#FFF1EB] text-[10px] font-bold text-[#EE5326] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#EE5326] group-hover:text-white">
                             {String(index + 1).padStart(2, "0")}
                           </div>
 
                           {/* Text */}
                           <div className="min-w-0 flex-1">
-                            <p className="text-[9px] font-extrabold uppercase tracking-[0.18em] !text-[#8A94A3] sm:text-[10px]">
+                            <p className="text-[9px] font-bold uppercase tracking-[0.18em] !text-[#8A94A3] sm:text-[10px]">
                               {item.label}
                             </p>
 
@@ -210,7 +210,7 @@ export default function PayNowPage() {
                   <div className="flex items-center gap-2 rounded-full border border-white/40 bg-white/90 px-4 py-2.5 shadow-lg backdrop-blur-md">
                     <LockKeyhole className="h-4 w-4 text-[#EE5326]" />
 
-                    <span className="text-[10px] font-extrabold uppercase tracking-[0.12em] !text-[#10407A]">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.12em] !text-[#10407A]">
                       Secure Transaction
                     </span>
                   </div>
@@ -226,11 +226,11 @@ export default function PayNowPage() {
                   </div>
 
                   {/* Title */}
-                  <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.2em] !text-white">
+                  <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.2em] !text-white">
                     TravelIQ Payments
                   </p>
 
-                  <h3 className="mt-2 text-2xl font-extrabold leading-tight tracking-[-0.04em] !text-white sm:text-3xl">
+                  <h3 className="mt-2 text-2xl font-bold leading-tight tracking-[-0.04em] !text-white sm:text-3xl">
                     Simple. Secure.
                     <br />
                     Reliable.
@@ -275,7 +275,7 @@ export default function PayNowPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-extrabold !text-[#10407A]">
+                  <h3 className="text-sm font-bold !text-[#10407A]">
                     Secure Payment
                   </h3>
 
@@ -294,7 +294,7 @@ export default function PayNowPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-extrabold !text-[#10407A]">
+                  <h3 className="text-sm font-bold !text-[#10407A]">
                     Official Account
                   </h3>
 
@@ -313,7 +313,7 @@ export default function PayNowPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-extrabold !text-[#10407A]">
+                  <h3 className="text-sm font-bold !text-[#10407A]">
                     Easy Verification
                   </h3>
 
@@ -334,12 +334,12 @@ export default function PayNowPage() {
                 <div className="flex items-center justify-center gap-3 lg:justify-start">
                   <span className="h-[2px] w-7 rounded-full bg-[#EE5326]" />
 
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#EE5326]">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#EE5326]">
                     Need Assistance?
                   </span>
                 </div>
 
-                <h3 className="mt-3 text-xl font-extrabold tracking-[-0.03em] !text-[#10407A] sm:text-2xl">
+                <h3 className="mt-3 text-xl font-bold tracking-[-0.03em] !text-[#10407A] sm:text-2xl">
                   Have questions about your payment?
                 </h3>
 

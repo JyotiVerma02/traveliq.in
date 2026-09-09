@@ -118,7 +118,7 @@ export default function VideoGalleryPage() {
               <span className="h-[2px] w-10 bg-[#EE5326]" />
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-[-0.045em] text-[#10407A] sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold tracking-[-0.045em] text-[#10407A] sm:text-5xl lg:text-6xl">
               Explore TravelIQ{" "}
               <span className="text-[#EE5326]">in Motion</span>
             </h1>
@@ -151,7 +151,7 @@ export default function VideoGalleryPage() {
         <div className="mx-auto max-w-5xl px-5 text-center sm:px-8">
           <div className="mx-auto h-[2px] w-10 bg-[#EE5326]" />
 
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-[#10407A] sm:text-4xl">
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#10407A] sm:text-4xl">
             Want to Know More About TravelIQ?
           </h2>
 

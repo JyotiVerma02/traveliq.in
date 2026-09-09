@@ -108,7 +108,7 @@ export default function Footer() {
               CONTACT
           ===================================================== */}
           <div>
-            <h3 className="mb-5 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#FF7043]">
+            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#FF7043]">
               Get In Touch
             </h3>
 
@@ -155,7 +155,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <p className="mb-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/35">
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/35">
                     Office
                   </p>
                   <p className="text-sm leading-6 text-white/70">
@@ -202,7 +202,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <p className="mb-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/35">
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/35">
                     Email
                   </p>
                   <p className="text-sm text-white/70 transition group-hover:text-[#FF7043]">
@@ -249,7 +249,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <p className="mb-1 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/35">
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/35">
                     Call Us
                   </p>
                   <p className="text-sm text-white/70 transition group-hover:text-[#FF7043]">
@@ -264,7 +264,7 @@ export default function Footer() {
               QUICK LINKS
           ===================================================== */}
           <div>
-            <h3 className="mb-5 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#FF7043]">
+            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#FF7043]">
               Quick Links
             </h3>
 
@@ -340,7 +340,7 @@ export default function Footer() {
               "
             >
               <div>
-                <p className="text-xs font-extrabold text-[#FF7043]">
+                <p className="text-xs font-bold text-[#FF7043]">
                   Become an Agent
                 </p>
                 <p className="mt-1 text-[11px] text-white/45">
@@ -366,7 +366,7 @@ export default function Footer() {
               CONNECT
           ===================================================== */}
           <div>
-            <h3 className="mb-5 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#FF7043]">
+            <h3 className="mb-5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#FF7043]">
               Connect With Us
             </h3>
 
@@ -381,7 +381,7 @@ export default function Footer() {
                 shadow-[5px_5px_15px_rgba(0,0,0,0.14),inset_-2px_-2px_5px_rgba(255,255,255,0.025)]
               "
             >
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/35">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/35">
                 Working Hours
               </p>
 
@@ -401,7 +401,7 @@ export default function Footer() {
 
             {/* Social links */}
             <div className="mt-6">
-              <p className="mb-3 text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/35">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.16em] text-white/35">
                 Follow TravelIQ
               </p>
 

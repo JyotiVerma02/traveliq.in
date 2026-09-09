@@ -17,7 +17,7 @@ export default function PayUsAliasPage() {
           <span>/</span>
           <span className="text-[#10407A]">Pay Us</span>
         </div>
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           Pay Online Secure Payment
         </h1>
         <p className="mt-4 text-lg text-slate-700">

@@ -114,7 +114,7 @@ export default function ServicesPage() {
               <span className="h-[2px] w-10 bg-[#EE5326]" />
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-[-0.04em] text-[#10407A] sm:text-5xl lg:text-[56px] lg:leading-[1.08]">
+            <h1 className="text-4xl font-bold tracking-[-0.04em] text-[#10407A] sm:text-5xl lg:text-[56px] lg:leading-[1.08]">
               Complete Travel Solutions
               <span className="block text-[#EE5326]">
                 Built for Better Journeys
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                 </span>
               </div>
 
-              <h2 className="text-3xl font-extrabold tracking-tight text-[#10407A] sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#10407A] sm:text-4xl">
                 Our Travel Services
               </h2>
             </div>
@@ -249,7 +249,7 @@ export default function ServicesPage() {
                 Why TravelIQ
               </span>
 
-              <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-[#10407A] sm:text-3xl">
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-[#10407A] sm:text-3xl">
                 One Travel Partner.
                 <span className="block">
                   Multiple Business Opportunities.
@@ -287,7 +287,7 @@ export default function ServicesPage() {
               <span className="h-[2px] w-9 bg-[#EE5326]" />
             </div>
 
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#10407A] sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#10407A] sm:text-4xl">
               Upcoming Services
             </h2>
 
@@ -306,7 +306,7 @@ export default function ServicesPage() {
               >
                 <div className="flex items-start gap-5">
                   {/* Number */}
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#EE5326]/20 bg-[#FFF5F1] text-xs font-extrabold tracking-widest text-[#EE5326]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-[#EE5326]/20 bg-[#FFF5F1] text-xs font-bold tracking-widest text-[#EE5326]">
                     {item.number}
                   </div>
 
@@ -348,7 +348,7 @@ export default function ServicesPage() {
             <span className="h-[2px] w-9 bg-[#EE5326]" />
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#10407A] sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#10407A] sm:text-4xl">
             Build a Better Travel Business
           </h2>
 
