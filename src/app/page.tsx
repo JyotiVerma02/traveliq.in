@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import WhyWeBetter from "@/components/WhyWeBetter";
 import Testimonials from "@/components/Testimonials";
 import LatestPosts from "@/components/OurNews";
+import FaqSection from "@/components/FaqSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Hero />
       <PartnerLogos />
       <Services />
+      <FaqSection />
       <WhyWeBetter />
       <Testimonials />
       <LatestPosts />
