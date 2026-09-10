@@ -121,7 +121,7 @@ export default function FaqSection() {
                 px-4
                 py-2
                 text-[10px]
-                font-black
+                font-bold
                 uppercase
                 tracking-[0.18em]
                 text-[#EE5326]
@@ -139,12 +139,12 @@ export default function FaqSection() {
                 mt-5
                 max-w-3xl
                 text-3xl
-                font-black
-                leading-[1.05]
-                tracking-[-0.045em]
+                font-bold
+                leading-[1.08]
+                tracking-[-0.035em]
                 text-[#0B1728]
                 sm:text-4xl
-                lg:text-[46px]
+                lg:text-[44px]
               "
             >
               Control All Your Bookings &amp; Learn
@@ -161,6 +161,7 @@ export default function FaqSection() {
                 mt-5
                 max-w-2xl
                 text-sm
+                font-normal
                 leading-7
                 text-[#697589]
                 sm:text-[15px]
@@ -191,7 +192,7 @@ export default function FaqSection() {
               px-5
               py-3
               text-xs
-              font-black
+              font-bold
               text-[#10407A]
               shadow-[7px_7px_15px_rgba(16,64,122,0.10),-6px_-6px_14px_rgba(255,255,255,0.95)]
               transition-all
@@ -214,7 +215,7 @@ export default function FaqSection() {
                 rounded-full
                 bg-[#10407A]/[0.07]
                 text-sm
-                transition-transform
+                transition-all
                 duration-300
                 group-hover:translate-x-0.5
                 group-hover:bg-white/10
@@ -301,7 +302,7 @@ export default function FaqSection() {
                     px-3
                     py-2
                     text-[8px]
-                    font-black
+                    font-bold
                     uppercase
                     tracking-[0.15em]
                     text-white
@@ -357,7 +358,7 @@ export default function FaqSection() {
                   {/* Text */}
 
                   <div className="min-w-0">
-                    <p className="text-xs font-black text-[#0B1728]">
+                    <p className="text-xs font-bold text-[#0B1728]">
                       24/7 Agent Support Line
                     </p>
 
@@ -365,7 +366,7 @@ export default function FaqSection() {
                       className="
                         mt-1
                         text-[10px]
-                        font-bold
+                        font-semibold
                         text-[#10407A]/60
                         sm:text-[11px]
                       "
@@ -403,7 +404,7 @@ export default function FaqSection() {
                 <p
                   className="
                     text-[9px]
-                    font-black
+                    font-bold
                     uppercase
                     tracking-[0.12em]
                     text-[#8993A1]
@@ -412,7 +413,7 @@ export default function FaqSection() {
                   Need assistance?
                 </p>
 
-                <p className="mt-0.5 text-xs font-bold text-[#10407A]">
+                <p className="mt-0.5 text-xs font-semibold text-[#10407A]">
                   Our team is here to help.
                 </p>
               </div>
@@ -437,7 +438,9 @@ export default function FaqSection() {
                   shadow-[8px_8px_18px_rgba(16,64,122,0.08),-7px_-7px_16px_rgba(255,255,255,0.95)]
                   transition-all
                   duration-300
+
                   open:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)]
+
                   hover:-translate-y-0.5
                   hover:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)]
                 "
@@ -476,7 +479,7 @@ export default function FaqSection() {
                         bg-[#FFF0E9]
                         font-mono
                         text-[10px]
-                        font-black
+                        font-semibold
                         text-[#EE5326]
                         shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]
                       "
@@ -490,19 +493,21 @@ export default function FaqSection() {
                       className="
                         min-w-0
                         text-sm
-                        font-black
+                        font-semibold
                         leading-6
-                        tracking-[-0.015em]
+                        tracking-[-0.01em]
                         text-[#0B1728]
                         sm:text-base
-                        lg:text-[17px]
+                        lg:text-[16px]
                       "
                     >
                       {faq.question}
                     </span>
                   </div>
 
-                  {/* Plus button */}
+                  {/* =================================================
+                      PLUS / MINUS BUTTON
+                  ================================================= */}
 
                   <span
                     className="
@@ -516,16 +521,24 @@ export default function FaqSection() {
                       bg-[#10407A]/[0.055]
                       text-lg
                       font-medium
+                      leading-none
                       text-[#10407A]
                       shadow-[4px_4px_9px_rgba(16,64,122,0.08),-3px_-3px_7px_rgba(255,255,255,0.95)]
                       transition-all
                       duration-300
-                      group-open:rotate-45
+
                       group-open:bg-[#EE5326]
                       group-open:text-white
                     "
                   >
-                    +
+                    {/* Closed = + | Open = − */}
+                    <span className="block group-open:hidden">
+                      +
+                    </span>
+
+                    <span className="hidden group-open:block">
+                      −
+                    </span>
                   </span>
                 </summary>
 

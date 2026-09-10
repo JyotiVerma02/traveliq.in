@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -117,7 +116,7 @@ export default function Header() {
   return (
     <>
       {/* =========================================================
-          HEADER
+          FULL WIDTH HEADER
       ========================================================= */}
 
       <header
@@ -126,225 +125,280 @@ export default function Header() {
           inset-x-0
           top-0
           z-[100]
+          w-full
+          bg-white
           transition-all
-          duration-500
+          duration-300
 
           ${
             isScrolled
-              ? "py-3"
-              : "py-0"
+              ? "border-b border-[#10407A]/10 shadow-[0_6px_25px_rgba(7,31,61,0.08)]"
+              : "border-b border-[#10407A]/[0.06]"
           }
         `}
       >
+        {/* =======================================================
+            NAV INNER CONTAINER
+        ======================================================= */}
+
         <div
-          className="
+          className={`
             mx-auto
+            flex
             w-full
             max-w-[1500px]
-            px-3
-            sm:px-5
+            items-center
+            justify-between
+
+            px-4
+            sm:px-6
             lg:px-8
             xl:px-10
-          "
+
+            transition-all
+            duration-300
+
+            ${
+              isScrolled
+                ? "h-[68px]"
+                : "h-[80px]"
+            }
+          `}
         >
           {/* =====================================================
-              MAIN NAVBAR
+              LOGO
           ===================================================== */}
 
-          <div
-            className={`
+          <Link
+            href="/"
+            aria-label="TravelIQ home"
+            onClick={closeMenu}
+            className="
               relative
+              z-[110]
               flex
-              w-full
+              shrink-0
               items-center
-              justify-between
-
-              border
-              border-white/90
-
-              bg-[var(--tiq-bg)]
-              backdrop-blur-xl
-
+              rounded-lg
               transition-all
-              duration-500
-
-              ${
-                isScrolled
-                  ? `
-                    h-[68px]
-                    rounded-[26px]
-                    px-3
-
-                    shadow[
-                      12px_14px_32px_rgba(16,64,122,0.14),
-                      -10px_-10px_28px_rgba(255,255,255,0.95)
-                    ]
-                  `
-                  : `
-                    h-[82px]
-                    rounded-b-[30px]
-                    px-3
-
-                    shadow[
-                      10px_14px_35px_rgba(16,64,122,0.09),
-                      -8px_-8px_28px_rgba(255,255,255,0.95)
-                    ]
-                  `
-              }
-            `}
+              duration-300
+              hover:-translate-y-0.5
+            "
           >
-            {/* ===================================================
-                INNER HIGHLIGHT
-            =================================================== */}
-
-            <div
-              className="
-                pointer-events-none
-                absolute
-                inset-[1px]
-                rounded-[inherit]
-                border
-                border-white/50
-                opacity-70
-              "
-            />
-
-            {/* ===================================================
-                LOGO
-            =================================================== */}
-
-            <Link
-              href="/"
-              aria-label="TravelIQ home"
-              onClick={closeMenu}
-              className="
-                relative
-                z-[110]
-                flex
-                shrink-0
-                items-center
-                rounded-[18px]
-                p-1.5
-
+            <Image
+              src="/logo.png"
+              alt="TravelIQ"
+              width={225}
+              height={56}
+              priority
+              className={`
+                h-auto
+                object-contain
                 transition-all
                 duration-300
 
-                hover:-translate-y-0.5
-              "
-            >
-              <Image
-                src="/logo.png"
-                alt="TravelIQ"
-                width={225}
-                height={56}
-                priority
-                className={`
-                  h-auto
-                  object-contain
-                  transition-all
-                  duration-500
+                ${
+                  isScrolled
+                    ? "w-[145px] sm:w-[160px]"
+                    : "w-[160px] sm:w-[180px] lg:w-[195px]"
+                }
+              `}
+            />
+          </Link>
 
-                  ${
-                    isScrolled
-                      ? "w-[145px] sm:w-[160px]"
-                      : "w-[165px] sm:w-[185px] lg:w-[205px]"
-                  }
-                `}
-              />
-            </Link>
+          {/* =====================================================
+              DESKTOP NAVIGATION
+          ===================================================== */}
 
-            {/* ===================================================
-                DESKTOP NAVIGATION
-            =================================================== */}
-
-            <nav
+          <nav
+            className="
+              relative
+              z-[105]
+              hidden
+              xl:block
+            "
+            aria-label="Main navigation"
+          >
+            <div
               className="
-                relative
-                z-[105]
-                hidden
-                xl:block
+                flex
+                items-center
+                gap-1
               "
-              aria-label="Main navigation"
             >
-              <div
-                className="
+              {/* HOME */}
+
+              <Link
+                href="/"
+                className={`
+                  group
+                  relative
                   flex
                   items-center
-                  gap-1
 
-                  rounded-full
-                  border
-                  border-white/80
+                  px-3.5
+                  py-2.5
 
-                  bg-[var(--tiq-surface-soft)]
+                  text-[14px]
+                  font-semibold
+                  tracking-[0.02em]
 
-                  p-1.5
+                  transition-all
+                  duration-300
 
-                  shadow[
-                    inset_3px_3px_8px_rgba(16,64,122,0.035),
-                    inset_-3px_-3px_8px_rgba(255,255,255,0.9)
-                  ]
-                "
+                  ${
+                    isActive("/")
+                      ? `
+                        text-[var(--tiq-orange)]
+                      `
+                      : `
+                        text-[var(--tiq-navy)]
+
+                        hover:text-[var(--tiq-orange)]
+                      `
+                  }
+                `}
               >
-                {/* HOME */}
+                Home
 
+                {isActive("/") && (
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-1/2
+
+                      h-[2px]
+                      w-5
+
+                      -translate-x-1/2
+
+                      rounded-full
+                      bg-[var(--tiq-orange)]
+                    "
+                  />
+                )}
+              </Link>
+
+              {/* ABOUT */}
+
+              <Link
+                href="/about-travel-iq/"
+                className={`
+                  group
+                  relative
+                  flex
+                  items-center
+
+                  px-3.5
+                  py-2.5
+
+                  text-[14px]
+                  font-semibold
+                  tracking-[0.02em]
+
+                  transition-all
+                  duration-300
+
+                  ${
+                    isActive("/about-travel-iq/")
+                      ? `
+                        text-[var(--tiq-orange)]
+                      `
+                      : `
+                        text-[var(--tiq-navy)]
+
+                        hover:text-[var(--tiq-orange)]
+                      `
+                  }
+                `}
+              >
+                About
+
+                {isActive("/about-travel-iq/") && (
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-1/2
+                      h-[2px]
+                      w-5
+                      -translate-x-1/2
+                      rounded-full
+                      bg-[var(--tiq-orange)]
+                    "
+                  />
+                )}
+              </Link>
+
+              {/* =================================================
+                  SERVICES
+              ================================================= */}
+
+              <div
+                className="relative"
+                onMouseEnter={() =>
+                  setServicesOpen(true)
+                }
+                onMouseLeave={() =>
+                  setServicesOpen(false)
+                }
+              >
                 <Link
-                  href="/"
+                  href="/our-services/"
                   className={`
                     group
                     relative
                     flex
                     items-center
-
-                    rounded-full
+                    gap-1
 
                     px-3.5
-                    py-2
+                    py-2.5
 
                     text-[14px]
                     font-semibold
-                    tracking-[0.03em]
+                    tracking-[0.02em]
 
                     transition-all
                     duration-300
 
                     ${
-                      isActive("/")
-                        ? `
-                          bg-[var(--tiq-orange-soft)]
-                          text-[var(--tiq-orange)]
-
-                          shadow[
-                            4px_5px_10px_rgba(238,83,38,0.08),
-                            inset_-2px_-2px_5px_rgba(255,255,255,0.9)
-                          ]
-                        `
+                      servicesActive
+                        ? "text-[var(--tiq-orange)]"
                         : `
                           text-[var(--tiq-navy)]
-
-                          hover:-translate-y-0.5
-                          hover:bg-white
                           hover:text-[var(--tiq-orange)]
-
-                          hover:shadow[
-                            4px_5px_10px_rgba(16,64,122,0.06),
-                            -3px_-3px_8px_rgba(255,255,255,0.9)
-                          ]
                         `
                     }
                   `}
                 >
-                  Home
+                  Services
 
-                  {isActive("/") && (
+                  <ChevronDown
+                    size={14}
+                    strokeWidth={2.3}
+                    className={`
+                      transition-transform
+                      duration-300
+
+                      ${
+                        servicesOpen
+                          ? "rotate-180"
+                          : ""
+                      }
+                    `}
+                  />
+
+                  {servicesActive && (
                     <span
                       className="
                         absolute
-                        bottom-[3px]
+                        bottom-0
                         left-1/2
 
                         h-[2px]
-                        w-3
+                        w-5
 
                         -translate-x-1/2
 
@@ -355,682 +409,1024 @@ export default function Header() {
                   )}
                 </Link>
 
-                {/* ABOUT */}
+                {/* =================================================
+                    SERVICES DROPDOWN
+                ================================================= */}
 
-                <Link
-                  href="/about-travel-iq/"
+                <div
                   className={`
-                    rounded-full
+                    absolute
+                    left-1/2
+                    top-full
+                    z-[200]
 
-                    px-3.5
-                    py-2
+                    w-[365px]
 
-                    text-[14px]
-                    font-semibold
-                    tracking-[0.03em]
+                    -translate-x-1/2
+
+                    pt-4
 
                     transition-all
                     duration-300
 
                     ${
-                      isActive("/about-travel-iq/")
-                        ? `
-                          bg-[var(--tiq-orange-soft)]
-                          text-[var(--tiq-orange)]
-
-                          shadow[
-                            inset_2px_2px_6px_rgba(238,83,38,0.04)
-                          ]
-                        `
-                        : `
-                          text-[var(--tiq-navy)]
-
-                          hover:-translate-y-0.5
-                          hover:bg-white
-                          hover:text-[var(--tiq-orange)]
-
-                          hover:shadow[
-                            4px_5px_10px_rgba(16,64,122,0.06),
-                            -3px_-3px_8px_rgba(255,255,255,0.9)
-                          ]
-                        `
+                      servicesOpen
+                        ? "visible translate-y-0 opacity-100"
+                        : "invisible -translate-y-2 opacity-0"
                     }
                   `}
                 >
-                  About
-                </Link>
-
-                {/* SERVICES */}
-
-                <div
-                  className="relative"
-                  onMouseEnter={() =>
-                    setServicesOpen(true)
-                  }
-                  onMouseLeave={() =>
-                    setServicesOpen(false)
-                  }
-                >
-                  <Link
-                    href="/our-services/"
-                    className={`
-                      flex
-                      items-center
-                      gap-1
-
-                      rounded-full
-
-                      px-3.5
-                      py-2
-
-                      text-[14px]
-                      font-semibold
-                      tracking-[0.03em]
-
-                      transition-all
-                      duration-300
-
-                      ${
-                        servicesActive
-                          ? `
-                            bg-[var(--tiq-orange-soft)]
-                            text-[var(--tiq-orange)]
-
-                            shadow[
-                              inset_2px_2px_6px_rgba(238,83,38,0.04)
-                            ]
-                          `
-                          : `
-                            text-[var(--tiq-navy)]
-
-                            hover:-translate-y-0.5
-                            hover:bg-white
-                            hover:text-[var(--tiq-orange)]
-
-                            hover:shadow[
-                              4px_5px_10px_rgba(16,64,122,0.06),
-                              -3px_-3px_8px_rgba(255,255,255,0.9)
-                            ]
-                          `
-                      }
-                    `}
-                  >
-                    Services
-
-                    <ChevronDown
-                      size={14}
-                      strokeWidth={2.3}
-                      className={`
-                        transition-transform
-                        duration-300
-
-                        ${
-                          servicesOpen
-                            ? "rotate-180"
-                            : ""
-                        }
-                      `}
-                    />
-                  </Link>
-
-                  {/* SERVICES DROPDOWN */}
-
                   <div
-                    className={`
-                      absolute
-                      left-1/2
-                      top-full
+                    className="
+                      relative
+                      overflow-hidden
 
-                      z-[200]
+                      rounded-[20px]
 
-                      w-[365px]
+                      border
+                      border-[#10407A]/10
 
-                      -translate-x-1/2
+                      bg-white
 
-                      pt-4
+                      p-3
 
-                      transition-all
-                      duration-300
-
-                      ${
-                        servicesOpen
-                          ? "visible translate-y-0 opacity-100"
-                          : "invisible -translate-y-2 opacity-0"
-                      }
-                    `}
+                      shadow-[0_18px_45px_rgba(7,31,61,0.14)]
+                    "
                   >
+                    {/* DROPDOWN GLOW */}
+
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute
+
+                        -right-10
+                        -top-10
+
+                        h-28
+                        w-28
+
+                        rounded-full
+
+                        bg-[var(--tiq-orange)]
+
+                        opacity-[0.06]
+                        blur-2xl
+                      "
+                    />
+
+                    {/* DROPDOWN HEADER */}
+
                     <div
                       className="
                         relative
                         overflow-hidden
 
-                        rounded-[28px]
+                        rounded-[16px]
 
-                        border
-                        border-white
+                        bg-[#F5F8FC]
 
-                        bg-[var(--tiq-bg)]
-
-                        p-3
-
-                        shadow[
-                          18px_22px_50px_rgba(16,64,122,0.16),
-                          -12px_-12px_32px_rgba(255,255,255,0.96)
-                        ]
+                        p-4
                       "
                     >
-                      {/* DROPDOWN GLOW */}
-
                       <div
                         className="
-                          pointer-events-none
-                          absolute
-
-                          -right-10
-                          -top-10
-
-                          h-28
-                          w-28
-
-                          rounded-full
-
-                          bg-[var(--tiq-orange)]
-
-                          opacity-[0.07]
-                          blur-2xl
-                        "
-                      />
-
-                      {/* DROPDOWN HEADER */}
-
-                      <div
-                        className="
-                          relative
-                          overflow-hidden
-
-                          rounded-[22px]
-
-                          bg-[var(--tiq-surface-blue)]
-
-                          p-4
-
-                          shadow[
-                            inset_4px_4px_9px_rgba(16,64,122,0.045),
-                            inset_-4px_-4px_9px_rgba(255,255,255,0.9)
-                          ]
-                        "
-                      >
-                        <div
-                          className="
-                            flex
-                            items-center
-                            justify-between
-                          "
-                        >
-                          <div>
-                            <p
-                              className="
-                                text-[9px]
-                                font-black
-                                uppercase
-                                tracking-[0.25em]
-                                text-[var(--tiq-orange)]
-                              "
-                            >
-                              TravelIQ
-                            </p>
-
-                            <p
-                              className="
-                                mt-1
-                                text-[16px]
-                                font-bold
-                                tracking-[-0.01em]
-                                text-[var(--tiq-navy)]
-                              "
-                            >
-                              Travel Solutions
-                            </p>
-
-                            <p
-                              className="
-                                mt-1
-                                text-[10px]
-                                font-medium
-                                tracking-[0.01em]
-                                text-[var(--tiq-muted)]
-                              "
-                            >
-                              Everything your travel business needs.
-                            </p>
-                          </div>
-
-                          <div
-                            className="
-                              flex
-                              h-11
-                              w-11
-                              shrink-0
-                              items-center
-                              justify-center
-
-                              rounded-[16px]
-
-                              bg-[var(--tiq-orange)]
-
-                              !text-white
-
-                              shadow[
-                                7px_8px_16px_rgba(238,83,38,0.20),
-                                -4px_-4px_10px_rgba(255,255,255,0.85)
-                              ]
-                            "
-                          >
-                            <ArrowUpRight
-                              size={18}
-                              strokeWidth={2.5}
-                              className="!text-white"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* SERVICES */}
-
-                      <div className="mt-2.5 space-y-1">
-                        {services.map(
-                          ([name, href], index) => (
-                            <Link
-                              key={href}
-                              href={href}
-                              className={`
-                                group
-
-                                flex
-                                items-center
-                                justify-between
-
-                                rounded-[17px]
-
-                                border
-                                border-transparent
-
-                                px-3.5
-                                py-2.5
-
-                                text-[14px]
-                                font-semibold
-                                tracking-[0.015em]
-
-                                transition-all
-                                duration-200
-
-                                ${
-                                  isActive(href)
-                                    ? `
-                                      border-white
-                                      bg-[var(--tiq-orange-soft)]
-                                      text-[var(--tiq-orange)]
-
-                                      shadow[
-                                        inset_3px_3px_7px_rgba(238,83,38,0.045),
-                                        inset_-3px_-3px_7px_rgba(255,255,255,0.85)
-                                      ]
-                                    `
-                                    : `
-                                      text-[var(--tiq-text)]
-
-                                      hover:-translate-y-0.5
-                                      hover:border-white
-                                      hover:bg-white
-                                      hover:text-[var(--tiq-navy)]
-
-                                      hover:shadow[
-                                        5px_6px_12px_rgba(16,64,122,0.07),
-                                        -4px_-4px_10px_rgba(255,255,255,0.9)
-                                      ]
-                                    `
-                                }
-                              `}
-                            >
-                              <span className="flex items-center gap-2">
-                                <span
-                                  className={`
-                                    flex
-                                    h-5
-                                    w-5
-                                    items-center
-                                    justify-center
-
-                                    rounded-md
-
-                                    text-[8px]
-                                    font-bold
-
-                                    ${
-                                      isActive(href)
-                                        ? `
-                                          bg-white
-                                          text-[var(--tiq-orange)]
-                                        `
-                                        : `
-                                          bg-[var(--tiq-surface-blue)]
-                                          text-[var(--tiq-navy)]
-                                        `
-                                    }
-                                  `}
-                                >
-                                  {String(index + 1).padStart(
-                                    2,
-                                    "0"
-                                  )}
-                                </span>
-
-                                {name}
-                              </span>
-
-                              <ArrowUpRight
-                                size={14}
-                                className="
-                                  opacity-0
-
-                                  transition-all
-                                  duration-200
-
-                                  group-hover:translate-x-0.5
-                                  group-hover:-translate-y-0.5
-                                  group-hover:opacity-100
-                                "
-                              />
-                            </Link>
-                          )
-                        )}
-                      </div>
-
-                      {/* ALL SERVICES */}
-
-                      <Link
-                        href="/our-services/"
-                        className="
-                          group
-
-                          mt-2.5
-
                           flex
                           items-center
                           justify-between
-
-                          rounded-[18px]
-
-                          bg-[var(--tiq-navy)]
-
-                          px-4
-                          py-3
-
-                          text-[10px]
-                          font-bold
-
-                          uppercase
-                          tracking-[0.12em]
-
-                          !text-white
-
-                          shadow[
-                            8px_9px_18px_rgba(16,64,122,0.17),
-                            -3px_-3px_8px_rgba(255,255,255,0.55)
-                          ]
-
-                          transition-all
-                          duration-300
-
-                          hover:-translate-y-0.5
-                          hover:bg-[var(--tiq-navy-dark)]
-                          hover:!text-white
                         "
                       >
-                        <span className="!text-white">
-                          Explore all services
-                        </span>
+                        <div>
+                          <p
+                            className="
+                              text-[9px]
+                              font-black
+                              uppercase
+                              tracking-[0.25em]
+                              text-[var(--tiq-orange)]
+                            "
+                          >
+                            TravelIQ
+                          </p>
 
-                        <ArrowUpRight
-                          size={14}
+                          <p
+                            className="
+                              mt-1
+                              text-[16px]
+                              font-bold
+                              text-[var(--tiq-navy)]
+                            "
+                          >
+                            Travel Solutions
+                          </p>
+
+                          <p
+                            className="
+                              mt-1
+                              text-[10px]
+                              font-medium
+                              text-[var(--tiq-muted)]
+                            "
+                          >
+                            Everything your travel business needs.
+                          </p>
+                        </div>
+
+                        <div
                           className="
+                            flex
+                            h-11
+                            w-11
+                            shrink-0
+                            items-center
+                            justify-center
+
+                            rounded-[13px]
+
+                            bg-[var(--tiq-orange)]
+
                             !text-white
-
-                            transition-transform
-
-                            group-hover:-translate-y-0.5
-                            group-hover:translate-x-0.5
                           "
-                        />
-                      </Link>
+                        >
+                          <ArrowUpRight
+                            size={18}
+                            strokeWidth={2.5}
+                            className="!text-white"
+                          />
+                        </div>
+                      </div>
                     </div>
+
+                    {/* SERVICES */}
+
+                    <div className="mt-2.5 space-y-1">
+                      {services.map(
+                        ([name, href], index) => (
+                          <Link
+                            key={href}
+                            href={href}
+                            className={`
+                              group
+
+                              flex
+                              items-center
+                              justify-between
+
+                              rounded-[13px]
+
+                              border
+                              border-transparent
+
+                              px-3.5
+                              py-2.5
+
+                              text-[13px]
+                              font-semibold
+
+                              transition-all
+                              duration-200
+
+                              ${
+                                isActive(href)
+                                  ? `
+                                    border-[var(--tiq-orange)]/10
+                                    bg-[var(--tiq-orange-soft)]
+                                    text-[var(--tiq-orange)]
+                                  `
+                                  : `
+                                    text-[var(--tiq-text)]
+
+                                    hover:bg-[#F5F8FC]
+                                    hover:text-[var(--tiq-navy)]
+                                  `
+                              }
+                            `}
+                          >
+                            <span className="flex items-center gap-2">
+                              <span
+                                className={`
+                                  flex
+                                  h-5
+                                  w-5
+                                  items-center
+                                  justify-center
+
+                                  rounded-md
+
+                                  text-[8px]
+                                  font-bold
+
+                                  ${
+                                    isActive(href)
+                                      ? `
+                                        bg-white
+                                        text-[var(--tiq-orange)]
+                                      `
+                                      : `
+                                        bg-[#F1F5F9]
+                                        text-[var(--tiq-navy)]
+                                      `
+                                  }
+                                `}
+                              >
+                                {String(index + 1).padStart(
+                                  2,
+                                  "0"
+                                )}
+                              </span>
+
+                              {name}
+                            </span>
+
+                            <ArrowUpRight
+                              size={14}
+                              className="
+                                opacity-0
+                                transition-all
+                                duration-200
+
+                                group-hover:translate-x-0.5
+                                group-hover:-translate-y-0.5
+                                group-hover:opacity-100
+                              "
+                            />
+                          </Link>
+                        )
+                      )}
+                    </div>
+
+                    {/* ALL SERVICES */}
+
+                    <Link
+                      href="/our-services/"
+                      className="
+                        group
+
+                        mt-2.5
+
+                        flex
+                        items-center
+                        justify-between
+
+                        rounded-[14px]
+
+                        bg-[var(--tiq-navy)]
+
+                        px-4
+                        py-3
+
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.12em]
+
+                        !text-white
+
+                        transition-all
+                        duration-300
+
+                        hover:bg-[var(--tiq-navy-dark)]
+                      "
+                    >
+                      <span className="!text-white">
+                        Explore all services
+                      </span>
+
+                      <ArrowUpRight
+                        size={14}
+                        className="
+                          !text-white
+                          transition-transform
+
+                          group-hover:-translate-y-0.5
+                          group-hover:translate-x-0.5
+                        "
+                      />
+                    </Link>
                   </div>
                 </div>
-
-                {/* VIDEO */}
-
-                <Link
-                  href="/video-gallery/"
-                  className={`
-                    rounded-full
-
-                    px-3.5
-                    py-2
-
-                    text-[14px]
-                    font-semibold
-                    tracking-[0.03em]
-
-                    transition-all
-                    duration-300
-
-                    ${
-                      isActive("/video-gallery/")
-                        ? `
-                          bg-[var(--tiq-orange-soft)]
-                          text-[var(--tiq-orange)]
-                        `
-                        : `
-                          text-[var(--tiq-navy)]
-
-                          hover:-translate-y-0.5
-                          hover:bg-white
-                          hover:text-[var(--tiq-orange)]
-                        `
-                    }
-                  `}
-                >
-                  Video Gallery
-                </Link>
-
-                {/* CONTACT */}
-
-                <Link
-                  href="/contact-us/"
-                  className={`
-                    rounded-full
-
-                    px-3.5
-                    py-2
-
-                    text-[14px]
-                    font-semibold
-                    tracking-[0.03em]
-
-                    transition-all
-                    duration-300
-
-                    ${
-                      isActive("/contact-us/")
-                        ? `
-                          bg-[var(--tiq-orange-soft)]
-                          text-[var(--tiq-orange)]
-                        `
-                        : `
-                          text-[var(--tiq-navy)]
-
-                          hover:-translate-y-0.5
-                          hover:bg-white
-                          hover:text-[var(--tiq-orange)]
-                        `
-                    }
-                  `}
-                >
-                  Contact
-                </Link>
-
-                {/* PAY NOW */}
-
-                <Link
-                  href="/pay-now/"
-                  className={`
-                    rounded-full
-
-                    px-3.5
-                    py-2
-
-                    text-[14px]
-                    font-semibold
-                    tracking-[0.03em]
-
-                    transition-all
-                    duration-300
-
-                    ${
-                      isActive("/pay-now/")
-                        ? `
-                          bg-[var(--tiq-orange-soft)]
-                          text-[var(--tiq-orange)]
-                        `
-                        : `
-                          text-[var(--tiq-navy)]
-
-                          hover:-translate-y-0.5
-                          hover:bg-white
-                          hover:text-[var(--tiq-orange)]
-                        `
-                    }
-                  `}
-                >
-                  Pay now
-                </Link>
               </div>
-            </nav>
 
-            {/* ===================================================
-                DESKTOP ACTIONS
-            =================================================== */}
+              {/* VIDEO */}
 
-            <div
+              <Link
+                href="/video-gallery/"
+                className={`
+                  group
+                  relative
+
+                  px-3.5
+                  py-2.5
+
+                  text-[14px]
+                  font-semibold
+                  tracking-[0.02em]
+
+                  transition-all
+                  duration-300
+
+                  ${
+                    isActive("/video-gallery/")
+                      ? `
+                        text-[var(--tiq-orange)]
+                      `
+                      : `
+                        text-[var(--tiq-navy)]
+                        hover:text-[var(--tiq-orange)]
+                      `
+                  }
+                `}
+              >
+                Video Gallery
+
+                {isActive("/video-gallery/") && (
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-1/2
+                      h-[2px]
+                      w-5
+                      -translate-x-1/2
+                      rounded-full
+                      bg-[var(--tiq-orange)]
+                    "
+                  />
+                )}
+              </Link>
+
+              {/* CONTACT */}
+
+              <Link
+                href="/contact-us/"
+                className={`
+                  group
+                  relative
+
+                  px-3.5
+                  py-2.5
+
+                  text-[14px]
+                  font-semibold
+                  tracking-[0.02em]
+
+                  transition-all
+                  duration-300
+
+                  ${
+                    isActive("/contact-us/")
+                      ? `
+                        text-[var(--tiq-orange)]
+                      `
+                      : `
+                        text-[var(--tiq-navy)]
+                        hover:text-[var(--tiq-orange)]
+                      `
+                  }
+                `}
+              >
+                Contact
+
+                {isActive("/contact-us/") && (
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-1/2
+                      h-[2px]
+                      w-5
+                      -translate-x-1/2
+                      rounded-full
+                      bg-[var(--tiq-orange)]
+                    "
+                  />
+                )}
+              </Link>
+
+              {/* PAY NOW */}
+
+              <Link
+                href="/pay-now/"
+                className={`
+                  group
+                  relative
+
+                  px-3.5
+                  py-2.5
+
+                  text-[14px]
+                  font-semibold
+                  tracking-[0.02em]
+
+                  transition-all
+                  duration-300
+
+                  ${
+                    isActive("/pay-now/")
+                      ? `
+                        text-[var(--tiq-orange)]
+                      `
+                      : `
+                        text-[var(--tiq-navy)]
+                        hover:text-[var(--tiq-orange)]
+                      `
+                  }
+                `}
+              >
+                Pay now
+
+                {isActive("/pay-now/") && (
+                  <span
+                    className="
+                      absolute
+                      bottom-0
+                      left-1/2
+                      h-[2px]
+                      w-5
+                      -translate-x-1/2
+                      rounded-full
+                      bg-[var(--tiq-orange)]
+                    "
+                  />
+                )}
+              </Link>
+            </div>
+          </nav>
+
+          {/* =====================================================
+              DESKTOP ACTIONS
+          ===================================================== */}
+
+          <div
+            className="
+              relative
+              z-[105]
+
+              hidden
+              items-center
+              gap-2
+
+              xl:flex
+            "
+          >
+            {/* AGENT LOGIN */}
+
+            <a
+              href="https://b2b.traveliq.in"
+              target="_blank"
+              rel="noreferrer"
               className="
-                relative
-                z-[105]
+                group
 
-                hidden
+                flex
+                items-center
+                gap-1.5
+
+                px-3
+                py-2
+
+                text-[13px]
+                font-semibold
+                tracking-[0.03em]
+
+                text-[var(--tiq-navy)]
+
+                transition-all
+                duration-300
+
+                hover:text-[var(--tiq-orange)]
+              "
+            >
+              Agent Login
+
+              <ArrowUpRight
+                size={13}
+                className="
+                  transition-transform
+
+                  group-hover:-translate-y-0.5
+                  group-hover:translate-x-0.5
+                "
+              />
+            </a>
+
+            {/* BECOME AN AGENT */}
+
+            <Link
+              href="/irctc-agent-registration/"
+              className="
+                group
+
+                flex
                 items-center
                 gap-2
 
-                xl:flex
+                rounded-[11px]
+
+                bg-[var(--tiq-orange)]
+
+                px-4
+                py-2.5
+
+                text-[11px]
+                font-semibold
+                tracking-[0.05em]
+
+                !text-white
+
+                shadow-[0_7px_18px_rgba(238,83,38,0.18)]
+
+                transition-all
+                duration-300
+
+                hover:-translate-y-0.5
+                hover:bg-[var(--tiq-orange-dark)]
+                hover:!text-white
               "
             >
-              {/* AGENT LOGIN */}
+              <span className="!text-white">
+                Become an Agent
+              </span>
+
+              <ArrowUpRight
+                size={14}
+                className="
+                  !text-white
+
+                  transition-transform
+                  duration-300
+
+                  group-hover:-translate-y-0.5
+                  group-hover:translate-x-0.5
+                "
+              />
+            </Link>
+
+            {/* WHATSAPP */}
+
+            <a
+              href="https://wa.me/917835025025"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Chat with us on WhatsApp"
+              className="
+                group
+
+                flex
+                h-10
+                w-10
+
+                items-center
+                justify-center
+
+                rounded-[11px]
+
+                bg-[#25D366]
+
+                !text-white
+
+                shadow-[0_6px_15px_rgba(37,211,102,0.18)]
+
+                transition-all
+                duration-300
+
+                hover:-translate-y-0.5
+              "
+            >
+              <FaWhatsapp
+                className="
+                  h-[19px]
+                  w-[19px]
+                  !text-white
+
+                  transition-transform
+                  duration-300
+
+                  group-hover:scale-110
+                "
+              />
+            </a>
+          </div>
+
+          {/* =====================================================
+              MOBILE MENU BUTTON
+          ===================================================== */}
+
+          <button
+            type="button"
+            onClick={() =>
+              setOpen((value) => !value)
+            }
+            aria-label={
+              open
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={open}
+            className="
+              relative
+              z-[110]
+
+              flex
+              h-10
+              w-10
+
+              items-center
+              justify-center
+
+              rounded-[10px]
+
+              border
+              border-[#10407A]/10
+
+              bg-white
+
+              text-[var(--tiq-navy)]
+
+              shadow-[0_4px_12px_rgba(7,31,61,0.08)]
+
+              transition-all
+              duration-300
+
+              hover:text-[var(--tiq-orange)]
+
+              xl:hidden
+            "
+          >
+            {open ? (
+              <X
+                size={20}
+                strokeWidth={2.5}
+              />
+            ) : (
+              <Menu
+                size={20}
+                strokeWidth={2.5}
+              />
+            )}
+          </button>
+        </div>
+
+        {/* =======================================================
+            MOBILE MENU
+        ======================================================= */}
+
+        <div
+          className={`
+            overflow-hidden
+            bg-white
+
+            transition-all
+            duration-300
+
+            xl:hidden
+
+            ${
+              open
+                ? "max-h-[calc(100vh-80px)] opacity-100"
+                : "max-h-0 opacity-0"
+            }
+          `}
+        >
+          <div
+            className="
+              mx-4
+              mb-4
+              mt-2
+
+              max-h-[calc(100vh-95px)]
+
+              overflow-y-auto
+
+              rounded-[18px]
+
+              border
+              border-[#10407A]/10
+
+              bg-white
+
+              p-3
+
+              shadow-[0_12px_30px_rgba(7,31,61,0.10)]
+            "
+          >
+            {/* MOBILE NAVIGATION */}
+
+            <nav
+              className="space-y-1"
+              aria-label="Mobile navigation"
+            >
+              {nav.map(([name, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={closeMenu}
+                  className={`
+                    group
+
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+
+                    rounded-[12px]
+
+                    px-4
+                    py-3
+
+                    text-[14px]
+                    font-semibold
+
+                    transition-all
+                    duration-200
+
+                    ${
+                      isActive(href)
+                        ? `
+                          bg-[var(--tiq-orange-soft)]
+                          text-[var(--tiq-orange)]
+                        `
+                        : `
+                          text-[var(--tiq-navy)]
+
+                          hover:bg-[#F5F8FC]
+                          hover:text-[var(--tiq-orange)]
+                        `
+                    }
+                  `}
+                >
+                  <span>{name}</span>
+
+                  <ArrowUpRight
+                    size={14}
+                    className="
+                      opacity-40
+
+                      transition-all
+
+                      group-hover:-translate-y-0.5
+                      group-hover:translate-x-0.5
+                      group-hover:opacity-100
+                    "
+                  />
+                </Link>
+              ))}
+
+              {/* MOBILE SERVICES */}
+
+              <div className="pt-1">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setServicesOpen(
+                      (value) => !value
+                    )
+                  }
+                  className={`
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+
+                    rounded-[12px]
+
+                    px-4
+                    py-3
+
+                    text-[14px]
+                    font-semibold
+
+                    transition-all
+
+                    ${
+                      servicesActive
+                        ? `
+                          bg-[var(--tiq-orange-soft)]
+                          text-[var(--tiq-orange)]
+                        `
+                        : `
+                          text-[var(--tiq-navy)]
+
+                          hover:bg-[#F5F8FC]
+                          hover:text-[var(--tiq-orange)]
+                        `
+                    }
+                  `}
+                >
+                  Services
+
+                  <ChevronDown
+                    size={17}
+                    strokeWidth={2.3}
+                    className={`
+                      transition-transform
+                      duration-300
+
+                      ${
+                        servicesOpen
+                          ? "rotate-180"
+                          : ""
+                      }
+                    `}
+                  />
+                </button>
+
+                <div
+                  className={`
+                    overflow-hidden
+                    transition-all
+                    duration-300
+
+                    ${
+                      servicesOpen
+                        ? "max-h-[700px] opacity-100"
+                        : "max-h-0 opacity-0"
+                    }
+                  `}
+                >
+                  <div
+                    className="
+                      ml-3
+                      mt-2
+                      space-y-1
+
+                      border-l-2
+                      border-[var(--tiq-orange)]/15
+
+                      pl-3
+                    "
+                  >
+                    {/* ALL SERVICES */}
+
+                    <Link
+                      href="/our-services/"
+                      onClick={closeMenu}
+                      className="
+                        group
+
+                        flex
+                        items-center
+                        justify-between
+
+                        rounded-[11px]
+
+                        bg-[#F5F8FC]
+
+                        px-3
+                        py-2.5
+
+                        text-[13px]
+                        font-bold
+
+                        text-[var(--tiq-navy)]
+                      "
+                    >
+                      All Services
+
+                      <ArrowUpRight
+                        size={14}
+                        className="
+                          transition-transform
+
+                          group-hover:-translate-y-0.5
+                          group-hover:translate-x-0.5
+                        "
+                      />
+                    </Link>
+
+                    {/* SERVICES */}
+
+                    {services.map(
+                      ([name, href]) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          onClick={closeMenu}
+                          className={`
+                            group
+
+                            flex
+                            items-center
+                            justify-between
+
+                            rounded-[11px]
+
+                            px-3
+                            py-2.5
+
+                            text-[13px]
+                            font-medium
+
+                            transition-all
+
+                            ${
+                              isActive(href)
+                                ? `
+                                  bg-[var(--tiq-orange-soft)]
+                                  text-[var(--tiq-orange)]
+                                `
+                                : `
+                                  text-[var(--tiq-muted)]
+
+                                  hover:bg-[#F5F8FC]
+                                  hover:text-[var(--tiq-navy)]
+                                `
+                            }
+                          `}
+                        >
+                          <span>{name}</span>
+
+                          <ArrowUpRight
+                            size={13}
+                            className="
+                              opacity-40
+
+                              transition-all
+
+                              group-hover:-translate-y-0.5
+                              group-hover:translate-x-0.5
+                              group-hover:opacity-100
+                            "
+                          />
+                        </Link>
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+            {/* MOBILE ACTIONS */}
+
+            <div className="mt-4 grid gap-2.5">
+              {/* LOGIN */}
 
               <a
                 href="https://b2b.traveliq.in"
                 target="_blank"
                 rel="noreferrer"
                 className="
-                  group
-
                   flex
-                  items-center
-                  gap-1.5
+                  min-h-12
 
-                  rounded-full
+                  items-center
+                  justify-center
+
+                  rounded-[12px]
 
                   border
-                  border-transparent
+                  border-[#10407A]/10
 
-                  px-3
-                  py-2
+                  bg-white
 
-                  text-[13px]
+                  px-4
+                  py-3
+
+                  text-sm
                   font-semibold
-                  tracking-[0.04em]
 
                   text-[var(--tiq-navy)]
 
+                  shadow-[0_4px_12px_rgba(7,31,61,0.05)]
+
                   transition-all
-                  duration-300
 
-                  hover:-translate-y-0.5
-                  hover:border-white
-                  hover:bg-white
                   hover:text-[var(--tiq-orange)]
-
-                  hover:shadow[
-                    4px_5px_10px_rgba(16,64,122,0.06),
-                    -3px_-3px_8px_rgba(255,255,255,0.9)
-                  ]
                 "
               >
                 Agent Login
-
-                <ArrowUpRight
-                  size={13}
-                  className="
-                    transition-transform
-
-                    group-hover:-translate-y-0.5
-                    group-hover:translate-x-0.5
-                  "
-                />
               </a>
 
-              {/* BECOME AN AGENT */}
+              {/* BECOME AGENT */}
 
               <Link
                 href="/irctc-agent-registration/"
+                onClick={closeMenu}
                 className="
-                  group
-
                   flex
+                  min-h-12
+
                   items-center
+                  justify-center
                   gap-2
 
-                  rounded-[19px]
-
-                  border
-                  border-white/40
+                  rounded-[12px]
 
                   bg-[var(--tiq-orange)]
 
                   px-4
-                  py-2.5
+                  py-3
 
-                  text-[11px]
+                  text-sm
                   font-semibold
-                  tracking-[0.05em]
 
                   !text-white
 
-                  shadow[
-                    7px_8px_18px_rgba(238,83,38,0.24),
-                    -4px_-4px_10px_rgba(255,255,255,0.72)
-                  ]
+                  shadow-[0_7px_16px_rgba(238,83,38,0.18)]
 
                   transition-all
-                  duration-300
 
-                  hover:-translate-y-1
                   hover:bg-[var(--tiq-orange-dark)]
-                  hover:!text-white
-
-                  hover:shadow[
-                    9px_11px_22px_rgba(238,83,38,0.28),
-                    -4px_-4px_10px_rgba(255,255,255,0.8)
-                  ]
                 "
               >
                 <span className="!text-white">
@@ -1038,16 +1434,8 @@ export default function Header() {
                 </span>
 
                 <ArrowUpRight
-                  size={14}
-                  className="
-                    !text-white
-
-                    transition-transform
-                    duration-300
-
-                    group-hover:-translate-y-0.5
-                    group-hover:translate-x-0.5
-                  "
+                  size={15}
+                  className="!text-white"
                 />
               </Link>
 
@@ -1059,639 +1447,83 @@ export default function Header() {
                 rel="noreferrer"
                 aria-label="Chat with us on WhatsApp"
                 className="
-                  group
-
                   flex
-                  h-10
-                  w-10
+                  min-h-12
 
                   items-center
                   justify-center
+                  gap-2
 
-                  rounded-[15px]
-
-                  border
-                  border-white/70
+                  rounded-[12px]
 
                   bg-[#25D366]
 
+                  px-4
+                  py-3
+
+                  text-sm
+                  font-semibold
+
                   !text-white
 
-                  shadow[
-                    6px_7px_15px_rgba(37,211,102,0.20),
-                    -4px_-4px_10px_rgba(255,255,255,0.85)
-                  ]
+                  shadow-[0_7px_16px_rgba(37,211,102,0.16)]
 
                   transition-all
-                  duration-300
 
-                  hover:-translate-y-1
-                  hover:!text-white
-
-                  hover:shadow[
-                    8px_10px_18px_rgba(37,211,102,0.24),
-                    -4px_-4px_10px_rgba(255,255,255,0.9)
-                  ]
+                  hover:-translate-y-0.5
                 "
               >
                 <FaWhatsapp
                   className="
-                    h-[19px]
-                    w-[19px]
-
+                    h-4
+                    w-4
                     !text-white
-
-                    transition-transform
-                    duration-300
-
-                    group-hover:scale-110
                   "
                 />
+
+                <span className="!text-white">
+                  WhatsApp
+                </span>
               </a>
             </div>
 
-            {/* ===================================================
-                MOBILE MENU BUTTON
-            =================================================== */}
+            {/* HELP CARD */}
 
-            <button
-              type="button"
-              onClick={() =>
-                setOpen((value) => !value)
-              }
-              aria-label={
-                open
-                  ? "Close navigation menu"
-                  : "Open navigation menu"
-              }
-              aria-expanded={open}
-              className="
-                relative
-                z-[110]
-
-                flex
-                h-10
-                w-10
-
-                items-center
-                justify-center
-
-                rounded-[15px]
-
-                border
-                border-white
-
-                bg-[var(--tiq-bg)]
-
-                text-[var(--tiq-navy)]
-
-                shadow[
-                  5px_6px_12px_rgba(16,64,122,0.10),
-                  -4px_-4px_10px_rgba(255,255,255,0.95)
-                ]
-
-                transition-all
-                duration-300
-
-                hover:-translate-y-0.5
-                hover:text-[var(--tiq-orange)]
-
-                active:translate-y-0
-
-                xl:hidden
-              "
-            >
-              {open ? (
-                <X
-                  size={20}
-                  strokeWidth={2.5}
-                />
-              ) : (
-                <Menu
-                  size={20}
-                  strokeWidth={2.5}
-                />
-              )}
-            </button>
-          </div>
-
-          {/* =====================================================
-              MOBILE MENU
-          ===================================================== */}
-
-          <div
-            className={`
-              overflow-hidden
-
-              transition-all
-              duration-500
-
-              xl:hidden
-
-              ${
-                open
-                  ? "max-h-[calc(100vh-90px)] opacity-100"
-                  : "max-h-0 opacity-0"
-              }
-            `}
-          >
             <div
               className="
-                mt-3
+                mt-4
 
-                max-h-[calc(100vh-95px)]
+                rounded-[14px]
 
-                overflow-y-auto
+                bg-[#F5F8FC]
 
-                rounded-[28px]
+                px-4
+                py-4
 
-                border
-                border-white
-
-                bg-[var(--tiq-bg)]
-
-                p-3
-
-                shadow[
-                  14px_17px_38px_rgba(16,64,122,0.14),
-                  -8px_-8px_25px_rgba(255,255,255,0.95)
-                ]
+                text-center
               "
             >
-              {/* MOBILE NAVIGATION */}
-
-              <nav
-                className="space-y-1"
-                aria-label="Mobile navigation"
-              >
-                {nav.map(([name, href]) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    onClick={closeMenu}
-                    className={`
-                      group
-
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-
-                      rounded-[17px]
-
-                      border
-                      border-transparent
-
-                      px-4
-                      py-3
-
-                      text-[14px]
-                      font-semibold
-                      tracking-[0.02em]
-
-                      transition-all
-                      duration-200
-
-                      ${
-                        isActive(href)
-                          ? `
-                            border-white
-                            bg-[var(--tiq-orange-soft)]
-                            text-[var(--tiq-orange)]
-
-                            shadow[
-                              inset_3px_3px_7px_rgba(238,83,38,0.04),
-                              inset_-3px_-3px_7px_rgba(255,255,255,0.9)
-                            ]
-                          `
-                          : `
-                            text-[var(--tiq-navy)]
-
-                            hover:-translate-y-0.5
-                            hover:border-white
-                            hover:bg-white
-                            hover:text-[var(--tiq-orange)]
-
-                            hover:shadow[
-                              5px_6px_12px_rgba(16,64,122,0.06),
-                              -4px_-4px_10px_rgba(255,255,255,0.9)
-                            ]
-                          `
-                      }
-                    `}
-                  >
-                    <span>{name}</span>
-
-                    <ArrowUpRight
-                      size={14}
-                      className="
-                        opacity-50
-
-                        transition-all
-
-                        group-hover:-translate-y-0.5
-                        group-hover:translate-x-0.5
-                        group-hover:opacity-100
-                      "
-                    />
-                  </Link>
-                ))}
-
-                {/* MOBILE SERVICES */}
-
-                <div className="pt-1">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setServicesOpen(
-                        (value) => !value
-                      )
-                    }
-                    className={`
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-
-                      rounded-[17px]
-
-                      border
-                      border-transparent
-
-                      px-4
-                      py-3
-
-                      text-[14px]
-                      font-semibold
-                      tracking-[0.02em]
-
-                      transition-all
-
-                      ${
-                        servicesActive
-                          ? `
-                            border-white
-                            bg-[var(--tiq-orange-soft)]
-                            text-[var(--tiq-orange)]
-                          `
-                          : `
-                            text-[var(--tiq-navy)]
-
-                            hover:bg-white
-                            hover:text-[var(--tiq-orange)]
-                          `
-                      }
-                    `}
-                  >
-                    Services
-
-                    <ChevronDown
-                      size={17}
-                      strokeWidth={2.3}
-                      className={`
-                        transition-transform
-                        duration-300
-
-                        ${
-                          servicesOpen
-                            ? "rotate-180"
-                            : ""
-                        }
-                      `}
-                    />
-                  </button>
-
-                  <div
-                    className={`
-                      overflow-hidden
-
-                      transition-all
-                      duration-300
-
-                      ${
-                        servicesOpen
-                          ? "max-h-[700px] opacity-100"
-                          : "max-h-0 opacity-0"
-                      }
-                    `}
-                  >
-                    <div
-                      className="
-                        ml-3
-                        mt-2
-
-                        space-y-1
-
-                        border-l-2
-                        border-[var(--tiq-navy)]/10
-
-                        pl-3
-                      "
-                    >
-                      {/* ALL SERVICES */}
-
-                      <Link
-                        href="/our-services/"
-                        onClick={closeMenu}
-                        className="
-                          group
-
-                          flex
-                          items-center
-                          justify-between
-
-                          rounded-[14px]
-
-                          bg-[var(--tiq-surface-blue)]
-
-                          px-3
-                          py-2.5
-
-                          text-[13px]
-                          font-bold
-                          tracking-[0.02em]
-
-                          text-[var(--tiq-navy)]
-
-                          shadow[
-                            inset_2px_2px_6px_rgba(16,64,122,0.035),
-                            inset_-2px_-2px_6px_rgba(255,255,255,0.9)
-                          ]
-                        "
-                      >
-                        All Services
-
-                        <ArrowUpRight
-                          size={14}
-                          className="
-                            transition-transform
-
-                            group-hover:-translate-y-0.5
-                            group-hover:translate-x-0.5
-                          "
-                        />
-                      </Link>
-
-                      {/* SERVICES */}
-
-                      {services.map(
-                        ([name, href]) => (
-                          <Link
-                            key={href}
-                            href={href}
-                            onClick={closeMenu}
-                            className={`
-                              group
-
-                              flex
-                              items-center
-                              justify-between
-
-                              rounded-[14px]
-
-                              px-3
-                              py-2.5
-
-                              text-[13px]
-                              font-medium
-                              tracking-[0.015em]
-
-                              transition-all
-
-                              ${
-                                isActive(href)
-                                  ? `
-                                    bg-[var(--tiq-orange-soft)]
-                                    text-[var(--tiq-orange)]
-                                  `
-                                  : `
-                                    text-[var(--tiq-muted)]
-
-                                    hover:bg-white
-                                    hover:text-[var(--tiq-navy)]
-                                  `
-                              }
-                            `}
-                          >
-                            <span>{name}</span>
-
-                            <ArrowUpRight
-                              size={13}
-                              className="
-                                opacity-40
-
-                                transition-all
-
-                                group-hover:-translate-y-0.5
-                                group-hover:translate-x-0.5
-                                group-hover:opacity-100
-                              "
-                            />
-                          </Link>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </nav>
-
-              {/* MOBILE ACTIONS */}
-
-              <div className="mt-4 grid gap-2.5">
-                {/* MOBILE LOGIN */}
-
-                <a
-                  href="https://b2b.traveliq.in"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="
-                    flex
-                    min-h-12
-
-                    items-center
-                    justify-center
-
-                    rounded-[17px]
-
-                    border
-                    border-white
-
-                    bg-[var(--tiq-bg)]
-
-                    px-4
-                    py-3
-
-                    text-sm
-                    font-semibold
-                    tracking-[0.03em]
-
-                    text-[var(--tiq-navy)]
-
-                    shadow[
-                      6px_7px_14px_rgba(16,64,122,0.08),
-                      -5px_-5px_12px_rgba(255,255,255,0.95)
-                    ]
-
-                    transition-all
-
-                    hover:-translate-y-0.5
-                    hover:text-[var(--tiq-orange)]
-                  "
-                >
-                  Agent Login
-                </a>
-
-                {/* MOBILE BECOME AGENT */}
-
-                <Link
-                  href="/irctc-agent-registration/"
-                  onClick={closeMenu}
-                  className="
-                    flex
-                    min-h-12
-
-                    items-center
-                    justify-center
-                    gap-2
-
-                    rounded-[17px]
-
-                    border
-                    border-white/40
-
-                    bg-[var(--tiq-orange)]
-
-                    px-4
-                    py-3
-
-                    text-sm
-                    font-semibold
-                    tracking-[0.04em]
-
-                    !text-white
-
-                    shadow[
-                      8px_9px_18px_rgba(238,83,38,0.22),
-                      -4px_-4px_10px_rgba(255,255,255,0.7)
-                    ]
-
-                    transition-all
-
-                    hover:-translate-y-0.5
-                    hover:bg-[var(--tiq-orange-dark)]
-                    hover:!text-white
-                  "
-                >
-                  <span className="!text-white">
-                    Become an Agent
-                  </span>
-
-                  <ArrowUpRight
-                    size={15}
-                    className="!text-white"
-                  />
-                </Link>
-
-                {/* MOBILE WHATSAPP */}
-
-                <a
-                  href="https://wa.me/917835025025"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Chat with us on WhatsApp"
-                  className="
-                    flex
-                    min-h-12
-
-                    items-center
-                    justify-center
-                    gap-2
-
-                    rounded-[17px]
-
-                    border
-                    border-white/70
-
-                    bg-[#25D366]
-
-                    px-4
-                    py-3
-
-                    text-sm
-                    font-semibold
-                    tracking-[0.04em]
-
-                    !text-white
-
-                    shadow[
-                      7px_8px_18px_rgba(37,211,102,0.18),
-                      -4px_-4px_10px_rgba(255,255,255,0.8)
-                    ]
-
-                    transition-all
-
-                    hover:-translate-y-0.5
-                    hover:!text-white
-                  "
-                >
-                  <FaWhatsapp
-                    className="
-                      h-4
-                      w-4
-                      !text-white
-                    "
-                  />
-
-                  <span className="!text-white">
-                    WhatsApp
-                  </span>
-                </a>
-              </div>
-
-              {/* HELP CARD */}
-
-              <div
+              <p
                 className="
-                  mt-4
+                  text-[11px]
+                  font-medium
+                  leading-5
 
-                  rounded-[18px]
-
-                  bg-[var(--tiq-surface-blue)]
-
-                  px-4
-                  py-4
-
-                  text-center
-
-                  shadow[
-                    inset_3px_3px_8px_rgba(16,64,122,0.035),
-                    inset_-3px_-3px_8px_rgba(255,255,255,0.9)
-                  ]
+                  text-[var(--tiq-muted)]
                 "
               >
-                <p
-                  className="
-                    text-[11px]
-                    font-medium
-                    leading-5
-                    tracking-[0.01em]
+                Need help getting started?
+                <br />
 
-                    text-[var(--tiq-muted)]
+                <span
+                  className="
+                    font-semibold
+                    text-[var(--tiq-navy)]
                   "
                 >
-                  Need help getting started?
-                  <br />
-
-                  <span
-                    className="
-                      font-semibold
-                      text-[var(--tiq-navy)]
-                    "
-                  >
-                    Talk to a TravelIQ specialist.
-                  </span>
-                </p>
-              </div>
+                  Talk to a TravelIQ specialist.
+                </span>
+              </p>
             </div>
           </div>
         </div>
@@ -1703,11 +1535,10 @@ export default function Header() {
 
       {!isHome && (
         <div
-          className={
-            isScrolled
-              ? "h-[84px]"
-              : "h-[82px]"
-          }
+          className="
+            h-[80px]
+            lg:h-[82px]
+          "
           aria-hidden="true"
         />
       )}

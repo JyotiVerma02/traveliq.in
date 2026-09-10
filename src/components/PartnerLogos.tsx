@@ -11,14 +11,16 @@ export default function PartnerLogos() {
   return (
     <section
       className="
-        relative mx-3 overflow-hidden
-        rounded-[28px]
-        border border-white/[0.07]
-        bg-[#0A1B32]
-        py-6
-        shadow-[-8px_-8px_20px_rgba(255,255,255,0.035),_12px_14px_28px_rgba(0,0,0,0.35)]
+        relative mx-3 mt-6 overflow-hidden
+        rounded-[24px]
+        border border-[#10407A]/10
+        bg-white
+        py-7
+        shadow-[0_8px_30px_rgba(7,31,61,0.08)]
         sm:mx-5
+        sm:mt-8
         lg:mx-8
+        lg:mt-10
       "
     >
       {/* Soft background glow */}
@@ -29,7 +31,7 @@ export default function PartnerLogos() {
           h-64 w-64
           -translate-y-1/2
           rounded-full
-          bg-[#EE5326]/[0.045]
+          bg-[#EE5326]/[0.05]
           blur-[100px]
         "
       />
@@ -41,32 +43,29 @@ export default function PartnerLogos() {
           h-64 w-64
           -translate-y-1/2
           rounded-full
-          bg-[#10407A]/20
+          bg-[#10407A]/[0.06]
           blur-[100px]
         "
       />
 
-      {/* Subtle inner highlight */}
-      <div className="pointer-events-none absolute inset-[1px] rounded-[27px] border border-white/[0.025]" />
-
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         {/* Heading */}
-        <div className="mb-5 text-center">
+        <div className="mb-6 text-center">
           <div className="mb-2 flex items-center justify-center gap-3">
             <span className="h-px w-7 bg-[#EE5326]/70" />
 
-            <span className="text-[10px] font-medium text-[#EE5326]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#EE5326]">
               Our Network
             </span>
 
             <span className="h-px w-7 bg-[#EE5326]/70" />
           </div>
 
-          <h2 className="text-lg font-semibold text-white sm:text-xl">
+          <h2 className="text-lg font-semibold text-[#071F3D] sm:text-xl">
             Trusted Travel Partners
           </h2>
 
-          <p className="mt-1 text-xs text-white/45">
+          <p className="mt-1 text-xs text-[#071F3D]/50">
             Connected with trusted names across travel, aviation and railway.
           </p>
         </div>
@@ -77,33 +76,26 @@ export default function PartnerLogos() {
             <div
               key={partner.name}
               className="
-                group relative flex min-h-[68px]
+                group relative flex min-h-[72px]
                 items-center justify-center
                 overflow-hidden
-                rounded-[16px]
-                border border-white/[0.06]
-                bg-[#071428]
+                rounded-[14px]
+                border border-[#10407A]/10
+                bg-[#F8FAFC]
                 px-3 py-3
                 text-center
 
-                shadow-[
-                  inset_2px_2px_6px_rgba(255,255,255,0.02),
-                  inset_-3px_-3px_8px_rgba(0,0,0,0.25)
-                ]
+                shadow-[inset_1px_1px_4px_rgba(255,255,255,0.9),0_3px_10px_rgba(7,31,61,0.05)]
 
                 transition-all duration-300
 
                 hover:-translate-y-0.5
-                hover:border-[#EE5326]/20
-                hover:bg-[#09192E]
-
-                hover:shadow-[
-                  -3px_-3px_8px_rgba(255,255,255,0.025),
-                  5px_6px_12px_rgba(0,0,0,0.3)
-                ]
+                hover:border-[#EE5326]/25
+                hover:bg-white
+                hover:shadow-[0_8px_18px_rgba(7,31,61,0.09)]
               "
             >
-              {/* Card orange glow */}
+              {/* Orange glow */}
               <div
                 className="
                   pointer-events-none absolute
@@ -120,7 +112,7 @@ export default function PartnerLogos() {
 
               <div className="relative">
                 {/* Number */}
-                <div className="mb-1 text-[8px] font-medium text-white/20">
+                <div className="mb-1 text-[8px] font-semibold text-[#10407A]/25">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
@@ -131,7 +123,7 @@ export default function PartnerLogos() {
                       h-1.5 w-1.5 shrink-0
                       rounded-full
                       bg-[#EE5326]
-                      shadow-[0_0_8px_rgba(238,83,38,0.35)]
+                      shadow-[0_0_7px_rgba(238,83,38,0.25)]
                       transition-transform duration-300
                       group-hover:scale-125
                     "
@@ -139,10 +131,10 @@ export default function PartnerLogos() {
 
                   <span
                     className="
-                      text-xs font-medium
-                      text-white/85
+                      text-xs font-semibold
+                      text-[#071F3D]/85
                       transition-colors duration-300
-                      group-hover:text-white
+                      group-hover:text-[#071F3D]
                       sm:text-sm
                     "
                   >
@@ -151,7 +143,7 @@ export default function PartnerLogos() {
                 </div>
 
                 {/* Partner Type */}
-                <p className="mt-0.5 text-[9px] text-white/30">
+                <p className="mt-0.5 text-[9px] font-medium text-[#10407A]/40">
                   {partner.name === "IRCTC" && "Official Partner"}
                   {partner.name === "IATA" && "Accredited"}
                   {partner.name === "Air India" && "Airline Partner"}
@@ -165,17 +157,17 @@ export default function PartnerLogos() {
         </div>
 
         {/* Bottom Trust Line */}
-        <div className="mt-4 flex items-center justify-center gap-2">
+        <div className="mt-5 flex items-center justify-center gap-2">
           <span
             className="
               h-1.5 w-1.5
               rounded-full
               bg-[#25D366]
-              shadow-[0_0_8px_rgba(37,211,102,0.4)]
+              shadow-[0_0_7px_rgba(37,211,102,0.35)]
             "
           />
 
-          <p className="text-[10px] text-white/35">
+          <p className="text-[10px] font-medium text-[#071F3D]/40">
             Reliable connections across the travel ecosystem
           </p>
         </div>
