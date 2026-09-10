@@ -199,7 +199,7 @@ export default function FaqSection() {
               duration-300
               hover:-translate-y-0.5
               hover:bg-[#10407A]
-              hover:text-white
+         hover:!text-white
               hover:shadow-[8px_8px_18px_rgba(16,64,122,0.18)]
             "
           >
