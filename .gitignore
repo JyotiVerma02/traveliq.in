@@ -103,3 +103,8 @@ tmp/
 
 *.orig
 *.rej
+
+# AI agent instruction files (auto-generated)
+
+AGENTS.md
+CLAUDE.md

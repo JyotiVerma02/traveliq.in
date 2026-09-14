@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="Bus Tickets"
-      image="/images/services/bus-tickets.jpg"
+      image="/images/services/bus-tickets.webp"
       imageAlt="Modern luxury air-conditioned coach bus - Book Bus Tickets with TravelIQ"
       intro="Why wait in long queues at bus ticket counters for your next bus travel? Traveliq is a cost-effective and inexpensive internet trip booking service."
       sections={[

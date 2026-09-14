@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="Air Tickets"
-      image="/images/services/air-tickets.jpg"
+      image="/images/services/air-tickets.webp"
       imageAlt="Passenger airplane flying above clouds - Book Air Tickets with TravelIQ"
       intro="We are an IATA-accredited travel agent with a central reservation system and ticket inventory for all domestic and international airlines."
       sections={[

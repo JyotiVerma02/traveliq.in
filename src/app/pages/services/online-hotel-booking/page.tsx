@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="Hotel Booking"
-      image="/images/services/hotel-booking.jpg"
+      image="/images/services/hotel-booking.webp"
       imageAlt="Luxury hotel room with king bed and city view - Book Hotels with TravelIQ"
       intro="TraveliQ provides a diverse selection of luxury, deluxe, and budget hotels. Choose to stay in luxury and comfort with the best hotel booking discounts available."
       sections={[

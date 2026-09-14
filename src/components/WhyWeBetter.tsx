@@ -619,11 +619,10 @@ export default function WhyWeBetter() {
                 </div>
 
                 <Image
-                  src="/logo1.png"
+                  src="/logo1.webp"
                   alt="TravelIQ Logo"
                   width={400}
                   height={180}
-                  priority
                   sizes="(max-width: 768px) 280px, 400px"
                   className="
                     relative

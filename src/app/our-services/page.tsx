@@ -19,49 +19,49 @@ const services = [
     title: "Air Tickets",
     description:
       "Travel IQ offers competitive fares for domestic and international air tickets with reliable booking support.",
-    image: "/images/services/air-tickets.jpg",
+    image: "/images/services/air-tickets.webp",
     href: "/pages/services/online-air-ticket-booking",
   },
   {
     title: "Bus Tickets",
     description:
       "Book bus tickets with convenient online booking options and travel support across major routes.",
-    image: "/images/services/bus-tickets.jpg",
+    image: "/images/services/bus-tickets.webp",
     href: "/pages/services/bus-ticket-booking",
   },
   {
     title: "Hotel Booking",
     description:
       "Find hotels worldwide with attractive deals and offers designed to make every journey comfortable.",
-    image: "/images/services/hotel-booking.jpg",
+    image: "/images/services/hotel-booking.webp",
     href: "/pages/services/online-hotel-booking",
   },
   {
     title: "IRCTC Domestic Packages",
     description:
       "Book branded IRCTC domestic tour packages and create additional earning opportunities for your business.",
-    image: "/images/services/irctc-domestic-packages.jpg",
+    image: "/images/services/irctc-domestic-packages.webp",
     href: "/pages/services/irctc-domestic-packages",
   },
   {
     title: "Tour Packages",
     description:
       "Explore carefully planned domestic and international holiday packages for memorable travel experiences.",
-    image: "/images/services/tour-packages.jpg",
+    image: "/images/services/tour-packages.webp",
     href: "/pages/services/irctc-tour-packages",
   },
   {
     title: "Railway Reservations",
     description:
       "Book railway tickets across India with convenient reservation support for different travel requirements.",
-    image: "/images/services/railway-reservations.jpg",
+    image: "/images/services/railway-reservations.webp",
     href: "/pages/services/railway-reservations",
   },
   {
     title: "Class 3 Digital Signature",
     description:
       "Get Class 3 Digital Signature Certificates with solutions designed for business and professional requirements.",
-    image: "/images/services/digital-signature.jpg",
+    image: "/images/services/digital-signature.webp",
     href: "/pages/services/digital-signature-provider-in-gurgaon",
   },
 ];

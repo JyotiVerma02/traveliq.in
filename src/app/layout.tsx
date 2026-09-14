@@ -8,8 +8,10 @@ import Footer from "@/components/Footer";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -49,15 +51,6 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} h-full antialiased`}
     >
-      <head>
-        <link
-          rel="preload"
-          href="/vande_bharat_hero.jpg"
-          as="image"
-          type="image/jpeg"
-          fetchPriority="high"
-        />
-      </head>
       <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">
         <div className="flex min-h-screen flex-col">
           {/* ================= HEADER ================= */}

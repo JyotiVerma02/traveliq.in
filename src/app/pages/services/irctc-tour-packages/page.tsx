@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="Tour Packages"
-      image="/images/services/tour-packages.jpg"
+      image="/images/services/tour-packages.webp"
       imageAlt="Beautiful Indian travel destination - Book Holiday Tour Packages with TravelIQ"
       intro="Making a family vacation unforgettable begins with choosing an exciting destination that matches your dreamy expectations."
       sections={[

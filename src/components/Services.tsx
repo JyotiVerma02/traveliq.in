@@ -6,12 +6,12 @@ import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
 const services = [
-  ["Air Tickets", "Travel IQ is offering the cheapest fares for all domestic & International air tickets.", "/pages/services/online-air-ticket-booking/", "/images/services/air-tickets.jpg"],
-  ["Bus Tickets", "TraveliQ is India's leading provider of online bus ticketing services that provide comfortable bus and train travel.", "/pages/services/bus-ticket-booking/", "/images/services/bus-tickets.jpg"],
-  ["Hotel Booking", "You can get the latest deals and offers on hotel bookings all over the world.", "/pages/services/online-hotel-booking/", "/images/services/hotel-booking.jpg"],
-  ["IRCTC Domestic Packages", "Book Branded IRCTC Domestic tour packages and earn commission.", "/pages/services/irctc-domestic-packages/", "/images/services/irctc-domestic-packages.jpg"],
-  ["Tour Packages", "Best tour packages for domestic and international holidays", "/pages/services/irctc-tour-packages/", "/images/services/tour-packages.jpg"],
-  ["IRCTC Agency", "IRCTC Agent Registration in very affordable price. OTP and DC Based Login Authentication", "/irctc-agent-registration/", "/images/services/railway-reservations.jpg"],
+  ["Air Tickets", "Travel IQ is offering the cheapest fares for all domestic & International air tickets.", "/pages/services/online-air-ticket-booking/", "/images/services/air-tickets.webp"],
+  ["Bus Tickets", "TraveliQ is India's leading provider of online bus ticketing services that provide comfortable bus and train travel.", "/pages/services/bus-ticket-booking/", "/images/services/bus-tickets.webp"],
+  ["Hotel Booking", "You can get the latest deals and offers on hotel bookings all over the world.", "/pages/services/online-hotel-booking/", "/images/services/hotel-booking.webp"],
+  ["IRCTC Domestic Packages", "Book Branded IRCTC Domestic tour packages and earn commission.", "/pages/services/irctc-domestic-packages/", "/images/services/irctc-domestic-packages.webp"],
+  ["Tour Packages", "Best tour packages for domestic and international holidays", "/pages/services/irctc-tour-packages/", "/images/services/tour-packages.webp"],
+  ["IRCTC Agency", "IRCTC Agent Registration in very affordable price. OTP and DC Based Login Authentication", "/irctc-agent-registration/", "/images/services/railway-reservations.webp"],
 ] as const;
 
 export default function Services() {

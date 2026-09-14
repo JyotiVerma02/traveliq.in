@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="IRCTC Domestic Packages"
-      image="/images/services/irctc-domestic-packages.jpg"
+      image="/images/services/irctc-domestic-packages.webp"
       imageAlt="Indian train on scenic landscape - IRCTC Domestic Tour Packages by TravelIQ"
       intro="Book Branded IRCTC Domestic tour packages and earn commission."
       sections={[

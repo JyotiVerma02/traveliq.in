@@ -18,7 +18,7 @@ export const servicesData: ServiceItem[] = [
     title: "Air Tickets",
     description:
       "Travel IQ is offering the cheapest fares for all domestic & International air tickets.",
-    image: "/images/services/air-tickets.jpg",
+    image: "/images/services/air-tickets.webp",
     href: "/pages/services/online-air-ticket-booking",
     tags: ["AGENTS", "GENAI", "AUTOMATION"],
   },
@@ -26,7 +26,7 @@ export const servicesData: ServiceItem[] = [
     title: "Web Platforms",
     description:
       "High-performance web products engineered to scale — from first release to enterprise-grade platforms.",
-    image: "/images/services/bus-tickets.jpg",
+    image: "/images/services/bus-tickets.webp",
     href: "/pages/services/bus-ticket-booking",
     tags: ["NEXT.JS", "REACT", "NODE.JS"],
   },
@@ -34,7 +34,7 @@ export const servicesData: ServiceItem[] = [
     title: "Bus Tickets",
     description:
       "TraveliQ is India's leading provider of online bus ticketing services that provide comfortable bus and train travel.",
-    image: "/images/services/bus-tickets.jpg",
+    image: "/images/services/bus-tickets.webp",
     href: "/pages/services/bus-ticket-booking",
     tags: ["REACT NATIVE", "FLUTTER", "SWIFT"],
   },
@@ -42,7 +42,7 @@ export const servicesData: ServiceItem[] = [
     title: "Hotel Booking",
     description:
       "You can get the latest deals and offers on hotel bookings all over the world.",
-    image: "/images/services/hotel-booking.jpg",
+    image: "/images/services/hotel-booking.webp",
     href: "/pages/services/online-hotel-booking",
     tags: ["FIGMA", "RESEARCH", "SYSTEMS"],
   },
@@ -50,7 +50,7 @@ export const servicesData: ServiceItem[] = [
     title: "IRCTC Domestic Packages",
     description:
       "Book Branded IRCTC Domestic tour packages and earn commission.",
-    image: "/images/services/irctc-domestic-packages.jpg",
+    image: "/images/services/irctc-domestic-packages.webp",
     href: "/pages/services/irctc-domestic-packages",
     tags: ["IRCTC", "PACKAGES", "DOMESTIC"],
   },
@@ -58,7 +58,7 @@ export const servicesData: ServiceItem[] = [
     title: "Tour Packages",
     description:
       "Best tour packages for domestic and international holidays.",
-    image: "/images/services/tour-packages.jpg",
+    image: "/images/services/tour-packages.webp",
     href: "/pages/services/irctc-tour-packages",
     tags: ["HOLIDAYS", "TOURS", "VACATION"],
   },
@@ -66,7 +66,7 @@ export const servicesData: ServiceItem[] = [
     title: "Railway Reservations",
     description:
       "Book railway tickets across India with convenient reservation support for different travel requirements.",
-    image: "/images/services/railway-reservations.jpg",
+    image: "/images/services/railway-reservations.webp",
     href: "/pages/services/railway-reservations",
     tags: ["TRAINS", "IRCTC", "RESERVATION"],
   },
@@ -74,7 +74,7 @@ export const servicesData: ServiceItem[] = [
     title: "Class 3 Digital Signature",
     description:
       "Get Class 3 Digital Signature Certificates with solutions designed for business and professional requirements.",
-    image: "/images/services/digital-signature.jpg",
+    image: "/images/services/digital-signature.webp",
     href: "/pages/services/digital-signature-provider-in-gurgaon",
     tags: ["DSC", "SECURITY", "DIGITAL"],
   },

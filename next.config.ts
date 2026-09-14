@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
   // Optimize CSS — splits critical from non-critical CSS to remove render blocking
   experimental: {
     optimizeCss: true,
+    optimizePackageImports: ["lucide-react"],
   },
 
   // Add security and caching headers to all routes

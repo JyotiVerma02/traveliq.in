@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="Class 3 Digital Signature"
-      image="/images/services/digital-signature.jpg"
+      image="/images/services/digital-signature.webp"
       imageAlt="Digital security and electronic signature on laptop - Class 3 DSC by TravelIQ"
       intro="As part of the RCAI hierarchy arrangement of Controller of Certifying Authorities (CCA) in India, a Class 3 Digital Signature Certificate (DSC) renders the highest level of trust and assurance."
       sections={[

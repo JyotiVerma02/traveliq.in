@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { ArrowRight, PlayCircle, Video, BookOpen, UsersRound } from "lucide-react";
-import VideoGalleryGrid from "@/components/VideoGalleryGrid";
+
+const VideoGalleryGrid = dynamic(() => import("@/components/VideoGalleryGrid"));
 
 export const metadata: Metadata = {
   title: "Video Gallery | TravelIQ",

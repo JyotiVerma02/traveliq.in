@@ -4,12 +4,12 @@ import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  FaWhatsapp,
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaYoutube,
-} from "react-icons/fa";
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  WhatsAppIcon,
+  YouTubeIcon,
+} from "@/components/icons";
 import {
   Mail,
   MapPin,
@@ -41,16 +41,16 @@ const clayCardHover =
 const socialLinks = [
   {
     name: "Facebook",
-    href: "#",
-    icon: FaFacebookF,
+    href: "https://www.facebook.com/traveliqindia",
+    icon: FacebookIcon,
     bg: "bg-[#1877F2]",
     shadow:
       "shadow-[0_8px_20px_rgba(24,119,242,0.28)] hover:shadow-[0_12px_26px_rgba(24,119,242,0.38)]",
   },
   {
     name: "Instagram",
-    href: "#",
-    icon: FaInstagram,
+    href: "https://www.instagram.com/traveliqindia/",
+    icon: InstagramIcon,
     bg: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#515BD4]",
     shadow:
       "shadow-[0_8px_20px_rgba(221,42,123,0.25)] hover:shadow-[0_12px_26px_rgba(221,42,123,0.38)]",
@@ -58,7 +58,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/travel-iq-services-private-limited/",
-    icon: FaLinkedinIn,
+    icon: LinkedInIcon,
     bg: "bg-[#0A66C2]",
     shadow:
       "shadow-[0_8px_20px_rgba(10,102,194,0.28)] hover:shadow-[0_12px_26px_rgba(10,102,194,0.4)]",
@@ -66,7 +66,7 @@ const socialLinks = [
   {
     name: "YouTube",
     href: "#",
-    icon: FaYoutube,
+    icon: YouTubeIcon,
     bg: "bg-[#FF0000]",
     shadow:
       "shadow-[0_8px_20px_rgba(255,0,0,0.24)] hover:shadow-[0_12px_26px_rgba(255,0,0,0.38)]",
@@ -189,7 +189,7 @@ export default function ContactPage() {
             className={`group flex min-h-[205px] flex-col items-center justify-center rounded-[24px] p-6 text-center ${clayCard} ${clayCardHover}`}
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EFFFF5] text-[#25D366] shadow-inner transition duration-300 group-hover:scale-105">
-              <FaWhatsapp className="h-6 w-6" />
+              <WhatsAppIcon className="h-6 w-6" />
             </div>
 
             <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.18em] text-[#9AA7B8]">
@@ -341,7 +341,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#25D366] shadow-[5px_7px_18px_rgba(16,64,122,0.08)]">
-                    <FaWhatsapp className="h-6 w-6" />
+                    <WhatsAppIcon className="h-6 w-6" />
                   </div>
                 </div>
 
@@ -357,7 +357,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-5 py-3.5 text-sm font-bold !text-white shadow-[0_12px_24px_rgba(37,211,102,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20BD5A] hover:shadow-[0_16px_30px_rgba(37,211,102,0.36)]"
                 >
-                  <FaWhatsapp className="h-5 w-5 !text-white" />
+                  <WhatsAppIcon className="h-5 w-5 !text-white" />
 
                   <span className="!text-white">
                     Chat on WhatsApp

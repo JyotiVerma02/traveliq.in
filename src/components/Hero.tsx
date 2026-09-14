@@ -9,7 +9,8 @@ import {
   Sparkles,
   TrainFront,
 } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import HeroMedia from "@/components/HeroMedia";
+import { WhatsAppIcon } from "@/components/icons";
 
 const stats = [
   {
@@ -67,94 +68,7 @@ const reassurance = [
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#071F3D]">
-      {/* =====================================================
-          VIDEO / IMAGE HERO BACKGROUND
-      ====================================================== */}
-      <div className="absolute inset-0 z-0">
-        {/* Lightweight Mobile Background Image (Saves 2.04 MB payload on mobile) */}
-        <img
-          src="/vande_bharat_hero.jpg"
-          alt="TravelIQ travel destinations"
-          className="h-full w-full object-cover object-center lg:hidden"
-        />
-
-        {/* Desktop Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          poster="/vande_bharat_hero.jpg"
-          aria-label="TravelIQ travel destinations montage"
-          className="
-            hidden
-            h-full
-            w-full
-            object-cover
-            object-center
-            lg:block
-          "
-        >
-          <track kind="captions" src="" default />
-          <source
-            src="/traveliq_hero_slider.mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        {/* Light overall overlay */}
-        <div className="absolute inset-0 bg-[#071F3D]/18" />
-
-        {/* Center readability overlay */}
-        <div
-          className="
-            absolute
-            inset-0
-            bg-gradient-to-r
-            from-[#071F3D]/35
-            via-[#071F3D]/60
-            to-[#071F3D]/35
-          "
-        />
-
-        {/* Slightly stronger center area */}
-        <div
-          className="
-            absolute
-            inset-0
-            bg-[radial-gradient(circle_at_center,rgba(7,31,61,0.58)_0%,rgba(7,31,61,0.32)_38%,rgba(7,31,61,0.05)_72%)]
-          "
-        />
-
-        {/* Bottom fade */}
-        <div
-          className="
-            absolute
-            inset-x-0
-            bottom-0
-            h-[32%]
-            bg-gradient-to-t
-            from-[#071F3D]/85
-            via-[#071F3D]/30
-            to-transparent
-          "
-        />
-
-        {/* Subtle orange glow */}
-        <div
-          className="
-            absolute
-            right-[5%]
-            top-[18%]
-            h-[400px]
-            w-[400px]
-            rounded-full
-            bg-[#EE5326]/8
-            blur-[130px]
-          "
-        />
-      </div>
+      <HeroMedia />
 
       {/* =====================================================
           CONTENT
@@ -198,27 +112,7 @@ export default function Hero() {
             "
           >
             <span className="relative flex h-2 w-2 shrink-0">
-              <span
-                className="
-                  absolute
-                  inline-flex
-                  h-full
-                  w-full
-                  animate-ping
-                  rounded-full
-                  bg-[#EE5326]/60
-                "
-              />
-
-              <span
-                className="
-                  relative
-                  h-2
-                  w-2
-                  rounded-full
-                  bg-[#EE5326]
-                "
-              />
+              <span className="relative h-2 w-2 rounded-full bg-[#EE5326]" />
             </span>
 
             <span
@@ -507,10 +401,7 @@ export default function Hero() {
                     bg-[#25D366]
                   "
                 >
-                  <FaWhatsapp
-                    size={18}
-                    className="text-white"
-                  />
+                  <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
                 </span>
 
                 <span className="!text-white">

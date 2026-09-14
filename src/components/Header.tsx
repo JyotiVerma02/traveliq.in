@@ -9,8 +9,9 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { WhatsAppIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
+
 
 const nav = [
   ["Home", "/"],
@@ -92,16 +93,15 @@ export default function Header() {
     pathname.replace(/\/$/, "") || "/";
 
   const isActive = (href: string) => {
-    const normalizedHref =
-      href.replace(/\/$/, "") || "/";
+  const normalizedHref = href.replace(/\/$/, "");
+  const normalizedPath = pathname.replace(/\/$/, "");
 
-    return (
-      normalizedPath === normalizedHref ||
-      (normalizedHref !== "/" &&
-        normalizedPath.startsWith(`${normalizedHref}/`))
-    );
-  };
-
+  return (
+    normalizedPath === normalizedHref ||
+    (normalizedHref !== "" &&
+      normalizedPath.startsWith(normalizedHref + "/"))
+  );
+};
   const isHome = normalizedPath === "/";
 
   const servicesActive =
@@ -186,11 +186,10 @@ export default function Header() {
             "
           >
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="TravelIQ"
               width={225}
               height={56}
-              priority
               className={`
                 h-auto
                 object-contain
@@ -993,7 +992,7 @@ export default function Header() {
                 hover:-translate-y-0.5
               "
             >
-              <FaWhatsapp
+              <WhatsAppIcon
                 className="
                   h-[19px]
                   w-[19px]
@@ -1473,7 +1472,7 @@ export default function Header() {
                   hover:-translate-y-0.5
                 "
               >
-                <FaWhatsapp
+                <WhatsAppIcon
                   className="
                     h-4
                     w-4

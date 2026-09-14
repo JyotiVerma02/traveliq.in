@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <ServiceDetail
       title="Railway Reservations"
-      image="/images/services/railway-reservations.jpg"
+      image="/images/services/railway-reservations.webp"
       imageAlt="Indian railway station with trains on platform - Railway Reservations by TravelIQ"
       intro="The Indian Railway Reservation System allows passengers to reserve their seats in advance of their journey. This facility offers a large number of windows and classifications, making it convenient for passengers."
       sections={[

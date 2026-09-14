@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone, ArrowUpRight, Clock } from "lucide-react";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaWhatsapp,
-} from "react-icons/fa";
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  WhatsAppIcon,
+} from "@/components/icons";
 
 const links = [
   ["About TravelIQ", "/about-travel-iq/"],
@@ -22,14 +22,14 @@ export default function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* Ultra dark glows */}
-      <div className="pointer-events-none absolute -left-32 top-20 h- w- rounded-full bg-[#EE5326]/[0.03] blur-" />
-      <div className="pointer-events-none absolute right-0 top-0 h- w- rounded-full bg-[#0A2A50]/20 blur-" />
+      <div className="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-[#EE5326]/[0.03] blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-[#0A2A50]/20 blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-8 lg:py-20">
         {/* TOP BRAND - Same as your dark navy image */}
         <div className="mb-12 border-b border-white/[0.06] pb-10">
           <div className="inline-flex rounded-lg border border-white/5 bg-[#0A182E] px-4 py-3 shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
-            <Image src="/logo.png" alt="TravelIQ" width={170} height={41} className="h-auto w- sm:w-" />
+            <Image src="/logo.webp" alt="TravelIQ" width={170} height={41} className="h-auto w-[150px] sm:w-[170px]" />
           </div>
           <div className="mt-6 max-w-2xl">
             <p className="text-2xl font-black tracking-tight text-white sm:text-3xl">
@@ -133,7 +133,7 @@ export default function Footer() {
                   aria-label="Follow TravelIQ on Facebook"
                   className="grid h-10 w-10 place-items-center rounded-lg border border-[#FF6B35]/20 bg-[#0A182E] text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#1877F2] hover:text-white hover:border-transparent"
                 >
-                  <FaFacebookF className="h-4 w-4" />
+                  <FacebookIcon className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.instagram.com/traveliqindia/"
@@ -142,7 +142,7 @@ export default function Footer() {
                   aria-label="Follow TravelIQ on Instagram"
                   className="grid h-10 w-10 place-items-center rounded-lg border border-[#FF6B35]/20 bg-[#0A182E] text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#E4405F] hover:text-white hover:border-transparent"
                 >
-                  <FaInstagram className="h-4 w-4" />
+                  <InstagramIcon className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/traveliq/"
@@ -151,7 +151,7 @@ export default function Footer() {
                   aria-label="Follow TravelIQ on LinkedIn"
                   className="grid h-10 w-10 place-items-center rounded-lg border border-[#FF6B35]/20 bg-[#0A182E] text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#0A66C2] hover:text-white hover:border-transparent"
                 >
-                  <FaLinkedinIn className="h-4 w-4" />
+                  <LinkedInIcon className="h-4 w-4" />
                 </a>
                 <a
                   href="https://wa.me/917835025025"
@@ -160,7 +160,7 @@ export default function Footer() {
                   aria-label="Chat with TravelIQ on WhatsApp"
                   className="grid h-10 w-10 place-items-center rounded-lg border border-[#25D366]/30 bg-[#0A2418] text-[#25D366] transition-all hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white"
                 >
-                  <FaWhatsapp className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4" />
                 </a>
               </div>
             </div>
