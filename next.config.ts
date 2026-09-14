@@ -24,19 +24,31 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
   },
 
-  // Add security headers to all routes
+  // Add security and caching headers to all routes
   async headers() {
     return [
       {
         source: "/(.*)",
         headers: securityHeaders,
       },
+      {
+        source: "/:path*.(jpg|jpeg|png|webp|avif|mp4|svg|css|js)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 
   images: {
-    // Serve modern WebP/AVIF formats automatically
+    // Serve modern WebP/AVIF formats automatically with optimal sizes
     formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 31536000,
+    deviceSizes: [360, 480, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
         protocol: "https",

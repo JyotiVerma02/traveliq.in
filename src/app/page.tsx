@@ -1,11 +1,13 @@
 import Hero from "@/components/Hero";
-import PartnerLogos from "@/components/PartnerLogos";
-import Services from "@/components/Services";
-import WhyWeBetter from "@/components/WhyWeBetter";
-import Testimonials from "@/components/Testimonials";
-import LatestPosts from "@/components/OurNews";
-import FaqSection from "@/components/FaqSection";
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+
+const PartnerLogos = dynamic(() => import("@/components/PartnerLogos"));
+const Services = dynamic(() => import("@/components/Services"));
+const FaqSection = dynamic(() => import("@/components/FaqSection"));
+const WhyWeBetter = dynamic(() => import("@/components/WhyWeBetter"));
+const Testimonials = dynamic(() => import("@/components/Testimonials"));
+const LatestPosts = dynamic(() => import("@/components/OurNews"));
 
 export const metadata: Metadata = {
   title: "Travel IQ - Your Own Travel Intelligence",

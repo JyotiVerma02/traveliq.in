@@ -146,7 +146,7 @@ export default function WhyWeBetter() {
               text-sm
               font-medium
               leading-7
-              text-[#697589]
+              text-[#374151]
               sm:text-[15px]
             "
           >

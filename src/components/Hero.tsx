@@ -68,9 +68,17 @@ export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#071F3D]">
       {/* =====================================================
-          VIDEO BACKGROUND
+          VIDEO / IMAGE HERO BACKGROUND
       ====================================================== */}
       <div className="absolute inset-0 z-0">
+        {/* Lightweight Mobile Background Image (Saves 2.04 MB payload on mobile) */}
+        <img
+          src="/vande_bharat_hero.jpg"
+          alt="TravelIQ travel destinations"
+          className="h-full w-full object-cover object-center lg:hidden"
+        />
+
+        {/* Desktop Video Background */}
         <video
           autoPlay
           loop
@@ -80,10 +88,12 @@ export default function Hero() {
           poster="/vande_bharat_hero.jpg"
           aria-label="TravelIQ travel destinations montage"
           className="
+            hidden
             h-full
             w-full
             object-cover
             object-center
+            lg:block
           "
         >
           <track kind="captions" src="" default />

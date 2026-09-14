@@ -21,7 +21,7 @@ export default function ContactForm() {
   return (
     <div className="rounded-xl border border-[#10407A]/12 bg-white p-6 sm:p-8 shadow-xs">
       <h3 className="text-2xl font-bold text-[#08090b]">Send Us A Message</h3>
-      <p className="mt-1 text-sm text-[#10407A]/60">
+      <p className="mt-1 text-sm text-[#0E3360]">
         Have a question about IRCTC agent registration, flight bookings, or services? Fill out the form below.
       </p>
 
