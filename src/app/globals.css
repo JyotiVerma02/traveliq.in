@@ -1,0 +1,1357 @@
+@import "tailwindcss";
+
+/* =========================================================
+   TRAVEL IQ
+   PREMIUM NEO + CLAYMORPHISM DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  /* ---------------------------------------------------------
+     BRAND
+  --------------------------------------------------------- */
+  --tiq-orange: #ee5326;
+  --tiq-orange-dark: #d9471d;
+  --tiq-orange-light: #ff7043;
+
+  --tiq-navy: #10407a;
+  --tiq-navy-dark: #071f3d;
+  --tiq-navy-deep: #0b1728;
+
+  /* ---------------------------------------------------------
+     SURFACES
+  --------------------------------------------------------- */
+  --tiq-bg: #fff8f3;
+  --tiq-surface: #fffaf7;
+  --tiq-surface-soft: #f5f8fc;
+  --tiq-surface-blue: #f1f5fa;
+  --tiq-orange-soft: #fff0e9;
+
+  --tiq-white: #ffffff;
+
+  /* ---------------------------------------------------------
+     TEXT
+  --------------------------------------------------------- */
+  --tiq-text: #0b1728;
+  --tiq-text-blue: #10407a;
+  --tiq-muted: #697589;
+  --tiq-muted-light: #8993a1;
+
+  /* ---------------------------------------------------------
+     BORDERS
+  --------------------------------------------------------- */
+  --tiq-border: rgba(16, 64, 122, 0.1);
+  --tiq-border-light: rgba(255, 255, 255, 0.95);
+
+  /* ---------------------------------------------------------
+     CLAY SHADOWS
+  --------------------------------------------------------- */
+
+  /* Main raised clay surface */
+  --tiq-clay-raised:
+    16px 18px 38px rgba(16, 64, 122, 0.12),
+    -10px -10px 28px rgba(255, 255, 255, 0.96);
+
+  /* Medium raised */
+  --tiq-clay-medium:
+    9px 11px 24px rgba(16, 64, 122, 0.1),
+    -7px -7px 18px rgba(255, 255, 255, 0.96);
+
+  /* Small raised */
+  --tiq-clay-small:
+    5px 7px 15px rgba(16, 64, 122, 0.08),
+    -4px -4px 11px rgba(255, 255, 255, 0.95);
+
+  /* Inset clay */
+  --tiq-clay-inset:
+    inset 4px 5px 10px rgba(16, 64, 122, 0.06),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.95);
+
+  /* Orange button */
+  --tiq-orange-shadow:
+    7px 9px 20px rgba(238, 83, 38, 0.25),
+    -5px -5px 13px rgba(255, 255, 255, 0.9);
+
+  /* ---------------------------------------------------------
+     RADIUS
+  --------------------------------------------------------- */
+  --tiq-radius-sm: 14px;
+  --tiq-radius-md: 20px;
+  --tiq-radius-lg: 28px;
+  --tiq-radius-xl: 34px;
+  --tiq-radius-pill: 999px;
+
+  /* ---------------------------------------------------------
+     FONT
+  --------------------------------------------------------- */
+  --font-tiq:
+    var(--font-poppins),
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   TAILWIND THEME
+   ========================================================= */
+
+@theme inline {
+  --color-background: var(--tiq-bg);
+  --color-foreground: var(--tiq-text);
+
+  --color-primary: var(--tiq-navy);
+  --color-secondary: var(--tiq-orange);
+
+  --color-blue: var(--tiq-navy);
+  --color-coral: var(--tiq-orange);
+
+  --font-sans: var(--font-tiq);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(238, 83, 38, 0.045),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 8% 90%,
+      rgba(16, 64, 122, 0.035),
+      transparent 30%
+    ),
+    var(--tiq-bg);
+
+  color: var(--tiq-text);
+  font-family: var(--font-tiq);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.tiq-container {
+  width: min(100% - 40px, 1500px);
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .tiq-container {
+    width: min(100% - 28px, 1500px);
+  }
+}
+
+/* =========================================================
+   BASIC CLAY UTILITIES
+   ========================================================= */
+
+.tiq-clay {
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  background: var(--tiq-bg);
+  box-shadow: var(--tiq-clay-raised);
+}
+
+.tiq-clay-medium {
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  background: var(--tiq-bg);
+  box-shadow: var(--tiq-clay-medium);
+}
+
+.tiq-clay-small {
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  background: var(--tiq-bg);
+  box-shadow: var(--tiq-clay-small);
+}
+
+.tiq-neo {
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  background: var(--tiq-surface);
+  box-shadow: var(--tiq-clay-medium);
+}
+
+.tiq-neo-inset {
+  background: var(--tiq-surface-blue);
+  box-shadow: var(--tiq-clay-inset);
+}
+
+/* =========================================================
+   HOME HERO
+   ========================================================= */
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(238, 83, 38, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(16, 64, 122, 0.045),
+      transparent 28%
+    ),
+    var(--tiq-bg);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  opacity: 0.28;
+
+  background-image:
+    linear-gradient(
+      rgba(16, 64, 122, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(16, 64, 122, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  pointer-events: none;
+}
+
+.home-hero__sun {
+  position: absolute;
+  right: -180px;
+  top: -180px;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: rgba(238, 83, 38, 0.07);
+
+  filter: blur(130px);
+
+  pointer-events: none;
+}
+
+.home-hero__rings {
+  position: absolute;
+  left: -220px;
+  bottom: -220px;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: rgba(16, 64, 122, 0.045);
+
+  filter: blur(140px);
+
+  pointer-events: none;
+}
+
+.home-hero__grain {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.025;
+
+  background-image:
+    radial-gradient(
+      rgba(16, 64, 122, 0.8) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 7px 7px;
+}
+
+/* =========================================================
+   HERO BADGE
+   ========================================================= */
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  min-height: 34px;
+  padding: 7px 14px;
+
+  border-radius: var(--tiq-radius-pill);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  background: var(--tiq-surface);
+
+  color: var(--tiq-navy);
+
+  box-shadow: var(--tiq-clay-small);
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO PRIMARY BUTTON
+   IMPORTANT:
+   Explicit color prevents global anchor styles from
+   making the text invisible.
+   ========================================================= */
+
+.hero-primary-btn,
+.hero-orange-button,
+.tiq-orange-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 54px;
+  padding: 0 28px;
+
+  border: 0;
+  border-radius: var(--tiq-radius-pill);
+
+  background: linear-gradient(
+    145deg,
+    #ff6335 0%,
+    #ee5326 48%,
+    #d9471d 100%
+  );
+
+  color: #ffffff !important;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  box-shadow:
+    8px 10px 22px rgba(238, 83, 38, 0.25),
+    -5px -5px 12px rgba(255, 255, 255, 0.92);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-primary-btn *,
+.hero-orange-button *,
+.tiq-orange-button * {
+  color: #ffffff !important;
+}
+
+.hero-primary-btn:hover,
+.hero-orange-button:hover,
+.tiq-orange-button:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    145deg,
+    #ff7043 0%,
+    #ee5326 48%,
+    #c63d16 100%
+  );
+
+  box-shadow:
+    10px 14px 28px rgba(238, 83, 38, 0.3),
+    -6px -6px 14px rgba(255, 255, 255, 0.94);
+}
+
+.hero-primary-btn:active,
+.hero-orange-button:active,
+.tiq-orange-button:active {
+  transform: translateY(0);
+
+  box-shadow:
+    inset 4px 5px 9px rgba(130, 35, 10, 0.2),
+    inset -4px -4px 9px rgba(255, 140, 110, 0.22);
+}
+
+/* =========================================================
+   HERO WHATSAPP / SECONDARY BUTTON
+   ========================================================= */
+
+.hero-whatsapp-btn,
+.hero-outline-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 54px;
+  padding: 0 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--tiq-radius-pill);
+
+  background: var(--tiq-bg);
+
+  color: var(--tiq-navy) !important;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  box-shadow:
+    8px 10px 22px rgba(16, 64, 122, 0.09),
+    -7px -7px 15px rgba(255, 255, 255, 0.98);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.hero-whatsapp-btn:hover,
+.hero-outline-button:hover {
+  transform: translateY(-3px);
+
+  color: #25d366 !important;
+
+  box-shadow:
+    10px 13px 27px rgba(16, 64, 122, 0.13),
+    -7px -7px 16px rgba(255, 255, 255, 1);
+}
+
+.hero-whatsapp-btn span,
+.hero-outline-button span {
+  color: inherit;
+}
+
+/* =========================================================
+   HERO MAIN HEADING
+   ========================================================= */
+
+.home-hero h1 {
+  color: var(--tiq-navy-deep);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+}
+
+.home-hero h1 span {
+  color: var(--tiq-orange);
+}
+
+/* =========================================================
+   HERO DASHBOARD
+   ========================================================= */
+
+.hero-clay-card {
+  position: relative;
+
+  border-radius: 34px;
+
+  border: 1px solid rgba(255, 255, 255, 0.98);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    ),
+    var(--tiq-bg);
+
+  box-shadow:
+    20px 24px 52px rgba(16, 64, 122, 0.14),
+    -13px -13px 34px rgba(255, 255, 255, 0.98);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.hero-clay-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    24px 28px 60px rgba(16, 64, 122, 0.16),
+    -14px -14px 36px rgba(255, 255, 255, 1);
+}
+
+/* =========================================================
+   HERO NAVY PANEL
+   ========================================================= */
+
+.hero-clay-panel {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 27px;
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(238, 83, 38, 0.34),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #124d8f,
+      #10407a 55%,
+      #0b315e
+    );
+
+  box-shadow:
+    inset 5px 5px 13px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 13px rgba(255, 255, 255, 0.07),
+    0 12px 28px rgba(16, 64, 122, 0.14);
+}
+
+/* =========================================================
+   HERO SERVICE CARDS
+   ========================================================= */
+
+.hero-service-card {
+  position: relative;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.98);
+
+  background: var(--tiq-bg);
+
+  box-shadow:
+    7px 8px 17px rgba(16, 64, 122, 0.075),
+    -6px -6px 13px rgba(255, 255, 255, 0.98);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-service-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    9px 11px 22px rgba(16, 64, 122, 0.1),
+    -7px -7px 15px rgba(255, 255, 255, 1);
+}
+
+/* =========================================================
+   HERO ICON CLAY
+   ========================================================= */
+
+.hero-icon-clay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: var(--tiq-surface-blue);
+
+  color: var(--tiq-navy);
+
+  box-shadow:
+    inset 3px 3px 8px rgba(16, 64, 122, 0.055),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.98);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.hero-service-card:hover .hero-icon-clay {
+  background: var(--tiq-orange-soft);
+  color: var(--tiq-orange);
+}
+
+/* =========================================================
+   TRUST BADGE
+   ========================================================= */
+
+.hero-trust-badge {
+  border: 1px solid rgba(255, 255, 255, 0.98);
+
+  border-radius: 20px;
+
+  background: var(--tiq-bg);
+
+  box-shadow:
+    11px 13px 27px rgba(16, 64, 122, 0.13),
+    -8px -8px 18px rgba(255, 255, 255, 0.98);
+}
+
+/* =========================================================
+   HERO STATS
+   ========================================================= */
+
+.hero-stats {
+  border: 1px solid rgba(255, 255, 255, 0.98);
+
+  border-radius: 28px;
+
+  background: var(--tiq-bg);
+
+  box-shadow:
+    13px 15px 31px rgba(16, 64, 122, 0.085),
+    -10px -10px 26px rgba(255, 255, 255, 0.98);
+}
+
+.hero-stat-box {
+  border-radius: 20px;
+
+  background: var(--tiq-surface-soft);
+
+  box-shadow:
+    inset 3px 3px 9px rgba(16, 64, 122, 0.03),
+    inset -3px -3px 9px rgba(255, 255, 255, 0.98);
+
+  transition: transform 0.25s ease;
+}
+
+.hero-stat-box:hover {
+  transform: translateY(-2px);
+}
+
+.hero-stat-box.is-orange {
+  background: var(--tiq-orange-soft);
+}
+
+/* =========================================================
+   GENERIC TRAVEL CARDS
+   ========================================================= */
+
+.travel-card {
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 24px;
+
+  background: var(--tiq-surface);
+
+  box-shadow: var(--tiq-clay-medium);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.travel-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    12px 15px 30px rgba(16, 64, 122, 0.12),
+    -8px -8px 20px rgba(255, 255, 255, 0.98);
+}
+
+.card-blue-gradient {
+  background:
+    linear-gradient(
+      145deg,
+      #10407a,
+      #071f3d
+    );
+
+  color: white;
+}
+
+.card-blue-border {
+  border: 1px solid rgba(16, 64, 122, 0.12);
+}
+
+.blue-badge {
+  display: inline-flex;
+  align-items: center;
+
+  border-radius: 999px;
+
+  background: #edf4fb;
+
+  color: var(--tiq-navy);
+
+  box-shadow: var(--tiq-clay-inset);
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   SECTION LABELS
+   ========================================================= */
+
+.section-label,
+.section-kicker,
+.eyebrow {
+  color: var(--tiq-orange);
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.editorial-heading {
+  color: var(--tiq-navy-deep);
+
+  font-weight: 900;
+
+  letter-spacing: -0.055em;
+}
+
+.text-travel-blue {
+  color: var(--tiq-navy);
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 20px;
+
+  background: var(--tiq-surface);
+
+  box-shadow: var(--tiq-clay-small);
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(238, 83, 38, 0.06),
+      transparent 30%
+    ),
+    var(--tiq-bg);
+}
+
+.hero-grid {
+  position: relative;
+}
+
+.hero-image-wrap {
+  border-radius: 30px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow: var(--tiq-clay-raised);
+}
+
+.image-wash {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 64, 122, 0.1),
+      transparent 50%
+    );
+}
+
+.hero-proof {
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 20px;
+
+  background: var(--tiq-bg);
+
+  box-shadow: var(--tiq-clay-medium);
+}
+
+.benefit-card,
+.about-solution__card {
+  border: 1px solid rgba(255, 255, 255, 0.96);
+
+  border-radius: 24px;
+
+  background: var(--tiq-surface);
+
+  box-shadow: var(--tiq-clay-medium);
+
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover,
+.about-solution__card:hover {
+  transform: translateY(-4px);
+}
+
+.benefit-number {
+  color: var(--tiq-orange);
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: var(--tiq-orange-soft);
+
+  color: var(--tiq-orange);
+
+  box-shadow: var(--tiq-clay-inset);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  position: fixed;
+
+  top: 14px;
+  left: 50%;
+
+  z-index: 1000;
+
+  width: min(
+    calc(100% - 28px),
+    1320px
+  );
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.92);
+
+  border-radius: 24px;
+
+  background: rgba(255, 248, 243, 0.86);
+
+  box-shadow:
+    10px 13px 30px rgba(16, 64, 122, 0.1),
+    -8px -8px 22px rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    top 0.3s ease,
+    width 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  top: 9px;
+
+  box-shadow:
+    12px 16px 34px rgba(16, 64, 122, 0.14),
+    -9px -9px 24px rgba(255, 255, 255, 0.98);
+}
+
+.site-header.is-home:not(.is-scrolled) {
+  background: rgba(255, 248, 243, 0.72);
+}
+
+/* ---------------------------------------------------------
+   HEADER LINKS
+--------------------------------------------------------- */
+
+.site-nav-link,
+.travel-nav-link {
+  position: relative;
+
+  color: var(--tiq-navy) !important;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-nav-link:hover,
+.travel-nav-link:hover {
+  color: var(--tiq-orange) !important;
+}
+
+.site-nav-link.is-active,
+.travel-nav-link.is-active {
+  color: var(--tiq-orange) !important;
+}
+
+/* ---------------------------------------------------------
+   SERVICE MENU
+--------------------------------------------------------- */
+
+.service-menu {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  left: 0;
+
+  min-width: 250px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.96);
+
+  border-radius: 20px;
+
+  background: rgba(255, 248, 243, 0.97);
+
+  box-shadow: var(--tiq-clay-raised);
+
+  backdrop-filter: blur(18px);
+}
+
+.service-menu a {
+  display: block;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  color: var(--tiq-navy) !important;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.service-menu a:hover,
+.service-menu a.is-active {
+  background: var(--tiq-orange-soft);
+  color: var(--tiq-orange) !important;
+}
+
+/* ---------------------------------------------------------
+   LOGIN
+--------------------------------------------------------- */
+
+.header-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  background: var(--tiq-navy);
+
+  color: #ffffff !important;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  box-shadow:
+    5px 7px 15px rgba(16, 64, 122, 0.18),
+    -3px -3px 8px rgba(255, 255, 255, 0.9);
+
+  transition: transform 0.2s ease;
+}
+
+.header-login:hover {
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   BRAND BUTTON
+--------------------------------------------------------- */
+
+.brand-button {
+  border-radius: 16px;
+
+  background: var(--tiq-bg);
+
+  box-shadow: var(--tiq-clay-small);
+}
+
+/* ---------------------------------------------------------
+   WHATSAPP
+--------------------------------------------------------- */
+
+.header-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 17px;
+
+  border-radius: 999px;
+
+  background: #25d366;
+
+  color: #ffffff !important;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  box-shadow:
+    5px 7px 15px rgba(37, 211, 102, 0.18),
+    -3px -3px 8px rgba(255, 255, 255, 0.9);
+}
+
+.header-whatsapp:hover {
+  color: #ffffff !important;
+}/* =========================================================
+   TRAVELIQ HEADER CTA — FORCE WHITE
+   ========================================================= */
+
+header a[href="/irctc-agent-registration/"],
+header a[href="/irctc-agent-registration/"] span,
+header a[href="/irctc-agent-registration/"] svg {
+  color: #ffffff !important;
+}
+
+header a[href*="wa.me"],
+header a[href*="wa.me"] span,
+header a[href*="wa.me"] svg {
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   MOBILE MENU
+--------------------------------------------------------- */
+
+.mobile-menu {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 22px;
+
+  background: rgba(255, 248, 243, 0.98);
+
+  box-shadow: var(--tiq-clay-raised);
+
+  backdrop-filter: blur(18px);
+}
+
+.mobile-menu a {
+  display: block;
+
+  padding: 13px 14px;
+
+  border-radius: 14px;
+
+  color: var(--tiq-navy) !important;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.mobile-menu a:hover {
+  background: var(--tiq-orange-soft);
+  color: var(--tiq-orange) !important;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer,
+.travel-footer {
+  background: var(--tiq-navy-deep);
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.site-footer a,
+.travel-footer a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.site-footer a:hover,
+.travel-footer a:hover {
+  color: var(--tiq-orange-light);
+}
+
+/* =========================================================
+   GENERIC ORANGE CTA
+   ========================================================= */
+
+.brand-button,
+.about-solution__cta {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.about-solution__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 25px;
+
+  border-radius: 999px;
+
+  background: var(--tiq-orange);
+
+  color: #ffffff !important;
+
+  font-weight: 900;
+
+  box-shadow: var(--tiq-orange-shadow);
+}
+
+.about-solution__cta:hover {
+  transform: translateY(-3px);
+
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes tiq-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes tiq-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes tiq-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tiq-orb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(12px, -10px, 0);
+  }
+}
+
+.float-slow {
+  animation: tiq-float 5s ease-in-out infinite;
+}
+
+.live-pulse {
+  animation: tiq-pulse 2s ease-in-out infinite;
+}
+
+.fade-up,
+.fadeUp {
+  animation: tiq-fade-up 0.7s ease both;
+}
+
+.orb-drift {
+  animation: tiq-orb 8s ease-in-out infinite;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(238, 83, 38, 0.35);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(238, 83, 38, 0.18);
+  color: var(--tiq-navy-deep);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .site-header {
+    width: calc(100% - 24px);
+  }
+
+  .hero-clay-card {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    top: 8px;
+    border-radius: 20px;
+  }
+
+  .home-hero::before {
+    background-size: 55px 55px;
+  }
+
+  .hero-clay-card {
+    border-radius: 28px;
+  }
+
+  .hero-clay-panel {
+    border-radius: 23px;
+  }
+
+  .hero-trust-badge {
+    left: 8px;
+    bottom: -22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-primary-btn,
+  .hero-orange-button,
+  .hero-whatsapp-btn,
+  .hero-outline-button {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .hero-clay-card {
+    border-radius: 24px;
+  }
+
+  .hero-clay-panel {
+    border-radius: 20px;
+  }
+
+  .hero-service-card {
+    border-radius: 17px;
+  }
+
+  .hero-stats {
+    border-radius: 23px;
+  }
+
+  .hero-stat-box {
+    border-radius: 17px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
