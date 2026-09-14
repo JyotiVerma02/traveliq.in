@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Playfair_Display, Poppins } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/Header";
@@ -12,6 +12,14 @@ const poppins = Poppins({
   display: "swap",
   preload: true,
   adjustFontFallback: true,
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-serif-accent",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  style: ["italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,8 +57,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="preload"
+          href="/vande_bharat_hero.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">
         <div className="flex min-h-screen flex-col">
           {/* ================= HEADER ================= */}
