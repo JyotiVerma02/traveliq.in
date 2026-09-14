@@ -143,7 +143,7 @@ export default function PartnerLogos() {
                 </div>
 
                 {/* Partner Type */}
-                <p className="mt-0.5 text-[9px] font-medium text-[#10407A]/65">
+                <p className="mt-0.5 text-[9px] font-medium text-[#0E3360]">
                   {partner.name === "IRCTC" && "Official Partner"}
                   {partner.name === "IATA" && "Accredited"}
                   {partner.name === "Air India" && "Airline Partner"}
@@ -167,7 +167,7 @@ export default function PartnerLogos() {
             "
           />
 
-          <p className="text-[10px] font-medium text-[#071F3D]/65">
+          <p className="text-[10px] font-medium text-[#0E3360]">
             Reliable connections across the travel ecosystem
           </p>
         </div>

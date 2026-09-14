@@ -262,7 +262,7 @@ export default function FaqSection() {
 
               <div className="relative overflow-hidden rounded-[26px]">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=75"
                   alt="TravelIQ Agent Support Team"
                   className="
                     h-[420px]

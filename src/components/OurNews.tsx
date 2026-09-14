@@ -108,7 +108,7 @@ export default function OurNews() {
             Latest Updates from TravelIQ
           </p>
 
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#697589]">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#374151]">
             Stay updated with the latest railway, flight, travel and
             industry news from TravelIQ.
           </p>
@@ -257,7 +257,7 @@ export default function OurNews() {
               ================================================= */}
               <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
                 {/* Category */}
-                <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#EE5326]">
+                <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D83B0E]">
                   TravelIQ Updates
                 </span>
 
@@ -288,7 +288,7 @@ export default function OurNews() {
                     text-[12px]
                     font-medium
                     leading-6
-                    text-[#697589]
+                    text-[#374151]
                   "
                 >
                   {item.description}

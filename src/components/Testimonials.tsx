@@ -175,7 +175,7 @@ export default function Testimonials() {
                 text-sm
                 font-medium
                 leading-7
-                text-[#697589]
+                text-[#374151]
                 sm:text-[15px]
               "
             >
@@ -218,7 +218,7 @@ export default function Testimonials() {
                   4.9
                 </span>
 
-                <span className="text-[11px] font-bold text-[#697589]">
+                <span className="text-[11px] font-bold text-[#374151]">
                   /5
                 </span>
               </div>
@@ -236,7 +236,7 @@ export default function Testimonials() {
                   font-black
                   uppercase
                   tracking-[0.16em]
-                  text-[#8993A1]
+                  text-[#475569]
                 "
               >
                 Agent Rating
@@ -268,7 +268,7 @@ export default function Testimonials() {
                   font-black
                   uppercase
                   tracking-[0.16em]
-                  text-[#8993A1]
+                  text-[#475569]
                 "
               >
                 Agent Network
@@ -517,7 +517,7 @@ export default function Testimonials() {
                           font-black
                           uppercase
                           tracking-[0.14em]
-                          text-[#8993A1]
+                          text-[#475569]
                         "
                       >
                         {testimonial.role}
@@ -609,7 +609,7 @@ export default function Testimonials() {
               ✓
             </span>
 
-            <p className="text-xs font-medium text-[#687386]">
+            <p className="text-xs font-medium text-[#374151]">
               Trusted by travel professionals across India and beyond.
             </p>
           </div>
