@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 const quickLinks = [
   {
@@ -88,7 +89,7 @@ export default function WhyWeBetter() {
             SECTION HEADER
         ====================================================== */}
 
-        <div className="max-w-4xl">
+        <Reveal className="max-w-4xl">
           {/* Badge */}
 
           <div
@@ -168,7 +169,7 @@ export default function WhyWeBetter() {
               to-transparent
             "
           />
-        </div>
+        </Reveal>
 
         {/* =====================================================
             MAIN CONTENT
@@ -189,7 +190,7 @@ export default function WhyWeBetter() {
               LEFT CONTENT
           ==================================================== */}
 
-          <div className="lg:col-span-7">
+          <Reveal direction="left" className="lg:col-span-7">
             <div
               className="
                 rounded-[30px]
@@ -403,7 +404,9 @@ export default function WhyWeBetter() {
               >
                 {/* Founded */}
 
-                <div
+                <Reveal
+                  delay={0}
+                  distance={16}
                   className="
                     rounded-[20px]
                     border
@@ -429,11 +432,13 @@ export default function WhyWeBetter() {
                   >
                     Founded
                   </p>
-                </div>
+                </Reveal>
 
                 {/* Agents */}
 
-                <div
+                <Reveal
+                  delay={0.08}
+                  distance={16}
                   className="
                     rounded-[20px]
                     border
@@ -459,11 +464,13 @@ export default function WhyWeBetter() {
                   >
                     Agents
                   </p>
-                </div>
+                </Reveal>
 
                 {/* IATA */}
 
-                <div
+                <Reveal
+                  delay={0.16}
+                  distance={16}
                   className="
                     rounded-[20px]
                     border
@@ -489,11 +496,13 @@ export default function WhyWeBetter() {
                   >
                     Accredited
                   </p>
-                </div>
+                </Reveal>
 
                 {/* B2B */}
 
-                <div
+                <Reveal
+                  delay={0.24}
+                  distance={16}
                   className="
                     rounded-[20px]
                     border
@@ -519,16 +528,16 @@ export default function WhyWeBetter() {
                   >
                     Platform
                   </p>
-                </div>
+                </Reveal>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* ===================================================
               RIGHT COLUMN
           ==================================================== */}
 
-          <div className="lg:sticky lg:top-24 lg:col-span-5">
+          <Reveal direction="right" className="lg:sticky lg:top-24 lg:col-span-5">
             {/* =================================================
                 LOGO CLAY CARD
             ================================================== */}
@@ -673,12 +682,16 @@ export default function WhyWeBetter() {
               </div>
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                {quickLinks.map((item) => {
+                {quickLinks.map((item, index) => {
                   const isInternal = item.href === "#";
 
                   return (
-                    <a
+                    <Reveal
                       key={item.title}
+                      delay={index * 0.06}
+                      distance={16}
+                    >
+                    <a
                       href={item.href}
                       target={isInternal ? undefined : "_blank"}
                       rel={isInternal ? undefined : "noreferrer"}
@@ -784,6 +797,7 @@ export default function WhyWeBetter() {
                         →
                       </span>
                     </a>
+                    </Reveal>
                   );
                 })}
               </div>
@@ -822,7 +836,7 @@ export default function WhyWeBetter() {
                 Trusted Travel Solutions Since 2014
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

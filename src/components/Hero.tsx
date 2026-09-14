@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import HeroMedia from "@/components/HeroMedia";
 import { WhatsAppIcon } from "@/components/icons";
+import Reveal from "@/components/Reveal";
 
 const stats = [
   {
@@ -200,113 +201,120 @@ export default function Hero() {
             "
           >
             {/* Kicker */}
-            <div
-              className="
-                mb-6
-                flex
-                items-center
-                justify-center
-                gap-3
-              "
-            >
-              <span
+            <Reveal delay={0}>
+              <div
                 className="
-                  h-[2px]
-                  w-9
-                  bg-[#EE5326]
-                  sm:w-11
-                "
-              />
-
-              <span
-                className="
-                  text-[9px]
-                  font-bold
-                  uppercase
-                  tracking-[0.25em]
-                  text-white
-                  sm:text-[10px]
+                  mb-6
+                  flex
+                  items-center
+                  justify-center
+                  gap-3
                 "
               >
-                Your Travel Business Partner
-              </span>
+                <span
+                  className="
+                    h-[2px]
+                    w-9
+                    bg-[#EE5326]
+                    sm:w-11
+                  "
+                />
 
-              <span
-                className="
-                  h-[2px]
-                  w-9
-                  bg-[#EE5326]
-                  sm:w-11
-                "
-              />
-            </div>
+                <span
+                  className="
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-[0.25em]
+                    text-white
+                    sm:text-[10px]
+                  "
+                >
+                  Your Travel Business Partner
+                </span>
+
+                <span
+                  className="
+                    h-[2px]
+                    w-9
+                    bg-[#EE5326]
+                    sm:w-11
+                  "
+                />
+              </div>
+            </Reveal>
 
             {/* =================================================
                 MAIN HEADING
             ================================================== */}
-            <h1
-              className="
-                mx-auto
-                max-w-[900px]
-                text-[3rem]
-                font-bold
-                leading-[1.04]
-                tracking-[-0.035em]
-                text-white
-                drop-shadow-[0_5px_24px_rgba(0,0,0,0.55)]
-                sm:text-[4rem]
-                md:text-[4.5rem]
-                lg:text-[5rem]
-                xl:text-[5.35rem]
-              "
-            >
-              Grow Your
-              <br />
+            <Reveal delay={0.08}>
+              <h1
+                className="
+                  mx-auto
+                  max-w-[900px]
+                  text-[3rem]
+                  font-bold
+                  leading-[1.04]
+                  tracking-[-0.035em]
+                  text-white
+                  drop-shadow-[0_5px_24px_rgba(0,0,0,0.55)]
+                  sm:text-[4rem]
+                  md:text-[4.5rem]
+                  lg:text-[5rem]
+                  xl:text-[5.35rem]
+                "
+              >
+                Grow Your
+                <br />
 
-              Travel Business
-              <br />
+                Travel Business
+                <br />
 
-              <span className="relative inline-block text-[#FF7045]">
-                With TravelIQ.
+                <span className="relative inline-block text-[#FF7045]">
+                  With TravelIQ.
 
-                <span
-                  className="
-                    absolute
-                    -bottom-2
-                    left-1/2
-                    h-[3px]
-                    w-[42%]
-                    -translate-x-1/2
-                    bg-[#EE5326]
-                  "
-                />
-              </span>
-            </h1>
+                  <span
+                    className="
+                      absolute
+                      -bottom-2
+                      left-1/2
+                      h-[3px]
+                      w-[42%]
+                      -translate-x-1/2
+                      bg-[#EE5326]
+                    "
+                  />
+                </span>
+              </h1>
+            </Reveal>
 
             {/* Description */}
-            <p
-              className="
-                mx-auto
-                mt-7
-                max-w-[680px]
-                text-[14px]
-                font-medium
-                leading-7
-                text-white/85
-                drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]
-                sm:text-base
-                sm:leading-8
-                lg:text-[17px]
-              "
-            >
-              Become an authorized IRCTC travel agent and access
-              railway, flights, hotels, buses and holidays through
-              one trusted B2B platform.
-            </p>
+            <Reveal delay={0.16}>
+              <p
+                className="
+                  mx-auto
+                  mt-7
+                  max-w-[680px]
+                  text-[14px]
+                  font-medium
+                  leading-7
+                  text-white/85
+                  drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]
+                  sm:text-base
+                  sm:leading-8
+                  lg:text-[17px]
+                "
+              >
+                Become an authorized IRCTC travel agent and access
+                railway, flights, hotels, buses and holidays through
+                one trusted B2B platform.
+              </p>
+            </Reveal>
 
             {/* =================================================
                 CTA BUTTONS
             ================================================== */}
+            <Reveal delay={0.24}>
             <div
               className="
                 mt-8
@@ -409,10 +417,12 @@ export default function Hero() {
                 </span>
               </a>
             </div>
+            </Reveal>
 
             {/* =================================================
                 REASSURANCE
             ================================================== */}
+            <Reveal delay={0.32}>
             <div
               className="
                 mt-7
@@ -476,6 +486,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
+            </Reveal>
           </div>
         </div>
 
@@ -494,12 +505,14 @@ export default function Hero() {
             sm:gap-3
           "
         >
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
-              <div
+              <Reveal
                 key={service.title}
+                delay={index * 0.06}
+                distance={16}
                 className="
                   group
                   flex
@@ -562,7 +575,7 @@ export default function Hero() {
                     {service.text}
                   </p>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

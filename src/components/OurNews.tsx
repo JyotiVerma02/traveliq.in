@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const news = [
   {
@@ -63,7 +64,7 @@ export default function OurNews() {
         {/* =======================================================
             SECTION HEADER
         ======================================================= */}
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           {/* Badge */}
           <div
             className="
@@ -112,15 +113,15 @@ export default function OurNews() {
             Stay updated with the latest railway, flight, travel and
             industry news from TravelIQ.
           </p>
-        </div>
+        </Reveal>
 
         {/* =======================================================
             NEWS GRID
         ======================================================= */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {news.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.08}>
             <article
-              key={item.title}
               className="
                 group
                 relative
@@ -340,13 +341,14 @@ export default function OurNews() {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
 
         {/* =======================================================
             VIEW ALL
         ======================================================= */}
-        <div className="mt-12 flex justify-center">
+        <Reveal className="mt-12 flex justify-center">
           <Link
             href="/pages/social/"
             className="
@@ -400,7 +402,7 @@ export default function OurNews() {
               />
             </span>
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

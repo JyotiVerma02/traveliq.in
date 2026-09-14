@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
@@ -10,13 +9,7 @@ import {
   WhatsAppIcon,
   YouTubeIcon,
 } from "@/components/icons";
-import {
-  Mail,
-  MapPin,
-  Phone,
-  ArrowRight,
-  Check,
-} from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Travel IQ | TravelIQ",
@@ -116,9 +109,7 @@ export default function ContactPage() {
 
             <span className="text-[#EE5326]">/</span>
 
-            <span className="text-sm font-bold text-[#10407A]">
-              Contact Us
-            </span>
+            <span className="text-sm font-bold text-[#10407A]">Contact Us</span>
           </div>
 
           {/* Hero content */}
@@ -139,28 +130,26 @@ export default function ContactPage() {
             {/* Description */}
             <p className="mt-5 max-w-2xl text-balance text-sm font-medium leading-6 text-[#344154] sm:mt-6 sm:text-base sm:leading-7">
               Whether you have a question about our services, need help with
-              your travel plans, or simply want to know more about TravelIQ,
-              our team is ready to help.
+              your travel plans, or simply want to know more about TravelIQ, our
+              team is ready to help.
             </p>
 
             {/* Trust pills */}
             <div className="mt-7 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-3">
-              {[
-                "Quick Response",
-                "Travel Experts",
-                "Dedicated Support",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#344154] shadow-[5px_6px_15px_rgba(16,64,122,0.07)] backdrop-blur-sm sm:px-4 sm:py-2.5"
-                >
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#10407A]">
-                    <Check className="h-3 w-3 text-white" strokeWidth={3} />
-                  </span>
+              {["Quick Response", "Travel Experts", "Dedicated Support"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#344154] shadow-[5px_6px_15px_rgba(16,64,122,0.07)] backdrop-blur-sm sm:px-4 sm:py-2.5"
+                  >
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#10407A]">
+                      <Check className="h-3 w-3 text-white" strokeWidth={3} />
+                    </span>
 
-                  {item}
-                </div>
-              ))}
+                    {item}
+                  </div>
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -205,9 +194,7 @@ export default function ContactPage() {
               +91 78350 25025
             </a>
 
-            <p className="mt-1 text-sm text-[#7A8493]">
-              Chat with our team
-            </p>
+            <p className="mt-1 text-sm text-[#7A8493]">Chat with our team</p>
           </div>
 
           {/* Phone */}
@@ -229,9 +216,7 @@ export default function ContactPage() {
               +91 78350 25030
             </a>
 
-            <p className="mt-1 text-sm text-[#7A8493]">
-              Call us directly
-            </p>
+            <p className="mt-1 text-sm text-[#7A8493]">Call us directly</p>
           </div>
 
           {/* Office */}
@@ -270,9 +255,7 @@ export default function ContactPage() {
               support@traveliq.in
             </a>
 
-            <p className="mt-1 text-sm text-[#7A8493]">
-              Send us an email
-            </p>
+            <p className="mt-1 text-sm text-[#7A8493]">Send us an email</p>
           </div>
         </div>
       </section>
@@ -294,14 +277,13 @@ export default function ContactPage() {
               </p>
 
               <h2 className="mt-2 text-3xl font-extrabold leading-tight tracking-[-0.025em] text-[#0B1728] sm:text-4xl">
-                Tell us{" "}
-                <span className="text-[#EE5326]">what you need.</span>
+                Tell us <span className="text-[#EE5326]">what you need.</span>
               </h2>
 
               <p className="mt-3 max-w-2xl text-sm leading-6 text-[#5B6B7F] sm:text-base">
-                Have a question, need assistance, or planning your next
-                journey? Share your requirements with us and our team will get
-                back to you with the right guidance.
+                Have a question, need assistance, or planning your next journey?
+                Share your requirements with us and our team will get back to
+                you with the right guidance.
               </p>
             </div>
 
@@ -346,8 +328,8 @@ export default function ContactPage() {
                 </div>
 
                 <p className="mt-4 text-sm leading-6 text-[#526174] sm:text-base">
-                  Get quick answers from our travel support team. We are here
-                  to help with your questions and travel requirements.
+                  Get quick answers from our travel support team. We are here to
+                  help with your questions and travel requirements.
                 </p>
 
                 {/* IMPORTANT: icon + text WHITE */}
@@ -359,9 +341,7 @@ export default function ContactPage() {
                 >
                   <WhatsAppIcon className="h-5 w-5 !text-white" />
 
-                  <span className="!text-white">
-                    Chat on WhatsApp
-                  </span>
+                  <span className="!text-white">Chat on WhatsApp</span>
 
                   <ArrowRight className="h-4 w-4 !text-white" />
                 </a>
@@ -373,7 +353,7 @@ export default function ContactPage() {
             ================================================= */}
 
             <div
-              className={`rounded-[28px] p-6 sm:p-8 ${clayCard} ${clayCardHover}`}
+              className={`rounded-[28px] p-5 sm:p-6 ${clayCard} ${clayCardHover}`}
             >
               <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#EE5326]">
                 Stay Connected
@@ -388,7 +368,8 @@ export default function ContactPage() {
                 latest from TravelIQ.
               </p>
 
-              <div className="mt-6 grid grid-cols-4 gap-3">
+              <div className="mt-5 grid grid-cols-4 gap-2 sm:gap-2.5">
+                {" "}
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
 
@@ -398,12 +379,10 @@ export default function ContactPage() {
                       href={social.href}
                       target={social.href !== "#" ? "_blank" : undefined}
                       rel={
-                        social.href !== "#"
-                          ? "noopener noreferrer"
-                          : undefined
+                        social.href !== "#" ? "noopener noreferrer" : undefined
                       }
                       aria-label={social.name}
-                      className={`group flex aspect-square w-full items-center justify-center rounded-2xl ${social.bg} ${social.shadow} transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]`}
+                      className={`group flex aspect-square w-full items-center justify-center rounded-xl ${social.bg} ${social.shadow} transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]`}
                     >
                       {/* IMPORTANT: force icon white */}
                       <Icon className="h-5 w-5 !text-white transition-transform duration-300 group-hover:scale-110 sm:h-6 sm:w-6" />
@@ -417,9 +396,7 @@ export default function ContactPage() {
                 MAP
             ================================================= */}
 
-            <div
-              className={`overflow-hidden rounded-[28px] p-2 ${clayCard}`}
-            >
+            <div className={`overflow-hidden rounded-[28px] p-2 ${clayCard}`}>
               <div className="overflow-hidden rounded-[22px]">
                 <iframe
                   title="Travel IQ Location Map"
@@ -437,4 +414,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

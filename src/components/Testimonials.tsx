@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const testimonials = [
   {
     name: "Rishabh Kumar",
@@ -105,7 +107,7 @@ export default function Testimonials() {
             SECTION HEADER
         ======================================================= */}
 
-        <div
+        <Reveal
           className="
             grid
             items-end
@@ -275,7 +277,7 @@ export default function Testimonials() {
               </p>
             </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* =========================================================
             TESTIMONIAL GRID
@@ -291,8 +293,8 @@ export default function Testimonials() {
           "
         >
           {testimonials.map((testimonial, index) => (
+            <Reveal key={testimonial.name} delay={index * 0.1}>
             <article
-              key={testimonial.name}
               className="
                 group
                 relative
@@ -562,6 +564,7 @@ export default function Testimonials() {
                 "
               />
             </article>
+            </Reveal>
           ))}
         </div>
 
@@ -569,7 +572,7 @@ export default function Testimonials() {
             BOTTOM TRUST STRIP
         ========================================================= */}
 
-        <div
+        <Reveal
           className="
             mt-10
             flex
@@ -641,7 +644,7 @@ export default function Testimonials() {
               TravelIQ Agent Network
             </span>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

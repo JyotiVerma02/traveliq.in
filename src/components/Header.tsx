@@ -1,17 +1,12 @@
+
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  ArrowUpRight,
-  ChevronDown,
-  Menu,
-  X,
-} from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
-
 
 const nav = [
   ["Home", "/"],
@@ -23,26 +18,11 @@ const nav = [
 
 const services = [
   ["Railway Agent ID", "/pages/services/railway-reservations/"],
-  [
-    "IRCTC Domestic Packages",
-    "/pages/services/irctc-domestic-packages/",
-  ],
-  [
-    "Tour Packages",
-    "/pages/services/irctc-tour-packages/",
-  ],
-  [
-    "Air Tickets",
-    "/pages/services/online-air-ticket-booking/",
-  ],
-  [
-    "Bus Tickets",
-    "/pages/services/bus-ticket-booking/",
-  ],
-  [
-    "Hotel Booking",
-    "/pages/services/online-hotel-booking/",
-  ],
+  ["IRCTC Domestic Packages", "/pages/services/irctc-domestic-packages/"],
+  ["Tour Packages", "/pages/services/irctc-tour-packages/"],
+  ["Air Tickets", "/pages/services/online-air-ticket-booking/"],
+  ["Bus Tickets", "/pages/services/bus-ticket-booking/"],
+  ["Hotel Booking", "/pages/services/online-hotel-booking/"],
   [
     "Class 3 Digital Signature",
     "/pages/services/digital-signature-provider-in-gurgaon/",
@@ -58,6 +38,9 @@ export default function Header() {
 
   /* =========================================================
      SCROLL DETECTION
+     IMPORTANT:
+     Scroll state changes ONLY visual styling.
+     Header height and logo size never change.
   ========================================================= */
 
   useEffect(() => {
@@ -89,19 +72,19 @@ export default function Header() {
      ACTIVE ROUTE
   ========================================================= */
 
-  const normalizedPath =
-    pathname.replace(/\/$/, "") || "/";
+  const normalizedPath = pathname.replace(/\/$/, "") || "/";
 
   const isActive = (href: string) => {
-  const normalizedHref = href.replace(/\/$/, "");
-  const normalizedPath = pathname.replace(/\/$/, "");
+    const normalizedHref = href.replace(/\/$/, "");
+    const currentPath = pathname.replace(/\/$/, "");
 
-  return (
-    normalizedPath === normalizedHref ||
-    (normalizedHref !== "" &&
-      normalizedPath.startsWith(normalizedHref + "/"))
-  );
-};
+    return (
+      currentPath === normalizedHref ||
+      (normalizedHref !== "" &&
+        currentPath.startsWith(normalizedHref + "/"))
+    );
+  };
+
   const isHome = normalizedPath === "/";
 
   const servicesActive =
@@ -127,7 +110,8 @@ export default function Header() {
           z-[100]
           w-full
           bg-white
-          transition-all
+
+          transition-[box-shadow,border-color]
           duration-300
 
           ${
@@ -139,12 +123,16 @@ export default function Header() {
       >
         {/* =======================================================
             NAV INNER CONTAINER
+
+            STATIC 80px HEIGHT
+            Does NOT change on scroll.
         ======================================================= */}
 
         <div
-          className={`
+          className="
             mx-auto
             flex
+            h-[80px]
             w-full
             max-w-[1500px]
             items-center
@@ -154,19 +142,13 @@ export default function Header() {
             sm:px-6
             lg:px-8
             xl:px-10
-
-            transition-all
-            duration-300
-
-            ${
-              isScrolled
-                ? "h-[68px]"
-                : "h-[80px]"
-            }
-          `}
+          "
         >
           {/* =====================================================
               LOGO
+
+              STATIC SIZE
+              Does NOT shrink on scroll.
           ===================================================== */}
 
           <Link
@@ -180,8 +162,10 @@ export default function Header() {
               shrink-0
               items-center
               rounded-lg
-              transition-all
+
+              transition-transform
               duration-300
+
               hover:-translate-y-0.5
             "
           >
@@ -190,18 +174,19 @@ export default function Header() {
               alt="TravelIQ"
               width={225}
               height={56}
-              className={`
-                h-auto
+              priority
+              sizes="225px"
+              className="
+                h-[46px]
+                w-[185px]
                 object-contain
-                transition-all
-                duration-300
 
-                ${
-                  isScrolled
-                    ? "w-[145px] sm:w-[160px]"
-                    : "w-[160px] sm:w-[180px] lg:w-[195px]"
-                }
-              `}
+                sm:h-[50px]
+                sm:w-[200px]
+
+                lg:h-[56px]
+                lg:w-[215px]
+              "
             />
           </Link>
 
@@ -225,7 +210,9 @@ export default function Header() {
                 gap-1
               "
             >
-              {/* HOME */}
+              {/* =================================================
+                  HOME
+              ================================================= */}
 
               <Link
                 href="/"
@@ -242,17 +229,14 @@ export default function Header() {
                   font-semibold
                   tracking-[0.02em]
 
-                  transition-all
+                  transition-colors
                   duration-300
 
                   ${
                     isActive("/")
-                      ? `
-                        text-[var(--tiq-orange)]
-                      `
+                      ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
-
                         hover:text-[var(--tiq-orange)]
                       `
                   }
@@ -266,12 +250,9 @@ export default function Header() {
                       absolute
                       bottom-0
                       left-1/2
-
                       h-[2px]
                       w-5
-
                       -translate-x-1/2
-
                       rounded-full
                       bg-[var(--tiq-orange)]
                     "
@@ -279,7 +260,9 @@ export default function Header() {
                 )}
               </Link>
 
-              {/* ABOUT */}
+              {/* =================================================
+                  ABOUT
+              ================================================= */}
 
               <Link
                 href="/about-travel-iq/"
@@ -296,17 +279,14 @@ export default function Header() {
                   font-semibold
                   tracking-[0.02em]
 
-                  transition-all
+                  transition-colors
                   duration-300
 
                   ${
                     isActive("/about-travel-iq/")
-                      ? `
-                        text-[var(--tiq-orange)]
-                      `
+                      ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
-
                         hover:text-[var(--tiq-orange)]
                       `
                   }
@@ -336,12 +316,8 @@ export default function Header() {
 
               <div
                 className="relative"
-                onMouseEnter={() =>
-                  setServicesOpen(true)
-                }
-                onMouseLeave={() =>
-                  setServicesOpen(false)
-                }
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
               >
                 <Link
                   href="/our-services/"
@@ -359,7 +335,7 @@ export default function Header() {
                     font-semibold
                     tracking-[0.02em]
 
-                    transition-all
+                    transition-colors
                     duration-300
 
                     ${
@@ -381,11 +357,7 @@ export default function Header() {
                       transition-transform
                       duration-300
 
-                      ${
-                        servicesOpen
-                          ? "rotate-180"
-                          : ""
-                      }
+                      ${servicesOpen ? "rotate-180" : ""}
                     `}
                   />
 
@@ -395,12 +367,9 @@ export default function Header() {
                         absolute
                         bottom-0
                         left-1/2
-
                         h-[2px]
                         w-5
-
                         -translate-x-1/2
-
                         rounded-full
                         bg-[var(--tiq-orange)]
                       "
@@ -422,7 +391,6 @@ export default function Header() {
                     w-[365px]
 
                     -translate-x-1/2
-
                     pt-4
 
                     transition-all
@@ -439,14 +407,12 @@ export default function Header() {
                     className="
                       relative
                       overflow-hidden
-
                       rounded-[20px]
 
                       border
                       border-[#10407A]/10
 
                       bg-white
-
                       p-3
 
                       shadow-[0_18px_45px_rgba(7,31,61,0.14)]
@@ -458,7 +424,6 @@ export default function Header() {
                       className="
                         pointer-events-none
                         absolute
-
                         -right-10
                         -top-10
 
@@ -468,7 +433,6 @@ export default function Header() {
                         rounded-full
 
                         bg-[var(--tiq-orange)]
-
                         opacity-[0.06]
                         blur-2xl
                       "
@@ -480,11 +444,8 @@ export default function Header() {
                       className="
                         relative
                         overflow-hidden
-
                         rounded-[16px]
-
                         bg-[#F5F8FC]
-
                         p-4
                       "
                     >
@@ -559,99 +520,95 @@ export default function Header() {
                     {/* SERVICES */}
 
                     <div className="mt-2.5 space-y-1">
-                      {services.map(
-                        ([name, href], index) => (
-                          <Link
-                            key={href}
-                            href={href}
-                            className={`
-                              group
+                      {services.map(([name, href], index) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          className={`
+                            group
 
-                              flex
-                              items-center
-                              justify-between
+                            flex
+                            items-center
+                            justify-between
 
-                              rounded-[13px]
+                            rounded-[13px]
 
-                              border
-                              border-transparent
+                            border
+                            border-transparent
 
-                              px-3.5
-                              py-2.5
+                            px-3.5
+                            py-2.5
 
-                              text-[13px]
-                              font-semibold
+                            text-[13px]
+                            font-semibold
+
+                            transition-colors
+                            duration-200
+
+                            ${
+                              isActive(href)
+                                ? `
+                                  border-[var(--tiq-orange)]/10
+                                  bg-[var(--tiq-orange-soft)]
+                                  text-[var(--tiq-orange)]
+                                `
+                                : `
+                                  text-[var(--tiq-text)]
+
+                                  hover:bg-[#F5F8FC]
+                                  hover:text-[var(--tiq-navy)]
+                                `
+                            }
+                          `}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span
+                              className={`
+                                flex
+                                h-5
+                                w-5
+                                items-center
+                                justify-center
+
+                                rounded-md
+
+                                text-[8px]
+                                font-bold
+
+                                ${
+                                  isActive(href)
+                                    ? `
+                                      bg-white
+                                      text-[var(--tiq-orange)]
+                                    `
+                                    : `
+                                      bg-[#F1F5F9]
+                                      text-[var(--tiq-navy)]
+                                    `
+                                }
+                              `}
+                            >
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            {name}
+                          </span>
+
+                          <ArrowUpRight
+                            size={14}
+                            className="
+                              opacity-0
 
                               transition-all
                               duration-200
 
-                              ${
-                                isActive(href)
-                                  ? `
-                                    border-[var(--tiq-orange)]/10
-                                    bg-[var(--tiq-orange-soft)]
-                                    text-[var(--tiq-orange)]
-                                  `
-                                  : `
-                                    text-[var(--tiq-text)]
-
-                                    hover:bg-[#F5F8FC]
-                                    hover:text-[var(--tiq-navy)]
-                                  `
-                              }
-                            `}
-                          >
-                            <span className="flex items-center gap-2">
-                              <span
-                                className={`
-                                  flex
-                                  h-5
-                                  w-5
-                                  items-center
-                                  justify-center
-
-                                  rounded-md
-
-                                  text-[8px]
-                                  font-bold
-
-                                  ${
-                                    isActive(href)
-                                      ? `
-                                        bg-white
-                                        text-[var(--tiq-orange)]
-                                      `
-                                      : `
-                                        bg-[#F1F5F9]
-                                        text-[var(--tiq-navy)]
-                                      `
-                                  }
-                                `}
-                              >
-                                {String(index + 1).padStart(
-                                  2,
-                                  "0"
-                                )}
-                              </span>
-
-                              {name}
-                            </span>
-
-                            <ArrowUpRight
-                              size={14}
-                              className="
-                                opacity-0
-                                transition-all
-                                duration-200
-
-                                group-hover:translate-x-0.5
-                                group-hover:-translate-y-0.5
-                                group-hover:opacity-100
-                              "
-                            />
-                          </Link>
-                        )
-                      )}
+                              group-hover:translate-x-0.5
+                              group-hover:-translate-y-0.5
+                              group-hover:opacity-100
+                            "
+                          />
+                        </Link>
+                      ))}
                     </div>
 
                     {/* ALL SERVICES */}
@@ -681,7 +638,7 @@ export default function Header() {
 
                         !text-white
 
-                        transition-all
+                        transition-colors
                         duration-300
 
                         hover:bg-[var(--tiq-navy-dark)]
@@ -695,6 +652,7 @@ export default function Header() {
                         size={14}
                         className="
                           !text-white
+
                           transition-transform
 
                           group-hover:-translate-y-0.5
@@ -706,7 +664,9 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* VIDEO */}
+              {/* =================================================
+                  VIDEO
+              ================================================= */}
 
               <Link
                 href="/video-gallery/"
@@ -721,14 +681,12 @@ export default function Header() {
                   font-semibold
                   tracking-[0.02em]
 
-                  transition-all
+                  transition-colors
                   duration-300
 
                   ${
                     isActive("/video-gallery/")
-                      ? `
-                        text-[var(--tiq-orange)]
-                      `
+                      ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
                         hover:text-[var(--tiq-orange)]
@@ -754,7 +712,9 @@ export default function Header() {
                 )}
               </Link>
 
-              {/* CONTACT */}
+              {/* =================================================
+                  CONTACT
+              ================================================= */}
 
               <Link
                 href="/contact-us/"
@@ -769,14 +729,12 @@ export default function Header() {
                   font-semibold
                   tracking-[0.02em]
 
-                  transition-all
+                  transition-colors
                   duration-300
 
                   ${
                     isActive("/contact-us/")
-                      ? `
-                        text-[var(--tiq-orange)]
-                      `
+                      ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
                         hover:text-[var(--tiq-orange)]
@@ -802,7 +760,9 @@ export default function Header() {
                 )}
               </Link>
 
-              {/* PAY NOW */}
+              {/* =================================================
+                  PAY NOW
+              ================================================= */}
 
               <Link
                 href="/pay-now/"
@@ -817,14 +777,12 @@ export default function Header() {
                   font-semibold
                   tracking-[0.02em]
 
-                  transition-all
+                  transition-colors
                   duration-300
 
                   ${
                     isActive("/pay-now/")
-                      ? `
-                        text-[var(--tiq-orange)]
-                      `
+                      ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
                         hover:text-[var(--tiq-orange)]
@@ -890,7 +848,7 @@ export default function Header() {
 
                 text-[var(--tiq-navy)]
 
-                transition-all
+                transition-colors
                 duration-300
 
                 hover:text-[var(--tiq-orange)]
@@ -984,9 +942,9 @@ export default function Header() {
 
                 !text-white
 
-                shadow-[0_6px_15px_rgba(37,211,102,0.18)]
+                shadow-[0_6px_15px_rgba(37,211,61,0.18)]
 
-                transition-all
+                transition-transform
                 duration-300
 
                 hover:-translate-y-0.5
@@ -1013,9 +971,7 @@ export default function Header() {
 
           <button
             type="button"
-            onClick={() =>
-              setOpen((value) => !value)
-            }
+            onClick={() => setOpen((value) => !value)}
             aria-label={
               open
                 ? "Close navigation menu"
@@ -1044,7 +1000,7 @@ export default function Header() {
 
               shadow-[0_4px_12px_rgba(7,31,61,0.08)]
 
-              transition-all
+              transition-colors
               duration-300
 
               hover:text-[var(--tiq-orange)]
@@ -1075,7 +1031,7 @@ export default function Header() {
             overflow-hidden
             bg-white
 
-            transition-all
+            transition-[max-height,opacity]
             duration-300
 
             xl:hidden
@@ -1109,7 +1065,9 @@ export default function Header() {
               shadow-[0_12px_30px_rgba(7,31,61,0.10)]
             "
           >
-            {/* MOBILE NAVIGATION */}
+            {/* =================================================
+                MOBILE NAVIGATION
+            ================================================= */}
 
             <nav
               className="space-y-1"
@@ -1136,7 +1094,7 @@ export default function Header() {
                     text-[14px]
                     font-semibold
 
-                    transition-all
+                    transition-colors
                     duration-200
 
                     ${
@@ -1171,15 +1129,15 @@ export default function Header() {
                 </Link>
               ))}
 
-              {/* MOBILE SERVICES */}
+              {/* =================================================
+                  MOBILE SERVICES
+              ================================================= */}
 
               <div className="pt-1">
                 <button
                   type="button"
                   onClick={() =>
-                    setServicesOpen(
-                      (value) => !value
-                    )
+                    setServicesOpen((value) => !value)
                   }
                   className={`
                     flex
@@ -1195,7 +1153,8 @@ export default function Header() {
                     text-[14px]
                     font-semibold
 
-                    transition-all
+                    transition-colors
+                    duration-200
 
                     ${
                       servicesActive
@@ -1221,11 +1180,7 @@ export default function Header() {
                       transition-transform
                       duration-300
 
-                      ${
-                        servicesOpen
-                          ? "rotate-180"
-                          : ""
-                      }
+                      ${servicesOpen ? "rotate-180" : ""}
                     `}
                   />
                 </button>
@@ -1233,7 +1188,8 @@ export default function Header() {
                 <div
                   className={`
                     overflow-hidden
-                    transition-all
+
+                    transition-[max-height,opacity]
                     duration-300
 
                     ${
@@ -1295,67 +1251,68 @@ export default function Header() {
 
                     {/* SERVICES */}
 
-                    {services.map(
-                      ([name, href]) => (
-                        <Link
-                          key={href}
-                          href={href}
-                          onClick={closeMenu}
-                          className={`
-                            group
+                    {services.map(([name, href]) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        onClick={closeMenu}
+                        className={`
+                          group
 
-                            flex
-                            items-center
-                            justify-between
+                          flex
+                          items-center
+                          justify-between
 
-                            rounded-[11px]
+                          rounded-[11px]
 
-                            px-3
-                            py-2.5
+                          px-3
+                          py-2.5
 
-                            text-[13px]
-                            font-medium
+                          text-[13px]
+                          font-medium
+
+                          transition-colors
+                          duration-200
+
+                          ${
+                            isActive(href)
+                              ? `
+                                bg-[var(--tiq-orange-soft)]
+                                text-[var(--tiq-orange)]
+                              `
+                              : `
+                                text-[var(--tiq-muted)]
+
+                                hover:bg-[#F5F8FC]
+                                hover:text-[var(--tiq-navy)]
+                              `
+                          }
+                        `}
+                      >
+                        <span>{name}</span>
+
+                        <ArrowUpRight
+                          size={13}
+                          className="
+                            opacity-40
 
                             transition-all
 
-                            ${
-                              isActive(href)
-                                ? `
-                                  bg-[var(--tiq-orange-soft)]
-                                  text-[var(--tiq-orange)]
-                                `
-                                : `
-                                  text-[var(--tiq-muted)]
-
-                                  hover:bg-[#F5F8FC]
-                                  hover:text-[var(--tiq-navy)]
-                                `
-                            }
-                          `}
-                        >
-                          <span>{name}</span>
-
-                          <ArrowUpRight
-                            size={13}
-                            className="
-                              opacity-40
-
-                              transition-all
-
-                              group-hover:-translate-y-0.5
-                              group-hover:translate-x-0.5
-                              group-hover:opacity-100
-                            "
-                          />
-                        </Link>
-                      )
-                    )}
+                            group-hover:-translate-y-0.5
+                            group-hover:translate-x-0.5
+                            group-hover:opacity-100
+                          "
+                        />
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
             </nav>
 
-            {/* MOBILE ACTIONS */}
+            {/* =================================================
+                MOBILE ACTIONS
+            ================================================= */}
 
             <div className="mt-4 grid gap-2.5">
               {/* LOGIN */}
@@ -1388,7 +1345,8 @@ export default function Header() {
 
                   shadow-[0_4px_12px_rgba(7,31,61,0.05)]
 
-                  transition-all
+                  transition-colors
+                  duration-200
 
                   hover:text-[var(--tiq-orange)]
                 "
@@ -1423,7 +1381,8 @@ export default function Header() {
 
                   shadow-[0_7px_16px_rgba(238,83,38,0.18)]
 
-                  transition-all
+                  transition-colors
+                  duration-200
 
                   hover:bg-[var(--tiq-orange-dark)]
                 "
@@ -1467,7 +1426,8 @@ export default function Header() {
 
                   shadow-[0_7px_16px_rgba(37,211,102,0.16)]
 
-                  transition-all
+                  transition-transform
+                  duration-200
 
                   hover:-translate-y-0.5
                 "
@@ -1486,7 +1446,9 @@ export default function Header() {
               </a>
             </div>
 
-            {/* HELP CARD */}
+            {/* =================================================
+                HELP CARD
+            ================================================= */}
 
             <div
               className="
@@ -1530,17 +1492,17 @@ export default function Header() {
 
       {/* =========================================================
           NON-HOME PAGE SPACING
+
+          Matches the fixed 80px header.
       ========================================================= */}
 
       {!isHome && (
         <div
-          className="
-            h-[80px]
-            lg:h-[82px]
-          "
+          className="h-[80px]"
           aria-hidden="true"
         />
       )}
     </>
   );
 }
+

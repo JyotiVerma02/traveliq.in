@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const services = [
   ["Air Tickets", "Travel IQ is offering the cheapest fares for all domestic & International air tickets.", "/pages/services/online-air-ticket-booking/", "/images/services/air-tickets.webp"],
@@ -79,7 +80,7 @@ export default function Services() {
   return (
     <section ref={servicesSectionRef} className="bg-[#F4F7FB]">
       <div className="relative w-full py-20 lg:py-28">
-        <div className="mx-auto max-w-2xl px-5 text-center">
+        <Reveal className="mx-auto max-w-2xl px-5 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#EE5326]">
             Our Services
           </p>
@@ -89,7 +90,7 @@ export default function Services() {
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#5A6A80]">
             Air tickets, railway reservations, hotels, buses, tour packages and visa assistance — arranged with care.
           </p>
-        </div>
+        </Reveal>
 
         <div
           ref={servicesTrackRef}
@@ -105,10 +106,16 @@ export default function Services() {
           }}
         >
           {services.map(([title, description, href, image], index) => (
+            <Reveal
+              key={title}
+              delay={Math.min(index, 4) * 0.08}
+              direction="right"
+              distance={24}
+              className="h-[500px] w-[320px] shrink-0 snap-start sm:w-[360px] lg:w-[380px]"
+            >
             <Link
               href={href}
-              key={title}
-              className="group flex h-[500px] w-[320px] shrink-0 snap-start flex-col overflow-hidden rounded-[24px] border border-[#10407A]/10 bg-white shadow-[0_18px_50px_rgba(16,64,122,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#EE5326]/25 hover:shadow-[0_28px_60px_rgba(16,64,122,0.12)] sm:w-[360px] lg:w-[380px]"
+              className="group flex h-full w-full flex-col overflow-hidden rounded-[24px] border border-[#10407A]/10 bg-white shadow-[0_18px_50px_rgba(16,64,122,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#EE5326]/25 hover:shadow-[0_28px_60px_rgba(16,64,122,0.12)]"
             >
               <div className="relative aspect-[16/10] overflow-hidden rounded-md bg-[#EEF4FA]">
                 <Image
@@ -151,10 +158,11 @@ export default function Services() {
                 </div>
               </div>
             </Link>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <Reveal className="mt-12 text-center">
         <Link
   href="/our-services/"
   className="inline-flex items-center gap-2 rounded-full bg-[#EE5326] px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.16em] !text-white transition hover:bg-[#D9471D]"
@@ -162,7 +170,7 @@ export default function Services() {
   <span className="!text-white">View All Services</span>
   <ArrowRight size={16} className="!text-white" />
 </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

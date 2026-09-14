@@ -495,9 +495,9 @@ export default function AboutPage() {
       ================================================= */}
 
             <div className="relative z-10 w-full min-w-0">
-            {/* Decorative orange line */}
-            <div
-              className="
+              {/* Decorative orange line */}
+              <div
+                className="
             absolute
             -right-3
             -top-3
@@ -512,11 +512,11 @@ export default function AboutPage() {
             sm:h-32
             sm:w-32
           "
-            />
+              />
 
-            {/* Decorative navy line */}
-            <div
-              className="
+              {/* Decorative navy line */}
+              <div
+                className="
             absolute
             -bottom-3
             -left-3
@@ -531,24 +531,24 @@ export default function AboutPage() {
             sm:h-32
             sm:w-32
           "
-            />
-
-            {/* Main image */}
-            <div className="group relative h-[380px] overflow-hidden rounded-[24px] bg-[#EEF3F8] sm:h-[440px] lg:h-[480px] xl:h-[520px]">
-              <Image
-                src="/images/about.webp"
-                alt="TravelIQ travel services"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 58vw"
-                priority
-                fetchPriority="high"
-                quality={75}
               />
 
-              {/* Image overlay */}
-              <div
-                className="
+              {/* Main image */}
+              <div className="group relative h-[380px] overflow-hidden rounded-[24px] bg-[#EEF3F8] sm:h-[440px] lg:h-[480px] xl:h-[520px]">
+                <Image
+                  src="/images/about.webp"
+                  alt="TravelIQ travel services"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 58vw"
+                  priority
+                  fetchPriority="high"
+                  quality={75}
+                />
+
+                {/* Image overlay */}
+                <div
+                  className="
               pointer-events-none
               absolute
               inset-0
@@ -557,11 +557,11 @@ export default function AboutPage() {
               via-[#071A35]/10
               to-transparent
             "
-              />
+                />
 
-              {/* Orange edge */}
-              <div
-                className="
+                {/* Orange edge */}
+                <div
+                  className="
               absolute
               bottom-0
               left-0
@@ -569,11 +569,11 @@ export default function AboutPage() {
               w-full
               bg-[#EE5326]
             "
-              />
+                />
 
-              {/* Image Content */}
-              <div
-                className="
+                {/* Image Content */}
+                <div
+                  className="
               absolute
               bottom-0
               left-0
@@ -582,23 +582,23 @@ export default function AboutPage() {
               sm:p-7
               lg:p-8
             "
-              >
-                <div className="flex items-end justify-between gap-5">
-                  <div>
-                    <p
-                      className="
+                >
+                  <div className="flex items-end justify-between gap-5">
+                    <div>
+                      <p
+                        className="
                     text-[9px]
                     font-semibold
                     uppercase
                     tracking-[0.24em]
                     text-white/70
                   "
-                    >
-                      Travel Intelligence
-                    </p>
+                      >
+                        Travel Intelligence
+                      </p>
 
-                    <h3
-                      className="
+                      <h3
+                        className="
                     mt-2
                     text-2xl
                     font-bold
@@ -606,12 +606,12 @@ export default function AboutPage() {
                     text-white
                     sm:text-3xl
                   "
-                    >
-                      Your Travel Partner
-                    </h3>
+                      >
+                        Your Travel Partner
+                      </h3>
 
-                    <p
-                      className="
+                      <p
+                        className="
                     mt-2
                     max-w-md
                     text-xs
@@ -619,15 +619,15 @@ export default function AboutPage() {
                     text-white/70
                     sm:text-sm
                   "
-                    >
-                      Connecting people, journeys and travel opportunities with
-                      trusted expertise.
-                    </p>
-                  </div>
+                      >
+                        Connecting people, journeys and travel opportunities
+                        with trusted expertise.
+                      </p>
+                    </div>
 
-                  {/* Globe */}
-                  <div
-                    className="
+                    {/* Globe */}
+                    <div
+                      className="
                   flex
                   h-12
                   w-12
@@ -641,19 +641,19 @@ export default function AboutPage() {
                   sm:h-14
                   sm:w-14
                 "
-                  >
-                    <Globe className="h-6 w-6 text-white" />
+                    >
+                      <Globe className="h-6 w-6 text-white" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* =================================================
+              {/* =================================================
             SMALL IMAGE LABEL
         ================================================= */}
 
-            <div
-              className="
+              <div
+                className="
             absolute
             -bottom-5
             right-5
@@ -671,9 +671,9 @@ export default function AboutPage() {
             sm:px-5
             sm:py-4
           "
-            >
-              <div
-                className="
+              >
+                <div
+                  className="
               flex
               h-9
               w-9
@@ -681,35 +681,35 @@ export default function AboutPage() {
               justify-center
               bg-[#FFF0EA]
             "
-              >
-                <BadgeCheck className="h-5 w-5 text-[#EE5326]" />
-              </div>
+                >
+                  <BadgeCheck className="h-5 w-5 text-[#EE5326]" />
+                </div>
 
-              <div>
-                <p
-                  className="
+                <div>
+                  <p
+                    className="
                 text-[8px]
                 font-bold
                 uppercase
                 tracking-[0.18em]
                 text-[#EE5326]
               "
-                >
-                  Trusted Since
-                </p>
+                  >
+                    Trusted Since
+                  </p>
 
-                <p
-                  className="
+                  <p
+                    className="
                 mt-0.5
                 text-sm
                 font-bold
                 text-[#10407A]
               "
-                >
-                  2014
-                </p>
+                  >
+                    2014
+                  </p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
