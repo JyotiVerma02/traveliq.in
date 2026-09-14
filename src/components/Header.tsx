@@ -44,8 +44,15 @@ export default function Header() {
   ========================================================= */
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 25);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 25);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     handleScroll();

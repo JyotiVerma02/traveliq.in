@@ -337,18 +337,18 @@ export default function Hero() {
                   justify-center
                   gap-3
                   rounded-[14px]
-                  bg-[#EE5326]
+                  bg-[#C4320A]
                   px-7
                   text-[11px]
                   font-semibold
                   tracking-[0.055em]
                   !text-white
-                  shadow-[0_12px_30px_rgba(238,83,38,0.30)]
+                  shadow-[0_12px_30px_rgba(196,50,10,0.30)]
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:bg-[#D9471D]
-                  hover:shadow-[0_16px_35px_rgba(238,83,38,0.40)]
+                  hover:bg-[#A82907]
+                  hover:shadow-[0_16px_35px_rgba(196,50,10,0.40)]
                   active:translate-y-0
                 "
               >

@@ -16,76 +16,15 @@ const services = [
 ] as const;
 
 export default function Services() {
-  const servicesSectionRef = useRef<HTMLElement>(null);
-  const servicesTrackRef = useRef<HTMLDivElement>(null);
-  const wheelLockedRef = useRef(false);
-
-  useEffect(() => {
-    const section = servicesSectionRef.current;
-    const track = servicesTrackRef.current;
-
-    if (!section || !track) return;
-
-    const handleWheel = (event: WheelEvent) => {
-      if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) {
-        return;
-      }
-
-      const maxScrollLeft = track.scrollWidth - track.clientWidth;
-      const movingRight = event.deltaY > 0;
-      const boundaryTolerance = 24;
-      const atStart = track.scrollLeft <= boundaryTolerance;
-      const atEnd = track.scrollLeft >= maxScrollLeft - boundaryTolerance;
-      const canMoveRight = !atEnd;
-      const canMoveLeft = !atStart;
-
-      if ((movingRight && !canMoveRight) || (!movingRight && !canMoveLeft)) {
-        return;
-      }
-
-      event.preventDefault();
-
-      if (wheelLockedRef.current) {
-        return;
-      }
-
-      const firstCard = track.firstElementChild as HTMLElement | null;
-      const cardStep = firstCard
-        ? firstCard.getBoundingClientRect().width + 28
-        : 420;
-      const targetScrollLeft = Math.max(
-        0,
-        Math.min(
-          maxScrollLeft,
-          track.scrollLeft + (movingRight ? cardStep : -cardStep),
-        ),
-      );
-
-      wheelLockedRef.current = true;
-      track.scrollTo({
-        left: targetScrollLeft,
-        behavior: "smooth",
-      });
-
-      window.setTimeout(() => {
-        wheelLockedRef.current = false;
-      }, 220);
-    };
-
-    section.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => section.removeEventListener("wheel", handleWheel);
-  }, []);
-
   return (
-    <section ref={servicesSectionRef} className="bg-[#F4F7FB]">
+    <section className="bg-[#F4F7FB]">
       <div className="relative w-full py-20 lg:py-28">
         <Reveal className="mx-auto max-w-2xl px-5 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#EE5326]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C4320A]">
             Our Services
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-[-0.04em] text-[#071F3D] sm:text-5xl lg:text-6xl">
-            Best travel services in <span className="text-[#EE5326]">India</span>
+            Best travel services in <span className="text-[#C4320A]">India</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#5A6A80]">
             Air tickets, railway reservations, hotels, buses, tour packages and visa assistance — arranged with care.
@@ -93,7 +32,6 @@ export default function Services() {
         </Reveal>
 
         <div
-          ref={servicesTrackRef}
           className="mt-12 flex w-full snap-x snap-mandatory gap-7 overflow-x-auto px-5 pb-8 pt-2 scrollbar-none sm:px-8 lg:px-16"
           style={{
             scrollbarWidth: "none",

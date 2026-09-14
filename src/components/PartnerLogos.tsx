@@ -52,13 +52,13 @@ export default function PartnerLogos() {
         {/* Heading */}
         <div className="mb-6 text-center">
           <div className="mb-2 flex items-center justify-center gap-3">
-            <span className="h-px w-7 bg-[#EE5326]/70" />
+            <span className="h-px w-7 bg-[#C4320A]/70" />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#EE5326]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C4320A]">
               Our Network
             </span>
 
-            <span className="h-px w-7 bg-[#EE5326]/70" />
+            <span className="h-px w-7 bg-[#C4320A]/70" />
           </div>
 
           <h2 className="text-lg font-semibold text-[#071F3D] sm:text-xl">

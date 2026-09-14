@@ -131,7 +131,7 @@ export default function ServicesPage() {
 
               <span className="h-px w-9 bg-[#ee5326]" />
 
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#ee5326]">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C4320A]">
                 TravelIQ Services
               </span>
 
@@ -346,7 +346,7 @@ export default function ServicesPage() {
                       Explore Service
                     </span>
 
-                    <span className="flex h-9 w-9 items-center justify-center rounded-[11px] border border-white bg-[#f1f4f8] text-[#ee5326] shadow-[4px_5px_10px_rgba(16,64,122,0.08),-3px_-3px_8px_rgba(255,255,255,0.9)] transition-all duration-300 group-hover:bg-[#ee5326] group-hover:text-white">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-[11px] border border-white bg-[#f1f4f8] text-[#C4320A] shadow-[4px_5px_10px_rgba(16,64,122,0.08),-3px_-3px_8px_rgba(255,255,255,0.9)] transition-all duration-300 group-hover:bg-[#C4320A] group-hover:text-white">
 
                       <ArrowRight className="h-4 w-4" />
 

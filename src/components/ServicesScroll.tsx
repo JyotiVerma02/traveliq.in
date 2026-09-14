@@ -111,7 +111,7 @@ export default function ServicesScroll({
         <div className="mx-auto max-w-3xl text-center">
           {kicker && (
             <div className="mb-4 inline-block">
-              <span className="rounded-full bg-[#FFF1EB] px-4 py-1.5 text-xs font-semibold text-[#EE5326] shadow-xs">
+              <span className="rounded-full bg-[#FFF1EB] px-4 py-1.5 text-xs font-semibold text-[#C4320A] shadow-xs">
                 {kicker}
               </span>
             </div>
