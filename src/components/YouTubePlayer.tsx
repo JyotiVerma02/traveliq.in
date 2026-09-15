@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 interface YouTubePlayerProps {
@@ -44,12 +45,12 @@ export default function YouTubePlayer({ url }: YouTubePlayerProps) {
       className="relative h-full w-full"
       aria-label="Play video"
     >
-      <img
+      <Image
         src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
         alt=""
+        width={480}
+        height={360}
         className="h-full w-full object-cover"
-        loading="lazy"
-        decoding="async"
       />
       <span className="absolute inset-0 bg-[#071A35]/25" />
       <span className="absolute inset-0 m-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#EE5326] text-white shadow-[0_10px_24px_rgba(238,83,38,0.35)]">

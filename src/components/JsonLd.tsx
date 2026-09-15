@@ -1,10 +1,20 @@
 import React from "react";
+import { absoluteUrl, canonicalUrl, SITE_URL } from "@/lib/site";
+import { escapeJsonLd } from "@/lib/sanitize";
 
-export function JsonLd({ data }: { data: Record<string, any> | Record<string, any>[] }) {
+type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | { [key: string]: JsonValue | undefined };
+
+export function JsonLd({ data }: { data: JsonValue | JsonValue[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: escapeJsonLd(data) }}
     />
   );
 }
@@ -13,11 +23,11 @@ export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://traveliq.in/#organization",
+    "@id": `${SITE_URL}/#organization`,
     name: "TravelIQ",
     legalName: "Travel IQ Services Private Limited",
-    url: "https://traveliq.in",
-    logo: "https://traveliq.in/logo.webp",
+    url: SITE_URL,
+    logo: absoluteUrl("/logo.webp"),
     foundingDate: "2014",
     description:
       "TravelIQ is the leading IRCTC Principal Service Provider and IATA accredited travel agency in India providing train ticket booking agent registration, flight, hotel, bus, and tour packages.",
@@ -50,12 +60,12 @@ export function getWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://traveliq.in/#website",
-    url: "https://traveliq.in",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
     name: "TravelIQ",
     description: "Your Own Travel Intelligence - IRCTC Principal Agent & Travel Services",
     publisher: {
-      "@id": "https://traveliq.in/#organization",
+      "@id": `${SITE_URL}/#organization`,
     },
   };
 }
@@ -64,10 +74,10 @@ export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "@id": "https://traveliq.in/#localbusiness",
+    "@id": `${SITE_URL}/#localbusiness`,
     name: "Travel IQ Services Private Limited",
-    image: "https://traveliq.in/logo.webp",
-    url: "https://traveliq.in",
+    image: absoluteUrl("/logo.webp"),
+    url: SITE_URL,
     telephone: "+91-7835025030",
     email: "support@traveliq.in",
     priceRange: "₹₹",
@@ -123,10 +133,10 @@ export function getServiceSchema(
     "@type": "Service",
     name,
     description,
-    url,
-    image: image ? `https://traveliq.in${image}` : undefined,
+    url: /^https?:\/\//i.test(url) ? url : canonicalUrl(url),
+    image: image ? absoluteUrl(image) : undefined,
     provider: {
-      "@id": "https://traveliq.in/#organization",
+      "@id": `${SITE_URL}/#organization`,
     },
     areaServed: {
       "@type": "Country",

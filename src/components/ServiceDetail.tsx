@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { JsonLd, getBreadcrumbSchema, getServiceSchema } from "@/components/JsonLd";
+import { canonicalUrl } from "@/lib/site";
 
 type ServiceDetailProps = {
   title: string;
@@ -19,15 +20,15 @@ export default function ServiceDetail({
   image,
   imageAlt,
 }: ServiceDetailProps) {
-  const canonicalUrl = `https://traveliq.in/pages/services/${slug}/`;
+  const pageUrl = canonicalUrl(`/pages/services/${slug}`);
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", item: "https://traveliq.in/" },
-    { name: "Services", item: "https://traveliq.in/our-services/" },
-    { name: title, item: canonicalUrl },
+    { name: "Home", item: canonicalUrl("/") },
+    { name: "Services", item: canonicalUrl("/our-services") },
+    { name: title, item: pageUrl },
   ]);
 
-  const serviceSchema = getServiceSchema(title, intro, canonicalUrl, image);
+  const serviceSchema = getServiceSchema(title, intro, pageUrl, image);
 
   return (
     <main className="min-h-screen bg-[#f6f9fe]">
@@ -40,7 +41,7 @@ export default function ServiceDetail({
               Home
             </Link>
             <span>/</span>
-            <Link href="/our-services/" className="hover:text-[#10407A] transition-colors">
+            <Link href="/our-services" className="hover:text-[#10407A] transition-colors">
               Services
             </Link>
             <span>/</span>
@@ -81,7 +82,7 @@ export default function ServiceDetail({
           ))}
           <div className="pt-4 text-center">
             <Link
-              href="/irctc-agent-registration/"
+              href="/irctc-agent-registration"
               className="inline-flex rounded-full bg-[#EE5326] px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#D9471D] transition-transform hover:-translate-y-0.5"
             >
               Become an IRCTC Agent Now

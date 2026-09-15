@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Get Class 3 Digital Signature Certificates (DSC) in Gurgaon with TravelIQ. Official CCA accredited DSC issuing assistance for IRCTC agents, e-tendering, and GST filing.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon/",
+    canonical: "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon",
   },
   openGraph: {
     title: "Class 3 Digital Signature Provider in Gurgaon | TravelIQ",
     description:
       "Get Class 3 Digital Signature Certificates (DSC) in Gurgaon with TravelIQ. Official CCA accredited DSC issuing assistance for IRCTC agents, e-tendering, and GST filing.",
-    url: "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon/",
+    url: "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

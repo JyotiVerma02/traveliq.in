@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Book official IRCTC domestic tour packages across India with TravelIQ. Bharat Gaurav trains, pilgrim packages, hill stations, and heritage tours with attractive agent commissions.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/irctc-domestic-packages/",
+    canonical: "https://traveliq.in/pages/services/irctc-domestic-packages",
   },
   openGraph: {
     title: "IRCTC Domestic Tour Packages | TravelIQ",
     description:
       "Book official IRCTC domestic tour packages across India with TravelIQ. Bharat Gaurav trains, pilgrim packages, hill stations, and heritage tours with attractive agent commissions.",
-    url: "https://traveliq.in/pages/services/irctc-domestic-packages/",
+    url: "https://traveliq.in/pages/services/irctc-domestic-packages",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

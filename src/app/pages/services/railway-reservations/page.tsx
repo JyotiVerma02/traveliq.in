@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Authorized IRCTC train ticket reservation services with TravelIQ. Book general, Tatkal, AC, Sleeper, and luxury train tickets across Indian Railways network.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/railway-reservations/",
+    canonical: "https://traveliq.in/pages/services/railway-reservations",
   },
   openGraph: {
     title: "Railway Reservation & IRCTC Agent Ticket Booking | TravelIQ",
     description:
       "Authorized IRCTC train ticket reservation services with TravelIQ. Book general, Tatkal, AC, Sleeper, and luxury train tickets across Indian Railways network.",
-    url: "https://traveliq.in/pages/services/railway-reservations/",
+    url: "https://traveliq.in/pages/services/railway-reservations",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

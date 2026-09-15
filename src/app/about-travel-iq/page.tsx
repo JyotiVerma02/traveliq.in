@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
   alternates: {
-    canonical: "https://traveliq.in/about-travel-iq/",
+    canonical: "https://traveliq.in/about-travel-iq",
   },
   openGraph: {
     title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
     description:
       "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
-    url: "https://traveliq.in/about-travel-iq/",
+    url: "https://traveliq.in/about-travel-iq",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -183,7 +183,7 @@ const journey = [
 export default function AboutPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "https://traveliq.in/" },
-    { name: "About Us", item: "https://traveliq.in/about-travel-iq/" },
+    { name: "About Us", item: "https://traveliq.in/about-travel-iq" },
   ]);
 
   return (
@@ -2283,7 +2283,7 @@ export default function AboutPage() {
 
               {/* CTA */}
               <Link
-                href="/our-services/"
+                href="/our-services"
                 aria-label="Explore TravelIQ services"
                 className="group mt-7 inline-flex items-center gap-4 text-[12px] font-bold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:text-[#EE5326]"
               >

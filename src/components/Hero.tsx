@@ -324,7 +324,7 @@ export default function Hero() {
             >
               {/* Become an Agent */}
               <Link
-                href="/irctc-agent-registration/"
+                href="/irctc-agent-registration"
                 className="
                   group
                   inline-flex

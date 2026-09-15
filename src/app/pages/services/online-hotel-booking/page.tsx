@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Book hotels online in India and worldwide with TravelIQ. Compare luxury resorts, business hotels, and budget stays with exclusive agent discounts.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/online-hotel-booking/",
+    canonical: "https://traveliq.in/pages/services/online-hotel-booking",
   },
   openGraph: {
     title: "Online Hotel Booking - Luxury & Budget Accommodation | TravelIQ",
     description:
       "Book hotels online in India and worldwide with TravelIQ. Compare luxury resorts, business hotels, and budget stays with exclusive agent discounts.",
-    url: "https://traveliq.in/pages/services/online-hotel-booking/",
+    url: "https://traveliq.in/pages/services/online-hotel-booking",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Read the terms and conditions for using Travel IQ Services Private Limited services and website.",
   alternates: {
-    canonical: "https://traveliq.in/term-and-conditions/",
+    canonical: "https://traveliq.in/term-and-conditions",
   },
   openGraph: {
     title: "Terms and Conditions | TravelIQ",
     description:
       "Read the terms and conditions for using Travel IQ Services Private Limited services and website.",
-    url: "https://traveliq.in/term-and-conditions/",
+    url: "https://traveliq.in/term-and-conditions",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

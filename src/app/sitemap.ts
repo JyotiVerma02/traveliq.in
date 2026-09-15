@@ -1,121 +1,63 @@
 import type { MetadataRoute } from "next";
 import { getPosts } from "@/lib/wordpress";
+import { SITE_URL, canonicalUrl, staticSitemapPaths } from "@/lib/site";
+
+const staticRouteMeta: Record<
+  (typeof staticSitemapPaths)[number],
+  Pick<MetadataRoute.Sitemap[number], "changeFrequency" | "priority">
+> = {
+  "/": { changeFrequency: "daily", priority: 1.0 },
+  "/irctc-agent-registration": { changeFrequency: "weekly", priority: 0.9 },
+  "/our-services": { changeFrequency: "weekly", priority: 0.9 },
+  "/pages/services/railway-reservations": {
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  "/pages/services/irctc-domestic-packages": {
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  "/pages/services/irctc-tour-packages": {
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  "/pages/services/online-air-ticket-booking": {
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  "/pages/services/bus-ticket-booking": {
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  "/pages/services/online-hotel-booking": {
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  "/pages/services/digital-signature-provider-in-gurgaon": {
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
+  "/about-travel-iq": { changeFrequency: "monthly", priority: 0.8 },
+  "/contact-us": { changeFrequency: "monthly", priority: 0.8 },
+  "/video-gallery": { changeFrequency: "weekly", priority: 0.8 },
+  "/pay-now": { changeFrequency: "monthly", priority: 0.7 },
+  "/privacy-policy": { changeFrequency: "yearly", priority: 0.3 },
+  "/refund-cancellation-policy": { changeFrequency: "yearly", priority: 0.3 },
+  "/term-and-conditions": { changeFrequency: "yearly", priority: 0.3 },
+};
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://traveliq.in";
-
-  // Public static routes
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/irctc-agent-registration/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/our-services/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/railway-reservations/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/irctc-domestic-packages/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/irctc-tour-packages/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/online-air-ticket-booking/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/bus-ticket-booking/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/online-hotel-booking/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pages/services/digital-signature-provider-in-gurgaon/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about-travel-iq/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact-us/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/video-gallery/`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/pay-now/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/privacy-policy/`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/refund-cancellation-policy/`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/term-and-conditions/`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-  ];
+  const staticRoutes = staticSitemapPaths.map((path) => ({
+    url: canonicalUrl(path),
+    ...staticRouteMeta[path],
+  }));
 
   // Fetch dynamic WP post URLs safely
   let postRoutes: MetadataRoute.Sitemap = [];
   try {
     const posts = await getPosts("posts");
     postRoutes = posts.map((post) => ({
-      url: `${baseUrl}/pages/${post.slug}/`,
+      url: `${SITE_URL}/pages/${post.slug}`,
       lastModified: post.date ? new Date(post.date) : new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

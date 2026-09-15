@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Book online bus tickets across 12,000+ routes in India with TravelIQ. Choose from Volvo, AC Sleeper, Deluxe, and Express buses with best fare support.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/bus-ticket-booking/",
+    canonical: "https://traveliq.in/pages/services/bus-ticket-booking",
   },
   openGraph: {
     title: "Bus Ticket Booking Online | TravelIQ",
     description:
       "Book online bus tickets across 12,000+ routes in India with TravelIQ. Choose from Volvo, AC Sleeper, Deluxe, and Express buses with best fare support.",
-    url: "https://traveliq.in/pages/services/bus-ticket-booking/",
+    url: "https://traveliq.in/pages/services/bus-ticket-booking",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

@@ -10,22 +10,22 @@ import { useEffect, useState } from "react";
 
 const nav = [
   ["Home", "/"],
-  ["About", "/about-travel-iq/"],
-  ["Video Gallery", "/video-gallery/"],
-  ["Contact", "/contact-us/"],
-  ["Pay now", "/pay-now/"],
+  ["About", "/about-travel-iq"],
+  ["Video Gallery", "/video-gallery"],
+  ["Contact", "/contact-us"],
+  ["Pay now", "/pay-now"],
 ];
 
 const services = [
-  ["Railway Agent ID", "/pages/services/railway-reservations/"],
-  ["IRCTC Domestic Packages", "/pages/services/irctc-domestic-packages/"],
-  ["Tour Packages", "/pages/services/irctc-tour-packages/"],
-  ["Air Tickets", "/pages/services/online-air-ticket-booking/"],
-  ["Bus Tickets", "/pages/services/bus-ticket-booking/"],
-  ["Hotel Booking", "/pages/services/online-hotel-booking/"],
+  ["Railway Agent ID", "/pages/services/railway-reservations"],
+  ["IRCTC Domestic Packages", "/pages/services/irctc-domestic-packages"],
+  ["Tour Packages", "/pages/services/irctc-tour-packages"],
+  ["Air Tickets", "/pages/services/online-air-ticket-booking"],
+  ["Bus Tickets", "/pages/services/bus-ticket-booking"],
+  ["Hotel Booking", "/pages/services/online-hotel-booking"],
   [
     "Class 3 Digital Signature",
-    "/pages/services/digital-signature-provider-in-gurgaon/",
+    "/pages/services/digital-signature-provider-in-gurgaon",
   ],
 ];
 
@@ -71,8 +71,12 @@ export default function Header() {
   ========================================================= */
 
   useEffect(() => {
-    setOpen(false);
-    setServicesOpen(false);
+    const timeoutId = window.setTimeout(() => {
+      setOpen(false);
+      setServicesOpen(false);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, [pathname]);
 
   /* =========================================================
@@ -95,7 +99,7 @@ export default function Header() {
   const isHome = normalizedPath === "/";
 
   const servicesActive =
-    isActive("/our-services/") ||
+    isActive("/our-services") ||
     services.some(([, href]) => isActive(href));
 
   const closeMenu = () => {
@@ -275,7 +279,7 @@ export default function Header() {
               ================================================= */}
 
               <Link
-                href="/about-travel-iq/"
+                href="/about-travel-iq"
                 className={`
                   group
                   relative
@@ -293,7 +297,7 @@ export default function Header() {
                   duration-300
 
                   ${
-                    isActive("/about-travel-iq/")
+                    isActive("/about-travel-iq")
                       ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
@@ -304,7 +308,7 @@ export default function Header() {
               >
                 About
 
-                {isActive("/about-travel-iq/") && (
+                {isActive("/about-travel-iq") && (
                   <span
                     className="
                       absolute
@@ -330,7 +334,7 @@ export default function Header() {
                 onMouseLeave={() => setServicesOpen(false)}
               >
                 <Link
-                  href="/our-services/"
+                  href="/our-services"
                   className={`
                     group
                     relative
@@ -624,7 +628,7 @@ export default function Header() {
                     {/* ALL SERVICES */}
 
                     <Link
-                      href="/our-services/"
+                      href="/our-services"
                       className="
                         group
 
@@ -679,7 +683,7 @@ export default function Header() {
               ================================================= */}
 
               <Link
-                href="/video-gallery/"
+                href="/video-gallery"
                 className={`
                   group
                   relative
@@ -695,7 +699,7 @@ export default function Header() {
                   duration-300
 
                   ${
-                    isActive("/video-gallery/")
+                    isActive("/video-gallery")
                       ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
@@ -706,7 +710,7 @@ export default function Header() {
               >
                 Video Gallery
 
-                {isActive("/video-gallery/") && (
+                {isActive("/video-gallery") && (
                   <span
                     className="
                       absolute
@@ -727,7 +731,7 @@ export default function Header() {
               ================================================= */}
 
               <Link
-                href="/contact-us/"
+                href="/contact-us"
                 className={`
                   group
                   relative
@@ -743,7 +747,7 @@ export default function Header() {
                   duration-300
 
                   ${
-                    isActive("/contact-us/")
+                    isActive("/contact-us")
                       ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
@@ -754,7 +758,7 @@ export default function Header() {
               >
                 Contact
 
-                {isActive("/contact-us/") && (
+                {isActive("/contact-us") && (
                   <span
                     className="
                       absolute
@@ -775,7 +779,7 @@ export default function Header() {
               ================================================= */}
 
               <Link
-                href="/pay-now/"
+                href="/pay-now"
                 className={`
                   group
                   relative
@@ -791,7 +795,7 @@ export default function Header() {
                   duration-300
 
                   ${
-                    isActive("/pay-now/")
+                    isActive("/pay-now")
                       ? "text-[var(--tiq-orange)]"
                       : `
                         text-[var(--tiq-navy)]
@@ -802,7 +806,7 @@ export default function Header() {
               >
                 Pay now
 
-                {isActive("/pay-now/") && (
+                {isActive("/pay-now") && (
                   <span
                     className="
                       absolute
@@ -880,7 +884,7 @@ export default function Header() {
             {/* BECOME AN AGENT */}
 
             <Link
-              href="/irctc-agent-registration/"
+              href="/irctc-agent-registration"
               className="
                 group
 
@@ -1224,7 +1228,7 @@ export default function Header() {
                     {/* ALL SERVICES */}
 
                     <Link
-                      href="/our-services/"
+                      href="/our-services"
                       onClick={closeMenu}
                       className="
                         group
@@ -1367,7 +1371,7 @@ export default function Header() {
               {/* BECOME AGENT */}
 
               <Link
-                href="/irctc-agent-registration/"
+                href="/irctc-agent-registration"
                 onClick={closeMenu}
                 className="
                   flex
@@ -1515,4 +1519,3 @@ export default function Header() {
     </>
   );
 }
-

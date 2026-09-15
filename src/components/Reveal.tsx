@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ReactNode } from "react";
 
 type RevealProps = {
@@ -41,6 +41,7 @@ export default function Reveal({
   className,
   repeat = false,
 }: RevealProps) {
+  const prefersReducedMotion = useReducedMotion();
   const offset = offsets[direction];
 
   const variants: Variants = {
@@ -64,8 +65,8 @@ export default function Reveal({
   return (
     <motion.div
       className={className}
-      initial="hidden"
-      whileInView="visible"
+      initial={false}
+      whileInView={prefersReducedMotion ? undefined : "visible"}
       viewport={{ once: !repeat, amount: 0.2 }}
       variants={variants}
     >

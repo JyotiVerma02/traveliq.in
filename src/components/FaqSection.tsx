@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck } from "lucide-react";
 
 const faqs = [
@@ -177,7 +178,7 @@ export default function FaqSection() {
           ===================================================== */}
 
           <a
-            href="/contact-us/"
+            href="/contact-us"
             className="
               group
               inline-flex
@@ -261,9 +262,11 @@ export default function FaqSection() {
               {/* Image */}
 
               <div className="relative overflow-hidden rounded-[26px]">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=75"
                   alt="TravelIQ Agent Support Team"
+                  width={600}
+                  height={420}
                   className="
                     h-[280px]
                     w-full

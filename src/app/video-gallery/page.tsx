@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
   alternates: {
-    canonical: "https://traveliq.in/video-gallery/",
+    canonical: "https://traveliq.in/video-gallery",
   },
   openGraph: {
     title: "Video Gallery - IRCTC Agent Guides & Travel Tutorials | TravelIQ",
     description:
       "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
-    url: "https://traveliq.in/video-gallery/",
+    url: "https://traveliq.in/video-gallery",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -44,47 +44,42 @@ export const metadata: Metadata = {
 const videos = [
   {
     title:
-      "Travel Agents: Get IRCTC Authorized Agent ID at Just ₹1 + GST | Lowest Service Fee",
+      "Travel Agents: Get IRCTC Authorized Agent ID at Just Rs. 1 + GST | Lowest Service Fee",
     description:
       "Learn how travel agents can get an IRCTC authorized agent ID with TravelIQ.",
     badge: "Agent Registration",
     url: "https://www.youtube.com/watch?v=MdC5RSfDweQ",
   },
   {
-    title:
-      "अपने b2b.traveliq.in पोर्टल को कैसे activate करें | How to activate your b2b.traveliq.in portal",
+    title: "How to Activate Your b2b.traveliq.in Portal",
     description:
       "Follow the steps shown for activating a b2b.traveliq.in portal.",
     badge: "Portal Guide",
     url: "https://www.youtube.com/watch?v=AD8vt8i_ygE",
   },
   {
-    title:
-      "b2b.traveliq.in पोर्टल में पासवर्ड कैसे रीसेट करें | How to reset password in b2b.traveliq.in portal",
+    title: "How to Reset Password in the b2b.traveliq.in Portal",
     description:
       "See how to reset a forgotten password for the TravelIQ B2B portal.",
     badge: "Portal Guide",
     url: "https://www.youtube.com/watch?v=VxvVduiiP38",
   },
   {
-    title:
-      "b2b.traveliq.in पोर्टल में वॉलेट रिचार्ज कैसे करें | How to recharge wallet b2b.traveliq.in portal",
+    title: "How to Recharge Wallet in the b2b.traveliq.in Portal",
     description:
       "Learn the wallet recharge process inside the b2b.traveliq.in portal.",
     badge: "Portal Guide",
     url: "https://www.youtube.com/watch?v=bB73D9a33No",
   },
   {
-    title:
-      "IRCTC से tour package कैसे बुक करें । How to book tour package from IRCTC",
-    description:
-      "Watch the process for booking an IRCTC tour package.",
+    title: "How to Book a Tour Package from IRCTC",
+    description: "Watch the process for booking an IRCTC tour package.",
     badge: "Tour Packages",
     url: "https://www.youtube.com/watch?v=l7XWudlhw5g",
   },
   {
     title:
-      "IRCTC agent id ka password reset kaise kare | How to change IRCTC agent id password",
+      "IRCTC Agent ID ka Password Reset Kaise Kare | How to Change IRCTC Agent ID Password",
     description:
       "Follow the steps for changing an IRCTC agent ID password.",
     badge: "IRCTC Guide",
@@ -92,7 +87,7 @@ const videos = [
   },
   {
     title:
-      "Train ticket ka Boarding station kaise badle | How to change Boarding station after ticket booking",
+      "Train Ticket ka Boarding Station Kaise Badle | How to Change Boarding Station After Ticket Booking",
     description:
       "Learn how to change the boarding station after booking a train ticket.",
     badge: "Railway Guide",
@@ -100,48 +95,40 @@ const videos = [
   },
   {
     title:
-      "Chrome history kaise delete kare | How to delete history and cookies from chrome browser",
+      "Chrome History Kaise Delete Kare | How to Delete History and Cookies from Chrome Browser",
     description:
       "See how to delete browser history and cookies in Chrome.",
     badge: "Browser Guide",
     url: "https://www.youtube.com/watch?v=TKPU8ADzoy4",
   },
   {
-    title:
-      "IRCTC Agent Id से टिकट प्रिंट कैसे करे | How to Print Ticket from IRCTC Agent Id",
-    description:
-      "Learn how to print a ticket from an IRCTC agent ID.",
+    title: "How to Print a Ticket from an IRCTC Agent ID",
+    description: "Learn how to print a ticket from an IRCTC agent ID.",
     badge: "IRCTC Guide",
     url: "https://www.youtube.com/watch?v=zKSxk49vOqs",
   },
   {
     title:
-      "IRCTC Cancel ticket ka OTP verify kaise kare | How to verify OTP for cancel ticket",
+      "IRCTC Cancel Ticket ka OTP Verify Kaise Kare | How to Verify OTP for Cancel Ticket",
     description:
       "Follow the OTP verification step for cancelling an IRCTC ticket.",
     badge: "IRCTC Guide",
     url: "https://www.youtube.com/watch?v=oGYePMmJZqo",
   },
   {
-    title:
-      "IRCTC Agent ID से टिकट कैसे कैंसिल करे 2021 | How to cancel ticket with IRCTC Agent ID",
-    description:
-      "Learn how to cancel a ticket using an IRCTC agent ID.",
+    title: "How to Cancel a Ticket with an IRCTC Agent ID",
+    description: "Learn how to cancel a ticket using an IRCTC agent ID.",
     badge: "IRCTC Guide",
     url: "https://www.youtube.com/watch?v=PF2oP_hGSco",
   },
 ];
-
 const clayCard =
   "border border-white/90 bg-white shadow-[10px_12px_30px_rgba(16,64,122,0.08),-8px_-8px_24px_rgba(255,255,255,0.95)]";
-
-const clayHover =
-  "transition-all duration-300 hover:-translate-y-1 hover:shadow-[14px_18px_38px_rgba(16,64,122,0.12),-8px_-8px_24px_rgba(255,255,255,0.95)]";
 
 export default function VideoGalleryPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "https://traveliq.in/" },
-    { name: "Video Gallery", item: "https://traveliq.in/video-gallery/" },
+    { name: "Video Gallery", item: "https://traveliq.in/video-gallery" },
   ]);
 
   return (
@@ -458,7 +445,7 @@ export default function VideoGalleryPage() {
 
               {/* CTA Button */}
               <Link
-                href="/contact-us/"
+                href="/contact-us"
                 className="
                   mt-7
                   inline-flex

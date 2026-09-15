@@ -9,10 +9,10 @@ import {
 } from "@/components/icons";
 
 const quickLinks = [
-  { label: "About TravelIQ", href: "/about-travel-iq/" },
-  { label: "Our Services", href: "/our-services/" },
-  { label: "IRCTC Pay Now", href: "/pay-now/" },
-  { label: "Become an Agent", href: "/irctc-agent-registration/" },
+  { label: "About TravelIQ", href: "/about-travel-iq" },
+  { label: "Our Services", href: "/our-services" },
+  { label: "IRCTC Pay Now", href: "/pay-now" },
+  { label: "Become an Agent", href: "/irctc-agent-registration" },
 ];
 
 export default function Footer() {
@@ -140,7 +140,7 @@ export default function Footer() {
 
             {/* Callout Card */}
             <Link
-              href="/irctc-agent-registration/"
+              href="/irctc-agent-registration"
               className="group mt-8 flex items-center justify-between rounded-xl border border-[#EE5326]/40 bg-[#0D2240] p-4 shadow-[6px_6px_18px_rgba(0,0,0,0.35),inset_1px_1px_2px_rgba(255,255,255,0.08)] transition-all hover:border-[#EE5326]/70 hover:bg-[#0F294D]"
             >
               <div>
@@ -199,7 +199,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on Facebook"
-                  className="transition-transform duration-200 hover:scale-115"
+                  className="transition-transform duration-200 hover:scale-115 !text-white"
                 >
                   <FacebookIcon className="h-7 w-7 text-[#1877F2]" />
                 </a>

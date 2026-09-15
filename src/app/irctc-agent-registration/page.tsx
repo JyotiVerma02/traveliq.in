@@ -1,25 +1,52 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd, getBreadcrumbSchema, getServiceSchema } from "@/components/JsonLd";
+import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
+
+const pagePath = "/irctc-agent-registration";
+const pageUrl = canonicalUrl(pagePath);
+
+const faqItems = [
+  {
+    question: "Who can apply for IRCTC agent registration?",
+    answer:
+      "Individuals and travel businesses that want to offer railway ticket booking services can contact TravelIQ for eligibility guidance and onboarding support.",
+  },
+  {
+    question: "What documents are generally required?",
+    answer:
+      "Applicants should be ready with identity, address, contact, and business details. The exact document checklist should be verified with the TravelIQ registration team before submission.",
+  },
+  {
+    question: "Are IRCTC agent registration fees and commission fixed?",
+    answer:
+      "Fees, service charges, and commission details can change based on current commercial terms and verification status. TravelIQ should confirm current charges directly before payment.",
+  },
+  {
+    question: "Does TravelIQ help after agent ID activation?",
+    answer:
+      "TravelIQ provides B2B platform access, onboarding guidance, and support for travel services offered through the TravelIQ ecosystem.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "IRCTC Agent Registration - Become an Authorized IRCTC Travel Agent | TravelIQ",
   description:
     "Register as an authorized IRCTC travel agent with TravelIQ. Get official IRCTC agency license, fast onboarding support, and grow your train ticket booking business across India.",
   alternates: {
-    canonical: "https://traveliq.in/irctc-agent-registration/",
+    canonical: pageUrl,
   },
   openGraph: {
     title: "IRCTC Agent Registration - Become an Authorized IRCTC Travel Agent | TravelIQ",
     description:
       "Register as an authorized IRCTC travel agent with TravelIQ. Get official IRCTC agency license, fast onboarding support, and grow your train ticket booking business across India.",
-    url: "https://traveliq.in/irctc-agent-registration/",
+    url: pageUrl,
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/images/hero-1.webp",
+        url: absoluteUrl(OG_IMAGE_PATH),
         width: 1200,
         height: 630,
         alt: "IRCTC Agent Registration with TravelIQ",
@@ -31,25 +58,38 @@ export const metadata: Metadata = {
     title: "IRCTC Agent Registration - Become an Authorized IRCTC Travel Agent | TravelIQ",
     description:
       "Register as an authorized IRCTC travel agent with TravelIQ. Get official IRCTC agency license, fast onboarding support, and grow your train ticket booking business across India.",
-    images: ["/images/hero-1.webp"],
+    images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };
 
 export default function IrcTcAgentRegistrationPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", item: "https://traveliq.in/" },
-    { name: "IRCTC Agent Registration", item: "https://traveliq.in/irctc-agent-registration/" },
+    { name: "Home", item: canonicalUrl("/") },
+    { name: "IRCTC Agent Registration", item: pageUrl },
   ]);
 
   const serviceSchema = getServiceSchema(
     "IRCTC Agent Registration",
     "Authorized IRCTC travel agent license registration and onboarding support for travel agents in India.",
-    "https://traveliq.in/irctc-agent-registration/"
+    pageUrl
   );
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
 
   return (
     <main className="min-h-screen bg-[#f6f9fe]">
-      <JsonLd data={[breadcrumbSchema, serviceSchema]} />
+      <JsonLd data={[breadcrumbSchema, serviceSchema, faqSchema]} />
       <section className="relative overflow-hidden bg-[#edf5ff] py-12 sm:py-16">
         <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-sm font-medium text-slate-500">
@@ -87,7 +127,7 @@ export default function IrcTcAgentRegistrationPage() {
                   As an official IRCTC Principal Service Provider, we support authorized train ticket booking agent license registration, digital signature integration, and complete travel service guidance.
                 </p>
                 <p>
-                  Expand your agency portfolio with <Link href="/pages/services/railway-reservations/" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">Railway Reservations</Link>, <Link href="/pages/services/online-air-ticket-booking/" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">Air Ticket Bookings</Link>, <Link href="/pages/services/bus-ticket-booking/" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">Bus Tickets</Link>, and <Link href="/pages/services/irctc-tour-packages/" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">IRCTC Tour Packages</Link>.
+                  Expand your agency portfolio with <Link href="/pages/services/railway-reservations" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">Railway Reservations</Link>, <Link href="/pages/services/online-air-ticket-booking" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">Air Ticket Bookings</Link>, <Link href="/pages/services/bus-ticket-booking" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">Bus Tickets</Link>, and <Link href="/pages/services/irctc-tour-packages" className="font-semibold text-[#10407A] underline hover:text-[#EE5326]">IRCTC Tour Packages</Link>.
                 </p>
               </div>
             </div>
@@ -110,17 +150,103 @@ export default function IrcTcAgentRegistrationPage() {
               </div>
               <div className="mt-8 pt-4 border-t border-sky-200 flex flex-wrap gap-4 items-center">
                 <Link
-                  href="/contact-us/"
+                  href="/contact-us"
                   className="inline-flex rounded-full bg-[#EE5326] px-6 py-3 text-sm font-bold text-white shadow-md hover:bg-[#D9471D] transition"
                 >
                   Contact Support for Registration
                 </Link>
                 <Link
-                  href="/our-services/"
+                  href="/our-services"
                   className="inline-flex rounded-full border border-[#10407A] px-6 py-3 text-sm font-bold text-[#10407A] hover:bg-[#10407A] hover:text-white transition"
                 >
                   View All Services
                 </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-12 sm:pb-16">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              {
+                title: "Who Can Become an Agent?",
+                body: "Travel businesses, entrepreneurs, and service providers who want to support customers with railway ticket booking can apply after eligibility and document verification.",
+              },
+              {
+                title: "Documents to Keep Ready",
+                body: "Keep identity proof, address proof, contact details, business information, and any documents requested by the onboarding team ready for review.",
+              },
+              {
+                title: "Fees and Commission",
+                body: "Current fees, service charges, and commission terms must be confirmed directly with TravelIQ before payment. This page avoids publishing unverified or outdated amounts.",
+              },
+            ].map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-sky-100 bg-white p-6 shadow-sm"
+              >
+                <h2 className="text-xl font-bold text-[#10407A]">
+                  {item.title}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-slate-700">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-sky-100 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-bold text-slate-900">
+              IRCTC Authorized Agent Registration Support
+            </h2>
+            <div className="mt-5 grid gap-5 text-sm leading-7 text-slate-700 md:grid-cols-2">
+              <p>
+                An IRCTC authorized agent can support customers with railway
+                ticket booking through an approved business process instead of
+                using a personal account for commercial bookings.
+              </p>
+              <p>
+                TravelIQ helps applicants understand the registration flow,
+                required verification, digital signature requirements, platform
+                access, and the next steps after activation.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-sky-100 bg-[#f2f8ff] p-6 shadow-sm sm:p-8">
+              <h2 className="text-2xl font-bold text-slate-900">
+                Benefits for Travel Agents
+              </h2>
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
+                <li>Access to railway booking support through TravelIQ.</li>
+                <li>Opportunity to offer flights, hotels, buses, and packages.</li>
+                <li>Business-focused onboarding and customer support.</li>
+                <li>Centralized B2B platform access for travel services.</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-sky-100 bg-white p-6 shadow-sm sm:p-8">
+              <h2 className="text-2xl font-bold text-slate-900">
+                Registration FAQs
+              </h2>
+              <div className="mt-5 space-y-4">
+                {faqItems.map((item) => (
+                  <details
+                    key={item.question}
+                    className="rounded-xl border border-sky-100 bg-[#f8fbff] p-4"
+                  >
+                    <summary className="cursor-pointer text-sm font-bold text-[#10407A]">
+                      {item.question}
+                    </summary>
+                    <p className="mt-3 text-sm leading-7 text-slate-700">
+                      {item.answer}
+                    </p>
+                  </details>
+                ))}
               </div>
             </div>
           </div>

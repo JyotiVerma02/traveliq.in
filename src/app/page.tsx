@@ -7,25 +7,26 @@ import Testimonials from "@/components/Testimonials";
 import LatestPosts from "@/components/OurNews";
 import { JsonLd, getLocalBusinessSchema } from "@/components/JsonLd";
 import type { Metadata } from "next";
+import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
   description:
     "Become an authorized IRCTC travel agent with TravelIQ. Premier travel services including railway reservation, flight ticket booking, hotel booking, bus tickets, and tour packages.",
   alternates: {
-    canonical: "https://traveliq.in/",
+    canonical: canonicalUrl("/"),
   },
   openGraph: {
     title: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
     description:
       "Become an authorized IRCTC travel agent with TravelIQ. Premier travel services including railway reservation, flight ticket booking, hotel booking, bus tickets, and tour packages.",
-    url: "https://traveliq.in/",
+    url: canonicalUrl("/"),
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/images/hero-1.webp",
+        url: absoluteUrl(OG_IMAGE_PATH),
         width: 1200,
         height: 630,
         alt: "TravelIQ - Your Own Travel Intelligence",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     title: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
     description:
       "Become an authorized IRCTC travel agent with TravelIQ. Premier travel services including railway reservation, flight ticket booking, hotel booking, bus tickets, and tour packages.",
-    images: ["/images/hero-1.webp"],
+    images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };
 

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug } from "@/lib/wordpress";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+import { canonicalUrl, SITE_URL, absoluteUrl } from "@/lib/site";
+import { sanitizeWordPressHtml } from "@/lib/sanitize";
 
 interface PageProps {
   params: Promise<{
@@ -36,18 +38,18 @@ export async function generateMetadata({
     : "Read the latest article from TravelIQ.";
 
   const title = `${post.title.rendered} | TravelIQ`;
-  const canonicalUrl = `https://traveliq.in/pages/${slug.join("/")}/`;
+  const pageUrl = canonicalUrl(`/pages/${slug.join("/")}`);
 
   return {
     title,
     description: cleanExcerpt,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: pageUrl,
     },
     openGraph: {
       title,
       description: cleanExcerpt,
-      url: canonicalUrl,
+      url: pageUrl,
       siteName: "TravelIQ",
       locale: "en_IN",
       type: "article",
@@ -73,11 +75,13 @@ export default async function WordPressPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const canonicalUrl = `https://traveliq.in/pages/${slug.join("/")}/`;
+  const pageUrl = canonicalUrl(`/pages/${slug.join("/")}`);
+  const safeTitle = sanitizeWordPressHtml(post.title.rendered);
+  const safeContent = sanitizeWordPressHtml(post.content.rendered);
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", item: "https://traveliq.in/" },
-    { name: post.title.rendered, item: canonicalUrl },
+    { name: "Home", item: canonicalUrl("/") },
+    { name: post.title.rendered.replace(/<[^>]*>/g, ""), item: pageUrl },
   ]);
 
   const articleSchema = {
@@ -88,19 +92,19 @@ export default async function WordPressPostPage({ params }: PageProps) {
     dateModified: post.date,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": canonicalUrl,
+      "@id": pageUrl,
     },
     author: {
       "@type": "Organization",
       name: "TravelIQ",
-      url: "https://traveliq.in",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: "TravelIQ",
       logo: {
         "@type": "ImageObject",
-        url: "https://traveliq.in/logo.webp",
+        url: absoluteUrl("/logo.webp"),
       },
     },
     description: post.excerpt?.rendered
@@ -134,14 +138,14 @@ export default async function WordPressPostPage({ params }: PageProps) {
           <h1
             className="mt-3 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl"
             dangerouslySetInnerHTML={{
-              __html: post.title.rendered,
+              __html: safeTitle,
             }}
           />
 
           <div
             className="wp-content mt-8 text-slate-700 leading-relaxed text-base space-y-4"
             dangerouslySetInnerHTML={{
-              __html: post.content.rendered,
+              __html: safeContent,
             }}
           />
 
@@ -153,7 +157,7 @@ export default async function WordPressPostPage({ params }: PageProps) {
               ← Back to Home
             </Link>
             <Link
-              href="/irctc-agent-registration/"
+              href="/irctc-agent-registration"
               className="inline-flex rounded-full bg-[#EE5326] px-6 py-2.5 text-xs font-bold text-white shadow hover:bg-[#D9471D] transition"
             >
               Become an IRCTC Agent

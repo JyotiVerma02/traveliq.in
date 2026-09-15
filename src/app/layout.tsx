@@ -9,6 +9,7 @@ import {
   getOrganizationSchema,
   getWebSiteSchema,
 } from "@/components/JsonLd";
+import { absoluteUrl, OG_IMAGE_PATH, SITE_URL } from "@/lib/site";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,7 +29,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://traveliq.in"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
     template: "%s",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     "bus ticket booking",
     "tour packages",
   ],
-  authors: [{ name: "TravelIQ", url: "https://traveliq.in" }],
+  authors: [{ name: "TravelIQ", url: SITE_URL }],
   creator: "Travel IQ Services Private Limited",
   publisher: "Travel IQ Services Private Limited",
   robots: {
@@ -64,13 +65,13 @@ export const metadata: Metadata = {
     title: "TravelIQ | Travel Services & IRCTC Agent Services",
     description:
       "TravelIQ is an IATA accredited agency and IRCTC Principal Service Provider offering railway reservations, air tickets, hotel bookings, bus tickets, and agent registration across India.",
-    url: "https://traveliq.in",
+    url: SITE_URL,
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/images/hero-1.webp",
+        url: absoluteUrl(OG_IMAGE_PATH),
         width: 1200,
         height: 630,
         alt: "TravelIQ - Your Own Travel Intelligence",
@@ -82,7 +83,7 @@ export const metadata: Metadata = {
     title: "TravelIQ | Travel Services & IRCTC Agent Services",
     description:
       "Register as an authorized IRCTC travel agent with TravelIQ. Railway reservations, flights, hotels, and bus ticket booking.",
-    images: ["/images/hero-1.webp"],
+    images: [absoluteUrl(OG_IMAGE_PATH)],
   },
   icons: {
     icon: "/favicon.ico",

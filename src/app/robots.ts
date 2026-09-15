@@ -1,15 +1,13 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://traveliq.in";
-
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
         disallow: [
-          "/test",
           "/pay-us",
           "/payus",
           "/terms-and-conditions",
@@ -19,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

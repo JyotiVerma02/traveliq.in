@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Book customized domestic and international holiday tour packages with TravelIQ. Family vacations, honeymoon specials, weekend getaways, and spiritual tours with best prices.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/irctc-tour-packages/",
+    canonical: "https://traveliq.in/pages/services/irctc-tour-packages",
   },
   openGraph: {
     title: "Domestic & International Tour Packages | TravelIQ",
     description:
       "Book customized domestic and international holiday tour packages with TravelIQ. Family vacations, honeymoon specials, weekend getaways, and spiritual tours with best prices.",
-    url: "https://traveliq.in/pages/services/irctc-tour-packages/",
+    url: "https://traveliq.in/pages/services/irctc-tour-packages",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

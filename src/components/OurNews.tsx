@@ -12,34 +12,34 @@ const news = [
       "https://traveliq.in/wp-content/uploads/2022/06/Untitled-1.jpg",
     description:
       "The IRCTC Railway previously allowed people to book six tickets a month. Now the rule has been updated and you can book up to 24 tickets once linked with Aadhaar.",
-    href: "/pages/social/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month/",
+    href: "/pages/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month",
   },
   {
-    title: "IRCTC Executive Lounge Booking for Premium Passengers",
+    title: "IRCTC Railway Refund Rule",
     date: "16/04/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/IRCTC-EXECUTIVE-LOUNGE-1.jpg",
     description:
-      "The IRCTC Executive Lounge is a first-of-its-kind, completely air-conditioned facility where railway passengers can enjoy a premium waiting experience.",
-    href: "/pages/social/irctc-executive-lounge-2026/",
+      "Understand railway refund rules and how cancellation timing can affect the refund process for passengers and agents.",
+    href: "/pages/irctc-railway-refund-rule",
   },
   {
-    title: "SpiceJet Flights & Special Holiday Weekend Deals",
+    title: "Rules for IRCTC Ticket Cancellation and Refund",
     date: "08/04/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/spicejet-post.jpg",
     description:
-      "Choose SpiceJet and prepare to enhance your flying experience with comfort, speed, and convenience for long weekend domestic trips.",
-    href: "/pages/social/where-are-you-heading-this-long-weekend-april-2026/",
+      "Review important cancellation and refund rules that IRCTC agents and railway passengers should understand.",
+    href: "/pages/rules-for-irctc-ticket-cancellation-and-refund",
   },
   {
-    title: "World Health Day & Travel IQ Wellness Initiatives",
+    title: "Rules for Online Ticket Booking for IRCTC Agents",
     date: "07/04/2026",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/world-Health-Day-1-2.jpg",
     description:
-      "World Health Day is observed every year to raise awareness about the importance of health, wellness, and healthy travel lifestyles.",
-    href: "/pages/social/world-health-day-7-april-2026/",
+      "Learn practical rules and booking guidance for IRCTC agents using online railway ticketing workflows.",
+    href: "/pages/rules-for-the-online-ticket-booking-for-irctc-agents",
   },
 ];
 
@@ -350,7 +350,7 @@ export default function OurNews() {
         ======================================================= */}
         <Reveal className="mt-12 flex justify-center">
           <Link
-            href="/pages/social/"
+            href="/pages/irctc-railway-refund-rule"
             className="
               group
               inline-flex

@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   description:
     "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
   alternates: {
-    canonical: "https://traveliq.in/pay-now/",
+    canonical: "https://traveliq.in/pay-now",
   },
   openGraph: {
     title: "Pay Now - Official Bank Account Details & Secure Payment | TravelIQ",
     description:
       "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
-    url: "https://traveliq.in/pay-now/",
+    url: "https://traveliq.in/pay-now",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -76,7 +76,7 @@ const clayHover =
 export default function PayNowPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "https://traveliq.in/" },
-    { name: "Pay Now", item: "https://traveliq.in/pay-now/" },
+    { name: "Pay Now", item: "https://traveliq.in/pay-now" },
   ]);
 
   return (
@@ -425,7 +425,7 @@ export default function PayNowPage() {
 
           {/* IMPORTANT: icon + text white */}
           <Link
-            href="/contact-us/"
+            href="/contact-us"
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#EE5326] px-6 py-3.5 text-sm font-bold !text-white shadow-[0_10px_24px_rgba(238,83,38,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D9471D] hover:shadow-[0_14px_30px_rgba(238,83,38,0.32)] sm:px-7"
           >
             <span className="!text-white">Contact Us</span>

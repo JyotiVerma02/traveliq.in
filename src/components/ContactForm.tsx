@@ -4,6 +4,8 @@ import { useState, FormEvent } from "react";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,10 +14,46 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+    if (submitting) return;
+
+    setError("");
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("Please complete your name, email, and message.");
+      return;
+    }
+
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json().catch(() => null)) as {
+        message?: string;
+      } | null;
+
+      if (!response.ok) {
+        throw new Error(result?.message || "Unable to send your message.");
+      }
+
+      setSubmitted(true);
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Unable to send your message."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -39,6 +77,7 @@ export default function ContactForm() {
           <button
             onClick={() => {
               setSubmitted(false);
+              setError("");
               setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
             }}
             className="mt-6 rounded-full bg-[#EE5326] px-6 py-2 text-xs font-bold text-white transition hover:bg-[#d7491d]"
@@ -48,6 +87,14 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          {error && (
+            <div
+              role="alert"
+              className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
+            >
+              {error}
+            </div>
+          )}
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-[#10407A]">
@@ -127,9 +174,10 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full rounded-full bg-[#EE5326] py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#d7491d]"
+            disabled={submitting}
+            className="w-full rounded-full bg-[#EE5326] py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#d7491d] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Send Message
+            {submitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       )}

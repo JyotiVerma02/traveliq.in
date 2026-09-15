@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
   alternates: {
-    canonical: "https://traveliq.in/contact-us/",
+    canonical: "https://traveliq.in/contact-us",
   },
   openGraph: {
     title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
     description:
       "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
-    url: "https://traveliq.in/contact-us/",
+    url: "https://traveliq.in/contact-us",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -87,7 +87,7 @@ const socialLinks = [
   },
   {
     name: "YouTube",
-    href: "#",
+    href: "https://www.youtube.com/c/TravelIQindia",
     icon: YouTubeIcon,
     bg: "bg-[#FF0000]",
     shadow:
@@ -98,7 +98,7 @@ const socialLinks = [
 export default function ContactPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "https://traveliq.in/" },
-    { name: "Contact Us", item: "https://traveliq.in/contact-us/" },
+    { name: "Contact Us", item: "https://traveliq.in/contact-us" },
   ]);
 
   return (

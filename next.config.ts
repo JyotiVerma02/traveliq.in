@@ -1,6 +1,27 @@
 import type { NextConfig } from "next";
 
 const securityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https://traveliq.in https://images.unsplash.com https://i.ytimg.com",
+      "font-src 'self' data:",
+      "connect-src 'self' https://traveliq.in",
+      "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://maps.google.com https://www.google.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'self'",
+      "upgrade-insecure-requests",
+    ].join("; "),
+  },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=31536000; includeSubDomains; preload",
+  },
   // Prevent clickjacking
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   // Prevent MIME sniffing
@@ -18,6 +39,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  poweredByHeader: false,
+  trailingSlash: false,
 
   // Optimize CSS — splits critical from non-critical CSS to remove render blocking
   experimental: {
@@ -80,6 +103,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
       },
     ],
   },

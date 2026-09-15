@@ -169,7 +169,7 @@ export default function VideoGalleryGrid({
               {/* LEARN MORE */}
               <div className="mt-auto pt-5">
                 <Link
-                  href="/contact-us/"
+                  href="/contact-us"
                   className="
                     inline-flex
                     shrink-0

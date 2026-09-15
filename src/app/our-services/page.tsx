@@ -9,25 +9,29 @@ import {
 } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
+
+const pagePath = "/our-services";
+const pageUrl = canonicalUrl(pagePath);
 
 export const metadata: Metadata = {
   title: "Travel Services & IRCTC Solutions | TravelIQ",
   description:
     "Explore TravelIQ's travel services: Railway reservations, air tickets, hotel bookings, bus ticket booking, IRCTC domestic packages, tour packages, and Class 3 Digital Signature solutions.",
   alternates: {
-    canonical: "https://traveliq.in/our-services/",
+    canonical: pageUrl,
   },
   openGraph: {
     title: "Travel Services & IRCTC Solutions | TravelIQ",
     description:
       "Explore TravelIQ's travel services: Railway reservations, air tickets, hotel bookings, bus ticket booking, IRCTC domestic packages, tour packages, and Class 3 Digital Signature solutions.",
-    url: "https://traveliq.in/our-services/",
+    url: pageUrl,
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/images/hero-1.webp",
+        url: absoluteUrl(OG_IMAGE_PATH),
         width: 1200,
         height: 630,
         alt: "TravelIQ Travel Services",
@@ -39,7 +43,7 @@ export const metadata: Metadata = {
     title: "Travel Services & IRCTC Solutions | TravelIQ",
     description:
       "Explore TravelIQ's travel services: Railway reservations, air tickets, hotel bookings, bus ticket booking, IRCTC domestic packages, tour packages, and Class 3 Digital Signature solutions.",
-    images: ["/images/hero-1.webp"],
+    images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };
 
@@ -112,8 +116,8 @@ const upcomingServices = [
 
 export default function ServicesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Home", item: "https://traveliq.in/" },
-    { name: "Our Services", item: "https://traveliq.in/our-services/" },
+    { name: "Home", item: canonicalUrl("/") },
+    { name: "Our Services", item: pageUrl },
   ]);
 
   return (
@@ -597,7 +601,7 @@ export default function ServicesPage() {
               {/* Primary */}
 
               <Link
-                href="/contact-us/"
+                href="/contact-us"
                 className="inline-flex min-h-[48px] items-center justify-center gap-3 rounded-[14px] bg-[#ee5326] px-7 py-3.5 text-sm font-semibold text-white shadow-[7px_8px_18px_rgba(238,83,38,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#d9471d] hover:shadow-[9px_11px_23px_rgba(238,83,38,0.25)]"
               >
                 <span className="text-white">

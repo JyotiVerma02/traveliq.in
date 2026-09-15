@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Book low fare domestic and international flight tickets with TravelIQ. IATA accredited travel agency offering central reservation system fares for all major airlines.",
   alternates: {
-    canonical: "https://traveliq.in/pages/services/online-air-ticket-booking/",
+    canonical: "https://traveliq.in/pages/services/online-air-ticket-booking",
   },
   openGraph: {
     title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
     description:
       "Book low fare domestic and international flight tickets with TravelIQ. IATA accredited travel agency offering central reservation system fares for all major airlines.",
-    url: "https://traveliq.in/pages/services/online-air-ticket-booking/",
+    url: "https://traveliq.in/pages/services/online-air-ticket-booking",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
