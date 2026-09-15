@@ -1,26 +1,40 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import {
+  GlobeIcon,
+  YouTubeIcon,
+  TicketIcon,
+  WhatsAppIcon,
+} from "@/components/icons";
 
 const quickLinks = [
   {
     title: "Digital Promotion",
     href: "https://webshlok.com",
-    icon: "↗",
+    Icon: GlobeIcon,
+    iconBg: "bg-[#10407A]/10",
+    iconColor: "text-[#10407A]",
   },
   {
     title: "YouTube Channel",
     href: "https://www.youtube.com/c/TravelIQindia",
-    icon: "▶",
+    Icon: YouTubeIcon,
+    iconBg: "bg-[#FF0000]",
+    iconColor: "text-white",
   },
   {
     title: "Book Tickets Anytime",
     href: "#",
-    icon: "◷",
+    Icon: TicketIcon,
+    iconBg: "bg-[#EE5326]/10",
+    iconColor: "text-[#EE5326]",
   },
   {
     title: "Online Chat Support",
     href: "https://wa.me/917835025025",
-    icon: "✦",
+    Icon: WhatsAppIcon,
+    iconBg: "bg-[#25D366]/10",
+    iconColor: "text-[#25D366]",
   },
 ];
 
@@ -735,7 +749,7 @@ export default function WhyWeBetter() {
                         {/* Icon */}
 
                         <span
-                          className="
+                          className={`
                             flex
                             h-10
                             w-10
@@ -743,18 +757,16 @@ export default function WhyWeBetter() {
                             items-center
                             justify-center
                             rounded-xl
-                            bg-[#FFF0E9]
-                            text-sm
-                            font-black
-                            text-[#EE5326]
-                            shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]
+                            ${item.iconBg}
+                            shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.9)]
                             transition-all
                             duration-300
-                            group-hover:bg-[#EE5326]
-                            group-hover:text-white
-                          "
+                            group-hover:opacity-90
+                          `}
                         >
-                          {item.icon}
+                          <item.Icon
+                            className={`h-6 w-6 shrink-0 ${item.iconColor}`}
+                          />
                         </span>
 
                         {/* Title */}

@@ -8,171 +8,247 @@ import {
   WhatsAppIcon,
 } from "@/components/icons";
 
-const links = [
-  ["About TravelIQ", "/about-travel-iq/"],
-  ["Our Services", "/our-services/"],
-  ["IRCTC Pay Now", "/pay-now/"],
-  ["Become an Agent", "/irctc-agent-registration/"],
+const quickLinks = [
+  { label: "About TravelIQ", href: "/about-travel-iq/" },
+  { label: "Our Services", href: "/our-services/" },
+  { label: "IRCTC Pay Now", href: "/pay-now/" },
+  { label: "Become an Agent", href: "/irctc-agent-registration/" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative mt-20 overflow-hidden bg-[#060F1F] text-white">
-      {/* Subtle top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <footer className="relative bg-[#040C1A] text-white pt-16 pb-12 overflow-hidden border-t border-white/10">
+      {/* Background ambient glow */}
+      <div className="pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#10407A]/20 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-[#EE5326]/12 blur-[120px]" />
 
-      {/* Ultra dark glows */}
-      <div className="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-[#EE5326]/[0.03] blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-[#0A2A50]/20 blur-3xl" />
+      <div className="relative mx-auto max-w-[1320px] px-6 sm:px-8 lg:px-12">
+        {/* ===================================================
+            TOP BRANDING SECTION
+        ==================================================== */}
+        <div className="pb-10 border-b border-white/15">
+          {/* Logo directly on background */}
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo.webp"
+              alt="TravelIQ"
+              width={250}
+              height={60}
+              className="h-auto w-[220px] sm:w-[250px] object-contain"
+            />
+          </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-8 lg:py-20">
-        {/* TOP BRAND - Same as your dark navy image */}
-        <div className="mb-12 border-b border-white/[0.06] pb-10">
-          <div className="inline-flex rounded-lg border border-white/5 bg-[#0A182E] px-4 py-3 shadow-[0_8px_24px_rgba(0,0,0,0.4)]">
-            <Image src="/logo.webp" alt="TravelIQ" width={170} height={41} className="h-auto w-[150px] sm:w-[170px]" />
-          </div>
-          <div className="mt-6 max-w-2xl">
-            <p className="text-2xl font-black tracking-tight text-white sm:text-3xl">
-              Your Own Travel <span className="text-[#EE5326]">Intelligence.</span>
-            </p>
-            <p className="mt-3 text-sm leading-6 text-white/80">
-              A trusted partner for smarter journeys and better travel-business growth.
-            </p>
-          </div>
+          <h2 className="mt-5 text-2xl font-black tracking-tight text-white sm:text-3xl">
+            Your Own Travel{" "}
+            <span className="text-[#EE5326]">Intelligence</span>.
+          </h2>
+
+          <p className="mt-2.5 max-w-2xl text-sm font-medium leading-6 text-white">
+            A trusted partner for smarter journeys and better travel-business growth.
+          </p>
         </div>
 
-        {/* GRID - Exactly like image */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_0.85fr] lg:gap-12">
-          {/* GET IN TOUCH */}
+        {/* ===================================================
+            MAIN 3-COLUMN CONTENT GRID
+        ==================================================== */}
+        <div className="mt-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-14">
+          {/* COLUMN 1: CONTACT */}
           <div>
-            <h3 className="mb-7 text-xs font-bold uppercase tracking-[0.22em] text-[#FF6B35]">
-              Get In Touch
-            </h3>
-            <div className="space-y-3">
-              <div className="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-[#0A182E] p-4 transition-all hover:border-white/10 hover:bg-[#0F1E36]">
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#111F35] text-[#FF6B35]">
-                  <MapPin className="h-5 w-5" />
+            <div className="mb-7">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#EE5326]">
+                CONTACT
+              </h3>
+              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
+            </div>
+
+            <div className="space-y-6">
+              {/* Office */}
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0F2D59] text-[#EE5326] border border-white/10 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3),inset_-2px_-2px_5px_rgba(255,255,255,0.08)]">
+                  <MapPin className="h-4 w-4" />
                 </div>
-                <div className="min-w-0">
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80">Office</p>
-                  <p className="text-xs leading-5 text-white/90">1004G, JMD Megapolis, Sector 48, Gurugram</p>
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-wider text-white">
+                    OFFICE
+                  </p>
+                  <p className="mt-0.5 text-xs font-medium leading-5 text-white">
+                    1004G, JMD Megapolis, Sector 48, Gurugram.
+                  </p>
                 </div>
               </div>
 
-              <a href="mailto:support@traveliq.in" className="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-[#0A182E] p-4 transition-all hover:border-white/10 hover:bg-[#0F1E36]">
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#111F35] text-[#FF6B35]">
-                  <Mail className="h-5 w-5" />
+              {/* Email */}
+              <a
+                href="mailto:support@traveliq.in"
+                className="group flex items-start gap-4 transition-colors"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0F2D59] text-[#EE5326] border border-white/10 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3),inset_-2px_-2px_5px_rgba(255,255,255,0.08)] group-hover:border-[#EE5326]/50">
+                  <Mail className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80">Email</p>
-                  <p className="text-xs text-white/90">support@traveliq.in</p>
+                  <p className="text-[10px] font-black uppercase tracking-wider text-white">
+                    EMAIL
+                  </p>
+                  <p className="mt-0.5 text-xs font-medium text-white group-hover:text-[#EE5326] transition-colors">
+                    support@traveliq.in
+                  </p>
                 </div>
               </a>
 
-              <a href="tel:+917835025030" className="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-[#0A182E] p-4 transition-all hover:border-white/10 hover:bg-[#0F1E36]">
-                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#111F35] text-[#FF6B35]">
-                  <Phone className="h-5 w-5" />
+              {/* Call Us */}
+              <a
+                href="tel:+917835025030"
+                className="group flex items-start gap-4 transition-colors"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0F2D59] text-[#EE5326] border border-white/10 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3),inset_-2px_-2px_5px_rgba(255,255,255,0.08)] group-hover:border-[#EE5326]/50">
+                  <Phone className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80">Call Us</p>
-                  <p className="text-xs text-white/90">+91 78350 25030</p>
+                  <p className="text-[10px] font-black uppercase tracking-wider text-white">
+                    CALL US
+                  </p>
+                  <p className="mt-0.5 text-xs font-medium text-white group-hover:text-[#EE5326] transition-colors">
+                    +91 78350 25030
+                  </p>
                 </div>
               </a>
             </div>
           </div>
 
-          {/* QUICK LINKS */}
+          {/* COLUMN 2: QUICK LINKS */}
           <div>
-            <h3 className="mb-7 text-xs font-bold uppercase tracking-[0.22em] text-[#FF6B35]">
-              Quick Links
-            </h3>
-            <ul className="space-y-1">
-              {links.map(([label, href]) => (
-                <li key={href}>
-                  <Link href={href} className="flex items-center justify-between rounded-lg px-3 py-3 text-[13.5px] font-medium text-white/85 transition-all hover:bg-[#0A182E] hover:text-white">
-                    <span>{label}</span>
-                    <ArrowUpRight className="h-4 w-4 text-[#FF6B35]/80" />
+            <div className="mb-7">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#EE5326]">
+                QUICK LINKS
+              </h3>
+              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
+            </div>
+
+            <ul className="space-y-3.5">
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group flex items-center justify-between text-xs font-medium text-white transition-colors hover:text-[#EE5326]"
+                  >
+                    <span>{item.label}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <Link href="/irctc-agent-registration/" className="mt-6 flex items-center justify-between rounded-xl border border-[#FF6B35]/30 bg-[#0F1E36] px-4 py-4 transition-all hover:bg-[#14223E] hover:border-[#FF6B35]/40 group">
+            {/* Callout Card */}
+            <Link
+              href="/irctc-agent-registration/"
+              className="group mt-8 flex items-center justify-between rounded-xl border border-[#EE5326]/40 bg-[#0D2240] p-4 shadow-[6px_6px_18px_rgba(0,0,0,0.35),inset_1px_1px_2px_rgba(255,255,255,0.08)] transition-all hover:border-[#EE5326]/70 hover:bg-[#0F294D]"
+            >
               <div>
-                <p className="text-xs font-bold text-[#FF6B35]">Become an Agent</p>
-                <p className="mt-1 text-[11px] text-white/75">Grow your travel business</p>
+                <p className="text-[10px] font-black uppercase tracking-wider text-[#EE5326]">
+                  BECOME AN AGENT
+                </p>
+                <p className="mt-0.5 text-xs font-medium text-white">
+                  Grow your travel business
+                </p>
               </div>
-              <ArrowUpRight className="h-5 w-5 text-[#FF6B35] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
 
-          {/* CONNECT WITH US */}
+          {/* COLUMN 3: CONNECT WITH US & FOLLOW TRAVELIQ */}
           <div>
-            <h3 className="mb-7 text-xs font-bold uppercase tracking-[0.22em] text-[#FF6B35]">
-              Connect With Us
-            </h3>
-            <div className="rounded-xl border border-white/[0.06] bg-[#0A182E] p-5">
-              <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80">
-                <Clock className="h-3.5 w-3.5" /> Working Hours
+            <div className="mb-7">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#EE5326]">
+                CONNECT WITH US
+              </h3>
+              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
+            </div>
+
+            {/* Working Hours Card */}
+            <div className="rounded-xl border border-white/10 bg-[#0D2240] p-5 shadow-[6px_6px_18px_rgba(0,0,0,0.35),inset_1px_1px_2px_rgba(255,255,255,0.08)]">
+              <div className="flex items-center gap-2 text-white">
+                <Clock className="h-4 w-4 text-white" />
+                <span className="text-[10px] font-black uppercase tracking-wider text-white">
+                  WORKING HOURS
+                </span>
+              </div>
+              <p className="mt-3 text-sm font-bold text-white">
+                10:00 AM – 06:00 PM
               </p>
-              <p className="mt-3 text-xs font-bold text-white">10:00 AM – 06:00 PM</p>
-              <p className="mt-1 text-[11px] text-white/75">Monday – Saturday</p>
-              <div className="mt-4 flex items-start gap-2 text-xs leading-5 text-white/80">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#25D366] shadow-[0_0_6px_rgba(37,211,102,0.5)]" />
+              <p className="mt-0.5 text-xs font-medium text-white">
+                Monday – Saturday
+              </p>
+              <div className="mt-4 flex items-center gap-2 text-xs text-white">
+                <span className="h-2 w-2 rounded-full bg-[#25D366] shadow-[0_0_8px_rgba(37,211,102,0.8)]" />
                 <span>We are available during these timings.</span>
               </div>
             </div>
 
-            <div className="mt-8">
-              <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80">Follow TravelIQ</p>
-              <div className="flex gap-2.5">
+            {/* Follow TravelIQ */}
+            <div className="mt-7">
+              <div className="mb-4">
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#EE5326]">
+                  FOLLOW TRAVELIQ
+                </h3>
+                <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
+              </div>
+
+              <div className="flex items-center gap-3">
                 <a
                   href="https://www.facebook.com/traveliqindia"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on Facebook"
-                  className="grid h-10 w-10 place-items-center rounded-lg border border-[#FF6B35]/20 bg-[#0A182E] text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#1877F2] hover:text-white hover:border-transparent"
+                  className="transition-transform duration-200 hover:scale-115"
                 >
-                  <FacebookIcon className="h-4 w-4" />
+                  <FacebookIcon className="h-7 w-7 text-[#1877F2]" />
                 </a>
+
                 <a
                   href="https://www.instagram.com/traveliqindia/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on Instagram"
-                  className="grid h-10 w-10 place-items-center rounded-lg border border-[#FF6B35]/20 bg-[#0A182E] text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#E4405F] hover:text-white hover:border-transparent"
+                  className="transition-transform duration-200 hover:scale-115"
                 >
-                  <InstagramIcon className="h-4 w-4" />
+                  <InstagramIcon className="h-7 w-7 text-[#E4405F]" />
                 </a>
+
                 <a
                   href="https://www.linkedin.com/company/traveliq/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on LinkedIn"
-                  className="grid h-10 w-10 place-items-center rounded-lg border border-[#FF6B35]/20 bg-[#0A182E] text-white/80 transition-all hover:-translate-y-0.5 hover:bg-[#0A66C2] hover:text-white hover:border-transparent"
+                  className="transition-transform duration-200 hover:scale-115"
                 >
-                  <LinkedInIcon className="h-4 w-4" />
+                  <LinkedInIcon className="h-7 w-7 text-[#0A66C2]" />
                 </a>
+
                 <a
                   href="https://wa.me/917835025025"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Chat with TravelIQ on WhatsApp"
-                  className="grid h-10 w-10 place-items-center rounded-lg border border-[#25D366]/30 bg-[#0A2418] text-[#25D366] transition-all hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white"
+                  className="transition-transform duration-200 hover:scale-115"
                 >
-                  <WhatsAppIcon className="h-4 w-4" />
+                  <WhatsAppIcon className="h-7 w-7 text-[#25D366]" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM BAR - Same as image */}
-        <div className="mt-14 flex flex-col gap-3 rounded-xl border border-white/[0.04] bg-[#08101E] px-5 py-4 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} TravelIQ. All rights reserved.</span>
-          <span className="text-white/75">
-            Design and Developed by <span className="font-semibold text-white/90">CoderLala Technologies Pvt. Ltd.</span>
-          </span>
+        {/* ===================================================
+            BOTTOM FOOTER BAR
+        ==================================================== */}
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} TravelIQ. All rights reserved.</p>
+          <p>
+            Design and Developed by{" "}
+            <span className="font-bold text-white">
+              CoderLala Technologies Pvt. Ltd.
+            </span>
+          </p>
         </div>
       </div>
     </footer>
