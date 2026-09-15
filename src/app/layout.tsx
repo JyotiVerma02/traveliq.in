@@ -103,12 +103,11 @@ export default function RootLayout({
       className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          rel="preload"
-          href="/vande_bharat_hero.webp"
-          as="image"
-          type="image/webp"
-          fetchPriority="high"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
         <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>

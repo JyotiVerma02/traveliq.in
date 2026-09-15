@@ -33,8 +33,8 @@ export default function HeroMedia() {
         fill
         priority
         fetchPriority="high"
-        quality={70}
-        sizes="100vw"
+        quality={65}
+        sizes="(max-width: 640px) 640px, (max-width: 1024px) 1080px, 1200px"
         className="object-cover object-center"
       />
 
