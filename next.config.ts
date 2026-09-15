@@ -25,6 +25,27 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
 
+  // Add 301 redirects for duplicate/legacy routes
+  async redirects() {
+    return [
+      {
+        source: "/pay-us",
+        destination: "/pay-now",
+        permanent: true,
+      },
+      {
+        source: "/payus",
+        destination: "/pay-now",
+        permanent: true,
+      },
+      {
+        source: "/terms-and-conditions",
+        destination: "/term-and-conditions",
+        permanent: true,
+      },
+    ];
+  },
+
   // Add security and caching headers to all routes
   async headers() {
     return [

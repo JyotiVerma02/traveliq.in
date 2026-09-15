@@ -13,10 +13,39 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+
 export const metadata: Metadata = {
-  title: "Pay Now | TravelIQ - Account Details & Secure Payment",
+  title: "Pay Now - Official Bank Account Details & Secure Payment | TravelIQ",
   description:
-    "Pay Online Secure Payment - Pay your payment securely to Travel IQ Services Private Limited. Bank Details: 50200014341411, IFSC: HDFC0003648.",
+    "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
+  alternates: {
+    canonical: "https://traveliq.in/pay-now/",
+  },
+  openGraph: {
+    title: "Pay Now - Official Bank Account Details & Secure Payment | TravelIQ",
+    description:
+      "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
+    url: "https://traveliq.in/pay-now/",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/pay-now.webp",
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ Secure Payment",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pay Now - Official Bank Account Details & Secure Payment | TravelIQ",
+    description:
+      "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
+    images: ["/images/pay-now.webp"],
+  },
 };
 
 const accountDetails = [
@@ -45,8 +74,14 @@ const clayHover =
   "transition-all duration-300 hover:-translate-y-1 hover:shadow-[12px_16px_38px_rgba(16,64,122,0.12),-8px_-8px_25px_rgba(255,255,255,0.98)]";
 
 export default function PayNowPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "https://traveliq.in/" },
+    { name: "Pay Now", item: "https://traveliq.in/pay-now/" },
+  ]);
+
   return (
     <main className="min-h-screen w-full overflow-hidden bg-[#F4F7FB] text-[#0B1728] antialiased">
+      <JsonLd data={breadcrumbSchema} />
       {/* =====================================================
           HERO
       ===================================================== */}

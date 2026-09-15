@@ -19,10 +19,39 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+
 export const metadata: Metadata = {
-  title: "About Us | TravelIQ",
+  title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
   description:
-    "Travel IQ Services is the best Principal agent of IRCTC and an IATA accredited travel agent in INDIA.",
+    "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
+  alternates: {
+    canonical: "https://traveliq.in/about-travel-iq/",
+  },
+  openGraph: {
+    title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
+    description:
+      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
+    url: "https://traveliq.in/about-travel-iq/",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/about.webp",
+        width: 1200,
+        height: 630,
+        alt: "About TravelIQ Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
+    description:
+      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
+    images: ["/images/about.webp"],
+  },
 };
 
 /* =========================================================
@@ -152,8 +181,14 @@ const journey = [
 ];
 
 export default function AboutPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "https://traveliq.in/" },
+    { name: "About Us", item: "https://traveliq.in/about-travel-iq/" },
+  ]);
+
   return (
     <main className="overflow-hidden bg-[#FFFDFB] text-[#526174]">
+      <JsonLd data={breadcrumbSchema} />
       {/* =========================================================
           HERO
       ========================================================= */}

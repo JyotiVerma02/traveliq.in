@@ -4,6 +4,11 @@ import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import {
+  JsonLd,
+  getOrganizationSchema,
+  getWebSiteSchema,
+} from "@/components/JsonLd";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,29 +28,64 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://traveliq.in"),
   title: {
-    default: "Travel IQ - Your Own Travel Intelligence",
+    default: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
     template: "%s",
   },
-
-  description: "Know More to Become an IRCTC Travel Agent",
-
+  description:
+    "TravelIQ is the leading IRCTC Principal Service Provider in India. Register as an authorized IRCTC travel agent, book train tickets, flights, buses, hotels, and holiday packages.",
   keywords: [
     "TravelIQ",
-    "IRCTC agent",
     "IRCTC agent registration",
-    "train ticket booking",
+    "IRCTC principal agent",
+    "train ticket booking agent",
+    "railway reservation",
     "flight ticket booking",
     "hotel booking",
-    "travel services",
+    "bus ticket booking",
+    "tour packages",
   ],
-
+  authors: [{ name: "TravelIQ", url: "https://traveliq.in" }],
+  creator: "Travel IQ Services Private Limited",
+  publisher: "Travel IQ Services Private Limited",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "TravelIQ | Travel Services & IRCTC Agent Services",
     description:
-      "TravelIQ provides railway reservation, flight booking, hotel booking, bus ticket booking, tour packages and IRCTC agent services.",
-    type: "website",
+      "TravelIQ is an IATA accredited agency and IRCTC Principal Service Provider offering railway reservations, air tickets, hotel bookings, bus tickets, and agent registration across India.",
     url: "https://traveliq.in",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-1.webp",
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ - Your Own Travel Intelligence",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TravelIQ | Travel Services & IRCTC Agent Services",
+    description:
+      "Register as an authorized IRCTC travel agent with TravelIQ. Railway reservations, flights, hotels, and bus ticket booking.",
+    images: ["/images/hero-1.webp"],
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
@@ -54,6 +94,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = getOrganizationSchema();
+  const websiteSchema = getWebSiteSchema();
+
   return (
     <html
       lang="en"
@@ -67,6 +110,7 @@ export default function RootLayout({
           type="image/webp"
           fetchPriority="high"
         />
+        <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>
       <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">
         <div className="flex min-h-screen flex-col">

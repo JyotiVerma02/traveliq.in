@@ -11,10 +11,39 @@ import {
 } from "@/components/icons";
 import { Mail, MapPin, Phone, ArrowRight, Check } from "lucide-react";
 
+import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+
 export const metadata: Metadata = {
-  title: "Contact Travel IQ | TravelIQ",
+  title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
   description:
-    "Get in touch with Travel IQ. Contact us through WhatsApp, phone, email, or visit our office at JMD Megapolis, Gurugram.",
+    "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
+  alternates: {
+    canonical: "https://traveliq.in/contact-us/",
+  },
+  openGraph: {
+    title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
+    description:
+      "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
+    url: "https://traveliq.in/contact-us/",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/contact.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact TravelIQ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
+    description:
+      "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
+    images: ["/images/contact.webp"],
+  },
 };
 
 /* =========================================================
@@ -67,8 +96,14 @@ const socialLinks = [
 ];
 
 export default function ContactPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "https://traveliq.in/" },
+    { name: "Contact Us", item: "https://traveliq.in/contact-us/" },
+  ]);
+
   return (
     <main className="min-h-screen w-full overflow-hidden bg-[#F4F7FB] text-[#0B1728] antialiased">
+      <JsonLd data={breadcrumbSchema} />
       {/* =====================================================
           HERO
       ===================================================== */}

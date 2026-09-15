@@ -6,10 +6,39 @@ import { ArrowRight, PlayCircle, Video, BookOpen, UsersRound } from "lucide-reac
 
 const VideoGalleryGrid = dynamic(() => import("@/components/VideoGalleryGrid"));
 
+import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+
 export const metadata: Metadata = {
-  title: "Video Gallery | TravelIQ",
+  title: "Video Gallery - IRCTC Agent Guides & Travel Tutorials | TravelIQ",
   description:
-    "TravelIQ video gallery featuring travel guides, agent onboarding, and service highlights.",
+    "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
+  alternates: {
+    canonical: "https://traveliq.in/video-gallery/",
+  },
+  openGraph: {
+    title: "Video Gallery - IRCTC Agent Guides & Travel Tutorials | TravelIQ",
+    description:
+      "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
+    url: "https://traveliq.in/video-gallery/",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/video-gallery.webp",
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ Video Gallery",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Video Gallery - IRCTC Agent Guides & Travel Tutorials | TravelIQ",
+    description:
+      "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
+    images: ["/images/video-gallery.webp"],
+  },
 };
 
 const videos = [
@@ -110,8 +139,14 @@ const clayHover =
   "transition-all duration-300 hover:-translate-y-1 hover:shadow-[14px_18px_38px_rgba(16,64,122,0.12),-8px_-8px_24px_rgba(255,255,255,0.95)]";
 
 export default function VideoGalleryPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "https://traveliq.in/" },
+    { name: "Video Gallery", item: "https://traveliq.in/video-gallery/" },
+  ]);
+
   return (
     <main className="min-h-screen w-full bg-[#F5F7FB] text-[#0B1728] antialiased">
+      <JsonLd data={breadcrumbSchema} />
 
       {/* =====================================================
           HERO

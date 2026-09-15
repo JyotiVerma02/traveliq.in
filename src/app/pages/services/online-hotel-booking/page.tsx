@@ -2,21 +2,50 @@ import type { Metadata } from "next";
 import ServiceDetail from "@/components/ServiceDetail";
 
 export const metadata: Metadata = {
-  title: "Hotel Booking | TravelIQ",
-  description: "Online hotel booking in India and abroad with TravelIQ.",
+  title: "Online Hotel Booking - Luxury & Budget Accommodation | TravelIQ",
+  description:
+    "Book hotels online in India and worldwide with TravelIQ. Compare luxury resorts, business hotels, and budget stays with exclusive agent discounts.",
+  alternates: {
+    canonical: "https://traveliq.in/pages/services/online-hotel-booking/",
+  },
+  openGraph: {
+    title: "Online Hotel Booking - Luxury & Budget Accommodation | TravelIQ",
+    description:
+      "Book hotels online in India and worldwide with TravelIQ. Compare luxury resorts, business hotels, and budget stays with exclusive agent discounts.",
+    url: "https://traveliq.in/pages/services/online-hotel-booking/",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/services/hotel-booking.webp",
+        width: 1200,
+        height: 630,
+        alt: "Hotel Booking with TravelIQ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Online Hotel Booking - Luxury & Budget Accommodation | TravelIQ",
+    description:
+      "Book hotels online in India and worldwide with TravelIQ. Compare luxury resorts, business hotels, and budget stays with exclusive agent discounts.",
+    images: ["/images/services/hotel-booking.webp"],
+  },
 };
 
 export default function Page() {
   return (
     <ServiceDetail
       title="Hotel Booking"
+      slug="online-hotel-booking"
       image="/images/services/hotel-booking.webp"
       imageAlt="Luxury hotel room with king bed and city view - Book Hotels with TravelIQ"
-      intro="TraveliQ provides a diverse selection of luxury, deluxe, and budget hotels. Choose to stay in luxury and comfort with the best hotel booking discounts available."
+      intro="TravelIQ offers a wide selection of luxury resorts, star business hotels, heritage properties, and budget accommodations across major cities in India and top international destinations."
       sections={[
         {
-          heading: "Advantages of online hotel booking",
-          body: "In a few easy clicks, you may book hotels in India or internationally. Compare reviews, photos, ratings, and facilities in one spot, get fantastic deals and discounts, and reserve a suitable stay at affordable costs. We offer a wide variety of hotel bookings in both India and abroad at reasonable rates.",
+          heading: "Worldwide Hotel Reservation Network",
+          body: "Easily search, compare, and reserve hotel rooms with real-time room availability and instant confirmation.\n\nEnjoy transparent rates, flexible check-in options, group reservation support, and attractive B2B margins for travel agents across thousands of hotel properties worldwide.",
         },
       ]}
     />

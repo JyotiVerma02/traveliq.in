@@ -8,10 +8,39 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+
 export const metadata: Metadata = {
-  title: "Services Provided by Travel IQ | TravelIQ",
+  title: "Travel Services & IRCTC Solutions | TravelIQ",
   description:
-    "Travel IQ offers air tickets, railway reservations, hotel bookings, bus tickets, tour packages, IRCTC services and digital solutions.",
+    "Explore TravelIQ's travel services: Railway reservations, air tickets, hotel bookings, bus ticket booking, IRCTC domestic packages, tour packages, and Class 3 Digital Signature solutions.",
+  alternates: {
+    canonical: "https://traveliq.in/our-services/",
+  },
+  openGraph: {
+    title: "Travel Services & IRCTC Solutions | TravelIQ",
+    description:
+      "Explore TravelIQ's travel services: Railway reservations, air tickets, hotel bookings, bus ticket booking, IRCTC domestic packages, tour packages, and Class 3 Digital Signature solutions.",
+    url: "https://traveliq.in/our-services/",
+    siteName: "TravelIQ",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero-1.webp",
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ Travel Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Travel Services & IRCTC Solutions | TravelIQ",
+    description:
+      "Explore TravelIQ's travel services: Railway reservations, air tickets, hotel bookings, bus ticket booking, IRCTC domestic packages, tour packages, and Class 3 Digital Signature solutions.",
+    images: ["/images/hero-1.webp"],
+  },
 };
 
 const services = [
@@ -82,8 +111,14 @@ const upcomingServices = [
 ];
 
 export default function ServicesPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "https://traveliq.in/" },
+    { name: "Our Services", item: "https://traveliq.in/our-services/" },
+  ]);
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#f4f7fb] text-[#0b1728]">
+      <JsonLd data={breadcrumbSchema} />
 
       {/* =========================================================
           HERO
