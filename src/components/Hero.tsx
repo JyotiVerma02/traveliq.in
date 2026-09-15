@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import HeroMedia from "@/components/HeroMedia";
 import { WhatsAppIcon } from "@/components/icons";
-import Reveal from "@/components/Reveal";
 
 const stats = [
   {
@@ -502,14 +501,12 @@ export default function Hero() {
             sm:gap-3
           "
         >
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
 
             return (
-              <Reveal
+              <div
                 key={service.title}
-                delay={index * 0.06}
-                distance={16}
                 className="
                   group
                   flex
@@ -572,7 +569,7 @@ export default function Hero() {
                     {service.text}
                   </p>
                 </div>
-              </Reveal>
+              </div>
             );
           })}
         </div>

@@ -5,6 +5,8 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
+  officialSocialIconButtonClass,
+  officialSocialIconClass,
   WhatsAppIcon,
 } from "@/components/icons";
 
@@ -199,9 +201,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on Facebook"
-                  className="transition-transform duration-200 hover:scale-115 !text-white"
+                  className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 ${officialSocialIconButtonClass.facebook}`}
                 >
-                  <FacebookIcon className="h-7 w-7 text-[#1877F2]" />
+                  <FacebookIcon className={officialSocialIconClass} />
                 </a>
 
                 <a
@@ -209,9 +211,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on Instagram"
-                  className="transition-transform duration-200 hover:scale-115"
+                  className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 ${officialSocialIconButtonClass.instagram}`}
                 >
-                  <InstagramIcon className="h-7 w-7 text-[#E4405F]" />
+                  <InstagramIcon className={officialSocialIconClass} />
                 </a>
 
                 <a
@@ -219,9 +221,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow TravelIQ on LinkedIn"
-                  className="transition-transform duration-200 hover:scale-115"
+                  className={`flex h-9 w-9 items-center justify-center rounded-[6px] transition-transform duration-200 hover:scale-110 ${officialSocialIconButtonClass.linkedin}`}
                 >
-                  <LinkedInIcon className="h-7 w-7 text-[#0A66C2]" />
+                  <LinkedInIcon className={officialSocialIconClass} />
                 </a>
 
                 <a
@@ -229,9 +231,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Chat with TravelIQ on WhatsApp"
-                  className="transition-transform duration-200 hover:scale-115"
+                  className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 ${officialSocialIconButtonClass.whatsapp}`}
                 >
-                  <WhatsAppIcon className="h-7 w-7 text-[#25D366]" />
+                  <WhatsAppIcon className={officialSocialIconClass} />
                 </a>
               </div>
             </div>

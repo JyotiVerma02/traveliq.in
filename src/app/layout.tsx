@@ -26,6 +26,7 @@ const playfair = Playfair_Display({
   weight: ["600", "700"],
   style: ["italic"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -104,12 +105,6 @@ export default function RootLayout({
       className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>
       <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">

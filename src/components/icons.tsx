@@ -1,3 +1,18 @@
+export const officialSocialIconClass = "h-5 w-5 shrink-0 !text-white";
+
+export const officialSocialIconButtonClass = {
+  facebook:
+    "bg-[#1877F2] !text-white shadow-[0_8px_18px_rgba(24,119,242,0.28)] hover:shadow-[0_12px_26px_rgba(24,119,242,0.38)]",
+  instagram:
+    "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#515BD4] !text-white shadow-[0_8px_18px_rgba(221,42,123,0.28)] hover:shadow-[0_12px_26px_rgba(221,42,123,0.38)]",
+  linkedin:
+    "bg-[#0A66C2] !text-white shadow-[0_8px_18px_rgba(10,102,194,0.28)] hover:shadow-[0_12px_26px_rgba(10,102,194,0.4)]",
+  whatsapp:
+    "bg-[#25D366] !text-white shadow-[0_8px_18px_rgba(37,211,102,0.28)] hover:shadow-[0_12px_26px_rgba(37,211,102,0.38)]",
+  youtube:
+    "bg-[#FF0000] !text-white shadow-[0_8px_18px_rgba(255,0,0,0.24)] hover:shadow-[0_12px_26px_rgba(255,0,0,0.38)]",
+} as const;
+
 export function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
     <svg

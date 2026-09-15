@@ -1,7 +1,6 @@
 
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
@@ -180,25 +179,21 @@ export default function Header() {
               hover:-translate-y-0.5
             "
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element -- Header logo is intentionally plain HTML to avoid a Next/Image dev hydration mismatch. */}
+            <img
               src="/logo.webp"
               alt="TravelIQ"
               width={225}
               height={56}
-              priority
-              sizes="(max-width: 640px) 185px, 225px"
               className="
-                h-[38px]
+                h-auto
                 w-[145px]
                 object-contain
 
-                xs:h-[44px]
                 xs:w-[175px]
 
-                sm:h-[50px]
                 sm:w-[200px]
 
-                lg:h-[56px]
                 lg:w-[215px]
               "
             />

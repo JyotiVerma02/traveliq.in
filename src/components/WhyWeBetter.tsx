@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import {
   GlobeIcon,
+  officialSocialIconButtonClass,
   YouTubeIcon,
   TicketIcon,
   WhatsAppIcon,
@@ -19,8 +20,8 @@ const quickLinks = [
     title: "YouTube Channel",
     href: "https://www.youtube.com/c/TravelIQindia",
     Icon: YouTubeIcon,
-    iconBg: "bg-[#FF0000]",
-    iconColor: "text-white",
+    iconBg: officialSocialIconButtonClass.youtube,
+    iconColor: "!text-white",
   },
   {
     title: "Book Tickets Anytime",
@@ -33,8 +34,8 @@ const quickLinks = [
     title: "Online Chat Support",
     href: "https://wa.me/917835025025",
     Icon: WhatsAppIcon,
-    iconBg: "bg-[#25D366]/10",
-    iconColor: "text-[#25D366]",
+    iconBg: officialSocialIconButtonClass.whatsapp,
+    iconColor: "!text-white",
   },
 ];
 
@@ -758,7 +759,6 @@ export default function WhyWeBetter() {
                             justify-center
                             rounded-xl
                             ${item.iconBg}
-                            shadow-[inset_2px_2px_5px_rgba(0,0,0,0.06),inset_-2px_-2px_5px_rgba(255,255,255,0.9)]
                             transition-all
                             duration-300
                             group-hover:opacity-90

@@ -261,21 +261,17 @@ export default function FaqSection() {
             >
               {/* Image */}
 
-              <div className="relative overflow-hidden rounded-[26px]">
+              <div className="relative h-[280px] overflow-hidden rounded-[26px] sm:h-[360px] lg:h-[420px]">
                 <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=75"
                   alt="TravelIQ Agent Support Team"
-                  width={600}
-                  height={420}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 520px"
                   className="
-                    h-[280px]
-                    w-full
                     object-cover
                     transition-transform
                     duration-700
                     hover:scale-[1.03]
-                    sm:h-[360px]
-                    lg:h-[420px]
                   "
                 />
 

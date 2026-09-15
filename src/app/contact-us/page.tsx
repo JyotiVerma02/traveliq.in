@@ -6,6 +6,8 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
+  officialSocialIconButtonClass,
+  officialSocialIconClass,
   WhatsAppIcon,
   YouTubeIcon,
 } from "@/components/icons";
@@ -65,33 +67,25 @@ const socialLinks = [
     name: "Facebook",
     href: "https://www.facebook.com/traveliqindia",
     icon: FacebookIcon,
-    bg: "bg-[#1877F2]",
-    shadow:
-      "shadow-[0_8px_20px_rgba(24,119,242,0.28)] hover:shadow-[0_12px_26px_rgba(24,119,242,0.38)]",
+    buttonClass: officialSocialIconButtonClass.facebook,
   },
   {
     name: "Instagram",
     href: "https://www.instagram.com/traveliqindia/",
     icon: InstagramIcon,
-    bg: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#515BD4]",
-    shadow:
-      "shadow-[0_8px_20px_rgba(221,42,123,0.25)] hover:shadow-[0_12px_26px_rgba(221,42,123,0.38)]",
+    buttonClass: officialSocialIconButtonClass.instagram,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/travel-iq-services-private-limited/",
     icon: LinkedInIcon,
-    bg: "bg-[#0A66C2]",
-    shadow:
-      "shadow-[0_8px_20px_rgba(10,102,194,0.28)] hover:shadow-[0_12px_26px_rgba(10,102,194,0.4)]",
+    buttonClass: officialSocialIconButtonClass.linkedin,
   },
   {
     name: "YouTube",
     href: "https://www.youtube.com/c/TravelIQindia",
     icon: YouTubeIcon,
-    bg: "bg-[#FF0000]",
-    shadow:
-      "shadow-[0_8px_20px_rgba(255,0,0,0.24)] hover:shadow-[0_12px_26px_rgba(255,0,0,0.38)]",
+    buttonClass: officialSocialIconButtonClass.youtube,
   },
 ];
 
@@ -212,8 +206,10 @@ export default function ContactPage() {
           <div
             className={`group flex min-h-[205px] flex-col items-center justify-center rounded-[24px] p-6 text-center ${clayCard} ${clayCardHover}`}
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EFFFF5] text-[#25D366] shadow-inner transition duration-300 group-hover:scale-105">
-              <WhatsAppIcon className="h-6 w-6" />
+            <div
+              className={`flex h-14 w-14 items-center justify-center rounded-2xl transition duration-300 group-hover:scale-105 ${officialSocialIconButtonClass.whatsapp}`}
+            >
+              <WhatsAppIcon className="h-6 w-6 !text-white" />
             </div>
 
             <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.18em] text-[#9AA7B8]">
@@ -357,8 +353,10 @@ export default function ContactPage() {
                     </h3>
                   </div>
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#25D366] shadow-[5px_7px_18px_rgba(16,64,122,0.08)]">
-                    <WhatsAppIcon className="h-6 w-6" />
+                  <div
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${officialSocialIconButtonClass.whatsapp}`}
+                  >
+                    <WhatsAppIcon className="h-6 w-6 !text-white" />
                   </div>
                 </div>
 
@@ -417,10 +415,11 @@ export default function ContactPage() {
                         social.href !== "#" ? "noopener noreferrer" : undefined
                       }
                       aria-label={social.name}
-                      className={`group flex aspect-square w-full items-center justify-center rounded-xl ${social.bg} ${social.shadow} transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]`}
+                      className={`group flex aspect-square w-full items-center justify-center rounded-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] ${social.buttonClass}`}
                     >
-                      {/* IMPORTANT: force icon white */}
-                      <Icon className="h-5 w-5 !text-white transition-transform duration-300 group-hover:scale-110 sm:h-6 sm:w-6" />
+                      <Icon
+                        className={`${officialSocialIconClass} transition-transform duration-300 group-hover:scale-110 sm:h-6 sm:w-6`}
+                      />
                     </a>
                   );
                 })}
