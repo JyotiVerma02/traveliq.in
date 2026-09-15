@@ -287,7 +287,7 @@ export default function PayNowPage() {
               RIGHT — IMAGE
           ================================================= */}
 
-          <div className="relative min-h-[480px] w-full overflow-hidden bg-[#0E2A52] sm:min-h-[540px] lg:col-span-5 lg:min-h-[650px]">
+          <div className="relative min-h-[300px] w-full overflow-hidden bg-[#0E2A52] sm:min-h-[540px] lg:col-span-5 lg:min-h-[650px]">
             <Image
               src="/images/secure-payment.webp"
               alt="TravelIQ Online Payment"

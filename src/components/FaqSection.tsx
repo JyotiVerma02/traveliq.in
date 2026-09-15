@@ -265,12 +265,14 @@ export default function FaqSection() {
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=75"
                   alt="TravelIQ Agent Support Team"
                   className="
-                    h-[420px]
+                    h-[280px]
                     w-full
                     object-cover
                     transition-transform
                     duration-700
                     hover:scale-[1.03]
+                    sm:h-[360px]
+                    lg:h-[420px]
                   "
                 />
 

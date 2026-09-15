@@ -182,11 +182,14 @@ export default function Header() {
               width={225}
               height={56}
               priority
-              sizes="225px"
+              sizes="(max-width: 640px) 185px, 225px"
               className="
-                h-[46px]
-                w-[185px]
+                h-[38px]
+                w-[145px]
                 object-contain
+
+                xs:h-[44px]
+                xs:w-[175px]
 
                 sm:h-[50px]
                 sm:w-[200px]

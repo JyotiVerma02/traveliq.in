@@ -249,12 +249,13 @@ export default function Hero() {
               className="
                 mx-auto
                 max-w-[900px]
-                text-[3rem]
+                text-[2.25rem]
                 font-bold
-                leading-[1.04]
+                leading-[1.08]
                 tracking-[-0.035em]
                 text-white
                 drop-shadow-[0_5px_24px_rgba(0,0,0,0.55)]
+                xs:text-[2.6rem]
                 sm:text-[4rem]
                 md:text-[4.5rem]
                 lg:text-[5rem]
@@ -312,10 +313,12 @@ export default function Hero() {
               className="
                 mt-8
                 flex
+                w-full
                 flex-col
                 items-center
                 justify-center
                 gap-3
+                sm:w-auto
                 sm:flex-row
               "
             >
@@ -326,6 +329,7 @@ export default function Hero() {
                   group
                   inline-flex
                   min-h-[54px]
+                  w-full
                   items-center
                   justify-center
                   gap-3
@@ -343,6 +347,7 @@ export default function Hero() {
                   hover:bg-[#A82907]
                   hover:shadow-[0_16px_35px_rgba(196,50,10,0.40)]
                   active:translate-y-0
+                  sm:w-auto
                 "
               >
                 <span className="!text-white">
@@ -370,6 +375,7 @@ export default function Hero() {
                   group
                   inline-flex
                   min-h-[54px]
+                  w-full
                   items-center
                   justify-center
                   gap-2.5
@@ -389,6 +395,7 @@ export default function Hero() {
                   hover:border-white/50
                   hover:bg-white/20
                   active:translate-y-0
+                  sm:w-auto
                 "
               >
                 <span

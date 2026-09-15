@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#10407A]/20 blur-[120px]" />
       <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-[#EE5326]/12 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1320px] px-6 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-8 lg:px-12">
         {/* ===================================================
             TOP BRANDING SECTION
         ==================================================== */}

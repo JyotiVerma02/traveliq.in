@@ -136,9 +136,9 @@ export default function WhyWeBetter() {
             className="
               mt-5
               max-w-4xl
-              text-4xl
+              text-3xl
               font-black
-              leading-[1.04]
+              leading-[1.06]
               tracking-[-0.055em]
               text-[#0B1728]
               sm:text-5xl

@@ -49,7 +49,7 @@ export default function Services() {
               delay={Math.min(index, 4) * 0.08}
               direction="right"
               distance={24}
-              className="h-[500px] w-[320px] shrink-0 snap-start sm:w-[360px] lg:w-[380px]"
+              className="min-h-[460px] h-full w-[270px] xs:w-[310px] shrink-0 snap-start sm:w-[360px] lg:w-[380px]"
             >
             <Link
               href={href}
