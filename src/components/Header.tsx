@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
@@ -179,12 +180,13 @@ export default function Header() {
               hover:-translate-y-0.5
             "
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- Header logo is intentionally plain HTML to avoid a Next/Image dev hydration mismatch. */}
-            <img
+            <Image
               src="/logo.webp"
               alt="TravelIQ"
-              width={225}
-              height={56}
+              width={1166}
+              height={280}
+              quality={65}
+              sizes="(max-width: 479px) 145px, (max-width: 639px) 175px, (max-width: 1023px) 200px, 215px"
               className="
                 h-auto
                 w-[145px]

@@ -197,7 +197,7 @@ export default function Services() {
                     fill
                     loading="lazy"
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
-                    sizes="(max-width: 640px) 320px, 380px"
+                    sizes="(max-width: 479px) 280px, (max-width: 639px) 320px, (max-width: 1023px) 360px, 380px"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071A35]/65 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
