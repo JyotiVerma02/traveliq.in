@@ -1,84 +1,22 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
-
-const heroSlides = [
-  {
-    src: "/vande_bharat_hero.webp",
-    alt: "Vande Bharat Express train travel in India",
-  },
-  {
-    src: "/flight_hero.webp",
-    alt: "Flight ticket booking and air travel",
-  },
-  {
-    src: "/hotel_hero.webp",
-    alt: "Luxury hotel stay and accommodation booking",
-  },
-  {
-    src: "/bus_hero.webp",
-    alt: "Bus reservation and scenic road travel",
-  },
-  {
-    src: "/holiday_hero.webp",
-    alt: "Holiday tour packages and tropical destinations",
-  },
-];
+import HeroCarousel from "@/components/HeroCarousel";
 
 export default function HeroMedia() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-[#071F3D]">
-      {/* Primary LCP Image - Always rendered upfront with high priority */}
+      {/* The initial hero is server-rendered so it is immediately eligible for LCP. */}
       <Image
-        src={heroSlides[0].src}
-        alt={heroSlides[0].alt}
+        src="/vande_bharat_hero.webp"
+        alt="Vande Bharat Express train travel in India"
         fill
         priority
         fetchPriority="high"
         loading="eager"
         sizes="100vw"
-        className={`object-cover object-center transition-opacity duration-1000 ease-in-out ${
-          currentIndex === 0 ? "opacity-100 z-10" : "opacity-0 z-0"
-        }`}
+        className="object-cover object-center"
       />
 
-      {/* Secondary Slides - Mounted on client for smooth background transitions */}
-      {isMounted &&
-        heroSlides.slice(1).map((slide, idx) => {
-          const actualIndex = idx + 1;
-          const isActive = actualIndex === currentIndex;
-
-          return (
-            <div
-              key={slide.src}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                isActive ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                loading="lazy"
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-            </div>
-          );
-        })}
+      <HeroCarousel />
 
       {/* Gradient Overlays with pointer-events-none for LCP trace compatibility */}
       <div className="pointer-events-none absolute inset-0 z-20 bg-[#071F3D]/18" />
