@@ -5,16 +5,15 @@ export default function HeroMedia() {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-[#071F3D]">
       {/* The initial hero is server-rendered so it is immediately eligible for LCP. */}
-      <Image
-        src="/vande_bharat_hero.webp"
-        alt="Vande Bharat Express train travel in India"
-        fill
-        priority
-        fetchPriority="high"
-        loading="eager"
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+    <Image
+  src="/vande_bharat_hero.webp"
+  alt="Vande Bharat Express train travel in India"
+  fill
+  priority
+  fetchPriority="high"
+  sizes="100vw"
+  className="object-cover object-center"
+/>
 
       <HeroCarouselLoader />
 
