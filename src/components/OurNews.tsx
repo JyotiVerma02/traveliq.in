@@ -81,7 +81,7 @@ export default function OurNews() {
               font-bold
               uppercase
               tracking-[0.18em]
-              text-[#EE5326]
+              text-[#C4320A]
               shadow-[5px_5px_12px_rgba(16,64,122,0.08),-4px_-4px_10px_rgba(255,255,255,0.95)]
             "
           >
@@ -254,7 +254,7 @@ export default function OurNews() {
                 {/* CONTENT */}
                 <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
                   {/* Category */}
-                  <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D83B0E]">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#C4320A]">
                     TravelIQ Updates
                   </span>
 

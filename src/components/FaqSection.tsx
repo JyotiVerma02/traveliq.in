@@ -125,7 +125,7 @@ export default function FaqSection() {
                 font-bold
                 uppercase
                 tracking-[0.18em]
-                text-[#EE5326]
+                text-[#C4320A]
                 shadow-[4px_4px_10px_rgba(238,83,38,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]
               "
             >
@@ -481,7 +481,7 @@ export default function FaqSection() {
                         font-mono
                         text-[10px]
                         font-semibold
-                        text-[#EE5326]
+                        text-[#C4320A]
                         shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]
                       "
                     >

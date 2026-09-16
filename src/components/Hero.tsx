@@ -153,11 +153,7 @@ export default function Hero() {
               sm:justify-end
             "
           >
-            <Sparkles
-              size={11}
-              strokeWidth={2}
-              className="text-[#EE5326]"
-            />
+            <Sparkles size={11} strokeWidth={2} className="text-[#EE5326]" />
 
             <p
               className="
@@ -263,13 +259,10 @@ export default function Hero() {
             >
               Grow Your
               <br />
-
               Travel Business
               <br />
-
               <span className="relative inline-block text-[#FF7045]">
                 With TravelIQ.
-
                 <span
                   className="
                     absolute
@@ -300,9 +293,9 @@ export default function Hero() {
                 lg:text-[17px]
               "
             >
-              Become an authorized IRCTC travel agent and access
-              railway, flights, hotels, buses and holidays through
-              one trusted B2B platform.
+              Become an authorized IRCTC travel agent and access railway,
+              flights, hotels, buses and holidays through one trusted B2B
+              platform.
             </p>
 
             {/* =================================================
@@ -349,9 +342,7 @@ export default function Hero() {
                   sm:w-auto
                 "
               >
-                <span className="!text-white">
-                  Become an Agent
-                </span>
+                <span className="!text-white">Become an Agent</span>
 
                 <ArrowRight
                   size={17}
@@ -411,9 +402,7 @@ export default function Hero() {
                   <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
                 </span>
 
-                <span className="!text-white">
-                  WhatsApp Us
-                </span>
+                <span className="!text-white">WhatsApp Us</span>
               </a>
             </div>
 
@@ -432,10 +421,7 @@ export default function Hero() {
               "
             >
               {reassurance.map((item, index) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2"
-                >
+                <div key={item} className="flex items-center gap-2">
                   {index > 0 && (
                     <span
                       className="
@@ -463,10 +449,7 @@ export default function Hero() {
                       backdrop-blur-sm
                     "
                   >
-                    <Check
-                      size={10}
-                      strokeWidth={3}
-                    />
+                    <Check size={10} strokeWidth={3} />
                   </span>
 
                   <span
@@ -540,10 +523,7 @@ export default function Hero() {
                     group-hover:text-white
                   "
                 >
-                  <Icon
-                    size={16}
-                    strokeWidth={2}
-                  />
+                  <Icon size={16} strokeWidth={2} />
                 </div>
 
                 <div className="min-w-0">
@@ -602,11 +582,7 @@ export default function Hero() {
                 className={`
                   text-center
                   sm:text-left
-                  ${
-                    index > 0
-                      ? "sm:border-l sm:border-white/15 sm:pl-8"
-                      : ""
-                  }
+                  ${index > 0 ? "sm:border-l sm:border-white/15 sm:pl-8" : ""}
                 `}
               >
                 <p
@@ -615,11 +591,7 @@ export default function Hero() {
                     font-bold
                     tracking-[-0.05em]
                     sm:text-3xl
-                    ${
-                      index === 1
-                        ? "text-[#FF7045]"
-                        : "text-white"
-                    }
+                    ${index === 1 ? "text-[#FF7045]" : "text-white"}
                   `}
                 >
                   {stat.value}

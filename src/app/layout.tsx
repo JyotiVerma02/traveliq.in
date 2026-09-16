@@ -105,6 +105,13 @@ export default function RootLayout({
       className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
+        <link
+          rel="preload"
+          href="/vande_bharat_hero.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
         <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>
       <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">

@@ -101,7 +101,7 @@ export default function IrcTcAgentRegistrationPage() {
           </nav>
 
           <div className="mx-auto max-w-4xl text-center space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#EE5326]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#C4320A]">
               IRCTC Agent Registration
             </span>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
