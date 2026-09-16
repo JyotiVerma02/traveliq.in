@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import {
   GlobeIcon,
@@ -11,13 +12,16 @@ import {
 const quickLinks = [
   {
     title: "Digital Promotion",
+    subtitle: "Growth & B2B Tech Services",
     href: "https://webshlok.com",
     Icon: GlobeIcon,
-    iconBg: "bg-[#10407A]/10",
-    iconColor: "text-[#10407A]",
+    iconBg:
+      "bg-gradient-to-br from-[#10407A] to-[#0A2952] !text-white shadow-[0_8px_18px_rgba(16,64,122,0.30)] hover:shadow-[0_12px_26px_rgba(16,64,122,0.42)]",
+    iconColor: "!text-white",
   },
   {
     title: "YouTube Channel",
+    subtitle: "Travel IQ Videos & Guides",
     href: "https://www.youtube.com/c/TravelIQindia",
     Icon: YouTubeIcon,
     iconBg: officialSocialIconButtonClass.youtube,
@@ -25,13 +29,16 @@ const quickLinks = [
   },
   {
     title: "Book Tickets Anytime",
+    subtitle: "24/7 B2B Ticket Booking Portal",
     href: "#",
     Icon: TicketIcon,
-    iconBg: "bg-[#EE5326]/10",
-    iconColor: "text-[#EE5326]",
+    iconBg:
+      "bg-[#EE5326] !text-white shadow-[0_8px_18px_rgba(238,83,38,0.30)] hover:shadow-[0_12px_26px_rgba(238,83,38,0.42)]",
+    iconColor: "!text-white",
   },
   {
     title: "Online Chat Support",
+    subtitle: "Instant WhatsApp Assistance",
     href: "https://wa.me/917835025025",
     Icon: WhatsAppIcon,
     iconBg: officialSocialIconButtonClass.whatsapp,
@@ -665,7 +672,7 @@ export default function WhyWeBetter() {
                 QUICK ACCESS
             ================================================== */}
 
-            <div className="mt-9">
+            <div className="mt-10">
               <div className="mb-5 flex items-center gap-3">
                 <div
                   className="
@@ -717,10 +724,13 @@ export default function WhyWeBetter() {
                         items-center
                         justify-between
                         overflow-hidden
-                        rounded-[20px]
+                        rounded-[22px]
                         border
                         border-white
-                        bg-[#FFF8F3]
+                        bg-gradient-to-r
+                        from-white
+                        via-[#FFF8F3]/90
+                        to-white
                         px-4
                         py-3.5
                         shadow-[6px_6px_14px_rgba(16,64,122,0.07),-5px_-5px_12px_rgba(255,255,255,0.95)]
@@ -783,6 +793,10 @@ export default function WhyWeBetter() {
                         >
                           {item.title}
                         </span>
+
+                        <span className="mt-0.5 block text-[11px] font-semibold text-[#64748B]">
+                          {item.subtitle}
+                        </span>
                       </div>
 
                       {/* Arrow */}
@@ -806,7 +820,7 @@ export default function WhyWeBetter() {
                           group-hover:text-white
                         "
                       >
-                        →
+                        <ArrowRight className="h-4 w-4 stroke-[2.5]" />
                       </span>
                     </a>
                     </Reveal>
@@ -845,7 +859,8 @@ export default function WhyWeBetter() {
                   text-[#8993A1]
                 "
               >
-                Trusted Travel Solutions Since 2014
+                Trusted Travel Solutions{" "}
+                <span className="text-[#EE5326]">Since 2014</span>
               </p>
             </div>
           </Reveal>
