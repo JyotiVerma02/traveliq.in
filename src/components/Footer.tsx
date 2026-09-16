@@ -28,7 +28,7 @@ export default function Footer() {
         {/* ===================================================
             TOP BRANDING SECTION
         ==================================================== */}
-        <div className="pb-10 border-b border-white/15">
+        <div className="flex flex-col gap-5 border-b border-white/15 pb-10 sm:flex-row sm:items-center sm:justify-between">
           {/* Logo directly on background */}
           <div className="flex items-center gap-3">
             <Image
@@ -40,14 +40,16 @@ export default function Footer() {
             />
           </div>
 
-          <h2 className="mt-5 text-2xl font-black tracking-tight text-white sm:text-3xl">
-            Your Own Travel{" "}
-            <span className="text-[#EE5326]">Intelligence</span>.
-          </h2>
+          <div className="sm:max-w-2xl sm:text-right">
+            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
+              Your Own Travel{" "}
+              <span className="text-[#EE5326]">Intelligence</span>.
+            </h2>
 
-          <p className="mt-2.5 max-w-2xl text-sm font-medium leading-6 text-white">
-            A trusted partner for smarter journeys and better travel-business growth.
-          </p>
+            <p className="mt-2.5 text-sm font-medium leading-6 text-white">
+              A trusted partner for smarter journeys and better travel-business growth.
+            </p>
+          </div>
         </div>
 
         {/* ===================================================

@@ -817,7 +817,7 @@ export default function WhyWeBetter() {
                           duration-300
                           group-hover:translate-x-0.5
                           group-hover:bg-[#EE5326]
-                          group-hover:text-white
+                          group-hover:!text-white
                         "
                       >
                         <ArrowRight className="h-4 w-4 stroke-[2.5]" />

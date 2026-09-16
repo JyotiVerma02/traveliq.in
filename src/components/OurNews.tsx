@@ -121,232 +121,230 @@ export default function OurNews() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {news.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.08}>
-            <article
-              className="
-                group
-                relative
-                flex
-                min-h-full
-                flex-col
-                overflow-hidden
-                rounded-[28px]
-                border
-                border-white
-                bg-[#FFF8F3]
-                shadow-[9px_9px_22px_rgba(16,64,122,0.09),-8px_-8px_18px_rgba(255,255,255,0.95)]
-                transition-all
-                duration-500
-                hover:-translate-y-2
-                hover:shadow-[12px_14px_28px_rgba(16,64,122,0.13),-8px_-8px_20px_rgba(255,255,255,1)]
-              "
-            >
-              {/* Orange accent */}
-              <div
+              <article
                 className="
-                  absolute
-                  left-0
-                  top-7
-                  z-20
-                  h-10
-                  w-1
-                  rounded-r-full
-                  bg-[#EE5326]
-                  opacity-0
-                  transition-opacity
-                  duration-300
-                  group-hover:opacity-100
+                  group
+                  relative
+                  flex
+                  min-h-full
+                  flex-col
+                  overflow-hidden
+                  rounded-[28px]
+                  border
+                  border-white
+                  bg-[#FFF8F3]
+                  shadow-[9px_9px_22px_rgba(16,64,122,0.09),-8px_-8px_18px_rgba(255,255,255,0.95)]
+                  transition-all
+                  duration-500
+                  hover:-translate-y-2
+                  hover:shadow-[12px_14px_28px_rgba(16,64,122,0.13),-8px_-8px_20px_rgba(255,255,255,1)]
                 "
-              />
-
-              {/* =================================================
-                  IMAGE
-              ================================================= */}
-              <div className="relative aspect-[16/10] overflow-hidden p-2">
+              >
+                {/* Orange accent */}
                 <div
                   className="
-                    relative
-                    h-full
-                    w-full
-                    overflow-hidden
-                    rounded-[22px]
-                    bg-[#F4F7FB]
-                    shadow-[inset_2px_2px_7px_rgba(16,64,122,0.08)]
-                  "
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="
-                      object-cover
-                      transition-transform
-                      duration-700
-                      ease-out
-                      group-hover:scale-110
-                    "
-                  />
-
-                  {/* Image overlay */}
-                  <div
-                    className="
-                      pointer-events-none
-                      absolute
-                      inset-0
-                      bg-gradient-to-t
-                      from-[#071F3D]/35
-                      via-transparent
-                      to-transparent
-                      opacity-60
-                    "
-                  />
-
-                  {/* Article number */}
-                  <div
-                    className="
-                      absolute
-                      left-3
-                      top-3
-                      grid
-                      h-8
-                      w-8
-                      place-items-center
-                      rounded-full
-                      border
-                      border-white/60
-                      bg-[#FFF8F3]/90
-                      text-[10px]
-                      font-black
-                      text-[#10407A]
-                      shadow-[3px_3px_8px_rgba(0,0,0,0.12)]
-                      backdrop-blur-md
-                    "
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-
-                  {/* Date */}
-                  <div
-                    className="
-                      absolute
-                      bottom-3
-                      left-3
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      rounded-full
-                      border
-                      border-white/60
-                      bg-white/90
-                      px-3
-                      py-1.5
-                      text-[10px]
-                      font-bold
-                      text-[#10407A]
-                      shadow-[3px_3px_8px_rgba(0,0,0,0.12)]
-                      backdrop-blur-md
-                    "
-                  >
-                    <CalendarDays className="h-3 w-3 text-[#EE5326]" />
-                    {item.date}
-                  </div>
-                </div>
-              </div>
-
-              {/* =================================================
-                  CONTENT
-              ================================================= */}
-              <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
-                {/* Category */}
-                <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D83B0E]">
-                  TravelIQ Updates
-                </span>
-
-                {/* Title */}
-                <h3
-                  className="
-                    mt-2.5
-                    line-clamp-2
-                    min-h-[46px]
-                    text-[16px]
-                    font-bold
-                    leading-[1.45]
-                    tracking-[-0.015em]
-                    text-[#071F3D]
-                    transition-colors
+                    absolute
+                    left-0
+                    top-7
+                    z-20
+                    h-10
+                    w-1
+                    rounded-r-full
+                    bg-[#EE5326]
+                    opacity-0
+                    transition-opacity
                     duration-300
-                    group-hover:text-[#EE5326]
+                    group-hover:opacity-100
                   "
-                >
-                  {item.title}
-                </h3>
+                />
 
-                {/* Description */}
-                <p
-                  className="
-                    mt-3
-                    line-clamp-3
-                    text-[12px]
-                    font-medium
-                    leading-6
-                    text-[#374151]
-                  "
-                >
-                  {item.description}
-                </p>
-
-                {/* Read article */}
-                <div className="mt-auto pt-5">
-                  <Link
-                    href={item.href}
+                {/* IMAGE */}
+                <div className="relative aspect-[16/10] overflow-hidden p-2">
+                  <div
                     className="
-                      group/link
-                      inline-flex
-                      items-center
-                      gap-2
-                      rounded-full
-                      border
-                      border-[#10407A]/10
-                      bg-white/70
-                      px-4
-                      py-2.5
-                      text-[11px]
-                      font-bold
-                      text-[#10407A]
-                      shadow-[3px_3px_8px_rgba(16,64,122,0.06),-2px_-2px_6px_rgba(255,255,255,0.9)]
-                      transition-all
-                      duration-300
-                      hover:border-[#EE5326]/20
-                      hover:bg-[#EE5326]
-                      hover:text-white
-                      hover:shadow-[4px_5px_10px_rgba(238,83,38,0.18)]
+                      relative
+                      h-full
+                      w-full
+                      overflow-hidden
+                      rounded-[22px]
+                      bg-[#F4F7FB]
+                      shadow-[inset_2px_2px_7px_rgba(16,64,122,0.08)]
                     "
                   >
-                    <span>
-                      Read Article
-                      <span className="sr-only"> — {item.title}</span>
-                    </span>
-
-                    <ArrowUpRight
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="
-                        h-3.5
-                        w-3.5
+                        object-cover
                         transition-transform
-                        duration-300
-                        group-hover/link:-translate-y-0.5
-                        group-hover/link:translate-x-0.5
+                        duration-700
+                        ease-out
+                        group-hover:scale-110
                       "
                     />
-                  </Link>
+
+                    {/* Image overlay */}
+                    <div
+                      className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        bg-gradient-to-t
+                        from-[#071F3D]/35
+                        via-transparent
+                        to-transparent
+                        opacity-60
+                      "
+                    />
+
+                    {/* Article number */}
+                    <div
+                      className="
+                        absolute
+                        left-3
+                        top-3
+                        grid
+                        h-8
+                        w-8
+                        place-items-center
+                        rounded-full
+                        border
+                        border-white/60
+                        bg-[#FFF8F3]/90
+                        text-[10px]
+                        font-black
+                        text-[#10407A]
+                        shadow-[3px_3px_8px_rgba(0,0,0,0.12)]
+                        backdrop-blur-md
+                      "
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
+
+                    {/* Date */}
+                    <div
+                      className="
+                        absolute
+                        bottom-3
+                        left-3
+                        inline-flex
+                        items-center
+                        gap-1.5
+                        rounded-full
+                        border
+                        border-white/60
+                        bg-white/90
+                        px-3
+                        py-1.5
+                        text-[10px]
+                        font-bold
+                        text-[#10407A]
+                        shadow-[3px_3px_8px_rgba(0,0,0,0.12)]
+                        backdrop-blur-md
+                      "
+                    >
+                      <CalendarDays className="h-3 w-3 text-[#EE5326]" />
+                      {item.date}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </article>
+
+                {/* CONTENT */}
+                <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
+                  {/* Category */}
+                  <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D83B0E]">
+                    TravelIQ Updates
+                  </span>
+
+                  {/* Title */}
+                  <h3
+                    className="
+                      mt-2.5
+                      line-clamp-2
+                      min-h-[46px]
+                      text-[16px]
+                      font-bold
+                      leading-[1.45]
+                      tracking-[-0.015em]
+                      text-[#071F3D]
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#EE5326]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className="
+                      mt-3
+                      line-clamp-3
+                      text-[12px]
+                      font-medium
+                      leading-6
+                      text-[#374151]
+                    "
+                  >
+                    {item.description}
+                  </p>
+
+                  {/* Read article */}
+                  <div className="mt-auto pt-5">
+                    <Link
+                      href={item.href}
+                      className="
+                        group/link
+                        inline-flex
+                        items-center
+                        gap-2
+                        rounded-full
+                        border
+                        border-[#10407A]/10
+                        bg-white/70
+                        px-4
+                        py-2.5
+                        text-[11px]
+                        font-bold
+                        !text-[#10407A]
+                        shadow-[3px_3px_8px_rgba(16,64,122,0.06),-2px_-2px_6px_rgba(255,255,255,0.9)]
+                        transition-all
+                        duration-300
+                        hover:border-[#EE5326]/20
+                        hover:bg-[#EE5326]
+                        hover:!text-white
+                        hover:shadow-[4px_5px_10px_rgba(238,83,38,0.18)]
+                      "
+                    >
+                      <span className="!text-current group-hover/link:!text-white">
+                        Read Article
+                        <span className="sr-only"> — {item.title}</span>
+                      </span>
+
+                      <ArrowUpRight
+                        className="
+                          h-3.5
+                          w-3.5
+                          !text-current
+                          group-hover/link:!text-white
+                          transition-transform
+                          duration-300
+                          group-hover/link:-translate-y-0.5
+                          group-hover/link:translate-x-0.5
+                        "
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
 
         {/* =======================================================
-            VIEW ALL
+            VIEW ALL BUTTON - FIXED WHITE TEXT ON ORANGE HOVER
         ======================================================= */}
         <Reveal className="mt-12 flex justify-center">
           <Link
@@ -364,18 +362,20 @@ export default function OurNews() {
               py-3.5
               text-xs
               font-bold
-              text-[#10407A]
+              !text-[#10407A]
               shadow-[7px_7px_16px_rgba(16,64,122,0.09),-6px_-6px_14px_rgba(255,255,255,0.95)]
               transition-all
               duration-300
               hover:-translate-y-1
               hover:border-[#EE5326]
               hover:bg-[#EE5326]
-              hover:text-white
+              hover:!text-white
               hover:shadow-[8px_10px_20px_rgba(238,83,38,0.18)]
             "
           >
-            <span>View All News Articles</span>
+            <span className="!text-current transition-colors duration-300 group-hover:!text-white">
+              View All News Articles
+            </span>
 
             <span
               className="
@@ -385,15 +385,19 @@ export default function OurNews() {
                 place-items-center
                 rounded-full
                 bg-[#10407A]/8
+                !text-[#071F3D]
                 transition-all
                 duration-300
-                group-hover:bg-white/15
+                group-hover:bg-white/20
+                group-hover:!text-white
               "
             >
               <ArrowUpRight
                 className="
                   h-3.5
                   w-3.5
+                  !text-current
+                  group-hover:!text-white
                   transition-transform
                   duration-300
                   group-hover:-translate-y-0.5

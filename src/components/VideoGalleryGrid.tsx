@@ -186,19 +186,19 @@ export default function VideoGalleryGrid({
                     py-2.5
                     text-sm
                     font-bold
-                    text-[#EE5326]
+                    !text-[#EE5326]
                     shadow-[4px_5px_10px_rgba(238,83,38,0.10),-4px_-4px_8px_rgba(255,255,255,0.95),inset_1px_1px_2px_rgba(255,255,255,0.9)]
                     transition-all
                     duration-300
                     hover:-translate-y-0.5
                     hover:gap-3
                     hover:bg-[#EE5326]
-                    hover:text-white
+                    hover:!text-white
                     hover:shadow-[5px_7px_14px_rgba(238,83,38,0.20),-4px_-4px_8px_rgba(255,255,255,0.9)]
                   "
                 >
-                  <span className="whitespace-nowrap">Learn More</span>
-                  <span aria-hidden="true">→</span>
+                  <span className="whitespace-nowrap !text-current hover:!text-white">Learn More</span>
+                  <span aria-hidden="true" className="!text-current hover:!text-white">→</span>
                 </Link>
               </div>
             </div>
@@ -227,24 +227,24 @@ export default function VideoGalleryGrid({
             py-3.5
             text-sm
             font-bold
-            text-[#EE5326]
+            !text-[#EE5326]
             shadow-[7px_8px_18px_rgba(16,64,122,0.12),-7px_-7px_16px_rgba(255,255,255,0.95),inset_1px_1px_2px_rgba(255,255,255,0.9)]
             transition-all
             duration-300
             hover:-translate-y-1
             hover:bg-[#EE5326]
-            hover:text-white
+            hover:!text-white
             hover:shadow-[9px_11px_22px_rgba(16,64,122,0.16),-6px_-6px_14px_rgba(255,255,255,0.9)]
             active:translate-y-0
           "
         >
-          <span className="whitespace-nowrap">
+          <span className="whitespace-nowrap !text-current group-hover:!text-white">
             {showAll ? "Show Less" : "See More Videos"}
           </span>
 
           <span
             aria-hidden="true"
-            className="shrink-0 text-base transition-transform duration-300"
+            className="shrink-0 text-base !text-current group-hover:!text-white transition-transform duration-300"
           >
             {showAll ? "↑" : "↓"}
           </span>
