@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroCarousel from "@/components/HeroCarousel";
+import HeroCarouselLoader from "@/components/HeroCarouselLoader";
 
 export default function HeroMedia() {
   return (
@@ -16,7 +16,7 @@ export default function HeroMedia() {
         className="object-cover object-center"
       />
 
-      <HeroCarousel />
+      <HeroCarouselLoader />
 
       {/* Gradient Overlays with pointer-events-none for LCP trace compatibility */}
       <div className="pointer-events-none absolute inset-0 z-20 bg-[#071F3D]/18" />
