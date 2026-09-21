@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
-import { getPosts } from "@/lib/wordpress";
-import { SITE_URL, canonicalUrl, staticSitemapPaths } from "@/lib/site";
+import sourceUrls from "../../all-urls.json";
+import { canonicalUrl, staticSitemapPaths } from "@/lib/site";
 
 const staticRouteMeta: Record<
-  (typeof staticSitemapPaths)[number],
+  string,
   Pick<MetadataRoute.Sitemap[number], "changeFrequency" | "priority">
 > = {
   "/": { changeFrequency: "daily", priority: 1.0 },
@@ -43,28 +43,18 @@ const staticRouteMeta: Record<
   "/pay-now": { changeFrequency: "monthly", priority: 0.7 },
   "/privacy-policy": { changeFrequency: "yearly", priority: 0.3 },
   "/refund-cancellation-policy": { changeFrequency: "yearly", priority: 0.3 },
-  "/term-and-conditions": { changeFrequency: "yearly", priority: 0.3 },
+  "/terms-and-conditions": { changeFrequency: "yearly", priority: 0.3 },
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = staticSitemapPaths.map((path) => ({
+  const sourcePaths = sourceUrls.map(({ url }) => new URL(url).pathname);
+  const paths = [...new Set([...staticSitemapPaths, ...sourcePaths])];
+
+  return paths.map((path) => ({
     url: canonicalUrl(path),
-    ...staticRouteMeta[path],
+    ...(staticRouteMeta[path] ?? {
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }),
   }));
-
-  // Fetch dynamic WP post URLs safely
-  let postRoutes: MetadataRoute.Sitemap = [];
-  try {
-    const posts = await getPosts("posts");
-    postRoutes = posts.map((post) => ({
-      url: `${SITE_URL}/pages/${post.slug}`,
-      lastModified: post.date ? new Date(post.date) : new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }));
-  } catch (error) {
-    console.error("Error fetching WordPress posts for sitemap:", error);
-  }
-
-  return [...staticRoutes, ...postRoutes];
 }

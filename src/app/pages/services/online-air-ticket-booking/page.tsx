@@ -4,14 +4,14 @@ import ServiceDetail from "@/components/ServiceDetail";
 export const metadata: Metadata = {
   title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
   description:
-    "Book low fare domestic and international flight tickets with TravelIQ. IATA accredited travel agency offering central reservation system fares for all major airlines.",
+    "Book low fare domestic and international flight tickets with TravelIQ. Premier travel agency offering central reservation system fares for all major airlines.",
   alternates: {
     canonical: "https://traveliq.in/pages/services/online-air-ticket-booking",
   },
   openGraph: {
     title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
     description:
-      "Book low fare domestic and international flight tickets with TravelIQ. IATA accredited travel agency offering central reservation system fares for all major airlines.",
+      "Book low fare domestic and international flight tickets with TravelIQ. Premier travel agency offering central reservation system fares for all major airlines.",
     url: "https://traveliq.in/pages/services/online-air-ticket-booking",
     siteName: "TravelIQ",
     locale: "en_IN",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
     description:
-      "Book low fare domestic and international flight tickets with TravelIQ. IATA accredited travel agency offering central reservation system fares for all major airlines.",
+      "Book low fare domestic and international flight tickets with TravelIQ. Premier travel agency offering central reservation system fares for all major airlines.",
     images: ["/images/services/air-tickets.webp"],
   },
 };
@@ -41,7 +41,7 @@ export default function Page() {
       slug="online-air-ticket-booking"
       image="/images/services/air-tickets.webp"
       imageAlt="Passenger airplane flying above clouds - Book Air Tickets with TravelIQ"
-      intro="TravelIQ is an IATA-accredited travel agency equipped with global distribution systems (GDS) and direct ticketing inventory for all major domestic and international airlines."
+      intro="TravelIQ is a leading travel platform equipped with global distribution systems (GDS) and direct ticketing inventory for all major domestic and international airlines."
       sections={[
         {
           heading: "Competitive Fares & Instant Confirmation",

@@ -241,8 +241,8 @@ export default function WhyWeBetter() {
                   <strong className="font-black text-[#0B1728]">
                     Travel IQ Services
                   </strong>{" "}
-                  is India&apos;s best IRCTC principal agent and an IATA
-                  accredited travel agency.
+                  is India&apos;s best IRCTC principal agent and premier travel agency.
+
                 </p>
 
                 {/* HISTORY */}
@@ -254,9 +254,9 @@ export default function WhyWeBetter() {
                   , Travel IQ has its corporate headquarters in Gurugram, the
                   IT capital of Delhi/NCR. Since then, the company has
                   consistently made significant gains in the travel market.
-                  In 2017, the company received recognition from IATA
-                  (International Air Transport Association), just three years
-                  after its founding.
+                  Within three years of its founding, the company expanded its operations nationwide
+                  across all major Indian states.
+
                 </p>
 
                 {/* B2B PLATFORM */}
@@ -488,7 +488,7 @@ export default function WhyWeBetter() {
                   </p>
                 </Reveal>
 
-                {/* IATA */}
+                {/* Verified */}
 
                 <Reveal
                   delay={0.16}
@@ -503,7 +503,7 @@ export default function WhyWeBetter() {
                   "
                 >
                   <p className="text-2xl font-black tracking-tight text-[#EE5326]">
-                    IATA
+                    100%
                   </p>
 
                   <p
@@ -516,7 +516,7 @@ export default function WhyWeBetter() {
                       text-[#5A6475]
                     "
                   >
-                    Accredited
+                    Verified
                   </p>
                 </Reveal>
 

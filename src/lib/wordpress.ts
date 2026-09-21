@@ -22,6 +22,7 @@ export interface WordPressPost {
 }
 
 const POST_TYPES = [
+  "pages",
   "posts",
   "social",
   "services",
@@ -75,4 +76,29 @@ export async function getPostBySlug(
   } catch {
     return null;
   }
+}
+
+/**
+ * Look up a public WordPress item using the same order as the source site.
+ * Top-level legacy URLs are mostly `page` records, while the `/pages/...`
+ * archive contains posts and custom post types.
+ */
+export async function getContentBySlug(
+  slug: string,
+  postTypes: readonly string[] = [
+    "pages",
+    "posts",
+    "services",
+    "packages",
+    "irctc",
+    "social",
+    "irctc-principal-agen",
+  ]
+): Promise<WordPressPost | null> {
+  for (const postType of postTypes) {
+    const post = await getPostBySlug(slug, postType);
+    if (post) return post;
+  }
+
+  return null;
 }

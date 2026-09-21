@@ -34,5 +34,5 @@ export const staticSitemapPaths = [
   "/pay-now",
   "/privacy-policy",
   "/refund-cancellation-policy",
-  "/term-and-conditions",
+  "/terms-and-conditions",
 ] as const;

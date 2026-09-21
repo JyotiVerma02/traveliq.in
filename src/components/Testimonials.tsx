@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 const testimonials = [
@@ -29,11 +33,30 @@ const testimonials = [
     message:
       "It was a well-planned, excellent trip to Amritsar and Dharamshala. Additionally, it was an excellent value in terms of travel. Travel-friendly, with awesome moments to cherish along the way!",
   },
+  {
+    name: "Subhash Sharma",
+    role: "Verified Travel Agent",
+    rating: "★★★★★",
+    message:
+      "Good travel agency. Our Mukteshwar trip was enjoyable because of your service.",
+  },
+  {
+    name: "Mr Shahid",
+    role: "Verified IRCTC Agent",
+    rating: "★★★★★",
+    message:
+      "I received my agency within the mentioned working days and booked my first ticket with TravelIQ team support. Quick WhatsApp support and a great response from the team.",
+  },
 ];
 
 export default function Testimonials() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const handleScroll = (direction: "left" | "right") => {
+    scrollContainerRef.current?.scrollBy({ left: direction === "left" ? -380 : 380, behavior: "smooth" });
+  };
+
   return (
-    <section className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-20 lg:py-28">
+    <section id="testimonials" className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-20 lg:py-28">
       {/* =========================================================
           PREMIUM BACKGROUND
       ========================================================= */}
@@ -279,21 +302,21 @@ export default function Testimonials() {
           </div>
         </Reveal>
 
+        <div className="mt-6 flex justify-end gap-3">
+          <button onClick={() => handleScroll("left")} aria-label="Previous testimonials" className="flex h-11 w-11 items-center justify-center rounded-full border border-[#10407A]/15 bg-white text-[#10407A] shadow-sm transition hover:bg-[#EE5326] hover:text-white"><ChevronLeft size={20} /></button>
+          <button onClick={() => handleScroll("right")} aria-label="Next testimonials" className="flex h-11 w-11 items-center justify-center rounded-full border border-[#10407A]/15 bg-white text-[#10407A] shadow-sm transition hover:bg-[#EE5326] hover:text-white"><ChevronRight size={20} /></button>
+        </div>
+
         {/* =========================================================
             TESTIMONIAL GRID
         ========================================================= */}
 
-        <div
-          className="
-            mt-12
-            grid
-            gap-6
-            sm:grid-cols-2
-            lg:grid-cols-4
-          "
+        <div ref={scrollContainerRef}
+          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-6 scrollbar-none"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y" }}
         >
           {testimonials.map((testimonial, index) => (
-            <Reveal key={testimonial.name} delay={index * 0.1}>
+            <Reveal key={testimonial.name} delay={index * 0.1} className="w-[285px] shrink-0 snap-start sm:w-[340px]">
             <article
               className="
                 group

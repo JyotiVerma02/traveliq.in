@@ -1,11 +1,10 @@
 export default function PartnerLogos() {
   const partners = [
-    { name: "IRCTC", text: "IRCTC Official" },
-    { name: "IATA", text: "IATA Accredited" },
-    { name: "Air India", text: "Air India" },
-    { name: "IndiGo", text: "IndiGo" },
-    { name: "SpiceJet", text: "SpiceJet" },
-    { name: "Vande Bharat", text: "Vande Bharat Express" },
+    { name: "IRCTC", text: "IRCTC Official", type: "Official Partner" },
+    { name: "Air India", text: "Air India", type: "Airline Partner" },
+    { name: "IndiGo", text: "IndiGo", type: "Airline Partner" },
+    { name: "SpiceJet", text: "SpiceJet", type: "Airline Partner" },
+    { name: "Vande Bharat", text: "Vande Bharat Express", type: "Railway Partner" },
   ];
 
   return (
@@ -70,8 +69,8 @@ export default function PartnerLogos() {
           </p>
         </div>
 
-        {/* Partner Cards */}
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {/* Partner Cards - 5 items centered layout */}
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {partners.map((partner, index) => (
             <div
               key={partner.name}
@@ -144,12 +143,7 @@ export default function PartnerLogos() {
 
                 {/* Partner Type */}
                 <p className="mt-0.5 text-[9px] font-medium text-[#0E3360]">
-                  {partner.name === "IRCTC" && "Official Partner"}
-                  {partner.name === "IATA" && "Accredited"}
-                  {partner.name === "Air India" && "Airline Partner"}
-                  {partner.name === "IndiGo" && "Airline Partner"}
-                  {partner.name === "SpiceJet" && "Airline Partner"}
-                  {partner.name === "Vande Bharat" && "Railway"}
+                  {partner.type}
                 </p>
               </div>
             </div>

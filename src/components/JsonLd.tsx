@@ -30,7 +30,7 @@ export function getOrganizationSchema() {
     logo: absoluteUrl("/logo.webp"),
     foundingDate: "2014",
     description:
-      "TravelIQ is the leading IRCTC Principal Service Provider and IATA accredited travel agency in India providing train ticket booking agent registration, flight, hotel, bus, and tour packages.",
+      "TravelIQ is the leading IRCTC Principal Service Provider and premier travel agency in India providing train ticket booking agent registration, flight, hotel, bus, and tour packages.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "1004G, JMD Megapolis, Sector 48",

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
 const faqs = [
@@ -36,7 +37,7 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-20 lg:py-28">
+    <section id="faq" className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-20 lg:py-28">
       {/* =========================================================
           BACKGROUND DECORATION
       ========================================================= */}
@@ -177,8 +178,8 @@ export default function FaqSection() {
               SEE MORE BUTTON
           ===================================================== */}
 
-          <a
-            href="/contact-us"
+          <Link
+            href="/frequently-asked-questions"
             className="
               group
               inline-flex
@@ -225,7 +226,7 @@ export default function FaqSection() {
             >
               →
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* =======================================================

@@ -24,14 +24,14 @@ import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
   description:
-    "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
+    "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and premier travel agency established in 2014.",
   alternates: {
     canonical: "https://traveliq.in/about-travel-iq",
   },
   openGraph: {
     title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
     description:
-      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
+      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and premier travel agency established in 2014.",
     url: "https://traveliq.in/about-travel-iq",
     siteName: "TravelIQ",
     locale: "en_IN",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
     description:
-      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and IATA accredited travel agency established in 2014.",
+      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and premier travel agency established in 2014.",
     images: ["/images/about.webp"],
   },
 };
@@ -138,8 +138,8 @@ const stats: {
     icon: UsersRound,
   },
   {
-    number: "IATA",
-    label: "Accredited",
+    number: "100%",
+    label: "Verified Support",
     icon: Award,
   },
   {
@@ -168,9 +168,9 @@ const journey = [
   },
   {
     year: "2017",
-    title: "IATA Recognition",
+    title: "Pan-India Expansion",
     description:
-      "Travel IQ acquired recognition from IATA within three years of its establishment.",
+      "Travel IQ expanded operations across all Indian states within three years of its establishment.",
   },
   {
     year: "Today",
@@ -402,7 +402,7 @@ export default function AboutPage() {
           "
               >
                 Travel IQ Services is the best Principal agent of IRCTC and an
-                IATA accredited travel agent in INDIA. Travel IQ started its
+                premier travel agent in INDIA. Travel IQ started its
                 operations in 2014 with its Corporate office in Gurugram, IT
                 city of Delhi/NCR. Since then, it has consistently shown
                 substantial progress in the market.
@@ -420,9 +420,9 @@ export default function AboutPage() {
           "
               >
                 In 2017, within mere three years of its establishment, the
-                company acquired recognition from IATA (International Air
-                Transport Association), one of the most prestigious airline
-                trade associations.
+                company expanded operations nationwide across all Indian states.
+
+
               </p>
 
               {/* =================================================
@@ -506,7 +506,7 @@ export default function AboutPage() {
                 text-[#10407A]
               "
                   >
-                    IATA
+                    100%
                   </p>
 
                   <p
@@ -974,7 +974,7 @@ export default function AboutPage() {
                 {[
                   ["2014", "Established"],
                   ["2016", "B2B Portal"],
-                  ["2017", "IATA Recognition"],
+                  ["2017", "Pan-India Reach"],
                   ["20K+", "Travel Agents"],
                 ].map(([year, label]) => (
                   <div key={year} className="group relative flex gap-5">
@@ -1046,8 +1046,8 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                Travel IQ Services is the best Principal agent of IRCTC and IATA
-                accredited travel agent in India. Started in 2014, the company
+                Travel IQ Services is the best Principal agent of IRCTC and premier
+                travel agent in India. Started in 2014, the company
                 has its corporate office in Gurugram, Delhi/NCR and has
                 consistently shown substantial progress in the market.
               </p>
@@ -1062,10 +1062,8 @@ export default function AboutPage() {
                 "
               >
                 In 2017, within mere three years of its establishment, the
-                company acquired recognition from IATA (International Air
-                Transport Association), the most prestigious airline trade
-                association which currently represents most of the total air
-                traffic.
+                company expanded its operations nationwide across all Indian states
+                and Union Territories.
               </p>
 
               {/* Quote */}

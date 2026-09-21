@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TravelIQ | Travel Services & IRCTC Agent Services",
     description:
-      "TravelIQ is an IATA accredited agency and IRCTC Principal Service Provider offering railway reservations, air tickets, hotel bookings, bus tickets, and agent registration across India.",
+      "TravelIQ is an official IRCTC Principal Service Provider offering railway reservations, air tickets, hotel bookings, bus tickets, and agent registration across India.",
     url: SITE_URL,
     siteName: "TravelIQ",
     locale: "en_IN",

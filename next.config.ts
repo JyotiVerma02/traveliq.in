@@ -95,8 +95,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/terms-and-conditions",
-        destination: "/term-and-conditions",
+        source: "/term-and-conditions",
+        destination: "/terms-and-conditions",
         permanent: true,
       },
     ];

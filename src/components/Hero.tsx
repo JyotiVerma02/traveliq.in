@@ -22,8 +22,8 @@ const stats = [
     label: "Travel Agents",
   },
   {
-    value: "IATA",
-    label: "Accredited",
+    value: "100%",
+    label: "Verified Support",
   },
   {
     value: "B2B",
@@ -140,7 +140,7 @@ export default function Hero() {
                 sm:text-[9px]
               "
             >
-              IATA Accredited
+              Authorized B2B Partner
             </span>
           </div>
 
