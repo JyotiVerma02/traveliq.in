@@ -1,0 +1,21 @@
+# TravelIQ
+
+> TravelIQ is an authorized IRCTC Principal Agent and premier B2B travel platform in India, offering railway reservation, flight booking, hotel booking, bus tickets, and holiday packages.
+
+## Overview
+
+TravelIQ provides comprehensive B2B travel intelligence and platform solutions for travel agents and business partners across India. Established in 2014, TravelIQ empowers 20,000+ travel agents with verified support and authorized IRCTC ticketing services.
+
+## Core Pages
+
+- [IRCTC Agent Registration](https://traveliq.in/irctc-agent-registration): Become an authorized IRCTC travel agent with TravelIQ.
+- [About TravelIQ](https://traveliq.in/about-travel-iq): Overview of TravelIQ's background, mission, and leadership.
+- [Contact Us](https://traveliq.in/contact-us): Support and business enquiry details for TravelIQ.
+- [Frequently Asked Questions](https://traveliq.in/frequently-asked-questions): Answers to common questions about IRCTC agent registration and services.
+- [Pay Now](https://traveliq.in/pay-now): Secure payment page for TravelIQ services.
+
+## Key Facts
+
+- Founded: 2014
+- Network: 20,000+ Verified Travel Agents across India
+- Primary Business: Authorized IRCTC Principal Agent & B2B Travel Services

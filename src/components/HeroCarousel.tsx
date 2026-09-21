@@ -52,7 +52,7 @@ export default function HeroCarousel() {
   return (
     <>
       {previousSlide && (
-        <div className="absolute inset-0 z-10 opacity-0 transition-opacity duration-1000 ease-in-out">
+        <div className="absolute inset-0 z-1 opacity-0 transition-opacity duration-1000 ease-in-out">
           <Image
             src={previousSlide.src}
             alt={previousSlide.alt}
@@ -67,7 +67,7 @@ export default function HeroCarousel() {
 
       {currentSlide && (
         <div
-          className={`absolute inset-0 z-10 transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 z-1 transition-opacity duration-1000 ease-in-out ${
             isFadingIn ? "opacity-100" : "opacity-0"
           }`}
         >

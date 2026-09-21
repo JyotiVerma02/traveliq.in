@@ -9,7 +9,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, startTransition } from "react";
 import { WhatsAppIcon } from "@/components/icons";
 
 /* =========================================================
@@ -104,8 +104,10 @@ export default function Header() {
   ========================================================= */
 
   useEffect(() => {
-    setOpen(false);
-    setServicesOpen(false);
+    startTransition(() => {
+      setOpen(false);
+      setServicesOpen(false);
+    });
   }, [pathname]);
 
   /* =========================================================
