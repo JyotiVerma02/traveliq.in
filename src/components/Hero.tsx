@@ -9,13 +9,8 @@ import {
   Sparkles,
   TrainFront,
 } from "lucide-react";
-
 import HeroMedia from "@/components/HeroMedia";
 import { WhatsAppIcon } from "@/components/icons";
-
-/* =========================================================
-   DATA
-========================================================= */
 
 const stats = [
   {
@@ -70,23 +65,14 @@ const reassurance = [
   "B2B Travel Network",
 ];
 
-/* =========================================================
-   HERO
-========================================================= */
-
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* =====================================================
-          BACKGROUND / HERO MEDIA
-      ====================================================== */}
-
       <HeroMedia />
 
       {/* =====================================================
           CONTENT
       ====================================================== */}
-
       <div
         className="
           relative
@@ -101,23 +87,19 @@ export default function Hero() {
         {/* ===================================================
             TOP TRUST BAR
         ==================================================== */}
-
         <div
           className="
             flex
-            min-h-[48px]
+            min-h-[54px]
             flex-col
             justify-center
-            gap-1.5
+            gap-3
             border-b
             border-white/15
-            py-2
-            sm:min-h-[54px]
+            py-3
             sm:flex-row
             sm:items-center
             sm:justify-between
-            sm:gap-3
-            sm:py-3
           "
         >
           <div
@@ -125,8 +107,7 @@ export default function Hero() {
               flex
               items-center
               justify-center
-              gap-2.5
-              sm:gap-3
+              gap-3
               sm:justify-start
             "
           >
@@ -139,10 +120,9 @@ export default function Hero() {
                 text-[8px]
                 font-bold
                 uppercase
-                tracking-[0.18em]
+                tracking-[0.20em]
                 text-white
                 sm:text-[9px]
-                sm:tracking-[0.20em]
               "
             >
               IRCTC Principal Agent
@@ -155,10 +135,9 @@ export default function Hero() {
                 text-[8px]
                 font-bold
                 uppercase
-                tracking-[0.18em]
+                tracking-[0.20em]
                 text-white/75
                 sm:text-[9px]
-                sm:tracking-[0.20em]
               "
             >
               Authorized B2B Partner
@@ -174,11 +153,7 @@ export default function Hero() {
               sm:justify-end
             "
           >
-            <Sparkles
-              size={11}
-              strokeWidth={2}
-              className="text-[#EE5326]"
-            />
+            <Sparkles size={11} strokeWidth={2} className="text-[#EE5326]" />
 
             <p
               className="
@@ -186,11 +161,10 @@ export default function Hero() {
                 text-[8px]
                 font-semibold
                 uppercase
-                tracking-[0.14em]
+                tracking-[0.15em]
                 text-white/65
                 sm:text-right
                 sm:text-[9px]
-                sm:tracking-[0.15em]
               "
             >
               Trusted travel solutions since 2014
@@ -201,14 +175,13 @@ export default function Hero() {
         {/* ===================================================
             CENTER HERO CONTENT
         ==================================================== */}
-
         <div
           className="
             flex
-            min-h-[520px]
+            min-h-[420px]
             items-center
             justify-center
-            py-8
+            py-6
             sm:min-h-[600px]
             sm:py-12
             lg:min-h-[700px]
@@ -222,10 +195,7 @@ export default function Hero() {
               text-center
             "
           >
-            {/* =================================================
-                KICKER
-            ================================================== */}
-
+            {/* Kicker */}
             <div
               className="
                 mb-4
@@ -239,7 +209,7 @@ export default function Hero() {
               <span
                 className="
                   h-[2px]
-                  w-8
+                  w-9
                   bg-[#EE5326]
                   sm:w-11
                 "
@@ -250,10 +220,9 @@ export default function Hero() {
                   text-[9px]
                   font-bold
                   uppercase
-                  tracking-[0.22em]
+                  tracking-[0.25em]
                   text-white
                   sm:text-[10px]
-                  sm:tracking-[0.25em]
                 "
               >
                 Your Travel Business Partner
@@ -262,7 +231,7 @@ export default function Hero() {
               <span
                 className="
                   h-[2px]
-                  w-8
+                  w-9
                   bg-[#EE5326]
                   sm:w-11
                 "
@@ -272,20 +241,20 @@ export default function Hero() {
             {/* =================================================
                 MAIN HEADING
             ================================================== */}
-
             <h1
               className="
                 mx-auto
                 max-w-[900px]
-                text-[2rem]
+                text-[1.75rem]
                 font-bold
-                leading-[1.02]
-                tracking-[-0.035em]
+                leading-[1.08]
+                tracking-[-0.03em]
                 text-white
                 drop-shadow-[0_5px_24px_rgba(0,0,0,0.55)]
-                xs:text-[2.3rem]
+                xs:text-[2rem]
                 sm:text-[4rem]
                 sm:leading-[1.06]
+                sm:tracking-[-0.035em]
                 md:text-[4.5rem]
                 lg:text-[5rem]
                 xl:text-[5.35rem]
@@ -293,27 +262,15 @@ export default function Hero() {
             >
               <span className="block">Grow Your</span>
 
-              <span className="block sm:inline">
-                Travel Business
-              </span>
+              <span className="block sm:inline">Travel Business</span>
 
               <span className="hidden sm:inline">
                 <br />
               </span>
 
-              <span
-                className="
-                  relative
-                  mt-1
-                  inline-block
-                  text-[#FF7045]
-                  sm:mt-0
-                "
-              >
+              <span className="relative mt-1 inline-block text-[#FF7045] sm:mt-0">
                 With TravelIQ.
-
                 <span
-                  aria-hidden="true"
                   className="
                     absolute
                     -bottom-1.5
@@ -328,16 +285,13 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* =================================================
-                DESCRIPTION
-            ================================================== */}
-
+            {/* Description */}
             <p
               className="
                 mx-auto
-                mt-5
+                mt-4
                 max-w-[680px]
-                text-[14px]
+                text-[13px]
                 font-medium
                 leading-6
                 text-white/85
@@ -348,45 +302,50 @@ export default function Hero() {
                 lg:text-[17px]
               "
             >
-              Become an authorized IRCTC travel agent and access railway,
-              flights, hotels, buses and holidays through one trusted B2B
-              platform.
+              {/* Mobile: shorter, punchier copy */}
+              <span className="sm:hidden">
+                One trusted platform for railway, flights, hotels, buses and
+                holidays — built for travel professionals.
+              </span>
+              {/* Desktop: full copy */}
+              <span className="hidden sm:inline">
+                Become an authorized IRCTC travel agent and access railway,
+                flights, hotels, buses and holidays through one trusted B2B
+                platform.
+              </span>
             </p>
 
             {/* =================================================
                 CTA BUTTONS
             ================================================== */}
-
             <div
               className="
-                mt-6
+                mt-5
                 flex
                 w-full
                 flex-col
                 items-center
                 justify-center
-                gap-2.5
+                gap-3
                 sm:mt-8
                 sm:w-auto
                 sm:flex-row
-                sm:gap-3
               "
             >
               {/* Become an Agent */}
-
               <Link
                 href="/irctc-agent-registration"
                 className="
                   group
                   inline-flex
-                  min-h-[48px]
+                  min-h-[50px]
                   w-full
                   items-center
                   justify-center
                   gap-3
                   rounded-[14px]
                   bg-[#C4320A]
-                  px-6
+                  px-7
                   text-[11px]
                   font-semibold
                   tracking-[0.055em]
@@ -400,12 +359,9 @@ export default function Hero() {
                   active:translate-y-0
                   sm:min-h-[54px]
                   sm:w-auto
-                  sm:px-7
                 "
               >
-                <span className="!text-white">
-                  Become an Agent
-                </span>
+                <span className="!text-white">Become an Agent</span>
 
                 <ArrowRight
                   size={17}
@@ -420,7 +376,6 @@ export default function Hero() {
               </Link>
 
               {/* WhatsApp */}
-
               <a
                 href="https://wa.me/917835025025"
                 target="_blank"
@@ -428,7 +383,7 @@ export default function Hero() {
                 className="
                   group
                   inline-flex
-                  min-h-[48px]
+                  min-h-[50px]
                   w-full
                   items-center
                   justify-center
@@ -467,44 +422,88 @@ export default function Hero() {
                   <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
                 </span>
 
-                <span className="!text-white">
-                  WhatsApp Us
-                </span>
+                <span className="!text-white">WhatsApp Us</span>
               </a>
             </div>
 
             {/* =================================================
                 REASSURANCE
+                Mobile: 3-col card grid with orange icon + label
+                sm+: inline horizontal row
             ================================================== */}
 
+            {/* Mobile grid */}
+            <div className="mt-5 grid grid-cols-3 gap-2 sm:hidden">
+              {reassurance.map((item) => (
+                <div
+                  key={item}
+                  className="
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    border
+                    border-white/15
+                    bg-white/8
+                    px-2
+                    py-3
+                    backdrop-blur-sm
+                  "
+                >
+                  <span
+                    className="
+                      flex
+                      h-7
+                      w-7
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#EE5326]/20
+                      text-[#FF7045]
+                    "
+                  >
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  <span
+                    className="
+                      text-center
+                      text-[9px]
+                      font-semibold
+                      leading-tight
+                      text-white/80
+                    "
+                  >
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop inline row */}
             <div
               className="
-                mt-5
-                flex
+                mt-7
+                hidden
                 flex-wrap
                 items-center
                 justify-center
-                gap-x-4
-                gap-y-2.5
-                sm:mt-7
-                sm:gap-x-5
-                sm:gap-y-3
+                gap-x-5
+                gap-y-3
+                sm:flex
               "
             >
               {reassurance.map((item, index) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2"
-                >
+                <div key={item} className="flex items-center gap-2">
                   {index > 0 && (
                     <span
                       className="
                         mr-3
-                        hidden
                         h-3
                         w-px
                         bg-white/25
-                        sm:block
                       "
                     />
                   )}
@@ -531,9 +530,8 @@ export default function Hero() {
                       text-[8px]
                       font-semibold
                       uppercase
-                      tracking-[0.10em]
+                      tracking-[0.11em]
                       text-white/70
-                      sm:tracking-[0.11em]
                     "
                   >
                     {item}
@@ -546,19 +544,64 @@ export default function Hero() {
 
         {/* ===================================================
             SERVICES STRIP
+            Mobile: 4-col compact icon + label tiles (first 4)
+            sm+: 5-col full strip with text
         ==================================================== */}
 
+        {/* Mobile — 4 icon tiles */}
+        <div className="grid grid-cols-4 gap-2 border-t border-white/15 py-4 sm:hidden">
+          {services.slice(0, 4).map((service) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={service.title}
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  border
+                  border-white/15
+                  bg-[#071F3D]/30
+                  px-1
+                  py-3
+                  backdrop-blur-md
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-9
+                    w-9
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-white/10
+                    text-[#FF7045]
+                  "
+                >
+                  <Icon size={18} strokeWidth={2} />
+                </div>
+                <span className="text-[9px] font-semibold text-white">
+                  {service.title}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop — full 5-col strip */}
         <div
           className="
-            grid
-            grid-cols-2
-            gap-2
+            hidden
+            grid-cols-5
+            gap-3
             border-t
             border-white/15
-            py-4
-            sm:grid-cols-5
-            sm:gap-3
-            sm:py-5
+            py-5
+            sm:grid
           "
         >
           {services.map((service) => {
@@ -632,52 +675,73 @@ export default function Hero() {
         </div>
 
         {/* ===================================================
-            STATS
+            SCROLL TO EXPLORE — mobile only
         ==================================================== */}
+        <div className="flex flex-col items-center gap-1.5 pb-4 pt-1 sm:hidden">
+          <span
+            className="
+              text-[8px]
+              font-bold
+              uppercase
+              tracking-[0.2em]
+              text-white/50
+            "
+          >
+            Scroll to explore
+          </span>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            className="animate-bounce text-white/40"
+          >
+            <path
+              d="M1 1L7 7L13 1"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
 
+        {/* ===================================================
+            STATS — hidden on mobile, visible on sm+
+        ==================================================== */}
         <div
           className="
-            mb-6
+            mb-8
+            hidden
             border-t
             border-white/15
-            py-4
+            py-5
             sm:mb-10
+            sm:block
             sm:py-6
           "
         >
           <div
             className="
               grid
-              grid-cols-2
-              gap-y-5
-              sm:grid-cols-4
-              sm:gap-0
+              grid-cols-4
+              gap-0
             "
           >
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className={`
-                  text-center
-                  sm:text-left
-                  ${
-                    index > 0
-                      ? "sm:border-l sm:border-white/15 sm:pl-8"
-                      : ""
-                  }
+                  text-left
+                  ${index > 0 ? "border-l border-white/15 pl-8" : ""}
                 `}
               >
                 <p
                   className={`
-                    text-2xl
+                    text-3xl
                     font-bold
                     tracking-[-0.05em]
-                    sm:text-3xl
-                    ${
-                      index === 1
-                        ? "text-[#FF7045]"
-                        : "text-white"
-                    }
+                    ${index === 1 ? "text-[#FF7045]" : "text-white"}
                   `}
                 >
                   {stat.value}
