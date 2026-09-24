@@ -48,7 +48,7 @@ const quickLinks = [
 
 export default function WhyWeBetter() {
   return (
-    <section className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-12 sm:py-14 lg:py-16">
       {/* =====================================================
           PREMIUM BACKGROUND
       ====================================================== */}
@@ -111,7 +111,7 @@ export default function WhyWeBetter() {
             SECTION HEADER
         ====================================================== */}
 
-        <Reveal className="max-w-4xl">
+        <Reveal className="w-full max-w-4xl">
           {/* Badge */}
 
           <div
@@ -143,14 +143,13 @@ export default function WhyWeBetter() {
           <h2
             className="
               mt-5
-              max-w-4xl
-              text-3xl
+              max-w-none
+              whitespace-nowrap
+              text-[clamp(0.875rem,4.2vw,3rem)]
               font-black
               leading-[1.06]
               tracking-[-0.055em]
               text-[#0B1728]
-              sm:text-5xl
-              lg:text-[52px]
             "
           >
             TravelIQ —
@@ -217,7 +216,7 @@ export default function WhyWeBetter() {
               className="
                 rounded-[30px]
                 border
-                border-white
+                border-[#10407A]/12
                 bg-[#FFF8F3]
                 p-6
                 shadow-[9px_9px_22px_rgba(16,64,122,0.07),-8px_-8px_20px_rgba(255,255,255,0.95)]
@@ -311,7 +310,7 @@ export default function WhyWeBetter() {
                     overflow-hidden
                     rounded-[24px]
                     border
-                    border-white
+                    border-[#10407A]/12
                     bg-[#FFF8F3]
                     p-1
                     shadow-[7px_7px_16px_rgba(16,64,122,0.07),-6px_-6px_14px_rgba(255,255,255,0.95)]
@@ -432,7 +431,7 @@ export default function WhyWeBetter() {
                   className="
                     rounded-[20px]
                     border
-                    border-white
+                    border-[#10407A]/12
                     bg-[#FFF8F3]
                     p-4
                     shadow-[5px_5px_11px_rgba(16,64,122,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]
@@ -464,7 +463,7 @@ export default function WhyWeBetter() {
                   className="
                     rounded-[20px]
                     border
-                    border-white
+                    border-[#10407A]/12
                     bg-[#FFF8F3]
                     p-4
                     shadow-[5px_5px_11px_rgba(16,64,122,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]
@@ -496,7 +495,7 @@ export default function WhyWeBetter() {
                   className="
                     rounded-[20px]
                     border
-                    border-white
+                    border-[#10407A]/12
                     bg-[#FFF8F3]
                     p-4
                     shadow-[5px_5px_11px_rgba(16,64,122,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]
@@ -528,7 +527,7 @@ export default function WhyWeBetter() {
                   className="
                     rounded-[20px]
                     border
-                    border-white
+                    border-[#10407A]/12
                     bg-[#FFF8F3]
                     p-4
                     shadow-[5px_5px_11px_rgba(16,64,122,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]
@@ -570,7 +569,7 @@ export default function WhyWeBetter() {
                 overflow-hidden
                 rounded-[34px]
                 border
-                border-white
+                border-[#10407A]/12
                 bg-[#FFF8F3]
                 p-3
                 shadow-[12px_12px_28px_rgba(16,64,122,0.12),-10px_-10px_25px_rgba(255,255,255,0.96)]
@@ -618,7 +617,7 @@ export default function WhyWeBetter() {
                   overflow-hidden
                   rounded-[27px]
                   border
-                  border-white
+                  border-[#10407A]/10
                   bg-gradient-to-br
                   from-white
                   via-[#FFF8F3]
@@ -726,7 +725,7 @@ export default function WhyWeBetter() {
                         overflow-hidden
                         rounded-[22px]
                         border
-                        border-white
+                        border-[#10407A]/12
                         bg-gradient-to-r
                         from-white
                         via-[#FFF8F3]/90
@@ -841,7 +840,7 @@ export default function WhyWeBetter() {
                 gap-3
                 rounded-full
                 border
-                border-white
+                border-[#10407A]/12
                 bg-[#FFF8F3]
                 px-4
                 py-3

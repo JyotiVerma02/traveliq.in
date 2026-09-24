@@ -15,7 +15,7 @@ const services = [
   ],
   [
     "Bus Tickets",
-    "TraveliQ is India's leading provider of online bus ticketing services that provide comfortable bus and train travel.",
+    "TravelIQ provides easy online bus tickets for comfortable bus and train travel.",
     "/pages/services/bus-ticket-booking",
     "/images/services/bus-tickets.webp",
   ],
@@ -59,14 +59,14 @@ export default function Services() {
 
   return (
     <section className="relative overflow-hidden bg-[#F4F7FB]">
-      <div className="relative mx-auto max-w-[1500px] py-20 lg:py-28">
+      <div className="relative mx-auto max-w-[1500px] bg-[#F4F7FB] px-0 py-12 sm:py-14 lg:py-16">
         {/* Section Header with Left/Right Controls */}
         <div className="flex flex-col items-center justify-between gap-6 px-5 sm:flex-row sm:items-end sm:px-8 lg:px-12">
-          <Reveal className="max-w-2xl text-center sm:text-left">
+          <Reveal className="w-full max-w-2xl text-center sm:text-left">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C4320A]">
               Our Services
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-[-0.04em] text-[#071F3D] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-3 whitespace-nowrap text-[clamp(0.95rem,4.8vw,3.75rem)] font-bold tracking-[-0.055em] text-[#071F3D]">
               Best travel services in{" "}
               <span className="text-[#C4320A]">India</span>
             </h2>
@@ -146,7 +146,7 @@ export default function Services() {
             gap-6
             overflow-x-auto
             px-5
-            pb-8
+            pb-3
             pt-2
             scrollbar-none
             sm:px-8
@@ -179,9 +179,9 @@ export default function Services() {
                   overflow-hidden
                   rounded-[24px]
                   border
-                  border-[#10407A]/10
+                  border-[#10407A]/15
                   bg-white
-                  shadow-[0_18px_50px_rgba(16,64,122,0.06)]
+                  shadow-none
                   transition-all
                   duration-300
                   hover:-translate-y-1
@@ -257,34 +257,17 @@ export default function Services() {
           ))}
         </div>
 
-        {/* View All Button */}
-        <Reveal className="mt-10 text-center">
+        {/* Services section action */}
+        <div className="mx-5 flex justify-center bg-[#F4F7FB] pt-9 sm:mx-8 sm:pt-11 lg:mx-12 lg:pt-13">
           <Link
             href="/our-services"
-            className="
-              inline-flex
-              items-center
-              gap-2.5
-              rounded-full
-              bg-[#EE5326]
-              px-8
-              py-3.5
-              text-[11px]
-              font-bold
-              uppercase
-              tracking-[0.16em]
-              !text-white
-              shadow-lg
-              transition-all
-              duration-300
-              hover:bg-[#D9471D]
-              hover:shadow-xl
-            "
+            className="inline-flex h-11 items-center gap-2 rounded-xl bg-[#EE5326] px-5 text-[10px] font-bold uppercase tracking-[0.12em] !text-white shadow-[0_8px_20px_rgba(238,83,38,0.18)] transition-colors hover:bg-[#D9471D] sm:text-[11px]"
           >
             <span className="!text-white">View All Services</span>
-            <ArrowRight size={16} className="!text-white" />
+            <ArrowRight className="h-4 w-4 !text-white" />
           </Link>
-        </Reveal>
+        </div>
+
       </div>
     </section>
   );

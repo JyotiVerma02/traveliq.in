@@ -1,139 +1,303 @@
 export default function PartnerLogos() {
   const partners = [
-    { name: "IRCTC", text: "IRCTC Official", type: "Official Partner" },
-    { name: "Air India", text: "Air India", type: "Airline Partner" },
-    { name: "IndiGo", text: "IndiGo", type: "Airline Partner" },
-    { name: "SpiceJet", text: "SpiceJet", type: "Airline Partner" },
-    { name: "Vande Bharat", text: "Vande Bharat Express", type: "Railway Partner" },
+    {
+      name: "IRCTC",
+      text: "IRCTC Official",
+      type: "Official Partner",
+
+      // IRCTC blue
+      bg: "bg-[#EAF3FF]",
+      border: "border-[#1D5FA7]/25",
+      dot: "bg-[#1D5FA7]",
+      number: "text-[#1D5FA7]/55",
+      typeColor: "text-[#1D5FA7]/75",
+      hoverBorder: "hover:border-[#1D5FA7]/50",
+      glow: "bg-[#1D5FA7]/10",
+    },
+
+    {
+      name: "Air India",
+      text: "Air India",
+      type: "Airline Partner",
+
+      // Air India red
+      bg: "bg-[#FFF0F2]",
+      border: "border-[#D71920]/20",
+      dot: "bg-[#D71920]",
+      number: "text-[#D71920]/50",
+      typeColor: "text-[#B5161C]/70",
+      hoverBorder: "hover:border-[#D71920]/45",
+      glow: "bg-[#D71920]/10",
+    },
+
+    {
+      name: "IndiGo",
+      text: "IndiGo",
+      type: "Airline Partner",
+
+      // IndiGo blue
+      bg: "bg-[#EEF1FF]",
+      border: "border-[#2B3990]/20",
+      dot: "bg-[#2B3990]",
+      number: "text-[#2B3990]/50",
+      typeColor: "text-[#2B3990]/70",
+      hoverBorder: "hover:border-[#2B3990]/45",
+      glow: "bg-[#2B3990]/10",
+    },
+
+    {
+      name: "SpiceJet",
+      text: "SpiceJet",
+      type: "Airline Partner",
+
+      // SpiceJet red
+      bg: "bg-[#FFF1F1]",
+      border: "border-[#E31E24]/20",
+      dot: "bg-[#E31E24]",
+      number: "text-[#E31E24]/50",
+      typeColor: "text-[#C61A1F]/70",
+      hoverBorder: "hover:border-[#E31E24]/45",
+      glow: "bg-[#E31E24]/10",
+    },
+
+    {
+      name: "Vande Bharat",
+      text: "Vande Bharat Express",
+      type: "Railway Partner",
+
+      // Vande Bharat blue
+      bg: "bg-[#EAF7FF]",
+      border: "border-[#1674A8]/20",
+      dot: "bg-[#1674A8]",
+      number: "text-[#1674A8]/50",
+      typeColor: "text-[#1674A8]/75",
+      hoverBorder: "hover:border-[#1674A8]/45",
+      glow: "bg-[#1674A8]/10",
+    },
   ];
 
   return (
     <section
       className="
-        relative mx-3 mt-6 overflow-hidden
+        relative
+        mx-3
+        mt-6
+        overflow-hidden
         rounded-[24px]
-        border border-[#10407A]/10
-        bg-white
+        border
+        border-[#10407A]/20
+        bg-[#F1F6FC]
         py-7
-        shadow-[0_8px_30px_rgba(7,31,61,0.08)]
+        shadow-[0_12px_35px_rgba(7,31,61,0.10)]
         sm:mx-5
         sm:mt-8
+        sm:py-8
         lg:mx-8
         lg:mt-10
       "
     >
-      {/* Soft background glow */}
+      {/* Top accent */}
       <div
+        aria-hidden="true"
         className="
-          pointer-events-none absolute
-          -left-32 top-1/2
-          h-64 w-64
-          -translate-y-1/2
+          absolute
+          left-0
+          top-0
+          h-[3px]
+          w-full
+          bg-gradient-to-r
+          from-[#10407A]
+          via-[#EE5326]
+          to-[#10407A]
+        "
+      />
+
+      {/* Background decoration */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          -left-24
+          -top-24
+          h-64
+          w-64
           rounded-full
-          bg-[#EE5326]/[0.05]
-          blur-[100px]
+          bg-[#10407A]/[0.07]
+          blur-[90px]
         "
       />
 
       <div
+        aria-hidden="true"
         className="
-          pointer-events-none absolute
-          -right-32 top-1/2
-          h-64 w-64
-          -translate-y-1/2
+          pointer-events-none
+          absolute
+          -bottom-28
+          -right-20
+          h-72
+          w-72
           rounded-full
-          bg-[#10407A]/[0.06]
+          bg-[#EE5326]/[0.07]
           blur-[100px]
         "
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Heading */}
-        <div className="mb-6 text-center">
-          <div className="mb-2 flex items-center justify-center gap-3">
-            <span className="h-px w-7 bg-[#C4320A]/70" />
+      {/* Dot pattern */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-[0.025]
+          [background-image:radial-gradient(#10407A_1px,transparent_1px)]
+          [background-size:18px_18px]
+        "
+      />
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C4320A]">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-7 lg:px-8">
+        {/* =========================
+            HEADING
+        ========================== */}
+        <div className="mb-6 text-center sm:mb-7">
+          <div className="mb-2.5 flex items-center justify-center gap-3">
+            <span className="h-[2px] w-8 rounded-full bg-[#EE5326]" />
+
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#C4320A]">
               Our Network
             </span>
 
-            <span className="h-px w-7 bg-[#C4320A]/70" />
+            <span className="h-[2px] w-8 rounded-full bg-[#EE5326]" />
           </div>
 
-          <h2 className="text-lg font-semibold text-[#071F3D] sm:text-xl">
+          <h2 className="text-xl font-bold tracking-[-0.02em] text-[#071F3D] sm:text-2xl">
             Trusted Travel Partners
           </h2>
 
-          <p className="mt-1 text-xs text-[#071F3D]/70">
+          <p className="mx-auto mt-1.5 max-w-xl text-xs leading-5 text-[#071F3D]/65 sm:text-sm">
             Connected with trusted names across travel, aviation and railway.
           </p>
         </div>
 
-        {/* Partner Cards - 5 items centered layout */}
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {/* =========================
+            PARTNER CARDS
+        ========================== */}
+        <div
+          className="
+            mx-auto
+            grid
+            max-w-6xl
+            grid-cols-2
+            gap-2.5
+            sm:grid-cols-3
+            sm:gap-3
+            lg:grid-cols-5
+            lg:gap-3.5
+          "
+        >
           {partners.map((partner, index) => (
             <div
               key={partner.name}
-              className="
-                group relative flex min-h-[72px]
-                items-center justify-center
+              className={`
+                group
+                relative
+                flex
+                min-h-[94px]
+                items-center
+                justify-center
                 overflow-hidden
-                rounded-[14px]
-                border border-[#10407A]/10
-                bg-[#F8FAFC]
-                px-3 py-3
+                rounded-[16px]
+                border
+                px-3
+                py-4
                 text-center
+                shadow-[0_4px_14px_rgba(7,31,61,0.06)]
+                transition-all
+                duration-300
 
-                shadow-[inset_1px_1px_4px_rgba(255,255,255,0.9),0_3px_10px_rgba(7,31,61,0.05)]
+                ${partner.bg}
+                ${partner.border}
+                ${partner.hoverBorder}
 
-                transition-all duration-300
-
-                hover:-translate-y-0.5
-                hover:border-[#EE5326]/25
-                hover:bg-white
-                hover:shadow-[0_8px_18px_rgba(7,31,61,0.09)]
-              "
+                hover:-translate-y-1
+                hover:shadow-[0_10px_24px_rgba(7,31,61,0.11)]
+              `}
             >
-              {/* Orange glow */}
+              {/* Brand glow */}
               <div
-                className="
-                  pointer-events-none absolute
-                  -right-8 -top-8
-                  h-20 w-20
+                aria-hidden="true"
+                className={`
+                  pointer-events-none
+                  absolute
+                  -right-10
+                  -top-10
+                  h-24
+                  w-24
                   rounded-full
-                  bg-[#EE5326]/10
+                  opacity-60
                   blur-2xl
-                  opacity-0
-                  transition-opacity duration-300
+                  transition-all
+                  duration-300
                   group-hover:opacity-100
+
+                  ${partner.glow}
+                `}
+              />
+
+              {/* Subtle white highlight */}
+              <div
+                aria-hidden="true"
+                className="
+                  pointer-events-none
+                  absolute
+                  inset-x-0
+                  top-0
+                  h-1/2
+                  bg-gradient-to-b
+                  from-white/35
+                  to-transparent
                 "
               />
 
-              <div className="relative">
+              <div className="relative w-full">
                 {/* Number */}
-                <div className="mb-1 text-[8px] font-semibold text-[#10407A]/50">
+                <div
+                  className={`
+                    mb-1.5
+                    text-[9px]
+                    font-bold
+                    tracking-[0.14em]
+
+                    ${partner.number}
+                  `}
+                >
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                {/* Partner Name */}
-                <div className="flex items-center justify-center gap-1.5">
+                {/* Name */}
+                <div className="flex items-center justify-center gap-2">
                   <span
-                    className="
-                      h-1.5 w-1.5 shrink-0
+                    className={`
+                      h-2
+                      w-2
+                      shrink-0
                       rounded-full
-                      bg-[#EE5326]
-                      shadow-[0_0_7px_rgba(238,83,38,0.25)]
-                      transition-transform duration-300
+                      shadow-[0_0_8px_rgba(0,0,0,0.12)]
+                      transition-transform
+                      duration-300
                       group-hover:scale-125
-                    "
+
+                      ${partner.dot}
+                    `}
                   />
 
                   <span
                     className="
-                      text-xs font-semibold
-                      text-[#071F3D]/85
-                      transition-colors duration-300
-                      group-hover:text-[#071F3D]
+                      text-xs
+                      font-bold
+                      leading-5
+                      text-[#071F3D]
                       sm:text-sm
                     "
                   >
@@ -141,8 +305,18 @@ export default function PartnerLogos() {
                   </span>
                 </div>
 
-                {/* Partner Type */}
-                <p className="mt-0.5 text-[9px] font-medium text-[#0E3360]">
+                {/* Type */}
+                <p
+                  className={`
+                    mt-1
+                    text-[9px]
+                    font-semibold
+                    uppercase
+                    tracking-[0.06em]
+
+                    ${partner.typeColor}
+                  `}
+                >
                   {partner.type}
                 </p>
               </div>
@@ -150,18 +324,56 @@ export default function PartnerLogos() {
           ))}
         </div>
 
-        {/* Bottom Trust Line */}
-        <div className="mt-5 flex items-center justify-center gap-2">
-          <span
-            className="
-              h-1.5 w-1.5
-              rounded-full
-              bg-[#25D366]
-              shadow-[0_0_7px_rgba(37,211,102,0.35)]
-            "
-          />
+        {/* =========================
+            TRUST LINE
+        ========================== */}
+        <div
+          className="
+            mx-auto
+            mt-5
+            flex
+            w-fit
+            items-center
+            justify-center
+            gap-2
+            rounded-full
+            border
+            border-[#10407A]/10
+            bg-white/80
+            px-4
+            py-2
+            shadow-sm
+            backdrop-blur-sm
+            sm:mt-6
+          "
+        >
+          <span className="relative flex h-2 w-2">
+            <span
+              className="
+                absolute
+                inline-flex
+                h-full
+                w-full
+                animate-ping
+                rounded-full
+                bg-[#25D366]
+                opacity-30
+              "
+            />
 
-          <p className="text-[10px] font-medium text-[#0E3360]">
+            <span
+              className="
+                relative
+                inline-flex
+                h-2
+                w-2
+                rounded-full
+                bg-[#25D366]
+              "
+            />
+          </span>
+
+          <p className="text-[10px] font-semibold text-[#0E3360] sm:text-[11px]">
             Reliable connections across the travel ecosystem
           </p>
         </div>

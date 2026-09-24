@@ -46,7 +46,7 @@ const news = [
 
 export default function OurNews() {
   return (
-    <section className="relative overflow-hidden border-b border-[#10407A]/8 bg-[#FFF8F3] py-20 lg:py-28">
+    <section className="relative overflow-hidden border-b border-[#10407A]/8 bg-[#FFF8F3] py-12 sm:py-14 lg:py-16">
       {/* =========================================================
           BACKGROUND GLOW
       ========================================================= */}
@@ -74,15 +74,15 @@ export default function OurNews() {
               gap-2
               rounded-full
               border
-              border-white
-              bg-[#FFF8F3]
+              border-[#EE5326]/15
+              bg-[#FFF0E9]
               px-4
               py-2
               text-[10px]
               font-bold
               uppercase
               tracking-[0.18em]
-              text-[#C4320A]
+              text-[#EE5326]
               shadow-[5px_5px_12px_rgba(16,64,122,0.08),-4px_-4px_10px_rgba(255,255,255,0.95)]
             "
           >
@@ -132,7 +132,7 @@ export default function OurNews() {
                   overflow-hidden
                   rounded-[28px]
                   border
-                  border-white
+                  border-[#10407A]/12
                   bg-[#FFF8F3]
                   shadow-[9px_9px_22px_rgba(16,64,122,0.09),-8px_-8px_18px_rgba(255,255,255,0.95)]
                   transition-all
@@ -357,19 +357,19 @@ export default function OurNews() {
               gap-3
               rounded-full
               border
-              border-white
-              bg-[#FFF8F3]
+              border-[#EE5326]
+              bg-[#EE5326]
               px-6
               py-3.5
               text-xs
               font-bold
-              !text-[#10407A]
+              !text-white
               shadow-[7px_7px_16px_rgba(16,64,122,0.09),-6px_-6px_14px_rgba(255,255,255,0.95)]
               transition-all
               duration-300
               hover:-translate-y-1
-              hover:border-[#EE5326]
-              hover:bg-[#EE5326]
+              hover:border-[#D9471D]
+              hover:bg-[#D9471D]
               hover:!text-white
               hover:shadow-[8px_10px_20px_rgba(238,83,38,0.18)]
             "
@@ -385,8 +385,8 @@ export default function OurNews() {
                 w-7
                 place-items-center
                 rounded-full
-                bg-[#10407A]/8
-                !text-[#071F3D]
+                bg-white/20
+                !text-white
                 transition-all
                 duration-300
                 group-hover:bg-white/20

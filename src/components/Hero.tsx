@@ -6,9 +6,9 @@ import {
   Globe2,
   Hotel,
   Plane,
-  Sparkles,
   TrainFront,
 } from "lucide-react";
+
 import HeroMedia from "@/components/HeroMedia";
 import { WhatsAppIcon } from "@/components/icons";
 
@@ -67,210 +67,125 @@ const reassurance = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section
+      className="
+        relative
+        isolate
+        flex
+        min-h-[100svh]
+        overflow-hidden
+      "
+    >
+      {/* ================================================
+          BACKGROUND MEDIA
+      ================================================= */}
       <HeroMedia />
 
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
+      {/* ================================================
+          HERO CONTENT WRAPPER
+      ================================================= */}
       <div
         className="
           relative
           z-10
           mx-auto
+          flex
+          w-full
           max-w-[1500px]
-          px-5
-          sm:px-8
-          lg:px-12
+          flex-1
+          flex-col
+          px-3
+          pt-[80px]
+          sm:px-5
+          sm:pt-[86px]
+          lg:px-8
+          xl:pt-[90px]
         "
       >
-        {/* ===================================================
-            TOP TRUST BAR
-        ==================================================== */}
+        {/* ================================================
+            CENTER HERO
+        ================================================= */}
         <div
           className="
             flex
-            min-h-[54px]
-            flex-col
-            justify-center
-            gap-3
-            border-b
-            border-white/15
-            py-3
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-          "
-        >
-          <div
-            className="
-              flex
-              items-center
-              justify-center
-              gap-3
-              sm:justify-start
-            "
-          >
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span className="relative h-2 w-2 rounded-full bg-[#EE5326]" />
-            </span>
-
-            <span
-              className="
-                text-[8px]
-                font-bold
-                uppercase
-                tracking-[0.20em]
-                text-white
-                sm:text-[9px]
-              "
-            >
-              IRCTC Principal Agent
-            </span>
-
-            <span className="h-3 w-px bg-white/30" />
-
-            <span
-              className="
-                text-[8px]
-                font-bold
-                uppercase
-                tracking-[0.20em]
-                text-white/75
-                sm:text-[9px]
-              "
-            >
-              Authorized B2B Partner
-            </span>
-          </div>
-
-          <div
-            className="
-              flex
-              items-center
-              justify-center
-              gap-2
-              sm:justify-end
-            "
-          >
-            <Sparkles size={11} strokeWidth={2} className="text-[#EE5326]" />
-
-            <p
-              className="
-                text-center
-                text-[8px]
-                font-semibold
-                uppercase
-                tracking-[0.15em]
-                text-white/65
-                sm:text-right
-                sm:text-[9px]
-              "
-            >
-              Trusted travel solutions since 2014
-            </p>
-          </div>
-        </div>
-
-        {/* ===================================================
-            CENTER HERO CONTENT
-        ==================================================== */}
-        <div
-          className="
-            flex
-            min-h-[420px]
+            min-h-0
+            flex-1
             items-center
             justify-center
-            py-6
-            sm:min-h-[600px]
-            sm:py-12
-            lg:min-h-[700px]
-            lg:py-16
+            py-3
+            sm:py-4
+            lg:py-5
           "
         >
-          <div
-            className="
-              w-full
-              max-w-[900px]
-              text-center
-            "
-          >
-            {/* Kicker */}
+          <div className="w-full max-w-[1050px] text-center">
+            {/* KICKER */}
             <div
               className="
-                mb-4
+                mb-3
                 flex
                 items-center
                 justify-center
-                gap-3
-                sm:mb-6
+                gap-2.5
+                sm:mb-4
+                sm:gap-3
               "
             >
-              <span
-                className="
-                  h-[2px]
-                  w-9
-                  bg-[#EE5326]
-                  sm:w-11
-                "
-              />
+              <span className="h-[2px] w-7 bg-[#EE5326] sm:w-10" />
 
               <span
                 className="
-                  text-[9px]
+                  text-[8px]
                   font-bold
                   uppercase
-                  tracking-[0.25em]
+                  tracking-[0.2em]
                   text-white
                   sm:text-[10px]
+                  sm:tracking-[0.25em]
                 "
               >
                 Your Travel Business Partner
               </span>
 
-              <span
-                className="
-                  h-[2px]
-                  w-9
-                  bg-[#EE5326]
-                  sm:w-11
-                "
-              />
+              <span className="h-[2px] w-7 bg-[#EE5326] sm:w-10" />
             </div>
 
-            {/* =================================================
+            {/* ================================================
                 MAIN HEADING
-            ================================================== */}
+            ================================================= */}
             <h1
               className="
                 mx-auto
-                max-w-[900px]
-                text-[1.75rem]
+                max-w-[1050px]
+                text-[1.8rem]
                 font-bold
-                leading-[1.08]
-                tracking-[-0.03em]
+                leading-[1.05]
+                tracking-[-0.035em]
                 text-white
                 drop-shadow-[0_5px_24px_rgba(0,0,0,0.55)]
-                xs:text-[2rem]
-                sm:text-[4rem]
-                sm:leading-[1.06]
-                sm:tracking-[-0.035em]
-                md:text-[4.5rem]
-                lg:text-[5rem]
-                xl:text-[5.35rem]
+                xs:text-[2.1rem]
+                sm:text-[3.15rem]
+                md:text-[3.65rem]
+                lg:text-[4.1rem]
+                xl:text-[4.5rem]
               "
             >
-              <span className="block">Grow Your</span>
-
-              <span className="block sm:inline">Travel Business</span>
-
-              <span className="hidden sm:inline">
-                <br />
+              <span className="block">
+                Grow Your Travel Business
               </span>
 
-              <span className="relative mt-1 inline-block text-[#FF7045] sm:mt-0">
+              <span
+                className="
+                  relative
+                  mt-1
+                  inline-block
+                  text-[#FF7045]
+                  sm:mt-1.5
+                "
+              >
                 With TravelIQ.
+
                 <span
+                  aria-hidden="true"
                   className="
                     absolute
                     -bottom-1.5
@@ -278,6 +193,7 @@ export default function Hero() {
                     h-[3px]
                     w-[42%]
                     -translate-x-1/2
+                    rounded-full
                     bg-[#EE5326]
                     sm:-bottom-2
                   "
@@ -285,29 +201,30 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* Description */}
+            {/* ================================================
+                DESCRIPTION
+            ================================================= */}
             <p
               className="
                 mx-auto
                 mt-4
-                max-w-[680px]
-                text-[13px]
+                max-w-[720px]
+                text-[12px]
                 font-medium
-                leading-6
+                leading-5
                 text-white/85
                 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]
-                sm:mt-7
-                sm:text-base
-                sm:leading-8
-                lg:text-[17px]
+                sm:mt-5
+                sm:text-[14px]
+                sm:leading-6
+                lg:text-[15px]
               "
             >
-              {/* Mobile: shorter, punchier copy */}
               <span className="sm:hidden">
                 One trusted platform for railway, flights, hotels, buses and
                 holidays — built for travel professionals.
               </span>
-              {/* Desktop: full copy */}
+
               <span className="hidden sm:inline">
                 Become an authorized IRCTC travel agent and access railway,
                 flights, hotels, buses and holidays through one trusted B2B
@@ -315,56 +232,61 @@ export default function Hero() {
               </span>
             </p>
 
-            {/* =================================================
+            {/* ================================================
                 CTA BUTTONS
-            ================================================== */}
+            ================================================= */}
             <div
               className="
-                mt-5
+                mx-auto
+                mt-4
                 flex
                 w-full
-                flex-col
+                max-w-[430px]
                 items-center
                 justify-center
-                gap-3
-                sm:mt-8
+                gap-2.5
+                sm:mt-5
                 sm:w-auto
-                sm:flex-row
+                sm:max-w-none
               "
             >
-              {/* Become an Agent */}
+              {/* BECOME AGENT */}
               <Link
                 href="/irctc-agent-registration"
                 className="
                   group
                   inline-flex
-                  min-h-[50px]
-                  w-full
+                  min-h-[46px]
+                  flex-1
                   items-center
                   justify-center
-                  gap-3
-                  rounded-[14px]
-                  bg-[#C4320A]
-                  px-7
-                  text-[11px]
+                  gap-2
+                  rounded-xl
+                  bg-[#EE5326]
+                  px-4
+                  text-[10px]
                   font-semibold
-                  tracking-[0.055em]
+                  tracking-[0.04em]
                   !text-white
-                  shadow-[0_12px_30px_rgba(196,50,10,0.30)]
+                  shadow-[0_10px_25px_rgba(238,83,38,0.30)]
                   transition-all
                   duration-300
-                  hover:-translate-y-1
-                  hover:bg-[#A82907]
-                  hover:shadow-[0_16px_35px_rgba(196,50,10,0.40)]
+                  hover:-translate-y-0.5
+                  hover:bg-[#D9471D]
+                  hover:shadow-[0_14px_30px_rgba(238,83,38,0.38)]
                   active:translate-y-0
-                  sm:min-h-[54px]
-                  sm:w-auto
+                  sm:min-h-[50px]
+                  sm:flex-none
+                  sm:px-7
+                  sm:text-[11px]
                 "
               >
-                <span className="!text-white">Become an Agent</span>
+                <span className="!text-white">
+                  Become an Agent
+                </span>
 
                 <ArrowRight
-                  size={17}
+                  size={16}
                   strokeWidth={2.5}
                   className="
                     !text-white
@@ -375,105 +297,95 @@ export default function Hero() {
                 />
               </Link>
 
-              {/* WhatsApp */}
+              {/* WHATSAPP */}
               <a
                 href="https://wa.me/917835025025"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Chat with TravelIQ on WhatsApp"
                 className="
                   group
                   inline-flex
-                  min-h-[50px]
-                  w-full
+                  min-h-[46px]
+                  flex-1
                   items-center
                   justify-center
-                  gap-2.5
-                  rounded-[14px]
-                  border
-                  border-[#25D366]/40
+                  gap-2
+                  rounded-xl
                   bg-[#25D366]
-                  px-6
-                  text-[11px]
+                  px-4
+                  text-[10px]
                   font-semibold
-                  tracking-[0.055em]
+                  tracking-[0.04em]
                   !text-white
-                  backdrop-blur-md
+                  shadow-[0_10px_25px_rgba(37,211,102,0.22)]
                   transition-all
                   duration-300
-                  hover:-translate-y-1
-                  hover:border-[#20BD5A]
+                  hover:-translate-y-0.5
                   hover:bg-[#20BD5A]
+                  hover:shadow-[0_14px_30px_rgba(37,211,102,0.28)]
                   active:translate-y-0
-                  sm:min-h-[54px]
-                  sm:w-auto
+                  sm:min-h-[50px]
+                  sm:flex-none
+                  sm:px-6
+                  sm:text-[11px]
                 "
               >
-                <span
-                  className="
-                    flex
-                    h-8
-                    w-8
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#25D366]
-                  "
-                >
-                  <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
-                </span>
+                <WhatsAppIcon className="h-[17px] w-[17px] text-white" />
 
-                <span className="!text-white">WhatsApp Us</span>
+                <span className="!text-white">
+                  WhatsApp Us
+                </span>
               </a>
             </div>
 
-            {/* =================================================
+            {/* ================================================
                 REASSURANCE
-                Mobile: 3-col card grid with orange icon + label
-                sm+: inline horizontal row
-            ================================================== */}
-
-            {/* Mobile grid */}
-            <div className="mt-5 grid grid-cols-3 gap-2 sm:hidden">
+                MOBILE
+            ================================================= */}
+            <div className="mt-4 grid grid-cols-3 gap-1.5 sm:hidden">
               {reassurance.map((item) => (
                 <div
                   key={item}
                   className="
                     flex
+                    min-w-0
                     flex-col
                     items-center
                     justify-center
-                    gap-2
-                    rounded-xl
+                    gap-1.5
+                    rounded-lg
                     border
                     border-white/15
-                    bg-white/8
-                    px-2
-                    py-3
-                    backdrop-blur-sm
+                    bg-[#071F3D]/50
+                    px-1
+                    py-2
+                    backdrop-blur-md
                   "
                 >
                   <span
                     className="
                       flex
-                      h-7
-                      w-7
+                      h-6
+                      w-6
                       shrink-0
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#EE5326]/20
-                      text-[#FF7045]
+                      bg-[#EE5326]
+                      text-white
                     "
                   >
-                    <Check size={12} strokeWidth={3} />
+                    <Check size={11} strokeWidth={3} />
                   </span>
+
                   <span
                     className="
                       text-center
-                      text-[9px]
+                      text-[8px]
                       font-semibold
                       leading-tight
-                      text-white/80
+                      text-white/90
                     "
                   >
                     {item}
@@ -482,30 +394,29 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Desktop inline row */}
+            {/* ================================================
+                REASSURANCE
+                TABLET / DESKTOP
+            ================================================= */}
             <div
               className="
-                mt-7
+                mt-5
                 hidden
                 flex-wrap
                 items-center
                 justify-center
                 gap-x-5
-                gap-y-3
+                gap-y-2
                 sm:flex
               "
             >
               {reassurance.map((item, index) => (
-                <div key={item} className="flex items-center gap-2">
+                <div
+                  key={item}
+                  className="flex items-center gap-2"
+                >
                   {index > 0 && (
-                    <span
-                      className="
-                        mr-3
-                        h-3
-                        w-px
-                        bg-white/25
-                      "
-                    />
+                    <span className="mr-2 h-3 w-px bg-white/25" />
                   )}
 
                   <span
@@ -517,9 +428,8 @@ export default function Hero() {
                       items-center
                       justify-center
                       rounded-full
-                      bg-white/10
-                      text-[#FF7045]
-                      backdrop-blur-sm
+                      bg-[#EE5326]
+                      text-white
                     "
                   >
                     <Check size={10} strokeWidth={3} />
@@ -531,7 +441,8 @@ export default function Hero() {
                       font-semibold
                       uppercase
                       tracking-[0.11em]
-                      text-white/70
+                      text-white/80
+                      lg:text-[9px]
                     "
                   >
                     {item}
@@ -542,31 +453,41 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ===================================================
+        {/* ================================================
             SERVICES STRIP
-            Mobile: 4-col compact icon + label tiles (first 4)
-            sm+: 5-col full strip with text
-        ==================================================== */}
-
-        {/* Mobile — 4 icon tiles */}
-        <div className="grid grid-cols-4 gap-2 border-t border-white/15 py-4 sm:hidden">
+            MOBILE
+        ================================================= */}
+        <div
+          className="
+            grid
+            shrink-0
+            grid-cols-4
+            gap-1.5
+            border-t
+            border-white/20
+            py-2
+            sm:hidden
+          "
+        >
           {services.slice(0, 4).map((service) => {
             const Icon = service.icon;
+
             return (
               <div
                 key={service.title}
                 className="
                   flex
+                  min-w-0
                   flex-col
                   items-center
                   justify-center
-                  gap-2
-                  rounded-xl
+                  gap-1.5
+                  rounded-lg
                   border
-                  border-white/15
-                  bg-[#071F3D]/30
+                  border-white/20
+                  bg-[#071F3D]/75
                   px-1
-                  py-3
+                  py-2
                   backdrop-blur-md
                 "
               >
@@ -578,13 +499,22 @@ export default function Hero() {
                     items-center
                     justify-center
                     rounded-lg
-                    bg-white/10
-                    text-[#FF7045]
+                    bg-[#EE5326]
+                    text-white
+                    shadow-[0_5px_15px_rgba(238,83,38,0.28)]
                   "
                 >
-                  <Icon size={18} strokeWidth={2} />
+                  <Icon size={18} strokeWidth={2.2} />
                 </div>
-                <span className="text-[9px] font-semibold text-white">
+
+                <span
+                  className="
+                    truncate
+                    text-[9px]
+                    font-bold
+                    text-white
+                  "
+                >
                   {service.title}
                 </span>
               </div>
@@ -592,16 +522,21 @@ export default function Hero() {
           })}
         </div>
 
-        {/* Desktop — full 5-col strip */}
+        {/* ================================================
+            SERVICES STRIP
+            TABLET / DESKTOP
+        ================================================= */}
         <div
           className="
             hidden
+            shrink-0
             grid-cols-5
-            gap-3
+            gap-2.5
             border-t
-            border-white/15
-            py-5
+            border-white/20
+            py-2.5
             sm:grid
+            lg:gap-3
           "
         >
           {services.map((service) => {
@@ -613,45 +548,53 @@ export default function Hero() {
                 className="
                   group
                   flex
+                  min-w-0
                   items-center
                   gap-3
+                  rounded-lg
                   border
-                  border-white/15
-                  bg-[#071F3D]/30
+                  border-white/20
+                  bg-[#071F3D]/70
                   px-3
-                  py-3
+                  py-2.5
+                  shadow-[0_8px_24px_rgba(0,0,0,0.10)]
                   backdrop-blur-md
                   transition-all
                   duration-300
-                  hover:border-white/30
-                  hover:bg-[#071F3D]/50
+                  hover:-translate-y-0.5
+                  hover:border-[#EE5326]/70
+                  hover:bg-[#0A294F]/85
                 "
               >
+                {/* Orange icon */}
                 <div
                   className="
                     flex
-                    h-9
-                    w-9
+                    h-11
+                    w-11
                     shrink-0
                     items-center
                     justify-center
-                    bg-white/10
-                    text-[#FF7045]
-                    transition-all
+                    rounded-lg
+                    bg-[#EE5326]
+                    text-white
+                    shadow-[0_6px_16px_rgba(238,83,38,0.28)]
+                    transition-transform
                     duration-300
-                    group-hover:bg-[#EE5326]
-                    group-hover:text-white
+                    group-hover:scale-105
                   "
                 >
-                  <Icon size={16} strokeWidth={2} />
+                  <Icon size={20} strokeWidth={2.2} />
                 </div>
 
-                <div className="min-w-0">
+                <div className="min-w-0 text-left">
                   <p
                     className="
-                      text-[10px]
-                      font-semibold
+                      text-[12px]
+                      font-bold
+                      leading-4
                       text-white
+                      lg:text-[13px]
                     "
                   >
                     {service.title}
@@ -661,9 +604,10 @@ export default function Hero() {
                     className="
                       mt-0.5
                       truncate
-                      text-[8px]
+                      text-[9px]
                       font-medium
                       text-white/70
+                      lg:text-[10px]
                     "
                   >
                     {service.text}
@@ -674,74 +618,47 @@ export default function Hero() {
           })}
         </div>
 
-        {/* ===================================================
-            SCROLL TO EXPLORE — mobile only
-        ==================================================== */}
-        <div className="flex flex-col items-center gap-1.5 pb-4 pt-1 sm:hidden">
-          <span
-            className="
-              text-[8px]
-              font-bold
-              uppercase
-              tracking-[0.2em]
-              text-white/50
-            "
-          >
-            Scroll to explore
-          </span>
-          <svg
-            width="14"
-            height="8"
-            viewBox="0 0 14 8"
-            fill="none"
-            className="animate-bounce text-white/40"
-          >
-            <path
-              d="M1 1L7 7L13 1"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+        {/* ================================================
+            STATS
+            DESKTOP ONLY
 
-        {/* ===================================================
-            STATS — hidden on mobile, visible on sm+
-        ==================================================== */}
+            Hidden below lg to make sure tablet/mobile
+            hero remains comfortably inside viewport.
+        ================================================= */}
         <div
           className="
-            mb-8
             hidden
+            shrink-0
             border-t
             border-white/15
-            py-5
-            sm:mb-10
-            sm:block
-            sm:py-6
+            py-3
+            lg:block
           "
         >
-          <div
-            className="
-              grid
-              grid-cols-4
-              gap-0
-            "
-          >
+          <div className="grid grid-cols-4">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className={`
                   text-left
-                  ${index > 0 ? "border-l border-white/15 pl-8" : ""}
+                  ${
+                    index > 0
+                      ? "border-l border-white/15 pl-6 lg:pl-8"
+                      : ""
+                  }
                 `}
               >
                 <p
                   className={`
-                    text-3xl
+                    text-xl
                     font-bold
-                    tracking-[-0.05em]
-                    ${index === 1 ? "text-[#FF7045]" : "text-white"}
+                    tracking-[-0.04em]
+                    xl:text-2xl
+                    ${
+                      index === 1
+                        ? "text-[#FF7045]"
+                        : "text-white"
+                    }
                   `}
                 >
                   {stat.value}
@@ -749,12 +666,13 @@ export default function Hero() {
 
                 <p
                   className="
-                    mt-1
-                    text-[8px]
+                    mt-0.5
+                    text-[7px]
                     font-semibold
                     uppercase
-                    tracking-[0.17em]
+                    tracking-[0.15em]
                     text-white/65
+                    xl:text-[8px]
                   "
                 >
                   {stat.label}

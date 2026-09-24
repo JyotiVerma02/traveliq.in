@@ -148,7 +148,7 @@ export default function Header() {
             HEADER INNER — STATIC 80px HEIGHT
         =================================================== */}
 
-        <div className={`mx-auto flex w-full max-w-[1500px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-10 ${isScrolled ? "h-[66px] sm:h-[72px] xl:h-[78px]" : "h-[72px] sm:h-[78px] xl:h-[84px]"}`}>
+        <div className={`mx-auto flex w-full max-w-[1500px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-10 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[78px]"}`}>
           {/* =================================================
               LOGO
           ================================================= */}
@@ -590,7 +590,7 @@ export default function Header() {
       ========================================================= */}
 
       {!isHome && (
-        <div className={`transition-[height] duration-300 ${isScrolled ? "h-[66px] sm:h-[72px] xl:h-[78px]" : "h-[72px] sm:h-[78px] xl:h-[84px]"}`} aria-hidden="true" />
+        <div className={`transition-[height] duration-300 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[78px]"}`} aria-hidden="true" />
       )}
     </>
   );

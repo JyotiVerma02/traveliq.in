@@ -56,7 +56,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-20 lg:py-28">
+    <section id="testimonials" className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-12 sm:py-14 lg:py-16">
       {/* =========================================================
           PREMIUM BACKGROUND
       ========================================================= */}
@@ -98,7 +98,7 @@ export default function Testimonials() {
 
             {/* Heading */}
 
-            <h2 className="mt-5 max-w-3xl text-4xl font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728] sm:text-5xl lg:text-[52px]">
+            <h2 className="mt-4 max-w-none whitespace-nowrap text-[clamp(0.95rem,4vw,3.25rem)] font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728]">
               Trusted by{" "}
               <span className="text-[#EE5326]">
                 travel professionals.
@@ -117,7 +117,7 @@ export default function Testimonials() {
               RATING SUMMARY
           ===================================================== */}
 
-          <div className="flex w-fit items-center gap-4 rounded-[22px] border border-white bg-[#FFF8F3] px-5 py-4 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
+          <div className="flex w-fit items-center gap-4 rounded-[22px] border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
             {/* Rating */}
 
             <div>
@@ -171,12 +171,12 @@ export default function Testimonials() {
 
         <div
           ref={scrollContainerRef}
-          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-6 scrollbar-none"
+          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-3 scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y" }}
         >
           {testimonials.map((testimonial, index) => (
             <Reveal key={testimonial.name} delay={index * 0.1} className="w-[285px] shrink-0 snap-start sm:w-[340px]">
-            <article className="group relative flex min-h-[410px] flex-col justify-between overflow-hidden rounded-[30px] border border-white bg-[#FFF8F3] p-6 shadow-[10px_10px_24px_rgba(16,64,122,0.10),-8px_-8px_20px_rgba(255,255,255,0.96)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[14px_14px_30px_rgba(16,64,122,0.13),-10px_-10px_24px_rgba(255,255,255,0.98)]">
+            <article className="group relative flex min-h-[410px] flex-col justify-between overflow-hidden rounded-[30px] border border-[#10407A]/12 bg-[#FFF8F3] p-6 shadow-[10px_10px_24px_rgba(16,64,122,0.10),-8px_-8px_20px_rgba(255,255,255,0.96)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:shadow-[14px_14px_30px_rgba(16,64,122,0.13),-10px_-10px_24px_rgba(255,255,255,0.98)]">
               {/* =================================================
                   ORANGE CORNER ACCENT
               ================================================= */}
@@ -277,7 +277,7 @@ export default function Testimonials() {
             BOTTOM TRUST STRIP
         ========================================================= */}
 
-        <Reveal className="mt-10 flex flex-col gap-5 rounded-[22px] border border-white bg-[#FFF8F3] px-5 py-4 shadow-[6px_6px_14px_rgba(16,64,122,0.06),-5px_-5px_12px_rgba(255,255,255,0.95)] sm:flex-row sm:items-center sm:justify-between">
+        <Reveal className="mt-10 flex flex-col gap-5 rounded-[22px] border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[6px_6px_14px_rgba(16,64,122,0.06),-5px_-5px_12px_rgba(255,255,255,0.95)] sm:flex-row sm:items-center sm:justify-between">
           {/* Trust message */}
 
           <div className="flex items-center gap-3">

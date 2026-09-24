@@ -24,15 +24,15 @@ export default function HeroMedia() {
         sizes="100vw"
         placeholder="blur"
         blurDataURL={HERO_BLUR_DATA_URL}
-        className="object-cover object-center"
+        className="object-cover object-center opacity-45"
       />
 
       {/* Gradient overlays at z-[1] — above the image (z-0) but below
           Hero content (z-10). */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[#071F3D]/18" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#071F3D]/35 via-[#071F3D]/60 to-[#071F3D]/35" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(7,31,61,0.58)_0%,rgba(7,31,61,0.32)_38%,rgba(7,31,61,0.05)_72%)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[32%] bg-gradient-to-t from-[#071F3D]/85 via-[#071F3D]/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[#071F3D]/35" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#071F3D]/45 via-[#071F3D]/65 to-[#071F3D]/45" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(7,31,61,0.48)_0%,rgba(7,31,61,0.32)_42%,rgba(7,31,61,0.18)_78%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[32%] bg-gradient-to-t from-[#071F3D]/90 via-[#071F3D]/40 to-transparent" />
     </div>
   );
 }
