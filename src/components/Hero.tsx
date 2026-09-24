@@ -390,8 +390,8 @@ export default function Hero() {
                   gap-2.5
                   rounded-[14px]
                   border
-                  border-white/35
-                  bg-white/10
+                  border-[#25D366]/40
+                  bg-[#25D366]
                   px-6
                   text-[11px]
                   font-semibold
@@ -401,8 +401,8 @@ export default function Hero() {
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:border-white/50
-                  hover:bg-white/20
+                  hover:border-[#20BD5A]
+                  hover:bg-[#20BD5A]
                   active:translate-y-0
                   sm:min-h-[54px]
                   sm:w-auto

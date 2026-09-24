@@ -7,6 +7,7 @@ const staticRouteMeta: Record<
 > = {
   "/": { changeFrequency: "daily", priority: 1.0 },
   "/irctc-agent-registration": { changeFrequency: "weekly", priority: 0.9 },
+  "/benefits-of-irctc-agent-registration": { changeFrequency: "monthly", priority: 0.7 },
   "/our-services": { changeFrequency: "weekly", priority: 0.9 },
   "/pages/services/railway-reservations": {
     changeFrequency: "weekly",
@@ -41,6 +42,7 @@ const staticRouteMeta: Record<
   "/video-gallery": { changeFrequency: "weekly", priority: 0.8 },
   "/pay-now": { changeFrequency: "monthly", priority: 0.7 },
   "/privacy-policy": { changeFrequency: "yearly", priority: 0.3 },
+  "/disclaimer-policy": { changeFrequency: "yearly", priority: 0.3 },
   "/refund-cancellation-policy": { changeFrequency: "yearly", priority: 0.3 },
   "/term-and-conditions": { changeFrequency: "yearly", priority: 0.3 },
   "/list-of-irctc-principal-service-providers": {

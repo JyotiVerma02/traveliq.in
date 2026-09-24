@@ -20,6 +20,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+import { WhatsAppIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
@@ -2126,7 +2127,7 @@ export default function AboutPage() {
                   transition
                   duration-300
                   hover:-translate-y-1
-                  hover:bg-[#1DA851]
+                  hover:bg-[#20BD5A]
                   hover:shadow-[10px_13px_28px_rgba(37,211,102,0.27),-5px_-5px_12px_rgba(255,255,255,0.9)]
                 "
               >
@@ -2142,14 +2143,7 @@ export default function AboutPage() {
                   "
                 >
                   <span className="text-white">
-                    {/* WhatsApp icon intentionally kept consistent */}
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-[18px] w-[18px] fill-current"
-                      aria-hidden="true"
-                    >
-                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.59 5.95L.1 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.47-8.42ZM12.09 21.8h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.23-.37a9.88 9.88 0 0 1-1.52-5.27C2.2 6.43 6.64 2 12.09 2a9.87 9.87 0 0 1 7.01 2.91 9.87 9.87 0 0 1 2.9 7.02c0 5.45-4.44 9.87-9.91 9.87Zm5.42-7.4c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.46-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.06 1.04-1.06 2.54s1.09 2.95 1.24 3.15c.15.2 2.14 3.27 5.18 4.58.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.12-.28-.2-.58-.35Z" />
-                    </svg>
+                    <WhatsAppIcon className="h-[18px] w-[18px]" />
                   </span>
                 </span>
 

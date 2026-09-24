@@ -140,15 +140,15 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-[100] w-full border-b bg-white/95 backdrop-blur-md transition-[box-shadow,border-color,background-color] duration-300 ${
           isScrolled
-            ? "border-[#10407A]/10 shadow-[0_8px_30px_rgba(4,12,26,0.08)]"
-            : "border-[#10407A]/[0.06] shadow-none"
+            ? "border-[#10407A]/12 shadow-[0_5px_20px_rgba(4,12,26,0.10)]"
+            : "border-[#10407A]/[0.06] shadow-[0_2px_10px_rgba(4,12,26,0.025)]"
         }`}
       >
         {/* ===================================================
             HEADER INNER — STATIC 80px HEIGHT
         =================================================== */}
 
-        <div className="mx-auto flex h-[80px] w-full max-w-[1500px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className={`mx-auto flex w-full max-w-[1500px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-10 ${isScrolled ? "h-[66px] sm:h-[72px] xl:h-[78px]" : "h-[72px] sm:h-[78px] xl:h-[84px]"}`}>
           {/* =================================================
               LOGO
           ================================================= */}
@@ -166,8 +166,8 @@ export default function Header() {
               height={280}
               quality={70}
               priority
-              sizes="(max-width: 639px) 150px, (max-width: 1023px) 175px, (max-width: 1279px) 190px, 205px"
-              className="h-auto w-[150px] object-contain sm:w-[175px] lg:w-[190px] xl:w-[205px]"
+              sizes="(max-width: 639px) 156px, (max-width: 1023px) 184px, (max-width: 1279px) 196px, 214px"
+              className="h-auto w-[156px] object-contain sm:w-[184px] lg:w-[196px] xl:w-[214px]"
             />
           </Link>
 
@@ -180,7 +180,7 @@ export default function Header() {
           ================================================= */}
 
           <nav
-            className="relative z-[110] hidden xl:block xl:ml-auto xl:mr-6"
+            className="relative z-[110] hidden xl:block"
             aria-label="Main navigation"
           >
             <div className="flex items-center gap-0.5">
@@ -213,7 +213,7 @@ export default function Header() {
                   href="/our-services"
                   aria-haspopup="true"
                   aria-expanded={servicesOpen}
-                  className={`group relative flex items-center gap-1 rounded-lg px-3.5 py-2.5 text-[14px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
+                    className={`group relative flex items-center gap-1 rounded-lg px-3 py-2.5 text-[15px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
                     servicesActive
                       ? "text-[var(--tiq-orange)]"
                       : "text-[var(--tiq-navy)] hover:text-[var(--tiq-orange)]"
@@ -364,28 +364,12 @@ export default function Header() {
               Starts at XL to match desktop navigation.
           ================================================= */}
 
-          <div className="hidden items-center gap-2 xl:flex">
-            {/* AGENT LOGIN */}
-
-            <a
-              href="https://b2b.traveliq.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] font-semibold tracking-[0.02em] text-[var(--tiq-navy)] outline-none transition-colors duration-200 hover:text-[var(--tiq-orange)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)]"
-            >
-              Agent Login
-
-              <ArrowUpRight
-                size={13}
-                className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </a>
-
+          <div className="hidden items-center justify-self-end gap-2 xl:flex">
             {/* BECOME AN AGENT */}
 
             <Link
               href="/irctc-agent-registration"
-              className="group flex items-center gap-1.5 rounded-[10px] bg-[var(--tiq-orange)] px-4 py-2.5 text-[12px] font-bold tracking-[0.03em] !text-white shadow-[0_7px_18px_rgba(238,83,38,0.17)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--tiq-orange-dark)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2"
+              className="group flex items-center gap-1.5 rounded-[10px] bg-[var(--tiq-orange)] px-4 py-2.5 text-[13px] font-bold tracking-[0.03em] !text-white shadow-[0_7px_18px_rgba(238,83,38,0.17)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--tiq-orange-dark)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2"
             >
               <span className="!text-white">Become an Agent</span>
 
@@ -402,9 +386,9 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with TravelIQ on WhatsApp"
-              className="group flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#25D366] !text-white shadow-[0_6px_16px_rgba(37,211,102,0.15)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_20px_rgba(37,211,102,0.20)] focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
+              className="group flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#25D366] !text-white shadow-[0_6px_16px_rgba(37,211,102,0.15)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_20px_rgba(37,211,102,0.20)] focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
             >
-              <WhatsAppIcon className="h-[18px] w-[18px] !text-white transition-transform duration-200 group-hover:scale-110" />
+              <WhatsAppIcon className="h-5 w-5 !text-white transition-transform duration-200 group-hover:scale-110" />
             </a>
           </div>
 
@@ -419,7 +403,7 @@ export default function Header() {
             onClick={() => setOpen((value) => !value)}
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
-            className="relative z-[120] flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#10407A]/10 bg-white text-[var(--tiq-navy)] shadow-[0_4px_12px_rgba(4,12,26,0.06)] outline-none transition-all duration-200 hover:border-[var(--tiq-orange)]/20 hover:text-[var(--tiq-orange)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] xl:hidden"
+            className="relative z-[120] flex h-11 w-11 items-center justify-center rounded-[10px] border border-[#10407A]/10 bg-white text-[var(--tiq-navy)] shadow-[0_4px_12px_rgba(4,12,26,0.06)] outline-none transition-all duration-200 hover:border-[var(--tiq-orange)]/20 hover:text-[var(--tiq-orange)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] xl:hidden"
           >
             {open ? (
               <X size={20} strokeWidth={2.4} />
@@ -438,11 +422,11 @@ export default function Header() {
         <div
           className={`overflow-hidden border-t border-[#10407A]/[0.06] bg-white transition-[max-height,opacity] duration-300 xl:hidden ${
             open
-              ? "max-h-[calc(100vh-80px)] opacity-100"
-              : "max-h-0 opacity-0"
+            ? `opacity-100 ${isScrolled ? "max-h-[calc(100vh-66px)] sm:max-h-[calc(100vh-72px)]" : "max-h-[calc(100vh-72px)] sm:max-h-[calc(100vh-78px)]"}`
+            : "max-h-0 opacity-0"
           }`}
         >
-          <div className="mx-3 mb-3 mt-3 max-h-[calc(100vh-96px)] overflow-y-auto rounded-[16px] border border-[#10407A]/10 bg-white p-2.5 shadow-[0_14px_35px_rgba(4,12,26,0.09)]">
+          <div className="mx-3 mb-3 mt-3 max-h-[calc(100vh-92px)] overflow-y-auto rounded-[16px] border border-[#10407A]/10 bg-white p-2.5 shadow-[0_14px_35px_rgba(4,12,26,0.09)] sm:max-h-[calc(100vh-98px)] xl:max-h-[calc(100vh-104px)]">
             {/* ===============================================
                 MOBILE NAV
             =============================================== */}
@@ -554,17 +538,6 @@ export default function Header() {
             =============================================== */}
 
             <div className="mt-3 grid gap-2">
-              {/* AGENT LOGIN */}
-
-              <a
-                href="https://b2b.traveliq.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center rounded-[11px] border border-[#10407A]/10 bg-white px-4 text-[14px] font-semibold text-[var(--tiq-navy)] shadow-[0_3px_10px_rgba(4,12,26,0.04)] transition-colors duration-200 hover:border-[var(--tiq-orange)]/20 hover:text-[var(--tiq-orange)]"
-              >
-                Agent Login
-              </a>
-
               {/* BECOME AN AGENT */}
 
               <Link
@@ -613,11 +586,11 @@ export default function Header() {
       {/* =========================================================
           FIXED HEADER SPACING
 
-          Header is always 80px.
+          Header height scales with the screen size.
       ========================================================= */}
 
       {!isHome && (
-        <div className="h-[80px]" aria-hidden="true" />
+        <div className={`transition-[height] duration-300 ${isScrolled ? "h-[66px] sm:h-[72px] xl:h-[78px]" : "h-[72px] sm:h-[78px] xl:h-[84px]"}`} aria-hidden="true" />
       )}
     </>
   );
@@ -639,7 +612,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`group relative flex items-center rounded-lg px-3.5 py-2.5 text-[14px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
+      className={`group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
         active
           ? "text-[var(--tiq-orange)]"
           : "text-[var(--tiq-navy)] hover:text-[var(--tiq-orange)]"

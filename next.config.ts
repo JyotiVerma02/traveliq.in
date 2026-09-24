@@ -113,9 +113,9 @@ const nextConfig: NextConfig = {
       { source: "/cancellation-and-refund-rules-for-irctc-train", destination: "/refund-cancellation-policy/", permanent: true },
 
       // IRCTC Registration landing page aliases
+      { source: "/pages/why-should-i-register-for-irctc-agent-login", destination: "/benefits-of-irctc-agent-registration/", permanent: true },
       { source: "/irctc-plans", destination: "/irctc-agent-registration/", permanent: true },
-      { source: "/why-should-i-register-for-irctc-agent-login", destination: "/irctc-agent-registration/", permanent: true },
-      { source: "/benefits-of-irctc-agent-registration", destination: "/irctc-agent-registration/", permanent: true },
+      { source: "/why-should-i-register-for-irctc-agent-login", destination: "/benefits-of-irctc-agent-registration/", permanent: true },
       { source: "/fees-and-pricing-structure-irctc-agent", destination: "/irctc-agent-registration/", permanent: true },
       { source: "/irctc-agent-id-lowest-pnr-charge", destination: "/irctc-agent-registration/", permanent: true },
       { source: "/irctc-authorized-agent-registration-fee", destination: "/irctc-agent-registration/", permanent: true },

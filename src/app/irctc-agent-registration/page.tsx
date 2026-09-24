@@ -18,7 +18,6 @@ import {
   ExternalLink,
   Building2,
   Mail,
-  MessageSquare,
   CreditCard,
   UserCheck,
   Wallet,
@@ -34,6 +33,7 @@ import {
   Headphones,
   MapPin,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons";
 
 const pagePath = "/irctc-agent-registration";
 const pageUrl = canonicalUrl(pagePath);
@@ -336,7 +336,7 @@ export default function IrcTcAgentRegistrationPage() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-white/30 bg-white/10 px-7 py-4 text-base font-bold !text-white shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
-                  <MessageSquare className="h-5 w-5 !text-white transition-transform duration-300 group-hover:scale-110" />
+                  <WhatsAppIcon className="h-5 w-5 !text-white transition-transform duration-300 group-hover:scale-110" />
 
                   <span className="!text-white">
                     Talk to an Expert
@@ -403,7 +403,7 @@ export default function IrcTcAgentRegistrationPage() {
 
       {/* QUICK INFO */}
       <section className="relative z-20 -mt-8 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl divide-y divide-slate-200 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[28px] border border-white/80 bg-[#F6F9FE] shadow-[10px_12px_28px_rgba(16,64,122,0.10),-8px_-8px_22px_rgba(255,255,255,0.95)] md:grid-cols-4">
           {[
             ["Registration fee", "From ₹500 + GST"],
             ["Authentication", "OTP or DSC"],
@@ -412,7 +412,7 @@ export default function IrcTcAgentRegistrationPage() {
           ].map(([label, value]) => (
             <div
               key={label}
-              className="px-5 py-4 transition-all duration-300 hover:bg-[#F6F9FE] sm:px-7"
+              className="border-b border-[#10407A]/[0.07] px-5 py-4 transition-all duration-300 last:border-b-0 hover:bg-white/70 sm:px-7 md:border-b-0 md:border-r md:last:border-r-0"
             >
               <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 {label}
@@ -536,10 +536,25 @@ export default function IrcTcAgentRegistrationPage() {
                 description:
                   "An agent can also cancel tickets using their IRCTC agent login.",
               },
+              {
+                title: "Wallet-Based Booking Payments",
+                description:
+                  "Use the applicable TravelIQ wallet process for booking transactions. Confirm funding methods, fees, and current terms before registration.",
+              },
+              {
+                title: "Flexible Business Hours",
+                description:
+                  "Manage customer enquiries and your travel business on a flexible schedule, while following IRCTC booking windows and operating rules.",
+              },
+              {
+                title: "Agent Booking Rules",
+                description:
+                  "Agent accounts follow booking limits and time restrictions set by IRCTC. Review the current rules before accepting customer bookings.",
+              },
             ].map((benefit, index) => (
               <div
                 key={index}
-                className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:border-[#EE5326]/20 hover:shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
+                className="group rounded-[24px] border border-white/90 bg-[#F7FAFE] p-6 shadow-[7px_8px_18px_rgba(16,64,122,0.09),-6px_-6px_16px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#EE5326]/20 hover:bg-white hover:shadow-[10px_14px_26px_rgba(16,64,122,0.14),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none"
               >
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-100 font-bold text-orange-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#EE5326] group-hover:!text-white">
                   {String(index + 1).padStart(2, "0")}
@@ -561,6 +576,18 @@ export default function IrcTcAgentRegistrationPage() {
               Become an authorized IRCTC travel agent and manage your train
               ticket booking services through a dedicated agent login.
             </p>
+          </div>
+          <div className="mt-7 text-center">
+            <Link
+              href="/benefits-of-irctc-agent-registration/"
+              className="group relative inline-flex min-h-12 items-center justify-center gap-3 overflow-hidden rounded-full border border-[#FFB199]/70 bg-[#EE5326] px-6 py-3 text-sm font-extrabold text-white shadow-[0_14px_28px_rgba(238,83,38,0.25),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#D94316] hover:shadow-[0_18px_36px_rgba(238,83,38,0.34),inset_0_1px_0_rgba(255,255,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EE5326] focus-visible:ring-offset-4 motion-reduce:transform-none motion-reduce:transition-none"
+            >
+              <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.25),rgba(255,255,255,0)_42%)] opacity-90" />
+              <span className="relative">Explore all agent registration benefits</span>
+              <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-white/95 text-[#EE5326] shadow-[0_5px_12px_rgba(131,36,7,0.18)] transition-transform duration-300 group-hover:translate-x-1">
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -591,10 +618,10 @@ export default function IrcTcAgentRegistrationPage() {
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`group relative flex flex-col justify-between rounded-3xl border p-8 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${
+                className={`group relative flex flex-col justify-between rounded-[28px] border p-8 shadow-[9px_12px_26px_rgba(16,64,122,0.11),-7px_-7px_20px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[12px_16px_32px_rgba(16,64,122,0.16),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none ${
                   plan.popular
-                    ? "border-[#EE5326] bg-white ring-4 ring-[#EE5326]/10 hover:ring-[#EE5326]/20"
-                    : "border-slate-200 bg-white hover:border-[#10407A]/30"
+                    ? "border-[#EE5326]/25 bg-[#FFF8F3] ring-4 ring-[#EE5326]/10 hover:ring-[#EE5326]/20"
+                    : "border-white bg-[#F6F9FE] hover:border-[#10407A]/20 hover:bg-white"
                 }`}
               >
                 {plan.popular && (
@@ -687,7 +714,7 @@ export default function IrcTcAgentRegistrationPage() {
           </div>
 
           <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
-            <div className="group border-t-4 border-[#EE5326] bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="group rounded-[24px] border border-white bg-[#FFF8F3] p-7 shadow-[7px_8px_18px_rgba(16,64,122,0.09),-6px_-6px_16px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_13px_25px_rgba(16,64,122,0.14),-4px_-4px_12px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none">
               <h3 className="text-xl font-bold text-[#0B2D5C]">
                 OTP Authentication
               </h3>
@@ -699,7 +726,7 @@ export default function IrcTcAgentRegistrationPage() {
               </p>
             </div>
 
-            <div className="group border-t-4 border-[#10407A] bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="group rounded-[24px] border border-white bg-[#F6F9FE] p-7 shadow-[7px_8px_18px_rgba(16,64,122,0.09),-6px_-6px_16px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_13px_25px_rgba(16,64,122,0.14),-4px_-4px_12px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none">
               <h3 className="text-xl font-bold text-[#0B2D5C]">
                 DSC Authentication
               </h3>
@@ -769,7 +796,7 @@ export default function IrcTcAgentRegistrationPage() {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col justify-between rounded-3xl border border-slate-100 bg-[#F6F9FE] p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#10407A]/20 hover:shadow-xl"
+                className="group flex flex-col justify-between rounded-[26px] border border-white/90 bg-[#F6F9FE] p-7 shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none"
               >
                 <div>
                   <p className="text-sm italic leading-relaxed text-slate-700">
@@ -857,7 +884,7 @@ export default function IrcTcAgentRegistrationPage() {
               return (
                 <div
                   key={benefit.title}
-                  className="group rounded-3xl border border-slate-100 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#10407A]/30 hover:shadow-xl"
+                  className="group rounded-[26px] border border-white bg-[#F6F9FE] p-7 shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#10407A] text-white shadow-md transition-all duration-300 group-hover:scale-110 group-hover:bg-[#EE5326]">
                     <Icon className="h-6 w-6 !text-white" />
@@ -918,7 +945,7 @@ export default function IrcTcAgentRegistrationPage() {
             ].map((st) => (
               <div
                 key={st.step}
-                className="group relative flex flex-col justify-between rounded-3xl border border-sky-100 bg-white p-7 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-[#10407A]/20 hover:shadow-xl"
+                className="group relative flex flex-col justify-between rounded-[26px] border border-white bg-[#F6F9FE] p-7 shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none"
               >
                 <div>
                   <span className="text-4xl font-black text-[#10407A]/20 transition-colors duration-300 group-hover:text-[#EE5326]/30">
@@ -1008,7 +1035,7 @@ export default function IrcTcAgentRegistrationPage() {
               ].map((doc, idx) => (
                 <div
                   key={idx}
-                  className="group rounded-2xl border border-slate-100 bg-[#F6F9FE] p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#10407A]/20 hover:bg-white hover:shadow-lg"
+                  className="group rounded-[22px] border border-white bg-[#F6F9FE] p-5 shadow-[6px_7px_16px_rgba(16,64,122,0.08),-5px_-5px_13px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1 hover:border-[#10407A]/15 hover:bg-white hover:shadow-[9px_11px_22px_rgba(16,64,122,0.13),-4px_-4px_11px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <div className="flex items-center gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#10407A] text-xs font-bold !text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-[#EE5326]">
@@ -1055,7 +1082,7 @@ export default function IrcTcAgentRegistrationPage() {
               return (
                 <div
                   key={idx}
-                  className="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#10407A]/20 hover:shadow-xl"
+                  className="group flex flex-col justify-between rounded-[26px] border border-white bg-[#F6F9FE] p-7 shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <div>
                     <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-100 text-[#EE5326] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#EE5326] group-hover:!text-white">
@@ -1159,7 +1186,7 @@ export default function IrcTcAgentRegistrationPage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="group rounded-3xl border border-slate-100 bg-[#F6F9FE] p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#10407A]/20 hover:bg-white hover:shadow-xl">
+            <div className="group rounded-[26px] border border-white bg-[#F6F9FE] p-7 text-center shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-[#10407A] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#10407A] group-hover:!text-white">
                 <Mail className="h-6 w-6" />
               </div>
@@ -1173,9 +1200,9 @@ export default function IrcTcAgentRegistrationPage() {
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-100 bg-[#F6F9FE] p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-200 hover:bg-white hover:shadow-xl">
+            <div className="group rounded-[26px] border border-white bg-[#F6F9FE] p-7 text-center shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-200 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:!text-white">
-                <MessageSquare className="h-6 w-6" />
+                <WhatsAppIcon className="h-6 w-6" />
               </div>
 
               <h3 className="text-sm font-bold text-slate-900">
@@ -1192,7 +1219,7 @@ export default function IrcTcAgentRegistrationPage() {
               </a>
             </div>
 
-            <div className="group rounded-3xl border border-slate-100 bg-[#F6F9FE] p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#EE5326]/20 hover:bg-white hover:shadow-xl">
+            <div className="group rounded-[26px] border border-white bg-[#F6F9FE] p-7 text-center shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#EE5326]/20 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-100 text-[#EE5326] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#EE5326] group-hover:!text-white">
                 <PhoneCall className="h-6 w-6" />
               </div>
@@ -1206,7 +1233,7 @@ export default function IrcTcAgentRegistrationPage() {
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-100 bg-[#F6F9FE] p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-indigo-200 hover:bg-white hover:shadow-xl">
+            <div className="group rounded-[26px] border border-white bg-[#F6F9FE] p-7 text-center shadow-[8px_10px_22px_rgba(16,64,122,0.10),-7px_-7px_18px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-200 hover:bg-white hover:shadow-[11px_15px_28px_rgba(16,64,122,0.15),-5px_-5px_14px_rgba(255,255,255,0.9)] motion-reduce:transform-none motion-reduce:transition-none">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:!text-white">
                 <MapPin className="h-6 w-6" />
               </div>
@@ -1273,7 +1300,7 @@ export default function IrcTcAgentRegistrationPage() {
               {faqItems.map((faq, index) => (
                 <details
                   key={index}
-                  className="group rounded-[24px] border border-white bg-[#FFF8F3] p-5 shadow-[8px_8px_18px_rgba(16,64,122,0.08),-7px_-7px_16px_rgba(255,255,255,0.95)] transition-all duration-300 open:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)] hover:-translate-y-0.5 hover:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)]"
+                  className="group rounded-[24px] border border-white bg-[#FFF8F3] p-5 shadow-[8px_8px_18px_rgba(16,64,122,0.08),-7px_-7px_16px_rgba(255,255,255,0.95)] transition-all duration-300 open:shadow-[inset_5px_5px_12px_rgba(16,64,122,0.08),inset_-5px_-5px_12px_rgba(255,255,255,0.9)] hover:-translate-y-0.5 hover:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)] motion-reduce:transform-none motion-reduce:transition-none"
                   open={index === 0}
                 >
                   <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-4 text-left focus:outline-none [&::-webkit-details-marker]:hidden">
@@ -1474,26 +1501,26 @@ export default function IrcTcAgentRegistrationPage() {
               gap-2
               rounded-full
               border
-              border-[#10407A]/20
-              bg-[#F6F9FE]
+              border-[#25D366]/40
+              bg-[#25D366]
               px-7
               py-3.5
               text-sm
               font-bold
-              !text-[#10407A]
+              !text-white
               transition-all
               duration-300
 
               hover:-translate-y-1
-              hover:border-[#10407A]
-              hover:bg-[#10407A]
+              hover:border-[#20BD5A]
+              hover:bg-[#20BD5A]
               hover:!text-white
               hover:shadow-lg
             "
           >
-            <MessageSquare className="h-[18px] w-[18px] transition-transform duration-300 group-hover:scale-110" />
+            <WhatsAppIcon className="h-[18px] w-[18px] !text-white transition-transform duration-300 group-hover:scale-110" />
 
-            <span className="group-hover:!text-white">
+            <span className="!text-white">
               Chat on WhatsApp
             </span>
           </a>

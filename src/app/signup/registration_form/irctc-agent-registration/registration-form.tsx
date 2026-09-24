@@ -189,7 +189,7 @@ export default function RegistrationForm() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#05B851] py-4 text-base font-extrabold !text-white shadow-lg shadow-emerald-500/20 transition-all duration-200 hover:bg-[#049E44] hover:shadow-xl hover:shadow-emerald-500/30"
+        className="group flex w-full items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366] py-4 text-base font-extrabold !text-white shadow-lg shadow-emerald-500/20 transition-all duration-200 hover:border-[#20BD5A] hover:bg-[#20BD5A] hover:shadow-xl hover:shadow-emerald-500/30"
       >
         <WhatsAppIcon className="h-6 w-6 !text-white transition-transform duration-200 group-hover:scale-110" />
         <span>Chat on WhatsApp</span>

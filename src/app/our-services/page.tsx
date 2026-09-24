@@ -4,12 +4,12 @@ import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
-  MessageCircle,
   Sparkles,
 } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
+import { WhatsAppIcon } from "@/components/icons";
 
 const pagePath = "/our-services";
 const pageUrl = canonicalUrl(pagePath);
@@ -619,9 +619,9 @@ export default function ServicesPage() {
                 href="https://wa.me/917835025025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] items-center justify-center gap-3 rounded-[14px] bg-[#10407a] px-7 py-3.5 text-sm font-semibold text-white shadow-[7px_8px_18px_rgba(16,64,122,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#0c315e]"
+                className="inline-flex min-h-[48px] items-center justify-center gap-3 rounded-[14px] border border-[#25D366]/40 bg-[#25D366] px-7 py-3.5 text-sm font-semibold !text-white shadow-[7px_8px_18px_rgba(37,211,102,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-[#20BD5A] hover:bg-[#20BD5A]"
               >
-                <MessageCircle className="h-4 w-4 text-white" />
+                <WhatsAppIcon className="h-4 w-4 !text-white" />
 
                 <span className="text-white">
                   WhatsApp Us

@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone, ArrowUpRight, Clock } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Clock,
+  ChevronRight,
+} from "lucide-react";
+
 import {
   FacebookIcon,
   InstagramIcon,
@@ -10,117 +17,159 @@ import {
   WhatsAppIcon,
 } from "@/components/icons";
 
-const quickLinks = [
-  { label: "About Us", href: "/about-travel-iq" },
-  { label: "Pay Now", href: "/pay-now/" },
-  { label: "Plans & Registration", href: "/signup/registration_form/irctc-agent-registration/" },
-  { label: "Contact Us", href: "/contact-us/" },
-  { label: "IRCTC Agent Registration", href: "/irctc-agent-registration" },
-  { label: "FAQs", href: "/frequently-asked-questions" },
-];
-
 const usefulLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms and Conditions", href: "/term-and-conditions/" },
-  { label: "Refund & Cancellation Policy", href: "/refund-cancellation-policy" },
-  { label: "Our Services", href: "/our-services" },
-  { label: "IRCTC Principal Service Providers", href: "/list-of-irctc-principal-service-providers" },
+  {
+    label: "Refund & Cancellation Policy",
+    href: "/refund-cancellation-policy",
+  },
+  { label: "Disclaimer Policy", href: "/disclaimer-policy" },
+  {
+    label: "Frequently Asked Questions",
+    href: "/frequently-asked-questions",
+  },
+];
+
+const irctcSupportLinks = [
+  {
+    label: "IRCTC Agent Registration",
+    href: "/irctc-agent-registration",
+  },
+  {
+    label: "Plans & Registration",
+    href: "/signup/registration_form/irctc-agent-registration/",
+  },
+  {
+    label: "IRCTC Principal Service Providers",
+    href: "/list-of-irctc-principal-service-providers",
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#040C1A] text-white pt-16 pb-12 overflow-hidden border-t border-white/10">
-      {/* Background ambient glow */}
-      <div className="pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#10407A]/20 blur-[120px]" />
-      <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-[#EE5326]/12 blur-[120px]" />
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#020A17] pb-5 pt-10 text-white sm:pt-12">
+      {/* Background glows */}
+      <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#10407A]/20 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#EE5326]/10 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1320px] px-4 sm:px-8 lg:px-12">
-        {/* ===================================================
-            TOP BRANDING SECTION
-        ==================================================== */}
-        <div className="flex flex-col gap-5 border-b border-white/15 pb-10 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/logo.webp"
-              alt="TravelIQ"
-              width={250}
-              height={60}
-              className="h-auto w-[220px] sm:w-[250px] object-contain"
+      {/* Flight path */}
+      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 select-none overflow-hidden opacity-30">
+        <svg
+          viewBox="0 0 400 400"
+          className="h-full w-full text-sky-500/30"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M -50 380 Q 200 380 350 240 T 380 100"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+          />
+
+          <path
+            d="M -30 395 Q 220 395 370 245 T 395 85"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeDasharray="4 4"
+            className="opacity-60"
+          />
+
+          <g transform="translate(350, 240) rotate(-45) scale(0.8)">
+            <path
+              fill="currentColor"
+              d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
             />
-          </div>
+          </g>
+        </svg>
+      </div>
 
-          <div className="sm:max-w-2xl sm:text-right">
-            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
+      <div className="relative mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
+        {/* ===============================
+            MAIN FOOTER
+        ================================ */}
+        <div className="grid grid-cols-1 gap-10 pb-9 md:grid-cols-2 md:gap-x-10 lg:grid-cols-[1.15fr_0.85fr_1fr] lg:gap-0">
+          {/* ===============================
+              COLUMN 1
+              BRAND + CONTACT
+          ================================ */}
+          <div className="min-w-0 lg:border-r lg:border-white/10 lg:pr-10 xl:pr-14">
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo.webp"
+                alt="TravelIQ"
+                width={210}
+                height={52}
+                className="h-auto w-[170px] object-contain brightness-125 contrast-110 sm:w-[185px]"
+              />
+            </Link>
+
+            <h2 className="mt-4 text-xl font-bold tracking-tight text-white sm:text-2xl">
               Your Own Travel{" "}
-              <span className="text-[#EE5326]">Intelligence</span>.
+              <span className="text-[#EE5326]">
+                Intelligence.
+              </span>
             </h2>
 
-            <p className="mt-2.5 text-sm font-medium leading-6 text-white/80">
-              A trusted partner for smarter journeys and better travel-business growth.
+            <p className="mt-2 max-w-sm text-xs leading-5 text-slate-300/80 sm:text-sm">
+              A trusted partner for smarter journeys and better travel-business
+              growth.
             </p>
-          </div>
-        </div>
 
-        {/* ===================================================
-            MAIN 4-COLUMN CONTENT GRID
-        ==================================================== */}
-        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {/* COLUMN 1: CONTACT */}
-          <div>
-            <div className="mb-6">
-              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#EE5326]">
-                CONTACT
-              </h3>
-              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
-            </div>
+            <div className="my-5 h-px max-w-sm bg-white/10" />
 
-            <div className="space-y-5">
-              {/* Office */}
-              <div className="flex items-start gap-3.5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0F2D59] text-[#EE5326] border border-white/10 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3)]">
-                  <MapPin className="h-4.5 w-4.5" />
-                </div>
+            {/* CONTACT */}
+            <div className="space-y-3.5">
+              <div className="flex items-start gap-3">
+                <ContactIcon>
+                  <MapPin className="h-4 w-4" />
+                </ContactIcon>
+
                 <div>
-                  <p className="text-xs font-black uppercase tracking-wider text-white/60">
-                    OFFICE
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    Office
                   </p>
-                  <p className="mt-0.5 text-sm font-medium leading-6 text-white">
+
+                  <p className="mt-0.5 max-w-xs text-xs font-medium leading-5 text-white sm:text-sm">
                     1004G, JMD Megapolis, Sector 48, Gurugram.
                   </p>
                 </div>
               </div>
 
-              {/* Email */}
               <a
                 href="mailto:support@traveliq.in"
-                className="group flex items-start gap-3.5 transition-colors"
+                className="group flex items-start gap-3"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0F2D59] text-[#EE5326] border border-white/10 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3)] group-hover:border-[#EE5326]/50">
-                  <Mail className="h-4.5 w-4.5" />
-                </div>
+                <ContactIcon>
+                  <Mail className="h-4 w-4" />
+                </ContactIcon>
+
                 <div>
-                  <p className="text-xs font-black uppercase tracking-wider text-white/60">
-                    EMAIL
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    Email
                   </p>
-                  <p className="mt-0.5 text-sm font-medium text-white group-hover:text-[#EE5326] transition-colors">
+
+                  <p className="mt-0.5 text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
                     support@traveliq.in
                   </p>
                 </div>
               </a>
 
-              {/* Call Us */}
               <a
                 href="tel:+917835025030"
-                className="group flex items-start gap-3.5 transition-colors"
+                className="group flex items-start gap-3"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0F2D59] text-[#EE5326] border border-white/10 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.3)] group-hover:border-[#EE5326]/50">
-                  <Phone className="h-4.5 w-4.5" />
-                </div>
+                <ContactIcon>
+                  <Phone className="h-4 w-4" />
+                </ContactIcon>
+
                 <div>
-                  <p className="text-xs font-black uppercase tracking-wider text-white/60">
-                    CALL US
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    Call Us
                   </p>
-                  <p className="mt-0.5 text-sm font-medium text-white group-hover:text-[#EE5326] transition-colors">
+
+                  <p className="mt-0.5 text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
                     +91 78350 25030
                   </p>
                 </div>
@@ -128,170 +177,195 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* COLUMN 2: QUICK LINKS */}
-          <div>
-            <div className="mb-6">
-              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#EE5326]">
-                QUICK LINKS
-              </h3>
-              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
-            </div>
+          {/* ===============================
+              COLUMN 2
+              USEFUL LINKS
+          ================================ */}
+          <div className="min-w-0 md:border-r md:border-white/10 md:pr-8 lg:px-10 xl:px-12">
+            <SectionHeading>Useful Links</SectionHeading>
 
-            <ul className="space-y-3.5">
-              {quickLinks.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-center justify-between text-sm font-semibold text-white/90 transition-colors hover:text-[#EE5326]"
-                  >
-                    <span>{item.label}</span>
-                    <ArrowUpRight className="h-4 w-4 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* COLUMN 3: USEFUL LINKS */}
-          <div>
-            <div className="mb-6">
-              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#EE5326]">
-                USEFUL LINKS
-              </h3>
-              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
-            </div>
-
-            <ul className="space-y-3.5">
+            <ul className="mt-5 space-y-3.5">
               {usefulLinks.map((item) => (
                 <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-center justify-between text-sm font-semibold text-white/90 transition-colors hover:text-[#EE5326]"
-                  >
-                    <span>{item.label}</span>
-                    <ArrowUpRight className="h-4 w-4 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </Link>
+                  <FooterLink href={item.href}>
+                    {item.label}
+                  </FooterLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ===============================
+              COLUMN 3
+              IRCTC + HOURS + SOCIAL
+          ================================ */}
+          <div className="min-w-0 md:col-span-2 md:border-t md:border-white/10 md:pt-8 lg:col-span-1 lg:border-t-0 lg:pl-10 lg:pt-0 xl:pl-12">
+            {/* IRCTC */}
+            <SectionHeading>IRCTC &amp; Support</SectionHeading>
+
+            <ul className="mt-5 space-y-3.5">
+              {irctcSupportLinks.map((item) => (
+                <li key={item.label}>
+                  <FooterLink href={item.href}>
+                    {item.label}
+                  </FooterLink>
                 </li>
               ))}
             </ul>
 
-            {/* Callout Card */}
-            <Link
-              href="/irctc-agent-registration"
-              className="group mt-6 flex items-center justify-between rounded-xl border border-[#EE5326]/40 bg-[#0D2240] p-4 shadow-md transition-all hover:border-[#EE5326]/70 hover:bg-[#0F294D]"
-            >
-              <div>
-                <p className="text-xs font-black uppercase tracking-wider text-[#EE5326]">
-                  BECOME AN AGENT
-                </p>
-                <p className="mt-0.5 text-xs font-semibold text-white">
-                  Grow your travel business
-                </p>
-              </div>
-              <ArrowUpRight className="h-4 w-4 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </div>
+            {/* WORK HOURS */}
+            <div className="mt-7">
+              <SectionHeading>Work Hours</SectionHeading>
 
-          {/* COLUMN 4: WORK HOURS & CONNECT */}
-          <div>
-            <div className="mb-6">
-              <h3 className="text-sm font-black uppercase tracking-[0.2em] text-[#EE5326]">
-                WORK HOURS
-              </h3>
-              <div className="mt-2 h-[2px] w-8 bg-[#EE5326]" />
+              <div className="mt-4 flex max-w-sm items-center gap-3 rounded-xl border border-white/10 bg-[#091A34]/90 p-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/5 bg-[#0B2247] text-[#EE5326]">
+                  <Clock className="h-4 w-4" />
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold text-white">
+                    10:00 AM – 06:00 PM
+                  </p>
+
+                  <p className="mt-0.5 text-xs font-medium text-slate-400">
+                    Monday – Saturday
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Working Hours Card */}
-            <div className="rounded-xl border border-white/10 bg-[#0D2240] p-5 shadow-md">
-              <div className="flex items-center gap-2 text-white">
-                <Clock className="h-4.5 w-4.5 text-[#EE5326]" />
-                <span className="text-xs font-black uppercase tracking-wider text-white">
-                  WORKING HOURS
-                </span>
-              </div>
-              <p className="mt-3 text-sm font-bold text-white">
-                10:00 AM – 06:00 PM
-              </p>
-              <p className="mt-0.5 text-xs font-medium text-white/80">
-                Monday – Saturday
-              </p>
-              <p className="mt-2.5 text-xs text-white/85">
-                We are available in above timings through
-              </p>
-
-              <a
-                href="https://wa.me/917835025025"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3.5 inline-flex w-full items-center justify-center rounded-full bg-[#EE5326] py-2.5 text-xs font-bold text-white shadow hover:bg-[#D9471D] transition-colors"
-              >
-                TravelIQ Support
-              </a>
-            </div>
-
-            {/* Follow TravelIQ */}
+            {/* SOCIAL */}
             <div className="mt-6">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#EE5326] mb-3">
-                FOLLOW TRAVELIQ
-              </p>
-              <div className="flex items-center gap-3">
-                <a
+              <SectionHeading>Follow TravelIQ</SectionHeading>
+
+              <div className="mt-4 flex items-center gap-3">
+                <SocialLink
                   href="https://www.facebook.com/traveliqindia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform hover:scale-110 ${officialSocialIconButtonClass.facebook}`}
+                  label="Facebook"
+                  className={officialSocialIconButtonClass.facebook}
                 >
                   <FacebookIcon className={officialSocialIconClass} />
-                </a>
+                </SocialLink>
 
-                <a
+                <SocialLink
                   href="https://www.instagram.com/traveliqindia/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform hover:scale-110 ${officialSocialIconButtonClass.instagram}`}
+                  label="Instagram"
+                  className={officialSocialIconButtonClass.instagram}
                 >
                   <InstagramIcon className={officialSocialIconClass} />
-                </a>
+                </SocialLink>
 
-                <a
+                <SocialLink
                   href="https://www.linkedin.com/company/traveliq/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className={`flex h-9 w-9 items-center justify-center rounded-[5px] transition-transform hover:scale-110 ${officialSocialIconButtonClass.linkedin}`}
+                  label="LinkedIn"
+                  className={officialSocialIconButtonClass.linkedin}
                 >
                   <LinkedInIcon className={officialSocialIconClass} />
-                </a>
+                </SocialLink>
 
-                <a
+                <SocialLink
                   href="https://wa.me/917835025025"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform hover:scale-110 ${officialSocialIconButtonClass.whatsapp}`}
+                  label="WhatsApp"
+                  className={officialSocialIconButtonClass.whatsapp}
                 >
                   <WhatsAppIcon className={officialSocialIconClass} />
-                </a>
+                </SocialLink>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ===================================================
-            BOTTOM FOOTER BAR
-        ==================================================== */}
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs sm:text-sm text-white/80 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} TravelIQ. All rights reserved.</p>
-          <p>
+        {/* ===============================
+            BOTTOM BAR
+        ================================ */}
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-5 text-[11px] text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-center sm:text-left">
+            © {new Date().getFullYear()} TravelIQ. All rights reserved.
+          </p>
+
+          <p className="text-center sm:text-right">
             Design and Developed by{" "}
-            <span className="font-bold text-white">
+            <span className="font-semibold text-white">
               CoderLala Technologies Pvt. Ltd.
             </span>
           </p>
         </div>
       </div>
     </footer>
+  );
+}
+
+/* =====================================
+   SMALL INTERNAL COMPONENTS
+===================================== */
+
+function SectionHeading({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#EE5326]">
+        {children}
+      </h3>
+
+      <div className="mt-2 h-[2px] w-7 bg-[#EE5326]" />
+    </div>
+  );
+}
+
+function FooterLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex items-center gap-2.5 text-xs font-medium text-slate-200 transition-colors hover:text-[#EE5326] sm:text-sm"
+    >
+      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5" />
+
+      <span>{children}</span>
+    </Link>
+  );
+}
+
+function ContactIcon({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-[#0B1E3B] text-[#EE5326]">
+      {children}
+    </div>
+  );
+}
+
+function SocialLink({
+  href,
+  label,
+  className,
+  children,
+}: {
+  href: string;
+  label: string;
+  className: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 hover:-translate-y-0.5 hover:scale-105 ${className}`}
+    >
+      {children}
+    </a>
   );
 }

@@ -411,16 +411,64 @@ function PolicyPage({
 export default function Page() {
   return (
     <PolicyPage
-      title="Privacy Policy of Travel IQ"
-      intro="We maintain full privacy of your personal information shared with us. We never misuse any of your personal information. Our privacy policy is as given below:"
+      title="Privacy Policy"
+      intro="At Travel IQ Services Private Limited (“we,” “us,” or “our”), we prioritize your privacy. This policy outlines how we collect, use, and protect your personal information when you use our website or services."
       sections={[
         {
-          heading: "1. Collection and Sharing of customer information:",
-          body: "We collect information from you only after you agree to provide it. Any information you give us is held with care and security. We may collect your title, name, gender, email address, postal address, telephone number, mobile number, payment details or bank account details. All this information is processed securely for your protection. Under no circumstances do we rent, trade or share your personal information for marketing purposes without your consent.",
+          heading: "1. Information We Collect",
+          body: `We collect the following data to provide our services:
+
+- Personal Information: Full name, date of birth, passport details, email, phone number, and billing address.
+- Booking Details: Travel dates, itinerary preferences, and payment information processed securely through payment gateways.
+- Technical Data: IP address, browser type, device information, and cookies.`,
         },
         {
-          heading: "2. Intellectual Property Rights:",
-          body: "All content included on this site, such as text, graphics, logos, button icons, images and software, is the property of Travel IQ Services Private Limited.",
+          heading: "2. How We Use Your Information",
+          body: `We may use your information:
+
+- To process bookings and deliver tickets.
+- To communicate booking confirmations, updates, or disruptions.
+- To improve our services and help prevent fraud.
+- For legal and regulatory compliance, including applicable tax records and fraud investigations.
+
+Marketing: We may send promotional offers and service-related communications. You can unsubscribe from marketing communications using the unsubscribe option provided in applicable emails.`,
+        },
+        {
+          heading: "3. Data Sharing",
+          body: `We share personal information only when necessary to provide our services or comply with applicable requirements:
+
+- Travel Providers: Including railways and other applicable travel service providers to fulfil bookings.
+- Service Partners: Including payment processors and IT/service providers involved in delivering our services.
+- Legal Requirements: Where disclosure is required by law or necessary to protect our legal rights.
+
+We do not sell your personal information to third parties.`,
+        },
+        {
+          heading: "4. Data Security",
+          body: `We implement measures designed to protect your personal information, including:
+
+- SSL/TLS encryption for data transmission.
+- Secure systems with appropriate access controls.
+- Security monitoring and reviews.
+
+Despite these measures, no system or method of electronic transmission is completely secure. Please keep your account credentials confidential and secure.`,
+        },
+        {
+          heading: "5. Your Rights",
+          body: `Subject to applicable law, you may have the right to:
+
+- Access: Request information about or a copy of your personal data.
+- Correct: Request correction of inaccurate or incomplete information.
+- Delete: Request deletion of your personal information where applicable by law.
+- Object: Opt out of certain marketing communications or object to certain processing where applicable.
+
+To exercise these rights or ask questions regarding your personal information, contact us at privacy@traveliq.in.`,
+        },
+        {
+          heading: "6. Changes to This Policy",
+          body: `We may update this Privacy Policy periodically. Where appropriate, significant changes may be communicated through our website or other suitable means.
+
+Last Updated: 15/05/2025`,
         },
       ]}
     />

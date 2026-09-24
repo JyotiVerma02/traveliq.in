@@ -19,6 +19,13 @@ export function duplicatePageDestination(path: string): string | undefined {
   if (parts.length !== 1 && parts[0] !== "pages") return undefined;
   const slug = parts.at(-1) ?? "";
 
+  if (slug === "why-should-i-register-for-irctc-agent-login") {
+    return "/benefits-of-irctc-agent-registration";
+  }
+  if (slug === "benefits-of-irctc-agent-registration" && parts[0] === "pages") {
+    return "/benefits-of-irctc-agent-registration";
+  }
+
   if (["pay-now", "pay-us", "payus"].includes(slug)) return "/pay-now";
   if (["term-and-conditions", "terms-and-conditions"].includes(slug)) return "/term-and-conditions";
   if (["about-travel-iq"].includes(slug)) return "/about-travel-iq";
@@ -34,8 +41,6 @@ export function duplicatePageDestination(path: string): string | undefined {
 
   const irctcAliases = [
     "irctc-plans",
-    "why-should-i-register-for-irctc-agent-login",
-    "benefits-of-irctc-agent-registration",
     "fees-and-pricing-structure-irctc-agent",
     "irctc-agent-id-lowest-pnr-charge",
     "irctc-authorized-agent-registration-fee",
@@ -67,6 +72,7 @@ export function canonicalUrl(path = "/") {
 export const staticSitemapPaths = [
   "/",
   "/irctc-agent-registration",
+  "/benefits-of-irctc-agent-registration",
   "/signup/registration_form/irctc-agent-registration",
   "/signup/registration_form/irctc-agent-registration-details",
   "/our-services",
@@ -82,6 +88,7 @@ export const staticSitemapPaths = [
   "/video-gallery",
   "/pay-now",
   "/privacy-policy",
+  "/disclaimer-policy",
   "/refund-cancellation-policy",
   "/term-and-conditions",
   "/list-of-irctc-principal-service-providers",

@@ -369,8 +369,11 @@ function TermsPage({
         {/* Footer note */}
         <footer className="terms-footer">
           <p>
-            If you have any questions about these Terms, please contact us at{" "}
-            <a href="mailto:support@traveliq.in">support@traveliq.in</a>.
+            Travel IQ Services Private Limited · {" "}
+            <a href="https://traveliq.in">traveliq.in</a> ·{" "}
+            <a href="mailto:support@traveliq.in">support@traveliq.in</a> ·{" "}
+            <a href="tel:+917835025030">+91 78350 25030</a> · Unit 1004G,
+            JMD Megapolis, Sector 48, Gurugram - 122018
           </p>
         </footer>
       </div>
@@ -381,33 +384,42 @@ function TermsPage({
 export default function TermAndConditionsPage() {
   return (
     <TermsPage
-      title="Terms and Conditions of TravelIQ"
-      intro="Last updated: 21/01/2022. Please read these Terms of Use carefully before using the https://traveliq.in website operated by Travel IQ Services Private Limited."
+      title="Terms & Conditions"
+      intro="Please read carefully before using our services. Effective Date: 19-04-2025 · Last Updated: 19-08-2025. Welcome to Travel IQ Services Private Limited (“we”, “our”, “us”), accessible at https://traveliq.in. By accessing or using our website/portal for train ticket booking services, you (“user”, “you”, “customer”, or “agent”) agree to be bound by these Terms & Conditions."
       sections={[
         {
-          heading: "1. Acceptance of Terms",
-          body: "By accessing or using the TravelIQ website and services, you agree to be bound by these Terms and Conditions and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.",
+          heading: "Services Provided",
+          body: "Travel IQ Services Private Limited facilitates the booking, cancellation, and refund of train tickets through authorized APIs and partners.\nWe act only as a booking facilitator and not as the operator of train services.\nWe are not responsible for train delays, cancellations, seat availability, or schedule changes made by Indian Railways.",
         },
         {
-          heading: "2. Intellectual Property",
-          body: "The Service and its original content, features, and functionality (including text, graphics, logos, images, icons, and software) are and will remain the exclusive property of Travel IQ Services Private Limited and its licensors.",
+          heading: "User Responsibilities",
+          body: "You must provide accurate passenger details (name, age, gender, ID proof, etc.) at the time of booking.\nYou are responsible for maintaining the confidentiality of your login credentials.\nAny misuse, fraudulent booking, or violation of Indian Railways rules may result in suspension or termination of your account.",
         },
         {
-          heading: "3. Links to Other Websites",
-          body: "Our Service may contain links to third-party web sites or services that are not owned or controlled by Travel IQ. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites or services.",
+          heading: "Payments & Charges",
+          body: "All payments are processed securely through our integrated payment gateways (PhonePe or other approved partners).\nService charges, payment gateway fees, and applicable taxes may apply in addition to ticket fares.\nWe do not store sensitive financial information such as debit/credit card details, UPI, or banking credentials.",
         },
         {
-          heading: "4. Termination and Disclaimer",
-          body: "We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever. Your use of the Service is at your sole risk. The Service is provided on an 'AS IS' and 'AS AVAILABLE' basis without warranties of any kind.",
+          heading: "Cancellations & Refunds",
+          body: "Cancellations and refunds are strictly governed by Indian Railways/IRCTC policies.\nRefund processing timelines depend on Indian Railways and the payment gateway.\nService charges, convenience fees, and payment gateway charges are non-refundable.",
         },
         {
-          heading: "5. Governing Law and Changes",
-          body: "These Terms shall be governed and construed in accordance with the laws of India. We reserve the right, at our sole discretion, to modify or replace these Terms at any time.",
+          heading: "Limitation of Liability",
+          body: "Travel IQ Services Private Limited shall not be liable for train delays, cancellations, or schedule changes.\nWe are not responsible for payment failures, downtime, or technical issues.\nWe are not liable for losses caused by incorrect details entered by the user.\nOur responsibility is limited solely to facilitating the booking and payment process.",
         },
         {
-          heading: "6. Contact Us",
-          body: "If you have any questions about these Terms and Conditions, please contact us at support@traveliq.in or call +91 78350 25030.",
+          heading: "Use of the Portal",
+          body: "Users must comply with all Indian Railways/IRCTC rules and guidelines.\nAny fraudulent, abusive, or unauthorized use of the portal may lead to immediate termination of access.",
         },
+        {
+          heading: "Privacy Policy",
+          body: "We collect personal details (such as name, phone number, email, and ID proof) only for booking and communication purposes.\nYour data is handled responsibly and will not be sold or misused.\nFor more information, please review our Privacy Policy.",
+        },
+        {
+          heading: "Governing Law & Jurisdiction",
+          body: "These Terms & Conditions shall be governed by and construed in accordance with the laws of India.\nAny disputes shall be subject to the exclusive jurisdiction of the courts of Gurugram, Haryana.",
+        },
+      
       ]}
     />
   );
