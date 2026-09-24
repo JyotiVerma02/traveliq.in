@@ -89,7 +89,6 @@
      FONT
   --------------------------------------------------------- */
   --font-tiq:
-    var(--font-poppins),
     Inter,
     ui-sans-serif,
     system-ui,

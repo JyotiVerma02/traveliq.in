@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/Header";
@@ -10,24 +9,6 @@ import {
   getWebSiteSchema,
 } from "@/components/JsonLd";
 import { absoluteUrl, OG_IMAGE_PATH, SITE_URL } from "@/lib/site";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-  adjustFontFallback: true,
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-serif-accent",
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  style: ["italic"],
-  display: "swap",
-  preload: false,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -102,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <head>
      
