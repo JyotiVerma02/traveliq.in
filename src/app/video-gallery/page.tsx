@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   description:
     "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
   alternates: {
-    canonical: "https://traveliq.in/video-gallery",
+    canonical: "https://traveliq.in/video-gallery/",
   },
   openGraph: {
     title: "Video Gallery - IRCTC Agent Guides & Travel Tutorials | TravelIQ",
     description:
       "Watch TravelIQ video guides, IRCTC agent ID registration tutorials, B2B portal activation, train ticket booking guides, and travel agency tips.",
-    url: "https://traveliq.in/video-gallery",
+    url: "https://traveliq.in/video-gallery/",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -128,7 +128,7 @@ const clayCard =
 export default function VideoGalleryPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "https://traveliq.in/" },
-    { name: "Video Gallery", item: "https://traveliq.in/video-gallery" },
+    { name: "Video Gallery", item: "https://traveliq.in/video-gallery/" },
   ]);
 
   return (

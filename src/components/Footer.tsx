@@ -12,17 +12,19 @@ import {
 
 const quickLinks = [
   { label: "About Us", href: "/about-travel-iq" },
-  { label: "Pay Now", href: "/pay-now" },
-  { label: "Register Now", href: "/irctc-agent-registration" },
+  { label: "Pay Now", href: "/pay-now/" },
+  { label: "Plans & Registration", href: "/signup/registration_form/irctc-agent-registration/" },
+  { label: "Contact Us", href: "/contact-us/" },
   { label: "IRCTC Agent Registration", href: "/irctc-agent-registration" },
   { label: "FAQs", href: "/frequently-asked-questions" },
 ];
 
 const usefulLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms and Conditions", href: "/terms-and-conditions" },
+  { label: "Terms and Conditions", href: "/term-and-conditions/" },
   { label: "Refund & Cancellation Policy", href: "/refund-cancellation-policy" },
   { label: "Our Services", href: "/our-services" },
+  { label: "IRCTC Principal Service Providers", href: "/list-of-irctc-principal-service-providers" },
 ];
 
 export default function Footer() {

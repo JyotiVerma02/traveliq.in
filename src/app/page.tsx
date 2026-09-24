@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import PartnerLogos from "@/components/PartnerLogos";
 import Services from "@/components/Services";
-import FaqSection from "@/components/FaqSection";
 import WhyWeBetter from "@/components/WhyWeBetter";
 import Testimonials from "@/components/Testimonials";
 import LatestPosts from "@/components/OurNews";
@@ -51,7 +50,6 @@ export default function HomePage() {
       <Hero />
       <PartnerLogos />
       <Services />
-      <FaqSection />
       <WhyWeBetter />
       <Testimonials />
       <LatestPosts />

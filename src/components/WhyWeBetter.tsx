@@ -30,7 +30,7 @@ const quickLinks = [
   {
     title: "Book Tickets Anytime",
     subtitle: "24/7 B2B Ticket Booking Portal",
-    href: "#",
+    href: "https://b2b.traveliq.in",
     Icon: TicketIcon,
     iconBg:
       "bg-[#EE5326] !text-white shadow-[0_8px_18px_rgba(238,83,38,0.30)] hover:shadow-[0_12px_26px_rgba(238,83,38,0.42)]",
@@ -705,7 +705,7 @@ export default function WhyWeBetter() {
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
                 {quickLinks.map((item, index) => {
-                  const isInternal = item.href === "#";
+                  const isInternal = item.href.startsWith("/");
 
                   return (
                     <Reveal

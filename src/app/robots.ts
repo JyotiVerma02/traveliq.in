@@ -8,10 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         disallow: [
-          "/pay-us",
-          "/payus",
-          "/terms-and-conditions",
-          "/api/",
           "/admin/",
           "/_next/",
         ],

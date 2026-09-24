@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-import sourceUrls from "../../all-urls.json";
-import { canonicalUrl, staticSitemapPaths } from "@/lib/site";
+import { canonicalPath, canonicalUrl, staticSitemapPaths } from "@/lib/site";
 
 const staticRouteMeta: Record<
   string,
@@ -43,16 +42,21 @@ const staticRouteMeta: Record<
   "/pay-now": { changeFrequency: "monthly", priority: 0.7 },
   "/privacy-policy": { changeFrequency: "yearly", priority: 0.3 },
   "/refund-cancellation-policy": { changeFrequency: "yearly", priority: 0.3 },
-  "/terms-and-conditions": { changeFrequency: "yearly", priority: 0.3 },
+  "/term-and-conditions": { changeFrequency: "yearly", priority: 0.3 },
+  "/list-of-irctc-principal-service-providers": {
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
 };
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const sourcePaths = sourceUrls.map(({ url }) => new URL(url).pathname);
-  const paths = [...new Set([...staticSitemapPaths, ...sourcePaths])];
+  // The old URL inventory is retained in all-urls.json for the migration.
+  // Only implemented frontend pages belong in the current sitemap.
+  const paths = [...new Set(staticSitemapPaths.map(canonicalPath))];
 
   return paths.map((path) => ({
     url: canonicalUrl(path),
-    ...(staticRouteMeta[path] ?? {
+    ...(staticRouteMeta[path.replace(/\/$/, "") || "/"] ?? {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     }),

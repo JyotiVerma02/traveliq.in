@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Read Travel IQ Services Private Limited's privacy policy regarding data collection, protection, and security.",
   alternates: {
-    canonical: "https://traveliq.in/privacy-policy",
+    canonical: "https://traveliq.in/privacy-policy/",
   },
   openGraph: {
     title: "Privacy Policy | TravelIQ",
     description:
       "Read Travel IQ Services Private Limited's privacy policy regarding data collection, protection, and security.",
-    url: "https://traveliq.in/privacy-policy",
+    url: "https://traveliq.in/privacy-policy/",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

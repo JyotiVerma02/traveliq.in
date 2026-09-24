@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { getPostBySlug } from "@/lib/local-content";
 
 const news = [
   {
@@ -293,7 +294,7 @@ export default function OurNews() {
 
                   {/* Read article */}
                   <div className="mt-auto pt-5">
-                    <Link
+                    {getPostBySlug(item.href.split("/").at(-1)!) ? <Link
                       href={item.href}
                       className="
                         group/link
@@ -335,7 +336,7 @@ export default function OurNews() {
                           group-hover/link:translate-x-0.5
                         "
                       />
-                    </Link>
+                    </Link> : <span className="text-xs text-slate-500">Article unavailable</span>}
                   </div>
                 </div>
               </article>
@@ -348,7 +349,7 @@ export default function OurNews() {
         ======================================================= */}
         <Reveal className="mt-12 flex justify-center">
           <Link
-            href="/pages/irctc-railway-refund-rule"
+            href="/frequently-asked-questions/"
             className="
               group
               inline-flex
@@ -374,7 +375,7 @@ export default function OurNews() {
             "
           >
             <span className="!text-current transition-colors duration-300 group-hover:!text-white">
-              View All News Articles
+              View IRCTC FAQs
             </span>
 
             <span

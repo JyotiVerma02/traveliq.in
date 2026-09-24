@@ -1,4 +1,5 @@
 import sanitizeHtml from "sanitize-html";
+import { duplicatePageDestination, SITE_URL } from "./site";
 
 const allowedTags = [
   "a",
@@ -45,13 +46,25 @@ export function sanitizeWordPressHtml(html: string) {
     },
     transformTags: {
       a: (_tagName, attribs) => {
-        const href = attribs.href || "";
+        let href = attribs.href || "";
+        if (href.startsWith("/") || /^https?:\/\//i.test(href)) {
+          try {
+            const url = new URL(href, SITE_URL);
+            const destination = duplicatePageDestination(url.pathname);
+            if (url.origin === SITE_URL && destination) {
+              href = `${destination}/${url.search}${url.hash}`;
+            }
+          } catch {
+            // Leave malformed URLs to the sanitizer's normal handling.
+          }
+        }
         const isExternal = /^https?:\/\//i.test(href);
 
         return {
           tagName: "a",
           attribs: {
             ...attribs,
+            href,
             ...(isExternal
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {}),

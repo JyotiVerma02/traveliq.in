@@ -1,0 +1,31 @@
+{
+  "routes": 24,
+  "internalLinks": 24,
+  "failures": [],
+  "canonicals": {
+    "/about-travel-iq/": "https://traveliq.in/about-travel-iq/",
+    "/contact-us/": "https://traveliq.in/contact-us/",
+    "/frequently-asked-questions/": "https://traveliq.in/frequently-asked-questions/",
+    "/irctc-agent-registration/": "https://traveliq.in/irctc-agent-registration/",
+    "/list-of-irctc-principal-service-providers/": "https://traveliq.in/list-of-irctc-principal-service-providers/",
+    "/our-services/": "https://traveliq.in/our-services/",
+    "/": "https://traveliq.in/",
+    "/pages/services/bus-ticket-booking/": "https://traveliq.in/pages/services/bus-ticket-booking/",
+    "/pages/services/digital-signature-provider-in-gurgaon/": "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon/",
+    "/pages/services/irctc-domestic-packages/": "https://traveliq.in/pages/services/irctc-domestic-packages/",
+    "/pages/services/irctc-tour-packages/": "https://traveliq.in/pages/services/irctc-tour-packages/",
+    "/pages/services/online-air-ticket-booking/": "https://traveliq.in/pages/services/online-air-ticket-booking/",
+    "/pages/services/online-hotel-booking/": "https://traveliq.in/pages/services/online-hotel-booking/",
+    "/pages/services/railway-reservations/": "https://traveliq.in/pages/services/railway-reservations/",
+    "/pay-now/": "https://traveliq.in/pay-now/",
+    "/pay-us/": "https://traveliq.in/pay-now/",
+    "/payus/": "https://traveliq.in/pay-now/",
+    "/privacy-policy/": "https://traveliq.in/privacy-policy/",
+    "/refund-cancellation-policy/": "https://traveliq.in/refund-cancellation-policy/",
+    "/signup/registration_form/irctc-agent-registration/": "https://traveliq.in/signup/registration_form/irctc-agent-registration/",
+    "/signup/registration_form/irctc-agent-registration-details/": "https://traveliq.in/signup/registration_form/irctc-agent-registration-details/",
+    "/term-and-conditions/": "https://traveliq.in/term-and-conditions/",
+    "/terms-and-conditions/": "https://traveliq.in/term-and-conditions/",
+    "/video-gallery/": "https://traveliq.in/video-gallery/"
+  }
+}

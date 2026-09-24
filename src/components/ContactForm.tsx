@@ -4,7 +4,6 @@ import { useState, FormEvent } from "react";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -14,46 +13,14 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (submitting) return;
-
     setError("");
-
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setError("Please complete your name, email, and message.");
       return;
     }
-
-    setSubmitting(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = (await response.json().catch(() => null)) as {
-        message?: string;
-      } | null;
-
-      if (!response.ok) {
-        throw new Error(result?.message || "Unable to send your message.");
-      }
-
-      setSubmitted(true);
-    } catch (submitError) {
-      setError(
-        submitError instanceof Error
-          ? submitError.message
-          : "Unable to send your message."
-      );
-    } finally {
-      setSubmitting(false);
-    }
+    setSubmitted(true);
   };
 
   return (
@@ -70,19 +37,19 @@ export default function ContactForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h4 className="mt-4 text-lg font-bold text-[#08090b]">Thank You!</h4>
+          <h4 className="mt-4 text-lg font-bold text-[#08090b]">Form Preview</h4>
           <p className="mt-1 text-sm text-[#10407A]">
-            Your message has been received. Our TravelIQ support team will get back to you shortly.
+            Your form is complete. This is a preview; your message has not been sent.
           </p>
           <button
             onClick={() => {
               setSubmitted(false);
               setError("");
-              setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+
             }}
             className="mt-6 rounded-full bg-[#EE5326] px-6 py-2 text-xs font-bold text-white transition hover:bg-[#d7491d]"
           >
-            Send Another Message
+            Back to Form
           </button>
         </div>
       ) : (
@@ -174,10 +141,9 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            disabled={submitting}
             className="w-full rounded-full bg-[#EE5326] py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#d7491d] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {submitting ? "Sending..." : "Send Message"}
+            Send Message
           </button>
         </form>
       )}

@@ -23,14 +23,6 @@ export const servicesData: ServiceItem[] = [
     tags: ["AGENTS", "GENAI", "AUTOMATION"],
   },
   {
-    title: "Web Platforms",
-    description:
-      "High-performance web products engineered to scale — from first release to enterprise-grade platforms.",
-    image: "/images/services/bus-tickets.webp",
-    href: "/pages/services/bus-ticket-booking",
-    tags: ["NEXT.JS", "REACT", "NODE.JS"],
-  },
-  {
     title: "Bus Tickets",
     description:
       "TraveliQ is India's leading provider of online bus ticketing services that provide comfortable bus and train travel.",

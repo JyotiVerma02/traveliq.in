@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+TravelIQ is currently a frontend-only Next.js project. There are no application API routes or runtime API requests.
+
+Contact and registration forms retain browser validation and display preview feedback without sending or saving submissions. Registration contact details pass between steps through session storage. Address fields are entered manually.
+
+Legacy page templates read `src/lib/local-content.ts`, which currently has no migrated records. Unavailable legacy pages return 404. The active sitemap lists implemented frontend pages; `all-urls.json` retains the original URL inventory for future migration. Backend integration can be added after the frontend is complete.
 
 ## Getting Started
 

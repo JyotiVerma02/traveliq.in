@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
-import { getPostBySlug } from "@/lib/wordpress";
+import { getPostBySlug } from "@/lib/local-content";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
-import { canonicalUrl, SITE_URL, absoluteUrl } from "@/lib/site";
+import { canonicalUrl, SITE_URL, absoluteUrl, duplicatePageDestination } from "@/lib/site";
 import { sanitizeWordPressHtml } from "@/lib/sanitize";
 
 interface PageProps {
@@ -16,6 +16,8 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  const destination = duplicatePageDestination(`/pages/${slug.join("/")}`);
+  if (destination) permanentRedirect(`${destination}/`);
 
   const postType = slug.length > 1 ? slug[0] : "posts";
   const postSlug = slug[slug.length - 1];
@@ -65,6 +67,8 @@ export async function generateMetadata({
 
 export default async function WordPressPostPage({ params }: PageProps) {
   const { slug } = await params;
+  const destination = duplicatePageDestination(`/pages/${slug.join("/")}`);
+  if (destination) permanentRedirect(`${destination}/`);
 
   const postType = slug.length > 1 ? slug[0] : "posts";
   const postSlug = slug[slug.length - 1];

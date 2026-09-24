@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   description:
     "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
   alternates: {
-    canonical: "https://traveliq.in/pay-now",
+    canonical: "https://traveliq.in/pay-now/",
   },
   openGraph: {
     title: "Pay Now - Official Bank Account Details & Secure Payment | TravelIQ",
     description:
       "Official bank account details for Travel IQ Services Private Limited. Bank Name: HDFC Bank Ltd, A/C: 50200014341411, IFSC: HDFC0003648.",
-    url: "https://traveliq.in/pay-now",
+    url: "https://traveliq.in/pay-now/",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -76,7 +76,7 @@ const clayHover =
 export default function PayNowPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "https://traveliq.in/" },
-    { name: "Pay Now", item: "https://traveliq.in/pay-now" },
+    { name: "Pay Now", item: "https://traveliq.in/pay-now/" },
   ]);
 
   return (

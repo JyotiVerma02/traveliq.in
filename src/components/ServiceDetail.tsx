@@ -82,10 +82,10 @@ export default function ServiceDetail({
           ))}
           <div className="pt-4 text-center">
             <Link
-              href="/irctc-agent-registration"
+              href={slug === "railway-reservations" ? "/irctc-agent-registration/" : "/contact-us/"}
               className="inline-flex rounded-full bg-[#EE5326] px-8 py-3.5 text-sm font-bold text-white shadow-md hover:bg-[#D9471D] transition-transform hover:-translate-y-0.5"
             >
-              Become an IRCTC Agent Now
+              {slug === "railway-reservations" ? "Become an IRCTC Agent Now" : "Enquire About This Service"}
             </Link>
           </div>
         </div>

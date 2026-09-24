@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Read Travel IQ Services Private Limited's refund and cancellation policy for travel bookings and services.",
   alternates: {
-    canonical: "https://traveliq.in/refund-cancellation-policy",
+    canonical: "https://traveliq.in/refund-cancellation-policy/",
   },
   openGraph: {
     title: "Refund & Cancellation Policy | TravelIQ",
     description:
       "Read Travel IQ Services Private Limited's refund and cancellation policy for travel bookings and services.",
-    url: "https://traveliq.in/refund-cancellation-policy",
+    url: "https://traveliq.in/refund-cancellation-policy/",
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",

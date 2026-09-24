@@ -16,7 +16,7 @@ const nav = [
   ["About", "/about-travel-iq"],
   ["Video Gallery", "/video-gallery"],
   ["Contact", "/contact-us"],
-  ["Pay now", "/pay-now"],
+  ["Pay now", "/pay-now/"],
 ] as const;
 
 /* =========================================================
@@ -352,7 +352,7 @@ export default function Header() {
                   PAY NOW
               ============================================= */}
 
-              <NavLink href="/pay-now" active={isActive("/pay-now")}>
+              <NavLink href="/pay-now/" active={isActive("/pay-now/")}>
                 Pay now
               </NavLink>
             </div>

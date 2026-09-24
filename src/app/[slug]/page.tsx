@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 import { canonicalUrl, SITE_URL, absoluteUrl } from "@/lib/site";
 import { sanitizeWordPressHtml } from "@/lib/sanitize";
-import { getContentBySlug } from "@/lib/wordpress";
+import { getContentBySlug } from "@/lib/local-content";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

@@ -34,8 +34,8 @@ for (const absolute of urls) {
     failures.push(`${absolute} uses an unexpected domain`);
   }
 
-  if (parsed.pathname !== "/" && parsed.pathname.endsWith("/")) {
-    failures.push(`${absolute} uses a trailing slash`);
+  if (!parsed.pathname.endsWith("/")) {
+    failures.push(`${absolute} is missing its canonical trailing slash`);
   }
 
   const localUrl = new URL(parsed.pathname, baseUrl).toString();
@@ -54,7 +54,7 @@ for (const absolute of urls) {
   const html = await page.text();
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
 
-  if (canonical && canonical !== absolute) {
+  if (canonical && new URL(canonical).href !== new URL(absolute).href) {
     failures.push(`${absolute} canonical mismatch: ${canonical}`);
   }
 }

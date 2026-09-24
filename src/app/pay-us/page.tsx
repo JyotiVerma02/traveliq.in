@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function PayUsPage() {
-  redirect("/pay-now");
+  permanentRedirect("/pay-now/");
 }

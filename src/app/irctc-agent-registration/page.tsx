@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   JsonLd,
   getBreadcrumbSchema,
   getServiceSchema,
 } from "@/components/JsonLd";
 import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
+import { agentFaqItems } from "@/lib/agent-faqs";
 import {
   CheckCircle2,
   ShieldCheck,
@@ -36,74 +38,7 @@ import {
 const pagePath = "/irctc-agent-registration";
 const pageUrl = canonicalUrl(pagePath);
 
-const faqItems = [
-  {
-    question: "What are the charges or fees for IRCTC agent registration?",
-    answer:
-      "TravelIQ provides registration options with OTP- and DSC-based authentication. Please confirm the current applicable registration fee, GST, and terms before applying.",
-  },
-  {
-    question: "What are the benefits of registering as an IRCTC agent?",
-    answer:
-      "An applicable authorized-agent setup can help a travel business offer railway ticket booking alongside services such as air, bus, hotel, and tour bookings. Booking access and other benefits remain subject to current IRCTC terms.",
-  },
-  {
-    question: "What formalities & documents are required for IRCTC agent registration?",
-    answer:
-      "The applicable process can require identity, address, contact, photograph, signed-form, and authentication information. TravelIQ can confirm the current documents and verification requirements before you apply.",
-  },
-  {
-    question: "Can IRCTC agents book Tatkal tickets?",
-    answer:
-      "Tatkal booking availability for agents is subject to the current IRCTC agent booking rules, applicable opening periods, quotas, passenger limits, and other restrictions. Please confirm the current rules before booking.",
-  },
-  {
-    question: "What is the online link for the IRCTC agent registration form?",
-    answer:
-      "You can fill the online IRCTC agent registration form to register as an authorized IRCTC agent. Use the Register Now link on this page.",
-  },
-  {
-    question: "How do I become an IRCTC agent?",
-    answer:
-      "The process generally includes contacting a Principal Service Provider, completing the online form, paying the applicable charge, submitting documents, verification, and completing the required authentication. Agent access is issued after the applicable steps are completed.",
-  },
-  {
-    question: "How long does it take to become an IRCTC agent?",
-    answer:
-      "Processing time depends on document verification, authentication choice, and applicable onboarding requirements. Confirm the current timeline with TravelIQ before applying.",
-  },
-  {
-    question: "What is OTP-based IRCTC agent login?",
-    answer:
-      "OTP-based login uses verification delivered to the registered mobile number. Device and authentication requirements can change, so confirm the current applicable setup before registration.",
-  },
-  {
-    question: "How do I get an IRCTC agent login?",
-    answer:
-      "IRCTC agent onboarding is handled through the applicable Principal Service Provider process. Contact an authorized PSP and follow the current registration, documentation, verification, and authentication requirements.",
-  },
-  {
-    question: "How is IRCTC agent registration handled?",
-    answer:
-      "IRCTC agent onboarding is handled through the applicable Principal Service Provider (PSP) process. Applicants should contact an authorized PSP and follow the current registration, documentation, verification, and authentication requirements.",
-  },
-  {
-    question: "Can agents book Premium Tatkal tickets?",
-    answer:
-      "Premium Tatkal availability for agents is subject to the current IRCTC booking rules and restrictions. Confirm the applicable policy before booking.",
-  },
-  {
-    question: "Can I start selling train tickets from home?",
-    answer:
-      "Home-based applicants may be able to apply using the address documentation applicable to their registration. Confirm the current requirements with TravelIQ before applying.",
-  },
-  {
-    question:
-      "Do I need any GST number or trade license to become an IRCTC agent?",
-    answer:
-      "No. You do not need a trade license or GST registration to become an IRCTC agent; you need to register as an authorized IRCTC travel agent.",
-  },
-];
+const faqItems = agentFaqItems;
 
 const pricingPlans = [
   {
@@ -123,7 +58,7 @@ const pricingPlans = [
       "Integrated TravelIQ Wallet for Instant Issuance",
     ],
     cta: "Apply for OTP Login",
-    href: "/contact-us",
+    href: "/signup/registration_form/irctc-agent-registration/?plan=otp",
   },
   {
     name: "DSC Agent Login",
@@ -142,7 +77,7 @@ const pricingPlans = [
       "Windows PC & Laptop Compatible",
     ],
     cta: "Apply for DSC Login",
-    href: "/contact-us",
+    href: "/signup/registration_form/irctc-agent-registration/?plan=dsc",
   },
 ];
 
@@ -151,7 +86,7 @@ const resourceCards = [
     title: "IRCTC Registration Fee",
     subtitle: "Registration fee starting from ₹500 + applicable GST",
     desc: "Review the current registration charge, GST, and applicable terms before applying.",
-    link: "/contact-us",
+    link: "/signup/registration_form/irctc-agent-registration/",
     btnText: "Apply Now",
     icon: CreditCard,
   },
@@ -159,7 +94,7 @@ const resourceCards = [
     title: "IRCTC Agent Sign Up",
     subtitle: "Fast Digital Onboarding",
     desc: "Complete the online application and upload the applicable documents. Processing time depends on verification and onboarding requirements.",
-    link: "/contact-us",
+    link: "/signup/registration_form/irctc-agent-registration/",
     btnText: "Register Online",
     icon: UserCheck,
   },
@@ -167,7 +102,7 @@ const resourceCards = [
     title: "Online Registration Form",
     subtitle: "Digital Application",
     desc: "IRCTC agent registration is completed online; the former registration PDF has been replaced by the online form.",
-    link: "/contact-us",
+    link: "/signup/registration_form/irctc-agent-registration/",
     btnText: "Register Online",
     icon: FileText,
   },
@@ -176,24 +111,24 @@ const resourceCards = [
     subtitle: "Applicable monthly maintenance",
     desc: "Monthly maintenance charges may apply according to the selected agent setup and current TravelIQ terms. Confirm the applicable amount before registration.",
     link: "/contact-us",
-    btnText: "View Terms",
+    btnText: "Ask About Charges",
     icon: Wallet,
   },
   {
     title: "Authorized PSP Directory",
     subtitle: "Page 5, Entry 21",
     desc: "Verify TravelIQ on the official Indian Railways Principal Service Provider directory.",
-    link: "https://contents.irctc.co.in/en/IRCTC%20Authorised%20Principal%20Service%20Providers.pdf",
-    btnText: "Verify PSP PDF",
+    link: "/list-of-irctc-principal-service-providers/",
+    btnText: "View PSP Directory",
     icon: ShieldCheck,
-    external: true,
+    external: false,
   },
   {
     title: "ID Activation Status",
     subtitle: "Quick Verification",
-    desc: "Track your document verification and IRCTC ID activation progress online.",
+    desc: "Contact TravelIQ support for your document verification and IRCTC ID activation status.",
     link: "/contact-us",
-    btnText: "Check Status",
+    btnText: "Contact Support",
     icon: CheckCircle2,
   },
 ];
@@ -385,7 +320,7 @@ export default function IrcTcAgentRegistrationPage() {
 
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <Link
-                  href="/contact-us"
+                  href="/signup/registration_form/irctc-agent-registration/"
                   className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#EE5326] px-8 py-4 text-base font-extrabold !text-white shadow-xl shadow-orange-950/40 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-[#D9471D] hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#EE5326] focus:ring-offset-2 focus:ring-offset-[#0B2D5C]"
                 >
                   <span className="!text-white">
@@ -1289,42 +1224,82 @@ export default function IrcTcAgentRegistrationPage() {
       </section>
 
       {/* ===================================================
-          FAQ
+          FAQ SECTION (TRAVELIQ DESIGN)
       ==================================================== */}
-      <section className="border-t border-slate-200/60 bg-[#F6F9FE] py-16 sm:py-24">
-        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-14 max-w-3xl text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#10407A]">
-              <HelpCircle className="h-3.5 w-3.5" />
-              Got Questions?
-            </span>
+      <section id="faq" className="relative overflow-hidden border-t border-[#10407A]/10 bg-[#FFF8F3] py-20 lg:py-28">
+        {/* Background Ambient Glows */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#EE5326]/[0.035] blur-3xl" />
+          <div className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-[#10407A]/[0.035] blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 blur-[120px]" />
+        </div>
 
-            <h2 className="mt-3 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-              Frequently Asked Questions
-            </h2>
+        <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+          {/* Header */}
+          <div className="flex flex-col justify-between gap-7 pb-12 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#EE5326]/15 bg-[#FFF0E9] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#C4320A] shadow-[4px_4px_10px_rgba(238,83,38,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
+                Help &amp; FAQs
+              </div>
+
+              <h2 className="mt-5 max-w-3xl text-3xl font-bold leading-[1.08] tracking-[-0.035em] text-[#0B1728] sm:text-4xl lg:text-[44px]">
+                Control All Your Bookings &amp; Learn
+                <span className="text-[#EE5326]"> IRCTC Agent Rules</span>
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-sm font-normal leading-7 text-[#697589] sm:text-[15px]">
+                Everything you need to know about IRCTC agent registration, fees, Tatkal booking rules, documents, and onboarding.
+              </p>
+            </div>
+
+            <Link
+              href="/frequently-asked-questions"
+              className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full border border-white bg-[#FFF8F3] px-5 py-3 text-xs font-bold text-[#10407A] shadow-[7px_7px_15px_rgba(16,64,122,0.10),-6px_-6px_14px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#10407A] hover:!text-white hover:shadow-[8px_8px_18px_rgba(16,64,122,0.18)]"
+            >
+              <span>See More FAQs</span>
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#10407A]/[0.07] text-sm transition-all duration-300 group-hover:translate-x-0.5 group-hover:bg-white/10 group-hover:text-white">
+                →
+              </span>
+            </Link>
           </div>
 
-          <div className="space-y-4">
-            {faqItems.map((item, idx) => (
-              <details
-                key={idx}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:border-[#10407A]/20 hover:shadow-lg open:shadow-md [&_summary::-webkit-details-marker]:hidden"
-              >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-bold text-[#10407A] sm:text-lg">
-                  <span className="flex items-center gap-3">
-                    <HelpCircle className="h-5 w-5 shrink-0 text-[#EE5326] transition-transform duration-300 group-hover:scale-110" />
+          {/* Grid Content */}
+          <div className="mt-2 ">
 
-                    {item.question}
-                  </span>
 
-                  <ChevronDown className="h-5 w-5 shrink-0 text-slate-400 transition-transform duration-300 group-open:rotate-180" />
-                </summary>
+            {/* Right FAQ Accordions */}
+            <div className="space-y-4 lg:w-full">
+              {faqItems.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group rounded-[24px] border border-white bg-[#FFF8F3] p-5 shadow-[8px_8px_18px_rgba(16,64,122,0.08),-7px_-7px_16px_rgba(255,255,255,0.95)] transition-all duration-300 open:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)] hover:-translate-y-0.5 hover:shadow-[10px_10px_22px_rgba(16,64,122,0.11),-8px_-8px_18px_rgba(255,255,255,0.98)]"
+                  open={index === 0}
+                >
+                  <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-4 text-left focus:outline-none [&::-webkit-details-marker]:hidden">
+                    <div className="flex min-w-0 items-center gap-4">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FFF0E9] font-mono text-[10px] font-semibold text-[#C4320A] shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="min-w-0 text-sm font-semibold leading-6 tracking-[-0.01em] text-[#0B1728] sm:text-base lg:text-[16px]">
+                        {faq.question}
+                      </span>
+                    </div>
 
-                <p className="mt-4 whitespace-pre-line border-t border-slate-100 pl-8 pt-4 text-sm leading-relaxed text-slate-700 sm:text-base">
-                  {item.answer}
-                </p>
-              </details>
-            ))}
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#10407A]/[0.055] text-lg font-medium leading-none text-[#10407A] shadow-[4px_4px_9px_rgba(16,64,122,0.08),-3px_-3px_7px_rgba(255,255,255,0.95)] transition-all duration-300 group-open:bg-[#EE5326] group-open:text-white">
+                      <span className="block group-open:hidden">+</span>
+                      <span className="hidden group-open:block">−</span>
+                    </span>
+                  </summary>
+
+                  <div className="mt-5 border-t border-[#10407A]/[0.08] pt-5 pl-0 sm:pl-[52px]">
+                    <p className="max-w-2xl text-xs font-medium leading-6 text-[#697589] sm:text-sm sm:leading-7">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1332,40 +1307,219 @@ export default function IrcTcAgentRegistrationPage() {
       {/* ===================================================
           BOTTOM CTA
       ==================================================== */}
-      <section className="bg-gradient-to-r from-[#040C1A] via-[#0B2D5C] to-[#10407A] py-16 text-white sm:py-20">
-        <div className="container mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black sm:text-5xl">
-            Ready to Start Your IRCTC Travel Agency?
-          </h2>
+  {/* ===================================================
+    FINAL CTA
+==================================================== */}
+<section className="relative overflow-hidden border-t border-slate-200 bg-[#F7FAFE] py-16 sm:py-20">
+  {/* Soft background decorations */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 overflow-hidden"
+  >
+    <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#10407A]/[0.05] blur-3xl" />
 
-          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
-            Register with TravelIQ and get guidance through the applicable
-            registration process.
-          </p>
+    <div className="absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-[#EE5326]/[0.07] blur-3xl" />
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact-us"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#EE5326] px-9 py-4 text-base font-extrabold !text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-[#D9471D] hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#EE5326] focus:ring-offset-2 focus:ring-offset-[#0B2D5C]"
-            >
-              <span className="!text-white">Apply Online Now</span>
+    <div className="absolute left-1/2 top-1/2 h-56 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 blur-3xl" />
+  </div>
 
-              <ArrowRight className="h-5 w-5 !text-white transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      className="
+        relative
+        mx-auto
+        max-w-5xl
+        overflow-hidden
+        rounded-[32px]
+        border
+        border-[#10407A]/10
+        bg-white
+        px-6
+        py-10
+        text-center
+        shadow-[0_20px_60px_rgba(15,23,42,0.08)]
+        sm:px-10
+        sm:py-12
+        lg:px-16
+      "
+    >
+      {/* Card decoration */}
+      <div
+        aria-hidden="true"
+        className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#10407A] via-[#EE5326] to-[#10407A]"
+      />
 
-            <a
-              href="https://wa.me/917835025025"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-base font-bold !text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50"
-            >
-              <MessageSquare className="h-5 w-5 !text-white transition-transform duration-300 group-hover:scale-110" />
+      <div
+        aria-hidden="true"
+        className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-[#EE5326]/[0.05] blur-2xl"
+      />
 
-              <span className="!text-white">Chat on WhatsApp</span>
-            </a>
-          </div>
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-[#10407A]/[0.05] blur-2xl"
+      />
+
+      <div className="relative">
+        {/* Badge */}
+        <span
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-[#EE5326]/15
+            bg-[#FFF4EF]
+            px-4
+            py-2
+            text-[11px]
+            font-bold
+            uppercase
+            tracking-[0.16em]
+            text-[#D9471D]
+          "
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#EE5326] opacity-30" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#EE5326]" />
+          </span>
+
+          Start Your Travel Business
+        </span>
+
+        {/* Heading */}
+        <h2
+          className="
+            mx-auto
+            mt-5
+            max-w-3xl
+            text-3xl
+            font-black
+            leading-tight
+            tracking-[-0.035em]
+            text-[#0B1F3A]
+            sm:text-4xl
+            lg:text-[42px]
+          "
+        >
+          Ready to Start Your{" "}
+          <span className="text-[#10407A]">
+            IRCTC Travel Agency?
+          </span>
+        </h2>
+
+        {/* Description */}
+        <p
+          className="
+            mx-auto
+            mt-4
+            max-w-2xl
+            text-sm
+            leading-7
+            text-slate-600
+            sm:text-base
+          "
+        >
+          Register with TravelIQ and get guidance through the applicable
+          IRCTC agent registration, documentation and onboarding process.
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link
+            href="/signup/registration_form/irctc-agent-registration/"
+            className="
+              group
+              inline-flex
+              min-w-[190px]
+              items-center
+              justify-center
+              gap-2
+              rounded-full
+              bg-[#EE5326]
+              px-7
+              py-3.5
+              text-sm
+              font-extrabold
+              !text-white
+              shadow-[0_10px_25px_rgba(238,83,38,0.22)]
+              transition-all
+              duration-300
+
+              hover:-translate-y-1
+              hover:bg-[#D9471D]
+              hover:shadow-[0_15px_30px_rgba(238,83,38,0.28)]
+
+              focus:outline-none
+              focus:ring-2
+              focus:ring-[#EE5326]
+              focus:ring-offset-2
+            "
+          >
+            Apply Online Now
+
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+
+          <a
+            href="https://wa.me/917835025025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              group
+              inline-flex
+              min-w-[190px]
+              items-center
+              justify-center
+              gap-2
+              rounded-full
+              border
+              border-[#10407A]/20
+              bg-[#F6F9FE]
+              px-7
+              py-3.5
+              text-sm
+              font-bold
+              !text-[#10407A]
+              transition-all
+              duration-300
+
+              hover:-translate-y-1
+              hover:border-[#10407A]
+              hover:bg-[#10407A]
+              hover:!text-white
+              hover:shadow-lg
+            "
+          >
+            <MessageSquare className="h-[18px] w-[18px] transition-transform duration-300 group-hover:scale-110" />
+
+            <span className="group-hover:!text-white">
+              Chat on WhatsApp
+            </span>
+          </a>
         </div>
-      </section>
+
+        {/* Trust line */}
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium text-slate-500">
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+            Registration guidance
+          </span>
+
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+            Document support
+          </span>
+
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+            Agent assistance
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
