@@ -148,7 +148,7 @@ export default function Header() {
             HEADER INNER — STATIC 80px HEIGHT
         =================================================== */}
 
-        <div className={`mx-auto flex w-full max-w-[1500px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-10 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[78px]"}`}>
+        <div className={`mx-auto flex w-full max-w-[2300px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-6 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[72px]"}`}>
           {/* =================================================
               LOGO
           ================================================= */}
@@ -160,14 +160,14 @@ export default function Header() {
             className="relative z-[120] flex shrink-0 items-center rounded-lg outline-none transition-transform duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2"
           >
             <Image
-              src="/logo.webp"
+              src="/logo1.webp"
               alt="TravelIQ"
-              width={1166}
-              height={280}
+              width={1200}
+              height={720}
               quality={70}
               priority
-              sizes="(max-width: 639px) 156px, (max-width: 1023px) 184px, (max-width: 1279px) 196px, 214px"
-              className="h-auto w-[156px] object-contain sm:w-[184px] lg:w-[196px] xl:w-[214px]"
+              sizes="(max-width: 639px) 120px, (max-width: 1023px) 120px, (max-width: 1279px) 120px, 120px"
+              className="h-auto w-[120px] object-contain"
             />
           </Link>
 
@@ -369,7 +369,7 @@ export default function Header() {
 
             <Link
               href="/irctc-agent-registration"
-              className="group flex items-center gap-1.5 rounded-[10px] bg-[var(--tiq-orange)] px-4 py-2.5 text-[13px] font-bold tracking-[0.03em] !text-white shadow-[0_7px_18px_rgba(238,83,38,0.17)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--tiq-orange-dark)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2"
+              className="group flex items-center gap-1.5 rounded-[10px] bg-[var(--tiq-orange)] px-4 py-2.5 text-[13px] font-bold tracking-[0.03em] !text-white shadow-[0_7px_18px_rgba(238,83,38,0.17)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--tiq-orange-dark)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2 2xl:px-5 2xl:py-3 2xl:text-[15px]"
             >
               <span className="!text-white">Become an Agent</span>
 
@@ -386,7 +386,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with TravelIQ on WhatsApp"
-              className="group flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#25D366] !text-white shadow-[0_6px_16px_rgba(37,211,102,0.15)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_20px_rgba(37,211,102,0.20)] focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
+              className="group flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#25D366] !text-white shadow-[0_6px_16px_rgba(37,211,102,0.15)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_9px_20px_rgba(37,211,102,0.20)] focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 2xl:h-12 2xl:w-12"
             >
               <WhatsAppIcon className="h-5 w-5 !text-white transition-transform duration-200 group-hover:scale-110" />
             </a>
@@ -422,11 +422,11 @@ export default function Header() {
         <div
           className={`overflow-hidden border-t border-[#10407A]/[0.06] bg-white transition-[max-height,opacity] duration-300 xl:hidden ${
             open
-            ? `opacity-100 ${isScrolled ? "max-h-[calc(100vh-66px)] sm:max-h-[calc(100vh-72px)]" : "max-h-[calc(100vh-72px)] sm:max-h-[calc(100vh-78px)]"}`
+            ? `opacity-100 ${isScrolled ? "max-h-[calc(100dvh-62px)] sm:max-h-[calc(100dvh-68px)]" : "max-h-[calc(100dvh-68px)] sm:max-h-[calc(100dvh-74px)]"}`
             : "max-h-0 opacity-0"
           }`}
         >
-          <div className="mx-3 mb-3 mt-3 max-h-[calc(100vh-92px)] overflow-y-auto rounded-[16px] border border-[#10407A]/10 bg-white p-2.5 shadow-[0_14px_35px_rgba(4,12,26,0.09)] sm:max-h-[calc(100vh-98px)] xl:max-h-[calc(100vh-104px)]">
+          <div className="mx-3 mb-3 mt-3 max-h-[calc(100dvh-84px)] overflow-y-auto overscroll-contain rounded-[16px] border border-[#10407A]/10 bg-white p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_14px_35px_rgba(4,12,26,0.09)] sm:max-h-[calc(100dvh-90px)] xl:max-h-[calc(100dvh-96px)]">
             {/* ===============================================
                 MOBILE NAV
             =============================================== */}
@@ -590,7 +590,7 @@ export default function Header() {
       ========================================================= */}
 
       {!isHome && (
-        <div className={`transition-[height] duration-300 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[78px]"}`} aria-hidden="true" />
+        <div className={`transition-[height] duration-300 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[72px]"}`} aria-hidden="true" />
       )}
     </>
   );
@@ -612,7 +612,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
+      className={`group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] 2xl:px-4 2xl:py-3 2xl:text-[17px] ${
         active
           ? "text-[var(--tiq-orange)]"
           : "text-[var(--tiq-navy)] hover:text-[var(--tiq-orange)]"

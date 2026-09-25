@@ -50,23 +50,23 @@ export default function Services() {
 
   const handleScroll = (direction: "left" | "right") => {
     if (!scrollContainerRef.current) return;
-    const scrollAmount = direction === "left" ? -380 : 380;
+    const scrollAmount = scrollContainerRef.current.clientWidth;
     scrollContainerRef.current.scrollBy({
-      left: scrollAmount,
+      left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
 
   return (
     <section className="relative overflow-hidden bg-[#F4F7FB]">
-      <div className="relative mx-auto max-w-[1500px] bg-[#F4F7FB] px-0 py-12 sm:py-14 lg:py-16">
+      <div className="relative mx-auto max-w-[1400px] bg-[#F4F7FB] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         {/* Section Header with Left/Right Controls */}
         <div className="flex flex-col items-center justify-between gap-6 px-5 sm:flex-row sm:items-end sm:px-8 lg:px-12">
           <Reveal className="w-full max-w-2xl text-center sm:text-left">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C4320A]">
               Our Services
             </p>
-            <h2 className="mt-3 whitespace-nowrap text-[clamp(0.95rem,4.8vw,3.75rem)] font-bold tracking-[-0.055em] text-[#071F3D]">
+            <h2 className="mt-3 text-balance text-[clamp(1.65rem,6vw,3.75rem)] font-bold leading-tight tracking-[-0.055em] text-[#071F3D]">
               Best travel services in{" "}
               <span className="text-[#C4320A]">India</span>
             </h2>
@@ -145,12 +145,11 @@ export default function Services() {
             snap-mandatory
             gap-6
             overflow-x-auto
-            px-5
+            pl-1
+            pr-0
             pb-3
             pt-2
             scrollbar-none
-            sm:px-8
-            lg:px-12
           "
           style={{
             scrollbarWidth: "none",
@@ -166,7 +165,7 @@ export default function Services() {
               delay={Math.min(index, 4) * 0.08}
               direction="right"
               distance={24}
-              className="flex h-[460px] w-[280px] shrink-0 snap-start xs:w-[320px] sm:w-[360px] lg:w-[380px]"
+              className="service-slide flex h-[460px] min-w-0 shrink-0 snap-start"
             >
               <Link
                 href={href}
@@ -197,7 +196,7 @@ export default function Services() {
                     fill
                     loading="lazy"
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
-                    sizes="(max-width: 479px) 280px, (max-width: 639px) 320px, (max-width: 1023px) 360px, 380px"
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071A35]/65 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />

@@ -125,6 +125,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -226,5 +227,29 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.service-slide,
+.testimonial-slide {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 640px) {
+  .service-slide,
+  .testimonial-slide {
+    flex-basis: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-slide,
+  .testimonial-slide {
+    flex-basis: calc((100% - 3rem) / 3);
   }
 }

@@ -52,7 +52,10 @@ const testimonials = [
 export default function Testimonials() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const handleScroll = (direction: "left" | "right") => {
-    scrollContainerRef.current?.scrollBy({ left: direction === "left" ? -380 : 380, behavior: "smooth" });
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const scrollAmount = container.clientWidth;
+    container.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
   };
 
   return (
@@ -171,11 +174,11 @@ export default function Testimonials() {
 
         <div
           ref={scrollContainerRef}
-          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-3 scrollbar-none"
+          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-3 pl-1 pr-0 scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y" }}
         >
           {testimonials.map((testimonial, index) => (
-            <Reveal key={testimonial.name} delay={index * 0.1} className="w-[285px] shrink-0 snap-start sm:w-[340px]">
+            <Reveal key={testimonial.name} delay={index * 0.1} className="testimonial-slide min-w-0 shrink-0 snap-start">
             <article className="group relative flex min-h-[410px] flex-col justify-between overflow-hidden rounded-[30px] border border-[#10407A]/12 bg-[#FFF8F3] p-6 shadow-[10px_10px_24px_rgba(16,64,122,0.10),-8px_-8px_20px_rgba(255,255,255,0.96)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:shadow-[14px_14px_30px_rgba(16,64,122,0.13),-10px_-10px_24px_rgba(255,255,255,0.98)]">
               {/* =================================================
                   ORANGE CORNER ACCENT

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <g transform="translate(10, 10)">
+    <path d="M5 45 C15 15 45 5 55 25 C40 22 25 32 15 48 Z" fill="#ED1C24"/>
+    <circle cx="38" cy="22" r="6" fill="#FFC20E"/>
+    <path d="M20 48 C30 35 50 28 58 35 C45 38 32 45 20 48 Z" fill="#B3141A"/>
+  </g>
+  <text x="75" y="45" font-family="'Times New Roman', Georgia, serif" font-weight="bold" font-size="28" fill="#ED1C24" letter-spacing="0.5">AIR INDIA</text>
+  <text x="76" y="60" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9" fill="#B3141A" letter-spacing="2">AIRLINE PARTNER</text>
+</svg>
