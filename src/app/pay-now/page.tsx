@@ -86,7 +86,7 @@ export default function PayNowPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative isolate min-h-[550px] overflow-hidden sm:min-h-[590px] lg:min-h-[620px]">
+      <section className="relative isolate min-h-[470px] overflow-hidden sm:min-h-[510px] md:min-h-[540px] lg:min-h-[560px]">
         {/* Background image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -110,7 +110,7 @@ export default function PayNowPage() {
         <div className="absolute -right-24 bottom-10 -z-10 h-80 w-80 rounded-full bg-[#EE5326]/10 blur-3xl" />
 
         {/* Hero content */}
-        <div className="mx-auto flex min-h-[550px] w-full max-w-7xl flex-col items-center justify-center px-4 py-14 text-center sm:min-h-[590px] sm:px-6 lg:min-h-[620px] lg:px-8">
+        <div className="mx-auto flex min-h-[470px] w-full max-w-7xl flex-col items-center justify-start px-4 pb-24 pt-11 text-center sm:min-h-[510px] sm:px-6 sm:pt-14 md:min-h-[540px] lg:min-h-[560px] lg:px-8 lg:pt-16">
           {/* Breadcrumb */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/80 px-4 py-2 shadow-[6px_7px_18px_rgba(16,64,122,0.08),-5px_-5px_15px_rgba(255,255,255,0.9)] backdrop-blur-md sm:px-5 sm:py-2.5">
             <Link
@@ -128,7 +128,7 @@ export default function PayNowPage() {
           </div>
 
           {/* Hero text */}
-          <div className="mt-7 flex w-full max-w-4xl flex-col items-center sm:mt-9">
+          <div className="mt-5 flex w-full max-w-4xl flex-col items-center sm:mt-7">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#EE5326]/10 bg-[#FFF0EA]/90 px-4 py-2 text-xs font-bold uppercase tracking-[0.17em] text-[#EE5326] shadow-sm backdrop-blur-sm">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#EE5326]" />
@@ -136,20 +136,20 @@ export default function PayNowPage() {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#0F2E5E] sm:text-5xl md:text-6xl lg:text-[64px]">
+            <h1 className="mt-4 text-balance text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-[-0.035em] text-[#0F2E5E] sm:mt-5 sm:text-5xl md:text-6xl lg:text-[64px]">
               Pay Online{" "}
               <span className="text-[#EE5326]">Securely</span>
             </h1>
 
             {/* Description */}
-            <p className="mt-5 max-w-2xl text-balance text-sm font-medium leading-6 text-[#526174] sm:text-base sm:leading-7">
+            <p className="mt-4 max-w-2xl text-balance text-sm font-medium leading-6 text-[#526174] sm:mt-5 sm:text-base sm:leading-7">
               Complete your payment using the official TravelIQ account
               details below. Please verify all information before making your
               transaction.
             </p>
 
             {/* Trust badges */}
-            <div className="mt-7 flex w-full max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-3">
+            <div className="mt-5 flex w-full max-w-3xl flex-wrap items-center justify-center gap-2 sm:mt-6 sm:gap-3">
               {[
                 {
                   label: "Secure Transaction",

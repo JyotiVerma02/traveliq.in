@@ -2,45 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 import Reveal from "@/components/Reveal";
-import { getPostBySlug } from "@/lib/local-content";
 
 const news = [
   {
     title:
       "IRCTC User ID Aadhaar Link: Book up to 24 tickets in a month",
-    date: "06/06/2026",
+    date: "06/06/2022",
     image:
       "https://traveliq.in/wp-content/uploads/2022/06/Untitled-1.jpg",
     description:
       "The IRCTC Railway previously allowed people to book six tickets a month. Now the rule has been updated and you can book up to 24 tickets once linked with Aadhaar.",
-    href: "/pages/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month",
+    href: "https://traveliq.in/pages/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month/",
   },
   {
-    title: "IRCTC Railway Refund Rule",
-    date: "16/04/2026",
+    title: "IRCTC Executive Lounge",
+    date: "16/04/2022",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/IRCTC-EXECUTIVE-LOUNGE-1.jpg",
     description:
-      "Understand railway refund rules and how cancellation timing can affect the refund process for passengers and agents.",
-    href: "/pages/irctc-railway-refund-rule",
+      "Explore the facilities and services available to railway passengers at IRCTC Executive Lounges.",
+    href: "https://traveliq.in/pages/social/irctc-executive-lounge-2022/",
   },
   {
-    title: "Rules for IRCTC Ticket Cancellation and Refund",
-    date: "08/04/2026",
+    title: "Where Are You Heading This Long Weekend?",
+    date: "08/04/2022",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/spicejet-post.jpg",
     description:
-      "Review important cancellation and refund rules that IRCTC agents and railway passengers should understand.",
-    href: "/pages/rules-for-irctc-ticket-cancellation-and-refund",
+      "Find inspiration for a long weekend getaway, with destination ideas and SpiceJet travel tips.",
+    href: "https://traveliq.in/pages/social/where-are-you-heading-this-long-weekend-april-2022/",
   },
   {
-    title: "Rules for Online Ticket Booking for IRCTC Agents",
-    date: "07/04/2026",
+    title: "World Health Day",
+    date: "07/04/2022",
     image:
       "https://traveliq.in/wp-content/uploads/2022/04/world-Health-Day-1-2.jpg",
     description:
-      "Learn practical rules and booking guidance for IRCTC agents using online railway ticketing workflows.",
-    href: "/pages/rules-for-the-online-ticket-booking-for-irctc-agents",
+      "A reminder of simple habits that support everyday health and wellbeing.",
+    href: "https://traveliq.in/pages/social/world-health-day-7-april-2022/",
   },
 ];
 
@@ -119,7 +118,7 @@ export default function OurNews() {
         {/* =======================================================
             NEWS GRID
         ======================================================= */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+        <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 xl:mt-14 xl:grid-cols-4 xl:gap-7">
           {news.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.08}>
               <article
@@ -294,8 +293,10 @@ export default function OurNews() {
 
                   {/* Read article */}
                   <div className="mt-auto pt-5">
-                    {getPostBySlug(item.href.split("/").at(-1)!) ? <Link
+                    <a
                       href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="
                         group/link
                         inline-flex
@@ -336,7 +337,7 @@ export default function OurNews() {
                           group-hover/link:translate-x-0.5
                         "
                       />
-                    </Link> : <span className="text-xs text-slate-500">Article unavailable</span>}
+                    </a>
                   </div>
                 </div>
               </article>

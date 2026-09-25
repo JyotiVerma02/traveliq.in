@@ -101,7 +101,7 @@ export default function Testimonials() {
 
             {/* Heading */}
 
-            <h2 className="mt-4 max-w-none whitespace-nowrap text-[clamp(0.95rem,4vw,3.25rem)] font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728]">
+          <h2 className="mt-4 max-w-none text-balance text-[clamp(1.75rem,6vw,3.25rem)] font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728]">
               Trusted by{" "}
               <span className="text-[#EE5326]">
                 travel professionals.

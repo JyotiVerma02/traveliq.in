@@ -144,8 +144,8 @@ export default function WhyWeBetter() {
             className="
               mt-5
               max-w-none
-              whitespace-nowrap
-              text-[clamp(0.875rem,4.2vw,3rem)]
+              text-balance
+              text-[clamp(1.75rem,5.3vw,3rem)]
               font-black
               leading-[1.06]
               tracking-[-0.055em]

@@ -246,17 +246,20 @@ export default function PartnerLogos() {
               </div>
 
               {/* Bottom Partner Type Label */}
-              <div className="relative mt-1 flex w-full items-center justify-between border-t border-black/5 pt-2">
-                <span className="text-[9px] font-semibold text-gray-500">
+              <div className="relative mt-1 flex w-full flex-col items-center justify-center gap-0.5 border-t border-black/5 pt-2 text-center sm:flex-row sm:justify-between sm:gap-2 sm:text-left">
+                <span className="text-[8px] font-semibold leading-tight text-gray-500 sm:text-[9px]">
                   {partner.badge}
                 </span>
                 <p
                   className={`
-                    text-[10px]
+                    text-[9px]
                     font-extrabold
                     uppercase
                     tracking-[0.06em]
+                    leading-tight
+                    text-center
                     ${partner.typeColor}
+                    sm:text-[10px]
                   `}
                 >
                   {partner.type}

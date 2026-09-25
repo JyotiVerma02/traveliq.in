@@ -102,7 +102,7 @@ export default function ContactPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative isolate min-h-[570px] overflow-hidden sm:min-h-[610px] lg:min-h-[640px]">
+      <section className="relative isolate min-h-[490px] overflow-hidden sm:min-h-[530px] md:min-h-[560px] lg:min-h-[580px]">
         {/* Background image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -126,7 +126,7 @@ export default function ContactPage() {
         <div className="absolute -right-24 bottom-10 -z-10 h-80 w-80 rounded-full bg-[#EE5326]/10 blur-3xl" />
 
         {/* Main hero content */}
-        <div className="mx-auto flex min-h-[570px] w-full max-w-7xl flex-col items-center justify-center px-4 py-16 text-center sm:min-h-[610px] sm:px-6 lg:min-h-[640px] lg:px-8">
+        <div className="mx-auto flex min-h-[490px] w-full max-w-7xl flex-col items-center justify-start px-4 pb-24 pt-11 text-center sm:min-h-[530px] sm:px-6 sm:pt-14 md:min-h-[560px] lg:min-h-[580px] lg:px-8 lg:pt-16">
           {/* Breadcrumb */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-4 py-2 shadow-[6px_7px_18px_rgba(16,64,122,0.08),-5px_-5px_15px_rgba(255,255,255,0.8)] backdrop-blur-md sm:px-5 sm:py-2.5">
             <Link
@@ -142,7 +142,7 @@ export default function ContactPage() {
           </div>
 
           {/* Hero content */}
-          <div className="mt-7 flex w-full max-w-4xl flex-col items-center sm:mt-9">
+          <div className="mt-5 flex w-full max-w-4xl flex-col items-center sm:mt-7">
             {/* Label */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#EE5326]/10 bg-[#FFF2EC]/90 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#EE5326] shadow-sm sm:px-5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
@@ -150,21 +150,21 @@ export default function ContactPage() {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-5 max-w-4xl text-balance text-4xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#0F2E5E] sm:text-5xl md:text-[58px] lg:text-[64px]">
+            <h1 className="mt-4 max-w-4xl text-balance text-[clamp(2rem,5vw,4rem)] font-extrabold leading-[1.05] tracking-[-0.035em] text-[#0F2E5E] sm:mt-5 sm:text-5xl md:text-[58px] lg:text-[64px]">
               Let&apos;s Talk.
               <br />
               <span className="text-[#EE5326]">Let&apos;s Travel.</span>
             </h1>
 
             {/* Description */}
-            <p className="mt-5 max-w-2xl text-balance text-sm font-medium leading-6 text-[#344154] sm:mt-6 sm:text-base sm:leading-7">
+            <p className="mt-4 max-w-2xl text-balance text-sm font-medium leading-6 text-[#344154] sm:mt-5 sm:text-base sm:leading-7">
               Whether you have a question about our services, need help with
               your travel plans, or simply want to know more about TravelIQ, our
               team is ready to help.
             </p>
 
             {/* Trust pills */}
-            <div className="mt-7 flex max-w-3xl flex-wrap items-center justify-center gap-2.5 sm:mt-8 sm:gap-3">
+            <div className="mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2 sm:mt-6 sm:gap-3">
               {["Quick Response", "Travel Experts", "Dedicated Support"].map(
                 (item) => (
                   <div

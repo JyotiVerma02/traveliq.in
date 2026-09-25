@@ -796,9 +796,10 @@ export default function AboutPage() {
             mx-auto
             max-w-7xl
             px-5
-            py-24
+            py-14
             sm:px-8
-            lg:py-32
+            sm:py-18
+            lg:py-24
           "
         >
           <div
@@ -860,7 +861,7 @@ export default function AboutPage() {
 
           {/* Journey cards */}
 
-          <div className="mt-20 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
             {journey.map((item, index) => (
               <div
                 key={item.year}
@@ -872,7 +873,8 @@ export default function AboutPage() {
                   border
                   border-[#10407A]/10
                   bg-[#FFFDFB]
-                  p-7
+                  p-5
+                  sm:p-6
                   shadow-[6px_8px_20px_rgba(16,64,122,0.04)]
                   transition-all
                   duration-500
@@ -914,7 +916,7 @@ export default function AboutPage() {
 
                 <div
                   className="
-                    mt-6
+                    mt-4
                     h-[2px]
                     w-8
                     bg-[#EE5326]
@@ -926,7 +928,7 @@ export default function AboutPage() {
 
                 <h3
                   className="
-                    mt-6
+                    mt-4
                     text-lg
                     font-semibold
                     tracking-[0.005em]
@@ -953,7 +955,7 @@ export default function AboutPage() {
 
           {/* Story text */}
 
-          <div className="mt-20 grid gap-12 lg:grid-cols-[280px_1fr]">
+          <div className="mt-12 grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-10">
             {/* Timeline */}
 
             <div className="relative hidden lg:block">
@@ -1073,7 +1075,7 @@ export default function AboutPage() {
                 className="
                   group
                   relative
-                  my-12
+                  my-8
                   overflow-hidden
                   rounded-[20px]
                   border
@@ -1081,14 +1083,14 @@ export default function AboutPage() {
                   border-l-[3px]
                   border-l-[#EE5326]
                   bg-[#FFF8F3]
-                  px-7
-                  py-7
+                  px-5
+                  py-5
                   shadow-[7px_9px_25px_rgba(238,83,38,0.04)]
                   transition-all
                   duration-500
                   hover:-translate-y-1
                   hover:shadow-[10px_15px_35px_rgba(238,83,38,0.08)]
-                  sm:px-10
+                  sm:px-8
                 "
               >
                 <div
@@ -1171,7 +1173,7 @@ export default function AboutPage() {
 
               <div
                 className="
-                  mt-14
+                  mt-10
                   overflow-hidden
                   rounded-[22px]
                   border
@@ -1317,23 +1319,24 @@ export default function AboutPage() {
             lg:py-10
           "
         >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
             {stats.map(({ number, label, icon: Icon }, index) => (
               <div
                 key={number}
                 className={`
                   group
                   relative
-                  p-7
+                  rounded-[18px]
+                  border
+                  border-[#10407A]/10
+                  bg-white/85
+                  p-5
+                  shadow-[5px_7px_18px_rgba(16,64,122,0.05)]
                   transition-all
                   duration-500
                   hover:-translate-y-1
+                  hover:border-[#EE5326]/25
                   hover:bg-white
-                  ${
-                    index !== stats.length - 1
-                      ? "border-b border-[#10407A]/10 lg:border-b-0 lg:border-r"
-                      : ""
-                  }
                 `}
               >
                 <div className="flex items-start justify-between">

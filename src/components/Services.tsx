@@ -188,7 +188,7 @@ export default function Services() {
                   hover:shadow-[0_28px_60px_rgba(16,64,122,0.12)]
                 "
               >
-                {/* Image Container */}
+                {/* Image Container with high brightness and soft bottom gradient */}
                 <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-[#EEF4FA]">
                   <Image
                     src={image}
@@ -199,9 +199,10 @@ export default function Services() {
                     sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071A35]/65 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
+                  {/* Soft bottom-only gradient for number tag legibility without darkening the main subject */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-30 transition-opacity duration-300 group-hover:opacity-50" />
 
-                  <span className="absolute bottom-4 left-5 text-xs font-bold tracking-[0.18em] text-white">
+                  <span className="absolute bottom-3 left-4 rounded-md bg-black/40 px-2 py-0.5 text-[11px] font-bold tracking-[0.16em] text-white backdrop-blur-xs">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -255,18 +256,6 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
-
-        {/* Services section action */}
-        <div className="mx-5 flex justify-center bg-[#F4F7FB] pt-9 sm:mx-8 sm:pt-11 lg:mx-12 lg:pt-13">
-          <Link
-            href="/our-services"
-            className="inline-flex h-11 items-center gap-2 rounded-xl bg-[#EE5326] px-5 text-[10px] font-bold uppercase tracking-[0.12em] !text-white shadow-[0_8px_20px_rgba(238,83,38,0.18)] transition-colors hover:bg-[#D9471D] sm:text-[11px]"
-          >
-            <span className="!text-white">View All Services</span>
-            <ArrowRight className="h-4 w-4 !text-white" />
-          </Link>
-        </div>
-
       </div>
     </section>
   );
