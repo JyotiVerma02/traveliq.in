@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import Link from "next/link";
@@ -15,19 +15,19 @@ const services = [
   ],
   [
     "Bus Tickets",
-    "TravelIQ provides easy online bus tickets for comfortable bus and train travel.",
+    "Access bus booking options across supported routes and operators.",
     "/pages/services/bus-ticket-booking",
     "/images/services/bus-tickets.webp",
   ],
   [
     "Hotel Booking",
-    "You can get the latest deals and offers on hotel bookings all over the world.",
+    "Search and book accommodation for domestic and international travel requirements.",
     "/pages/services/online-hotel-booking",
     "/images/services/hotel-booking.webp",
   ],
   [
     "IRCTC Domestic Packages",
-    "Book Branded IRCTC Domestic tour packages and earn commission.",
+    "Explore IRCTC domestic package options available through TravelIQ.",
     "/pages/services/irctc-domestic-packages",
     "/images/services/irctc-domestic-packages.webp",
   ],
@@ -38,8 +38,8 @@ const services = [
     "/images/services/tour-packages.webp",
   ],
   [
-    "IRCTC Agency",
-    "IRCTC Agent Registration in very affordable price. OTP and DC Based Login Authentication.",
+    "IRCTC Agent Registration",
+    "Apply for IRCTC agent onboarding with supported OTP and DSC-based authentication options.",
     "/irctc-agent-registration",
     "/images/services/railway-reservations.webp",
   ],
@@ -67,12 +67,11 @@ export default function Services() {
               Our Services
             </p>
             <h2 className="mt-3 text-balance text-[clamp(1.65rem,6vw,3.75rem)] font-bold leading-tight tracking-[-0.055em] text-[#071F3D]">
-              Travel services for{" "}
+              Travel Services for{" "}
               <span className="text-[#C4320A]">travel professionals</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-[#5A6A80]">
-              Air tickets, railway reservations, hotels, buses, tour packages and
-              agent support — arranged with care.
+              Railway and IRCTC services, flights, hotels, buses, holiday packages and agent support for travel professionals.
             </p>
           </Reveal>
 

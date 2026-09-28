@@ -122,18 +122,11 @@ export default function Testimonials() {
               RATING SUMMARY
           ===================================================== */}
 
-          <div className="flex w-fit items-center gap-4 rounded-[22px] border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
-            {/* Network */}
-
-            <div>
-              <p className="text-2xl font-black tracking-tight text-[#10407A]">
-                20K+
-              </p>
-
-              <p className="mt-1 text-[8px] font-black uppercase tracking-[0.16em] text-[#475569]">
-                Agent Network
-              </p>
-            </div>
+          <div className="flex w-fit items-center gap-3 rounded-full border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
+            <span className="h-2 w-2 rounded-full bg-[#EE5326]" aria-hidden="true" />
+            <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#10407A]">
+              Agent and customer feedback
+            </p>
           </div>
         </Reveal>
 
@@ -259,7 +252,7 @@ export default function Testimonials() {
             <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
 
             <span className="text-[9px] font-black uppercase tracking-[0.18em] text-[#10407A]">
-              TravelIQ Agent Network
+              TravelIQ customer and agent feedback
             </span>
           </div>
         </Reveal>

@@ -21,7 +21,7 @@ const quickLinks = [
   },
   {
     title: "YouTube Channel",
-    subtitle: "Travel IQ Videos & Guides",
+    subtitle: "TravelIQ Videos & Guides",
     href: "https://www.youtube.com/c/TravelIQindia",
     Icon: YouTubeIcon,
     iconBg: officialSocialIconButtonClass.youtube,
@@ -152,11 +152,7 @@ export default function WhyWeBetter() {
               text-[#0B1728]
             "
           >
-            TravelIQ —
-            <span className="text-[#EE5326]">
-              {" "}
-              Your Own Travel Intelligence
-            </span>
+            Travel Technology Built for Travel Professionals
           </h2>
 
           {/* Description */}
@@ -172,8 +168,10 @@ export default function WhyWeBetter() {
               sm:text-[15px]
             "
           >
-            A trusted travel technology and B2B platform built to simplify
-            travel services for agents and customers across India.
+            Established in 2014, TravelIQ supports travel agents and travel businesses with railway and IRCTC-related services, flights, hotels, buses, tour and holiday services, and B2B travel solutions.
+          </p>
+          <p className="mt-3 max-w-2xl text-sm font-medium leading-7 text-[#374151] sm:text-[15px]">
+            From agent onboarding to day-to-day booking support, TravelIQ focuses on practical technology and accessible assistance for travel professionals.
           </p>
 
           {/* Divider */}
@@ -238,7 +236,7 @@ export default function WhyWeBetter() {
 
                 <p>
                   <strong className="font-black text-[#0B1728]">
-                    Travel IQ Services
+                    TravelIQ
                   </strong>{" "}
                   supports travel professionals through railway services, B2B tools and agent-focused assistance.
 
@@ -382,12 +380,7 @@ export default function WhyWeBetter() {
                 {/* EXPERIENCE */}
 
                 <p>
-                  Travel IQ has established itself as a landmark in the travel
-                  business. Since 2014, the company has been recognised by
-                  some of the world&apos;s most prestigious airlines for its
-                  service delivery. This reflects the company&apos;s continued
-                  focus on providing high-quality travel-related services while
-                  maintaining strong industry relationships.
+                  TravelIQ supports travel professionals with practical booking services and agent assistance.
                 </p>
 
                 {/* SERVICES */}
@@ -457,7 +450,7 @@ export default function WhyWeBetter() {
                   "
                 >
                   <p className="text-2xl font-black tracking-tight text-[#0B1728]">
-                    20K+
+                    B2B
                   </p>
 
                   <p
@@ -470,7 +463,7 @@ export default function WhyWeBetter() {
                       text-[#5A6475]
                     "
                   >
-                    Agents
+                    Platform
                   </p>
                 </Reveal>
 

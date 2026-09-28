@@ -121,8 +121,7 @@ export default function Footer() {
             </h2>
 
             <p className="mt-2 max-w-sm text-xs leading-5 text-slate-300/80 sm:text-sm">
-              A trusted partner for smarter journeys and better travel-business
-              growth.
+              Travel services and B2B support for travel professionals.
             </p>
 
             <div className="my-5 h-px max-w-sm bg-white/10" />
@@ -292,7 +291,7 @@ export default function Footer() {
           </p>
 
           <p className="text-center sm:text-right">
-            Design and Developed by{" "}
+            Designed and developed by{" "}
             <span className="font-semibold text-white">
               CoderLala Technologies Pvt. Ltd.
             </span>

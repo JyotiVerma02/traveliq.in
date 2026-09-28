@@ -17,8 +17,8 @@ export default function PartnerLogos() {
     {
       name: "IRCTC",
       logo: "irctc",
-      type: "Official Partner",
-      badge: "Railway Partner",
+      type: "Railway Services",
+      badge: "IRCTC agent workflows",
       bg: "bg-gradient-to-br from-[#F4F8FF] via-white to-[#EBF3FF]",
       border: "border-[#1D5FA7]/25",
       typeColor: "text-[#1D5FA7]",
@@ -28,8 +28,8 @@ export default function PartnerLogos() {
     {
       name: "Air India",
       logo: "air-india",
-      type: "Airline Partner",
-      badge: "National Carrier",
+      type: "Airline Services",
+      badge: "Flight booking options",
       bg: "bg-gradient-to-br from-[#FFF5F6] via-white to-[#FFEBEF]",
       border: "border-[#D71920]/25",
       typeColor: "text-[#D71920]",
@@ -39,8 +39,8 @@ export default function PartnerLogos() {
     {
       name: "IndiGo",
       logo: "indigo",
-      type: "Airline Partner",
-      badge: "6E Fleet",
+      type: "Airline Services",
+      badge: "Flight booking options",
       bg: "bg-gradient-to-br from-[#F3F5FF] via-white to-[#E8ECFF]",
       border: "border-[#2B3990]/25",
       typeColor: "text-[#2B3990]",
@@ -50,8 +50,8 @@ export default function PartnerLogos() {
     {
       name: "SpiceJet",
       logo: "spicejet",
-      type: "Airline Partner",
-      badge: "Direct Routes",
+      type: "Airline Services",
+      badge: "Flight booking options",
       bg: "bg-gradient-to-br from-[#FFF4F4] via-white to-[#FFE8E8]",
       border: "border-[#E31E24]/25",
       typeColor: "text-[#E31E24]",
@@ -152,11 +152,11 @@ export default function PartnerLogos() {
           </div>
 
           <h2 className="text-xl font-bold tracking-[-0.02em] text-[#071F3D] sm:text-2xl">
-            Trusted Travel Partners
+            Travel Services Across Leading Networks
           </h2>
 
           <p className="mx-auto mt-1.5 max-w-xl text-xs leading-5 text-[#071F3D]/65 sm:text-sm">
-            Connected with trusted names across travel, aviation and railway.
+            Railway and flight services accessible through TravelIQ.
           </p>
         </div>
 

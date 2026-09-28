@@ -25,13 +25,15 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
     name: "TravelIQ",
-    alternateName: "TravelIQ",
     legalName: "Travel IQ Services Private Limited",
-    url: SITE_URL,
-    logo: absoluteUrl("/logo.webp"),
+    url: new URL(canonicalUrl("/")).toString(),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/logo.webp"),
+    },
     foundingDate: "2014",
     description:
-      "Travel IQ Services Private Limited provides travel services and agent support through TravelIQ.",
+      "TravelIQ provides railway and IRCTC-related services, flight booking, hotel booking, bus booking, tour and holiday services, IRCTC agent registration and B2B travel solutions for travel professionals.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "1004G, JMD Megapolis, Sector 48",
@@ -40,19 +42,17 @@ export function getOrganizationSchema() {
       postalCode: "122018",
       addressCountry: "IN",
     },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+91-7835025030",
-        contactType: "customer service",
-        email: "support@traveliq.in",
-        availableLanguage: ["en", "hi"],
-      },
-    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-78350-25030",
+      contactType: "customer support",
+      email: "support@traveliq.in",
+      areaServed: "IN",
+    },
     sameAs: [
       "https://www.facebook.com/traveliqindia",
       "https://www.instagram.com/traveliqindia/",
-      "https://www.linkedin.com/company/travel-iq-services-private-limited/",
+      "https://www.linkedin.com/company/traveliq/",
     ],
   };
 }
@@ -62,49 +62,12 @@ export function getWebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    url: SITE_URL,
+    url: new URL(canonicalUrl("/")).toString(),
     name: "TravelIQ",
-    description: "Your Own Travel Intelligence - IRCTC Principal Agent & Travel Services",
+    inLanguage: "en-IN",
     publisher: {
       "@id": `${SITE_URL}/#organization`,
     },
-  };
-}
-
-export function getLocalBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "@id": `${SITE_URL}/#localbusiness`,
-    name: "Travel IQ Services Private Limited",
-    image: absoluteUrl("/logo.webp"),
-    url: SITE_URL,
-    telephone: "+91-7835025030",
-    email: "support@traveliq.in",
-    priceRange: "₹₹",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "1004G, JMD Megapolis, Sector 48",
-      addressLocality: "Gurugram",
-      addressRegion: "Haryana",
-      postalCode: "122018",
-      addressCountry: "IN",
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        opens: "10:00",
-        closes: "18:00",
-      },
-    ],
   };
 }
 

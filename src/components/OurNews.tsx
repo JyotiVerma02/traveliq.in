@@ -82,7 +82,7 @@ export default function OurNews() {
             "
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
-            Our News
+            Guides &amp; Resources
           </div>
 
           <h2
@@ -97,17 +97,16 @@ export default function OurNews() {
               lg:leading-[1.05]
             "
           >
-            News &amp;{" "}
-            <span className="text-[#EE5326]">Articles</span>
+            Latest Guides &amp;{" "}
+            <span className="text-[#EE5326]">Resources</span>
           </h2>
 
           <p className="mt-4 text-sm font-semibold text-[#10407A] sm:text-base">
-            Latest Updates from TravelIQ
+            Travel and agent resources from TravelIQ
           </p>
 
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#374151]">
-            Stay updated with the latest railway, flight, travel and
-            industry news from TravelIQ.
+            Browse practical information about railway services, agent onboarding and travel bookings.
           </p>
         </Reveal>
 

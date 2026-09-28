@@ -4,21 +4,20 @@ import Services from "@/components/Services";
 import WhyWeBetter from "@/components/WhyWeBetter";
 import Testimonials from "@/components/Testimonials";
 import LatestPosts from "@/components/OurNews";
-import { JsonLd, getLocalBusinessSchema } from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "TravelIQ | B2B Travel Services for Travel Professionals",
+  title: "IRCTC Agent Registration & B2B Travel Portal | TravelIQ",
   description:
-    "TravelIQ supports travel professionals with railway, flight, hotel, bus, holiday and B2B travel services, including agent onboarding support.",
+    "TravelIQ supports travel professionals with IRCTC agent registration, railway services, flight booking, hotels, buses, tour packages and B2B travel solutions.",
   alternates: {
     canonical: canonicalUrl("/"),
   },
   openGraph: {
-    title: "TravelIQ | B2B Travel Services for Travel Professionals",
+    title: "IRCTC Agent Registration & B2B Travel Portal | TravelIQ",
     description:
-      "TravelIQ supports travel professionals with railway, flight, hotel, bus, holiday and B2B travel services, including agent onboarding support.",
+      "TravelIQ supports travel professionals with IRCTC agent registration, railway services, flight booking, hotels, buses, tour packages and B2B travel solutions.",
     url: canonicalUrl("/"),
     siteName: "TravelIQ",
     locale: "en_IN",
@@ -26,27 +25,24 @@ export const metadata: Metadata = {
     images: [
       {
         url: absoluteUrl(OG_IMAGE_PATH),
-        width: 1200,
-        height: 630,
-        alt: "TravelIQ - Your Own Travel Intelligence",
+        width: 960,
+        height: 717,
+        alt: "TravelIQ - IRCTC Agent Registration and B2B Travel Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TravelIQ | B2B Travel Services for Travel Professionals",
+    title: "IRCTC Agent Registration & B2B Travel Portal | TravelIQ",
     description:
-      "TravelIQ supports travel professionals with railway, flight, hotel, bus, holiday and B2B travel services, including agent onboarding support.",
+      "TravelIQ supports travel professionals with IRCTC agent registration, railway services, flight booking, hotels, buses, tour packages and B2B travel solutions.",
     images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };
 
 export default function HomePage() {
-  const localBusinessSchema = getLocalBusinessSchema();
-
   return (
     <>
-      <JsonLd data={localBusinessSchema} />
       <Hero />
       <PartnerLogos />
       <Services />

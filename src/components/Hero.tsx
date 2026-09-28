@@ -6,15 +6,14 @@ import { WhatsAppIcon } from "@/components/icons";
 
 const stats = [
   { value: "2014", label: "Established" },
-  { value: "20K+", label: "Registrations / Agents Served" },
-  { value: "B2B", label: "Travel Platform" },
+  { value: "Pan India", label: "Service Coverage" },
   { value: "B2B", label: "Travel Platform" },
 ];
 
 const reassurance = [
-  "Authorized Services",
-  "Professional Support",
-  "B2B Travel Network",
+  "Railway & IRCTC",
+  "Agent Support",
+  "B2B Services",
 ];
 
 export default function Hero() {
@@ -27,7 +26,7 @@ export default function Hero() {
           <div className="mb-3 flex items-center justify-center gap-2 sm:mb-4 sm:gap-3 lg:justify-start">
             <span className="h-[2px] w-7 shrink-0 bg-[#EE5326] sm:w-10" />
             <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#10407A] sm:text-[10px] sm:tracking-[0.22em]">
-              Your Travel Business Partner
+              Services for Travel Professionals
             </span>
             <span className="h-[2px] w-7 shrink-0 bg-[#EE5326] sm:w-10" />
           </div>
@@ -45,17 +44,8 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-[620px] text-[14px] font-medium leading-6 text-[#526174] sm:mt-5 sm:text-[15px] sm:leading-7 lg:mx-0 lg:text-base">
-            <span className="sm:hidden">
-              One trusted platform for railway, flights, hotels, buses and
-              holidays — built for travel professionals.
-            </span>
-            <span className="hidden sm:inline">
-              Become an authorized IRCTC travel agent and access railway,
-              flights, hotels, buses and holidays through one trusted B2B
-              platform.
-            </span>
+            Access railway, flight, hotel, bus and holiday services through a B2B platform designed for travel professionals. IRCTC agent onboarding and registration support is available through TravelIQ.
           </p>
-
           <div className="mx-auto mt-5 flex w-full max-w-[460px] flex-col gap-2.5 min-[360px]:flex-row sm:mt-6 lg:mx-0 lg:justify-start">
             <Link
               href="/irctc-agent-registration"
