@@ -17,30 +17,13 @@ import {
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 import { canonicalUrl } from "@/lib/site";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "List Of IRCTC Principal Service Providers (PSP) | TravelIQ",
-  description:
-    "Official list of all IRCTC Principal Service Providers (PSP) under B2B, ICS, B2C, G2G, TIES, and E-Governance schemes together with admin contact details and official PDF format.",
-  alternates: {
-    canonical: canonicalUrl("/list-of-irctc-principal-service-providers"),
-  },
-  openGraph: {
-    title: "List Of IRCTC Principal Service Providers (PSP) | TravelIQ",
-    description:
-      "Official directory of IRCTC Principal Service Providers (PSP) with contact information, admin emails, and official PDF document.",
-    url: canonicalUrl("/list-of-irctc-principal-service-providers"),
-    siteName: "TravelIQ",
-    locale: "en_IN",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "List Of IRCTC Principal Service Providers (PSP) | TravelIQ",
-    description:
-      "Official directory of IRCTC Principal Service Providers (PSP) with official PDF format.",
-  },
-};
+export const metadata: Metadata = createMetadata({
+  title: "IRCTC Principal Service Providers: Directory & Verification | TravelIQ",
+  description: "Understand the IRCTC Principal Service Provider role, review the directory snapshot from the linked IRCTC PDF, and learn how to verify current provider details.",
+  path: "/list-of-irctc-principal-service-providers",
+});
 
 interface PSPCompany {
   sNo: number;
@@ -384,17 +367,17 @@ export default function IRCTCPrincipalServiceProvidersPage() {
               <div className="mt-2 h-1 w-14 bg-[#EE5326] rounded-full" />
 
               <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-                The following directory groups IRCTC Principal Service Providers by scheme and shows the administrative contact details and email addresses provided in the supplied source.
+                A Principal Service Provider (PSP) is an organization authorized by IRCTC to provide agent booking access under applicable schemes. PSPs handle agent onboarding and may provide the booking interface, account support and operational guidance. Agents register through a PSP and remain responsible for following current IRCTC agent rules.
               </p>
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-500">
               <span className="inline-flex items-center gap-1.5 text-[#EE5326] font-bold">
-                <Calendar className="h-4 w-4" /> Last Updated: 23-December-2024
+                  <Calendar className="h-4 w-4" /> Source snapshot dated 23-December-2024
               </span>
               <span>•</span>
               <span className="inline-flex items-center gap-1 text-slate-600 font-bold">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" /> Directory source information
+                <ShieldCheck className="h-4 w-4 text-emerald-600" /> Verify current details before applying
               </span>
             </div>
           </div>
@@ -405,13 +388,33 @@ export default function IRCTCPrincipalServiceProvidersPage() {
             </div>
             <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.16em] text-[#EE5326]">Reference document</p>
             <h3 className="mt-1 text-lg font-extrabold text-[#0F2D5E]">IRCTC Principal Service Providers PDF</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-500">Open the source PDF for the directory information shown on this page.</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">This directory reflects the linked IRCTC PDF snapshot, dated 23 December 2024. Provider authorization and contacts can change; verify current details through IRCTC before applying or sharing documents.</p>
             <a href={pdfPath} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex w-fit items-center gap-2 rounded-xl bg-[#0F2D5E] px-5 py-3 text-xs font-bold !text-white transition hover:bg-[#10407A]">
               <FileText className="h-4 w-4" /> View Source PDF
             </a>
           </div>
         </div>
       </section>
+
+      <section className="mx-auto mt-8 grid max-w-7xl gap-4 px-4 sm:grid-cols-2 sm:px-6 lg:mt-10 lg:grid-cols-4 lg:px-8">
+        {[
+          { title: "What a PSP does", text: "An IRCTC-authorized PSP facilitates agent onboarding and provides access to applicable booking systems and operational support." },
+          { title: "Why selection matters", text: "Service scope, fees, support, authentication and commercial terms can differ. Review them before you apply or pay." },
+          { title: "How to verify", text: "Check the provider against current IRCTC references and confirm contacts directly. This page’s linked directory PDF is a dated source snapshot." },
+          { title: "TravelIQ’s role", text: "TravelIQ is listed in the linked source document. Read our onboarding details and confirm current requirements with our team." },
+        ].map((item) => (
+          <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h2 className="font-bold text-[#0F2D5E]">{item.title}</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">{item.text}</p>
+          </article>
+        ))}
+      </section>
+
+      <div className="mx-auto mt-5 flex max-w-7xl flex-wrap gap-4 px-4 text-sm font-semibold sm:px-6 lg:px-8">
+        <Link href="/irctc-agent-registration/" className="text-[#10407A] underline underline-offset-4 hover:text-[#EE5326]">IRCTC agent registration</Link>
+        <Link href="/irctc-agent/how-to-become-irctc-agent/" className="text-[#10407A] underline underline-offset-4 hover:text-[#EE5326]">How to become an IRCTC agent</Link>
+        <Link href="/contact-us/" className="text-[#10407A] underline underline-offset-4 hover:text-[#EE5326]">Contact TravelIQ</Link>
+      </div>
 
 
 

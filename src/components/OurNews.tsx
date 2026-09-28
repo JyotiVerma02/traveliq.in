@@ -6,40 +6,36 @@ import Reveal from "@/components/Reveal";
 const news = [
   {
     title:
-      "IRCTC User ID Aadhaar Link: Book up to 24 tickets in a month",
-    date: "06/06/2022",
-    image:
-      "https://traveliq.in/wp-content/uploads/2022/06/Untitled-1.jpg",
+      "IRCTC monthly ticket limits and Aadhaar verification",
+    date: "Updated guide",
+    image: "/vande_bharat_hero.webp",
     description:
-      "The IRCTC Railway previously allowed people to book six tickets a month. Now the rule has been updated and you can book up to 24 tickets once linked with Aadhaar.",
-    href: "https://traveliq.in/pages/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month/",
+      "Understand the individual-user 24-ticket limit, the Aadhaar verification condition, and how agent policies differ.",
+    href: "/pages/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month/",
   },
   {
-    title: "IRCTC Executive Lounge",
-    date: "16/04/2022",
-    image:
-      "https://traveliq.in/wp-content/uploads/2022/04/IRCTC-EXECUTIVE-LOUNGE-1.jpg",
+    title: "IRCTC Principal Service Provider directory",
+    date: "Agent resource",
+    image: "/images/irctc_psp_hero.jpg",
     description:
-      "Explore the facilities and services available to railway passengers at IRCTC Executive Lounges.",
-    href: "https://traveliq.in/pages/social/irctc-executive-lounge-2022/",
+      "Learn what a PSP does and review the available provider information and official reference document.",
+    href: "/list-of-irctc-principal-service-providers/",
   },
   {
-    title: "Where Are You Heading This Long Weekend?",
-    date: "08/04/2022",
-    image:
-      "https://traveliq.in/wp-content/uploads/2022/04/spicejet-post.jpg",
+    title: "Become an authorized IRCTC travel agent",
+    date: "Registration guide",
+    image: "/images/TravelIQ-IRCTC-Agent-Registration-Fees-Rs-1000-Only.png.webp",
     description:
-      "Find inspiration for a long weekend getaway, with destination ideas and SpiceJet travel tips.",
-    href: "https://traveliq.in/pages/social/where-are-you-heading-this-long-weekend-april-2022/",
+      "Review onboarding steps, document requirements, authentication options, and support before applying.",
+    href: "/irctc-agent-registration/",
   },
   {
-    title: "World Health Day",
-    date: "07/04/2022",
-    image:
-      "https://traveliq.in/wp-content/uploads/2022/04/world-Health-Day-1-2.jpg",
+    title: "Flight booking services for travel agents",
+    date: "Travel services",
+    image: "/flight_hero.webp",
     description:
-      "A reminder of simple habits that support everyday health and wellbeing.",
-    href: "https://traveliq.in/pages/social/world-health-day-7-april-2022/",
+      "Explore flight booking support for domestic and international journeys through the TravelIQ agent platform.",
+    href: "/pages/services/online-air-ticket-booking/",
   },
 ];
 
@@ -293,10 +289,8 @@ export default function OurNews() {
 
                   {/* Read article */}
                   <div className="mt-auto pt-5">
-                    <a
+                    <Link
                       href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="
                         group/link
                         inline-flex
@@ -337,7 +331,7 @@ export default function OurNews() {
                           group-hover/link:translate-x-0.5
                         "
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </article>

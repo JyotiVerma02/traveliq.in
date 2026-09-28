@@ -45,7 +45,7 @@ export default function Page() {
       sections={[
         {
           heading: "Competitive Fares & Instant Confirmation",
-          body: "Through our established airline partnerships, TravelIQ provides travel agents and travelers with real-time flight availability, specially contracted corporate fares, group booking deals, and quick ticket issuance.\n\nWhether booking domestic routes across India (IndiGo, Air India, SpiceJet, Vistara) or international flights globally, enjoy competitive pricing, flexible baggage allowances, and professional customer assistance.",
+          body: "Through our airline booking services, TravelIQ helps travel agents and travelers check flight availability, fares, group booking options, and ticket issuance.\n\nFor domestic routes across India, options may include IndiGo, Air India, Air India Express, SpiceJet and other leading airlines, subject to route availability and current inventory. International flight options are also available through the platform. Contact TravelIQ to confirm current availability and terms.",
         },
       ]}
     />

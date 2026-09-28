@@ -1,28 +1,11 @@
 import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Disclaimer Policy | TravelIQ",
-  description:
-    "Read the TravelIQ disclaimer about railway service information, third-party suppliers, travel disruptions, and linked websites.",
-  alternates: {
-    canonical: "https://traveliq.in/disclaimer-policy/",
-  },
-  openGraph: {
-    title: "Disclaimer Policy | TravelIQ",
-    description:
-      "Read the TravelIQ disclaimer about railway service information, third-party suppliers, travel disruptions, and linked websites.",
-    url: "https://traveliq.in/disclaimer-policy/",
-    siteName: "TravelIQ",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Disclaimer Policy | TravelIQ",
-    description:
-      "Read the TravelIQ disclaimer about railway service information, third-party suppliers, travel disruptions, and linked websites.",
-  },
-};
+  description: "Read the TravelIQ disclaimer about railway service information, third-party suppliers, travel disruptions, and linked websites.",
+  path: "/disclaimer-policy",
+});
 
 const paragraphs = [
   "We have made every commercially reasonable effort to ensure that the information contained on this website is accurate and correct. However, we cannot warrant the validity, quality, and pricing of the railway services offered on this website. The information, software, services, and products published on this website may include inaccuracies or typographical errors. In particular, we or our affiliates do not guarantee the accuracy of, and disclaim liability for inaccuracies related to the information and description of railway tickets (including pricing), schedules, routes, facilities, or other travel-related products displayed on this website.",

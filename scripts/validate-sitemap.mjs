@@ -54,9 +54,14 @@ for (const absolute of urls) {
   const html = await page.text();
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
 
-  if (canonical && new URL(canonical).href !== new URL(absolute).href) {
+  if (!canonical) {
+    failures.push(`${absolute} is missing a canonical link`);
+  } else if (new URL(canonical).href !== new URL(absolute).href) {
     failures.push(`${absolute} canonical mismatch: ${canonical}`);
   }
+
+  const robots = html.match(/<meta\s+name="robots"\s+content="([^"]+)"/i)?.[1] ?? "";
+  if (/noindex/i.test(robots)) failures.push(`${absolute} is noindex but included in sitemap`);
 }
 
 if (failures.length > 0) {

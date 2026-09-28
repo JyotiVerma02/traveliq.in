@@ -1,28 +1,11 @@
 import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Privacy Policy | TravelIQ",
-  description:
-    "Read Travel IQ Services Private Limited's privacy policy regarding data collection, protection, and security.",
-  alternates: {
-    canonical: "https://traveliq.in/privacy-policy/",
-  },
-  openGraph: {
-    title: "Privacy Policy | TravelIQ",
-    description:
-      "Read Travel IQ Services Private Limited's privacy policy regarding data collection, protection, and security.",
-    url: "https://traveliq.in/privacy-policy/",
-    siteName: "TravelIQ",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Privacy Policy | TravelIQ",
-    description:
-      "Read Travel IQ Services Private Limited's privacy policy regarding data collection, protection, and security.",
-  },
-};
+  description: "Read Travel IQ Services Private Limited's privacy policy regarding data collection, protection, and security.",
+  path: "/privacy-policy",
+});
 
 type Section = {
   heading?: string;

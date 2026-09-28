@@ -1,28 +1,11 @@
 import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Terms and Conditions | TravelIQ",
-  description:
-    "Read the terms and conditions for using Travel IQ Services Private Limited services and website.",
-  alternates: {
-    canonical: "https://traveliq.in/term-and-conditions/",
-  },
-  openGraph: {
-    title: "Terms and Conditions | TravelIQ",
-    description:
-      "Read the terms and conditions for using Travel IQ Services Private Limited services and website.",
-    url: "https://traveliq.in/term-and-conditions/",
-    siteName: "TravelIQ",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Terms and Conditions | TravelIQ",
-    description:
-      "Read the terms and conditions for using Travel IQ Services Private Limited services and website.",
-  },
-};
+  description: "Read the terms and conditions for using Travel IQ Services Private Limited services and website.",
+  path: "/term-and-conditions",
+});
 
 type Section = {
   heading: string;

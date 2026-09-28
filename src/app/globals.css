@@ -253,3 +253,9 @@ body {
     flex-basis: calc((100% - 3rem) / 3);
   }
 }
+
+@media (min-width: 1280px) {
+  .testimonial-slide {
+    flex-basis: calc((100% - 4.5rem) / 4);
+  }
+}

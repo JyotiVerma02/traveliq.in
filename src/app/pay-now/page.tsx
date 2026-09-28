@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://traveliq.in/pay-now/",
   },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Pay Now - Official Bank Account Details & Secure Payment | TravelIQ",
     description:

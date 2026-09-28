@@ -7,6 +7,9 @@ const staticRouteMeta: Record<
 > = {
   "/": { changeFrequency: "daily", priority: 1.0 },
   "/irctc-agent-registration": { changeFrequency: "weekly", priority: 0.9 },
+  "/irctc-agent/how-to-become-irctc-agent": { changeFrequency: "monthly", priority: 0.8 },
+  "/b2b-travel-portal": { changeFrequency: "weekly", priority: 0.9 },
+  "/pages/if-your-irctc-user-id-is-linked-to-your-aadhaar-number-you-can-book-up-to-24-tickets-in-a-month": { changeFrequency: "yearly", priority: 0.6 },
   "/benefits-of-irctc-agent-registration": { changeFrequency: "monthly", priority: 0.7 },
   "/our-services": { changeFrequency: "weekly", priority: 0.9 },
   "/pages/services/railway-reservations": {

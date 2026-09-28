@@ -15,6 +15,7 @@ export const metadata: Metadata = {
       "/signup/registration_form/irctc-agent-registration/"
     ),
   },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "IRCTC Agent Registration – Plans & Pricing | TravelIQ",
     description:

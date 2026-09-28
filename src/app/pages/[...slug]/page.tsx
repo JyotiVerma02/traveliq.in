@@ -3,7 +3,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug } from "@/lib/local-content";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
-import { canonicalUrl, SITE_URL, absoluteUrl, duplicatePageDestination } from "@/lib/site";
+import { canonicalUrl, SITE_URL, absoluteUrl, duplicatePageDestination, OG_IMAGE_PATH } from "@/lib/site";
 import { sanitizeWordPressHtml } from "@/lib/sanitize";
 
 interface PageProps {
@@ -56,11 +56,14 @@ export async function generateMetadata({
       locale: "en_IN",
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.modified ?? post.date,
+      images: [{ url: absoluteUrl(OG_IMAGE_PATH), width: 1200, height: 630, alt: "TravelIQ" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: cleanExcerpt,
+      images: [absoluteUrl(OG_IMAGE_PATH)],
     },
   };
 }
@@ -93,7 +96,8 @@ export default async function WordPressPostPage({ params }: PageProps) {
     "@type": "Article",
     headline: post.title.rendered,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.modified ?? post.date,
+    image: absoluteUrl(OG_IMAGE_PATH),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, UserRound } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 const testimonials = [
@@ -47,6 +47,15 @@ const testimonials = [
     message:
       "I received my agency within the mentioned working days and booked my first ticket with TravelIQ team support. Quick WhatsApp support and a great response from the team.",
   },
+];
+
+const reviewerIconColors = [
+  "bg-[#FFF0E9] text-[#EE5326]",
+  "bg-[#EEF4FA] text-[#10407A]",
+  "bg-[#F1EDFF] text-[#6D4ACD]",
+  "bg-[#EAF8F0] text-[#16834A]",
+  "bg-[#FFF5DF] text-[#A96A00]",
+  "bg-[#FDEEF2] text-[#C43D61]",
 ];
 
 export default function Testimonials() {
@@ -179,7 +188,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, index) => (
             <Reveal key={testimonial.name} delay={index * 0.1} className="testimonial-slide min-w-0 shrink-0 snap-start">
-            <article className="group relative flex min-h-[410px] flex-col justify-between overflow-hidden rounded-[30px] border border-[#10407A]/12 bg-[#FFF8F3] p-6 shadow-[10px_10px_24px_rgba(16,64,122,0.10),-8px_-8px_20px_rgba(255,255,255,0.96)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#10407A]/20 hover:shadow-[14px_14px_30px_rgba(16,64,122,0.13),-10px_-10px_24px_rgba(255,255,255,0.98)]">
+            <article className="group relative flex min-h-[365px] flex-col justify-between overflow-hidden rounded-[26px] border border-[#10407A]/12 bg-[#FFF8F3] p-5 shadow-[8px_8px_20px_rgba(16,64,122,0.09),-6px_-6px_16px_rgba(255,255,255,0.96)] transition-all duration-500 hover:-translate-y-1 hover:border-[#10407A]/20 hover:shadow-[12px_14px_26px_rgba(16,64,122,0.12),-8px_-8px_20px_rgba(255,255,255,0.98)] sm:p-6">
               {/* =================================================
                   ORANGE CORNER ACCENT
               ================================================= */}
@@ -209,12 +218,12 @@ export default function Testimonials() {
 
                 {/* Quote */}
 
-                <div className="relative mt-8">
-                  <span className="pointer-events-none absolute -left-2 -top-8 font-serif text-[80px] font-black leading-none text-[#EE5326]/[0.08]">
+                <div className="relative mt-6">
+                  <span className="pointer-events-none absolute -left-2 -top-7 font-serif text-[68px] font-black leading-none text-[#EE5326]/[0.08]">
                     &ldquo;
                   </span>
 
-                  <p className="relative z-10 text-[14px] font-medium leading-[1.8] text-[#526174]">
+                  <p className="relative z-10 text-[13px] font-medium leading-[1.75] text-[#526174] sm:text-[14px]">
                     {testimonial.message}
                   </p>
                 </div>
@@ -224,10 +233,10 @@ export default function Testimonials() {
                   BOTTOM PROFILE
               ================================================= */}
 
-              <div className="mt-10">
+              <div className="mt-7">
                 {/* Divider */}
 
-                <div className="mb-5 h-px w-full bg-gradient-to-r from-[#EE5326]/25 via-[#10407A]/10 to-transparent" />
+                <div className="mb-4 h-px w-full bg-gradient-to-r from-[#EE5326]/25 via-[#10407A]/10 to-transparent" />
 
                 <div className="flex items-center justify-between gap-3">
                   {/* Profile */}
@@ -235,10 +244,8 @@ export default function Testimonials() {
                   <div className="flex min-w-0 items-center gap-3">
                     {/* Avatar */}
 
-                    <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white bg-[#FFF0E9] shadow-[5px_5px_10px_rgba(238,83,38,0.08),-4px_-4px_9px_rgba(255,255,255,0.95)]">
-                      <span className="text-sm font-black text-[#EE5326]">
-                        {testimonial.name.charAt(0)}
-                      </span>
+                    <div className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white shadow-[4px_4px_9px_rgba(16,64,122,0.07),-4px_-4px_9px_rgba(255,255,255,0.95)] ${reviewerIconColors[index % reviewerIconColors.length]}`}>
+                      <UserRound className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
 
                       {/* Verified */}
 

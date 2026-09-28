@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "IRCTC Agent Registration Form Details | TravelIQ",
   description: "Complete your IRCTC agent registration with your contact, PAN, agency and address details.",
   alternates: { canonical: canonicalUrl("/signup/registration_form/irctc-agent-registration-details/") },
+  robots: { index: false, follow: true },
   openGraph: { title: "IRCTC Agent Registration Form Details | TravelIQ", url: canonicalUrl("/signup/registration_form/irctc-agent-registration-details/"), type: "website" },
 };
 

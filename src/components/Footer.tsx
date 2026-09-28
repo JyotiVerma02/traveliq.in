@@ -33,8 +33,16 @@ const usefulLinks = [
 
 const irctcSupportLinks = [
   {
+    label: "B2B Travel Portal",
+    href: "/b2b-travel-portal/",
+  },
+  {
     label: "IRCTC Agent Registration",
     href: "/irctc-agent-registration",
+  },
+  {
+    label: "How to Become an IRCTC Agent",
+    href: "/irctc-agent/how-to-become-irctc-agent/",
   },
   {
     label: "Plans & Registration",

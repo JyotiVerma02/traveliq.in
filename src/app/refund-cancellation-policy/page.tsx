@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import {
   AlertCircle,
   ArrowRight,
@@ -10,29 +11,11 @@ import {
   TrainFront,
 } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Refund & Cancellation Policy | TravelIQ",
-  description:
-    "Cancellation and refund rules for IRCTC train e-tickets booked through TravelIQ.",
-  alternates: {
-    canonical: "https://traveliq.in/refund-cancellation-policy/",
-  },
-  openGraph: {
-    title: "Refund & Cancellation Policy | TravelIQ",
-    description:
-      "Cancellation and refund rules for IRCTC train e-tickets booked through TravelIQ.",
-    url: "https://traveliq.in/refund-cancellation-policy/",
-    siteName: "TravelIQ",
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Refund & Cancellation Policy | TravelIQ",
-    description:
-      "Cancellation and refund rules for IRCTC train e-tickets booked through TravelIQ.",
-  },
-};
+  description: "Cancellation and refund rules for IRCTC train e-tickets booked through TravelIQ.",
+  path: "/refund-cancellation-policy",
+});
 
 const confirmedCharges = [
   ["AC First Class/Executive Class", "Rs. 240"],

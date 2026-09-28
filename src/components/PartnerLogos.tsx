@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import Image from "next/image";
 
 interface Partner {
   name: string;
@@ -167,7 +165,7 @@ export default function PartnerLogos() {
           className="
             mx-auto
             grid
-            max-w-6xl
+            max-w-7xl
             grid-cols-2
             gap-3
             sm:grid-cols-2
@@ -182,15 +180,16 @@ export default function PartnerLogos() {
                 group
                 relative
                 flex
-                min-h-[135px]
+                min-h-[158px]
                 w-full
                 flex-col
                 items-center
                 justify-between
                 overflow-hidden
-                rounded-[20px]
+                rounded-[22px]
                 border
-                p-4
+                px-4
+                py-4
                 text-center
                 shadow-[0_4px_16px_rgba(7,31,61,0.06)]
                 transition-all
@@ -240,22 +239,27 @@ export default function PartnerLogos() {
                 "
               />
 
-              {/* Main Logo Container filling full card width */}
-              <div className="relative flex w-full flex-1 items-center justify-center py-2">
+              {/* Partner logo */}
+              <div className="relative flex w-full flex-1 items-center justify-center py-1">
                 <PartnerMark name={partner.name} logo={partner.logo} />
               </div>
 
-              {/* Bottom Partner Type Label */}
-              <div className="relative mt-1 flex w-full flex-col items-center justify-center gap-0.5 border-t border-black/5 pt-2 text-center sm:flex-row sm:justify-between sm:gap-2 sm:text-left">
-                <span className="text-[8px] font-semibold leading-tight text-gray-500 sm:text-[9px]">
+              {/* Partner details */}
+              <div className="relative mt-2 flex w-full flex-col items-center justify-center gap-1.5 border-t border-[#10407A]/10 pt-2.5 text-center">
+                <span className="text-[10px] font-medium leading-tight text-[#526174] sm:text-[11px]">
                   {partner.badge}
                 </span>
                 <p
                   className={`
+                    rounded-full
+                    border border-[#10407A]/10
+                    bg-white/75
+                    px-3
+                    py-1
                     text-[9px]
                     font-extrabold
                     uppercase
-                    tracking-[0.06em]
+                    tracking-[0.12em]
                     leading-tight
                     text-center
                     ${partner.typeColor}
@@ -276,6 +280,7 @@ export default function PartnerLogos() {
             mt-6
             flex
             w-fit
+            max-w-full
             items-center
             justify-center
             gap-2.5
@@ -283,7 +288,7 @@ export default function PartnerLogos() {
             border
             border-[#10407A]/10
             bg-white/80
-            px-5
+            px-3
             py-2
             shadow-sm
             backdrop-blur-sm
@@ -314,7 +319,7 @@ export default function PartnerLogos() {
             />
           </span>
 
-          <p className="text-[11px] font-semibold text-[#0E3360]">
+          <p className="text-center text-[10px] font-semibold leading-4 text-[#0E3360] sm:text-[11px]">
             Reliable connections across the travel ecosystem
           </p>
         </div>
@@ -330,96 +335,20 @@ const partnerLogoSources: Record<string, string> = {
   spicejet: "/partners/spicejet.svg",
 };
 
-// Clean vector logos for fallback rendering
-function PartnerLogoSvg({ logo }: { logo: string }) {
-  switch (logo) {
-    case "irctc":
-      return (
-        <svg viewBox="0 0 280 80" className="h-full w-full object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(10, 8)">
-            <circle cx="32" cy="32" r="30" fill="#003366"/>
-            <circle cx="32" cy="32" r="24" fill="#FFFFFF"/>
-            <path d="M32 14 C22 14 14 22 14 32 C14 42 22 50 32 50 C42 50 50 42 50 32 C50 22 42 14 32 14 Z" fill="#003366"/>
-            <path d="M24 22 H40 V30 C40 35 36 38 32 38 C28 38 24 35 24 30 V22 Z" fill="#F37023"/>
-            <path d="M28 24 H36 V28 H28 Z" fill="#FFFFFF"/>
-            <circle cx="32" cy="43" r="2.5" fill="#FFFFFF"/>
-          </g>
-          <text x="82" y="46" fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="32" fill="#003366" letterSpacing="2">IRCTC</text>
-          <text x="83" y="60" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9.5" fill="#F37023" letterSpacing="1">OFFICIAL RAILWAY PARTNER</text>
-        </svg>
-      );
-    case "air-india":
-      return (
-        <svg viewBox="0 0 280 80" className="h-full w-full object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(10, 10)">
-            <path d="M5 45 C15 15 45 5 55 25 C40 22 25 32 15 48 Z" fill="#ED1C24"/>
-            <circle cx="38" cy="22" r="6" fill="#FFC20E"/>
-            <path d="M20 48 C30 35 50 28 58 35 C45 38 32 45 20 48 Z" fill="#B3141A"/>
-          </g>
-          <text x="75" y="45" fontFamily="'Times New Roman', Georgia, serif" fontWeight="bold" fontSize="28" fill="#ED1C24" letterSpacing="0.5">AIR INDIA</text>
-          <text x="76" y="60" fontFamily="system-ui, sans-serif" fontWeight="600" fontSize="9" fill="#B3141A" letterSpacing="2">AIRLINE PARTNER</text>
-        </svg>
-      );
-    case "indigo":
-      return (
-        <svg viewBox="0 0 280 80" className="h-full w-full object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(12, 16)">
-            <circle cx="8" cy="8" r="4.5" fill="#001B94" opacity="0.4"/>
-            <circle cx="20" cy="8" r="4.5" fill="#001B94" opacity="0.6"/>
-            <circle cx="32" cy="8" r="4.5" fill="#001B94" opacity="0.9"/>
-            <circle cx="14" cy="22" r="4.5" fill="#001B94" opacity="0.6"/>
-            <circle cx="26" cy="22" r="4.5" fill="#001B94" opacity="0.85"/>
-            <circle cx="38" cy="22" r="4.5" fill="#001B94" opacity="1.0"/>
-            <circle cx="20" cy="36" r="4.5" fill="#001B94" opacity="0.8"/>
-            <circle cx="32" cy="36" r="4.5" fill="#001B94" opacity="0.95"/>
-            <circle cx="44" cy="36" r="4.5" fill="#001B94" opacity="1.0"/>
-          </g>
-          <text x="72" y="48" fontFamily="system-ui, sans-serif" fontWeight="800" fontSize="34" fill="#001B94" letterSpacing="-0.5">IndiGo</text>
-          <text x="73" y="62" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="9" fill="#001B94" opacity="0.8" letterSpacing="1.5">6E AIRLINES</text>
-        </svg>
-      );
-    case "spicejet":
-      return (
-        <svg viewBox="0 0 280 80" className="h-full w-full object-contain" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(10, 14)">
-            <circle cx="6" cy="10" r="3.5" fill="#E31E24"/>
-            <circle cx="16" cy="10" r="3.5" fill="#E31E24"/>
-            <circle cx="26" cy="10" r="3.5" fill="#E31E24"/>
-            <circle cx="36" cy="10" r="3.5" fill="#FF9800"/>
-            <circle cx="46" cy="10" r="3.5" fill="#FF9800"/>
-            <circle cx="11" cy="22" r="3.5" fill="#E31E24"/>
-            <circle cx="21" cy="22" r="3.5" fill="#E31E24"/>
-            <circle cx="31" cy="22" r="3.5" fill="#FF9800"/>
-            <circle cx="41" cy="22" r="3.5" fill="#FF9800"/>
-            <circle cx="16" cy="34" r="3.5" fill="#E31E24"/>
-            <circle cx="26" cy="34" r="3.5" fill="#E31E24"/>
-            <circle cx="36" cy="34" r="3.5" fill="#E31E24"/>
-          </g>
-          <text x="68" y="47" fontFamily="system-ui, sans-serif" fontWeight="900" fontStyle="italic" fontSize="30" fill="#E31E24" letterSpacing="-0.5">SpiceJet</text>
-          <text x="70" y="61" fontFamily="system-ui, sans-serif" fontWeight="700" fontSize="8.5" fill="#C61A1F" letterSpacing="1.5">RED. HOT. SPICY.</text>
-        </svg>
-      );
-    default:
-      return null;
-  }
-}
-
 function PartnerMark({ name, logo }: { name: string; logo: string }) {
-  const [imgError, setImgError] = useState(false);
   const src = partnerLogoSources[logo];
 
   return (
-    <div className="flex h-16 w-full items-center justify-center p-1.5">
-      {!imgError && src ? (
-        <img
+    <div className="relative flex h-[68px] w-full items-center justify-center px-2 sm:h-[76px]">
+      {src && (
+        <Image
           src={src}
-          alt={`${name} official logo`}
-          loading="lazy"
-          onError={() => setImgError(true)}
-          className="h-full w-full max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-[1.05]"
+          alt={`${name} logo`}
+          width={280}
+          height={80}
+          sizes="(max-width: 640px) 40vw, (max-width: 1024px) 28vw, 280px"
+          className="h-auto max-h-[64px] w-full max-w-[250px] object-contain transition-transform duration-300 group-hover:scale-[1.04] sm:max-h-[70px]"
         />
-      ) : (
-        <PartnerLogoSvg logo={logo} />
       )}
     </div>
   );

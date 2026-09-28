@@ -25,12 +25,13 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
     name: "TravelIQ",
+    alternateName: "TravelIQ",
     legalName: "Travel IQ Services Private Limited",
     url: SITE_URL,
     logo: absoluteUrl("/logo.webp"),
     foundingDate: "2014",
     description:
-      "TravelIQ is the leading IRCTC Principal Service Provider and premier travel agency in India providing train ticket booking agent registration, flight, hotel, bus, and tour packages.",
+      "Travel IQ Services Private Limited provides travel services and agent support through TravelIQ.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "1004G, JMD Megapolis, Sector 48",

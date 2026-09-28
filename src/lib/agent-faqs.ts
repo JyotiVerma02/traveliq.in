@@ -1,24 +1,18 @@
 export const agentFaqItems = [
   {
     question: "What are the charges or fees for IRCTC agent registration?",
-    answer: `Registration charges for the IRCTC Agent login are quite affordable.
+    answer: `Registration charges depend on the currently available plan and authentication option. Review the latest fees, included services, taxes, payment terms and refund policy with the Principal Service Provider before applying.
 
-You can get more details for the above plans at this link: IRCTC Agent Registration Fee Plans.
-
-Lowest booking charge.
-
-You can choose login authentication between OTP or DC.
-
-Travel IQ Services is providing the lowest registration charges for IRCTC agent login.`,
+OTP and DSC options may be available depending on the current onboarding setup.`,
   },
 
   {
     question: "What are the benefits of registering as an IRCTC agent?",
     answer: `Registering your travel agency as an IRCTC authorized travel agency to sell railway e-tickets is very beneficial. Some of the benefits are as below.
 
-Access to other services: As an IRCTC registered agent you can sell other services offered by IRCTC like holiday & tour packages, air tickets etc. You can earn additional income from there also.
+Access to other services: Depending on eligibility and service availability, agents may also be able to offer other travel products such as holidays, tours and air tickets.
 
-Unlimited Tickets: As an authorized IRCTC agent you can book unlimited tickets with your agent login as compared to the monthly limit applicable to a personal IRCTC login ID.
+Separate account rules: The monthly ticket limit for an individual IRCTC user is different from the policies and commercial booking rules for authorized agents. Agent accounts are subject to applicable agent restrictions; do not describe them as unlimited.
 
 Recognition: Registering with IRCTC as an agent gives you recognition in the travel industry. Many travel consolidators can get your contact through the IRCTC database and may offer you other travel services such as air tickets, holiday packages and so on.
 

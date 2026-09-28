@@ -13,7 +13,7 @@ import { absoluteUrl, OG_IMAGE_PATH, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
+    default: "IRCTC Principal Service Provider & B2B Travel Portal | TravelIQ",
     template: "%s",
   },
   description:
@@ -33,10 +33,16 @@ export const metadata: Metadata = {
   creator: "Travel IQ Services Private Limited",
   publisher: "Travel IQ Services Private Limited",
   robots: {
-    index: true,
+    index:
+      process.env.VERCEL_ENV === "preview"
+        ? false
+        : process.env.VERCEL_ENV === "production" || process.env.NODE_ENV === "production",
     follow: true,
     googleBot: {
-      index: true,
+      index:
+        process.env.VERCEL_ENV === "preview"
+          ? false
+          : process.env.VERCEL_ENV === "production" || process.env.NODE_ENV === "production",
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
@@ -44,7 +50,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "TravelIQ | Travel Services & IRCTC Agent Services",
+    title: "IRCTC Principal Service Provider & B2B Travel Portal | TravelIQ",
     description:
       "TravelIQ is an official IRCTC Principal Service Provider offering railway reservations, air tickets, hotel bookings, bus tickets, and agent registration across India.",
     url: SITE_URL,
@@ -62,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TravelIQ | Travel Services & IRCTC Agent Services",
+    title: "IRCTC Principal Service Provider & B2B Travel Portal | TravelIQ",
     description:
       "Register as an authorized IRCTC travel agent with TravelIQ. Railway reservations, flights, hotels, and bus ticket booking.",
     images: [absoluteUrl(OG_IMAGE_PATH)],

@@ -148,7 +148,7 @@ export default function Header() {
             HEADER INNER — STATIC 80px HEIGHT
         =================================================== */}
 
-        <div className={`mx-auto flex w-full max-w-[2300px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-8 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-6 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[72px]"}`}>
+        <div className={`mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 transition-[height] duration-300 sm:px-6 lg:px-10 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-14 2xl:px-16 ${isScrolled ? "h-[62px] sm:h-[68px] xl:h-[70px]" : "h-[68px] sm:h-[74px] xl:h-[72px]"}`}>
           {/* =================================================
               LOGO
           ================================================= */}
