@@ -60,7 +60,7 @@ export default function OurNews() {
         {/* =======================================================
             SECTION HEADER
         ======================================================= */}
-        <Reveal className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-5xl text-center">
           {/* Badge */}
           <div
             className="
@@ -77,7 +77,7 @@ export default function OurNews() {
               font-bold
               uppercase
               tracking-[0.18em]
-              text-[#EE5326]
+              text-[#C4320A]
               shadow-[5px_5px_12px_rgba(16,64,122,0.08),-4px_-4px_10px_rgba(255,255,255,0.95)]
             "
           >
@@ -88,6 +88,7 @@ export default function OurNews() {
           <h2
             className="
               mt-5
+              max-w-none
               text-4xl
               font-black
               tracking-[-0.04em]
@@ -95,6 +96,7 @@ export default function OurNews() {
               sm:text-5xl
               lg:text-[52px]
               lg:leading-[1.05]
+              xl:whitespace-nowrap
             "
           >
             Latest Guides &amp;{" "}
@@ -289,7 +291,7 @@ export default function OurNews() {
                   {/* Read article */}
                   <div className="mt-auto pt-5">
                     <Link
-                      href={item.href}
+                      href={item.href} prefetch={false}
                       className="
                         group/link
                         inline-flex
@@ -343,7 +345,7 @@ export default function OurNews() {
         ======================================================= */}
         <Reveal className="mt-12 flex justify-center">
           <Link
-            href="/frequently-asked-questions/"
+            href="/frequently-asked-questions/" prefetch={false}
             className="
               group
               inline-flex

@@ -1,10 +1,8 @@
-﻿"use client";
-
-import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import CarouselControls from "@/components/CarouselControls";
 
 const services = [
   [
@@ -46,98 +44,47 @@ const services = [
 ] as const;
 
 export default function Services() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = (direction: "left" | "right") => {
-    if (!scrollContainerRef.current) return;
-    const scrollAmount = scrollContainerRef.current.clientWidth;
-    scrollContainerRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <section className="relative overflow-hidden bg-[#F4F7FB]">
       <div className="relative mx-auto max-w-[1400px] bg-[#F4F7FB] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         {/* Section Header with Left/Right Controls */}
-        <div className="flex flex-col items-center justify-between gap-6 px-5 sm:flex-row sm:items-end sm:px-8 lg:px-12">
-          <Reveal className="w-full max-w-2xl text-center sm:text-left">
+        <div className="flex flex-col items-center gap-4 px-5 sm:px-8 lg:px-12">
+          <Reveal className="mx-auto w-full max-w-none text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C4320A]">
               Our Services
             </p>
-            <h2 className="mt-3 text-balance text-[clamp(1.65rem,6vw,3.75rem)] font-bold leading-tight tracking-[-0.055em] text-[#071F3D]">
+            <h2 className="mt-2 text-[clamp(1.65rem,6vw,3.75rem)] font-bold leading-tight tracking-[-0.055em] text-[#071F3D] 2xl:whitespace-nowrap 2xl:text-[2.75rem]">
               Travel Services for{" "}
               <span className="text-[#C4320A]">travel professionals</span>
             </h2>
-            <p className="mt-4 text-base leading-7 text-[#5A6A80]">
+            <p className="mx-auto mt-3 max-w-5xl text-base leading-7 text-[#5A6A80]">
               Railway and IRCTC services, flights, hotels, buses, holiday packages and agent support for travel professionals.
             </p>
           </Reveal>
 
           {/* Carousel Control Buttons */}
-          <Reveal className="flex items-center gap-3">
-            <button
-              onClick={() => handleScroll("left")}
-              aria-label="Scroll left"
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-[#10407A]/15
-                bg-white
-                text-[#10407A]
-                shadow-sm
-                transition-all
-                duration-300
-                hover:border-[#EE5326]
-                hover:bg-[#EE5326]
-                hover:text-white
-                hover:shadow-md
-                active:scale-95
+          <Reveal className="self-end">
+            <CarouselControls
+              targetId="home-services-carousel"
+              previousLabel="Scroll services left"
+              nextLabel="Scroll services right"
+              className="flex items-center gap-3"
+              buttonClassName="
+                flex h-12 w-12 items-center justify-center rounded-full border
+                border-[#10407A]/15 bg-white text-[#10407A] shadow-sm
+                transition-all duration-300 hover:border-[#EE5326]
+                hover:bg-[#EE5326] hover:text-white hover:shadow-md active:scale-95
               "
-            >
-              <ChevronLeft size={20} strokeWidth={2.5} />
-            </button>
-
-            <button
-              onClick={() => handleScroll("right")}
-              aria-label="Scroll right"
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-[#10407A]/15
-                bg-white
-                text-[#10407A]
-                shadow-sm
-                transition-all
-                duration-300
-                hover:border-[#EE5326]
-                hover:bg-[#EE5326]
-                hover:text-white
-                hover:shadow-md
-                active:scale-95
-              "
-            >
-              <ChevronRight size={20} strokeWidth={2.5} />
-            </button>
+              iconStrokeWidth={2.5}
+            />
           </Reveal>
         </div>
 
         {/* Cards Carousel Container */}
         <div
-          ref={scrollContainerRef}
+          id="home-services-carousel"
           className="
-            mt-12
+            mt-8
             flex
             w-full
             snap-x
@@ -167,7 +114,7 @@ export default function Services() {
               className="service-slide flex h-[460px] min-w-0 shrink-0 snap-start"
             >
               <Link
-                href={href}
+                href={href} prefetch={false}
                 className="
                   group
                   flex

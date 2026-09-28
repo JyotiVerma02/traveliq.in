@@ -1,11 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
-  /** Delay in seconds before this element starts animating (great for staggering a row of cards). */
+  /** Delay in seconds before this element starts animating. */
   delay?: number;
   /** Direction the content travels in from. */
   direction?: "up" | "down" | "left" | "right" | "none";
@@ -17,22 +16,7 @@ type RevealProps = {
   repeat?: boolean;
 };
 
-const offsets: Record<
-  NonNullable<RevealProps["direction"]>,
-  { x?: number; y?: number }
-> = {
-  up: { y: 1 },
-  down: { y: -1 },
-  left: { x: 1 },
-  right: { x: -1 },
-  none: {},
-};
-
-/**
- * Wrap any section/card with <Reveal> to fade + slide it in the moment
- * it scrolls into the viewport. Pass `delay` to stagger a group of
- * siblings (e.g. delay={index * 0.08} inside a .map()).
- */
+/** Fade and slide content into view without loading an animation library. */
 export default function Reveal({
   children,
   delay = 0,
@@ -41,36 +25,53 @@ export default function Reveal({
   className,
   repeat = false,
 }: RevealProps) {
-  const prefersReducedMotion = useReducedMotion();
-  const offset = offsets[direction];
+  const elementRef = useRef<HTMLDivElement>(null);
 
-  const variants: Variants = {
-    hidden: {
-      opacity: 0,
-      x: offset.x ? offset.x * distance : 0,
-      y: offset.y ? offset.y * distance : 0,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay,
-        ease: [0.16, 1, 0.3, 1],
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element || !("IntersectionObserver" in window)) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const translation =
+      direction === "up"
+        ? `translate3d(0, ${distance}px, 0)`
+        : direction === "down"
+          ? `translate3d(0, -${distance}px, 0)`
+          : direction === "left"
+            ? `translate3d(${distance}px, 0, 0)`
+            : direction === "right"
+              ? `translate3d(-${distance}px, 0, 0)`
+              : "translate3d(0, 0, 0)";
+
+    element.style.opacity = "0";
+    element.style.transform = translation;
+    element.style.transition = `opacity 600ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 600ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          element.style.opacity = "1";
+          element.style.transform = "translate3d(0, 0, 0)";
+          if (!repeat) observer.unobserve(element);
+        } else if (repeat) {
+          element.style.opacity = "0";
+          element.style.transform = translation;
+        }
       },
-    },
-  };
+      { threshold: 0.2 },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [delay, direction, distance, repeat]);
 
   return (
-    <motion.div
-      className={className}
-      initial={false}
-      whileInView={prefersReducedMotion ? undefined : "visible"}
-      viewport={{ once: !repeat, amount: 0.2 }}
-      variants={variants}
-    >
+    <div ref={elementRef} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }

@@ -154,7 +154,7 @@ export default function Header() {
           ================================================= */}
 
           <Link
-            href="/"
+            href="/" prefetch={isHome ? false : undefined}
             aria-label="TravelIQ home"
             onClick={closeMenu}
             className="relative z-[120] flex shrink-0 items-center rounded-lg outline-none transition-transform duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2"
@@ -165,7 +165,7 @@ export default function Header() {
               width={1200}
               height={720}
               quality={70}
-              priority
+              {...(isHome ? { loading: "lazy" as const } : { preload: true })}
               sizes="(max-width: 639px) 120px, (max-width: 1023px) 120px, (max-width: 1279px) 120px, 120px"
               className="h-auto w-[120px] object-contain"
             />
@@ -188,7 +188,7 @@ export default function Header() {
                   HOME
               ============================================= */}
 
-              <NavLink href="/" active={isActive("/")}>
+              <NavLink href="/" active={isActive("/")} prefetch={isHome ? false : undefined}>
                 Home
               </NavLink>
 
@@ -196,7 +196,7 @@ export default function Header() {
                   ABOUT
               ============================================= */}
 
-              <NavLink href="/about-travel-iq" active={isActive("/about-travel-iq")}>
+              <NavLink href="/about-travel-iq" active={isActive("/about-travel-iq")} prefetch={isHome ? false : undefined}>
                 About
               </NavLink>
 
@@ -210,7 +210,7 @@ export default function Header() {
                 onMouseLeave={() => setServicesOpen(false)}
               >
                 <Link
-                  href="/our-services"
+                  href="/our-services" prefetch={isHome ? false : undefined}
                   aria-haspopup="true"
                   aria-expanded={servicesOpen}
                     className={`group relative flex items-center gap-1 rounded-lg px-3 py-2.5 text-[15px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
@@ -279,7 +279,7 @@ export default function Header() {
                         return (
                           <Link
                             key={href}
-                            href={href}
+                            href={href} prefetch={isHome ? false : undefined}
                             className={`group flex items-center justify-between rounded-[11px] px-3 py-2.5 outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
                               active
                                 ? "bg-[var(--tiq-orange-soft)] text-[var(--tiq-orange)]"
@@ -318,7 +318,7 @@ export default function Header() {
                     {/* ALL SERVICES */}
 
                     <Link
-                      href="/our-services"
+                      href="/our-services" prefetch={isHome ? false : undefined}
                       className="group mt-2 flex items-center justify-between rounded-[12px] bg-[var(--tiq-navy)] px-3.5 py-3 text-[10px] font-bold uppercase tracking-[0.11em] !text-white transition-all duration-200 hover:bg-[#0B2D5C]"
                     >
                       <span className="!text-white">Explore all services</span>
@@ -336,7 +336,7 @@ export default function Header() {
                   VIDEO GALLERY
               ============================================= */}
 
-              <NavLink href="/video-gallery" active={isActive("/video-gallery")}>
+              <NavLink href="/video-gallery" active={isActive("/video-gallery")} prefetch={isHome ? false : undefined}>
                 Video Gallery
               </NavLink>
 
@@ -344,7 +344,7 @@ export default function Header() {
                   CONTACT
               ============================================= */}
 
-              <NavLink href="/contact-us" active={isActive("/contact-us")}>
+              <NavLink href="/contact-us" active={isActive("/contact-us")} prefetch={isHome ? false : undefined}>
                 Contact
               </NavLink>
 
@@ -352,7 +352,7 @@ export default function Header() {
                   PAY NOW
               ============================================= */}
 
-              <NavLink href="/pay-now/" active={isActive("/pay-now/")}>
+              <NavLink href="/pay-now/" active={isActive("/pay-now/")} prefetch={isHome ? false : undefined}>
                 Pay now
               </NavLink>
             </div>
@@ -368,7 +368,7 @@ export default function Header() {
             {/* BECOME AN AGENT */}
 
             <Link
-              href="/irctc-agent-registration"
+              href="/irctc-agent-registration" prefetch={isHome ? false : undefined}
               className="group flex items-center gap-1.5 rounded-[10px] bg-[var(--tiq-orange)] px-4 py-2.5 text-[13px] font-bold tracking-[0.03em] !text-white shadow-[0_7px_18px_rgba(238,83,38,0.17)] outline-none transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--tiq-orange-dark)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] focus-visible:ring-offset-2 2xl:px-5 2xl:py-3 2xl:text-[15px]"
             >
               <span className="!text-white">Become an Agent</span>
@@ -438,7 +438,7 @@ export default function Header() {
                 return (
                   <Link
                     key={href}
-                    href={href}
+                    href={href} prefetch={isHome ? false : undefined}
                     onClick={closeMenu}
                     className={`group flex min-h-12 w-full items-center justify-between rounded-[11px] px-4 py-3 text-[15px] font-semibold outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
                       active
@@ -491,7 +491,7 @@ export default function Header() {
                     {/* ALL SERVICES */}
 
                     <Link
-                      href="/our-services"
+                      href="/our-services" prefetch={isHome ? false : undefined}
                       onClick={closeMenu}
                       className="group flex min-h-11 items-center justify-between rounded-[10px] bg-[#F5F8FC] px-3 text-[13px] font-bold text-[var(--tiq-navy)]"
                     >
@@ -511,7 +511,7 @@ export default function Header() {
                       return (
                         <Link
                           key={href}
-                          href={href}
+                          href={href} prefetch={isHome ? false : undefined}
                           onClick={closeMenu}
                           className={`group flex min-h-11 items-center justify-between rounded-[10px] px-3 text-[13px] font-medium transition-colors duration-200 ${
                             active
@@ -541,7 +541,7 @@ export default function Header() {
               {/* BECOME AN AGENT */}
 
               <Link
-                href="/irctc-agent-registration"
+                href="/irctc-agent-registration" prefetch={isHome ? false : undefined}
                 onClick={closeMenu}
                 className="flex min-h-12 items-center justify-center gap-2 rounded-[11px] bg-[var(--tiq-orange)] px-4 text-[14px] font-bold !text-white shadow-[0_7px_16px_rgba(238,83,38,0.16)] transition-all duration-200 hover:bg-[var(--tiq-orange-dark)]"
               >
@@ -604,14 +604,17 @@ function NavLink({
   href,
   active,
   children,
+  prefetch,
 }: {
   href: string;
   active: boolean;
   children: React.ReactNode;
+  prefetch?: boolean;
 }) {
   return (
     <Link
       href={href}
+      prefetch={prefetch}
       className={`group relative flex items-center rounded-lg px-3 py-2.5 text-[15px] font-semibold tracking-[0.01em] outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] 2xl:px-4 2xl:py-3 2xl:text-[17px] ${
         active
           ? "text-[var(--tiq-orange)]"

@@ -47,10 +47,10 @@ export default function ServiceDetail({
             <span>/</span>
             <span className="text-[#10407A] font-semibold">{title}</span>
           </nav>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h1 className="mx-auto max-w-4xl text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             {title}
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-4xl text-center text-base leading-relaxed text-slate-700 sm:text-lg">
             {intro}
           </p>
         </div>

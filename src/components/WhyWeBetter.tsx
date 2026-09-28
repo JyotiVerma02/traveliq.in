@@ -111,7 +111,7 @@ export default function WhyWeBetter() {
             SECTION HEADER
         ====================================================== */}
 
-        <Reveal className="w-full max-w-4xl">
+        <Reveal className="mx-auto flex w-full flex-col items-center text-center">
           {/* Badge */}
 
           <div
@@ -142,7 +142,7 @@ export default function WhyWeBetter() {
 
           <h2
             className="
-              mt-5
+              mt-3
               max-w-none
               text-balance
               text-[clamp(1.75rem,5.3vw,3rem)]
@@ -150,6 +150,8 @@ export default function WhyWeBetter() {
               leading-[1.06]
               tracking-[-0.055em]
               text-[#0B1728]
+              2xl:whitespace-nowrap
+              2xl:text-[2.75rem]
             "
           >
             Travel Technology Built for Travel Professionals
@@ -159,8 +161,7 @@ export default function WhyWeBetter() {
 
           <p
             className="
-              mt-5
-              max-w-2xl
+              mx-auto mt-4 max-w-4xl
               text-sm
               font-medium
               leading-7
@@ -170,7 +171,7 @@ export default function WhyWeBetter() {
           >
             Established in 2014, TravelIQ supports travel agents and travel businesses with railway and IRCTC-related services, flights, hotels, buses, tour and holiday services, and B2B travel solutions.
           </p>
-          <p className="mt-3 max-w-2xl text-sm font-medium leading-7 text-[#374151] sm:text-[15px]">
+          <p className="mx-auto mt-2 max-w-4xl text-sm font-medium leading-7 text-[#374151] sm:text-[15px]">
             From agent onboarding to day-to-day booking support, TravelIQ focuses on practical technology and accessible assistance for travel professionals.
           </p>
 
@@ -178,10 +179,10 @@ export default function WhyWeBetter() {
 
           <div
             className="
-              mt-7
+              mt-5
               h-px
               w-full
-              max-w-4xl
+              mx-auto max-w-4xl
               bg-gradient-to-r
               from-[#EE5326]/35
               via-[#10407A]/10
@@ -196,7 +197,7 @@ export default function WhyWeBetter() {
 
         <div
           className="
-            mt-14
+            mt-10
             grid
             items-start
             gap-12
@@ -259,12 +260,12 @@ export default function WhyWeBetter() {
                     rel="noreferrer"
                     className="
                       font-black
-                      text-[#EE5326]
+                      text-[#C4320A]
                       underline
                       decoration-[#EE5326]/30
                       underline-offset-4
                       transition-colors
-                      hover:text-[#D9471D]
+                      hover:text-[#A82907]
                       hover:decoration-[#EE5326]
                     "
                   >
@@ -337,7 +338,7 @@ export default function WhyWeBetter() {
                           font-black
                           uppercase
                           tracking-[0.18em]
-                          text-[#EE5326]
+                          text-[#C4320A]
                         "
                       >
                         Our Reach

@@ -42,13 +42,13 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <main className="flex-1">
       <Hero />
       <PartnerLogos />
       <Services />
       <WhyWeBetter />
       <Testimonials />
       <LatestPosts />
-    </>
+    </main>
   );
 }

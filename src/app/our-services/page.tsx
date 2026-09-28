@@ -259,11 +259,11 @@ export default function ServicesPage() {
 
           {/* Section heading */}
 
-          <div className="mb-12 grid gap-6 border-b border-[#10407a]/10 pb-8 lg:grid-cols-[1fr_430px] lg:items-end">
+          <div className="mb-10 flex flex-col items-center gap-3 border-b border-[#10407a]/10 pb-6 text-center">
 
             <div>
 
-              <div className="mb-3 flex items-center gap-3">
+              <div className="mb-3 flex items-center justify-center gap-3">
 
                 <span className="h-px w-9 bg-[#ee5326]" />
 
@@ -279,7 +279,7 @@ export default function ServicesPage() {
 
             </div>
 
-            <p className="text-sm leading-7 text-[#66758a] lg:text-right">
+            <p className="mx-auto max-w-3xl text-sm leading-7 text-[#66758a]">
               Railway, flight, hotel, bus and holiday booking services for travel professionals.
             </p>
 

@@ -48,8 +48,8 @@ export default function Hero() {
           </p>
           <div className="mx-auto mt-5 flex w-full max-w-[460px] flex-col gap-2.5 min-[360px]:flex-row sm:mt-6 lg:mx-0 lg:justify-start">
             <Link
-              href="/irctc-agent-registration"
-              className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#EE5326] px-3 text-[13px] font-semibold !text-white shadow-[0_10px_25px_rgba(238,83,38,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D9471D] hover:shadow-[0_14px_30px_rgba(238,83,38,0.32)] min-[360px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
+              href="/irctc-agent-registration" prefetch={false}
+              className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#C4320A] px-3 text-[13px] font-semibold !text-white shadow-[0_10px_25px_rgba(238,83,38,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82907] hover:shadow-[0_14px_30px_rgba(238,83,38,0.32)] min-[360px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
             >
               <span className="!text-white">Become an Agent</span>
               <ArrowRight size={18} strokeWidth={2.5} className="shrink-0 !text-white transition-transform duration-300 group-hover:translate-x-1" />
@@ -60,7 +60,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with TravelIQ on WhatsApp"
-              className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-[#20BD5A] bg-[#25D366] px-3 text-[13px] font-semibold !text-white shadow-[0_8px_20px_rgba(37,211,102,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1EAD52] hover:bg-[#20BD5A] hover:shadow-[0_12px_24px_rgba(37,211,102,0.3)] min-[360px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
+              className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-[#117A3B] bg-[#117A3B] px-3 text-[13px] font-semibold !text-white shadow-[0_8px_20px_rgba(37,211,102,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0B7138] hover:bg-[#0B7138] hover:shadow-[0_12px_24px_rgba(37,211,102,0.3)] min-[360px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
             >
               <WhatsAppIcon className="h-5 w-5 shrink-0 !text-white" />
               <span className="!text-white">WhatsApp Us</span>

@@ -10,8 +10,7 @@ export default function HeroMedia() {
         src="/vande_bharat_hero.webp"
         alt=""
         fill
-        priority
-        fetchPriority="high"
+        preload
         quality={75}
         sizes="100vw"
         placeholder="blur"

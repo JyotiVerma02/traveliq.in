@@ -48,8 +48,8 @@ export default function B2BTravelPortalPage() {
         </section>
 
         <section className="mt-12 sm:mt-16">
-          <div className="max-w-3xl"><h2 className="text-2xl font-extrabold sm:text-3xl">Travel services in one place</h2><p className="mt-3 leading-7 text-slate-600">Agents can review available service categories below. Availability, access conditions, commission, inventory and payment terms can vary by service and provider; confirm current terms during onboarding.</p></div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto max-w-5xl text-center"><h2 className="text-2xl font-extrabold sm:text-3xl">Travel services in one place</h2><p className="mx-auto mt-2 max-w-4xl leading-7 text-slate-600">Agents can review available service categories below. Availability, access conditions, commission, inventory and payment terms can vary by service and provider; confirm current terms during onboarding.</p></div>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(({ name, detail, href, Icon, color }) => <Link key={name} href={href} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#10407A]/25 hover:shadow-md"><span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${color}`}><Icon className="h-5 w-5" /></span><h3 className="mt-4 font-bold group-hover:text-[#EE5326]">{name}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p><span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#10407A]">Explore service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></Link>)}
           </div>
         </section>
@@ -60,7 +60,7 @@ export default function B2BTravelPortalPage() {
         </section>
 
         <section className="mx-auto mt-12 max-w-4xl sm:mt-16">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">Frequently asked questions</h2>
+          <h2 className="text-center text-2xl font-extrabold sm:text-3xl">Frequently asked questions</h2>
           <div className="mt-5 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white px-5 sm:px-7">
             <div className="py-5"><h3 className="font-bold">What is a B2B travel portal?</h3><p className="mt-2 text-sm leading-6 text-slate-600">It is a platform through which eligible travel businesses can access travel products or booking services for their customers under the provider’s commercial terms.</p></div>
             <div className="py-5"><h3 className="font-bold">Does one registration enable every service?</h3><p className="mt-2 text-sm leading-6 text-slate-600">Not necessarily. Some services have separate eligibility, verification, supplier conditions or onboarding steps. Confirm access and charges with TravelIQ.</p></div>

@@ -1,8 +1,6 @@
-"use client";
-
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight, UserRound } from "lucide-react";
+import { UserRound } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import CarouselControls from "@/components/CarouselControls";
 
 const testimonials = [
   {
@@ -53,14 +51,6 @@ const reviewerIconColors = [
 ];
 
 export default function Testimonials() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const handleScroll = (direction: "left" | "right") => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-    const scrollAmount = container.clientWidth;
-    container.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
-  };
-
   return (
     <section id="testimonials" className="relative overflow-hidden border-b border-[#10407A]/10 bg-[#FFF8F3] py-12 sm:py-14 lg:py-16">
       {/* =========================================================
@@ -90,13 +80,13 @@ export default function Testimonials() {
             SECTION HEADER
         ======================================================= */}
 
-        <Reveal className="grid items-end gap-8 border-b border-[#10407A]/10 pb-10 lg:grid-cols-[1fr_auto]">
+        <Reveal className="mx-auto flex w-full max-w-6xl flex-col items-center border-b border-[#10407A]/10 pb-7 text-center">
           {/* LEFT HEADER */}
 
-          <div className="max-w-3xl">
+          <div className="w-full max-w-none">
             {/* Badge */}
 
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#EE5326]/15 bg-[#FFF0E9] px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#EE5326] shadow-[4px_4px_10px_rgba(238,83,38,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#EE5326]/15 bg-[#FFF0E9] px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#C4320A] shadow-[4px_4px_10px_rgba(238,83,38,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#EE5326]" />
 
               Agent Experiences
@@ -104,7 +94,7 @@ export default function Testimonials() {
 
             {/* Heading */}
 
-          <h2 className="mt-4 max-w-none text-balance text-[clamp(1.75rem,6vw,3.25rem)] font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728]">
+          <h2 className="mt-4 max-w-none text-[clamp(1.75rem,6vw,3.25rem)] font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728] xl:whitespace-nowrap xl:text-[2.75rem]">
               Feedback from{" "}
               <span className="text-[#EE5326]">
                 travel professionals.
@@ -113,7 +103,7 @@ export default function Testimonials() {
 
             {/* Description */}
 
-            <p className="mt-5 max-w-2xl text-sm font-medium leading-7 text-[#374151] sm:text-[15px]">
+            <p className="mx-auto mt-5 max-w-2xl text-sm font-medium leading-7 text-[#374151] sm:text-[15px]">
               Customer experiences with TravelIQ bookings and agent support.
             </p>
           </div>
@@ -122,7 +112,7 @@ export default function Testimonials() {
               RATING SUMMARY
           ===================================================== */}
 
-          <div className="flex w-fit items-center gap-3 rounded-full border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
+          <div className="mt-4 flex w-fit items-center gap-3 rounded-full border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-3 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
             <span className="h-2 w-2 rounded-full bg-[#EE5326]" aria-hidden="true" />
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#10407A]">
               Agent and customer feedback
@@ -130,18 +120,21 @@ export default function Testimonials() {
           </div>
         </Reveal>
 
-        <div className="mt-6 flex justify-end gap-3">
-          <button onClick={() => handleScroll("left")} aria-label="Previous testimonials" className="flex h-11 w-11 items-center justify-center rounded-full border border-[#10407A]/15 bg-white text-[#10407A] shadow-sm transition hover:bg-[#EE5326] hover:text-white"><ChevronLeft size={20} /></button>
-          <button onClick={() => handleScroll("right")} aria-label="Next testimonials" className="flex h-11 w-11 items-center justify-center rounded-full border border-[#10407A]/15 bg-white text-[#10407A] shadow-sm transition hover:bg-[#EE5326] hover:text-white"><ChevronRight size={20} /></button>
-        </div>
+        <CarouselControls
+          targetId="home-testimonials-carousel"
+          previousLabel="Previous testimonials"
+          nextLabel="Next testimonials"
+          className="mt-4 flex justify-end gap-3"
+          buttonClassName="flex h-11 w-11 items-center justify-center rounded-full border border-[#10407A]/15 bg-white text-[#10407A] shadow-sm transition hover:bg-[#EE5326] hover:text-white"
+        />
 
         {/* =========================================================
             TESTIMONIAL GRID
         ========================================================= */}
 
         <div
-          ref={scrollContainerRef}
-          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-3 pl-1 pr-0 scrollbar-none"
+          id="home-testimonials-carousel"
+          className="mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-3 pl-1 pr-0 scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y" }}
         >
           {testimonials.map((testimonial, index) => (
@@ -163,7 +156,7 @@ export default function Testimonials() {
                 {/* Number + Rating */}
 
                 <div className="flex items-center justify-between">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#FFF0E9] text-[9px] font-black text-[#EE5326] shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#FFF0E9] text-[9px] font-black text-[#C4320A] shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
                 </div>

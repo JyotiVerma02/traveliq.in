@@ -341,15 +341,16 @@ export default function AboutPage() {
               
               <h1
                 className="
-            max-w-[620px]
-            text-[3rem]
+            max-w-[680px]
+            text-balance
+            text-[2.7rem]
             font-bold
             leading-[1.03]
             tracking-[-0.04em]
             text-[#10407A]
-            sm:text-[3.8rem]
-            lg:text-[4.25rem]
-            xl:text-[4.5rem]
+            sm:text-[3.2rem]
+            lg:text-[3.5rem]
+            xl:text-[3.75rem]
           "
               >
                 Building Smarter Travel Services Since 2014
