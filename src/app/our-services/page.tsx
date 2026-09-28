@@ -49,44 +49,44 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "Air Tickets",
+    title: "Flight Booking",
     description:
-      "Travel IQ offers competitive fares for domestic and international air tickets with reliable booking support.",
+      "Access domestic and international flight booking options through TravelIQ services.",
     image: "/images/services/air-tickets.webp",
     href: "/pages/services/online-air-ticket-booking",
   },
   {
     title: "Bus Tickets",
     description:
-      "Book bus tickets with convenient online booking options and travel support across major routes.",
+      "Access bus ticket booking options for supported routes and operators.",
     image: "/images/services/bus-tickets.webp",
     href: "/pages/services/bus-ticket-booking",
   },
   {
     title: "Hotel Booking",
     description:
-      "Find hotels worldwide with attractive deals and offers designed to make every journey comfortable.",
+      "Search and reserve hotel stays through TravelIQ travel services.",
     image: "/images/services/hotel-booking.webp",
     href: "/pages/services/online-hotel-booking",
   },
   {
     title: "IRCTC Domestic Packages",
     description:
-      "Book branded IRCTC domestic tour packages and create additional earning opportunities for your business.",
+      "Explore IRCTC Domestic Packages available through TravelIQ.",
     image: "/images/services/irctc-domestic-packages.webp",
     href: "/pages/services/irctc-domestic-packages",
   },
   {
     title: "Tour Packages",
     description:
-      "Explore carefully planned domestic and international holiday packages for memorable travel experiences.",
+      "Explore tour and holiday package options for domestic and international travel.",
     image: "/images/services/tour-packages.webp",
     href: "/pages/services/irctc-tour-packages",
   },
   {
     title: "Railway Reservations",
     description:
-      "Book railway tickets across India with convenient reservation support for different travel requirements.",
+      "Railway reservation services and agent workflows, subject to applicable IRCTC requirements.",
     image: "/images/services/railway-reservations.webp",
     href: "/pages/services/railway-reservations",
   },
@@ -96,21 +96,6 @@ const services = [
       "Get Class 3 Digital Signature Certificates with solutions designed for business and professional requirements.",
     image: "/images/services/digital-signature.webp",
     href: "/pages/services/digital-signature-provider-in-gurgaon",
-  },
-];
-
-const upcomingServices = [
-  {
-    number: "01",
-    title: "PAN Card",
-    description:
-      "UTIITSL authorized PAN Card services with opportunities to become a UTI PSA agent.",
-  },
-  {
-    number: "02",
-    title: "IRCTC Domestic Packages",
-    description:
-      "Book branded IRCTC domestic tour packages and unlock additional earning opportunities.",
   },
 ];
 
@@ -180,7 +165,7 @@ export default function ServicesPage() {
 
             <h1 className="text-4xl font-semibold leading-[1.12] tracking-[-0.02em] text-[#10407a] sm:text-5xl lg:text-[56px]">
 
-              Complete Travel Solutions
+              Travel Services for Professionals
 
               <span className="block text-[#ee5326]">
                 Built for Better Journeys
@@ -189,9 +174,7 @@ export default function ServicesPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#66758a] sm:text-base">
-              From flights and railway reservations to hotels, bus tickets and
-              holiday packages, TravelIQ provides reliable travel solutions for
-              agents and travellers across India.
+              TravelIQ supports travel professionals with railway, flight, hotel, bus and holiday booking services, along with agent onboarding and B2B travel support.
             </p>
 
           </div>
@@ -297,9 +280,7 @@ export default function ServicesPage() {
             </div>
 
             <p className="text-sm leading-7 text-[#66758a] lg:text-right">
-              Professional travel services designed to help agents and
-              travellers manage bookings, reservations and complete travel
-              requirements with confidence.
+              Railway, flight, hotel, bus and holiday booking services for travel professionals.
             </p>
 
           </div>
@@ -452,99 +433,10 @@ export default function ServicesPage() {
               {/* Description */}
 
               <p className="max-w-xl text-sm leading-7 text-[#66758a]">
-                TravelIQ brings multiple travel and business services
-                together so agents can offer more to their customers while
-                building a stronger travel business.
+                TravelIQ brings confirmed booking services together for agents, with onboarding support for applicable services.
               </p>
 
             </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================================
-          UPCOMING SERVICES
-      ========================================================= */}
-
-      <section className="relative overflow-hidden bg-[#f7f9fc] py-20 sm:py-24">
-
-        <div className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-[#ee5326]/5 blur-[100px]" />
-
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-
-          {/* Heading */}
-
-          <div className="mx-auto max-w-3xl text-center">
-
-            <div className="mb-4 flex items-center justify-center gap-3">
-
-              <span className="h-px w-9 bg-[#ee5326]" />
-
-              <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#ee5326]">
-                Coming Next
-              </span>
-
-              <span className="h-px w-9 bg-[#ee5326]" />
-
-            </div>
-
-            <h2 className="text-3xl font-semibold tracking-tight text-[#10407a] sm:text-4xl">
-              Upcoming Services
-            </h2>
-
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#66758a]">
-              More business-focused services are being added to the TravelIQ
-              ecosystem.
-            </p>
-
-          </div>
-
-
-          {/* Cards */}
-
-          <div className="mx-auto mt-12 grid max-w-5xl gap-7 md:grid-cols-2">
-
-            {upcomingServices.map((item) => (
-
-              <div
-                key={item.title}
-                className="group rounded-[26px] border border-white bg-[#f5f8fb] p-7 shadow-[9px_11px_25px_rgba(16,64,122,0.09),-8px_-8px_23px_rgba(255,255,255,0.95)] transition-all duration-300 hover:-translate-y-1"
-              >
-
-                <div className="flex items-start gap-5">
-
-                  {/* Number */}
-
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[14px] border border-white bg-[#eef2f6] text-xs font-semibold text-[#ee5326] shadow-[4px_5px_10px_rgba(16,64,122,0.07),-3px_-3px_8px_rgba(255,255,255,0.95)]">
-
-                    {item.number}
-
-                  </div>
-
-
-                  {/* Content */}
-
-                  <div>
-
-                    <h3 className="text-lg font-semibold text-[#10407a]">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-2 text-sm leading-7 text-[#66758a]">
-                      {item.description}
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            ))}
 
           </div>
 

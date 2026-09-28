@@ -240,21 +240,14 @@ export default function WhyWeBetter() {
                   <strong className="font-black text-[#0B1728]">
                     Travel IQ Services
                   </strong>{" "}
-                  is India&apos;s best IRCTC principal agent and premier travel agency.
+                  supports travel professionals through railway services, B2B tools and agent-focused assistance.
 
                 </p>
 
                 {/* HISTORY */}
 
                 <p>
-                  <strong className="font-black text-[#0B1728]">
-                    Founded in 2014
-                  </strong>
-                  , Travel IQ has its corporate headquarters in Gurugram, the
-                  IT capital of Delhi/NCR. Since then, the company has
-                  consistently made significant gains in the travel market.
-                  Within three years of its founding, the company expanded its operations nationwide
-                  across all major Indian states.
+                  <strong className="font-black text-[#0B1728]">Founded in 2014</strong>, TravelIQ is based in Gurugram, Haryana, India, and develops B2B travel services for travel professionals.
 
                 </p>
 
@@ -279,10 +272,7 @@ export default function WhyWeBetter() {
                   >
                     b2b.traveliq.in
                   </a>
-                  , providing online services for domestic and international
-                  air tickets, bus tickets, railway reservations, hotel
-                  bookings, visa assistance, tour packages and UTI PAN Card
-                  services.
+                  , supporting access to domestic and international flights, bus tickets, railway reservations, hotel bookings and tour packages.
                 </p>
 
                 {/* DIGITAL SHIFT */}
@@ -293,10 +283,9 @@ export default function WhyWeBetter() {
                   travel assistance with a strong emphasis on the B2B trade
                   module. Today, the website has over{" "}
                   <strong className="font-black text-[#0B1728]">
-                    20,000 registered agents
+                  20,000+ agent registrations
                   </strong>
-                  , many of whom are experienced professionals in the travel
-                  industry.
+                  .
                 </p>
 
                 {/* =================================================
@@ -404,9 +393,7 @@ export default function WhyWeBetter() {
                 {/* SERVICES */}
 
                 <p>
-                  We offer complete assistance with vacation packages, hotels,
-                  bus services, travel insurance, passport and visa assistance,
-                  cruise bookings, and many other travel services.
+                  TravelIQ supports railway, flight, hotel, bus and holiday bookings, IRCTC agent onboarding and Class 3 Digital Signature services.
                 </p>
               </div>
 
@@ -502,7 +489,7 @@ export default function WhyWeBetter() {
                   "
                 >
                   <p className="text-2xl font-black tracking-tight text-[#EE5326]">
-                    100%
+                    B2B
                   </p>
 
                   <p
@@ -515,7 +502,7 @@ export default function WhyWeBetter() {
                       text-[#5A6475]
                     "
                   >
-                    Verified
+                    Platform
                   </p>
                 </Reveal>
 

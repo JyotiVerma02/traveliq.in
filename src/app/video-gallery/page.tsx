@@ -43,14 +43,6 @@ export const metadata: Metadata = {
 
 const videos = [
   {
-    title:
-      "Travel Agents: Get IRCTC Authorized Agent ID at Just Rs. 1 + GST | Lowest Service Fee",
-    description:
-      "Learn how travel agents can get an IRCTC authorized agent ID with TravelIQ.",
-    badge: "Agent Registration",
-    url: "https://www.youtube.com/watch?v=MdC5RSfDweQ",
-  },
-  {
     title: "How to Activate Your b2b.traveliq.in Portal",
     description:
       "Follow the steps shown for activating a b2b.traveliq.in portal.",
@@ -63,13 +55,6 @@ const videos = [
       "See how to reset a forgotten password for the TravelIQ B2B portal.",
     badge: "Portal Guide",
     url: "https://www.youtube.com/watch?v=VxvVduiiP38",
-  },
-  {
-    title: "How to Recharge Wallet in the b2b.traveliq.in Portal",
-    description:
-      "Learn the wallet recharge process inside the b2b.traveliq.in portal.",
-    badge: "Portal Guide",
-    url: "https://www.youtube.com/watch?v=bB73D9a33No",
   },
   {
     title: "How to Book a Tour Package from IRCTC",

@@ -44,12 +44,6 @@ const benefits = [
     tone: "blue",
   },
   {
-    icon: Wallet,
-    title: "Wallet-based payments",
-    text: "Use the applicable TravelIQ wallet process for booking transactions. Confirm funding methods, charges, and terms before registering.",
-    tone: "orange",
-  },
-  {
     icon: CalendarClock,
     title: "Flexible business schedule",
     text: "Manage customer enquiries and your travel business flexibly while following IRCTC booking windows and operating restrictions.",
@@ -90,7 +84,7 @@ const benefits = [
 export const metadata: Metadata = {
   title: "Benefits of IRCTC Agent Registration | TravelIQ",
   description:
-    "Explore the benefits of IRCTC agent registration, including authorized booking access, travel services, wallet payments, support, and business flexibility.",
+    "Explore the benefits of IRCTC agent registration, including authorized booking access, agent support, and business flexibility.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Benefits of IRCTC Agent Registration | TravelIQ",
@@ -213,8 +207,8 @@ export default function AgentRegistrationBenefitsPage() {
             </article>
 
             <article className="rounded-[26px] border border-white bg-[#F1F6FD] p-6 shadow-[8px_10px_22px_rgba(16,64,122,0.09),-7px_-7px_18px_rgba(255,255,255,0.95)] sm:p-8">
-              <h3 className="text-xl font-extrabold text-[#0B1F3A]">Wallets, RDS, and bank details</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">IRCTC&apos;s policy uses a Rolling Deposit System (RDS) account for the Principal Service Provider (PSP), which is funded in advance and debited for ticket transactions. The PSP must maintain and replenish the required RDS balance. A PSP may also provide a wallet or balance interface for its agents; wallet top-up timing and transaction records depend on that provider&apos;s process.</p>
+              <h3 className="text-xl font-extrabold text-[#0B1F3A]">RDS and payment arrangements</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">IRCTC&apos;s policy uses a Rolling Deposit System (RDS) account for the Principal Service Provider (PSP), which is funded in advance and debited for ticket transactions. The PSP must maintain and replenish the required RDS balance. Other payment or settlement steps depend on the applicable PSP setup.</p>
               <p className="mt-3 text-sm leading-7 text-slate-600">Because the PSP manages the IRCTC RDS account, the older claim that every agent never needs a bank account is too broad. Ask TravelIQ which payment, settlement, and identity documents apply to your setup before registering. Keep the booking invoice and transaction record for each customer as required by the provider process.</p>
               <a href="https://contents.irctc.co.in/en/New_B2C_Policy.pdf" target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-xs font-bold text-[#10407A] underline decoration-[#10407A]/30 underline-offset-4 hover:text-[#C4320A]">See IRCTC&apos;s RDS and service-charge policy</a>
             </article>
@@ -255,7 +249,7 @@ export default function AgentRegistrationBenefitsPage() {
             <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#C4320A]">Good to know</span>
             <h2 className="mt-3 text-2xl font-extrabold text-[#0B1F3A]">Plan around the applicable rules</h2>
             <p className="mt-3 text-sm leading-7 text-slate-600">Agent access is designed for authorized commercial bookings. It does not guarantee unlimited ticket availability, fixed commission, or monthly income. Booking windows, Tatkal restrictions, service charges, cancellations, and account requirements can change.</p>
-            <p className="mt-3 text-sm leading-7 text-slate-600">The old article included repeated paragraphs and conflicting registration prices. Confirm current charges, commission arrangements, wallet funding, and any maintenance fees with TravelIQ before payment.</p>
+            <p className="mt-3 text-sm leading-7 text-slate-600">The old article included repeated paragraphs and conflicting registration prices. Confirm current charges, commission arrangements, payment steps, and any maintenance fees with TravelIQ before payment.</p>
           </article>
           <article className="rounded-[28px] border border-white bg-[#F1F6FD] p-7 shadow-[8px_10px_22px_rgba(16,64,122,0.09),-7px_-7px_18px_rgba(255,255,255,0.95)] sm:p-9">
             <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#10407A]">Continue exploring</span>

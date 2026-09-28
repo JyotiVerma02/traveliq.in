@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 const services = [
   [
     "Air Tickets",
-    "Travel IQ is offering the cheapest fares for all domestic & International air tickets.",
+    "Access domestic and international flight booking options through TravelIQ services.",
     "/pages/services/online-air-ticket-booking",
     "/images/services/air-tickets.webp",
   ],
@@ -33,7 +33,7 @@ const services = [
   ],
   [
     "Tour Packages",
-    "Best tour packages for domestic and international holidays.",
+    "Explore tour and holiday package options for domestic and international travel.",
     "/pages/services/irctc-tour-packages",
     "/images/services/tour-packages.webp",
   ],
@@ -67,12 +67,12 @@ export default function Services() {
               Our Services
             </p>
             <h2 className="mt-3 text-balance text-[clamp(1.65rem,6vw,3.75rem)] font-bold leading-tight tracking-[-0.055em] text-[#071F3D]">
-              Best travel services in{" "}
-              <span className="text-[#C4320A]">India</span>
+              Travel services for{" "}
+              <span className="text-[#C4320A]">travel professionals</span>
             </h2>
             <p className="mt-4 text-base leading-7 text-[#5A6A80]">
               Air tickets, railway reservations, hotels, buses, tour packages and
-              visa assistance — arranged with care.
+              agent support — arranged with care.
             </p>
           </Reveal>
 

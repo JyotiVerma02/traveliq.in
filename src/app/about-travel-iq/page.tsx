@@ -15,7 +15,6 @@ import {
   Building2,
   Hotel,
   Bus,
-  FileCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -67,9 +66,8 @@ const solutions: {
   icon: LucideIcon;
 }[] = [
   {
-    title: "AFFORDABLE PRICE",
-    description:
-      "You can get affordable prices for all the travel products & services.",
+    title: "AGENT SUPPORT",
+    description: "Practical assistance for agent onboarding and supported services.",
     icon: BadgeCheck,
   },
   {
@@ -79,7 +77,7 @@ const solutions: {
   },
   {
     title: "PERSONAL SERVICE",
-    description: "Personalized assistance for travel-related needs.",
+    description: "Agent-focused assistance for supported travel services.",
     icon: Headphones,
   },
   {
@@ -91,7 +89,7 @@ const solutions: {
   {
     title: "HOTEL & STAY",
     description:
-      "Complete hotel and accommodation solutions for business and leisure travel.",
+      "Hotel search and reservation services for travel professionals.",
     icon: Hotel,
   },
   {
@@ -105,18 +103,6 @@ const solutions: {
     description:
       "Easy and dependable bus booking support for different travel requirements.",
     icon: Bus,
-  },
-  {
-    title: "TRAVEL INSURANCE",
-    description:
-      "Travel insurance assistance designed to make your journey safer and more secure.",
-    icon: Shield,
-  },
-  {
-    title: "VISA ASSISTANCE",
-    description:
-      "Professional assistance for passport and visa-related travel requirements.",
-    icon: FileCheck,
   },
 ];
 
@@ -366,7 +352,7 @@ export default function AboutPage() {
             xl:text-[4.5rem]
           "
               >
-                The <span className="text-[#EE5326]">TravelIQ</span> Story
+                Building Smarter Travel Services Since 2014
               </h1>
 
               
@@ -388,7 +374,7 @@ export default function AboutPage() {
             sm:leading-8
           "
               >
-                Building Smarter Travel Services Since 2014
+                Supporting Travel Professionals
               </h2>
 
               
@@ -1045,10 +1031,7 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                TravelIQ supports travel professionals with railway reservations, flights, hotels, buses and holiday services. IRCTC-related agent services are provided in accordance with applicable authorization, PSP and agent requirements. {/* 
-                 */} Started in 2014, the company
-                has its corporate office in Gurugram, Delhi/NCR and has
-                consistently shown substantial progress in the market.
+                TravelIQ is based in Gurugram, Haryana, India, and supports travel professionals with railway, flight, hotel, bus and holiday services. IRCTC-related agent services are provided in accordance with applicable authorization, PSP and agent requirements.
               </p>
 
               <p
@@ -1125,10 +1108,7 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                The B2B platform is designed to help travel businesses access and manage multiple travel services from one ecosystem. {/*
-                focusing primarily on B2B module of trade. The website has more
-                than 20000 registered agents who are considered to be some of
-                the most experienced pros in the marketplace. */}
+                The B2B platform is designed to help travel businesses access and manage multiple travel services from one ecosystem.
               </p>
 
               <p
@@ -1152,12 +1132,7 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                This is because the company always focuses on offering
-                travel-related quality services to its clients and maintaining
-                healthy relationships. Having an edge in booking flights we also
-                provide complete assistance in booking travel packages, hotels,
-                bus services, travel insurance, assistance in acquiring
-                passport/visa, booking a cruise and many more.
+                TravelIQ focuses on practical technology, accessible support and a straightforward onboarding experience across confirmed booking services.
               </p>
 
               
@@ -1178,7 +1153,7 @@ export default function AboutPage() {
                 {[
                   [Plane, "Flights", "Easy Air Booking"],
                   [Building2, "Hospitality", "Hotels & Packages"],
-                  [Headphones, "Assistance", "Visa, Insurance & More"],
+                  [Headphones, "Agent Support", "Onboarding & Service Help"],
                 ].map(([Icon, title, subtitle]) => {
                   const ServiceIcon = Icon as LucideIcon;
 

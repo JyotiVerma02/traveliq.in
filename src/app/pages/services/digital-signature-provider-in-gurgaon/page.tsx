@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ServiceDetail from "@/components/ServiceDetail";
 
 export const metadata: Metadata = {
-  title: "Class 3 Digital Signature Provider in Gurgaon | TravelIQ",
+  title: "Class 3 Digital Signature Services | TravelIQ",
   description:
-    "Get Class 3 Digital Signature Certificates (DSC) in Gurgaon with TravelIQ. Official CCA accredited DSC issuing assistance for IRCTC agents, e-tendering, and GST filing.",
+    "Explore Class 3 Digital Signature Certificate options through TravelIQ. Issuer eligibility, verification and delivery terms depend on the selected certificate provider.",
   alternates: {
     canonical: "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon/",
   },
   openGraph: {
-    title: "Class 3 Digital Signature Provider in Gurgaon | TravelIQ",
+    title: "Class 3 Digital Signature Services | TravelIQ",
     description:
-      "Get Class 3 Digital Signature Certificates (DSC) in Gurgaon with TravelIQ. Official CCA accredited DSC issuing assistance for IRCTC agents, e-tendering, and GST filing.",
+      "Explore Class 3 Digital Signature Certificate options through TravelIQ. Issuer eligibility, verification and delivery terms depend on the selected certificate provider.",
     url: "https://traveliq.in/pages/services/digital-signature-provider-in-gurgaon/",
     siteName: "TravelIQ",
     locale: "en_IN",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Class 3 Digital Signature Provider in Gurgaon | TravelIQ",
+    title: "Class 3 Digital Signature Services | TravelIQ",
     description:
-      "Get Class 3 Digital Signature Certificates (DSC) in Gurgaon with TravelIQ. Official CCA accredited DSC issuing assistance for IRCTC agents, e-tendering, and GST filing.",
+      "Explore Class 3 Digital Signature Certificate options through TravelIQ. Issuer eligibility, verification and delivery terms depend on the selected certificate provider.",
     images: ["/images/services/digital-signature.webp"],
   },
 };
@@ -41,11 +41,11 @@ export default function Page() {
       slug="digital-signature-provider-in-gurgaon"
       image="/images/services/digital-signature.webp"
       imageAlt="Digital security and electronic signature on laptop - Class 3 DSC by TravelIQ"
-      intro="Under the RCAI hierarchy of the Controller of Certifying Authorities (CCA), Government of India, Class 3 Digital Signature Certificate (DSC) offers the highest level of security, encryption, and cryptographic trust."
+      intro="TravelIQ offers a Class 3 Digital Signature Certificate service. Certificate issuance, verification requirements and delivery terms depend on the selected provider."
       sections={[
         {
-          heading: "Class 3 Digital Signature Certificate (DSC) Solutions",
-          body: "Class 3 Digital Signature Certificates are essential for IRCTC travel agent onboarding, e-tendering, e-procurement, MCA filing, trademark registration, and GST filing. TravelIQ provides fast paperless video verification and USB token delivery across Gurgaon and Delhi NCR.\n\nBenefits include legal authenticity, high-encryption security, fast processing times, and dedicated technical support for USB token configuration.",
+          heading: "Class 3 Digital Signature Certificate",
+          body: "Contact TravelIQ to review the available Class 3 Digital Signature Certificate options and applicable provider requirements. Supported use cases, verification steps, hardware and delivery terms depend on the certificate provider.",
         },
       ]}
     />

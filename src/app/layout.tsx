@@ -13,11 +13,11 @@ import { absoluteUrl, OG_IMAGE_PATH, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "IRCTC Principal Service Provider & B2B Travel Portal | TravelIQ",
+    default: "B2B Travel Services & IRCTC Agent Registration | TravelIQ",
     template: "%s",
   },
   description:
-    "TravelIQ is the leading IRCTC Principal Service Provider in India. Register as an authorized IRCTC travel agent, book train tickets, flights, buses, hotels, and holiday packages.",
+    "TravelIQ supports travel professionals with railway, flight, hotel, bus and holiday booking services, IRCTC agent onboarding, and a B2B travel platform.",
   keywords: [
     "TravelIQ",
     "IRCTC agent registration",

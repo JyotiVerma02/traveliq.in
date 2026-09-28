@@ -4,14 +4,14 @@ import ServiceDetail from "@/components/ServiceDetail";
 export const metadata: Metadata = {
   title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
   description:
-    "Book low fare domestic and international flight tickets with TravelIQ. Premier travel agency offering central reservation system fares for all major airlines.",
+    "Explore domestic and international flight booking options through TravelIQ, subject to current availability and terms.",
   alternates: {
     canonical: "https://traveliq.in/pages/services/online-air-ticket-booking/",
   },
   openGraph: {
     title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
     description:
-      "Book low fare domestic and international flight tickets with TravelIQ. Premier travel agency offering central reservation system fares for all major airlines.",
+      "Explore domestic and international flight booking options through TravelIQ, subject to current availability and terms.",
     url: "https://traveliq.in/pages/services/online-air-ticket-booking/",
     siteName: "TravelIQ",
     locale: "en_IN",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Online Flight Ticket Booking - Domestic & International | TravelIQ",
     description:
-      "Book low fare domestic and international flight tickets with TravelIQ. Premier travel agency offering central reservation system fares for all major airlines.",
+      "Explore domestic and international flight booking options through TravelIQ, subject to current availability and terms.",
     images: ["/images/services/air-tickets.webp"],
   },
 };
@@ -41,11 +41,11 @@ export default function Page() {
       slug="online-air-ticket-booking"
       image="/images/services/air-tickets.webp"
       imageAlt="Passenger airplane flying above clouds - Book Air Tickets with TravelIQ"
-      intro="TravelIQ is a leading travel platform equipped with global distribution systems (GDS) and direct ticketing inventory for all major domestic and international airlines."
+      intro="TravelIQ provides domestic and international flight booking options for agents and travellers, subject to current availability and terms."
       sections={[
         {
-          heading: "Competitive Fares & Instant Confirmation",
-          body: "Through our airline booking services, TravelIQ helps travel agents and travelers check flight availability, fares, group booking options, and ticket issuance.\n\nFor domestic routes across India, options may include IndiGo, Air India, Air India Express, SpiceJet and other leading airlines, subject to route availability and current inventory. International flight options are also available through the platform. Contact TravelIQ to confirm current availability and terms.",
+          heading: "Domestic & International Flight Booking",
+          body: "TravelIQ supports flight search and booking requests for domestic and international travel. Airline, route, schedule, fare and ticket conditions depend on current availability and supplier terms.",
         },
       ]}
     />

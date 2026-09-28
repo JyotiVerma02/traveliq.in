@@ -24,7 +24,6 @@ import {
   Zap,
   Award,
   Sparkles,
-  ChevronDown,
   Check,
   BadgePercent,
   Clock,
@@ -59,7 +58,6 @@ const pricingPlans = [
       "Print your Agency Name & Address on Tickets",
       "Agent booking access, subject to applicable IRCTC rules",
       "Dedicated WhatsApp & phone helpline",
-      "Integrated TravelIQ Wallet for Instant Issuance",
     ],
     cta: "Apply for OTP Login",
     href: "/signup/registration_form/irctc-agent-registration/?plan=otp",
@@ -549,12 +547,6 @@ export default function IrcTcAgentRegistrationPage() {
                 description:
                   "An agent can also cancel tickets using their IRCTC agent login.",
                 icon: CircleX,
-              },
-              {
-                title: "Wallet-Based Booking Payments",
-                description:
-                  "Use the applicable TravelIQ wallet process for booking transactions. Confirm funding methods, fees, and current terms before registration.",
-                icon: Wallet,
               },
               {
                 title: "Flexible Business Hours",

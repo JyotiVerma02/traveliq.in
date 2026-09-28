@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BusFront, Building2, Plane, ShieldCheck, TrainFront, Wallet } from "lucide-react";
+import { ArrowRight, BusFront, Building2, Plane, ShieldCheck, TrainFront } from "lucide-react";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 import { canonicalUrl } from "@/lib/site";
 import { createMetadata } from "@/lib/metadata";
@@ -51,7 +51,6 @@ export default function B2BTravelPortalPage() {
           <div className="max-w-3xl"><h2 className="text-2xl font-extrabold sm:text-3xl">Travel services in one place</h2><p className="mt-3 leading-7 text-slate-600">Agents can review available service categories below. Availability, access conditions, commission, inventory and payment terms can vary by service and provider; confirm current terms during onboarding.</p></div>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(({ name, detail, href, Icon, color }) => <Link key={name} href={href} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#10407A]/25 hover:shadow-md"><span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${color}`}><Icon className="h-5 w-5" /></span><h3 className="mt-4 font-bold group-hover:text-[#EE5326]">{name}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p><span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#10407A]">Explore service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></Link>)}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5"><span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#EAF5FF] text-[#10407A]"><Wallet className="h-5 w-5" /></span><h3 className="mt-4 font-bold">Payments and wallet</h3><p className="mt-2 text-sm leading-6 text-slate-600">Review payment steps and use only the verified account instructions issued by TravelIQ.</p><Link href="/pay-now/" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#10407A] hover:text-[#EE5326]">Payment details <ArrowRight className="h-4 w-4" /></Link></div>
           </div>
         </section>
 

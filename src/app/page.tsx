@@ -9,16 +9,16 @@ import type { Metadata } from "next";
 import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
+  title: "TravelIQ | B2B Travel Services for Travel Professionals",
   description:
-    "Become an authorized IRCTC travel agent with TravelIQ. Premier travel services including railway reservation, flight ticket booking, hotel booking, bus tickets, and tour packages.",
+    "TravelIQ supports travel professionals with railway, flight, hotel, bus, holiday and B2B travel services, including agent onboarding support.",
   alternates: {
     canonical: canonicalUrl("/"),
   },
   openGraph: {
-    title: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
+    title: "TravelIQ | B2B Travel Services for Travel Professionals",
     description:
-      "Become an authorized IRCTC travel agent with TravelIQ. Premier travel services including railway reservation, flight ticket booking, hotel booking, bus tickets, and tour packages.",
+      "TravelIQ supports travel professionals with railway, flight, hotel, bus, holiday and B2B travel services, including agent onboarding support.",
     url: canonicalUrl("/"),
     siteName: "TravelIQ",
     locale: "en_IN",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Travel IQ - Your Own Travel Intelligence | IRCTC Principal Agent",
+    title: "TravelIQ | B2B Travel Services for Travel Professionals",
     description:
-      "Become an authorized IRCTC travel agent with TravelIQ. Premier travel services including railway reservation, flight ticket booking, hotel booking, bus tickets, and tour packages.",
+      "TravelIQ supports travel professionals with railway, flight, hotel, bus, holiday and B2B travel services, including agent onboarding support.",
     images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };

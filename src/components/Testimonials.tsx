@@ -8,42 +8,36 @@ const testimonials = [
   {
     name: "Rishabh Kumar",
     role: "Entrepreneur",
-    rating: "★★★★★",
     message:
       "Wow... what an experience. Excellent arrangements, a nice hotel, and the serene atmosphere of Bali. Our client made this statement when he traveled here last week. THANK YOU.",
   },
   {
     name: "Reenu Sharma",
     role: "Manager",
-    rating: "★★★★★",
     message:
       "Thanks to the team's excellent planning, we were able to enjoy the trip as a ladies group at a slower pace. Everything ran smoothly during our trip to Everest. Highly recommend TravelIQ.",
   },
   {
     name: "Rohit Sharma",
     role: "Digital Marketer",
-    rating: "★★★★★",
     message:
       "Singapore is a famous destination as it is clean, safe, green and well equipped with amazing tourist attractions. We appreciate TravelIQ for providing a high-quality travel experience.",
   },
   {
     name: "Danvendra Sharma",
     role: "Manager",
-    rating: "★★★★★",
     message:
       "It was a well-planned, excellent trip to Amritsar and Dharamshala. Additionally, it was an excellent value in terms of travel. Travel-friendly, with awesome moments to cherish along the way!",
   },
   {
     name: "Subhash Sharma",
-    role: "Verified Travel Agent",
-    rating: "★★★★★",
+    role: "Travel Agent",
     message:
       "Good travel agency. Our Mukteshwar trip was enjoyable because of your service.",
   },
   {
     name: "Mr Shahid",
-    role: "Verified IRCTC Agent",
-    rating: "★★★★★",
+    role: "IRCTC Agent",
     message:
       "I received my agency within the mentioned working days and booked my first ticket with TravelIQ team support. Quick WhatsApp support and a great response from the team.",
   },
@@ -111,7 +105,7 @@ export default function Testimonials() {
             {/* Heading */}
 
           <h2 className="mt-4 max-w-none text-balance text-[clamp(1.75rem,6vw,3.25rem)] font-black leading-[1.02] tracking-[-0.055em] text-[#0B1728]">
-              Trusted by{" "}
+              Feedback from{" "}
               <span className="text-[#EE5326]">
                 travel professionals.
               </span>
@@ -120,8 +114,7 @@ export default function Testimonials() {
             {/* Description */}
 
             <p className="mt-5 max-w-2xl text-sm font-medium leading-7 text-[#374151] sm:text-[15px]">
-              Real experiences from travel agents who trust TravelIQ to
-              support their business and deliver seamless travel solutions.
+              Customer experiences with TravelIQ bookings and agent support.
             </p>
           </div>
 
@@ -130,34 +123,6 @@ export default function Testimonials() {
           ===================================================== */}
 
           <div className="flex w-fit items-center gap-4 rounded-[22px] border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[7px_7px_16px_rgba(16,64,122,0.08),-6px_-6px_14px_rgba(255,255,255,0.95)]">
-            {/* Rating */}
-
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-black tracking-tight text-[#EE5326]">
-                  4.9
-                </span>
-
-                <span className="text-[11px] font-bold text-[#374151]">
-                  /5
-                </span>
-              </div>
-
-              <div className="mt-1 flex items-center gap-1">
-                <span className="text-[11px] tracking-[0.08em] text-[#EE5326]">
-                  ★★★★★
-                </span>
-              </div>
-
-              <p className="mt-1 text-[8px] font-black uppercase tracking-[0.16em] text-[#475569]">
-                Agent Rating
-              </p>
-            </div>
-
-            {/* Divider */}
-
-            <div className="h-12 w-px bg-[#10407A]/10" />
-
             {/* Network */}
 
             <div>
@@ -208,12 +173,6 @@ export default function Testimonials() {
                   <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#FFF0E9] text-[9px] font-black text-[#EE5326] shadow-[inset_2px_2px_5px_rgba(238,83,38,0.05),inset_-2px_-2px_5px_rgba(255,255,255,0.95)]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
-
-                  <div className="rounded-full bg-white/80 px-3 py-1.5 shadow-[3px_3px_7px_rgba(16,64,122,0.06),-3px_-3px_7px_rgba(255,255,255,0.95)]">
-                    <span className="text-[10px] tracking-[0.08em] text-[#EE5326]">
-                      {testimonial.rating}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Quote */}
@@ -246,12 +205,6 @@ export default function Testimonials() {
 
                     <div className={`relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white shadow-[4px_4px_9px_rgba(16,64,122,0.07),-4px_-4px_9px_rgba(255,255,255,0.95)] ${reviewerIconColors[index % reviewerIconColors.length]}`}>
                       <UserRound className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
-
-                      {/* Verified */}
-
-                      <span className="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#FFF8F3] bg-[#10407A] text-[7px] font-black text-white shadow-sm">
-                        ✓
-                      </span>
                     </div>
 
                     {/* Name + Role */}
@@ -296,7 +249,7 @@ export default function Testimonials() {
             </span>
 
             <p className="text-xs font-medium text-[#374151]">
-              Trusted by travel professionals across India and beyond.
+              Customer feedback on bookings and agent support.
             </p>
           </div>
 

@@ -17,31 +17,31 @@ export const servicesData: ServiceItem[] = [
   {
     title: "Air Tickets",
     description:
-      "Travel IQ is offering the cheapest fares for all domestic & International air tickets.",
+      "Access domestic and international flight booking options through TravelIQ services.",
     image: "/images/services/air-tickets.webp",
     href: "/pages/services/online-air-ticket-booking",
-    tags: ["AGENTS", "GENAI", "AUTOMATION"],
+    tags: ["FLIGHTS", "DOMESTIC", "INTERNATIONAL"],
   },
   {
     title: "Bus Tickets",
     description:
-      "TraveliQ is India's leading provider of online bus ticketing services that provide comfortable bus and train travel.",
+      "Explore bus booking options for supported routes and operators through TravelIQ.",
     image: "/images/services/bus-tickets.webp",
     href: "/pages/services/bus-ticket-booking",
-    tags: ["REACT NATIVE", "FLUTTER", "SWIFT"],
+    tags: ["BUS", "ROUTES", "OPERATORS"],
   },
   {
     title: "Hotel Booking",
     description:
-      "You can get the latest deals and offers on hotel bookings all over the world.",
+      "Search and reserve hotel stays through TravelIQ, subject to current property availability.",
     image: "/images/services/hotel-booking.webp",
     href: "/pages/services/online-hotel-booking",
-    tags: ["FIGMA", "RESEARCH", "SYSTEMS"],
+    tags: ["HOTELS", "SEARCH", "BOOKING"],
   },
   {
     title: "IRCTC Domestic Packages",
     description:
-      "Book Branded IRCTC Domestic tour packages and earn commission.",
+      "Explore IRCTC Domestic Packages available through TravelIQ.",
     image: "/images/services/irctc-domestic-packages.webp",
     href: "/pages/services/irctc-domestic-packages",
     tags: ["IRCTC", "PACKAGES", "DOMESTIC"],
@@ -49,7 +49,7 @@ export const servicesData: ServiceItem[] = [
   {
     title: "Tour Packages",
     description:
-      "Best tour packages for domestic and international holidays.",
+      "Explore domestic and international tour and holiday package options.",
     image: "/images/services/tour-packages.webp",
     href: "/pages/services/irctc-tour-packages",
     tags: ["HOLIDAYS", "TOURS", "VACATION"],
@@ -57,7 +57,7 @@ export const servicesData: ServiceItem[] = [
   {
     title: "Railway Reservations",
     description:
-      "Book railway tickets across India with convenient reservation support for different travel requirements.",
+      "Railway reservation services and agent workflows, subject to applicable IRCTC requirements.",
     image: "/images/services/railway-reservations.webp",
     href: "/pages/services/railway-reservations",
     tags: ["TRAINS", "IRCTC", "RESERVATION"],

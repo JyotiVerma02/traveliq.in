@@ -6,8 +6,8 @@ import { WhatsAppIcon } from "@/components/icons";
 
 const stats = [
   { value: "2014", label: "Established" },
-  { value: "20K+", label: "Travel Agents" },
-  { value: "100%", label: "Verified Support" },
+  { value: "20K+", label: "Registrations / Agents Served" },
+  { value: "B2B", label: "Travel Platform" },
   { value: "B2B", label: "Travel Platform" },
 ];
 
