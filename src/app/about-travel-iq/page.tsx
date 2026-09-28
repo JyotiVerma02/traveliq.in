@@ -21,19 +21,22 @@ import type { LucideIcon } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 import { WhatsAppIcon } from "@/components/icons";
+import { canonicalUrl } from "@/lib/site";
+
+const aboutTitle = "About TravelIQ | Travel Technology & B2B Services";
+const aboutDescription =
+  "Learn about TravelIQ, a Gurugram-based travel technology and services brand supporting travel professionals with railway, flight, hotel, bus, holiday and B2B travel solutions.";
 
 export const metadata: Metadata = {
-  title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
-  description:
-    "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and premier travel agency established in 2014.",
+  title: aboutTitle,
+  description: aboutDescription,
   alternates: {
-    canonical: "https://traveliq.in/about-travel-iq/",
+    canonical: canonicalUrl("/about-travel-iq/"),
   },
   openGraph: {
-    title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
-    description:
-      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and premier travel agency established in 2014.",
-    url: "https://traveliq.in/about-travel-iq/",
+    title: aboutTitle,
+    description: aboutDescription,
+    url: canonicalUrl("/about-travel-iq/"),
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -48,9 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Travel IQ Services | Premier IRCTC Principal Agent in India",
-    description:
-      "Learn about Travel IQ Services Private Limited, India's leading IRCTC Principal Service Provider and premier travel agency established in 2014.",
+    title: aboutTitle,
+    description: aboutDescription,
     images: ["/images/about.webp"],
   },
 };
@@ -71,14 +73,13 @@ const solutions: {
     icon: BadgeCheck,
   },
   {
-    title: "BEST DESTINATION",
-    description:
-      "Travel IQ is offering the best destinations for your holidays.",
+    title: "HOLIDAY SERVICES",
+    description: "Holiday options and planning support for travel professionals.",
     icon: Plane,
   },
   {
     title: "PERSONAL SERVICE",
-    description: "You will get personalized services at Travel IQ Services.",
+    description: "Personalized assistance for travel-related needs.",
     icon: Headphones,
   },
   {
@@ -135,17 +136,17 @@ const stats: {
   },
   {
     number: "20K+",
-    label: "Registered Agents",
+    label: "Registrations / Agents Served",
     icon: UsersRound,
   },
   {
-    number: "100%",
-    label: "Verified Support",
+    number: "B2B",
+    label: "Travel Platform",
     icon: Award,
   },
   {
-    number: "IRCTC",
-    label: "Principal Agent",
+    number: "Pan India",
+    label: "Service Coverage",
     icon: Shield,
   },
 ];
@@ -159,25 +160,25 @@ const journey = [
     year: "2014",
     title: "Company Established",
     description:
-      "Travel IQ Services began its journey with a vision to provide reliable and professional travel solutions.",
+      "TravelIQ began its journey with a focus on supporting travel professionals and customers with travel services.",
   },
   {
     year: "2016",
     title: "Online B2B Portal",
     description:
-      "The company launched its online travel assistance portal, focusing primarily on the B2B travel trade.",
+      "TravelIQ expanded its technology-led services for travel professionals.",
   },
   {
     year: "2017",
     title: "Pan-India Expansion",
     description:
-      "Travel IQ expanded operations across all Indian states within three years of its establishment.",
+      "Additional travel and agent-focused services were introduced.",
   },
   {
     year: "Today",
     title: "Growing Travel Network",
     description:
-      "Travel IQ continues to expand its services, technology and network of travel professionals across India.",
+      "TravelIQ continues to develop its travel technology, B2B services and customer support ecosystem.",
   },
 ];
 
@@ -265,7 +266,7 @@ export default function AboutPage() {
           sm:text-[10px]
         "
             >
-              Travel IQ Services
+              TravelIQ
             </span>
 
             <div className="hidden h-px flex-1 bg-[#10407A]/10 sm:mx-8 sm:block" />
@@ -305,7 +306,7 @@ export default function AboutPage() {
       ================================================= */}
 
             <div className="relative z-10">
-              {/* Breadcrumb */}
+              
               <div
                 className="
             mb-7
@@ -334,7 +335,7 @@ export default function AboutPage() {
                 <span className="font-semibold text-[#10407A]">About Us</span>
               </div>
 
-              {/* Kicker */}
+              
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-[2px] w-10 bg-[#EE5326]" />
 
@@ -351,7 +352,7 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              {/* Main Heading */}
+              
               <h1
                 className="
             max-w-[620px]
@@ -368,13 +369,13 @@ export default function AboutPage() {
                 The <span className="text-[#EE5326]">TravelIQ</span> Story
               </h1>
 
-              {/* Orange Accent */}
+              
               <div className="mt-5 flex items-center gap-2">
                 <span className="h-[3px] w-14 bg-[#EE5326]" />
                 <span className="h-[3px] w-5 bg-[#10407A]/15" />
               </div>
 
-              {/* Subheading */}
+              
               <h2
                 className="
             mt-7
@@ -387,10 +388,10 @@ export default function AboutPage() {
             sm:leading-8
           "
               >
-                Travel IQ Services is the best travel agency in INDIA
+                Building Smarter Travel Services Since 2014
               </h2>
 
-              {/* Description */}
+              
               <p
                 className="
             mt-5
@@ -402,11 +403,7 @@ export default function AboutPage() {
             sm:leading-7
           "
               >
-                Travel IQ Services is the best Principal agent of IRCTC and an
-                premier travel agent in INDIA. Travel IQ started its
-                operations in 2014 with its Corporate office in Gurugram, IT
-                city of Delhi/NCR. Since then, it has consistently shown
-                substantial progress in the market.
+                TravelIQ is a Gurugram-based travel technology and services brand supporting travel professionals with railway, flight, hotel, bus and holiday solutions.
               </p>
 
               <p
@@ -420,8 +417,7 @@ export default function AboutPage() {
             sm:leading-7
           "
               >
-                In 2017, within mere three years of its establishment, the
-                company expanded operations nationwide across all Indian states.
+                Through its B2B travel platform, onboarding assistance and agent support services, TravelIQ helps travel businesses access and manage multiple travel services from one ecosystem.
 
 
               </p>
@@ -492,7 +488,7 @@ export default function AboutPage() {
                 text-[#EE5326]
               "
                   >
-                    Registered Agents
+                    Registrations / Agents Served
                   </p>
                 </div>
 
@@ -507,7 +503,7 @@ export default function AboutPage() {
                 text-[#10407A]
               "
                   >
-                    100%
+                    B2B
                   </p>
 
                   <p
@@ -520,7 +516,7 @@ export default function AboutPage() {
                 text-[#EE5326]
               "
                   >
-                    Accredited
+                    Travel Platform
                   </p>
                 </div>
               </div>
@@ -531,7 +527,7 @@ export default function AboutPage() {
       ================================================= */}
 
             <div className="relative z-10 w-full min-w-0">
-              {/* Decorative orange line */}
+              
               <div
                 className="
             absolute
@@ -550,7 +546,7 @@ export default function AboutPage() {
           "
               />
 
-              {/* Decorative navy line */}
+              
               <div
                 className="
             absolute
@@ -569,7 +565,7 @@ export default function AboutPage() {
           "
               />
 
-              {/* Main image */}
+              
               <div className="group relative h-[380px] overflow-hidden rounded-[24px] bg-[#EEF3F8] sm:h-[440px] lg:h-[480px] xl:h-[520px]">
                 <Image
                   src="/images/about.webp"
@@ -582,7 +578,7 @@ export default function AboutPage() {
                   quality={75}
                 />
 
-                {/* Image overlay */}
+                
                 <div
                   className="
               pointer-events-none
@@ -595,7 +591,7 @@ export default function AboutPage() {
             "
                 />
 
-                {/* Orange edge */}
+                
                 <div
                   className="
               absolute
@@ -607,7 +603,7 @@ export default function AboutPage() {
             "
                 />
 
-                {/* Image Content */}
+                
                 <div
                   className="
               absolute
@@ -661,7 +657,7 @@ export default function AboutPage() {
                       </p>
                     </div>
 
-                    {/* Globe */}
+                    
                     <div
                       className="
                   flex
@@ -853,13 +849,13 @@ export default function AboutPage() {
                 lg:ml-auto
               "
             >
-              Travel IQ Services has grown with a clear vision — to make travel
+              TravelIQ provides technology-enabled travel services designed for travel agents and businesses across India, with a focus on practical technology, accessible support and straightforward onboarding. {/* — to make travel
               assistance smarter, more accessible and more reliable for travel
-              professionals across India.
+              professionals across India. */}
             </p>
           </div>
 
-          {/* Journey cards */}
+          
 
           <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
             {journey.map((item, index) => (
@@ -953,10 +949,10 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Story text */}
+          
 
           <div className="mt-12 grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-10">
-            {/* Timeline */}
+            
 
             <div className="relative hidden lg:block">
               <div
@@ -964,7 +960,7 @@ export default function AboutPage() {
                   absolute
                   left-[13px]
                   top-2
-                  h-[calc(100%-15px)]
+                  h-[calc(B2B-15px)]
                   w-px
                   bg-gradient-to-b
                   from-[#EE5326]/40
@@ -976,9 +972,9 @@ export default function AboutPage() {
               <div className="sticky top-32 space-y-10">
                 {[
                   ["2014", "Established"],
-                  ["2016", "B2B Portal"],
-                  ["2017", "Pan-India Reach"],
-                  ["20K+", "Travel Agents"],
+                  ["2016", "B2B Platform Growth"],
+                  ["2017", "Service Network Expansion"],
+                  ["Today", "Travel Services"],
                 ].map(([year, label]) => (
                   <div key={year} className="group relative flex gap-5">
                     <div
@@ -1038,7 +1034,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Story content */}
+            
 
             <div className="max-w-4xl">
               <p
@@ -1049,8 +1045,8 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                Travel IQ Services is the best Principal agent of IRCTC and premier
-                travel agent in India. Started in 2014, the company
+                TravelIQ supports travel professionals with railway reservations, flights, hotels, buses and holiday services. IRCTC-related agent services are provided in accordance with applicable authorization, PSP and agent requirements. {/* 
+                 */} Started in 2014, the company
                 has its corporate office in Gurugram, Delhi/NCR and has
                 consistently shown substantial progress in the market.
               </p>
@@ -1064,12 +1060,10 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                In 2017, within mere three years of its establishment, the
-                company expanded its operations nationwide across all Indian states
-                and Union Territories.
+                The platform brings together travel services and related support to help agents manage their operations more efficiently.
               </p>
 
-              {/* Quote */}
+              
 
               <div
                 className="
@@ -1131,10 +1125,10 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                The portal is basically designed for online travel assistance
+                The B2B platform is designed to help travel businesses access and manage multiple travel services from one ecosystem. {/*
                 focusing primarily on B2B module of trade. The website has more
                 than 20000 registered agents who are considered to be some of
-                the most experienced pros in the marketplace.
+                the most experienced pros in the marketplace. */}
               </p>
 
               <p
@@ -1146,10 +1140,7 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                Majorly operating in states like Haryana, Uttar Pradesh and
-                Punjab Travel IQ has become a landmark in travel industry. Since
-                the year 2014, the company is being awarded by some of the most
-                esteemed airlines for its outstanding provision of services.
+                Since 2014, TravelIQ has continued to develop travel services, technology and support for travel professionals.
               </p>
 
               <p
@@ -1169,7 +1160,7 @@ export default function AboutPage() {
                 passport/visa, booking a cruise and many more.
               </p>
 
-              {/* Service strip */}
+              
 
               <div
                 className="
@@ -1465,7 +1456,7 @@ export default function AboutPage() {
               lg:gap-24
             "
           >
-            {/* TEXT */}
+            
 
             <div className="animate-[fadeUp_0.8s_ease-out]">
               <div className="flex items-center gap-3">
@@ -1496,8 +1487,8 @@ export default function AboutPage() {
                   sm:text-5xl
                 "
               >
-                Guarantee Feel Free{" "}
-                <span className="text-[#EE5326]">From Pain Again</span>
+                Helping Agents Feel{" "}
+                <span className="text-[#EE5326]">Supported Again</span>
               </h2>
 
               <p
@@ -1510,10 +1501,7 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                Mr. Neeraj Garg has always been a visionary who does not
-                hesitate in thinking out of the box. The man is known for making
-                full-proof strategies and ascertaining that they are well
-                executed along with his great networking skills.
+                Mr. Neeraj Garg has focused on thoughtful planning, professional relationships and putting strategies into practice.
               </p>
 
               <p
@@ -1526,10 +1514,7 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                With an utmost endeavor of keeping up with the latest technology
-                and techniques, the company is also investing in new verticals
-                and niche products. Rather than just being concerned about
-                client satisfaction, we aim at making our clients happy.
+                TravelIQ continues to explore relevant technology, services and product areas while working to provide a positive client experience.
               </p>
 
               <p
@@ -1542,12 +1527,10 @@ export default function AboutPage() {
                   text-[#526174]
                 "
               >
-                With the primary goal of being process driven, we focus on
-                providing high standard services to our clients at affordable
-                prices.
+                With a process-driven approach, TravelIQ focuses on providing dependable services at accessible prices.
               </p>
 
-              {/* Trust box */}
+              
 
               <div
                 className="
@@ -1597,7 +1580,7 @@ export default function AboutPage() {
                       text-[#EE5326]
                     "
                   >
-                    Trusted Travel Solutions
+                    TravelIQ Advantage
                   </div>
 
                   <div
@@ -1615,7 +1598,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* IMAGE */}
+            
 
             <div
               className="
@@ -1696,7 +1679,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Floating card */}
+              
 
               <div
                 className="
@@ -1779,8 +1762,7 @@ export default function AboutPage() {
                   sm:text-4xl
                 "
               >
-                Complete Travel{" "}
-                <span className="text-[#EE5326]">Solutions</span>
+                What We Do
               </h3>
 
               <p
@@ -1822,7 +1804,7 @@ export default function AboutPage() {
                     animationDelay: `${index * 80}ms`,
                   }}
                 >
-                  {/* Hover background */}
+                  
 
                   <div
                     className="
@@ -1841,7 +1823,7 @@ export default function AboutPage() {
                   />
 
                   <div className="relative">
-                    {/* Icon */}
+                    
 
                     <div
                       className="
@@ -1870,7 +1852,7 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    {/* Title */}
+                    
 
                     <h3
                       className="
@@ -1888,7 +1870,7 @@ export default function AboutPage() {
                       {title}
                     </h3>
 
-                    {/* Description */}
+                    
 
                     <p
                       className="
@@ -1902,7 +1884,7 @@ export default function AboutPage() {
                       {description}
                     </p>
 
-                    {/* Animated line */}
+                    
 
                     <div className="mt-7 flex items-center gap-2">
                       <div
@@ -1931,7 +1913,7 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  {/* Bottom reveal */}
+                  
 
                   <div
                     className="
@@ -2100,9 +2082,7 @@ export default function AboutPage() {
                     text-[#526174]
                   "
                 >
-                  Travel IQ services can help the aspiring travel agencies to
-                  increase their business and get more clients through online
-                  promotions.
+                  Explore TravelIQ travel services, the B2B platform and agent onboarding options.
                 </p>
               </div>
 
@@ -2175,7 +2155,7 @@ export default function AboutPage() {
       ========================================================= */}
 
       <section className="relative min-h-[640px] overflow-hidden bg-[#071F3D] lg:min-h-[720px]">
-        {/* Background Image */}
+        
         <div className="absolute inset-0">
           <Image
             src="/images/staff-member.webp"
@@ -2191,14 +2171,14 @@ export default function AboutPage() {
       Strong on left, transparent on right */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071F3D] from-[0%] via-[#071F3D]/95 via-[25%] via-[#071F3D]/70 via-[45%] via-[#071F3D]/30 via-[60%] to-transparent" />
 
-        {/* Very subtle overall blue tint */}
+        
         <div className="absolute inset-0 bg-[#071F3D]/10" />
 
-        {/* Main Content */}
+        
         <div className="relative z-10 flex min-h-[640px] items-center lg:min-h-[720px]">
           <div className="w-full px-6 py-20 sm:px-10 lg:px-[4.3vw] lg:py-24">
             <div className="max-w-[820px]">
-              {/* Eyebrow */}
+              
               <div className="flex items-center gap-5">
                 <span className="h-[3px] w-12 bg-[#EE5326]" />
 
@@ -2207,20 +2187,20 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              {/* Heading */}
+              
               <h2 className="mt-6 max-w-[760px] text-[42px] font-bold leading-[1.08] tracking-[-0.025em] text-white sm:text-[50px] lg:text-[58px]">
                 Trusted People Behind
                 <br />
                 <span className="text-[#EE5326]">Your Travel Business</span>
               </h2>
 
-              {/* Heading Accent */}
+              
               <div className="mt-7 flex items-center gap-3">
                 <span className="h-[4px] w-12 bg-[#EE5326]" />
                 <span className="h-[4px] w-5 bg-white/80" />
               </div>
 
-              {/* Description */}
+              
               <div className="mt-8 max-w-[735px]">
                 <p className="text-[15px] font-normal leading-[1.9] tracking-[0.01em] text-white/90 sm:text-[16px]">
                   Behind every successful travel agent is a team that
@@ -2236,9 +2216,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Feature Cards */}
+              
               <div className="mt-8 grid max-w-[820px] gap-5 sm:grid-cols-2">
-                {/* Card 1 */}
+                
                 <div className="flex min-h-[112px] items-center gap-5 rounded-[9px] border border-white/20 border-l-[4px] border-l-[#EE5326] bg-[#071F3D]/55 px-6 py-5 backdrop-blur-[3px]">
                   <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[8px] bg-[#EE5326]">
                     <UsersRound
@@ -2258,7 +2238,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Card 2 */}
+                
                 <div className="flex min-h-[112px] items-center gap-5 rounded-[9px] border border-white/20 border-l-[4px] border-l-[#10407A] bg-[#071F3D]/55 px-6 py-5 backdrop-blur-[3px]">
                   <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[8px] bg-[#10407A]">
                     <Globe aria-hidden="true" className="h-8 w-8 text-white" />
@@ -2276,7 +2256,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* CTA */}
+              
               <Link
                 href="/our-services"
                 aria-label="Explore TravelIQ services"
@@ -2295,7 +2275,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Bottom Brand Line */}
+        
         <div className="absolute bottom-0 left-0 z-20 h-[3px] w-full bg-[#EE5326]" />
       </section>
 
@@ -2343,7 +2323,7 @@ export default function AboutPage() {
             lg:py-24
           "
         >
-          {/* Section heading */}
+          
 
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex items-center justify-center gap-3">
@@ -2374,7 +2354,7 @@ export default function AboutPage() {
                 sm:text-5xl
               "
             >
-              Built Around <span className="text-[#EE5326]">Trust</span>
+              Built for Travel Professionals
             </h2>
 
             <p
@@ -2386,12 +2366,11 @@ export default function AboutPage() {
                 text-[#526174]
               "
             >
-              Everything we do is focused on helping travel professionals grow
-              with confidence, reliability and better service.
+              TravelIQ combines a multi-service platform, onboarding assistance and support for travel professionals.
             </p>
           </div>
 
-          {/* Cards */}
+          
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -2439,7 +2418,7 @@ export default function AboutPage() {
                   hover:shadow-[12px_18px_38px_rgba(16,64,122,0.11)]
                 "
               >
-                {/* Hover background */}
+                
 
                 <div
                   className="
@@ -2457,7 +2436,7 @@ export default function AboutPage() {
                   "
                 />
 
-                {/* Number */}
+                
 
                 <span
                   className="
@@ -2476,7 +2455,7 @@ export default function AboutPage() {
                   {number}
                 </span>
 
-                {/* Icon */}
+                
 
                 <div
                   className="
@@ -2508,7 +2487,7 @@ export default function AboutPage() {
                   />
                 </div>
 
-                {/* Content */}
+                
 
                 <h3
                   className="
@@ -2540,7 +2519,7 @@ export default function AboutPage() {
                   {description}
                 </p>
 
-                {/* Animated line */}
+                
 
                 <div className="relative mt-7 flex items-center gap-2">
                   <span
@@ -2569,7 +2548,7 @@ export default function AboutPage() {
                   />
                 </div>
 
-                {/* Bottom reveal */}
+                
 
                 <div
                   className="
