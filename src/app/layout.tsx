@@ -34,15 +34,11 @@ export const metadata: Metadata = {
   publisher: "Travel IQ Services Private Limited",
   robots: {
     index:
-      process.env.VERCEL_ENV === "preview"
-        ? false
-        : process.env.VERCEL_ENV === "production" || process.env.NODE_ENV === "production",
+      process.env.VERCEL_ENV !== "preview" && process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_SITE_HOST === "traveliq.in",
     follow: true,
     googleBot: {
       index:
-        process.env.VERCEL_ENV === "preview"
-          ? false
-          : process.env.VERCEL_ENV === "production" || process.env.NODE_ENV === "production",
+        process.env.VERCEL_ENV !== "preview" && process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_SITE_HOST === "traveliq.in",
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",

@@ -60,7 +60,7 @@ export default function OurNews() {
         {/* =======================================================
             SECTION HEADER
         ======================================================= */}
-        <Reveal className="mx-auto max-w-5xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           {/* Badge */}
           <div
             className="
@@ -110,14 +110,14 @@ export default function OurNews() {
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#374151]">
             Browse practical information about railway services, agent onboarding and travel bookings.
           </p>
-        </Reveal>
+        </div>
 
         {/* =======================================================
             NEWS GRID
         ======================================================= */}
         <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 xl:mt-14 xl:grid-cols-4 xl:gap-7">
           {news.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.08}>
+            <div key={item.title}>
               <article
                 className="
                   group
@@ -131,7 +131,7 @@ export default function OurNews() {
                   border-[#10407A]/12
                   bg-[#FFF8F3]
                   shadow-[9px_9px_22px_rgba(16,64,122,0.09),-8px_-8px_18px_rgba(255,255,255,0.95)]
-                  transition-all
+                        transition-all
                   duration-500
                   hover:-translate-y-2
                   hover:shadow-[12px_14px_28px_rgba(16,64,122,0.13),-8px_-8px_20px_rgba(255,255,255,1)]
@@ -172,6 +172,8 @@ export default function OurNews() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      loading="lazy"
+                      quality={60}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="
                         object-cover
@@ -307,7 +309,7 @@ export default function OurNews() {
                         font-bold
                         !text-[#10407A]
                         shadow-[3px_3px_8px_rgba(16,64,122,0.06),-2px_-2px_6px_rgba(255,255,255,0.9)]
-                        transition-all
+                  transition-[transform,box-shadow]
                         duration-300
                         hover:border-[#EE5326]/20
                         hover:bg-[#EE5326]
@@ -336,14 +338,14 @@ export default function OurNews() {
                   </div>
                 </div>
               </article>
-            </Reveal>
+            </div>
           ))}
         </div>
 
         {/* =======================================================
             VIEW ALL BUTTON - FIXED WHITE TEXT ON ORANGE HOVER
         ======================================================= */}
-        <Reveal className="mt-12 flex justify-center">
+        <div className="mt-12 flex justify-center">
           <Link
             href="/frequently-asked-questions/" prefetch={false}
             className="
@@ -403,7 +405,7 @@ export default function OurNews() {
               />
             </span>
           </Link>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

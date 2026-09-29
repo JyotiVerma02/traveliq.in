@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-const HERO_BLUR_DATA_URL =
-  "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAUABUB8JYgCdADze7UQAMtC4VB/uy+hQWFLf01+GoJ6fYRCr7KxqAA=";
-
 export default function HeroMedia() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#F5F9FC]">
@@ -10,11 +7,10 @@ export default function HeroMedia() {
         src="/vande_bharat_hero.webp"
         alt=""
         fill
-        preload
-        quality={75}
+        fetchPriority="high"
+        loading="eager"
+        quality={65}
         sizes="100vw"
-        placeholder="blur"
-        blurDataURL={HERO_BLUR_DATA_URL}
         className="object-cover object-[70%_center] opacity-75 sm:object-[67%_center] sm:opacity-85 lg:object-[68%_center] lg:opacity-100"
       />
 

@@ -301,7 +301,7 @@ export default function PartnerLogos() {
                 inline-flex
                 h-full
                 w-full
-                animate-ping
+                motion-safe:animate-ping
                 rounded-full
                 bg-[#25D366]
                 opacity-30

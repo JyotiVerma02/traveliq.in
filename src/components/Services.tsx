@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import Reveal from "@/components/Reveal";
 import CarouselControls from "@/components/CarouselControls";
 
 const services = [
@@ -49,7 +48,7 @@ export default function Services() {
       <div className="relative mx-auto max-w-[1400px] bg-[#F4F7FB] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         {/* Section Header with Left/Right Controls */}
         <div className="flex flex-col items-center gap-4 px-5 sm:px-8 lg:px-12">
-          <Reveal className="mx-auto w-full max-w-none text-center">
+          <div className="mx-auto w-full max-w-none text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C4320A]">
               Our Services
             </p>
@@ -60,10 +59,10 @@ export default function Services() {
             <p className="mx-auto mt-3 max-w-5xl text-base leading-7 text-[#5A6A80]">
               Railway and IRCTC services, flights, hotels, buses, holiday packages and agent support for travel professionals.
             </p>
-          </Reveal>
+          </div>
 
           {/* Carousel Control Buttons */}
-          <Reveal className="self-end">
+          <div className="self-end">
             <CarouselControls
               targetId="home-services-carousel"
               previousLabel="Scroll services left"
@@ -77,7 +76,7 @@ export default function Services() {
               "
               iconStrokeWidth={2.5}
             />
-          </Reveal>
+          </div>
         </div>
 
         {/* Cards Carousel Container */}
@@ -106,11 +105,8 @@ export default function Services() {
           }}
         >
           {services.map(([title, description, href, image], index) => (
-            <Reveal
+            <div
               key={title}
-              delay={Math.min(index, 4) * 0.08}
-              direction="right"
-              distance={24}
               className="service-slide flex h-[460px] min-w-0 shrink-0 snap-start"
             >
               <Link
@@ -127,7 +123,7 @@ export default function Services() {
                   border-[#10407A]/15
                   bg-white
                   shadow-none
-                  transition-all
+                  transition-[transform,border-color,box-shadow]
                   duration-300
                   hover:-translate-y-1
                   hover:border-[#EE5326]/30
@@ -141,6 +137,7 @@ export default function Services() {
                     alt={title}
                     fill
                     loading="lazy"
+                    quality={60}
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                     sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
                   />
@@ -199,7 +196,7 @@ export default function Services() {
                   </div>
                 </div>
               </Link>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>

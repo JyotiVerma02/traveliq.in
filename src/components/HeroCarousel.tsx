@@ -28,6 +28,8 @@ export default function HeroCarousel() {
   const [isFadingIn, setIsFadingIn] = useState(false);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduceMotion.matches) return;
     const timer = window.setInterval(() => {
       setCurrentIndex((previous) => {
         setPreviousIndex(previous || null);

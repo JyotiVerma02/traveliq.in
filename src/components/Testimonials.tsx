@@ -1,5 +1,4 @@
 import { UserRound } from "lucide-react";
-import Reveal from "@/components/Reveal";
 import CarouselControls from "@/components/CarouselControls";
 
 const testimonials = [
@@ -80,7 +79,7 @@ export default function Testimonials() {
             SECTION HEADER
         ======================================================= */}
 
-        <Reveal className="mx-auto flex w-full max-w-6xl flex-col items-center border-b border-[#10407A]/10 pb-7 text-center">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center border-b border-[#10407A]/10 pb-7 text-center">
           {/* LEFT HEADER */}
 
           <div className="w-full max-w-none">
@@ -118,7 +117,7 @@ export default function Testimonials() {
               Agent and customer feedback
             </p>
           </div>
-        </Reveal>
+        </div>
 
         <CarouselControls
           targetId="home-testimonials-carousel"
@@ -138,8 +137,8 @@ export default function Testimonials() {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y" }}
         >
           {testimonials.map((testimonial, index) => (
-            <Reveal key={testimonial.name} delay={index * 0.1} className="testimonial-slide min-w-0 shrink-0 snap-start">
-            <article className="group relative flex min-h-[365px] flex-col justify-between overflow-hidden rounded-[26px] border border-[#10407A]/12 bg-[#FFF8F3] p-5 shadow-[8px_8px_20px_rgba(16,64,122,0.09),-6px_-6px_16px_rgba(255,255,255,0.96)] transition-all duration-500 hover:-translate-y-1 hover:border-[#10407A]/20 hover:shadow-[12px_14px_26px_rgba(16,64,122,0.12),-8px_-8px_20px_rgba(255,255,255,0.98)] sm:p-6">
+            <div key={testimonial.name} className="testimonial-slide min-w-0 shrink-0 snap-start">
+            <article className="group relative flex min-h-[365px] flex-col justify-between overflow-hidden rounded-[26px] border border-[#10407A]/12 bg-[#FFF8F3] p-5 shadow-[8px_8px_20px_rgba(16,64,122,0.09),-6px_-6px_16px_rgba(255,255,255,0.96)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[#10407A]/20 hover:shadow-[12px_14px_26px_rgba(16,64,122,0.12),-8px_-8px_20px_rgba(255,255,255,0.98)] sm:p-6">
               {/* =================================================
                   ORANGE CORNER ACCENT
               ================================================= */}
@@ -218,7 +217,7 @@ export default function Testimonials() {
 
               <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#EE5326] transition-all duration-500 group-hover:w-full" />
             </article>
-            </Reveal>
+            </div>
           ))}
         </div>
 
@@ -226,7 +225,7 @@ export default function Testimonials() {
             BOTTOM TRUST STRIP
         ========================================================= */}
 
-        <Reveal className="mt-10 flex flex-col gap-5 rounded-[22px] border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[6px_6px_14px_rgba(16,64,122,0.06),-5px_-5px_12px_rgba(255,255,255,0.95)] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-5 rounded-[22px] border border-[#10407A]/12 bg-[#FFF8F3] px-5 py-4 shadow-[6px_6px_14px_rgba(16,64,122,0.06),-5px_-5px_12px_rgba(255,255,255,0.95)] sm:flex-row sm:items-center sm:justify-between">
           {/* Trust message */}
 
           <div className="flex items-center gap-3">
@@ -248,7 +247,7 @@ export default function Testimonials() {
               TravelIQ customer and agent feedback
             </span>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
