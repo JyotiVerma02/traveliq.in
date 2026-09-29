@@ -7,8 +7,7 @@ export default function HeroMedia() {
         src="/vande_bharat_hero.webp"
         alt=""
         fill
-        fetchPriority="high"
-        loading="eager"
+        preload
         quality={65}
         sizes="100vw"
         className="object-cover object-[70%_center] opacity-75 sm:object-[67%_center] sm:opacity-85 lg:object-[68%_center] lg:opacity-100"

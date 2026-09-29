@@ -174,7 +174,7 @@ export default function OurNews() {
                       fill
                       loading="lazy"
                       quality={60}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 639px) 90vw, (max-width: 1023px) 46vw, 23vw"
                       className="
                         object-cover
                         transition-transform

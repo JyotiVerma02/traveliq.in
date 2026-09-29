@@ -1,5 +1,10 @@
 export const SITE_URL = "https://traveliq.in";
 
+export const IS_INDEXABLE_PRODUCTION =
+  process.env.NODE_ENV === "production" &&
+  process.env.VERCEL_ENV !== "preview" &&
+  process.env.NEXT_PUBLIC_SITE_HOST === "traveliq.in";
+
 export const OG_IMAGE_PATH = "/images/traveliq-og.webp";
 
 export function absoluteUrl(path = "/") {

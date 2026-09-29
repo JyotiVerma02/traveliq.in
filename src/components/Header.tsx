@@ -376,6 +376,7 @@ export default function Header() {
             onClick={() => setOpen((value) => !value)}
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation-panel"
             className="relative z-[120] flex h-11 w-11 items-center justify-center rounded-[10px] border border-[#10407A]/10 bg-white text-[var(--tiq-navy)] shadow-[0_4px_12px_rgba(4,12,26,0.06)] outline-none transition-all duration-200 hover:border-[var(--tiq-orange)]/20 hover:text-[var(--tiq-orange)] focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] xl:hidden"
           >
             {open ? (
@@ -393,6 +394,8 @@ export default function Header() {
         ===================================================== */}
 
         <div
+          id="mobile-navigation-panel"
+          inert={!open}
           className={`overflow-hidden border-t border-[#10407A]/[0.06] bg-white transition-[max-height,opacity] duration-300 xl:hidden ${
             open
             ? `opacity-100 ${isScrolled ? "max-h-[calc(100dvh-62px)] sm:max-h-[calc(100dvh-68px)]" : "max-h-[calc(100dvh-68px)] sm:max-h-[calc(100dvh-74px)]"}`
@@ -438,6 +441,8 @@ export default function Header() {
                   type="button"
                   onClick={() => setServicesOpen((value) => !value)}
                   aria-expanded={servicesOpen}
+                  aria-controls="mobile-services-list"
+                  aria-label={servicesOpen ? "Collapse services links" : "Expand services links"}
                   className={`flex min-h-12 w-full items-center justify-between rounded-[11px] px-4 py-3 text-[15px] font-semibold outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--tiq-orange)] ${
                     servicesActive
                       ? "bg-[var(--tiq-orange-soft)] text-[var(--tiq-orange)]"
@@ -453,8 +458,10 @@ export default function Header() {
                   />
                 </button>
 
-                <div
-                  className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
+                  <div
+                    id="mobile-services-list"
+                    inert={!servicesOpen}
+                    className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
                     servicesOpen
                       ? "max-h-[700px] opacity-100"
                       : "max-h-0 opacity-0"

@@ -35,16 +35,20 @@ export default function CarouselControls({
     <div className={className}>
       <button
         type="button"
+        aria-controls={targetId}
         onClick={() => scroll(-1)}
         aria-label={previousLabel}
+        title={previousLabel}
         className={buttonClassName}
       >
         <ChevronLeft size={iconSize} strokeWidth={iconStrokeWidth} />
       </button>
       <button
         type="button"
+        aria-controls={targetId}
         onClick={() => scroll(1)}
         aria-label={nextLabel}
+        title={nextLabel}
         className={buttonClassName}
       >
         <ChevronRight size={iconSize} strokeWidth={iconStrokeWidth} />

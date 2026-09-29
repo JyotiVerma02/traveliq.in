@@ -139,7 +139,7 @@ export default function Services() {
                     loading="lazy"
                     quality={60}
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
-                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    sizes="(max-width: 639px) 88vw, (max-width: 1023px) 46vw, 31vw"
                   />
 
                   {/* Soft bottom-only gradient for number tag legibility without darkening the main subject */}

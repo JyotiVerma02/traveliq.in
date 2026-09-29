@@ -8,7 +8,12 @@ import {
   getOrganizationSchema,
   getWebSiteSchema,
 } from "@/components/JsonLd";
-import { absoluteUrl, OG_IMAGE_PATH, SITE_URL } from "@/lib/site";
+import {
+  absoluteUrl,
+  IS_INDEXABLE_PRODUCTION,
+  OG_IMAGE_PATH,
+  SITE_URL,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,12 +38,10 @@ export const metadata: Metadata = {
   creator: "Travel IQ Services Private Limited",
   publisher: "Travel IQ Services Private Limited",
   robots: {
-    index:
-      process.env.VERCEL_ENV !== "preview" && process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_SITE_HOST === "traveliq.in",
+    index: IS_INDEXABLE_PRODUCTION,
     follow: true,
     googleBot: {
-      index:
-        process.env.VERCEL_ENV !== "preview" && process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_SITE_HOST === "traveliq.in",
+      index: IS_INDEXABLE_PRODUCTION,
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
