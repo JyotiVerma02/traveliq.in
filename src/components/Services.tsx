@@ -101,7 +101,6 @@ export default function Services() {
             msOverflowStyle: "none",
             overscrollBehaviorX: "contain",
             touchAction: "pan-x pan-y",
-            scrollBehavior: "smooth",
           }}
         >
           {services.map(([title, description, href, image], index) => (

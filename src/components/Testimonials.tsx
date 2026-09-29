@@ -134,7 +134,7 @@ export default function Testimonials() {
         <div
           id="home-testimonials-carousel"
           className="mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-3 pl-1 pr-0 scrollbar-none"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y" }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", overscrollBehaviorX: "contain", touchAction: "pan-x pan-y", scrollBehavior: "smooth" }}
         >
           {testimonials.map((testimonial, index) => (
             <div key={testimonial.name} className="testimonial-slide min-w-0 shrink-0 snap-start">

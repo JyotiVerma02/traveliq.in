@@ -26,7 +26,7 @@ export default function CarouselControls({
     if (!container) return;
 
     container.scrollBy({
-      left: direction * container.clientWidth,
+      left: direction * window.innerWidth,
       behavior: "smooth",
     });
   };
