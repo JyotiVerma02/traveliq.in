@@ -220,7 +220,7 @@ export default function ContactPage() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
+              className="mt-2 break-words text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
             >
               WhatsApp: +91 78350 25025
             </a>
@@ -242,7 +242,7 @@ export default function ContactPage() {
 
             <a
               href={`tel:${CONTACT_PHONE}`}
-              className="mt-2 text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
+              className="mt-2 break-words text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
             >
               {CONTACT_PHONE_DISPLAY}
             </a>
@@ -262,7 +262,7 @@ export default function ContactPage() {
               Office
             </p>
 
-            <p className="mt-2 max-w-[240px] text-sm font-semibold leading-5 text-[#0B1728]">
+            <p className="mt-2 max-w-[240px] break-words text-sm font-semibold leading-5 text-[#0B1728]">
               Unit 1004G, JMD Megapolis, Sector 48, Gurugram - 122018
             </p>
           </div>

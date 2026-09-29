@@ -139,7 +139,7 @@ export default function Footer() {
                     Office
                   </p>
 
-                  <p className="mt-0.5 max-w-xs text-xs font-medium leading-5 text-white sm:text-sm">
+                  <p className="mt-0.5 max-w-xs break-words text-xs font-medium leading-5 text-white sm:text-sm">
                     1004G, JMD Megapolis, Sector 48, Gurugram.
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function Footer() {
                     Email
                   </p>
 
-                  <p className="mt-0.5 text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
+                  <p className="mt-0.5 break-all text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
                     support@traveliq.in
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export default function Footer() {
                     Call Us
                   </p>
 
-                  <p className="mt-0.5 text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
+                  <p className="mt-0.5 break-all text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
                     {CONTACT_PHONE_DISPLAY}
                   </p>
                 </div>
@@ -333,11 +333,11 @@ function FooterLink({
   return (
     <Link
       href={href}
-      className="group flex items-center gap-2.5 text-xs font-medium text-slate-200 transition-colors hover:text-[#EE5326] sm:text-sm"
+      className="group flex min-h-8 items-center gap-2.5 text-sm font-medium text-slate-200 transition-colors hover:text-[#EE5326]"
     >
       <ChevronRight className="h-3.5 w-3.5 shrink-0 text-[#EE5326] transition-transform duration-200 group-hover:translate-x-0.5" />
 
-      <span>{children}</span>
+      <span className="min-w-0 break-words">{children}</span>
     </Link>
   );
 }

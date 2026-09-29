@@ -655,8 +655,8 @@ export default function IrcTcAgentRegistrationPage() {
                     {plan.tagline}
                   </p>
 
-                  <div className="mt-6 grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-3 border-b border-slate-100 pb-6 min-[430px]:flex min-[430px]:flex-wrap min-[430px]:items-baseline">
-                    <span className="text-4xl font-black text-[#10407A]">
+                  <div className="mt-6 flex flex-col items-start gap-2 border-b border-slate-100 pb-6 min-[430px]:flex-row min-[430px]:flex-wrap min-[430px]:items-center">
+                    <span className="text-4xl font-black leading-none text-[#10407A]">
                       {plan.price}
                     </span>
 
@@ -664,7 +664,7 @@ export default function IrcTcAgentRegistrationPage() {
                       {plan.gst}
                     </span>
 
-                    <span className="col-span-2 justify-self-start rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 min-[430px]:ml-auto min-[430px]:justify-self-auto">
+                    <span className="inline-flex max-w-full items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-bold leading-snug text-emerald-700 min-[430px]:ml-auto">
                       ⚡ {plan.activation}
                     </span>
                   </div>
@@ -755,8 +755,8 @@ export default function IrcTcAgentRegistrationPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-6 max-w-5xl overflow-x-auto border border-slate-200 bg-white shadow-sm">
-            <table className="w-full min-w-[560px] text-left text-sm">
+          <div className="mx-auto mt-6 hidden max-w-5xl overflow-x-auto border border-slate-200 bg-white shadow-sm sm:block">
+            <table className="w-full text-left text-sm">
               <thead className="bg-slate-50 text-[#0B2D5C]">
                 <tr>
                   <th className="p-4">Feature</th>
@@ -785,6 +785,21 @@ export default function IrcTcAgentRegistrationPage() {
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div className="mx-auto mt-6 grid max-w-5xl gap-4 sm:hidden">
+            {[
+              { feature: "Authentication", otp: "Mobile OTP", dsc: "Digital signature" },
+              { feature: "Physical device", otp: "No", dsc: "Applicable DSC device" },
+              { feature: "Setup", otp: "Digital verification", dsc: "DSC setup" },
+            ].map((item) => (
+              <article key={item.feature} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <h3 className="font-bold text-[#0B2D5C]">{item.feature}</h3>
+                <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+                  <p className="min-w-0 break-words"><span className="block text-xs font-bold uppercase tracking-wide text-slate-500">OTP</span>{item.otp}</p>
+                  <p className="min-w-0 break-words"><span className="block text-xs font-bold uppercase tracking-wide text-slate-500">DSC</span>{item.dsc}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

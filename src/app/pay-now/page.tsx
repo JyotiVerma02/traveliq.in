@@ -251,7 +251,7 @@ export default function PayNowPage() {
                         {item.label}
                       </p>
 
-                      <p className="mt-1 break-words text-sm font-bold leading-5 text-[#172033] sm:text-base">
+                      <p className="mt-1 break-all text-sm font-bold leading-5 text-[#172033] sm:text-base">
                         {item.value}
                       </p>
                     </div>

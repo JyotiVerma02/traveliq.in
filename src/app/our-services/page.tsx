@@ -121,7 +121,7 @@ export default function ServicesPage() {
 
         <div className="pointer-events-none absolute -bottom-52 -left-40 h-[500px] w-[500px] rounded-full bg-[#10407a]/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-[1400px] px-5 pb-16 pt-7 sm:px-8 sm:pb-20 lg:pb-24">
+        <div className="relative mx-auto max-w-[1400px] px-4 pb-16 pt-7 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
 
           {/* Breadcrumb */}
 
@@ -416,7 +416,7 @@ export default function ServicesPage() {
                 </div>
 
                 <h2 className="text-2xl font-semibold leading-snug text-[#10407a] sm:text-3xl">
-                  One Travel Partner.
+                  One Travel Partner.{" "}
                   <span className="block">
                     Multiple Business Opportunities.
                   </span>

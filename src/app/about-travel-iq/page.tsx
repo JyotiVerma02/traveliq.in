@@ -1447,7 +1447,7 @@ export default function AboutPage() {
                     text-[#EE5326]
                   "
                 >
-                  Best Solution for Our Agent
+                  Solutions for Our Agents
                 </span>
               </div>
 
@@ -2030,7 +2030,7 @@ export default function AboutPage() {
                       text-[#EE5326]
                     "
                   >
-                    Touch with us for a better Solution.
+                    Connect with us for the right solution.
                   </span>
                 </div>
 

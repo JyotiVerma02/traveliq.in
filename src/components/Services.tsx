@@ -106,7 +106,7 @@ export default function Services() {
           {services.map(([title, description, href, image], index) => (
             <div
               key={title}
-              className="service-slide flex h-[460px] min-w-0 shrink-0 snap-start"
+              className="service-slide flex min-h-[420px] min-w-0 shrink-0 snap-start sm:min-h-[460px]"
             >
               <Link
                 href={href} prefetch={false}

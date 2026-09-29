@@ -74,7 +74,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Your full name"
-                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-sm text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
+                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-base text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
               />
             </div>
 
@@ -89,7 +89,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="name@example.com"
-                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-sm text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
+                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-base text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
               />
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+91 9876543210"
-                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-sm text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
+                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-base text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
               />
             </div>
 
@@ -119,7 +119,7 @@ export default function ContactForm() {
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 placeholder="IRCTC Agent ID, Air Booking, etc."
-                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-sm text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
+                className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-base text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="How can we help you?"
-              className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-sm text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
+              className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-base text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
             ></textarea>
           </div>
 
