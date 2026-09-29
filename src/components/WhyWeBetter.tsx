@@ -8,6 +8,7 @@ import {
   TicketIcon,
   WhatsAppIcon,
 } from "@/components/icons";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const quickLinks = [
   {
@@ -39,7 +40,7 @@ const quickLinks = [
   {
     title: "Online Chat Support",
     subtitle: "Instant WhatsApp Assistance",
-    href: "https://wa.me/917835025025",
+    href: WHATSAPP_URL,
     Icon: WhatsAppIcon,
     iconBg: officialSocialIconButtonClass.whatsapp,
     iconColor: "!text-white",
@@ -401,7 +402,7 @@ export default function WhyWeBetter() {
                   grid
                   grid-cols-2
                   gap-3
-                  sm:grid-cols-4
+                  sm:grid-cols-3
                 "
               >
                 {/* Founded */}
@@ -451,7 +452,7 @@ export default function WhyWeBetter() {
                   "
                 >
                   <p className="text-2xl font-black tracking-tight text-[#0B1728]">
-                    B2B
+                    Pan India
                   </p>
 
                   <p
@@ -464,7 +465,7 @@ export default function WhyWeBetter() {
                       text-[#5A6475]
                     "
                   >
-                    Platform
+                    Coverage
                   </p>
                 </Reveal>
 
@@ -496,41 +497,10 @@ export default function WhyWeBetter() {
                       text-[#5A6475]
                     "
                   >
-                    Platform
+                    Travel Platform
                   </p>
                 </Reveal>
 
-                {/* B2B */}
-
-                <Reveal
-                  delay={0.24}
-                  distance={16}
-                  className="
-                    rounded-[20px]
-                    border
-                    border-[#10407A]/12
-                    bg-[#FFF8F3]
-                    p-4
-                    shadow-[5px_5px_11px_rgba(16,64,122,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]
-                  "
-                >
-                  <p className="text-2xl font-black tracking-tight text-[#0B1728]">
-                    B2B
-                  </p>
-
-                  <p
-                    className="
-                      mt-1
-                      text-[9px]
-                      font-black
-                      uppercase
-                      tracking-[0.15em]
-                      text-[#5A6475]
-                    "
-                  >
-                    Platform
-                  </p>
-                </Reveal>
               </div>
             </div>
           </Reveal>

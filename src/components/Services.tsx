@@ -54,7 +54,7 @@ export default function Services() {
             </p>
             <h2 className="mt-2 text-[clamp(1.65rem,6vw,3.75rem)] font-bold leading-tight tracking-[-0.055em] text-[#071F3D] 2xl:whitespace-nowrap 2xl:text-[2.75rem]">
               Travel Services for{" "}
-              <span className="text-[#C4320A]">travel professionals</span>
+              <span className="text-[#C4320A]">Travel Professionals</span>
             </h2>
             <p className="mx-auto mt-3 max-w-5xl text-base leading-7 text-[#5A6A80]">
               Railway and IRCTC services, flights, hotels, buses, holiday packages and agent support for travel professionals.

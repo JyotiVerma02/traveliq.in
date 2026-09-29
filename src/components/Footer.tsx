@@ -16,6 +16,7 @@ import {
   officialSocialIconClass,
   WhatsAppIcon,
 } from "@/components/icons";
+import { CONTACT_PHONE, CONTACT_PHONE_DISPLAY, WHATSAPP_URL } from "@/lib/site";
 
 const usefulLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
@@ -164,7 +165,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="tel:+917835025030"
+                href={`tel:${CONTACT_PHONE}`}
                 className="group flex items-start gap-3"
               >
                 <ContactIcon>
@@ -177,7 +178,7 @@ export default function Footer() {
                   </p>
 
                   <p className="mt-0.5 text-xs font-medium text-white transition-colors group-hover:text-[#EE5326] sm:text-sm">
-                    +91 78350 25030
+                    {CONTACT_PHONE_DISPLAY}
                   </p>
                 </div>
               </a>
@@ -271,7 +272,7 @@ export default function Footer() {
                 </SocialLink>
 
                 <SocialLink
-                  href="https://wa.me/917835025025"
+                  href={WHATSAPP_URL}
                   label="WhatsApp"
                   className={officialSocialIconButtonClass.whatsapp}
                 >

@@ -6,7 +6,7 @@ import {
   getBreadcrumbSchema,
   getServiceSchema,
 } from "@/components/JsonLd";
-import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
+import { absoluteUrl, canonicalUrl, CONTACT_PHONE, CONTACT_PHONE_DISPLAY, OG_IMAGE_PATH, WHATSAPP_URL } from "@/lib/site";
 import { agentFaqItems } from "@/lib/agent-faqs";
 import {
   CheckCircle2,
@@ -332,7 +332,7 @@ export default function IrcTcAgentRegistrationPage() {
                 </Link>
 
                 <a
-                  href="https://wa.me/917835025025"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-bold !text-white shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50 sm:text-base"
@@ -1000,7 +1000,7 @@ export default function IrcTcAgentRegistrationPage() {
               </span>
 
               <h2 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
-                Documents Required for IRCTC agent Registration
+                Documents Required for IRCTC Agent Registration
               </h2>
 
               <p className="text-base leading-relaxed text-slate-600">
@@ -1249,9 +1249,9 @@ export default function IrcTcAgentRegistrationPage() {
                 <h3 className="text-lg font-extrabold tracking-tight text-[#101B3B]">WhatsApp Helpline</h3>
                 <p className="mt-1.5 text-sm leading-6 text-slate-600">Chat with our support team on WhatsApp.</p>
               </div>
-              <a href="https://wa.me/917835025025" target="_blank" rel="noopener noreferrer" className="relative mt-5 flex min-h-[56px] w-full items-center gap-2.5 border-t border-dashed border-emerald-200 pt-4 text-sm font-bold text-emerald-700 hover:underline">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="relative mt-5 flex min-h-[56px] w-full items-center gap-2.5 border-t border-dashed border-emerald-200 pt-4 text-sm font-bold text-emerald-700 hover:underline">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100"><WhatsAppIcon className="h-3.5 w-3.5" /></span>
-                <span className="min-w-0 text-xs font-bold sm:text-sm">+91-7835025025</span>
+                <span className="min-w-0 text-xs font-bold sm:text-sm">+91 78350 25025</span>
               </a>
             </article>
 
@@ -1265,9 +1265,9 @@ export default function IrcTcAgentRegistrationPage() {
                 <h3 className="text-lg font-extrabold tracking-tight text-[#101B3B]">Phone Support</h3>
                 <p className="mt-1.5 text-sm leading-6 text-slate-600">Speak directly with our support executive.</p>
               </div>
-              <a href="tel:+917835025025" className="relative mt-5 flex min-h-[56px] w-full items-center gap-2.5 border-t border-dashed border-orange-200 pt-4 text-sm font-bold text-[#E94A17] hover:underline">
+              <a href={`tel:${CONTACT_PHONE}`} className="relative mt-5 flex min-h-[56px] w-full items-center gap-2.5 border-t border-dashed border-orange-200 pt-4 text-sm font-bold text-[#E94A17] hover:underline">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100"><PhoneCall className="h-3.5 w-3.5" /></span>
-                <span className="min-w-0 text-xs font-bold sm:text-sm">+91-7835025025</span>
+                <span className="min-w-0 text-xs font-bold sm:text-sm">{CONTACT_PHONE_DISPLAY}</span>
               </a>
             </article>
 
@@ -1529,7 +1529,7 @@ export default function IrcTcAgentRegistrationPage() {
           </Link>
 
           <a
-            href="https://wa.me/917835025025"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="

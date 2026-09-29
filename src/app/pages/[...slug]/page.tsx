@@ -3,7 +3,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug } from "@/lib/local-content";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
-import { canonicalUrl, SITE_URL, absoluteUrl, duplicatePageDestination, OG_IMAGE_PATH } from "@/lib/site";
+import { canonicalUrl, IS_INDEXABLE_PRODUCTION, SITE_URL, absoluteUrl, duplicatePageDestination, OG_IMAGE_PATH } from "@/lib/site";
 import { sanitizeWordPressHtml } from "@/lib/sanitize";
 
 interface PageProps {
@@ -48,6 +48,7 @@ export async function generateMetadata({
     alternates: {
       canonical: pageUrl,
     },
+    robots: { index: IS_INDEXABLE_PRODUCTION, follow: true },
     openGraph: {
       title,
       description: cleanExcerpt,

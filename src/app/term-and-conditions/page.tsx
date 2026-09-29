@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/lib/metadata";
+import { CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Terms and Conditions | TravelIQ",
@@ -355,7 +356,7 @@ function TermsPage({
             Travel IQ Services Private Limited · {" "}
             <a href="https://traveliq.in">traveliq.in</a> ·{" "}
             <a href="mailto:support@traveliq.in">support@traveliq.in</a> ·{" "}
-            <a href="tel:+917835025030">+91 78350 25030</a> · Unit 1004G,
+            <a href={`tel:${CONTACT_PHONE}`}>{CONTACT_PHONE_DISPLAY}</a> · Unit 1004G,
             JMD Megapolis, Sector 48, Gurugram - 122018
           </p>
         </footer>

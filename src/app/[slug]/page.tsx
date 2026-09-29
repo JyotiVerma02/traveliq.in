@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
-import { canonicalUrl, SITE_URL, absoluteUrl } from "@/lib/site";
+import { canonicalUrl, IS_INDEXABLE_PRODUCTION, SITE_URL, absoluteUrl } from "@/lib/site";
 import { sanitizeWordPressHtml } from "@/lib/sanitize";
 import { getContentBySlug } from "@/lib/local-content";
 
@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: { canonical: url },
+    robots: { index: IS_INDEXABLE_PRODUCTION, follow: true },
     openGraph: { title, description, url, siteName: "TravelIQ", locale: "en_IN", type: "article", publishedTime: page.date },
   };
 }

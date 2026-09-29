@@ -152,8 +152,14 @@ button {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+}
+
+/* Keep white labels on colored CTA links/buttons above inherited link styles. */
+@layer utilities {
+  :is(a, button)[class*="bg-"][class*="text-white"] {
+    color: #fff !important;
+  }
 }
 
 /* =========================================================

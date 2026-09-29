@@ -1,5 +1,10 @@
 import React from "react";
-import { absoluteUrl, canonicalUrl, SITE_URL } from "@/lib/site";
+import {
+  absoluteUrl,
+  canonicalUrl,
+  CONTACT_PHONE,
+  SITE_URL,
+} from "@/lib/site";
 import { escapeJsonLd } from "@/lib/sanitize";
 
 type JsonValue =
@@ -44,7 +49,7 @@ export function getOrganizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-78350-25030",
+      telephone: CONTACT_PHONE,
       contactType: "customer support",
       email: "support@traveliq.in",
       areaServed: "IN",

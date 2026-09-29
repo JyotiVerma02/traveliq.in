@@ -110,7 +110,7 @@ export default function HowToBecomeIrtctAgentPage() {
         </section>
 
         <div className="mt-10 flex flex-wrap gap-3 border-t border-slate-200 pt-7">
-          <Link href="/irctc-agent-registration/" className="inline-flex items-center gap-2 rounded-xl bg-[#EE5326] px-5 py-3 text-sm font-bold text-white hover:bg-[#D9471D]">View Registration Options <ArrowRight className="h-4 w-4" /></Link>
+          <Link href="/irctc-agent-registration/" className="inline-flex items-center gap-2 rounded-xl bg-[#EE5326] px-5 py-3 text-sm  text-white font-bold !text-white hover:bg-[#D9471D]">View Registration Options <ArrowRight className="h-4 w-4" /></Link>
           <Link href="/contact-us/" className="inline-flex items-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-bold text-[#10407A] hover:bg-slate-50">Ask TravelIQ</Link>
         </div>
       </article>

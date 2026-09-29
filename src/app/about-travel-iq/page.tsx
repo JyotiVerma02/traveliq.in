@@ -20,7 +20,7 @@ import type { LucideIcon } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
 import { WhatsAppIcon } from "@/components/icons";
-import { canonicalUrl } from "@/lib/site";
+import { canonicalUrl, WHATSAPP_URL } from "@/lib/site";
 
 const aboutTitle = "About TravelIQ | Travel Technology & B2B Services";
 const aboutDescription =
@@ -947,7 +947,7 @@ export default function AboutPage() {
                   absolute
                   left-[13px]
                   top-2
-                  h-[calc(B2B-15px)]
+                  bottom-0
                   w-px
                   bg-gradient-to-b
                   from-[#EE5326]/40
@@ -2063,7 +2063,7 @@ export default function AboutPage() {
               </div>
 
               <a
-                href="https://wa.me/917835025025"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="

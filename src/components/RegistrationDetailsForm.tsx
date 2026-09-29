@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { WhatsAppIcon } from "@/components/icons";
+import { WHATSAPP_URL } from "@/lib/site";
 
 export default function RegistrationDetailsForm() {
   const id = useId();
@@ -91,7 +92,7 @@ export default function RegistrationDetailsForm() {
     {message && <p role="alert" className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 shadow-[inset_3px_3px_8px_rgba(146,64,14,0.06),inset_-3px_-3px_8px_rgba(255,255,255,0.9)]">{message}</p>}
     <div className="flex flex-col justify-center gap-3 border-t border-[#10407A]/[0.08] pt-6 sm:flex-row sm:gap-4">
       <button type="submit" className="group inline-flex min-h-12 items-center justify-center rounded-full bg-[#EE5326] px-8 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(238,83,38,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D9471D] hover:shadow-[0_13px_25px_rgba(238,83,38,0.30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EE5326] focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none">Preview Registration Details</button>
-      <a href="https://wa.me/917835025025?text=I%20need%20IRCTC%20agent%20ID" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#25D366] px-6 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(37,211,102,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#20BD5A] hover:bg-[#20BD5A] hover:shadow-[0_13px_25px_rgba(37,211,102,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"><WhatsAppIcon className="h-5 w-5 !text-white" />WhatsApp us</a>
+      <a href={`${WHATSAPP_URL}?text=I%20need%20IRCTC%20agent%20ID`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#25D366] px-6 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(37,211,102,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#20BD5A] hover:bg-[#20BD5A] hover:shadow-[0_13px_25px_rgba(37,211,102,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"><WhatsAppIcon className="h-5 w-5 !text-white" />WhatsApp us</a>
     </div>
   </form>;
 }

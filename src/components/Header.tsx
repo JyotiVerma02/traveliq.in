@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "@/components/icons";
+import { WHATSAPP_URL } from "@/lib/site";
 
 /* =========================================================
    MAIN NAVIGATION
@@ -355,7 +356,7 @@ export default function Header() {
             {/* WHATSAPP */}
 
             <a
-              href="https://wa.me/917835025025"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with TravelIQ on WhatsApp"
@@ -533,7 +534,7 @@ export default function Header() {
               {/* WHATSAPP */}
 
               <a
-                href="https://wa.me/917835025025"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat with TravelIQ on WhatsApp"

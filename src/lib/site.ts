@@ -1,7 +1,11 @@
 export const SITE_URL = "https://traveliq.in";
+export const CONTACT_PHONE = "+917835025030";
+export const CONTACT_PHONE_DISPLAY = "+91 78350 25030";
+export const WHATSAPP_URL = "https://wa.me/917835025025";
 
 export const IS_INDEXABLE_PRODUCTION =
-  process.env.VERCEL_ENV === "production";
+  process.env.VERCEL_ENV === "production" &&
+  process.env.NEXT_PUBLIC_SITE_URL === SITE_URL;
 
 export const OG_IMAGE_PATH = "/images/traveliq-og.webp";
 

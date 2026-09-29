@@ -14,19 +14,20 @@ import {
 import { Mail, MapPin, Phone, ArrowRight, Check } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
+import { CONTACT_PHONE, CONTACT_PHONE_DISPLAY, WHATSAPP_URL, canonicalUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
   description:
-    "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
+    `Get in touch with Travel IQ Services Private Limited. Contact our team via phone (${CONTACT_PHONE_DISPLAY}), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.`,
   alternates: {
-    canonical: "https://traveliq.in/contact-us/",
+    canonical: canonicalUrl("/contact-us"),
   },
   openGraph: {
     title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
     description:
-      "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
-    url: "https://traveliq.in/contact-us/",
+      `Get in touch with Travel IQ Services Private Limited. Contact our team via phone (${CONTACT_PHONE_DISPLAY}), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.`,
+    url: canonicalUrl("/contact-us"),
     siteName: "TravelIQ",
     locale: "en_IN",
     type: "website",
@@ -42,8 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact Us - Travel IQ Services | Gurugram Office & Support",
-    description:
-      "Get in touch with Travel IQ Services Private Limited. Contact our team via phone (+91 78350 25030), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.",
+    description: `Get in touch with Travel IQ Services Private Limited. Contact our team via phone (${CONTACT_PHONE_DISPLAY}), email (support@traveliq.in), or visit our corporate HQ at JMD Megapolis, Gurugram.`,
     images: ["/images/contact.webp"],
   },
 };
@@ -217,7 +217,7 @@ export default function ContactPage() {
             </p>
 
             <a
-              href="https://wa.me/917835025025"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
@@ -241,10 +241,10 @@ export default function ContactPage() {
             </p>
 
             <a
-              href="tel:+917835025030"
+              href={`tel:${CONTACT_PHONE}`}
               className="mt-2 text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
             >
-              +91 78350 25030
+              {CONTACT_PHONE_DISPLAY}
             </a>
 
             <p className="mt-1 text-sm text-[#7A8493]">Call us directly</p>
@@ -367,7 +367,7 @@ export default function ContactPage() {
 
                 {/* IMPORTANT: icon + text WHITE */}
                 <a
-                  href="https://wa.me/917835025025"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-5 py-3.5 text-sm font-bold !text-white shadow-[0_12px_24px_rgba(37,211,102,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20BD5A] hover:shadow-[0_16px_30px_rgba(37,211,102,0.36)]"

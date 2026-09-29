@@ -12,7 +12,14 @@ import {
   Wallet,
 } from "lucide-react";
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
-import { canonicalUrl, absoluteUrl, OG_IMAGE_PATH } from "@/lib/site";
+import {
+  canonicalUrl,
+  absoluteUrl,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+  OG_IMAGE_PATH,
+  WHATSAPP_URL,
+} from "@/lib/site";
 import { WhatsAppIcon } from "@/components/icons";
 
 const pagePath = "/benefits-of-irctc-agent-registration";
@@ -257,9 +264,9 @@ export default function AgentRegistrationBenefitsPage() {
             <p className="mt-3 text-sm leading-7 text-slate-600">Review the registration process, documents, OTP and DSC authentication, and applicable fees on our main IRCTC agent registration page.</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link href="/irctc-agent-registration/" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#10407A] px-6 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(16,64,122,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#0B2D5C] motion-reduce:transform-none">Registration guide <ArrowRight className="h-4 w-4 !text-white" /></Link>
-              <a href="https://wa.me/917835025025" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#25D366] px-6 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(37,211,102,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#20BD5A] motion-reduce:transform-none"><WhatsAppIcon className="h-5 w-5 !text-white" />Chat with TravelIQ</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#25D366]/40 bg-[#25D366] px-6 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(37,211,102,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#20BD5A] motion-reduce:transform-none"><WhatsAppIcon className="h-5 w-5 !text-white" />Chat with TravelIQ</a>
             </div>
-            <p className="mt-5 text-xs font-medium text-slate-500">Customer care: <a href="tel:+917835025025" className="font-bold text-[#10407A] hover:text-[#C4320A]">+91 78350 25025</a></p>
+            <p className="mt-5 text-xs font-medium text-slate-500">Customer care: <a href={`tel:${CONTACT_PHONE}`} className="font-bold text-[#10407A] hover:text-[#C4320A]">{CONTACT_PHONE_DISPLAY}</a></p>
           </article>
         </div>
       </section>

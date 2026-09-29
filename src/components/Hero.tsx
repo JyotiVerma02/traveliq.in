@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 
 import HeroMedia from "@/components/HeroMedia";
 import { WhatsAppIcon } from "@/components/icons";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const stats = [
   { value: "2014", label: "Established" },
@@ -56,7 +57,7 @@ export default function Hero() {
             </Link>
 
             <a
-              href="https://wa.me/917835025025"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with TravelIQ on WhatsApp"

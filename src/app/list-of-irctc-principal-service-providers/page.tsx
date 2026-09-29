@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 import { JsonLd, getBreadcrumbSchema } from "@/components/JsonLd";
-import { canonicalUrl } from "@/lib/site";
+import { canonicalUrl, WHATSAPP_URL } from "@/lib/site";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createMetadata({
@@ -510,7 +510,7 @@ export default function IRCTCPrincipalServiceProvidersPage() {
                     <td className="py-3.5 px-4 font-medium text-slate-700">
                       {item.isTravelIQ ? (
                         <a
-                          href="https://wa.me/917835025025"
+                          href={WHATSAPP_URL}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-[#EE5326] font-bold hover:underline"

@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
+import { WHATSAPP_URL } from "@/lib/site";
 
 export default function RegistrationForm() {
   const router = useRouter();
@@ -185,7 +186,7 @@ export default function RegistrationForm() {
 
       {/* WhatsApp CTA Button */}
       <a
-        href="https://wa.me/917835025025?text=I%20need%20IRCTC%20agent%20ID"
+        href={`${WHATSAPP_URL}?text=I%20need%20IRCTC%20agent%20ID`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
