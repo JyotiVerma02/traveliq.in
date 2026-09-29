@@ -5,7 +5,7 @@ export const WHATSAPP_URL = "https://wa.me/917835025025";
 
 export const IS_INDEXABLE_PRODUCTION =
   process.env.VERCEL_ENV === "production" &&
-  process.env.NEXT_PUBLIC_SITE_URL === SITE_URL;
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") === SITE_URL;
 
 export const OG_IMAGE_PATH = "/images/traveliq-og.webp";
 

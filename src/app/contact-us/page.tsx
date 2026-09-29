@@ -222,7 +222,7 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="mt-2 text-base font-bold text-[#0B1728] transition-colors hover:text-[#10407A]"
             >
-              +91 78350 25025
+              WhatsApp: +91 78350 25025
             </a>
 
             <p className="mt-1 text-sm text-[#7A8493]">Chat with our team</p>

@@ -634,7 +634,7 @@ export default function IrcTcAgentRegistrationPage() {
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`group relative flex flex-col justify-between overflow-hidden rounded-[28px] border p-8 shadow-[0_12px_32px_rgba(16,64,122,0.09)] transition-all duration-300 before:absolute before:left-0 before:top-0 before:h-1.5 before:w-full before:bg-gradient-to-r before:from-[#EE5326] before:to-amber-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(16,64,122,0.15)] motion-reduce:transform-none motion-reduce:transition-none ${
+                className={`group relative flex flex-col justify-between overflow-hidden rounded-[28px] border p-5 sm:p-8 shadow-[0_12px_32px_rgba(16,64,122,0.09)] transition-all duration-300 before:absolute before:left-0 before:top-0 before:h-1.5 before:w-full before:bg-gradient-to-r before:from-[#EE5326] before:to-amber-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(16,64,122,0.15)] motion-reduce:transform-none motion-reduce:transition-none ${
                   plan.popular
                     ? "border-[#EE5326]/25 bg-[#FFF8F3] ring-4 ring-[#EE5326]/10 hover:ring-[#EE5326]/20"
                     : "border-white bg-[#F6F9FE] hover:border-[#10407A]/20 hover:bg-white"
@@ -655,7 +655,7 @@ export default function IrcTcAgentRegistrationPage() {
                     {plan.tagline}
                   </p>
 
-                  <div className="mt-6 flex flex-wrap items-baseline gap-2 border-b border-slate-100 pb-6">
+                  <div className="mt-6 grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-3 border-b border-slate-100 pb-6 min-[430px]:flex min-[430px]:flex-wrap min-[430px]:items-baseline">
                     <span className="text-4xl font-black text-[#10407A]">
                       {plan.price}
                     </span>
@@ -664,7 +664,7 @@ export default function IrcTcAgentRegistrationPage() {
                       {plan.gst}
                     </span>
 
-                    <span className="ml-auto rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">
+                    <span className="col-span-2 justify-self-start rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 min-[430px]:ml-auto min-[430px]:justify-self-auto">
                       ⚡ {plan.activation}
                     </span>
                   </div>
@@ -1251,7 +1251,7 @@ export default function IrcTcAgentRegistrationPage() {
               </div>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="relative mt-5 flex min-h-[56px] w-full items-center gap-2.5 border-t border-dashed border-emerald-200 pt-4 text-sm font-bold text-emerald-700 hover:underline">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100"><WhatsAppIcon className="h-3.5 w-3.5" /></span>
-                <span className="min-w-0 text-xs font-bold sm:text-sm">+91 78350 25025</span>
+                <span className="min-w-0 text-xs font-bold sm:text-sm">WhatsApp: +91 78350 25025</span>
               </a>
             </article>
 
