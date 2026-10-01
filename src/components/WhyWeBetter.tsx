@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  BriefcaseBusiness,
+  PlaneTakeoff,
+  ShieldCheck,
+} from "lucide-react";
 import Reveal from "@/components/Reveal";
 import {
   GlobeIcon,
@@ -44,6 +50,29 @@ const quickLinks = [
     Icon: WhatsAppIcon,
     iconBg: officialSocialIconButtonClass.whatsapp,
     iconColor: "!text-white",
+  },
+];
+
+const featureHighlights = [
+  {
+    title: "Agent support",
+    description: "Registration guidance and hands-on help for travel professionals.",
+    Icon: BadgeCheck,
+  },
+  {
+    title: "Rail & air",
+    description: "Railway, flight, bus and hotel services under one platform.",
+    Icon: PlaneTakeoff,
+  },
+  {
+    title: "B2B operations",
+    description: "Digital tools and booking workflows built for business efficiency.",
+    Icon: BriefcaseBusiness,
+  },
+  {
+    title: "Nationwide reach",
+    description: "Coverage across India with practical support for growing teams.",
+    Icon: ShieldCheck,
   },
 ];
 
@@ -237,65 +266,34 @@ export default function WhyWeBetter() {
                 {/* INTRO */}
 
                 <p>
-                  <strong className="font-black text-[#0B1728]">
-                    TravelIQ
-                  </strong>{" "}
-                  supports travel professionals through railway services, B2B tools and agent-focused assistance.
-
+                  <strong className="font-black text-[#0B1728]">TravelIQ</strong>{" "}
+                  helps travel professionals move faster with practical booking support,
+                  B2B travel tools, and expert assistance across the travel journey.
                 </p>
 
-                {/* HISTORY */}
-
-                <p>
-                  <strong className="font-black text-[#0B1728]">Founded in 2014</strong>, TravelIQ is based in Gurugram, Haryana, India, and develops B2B travel services for travel professionals.
-
-                </p>
-
-                {/* B2B PLATFORM */}
-
-                <p>
-                  In 2016, the company launched its web portal{" "}
-                  <a
-                    href="https://b2b.traveliq.in"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="
-                      font-black
-                      text-[#C4320A]
-                      underline
-                      decoration-[#EE5326]/30
-                      underline-offset-4
-                      transition-colors
-                      hover:text-[#A82907]
-                      hover:decoration-[#EE5326]
-                    "
-                  >
-                    b2b.traveliq.in
-                  </a>
-                  , supporting access to domestic and international flights, bus tickets, railway reservations, hotel bookings and tour packages.
-                </p>
-
-                {/* DIGITAL SHIFT */}
-
-                <p>
-                  Anticipating the digital shift that would transform the
-                  travel sector, the platform focuses primarily on online
-                  travel assistance with a strong emphasis on the B2B trade
-                  module. Today, the website has over{" "}
-                  <strong className="font-black text-[#0B1728]">
-                  20,000+ agent registrations
-                  </strong>
-                  .
-                </p>
-
-                {/* =================================================
-                    STATES / REACH CARD
-                ================================================== */}
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {featureHighlights.map(({ title, description, Icon }) => (
+                    <div
+                      key={title}
+                      className="rounded-[20px] border border-[#10407A]/10 bg-white/80 p-3.5 shadow-[5px_6px_16px_rgba(16,64,122,0.06),-4px_-4px_10px_rgba(255,255,255,0.95)]"
+                    >
+                      <div className="mb-2.5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF0E9] text-[#C4320A]">
+                        <Icon className="h-4 w-4" strokeWidth={2.2} />
+                      </div>
+                      <p className="text-xs font-black uppercase tracking-[0.15em] text-[#10407A]">
+                        {title}
+                      </p>
+                      <p className="mt-1.5 text-sm leading-6 text-[#526174]">
+                        {description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
 
                 <div
                   className="
                     relative
-                    my-9
+                    my-6
                     overflow-hidden
                     rounded-[24px]
                     border
@@ -319,8 +317,6 @@ export default function WhyWeBetter() {
                       sm:px-7
                     "
                   >
-                    {/* Orange accent */}
-
                     <div
                       className="
                         absolute
@@ -348,48 +344,12 @@ export default function WhyWeBetter() {
                       <span className="h-px w-8 bg-[#EE5326]/30" />
                     </div>
 
-                    <p
-                      className="
-                        mb-2
-                        text-sm
-                        font-black
-                        text-[#0B1728]
-                        sm:text-[15px]
-                      "
-                    >
-                      TravelIQ is available across multiple states and
-                      territories in India, including:
-                    </p>
-
-                    <p
-                      className="
-                        text-sm
-                        font-medium
-                        leading-6
-                        text-[#596579]
-                      "
-                    >
-                      Andhra Pradesh, Arunachal Pradesh, Assam, Bihar,
-                      Chhattisgarh, Goa, Gujarat, Haryana, Himachal Pradesh,
-                      Jharkhand, Karnataka, Kerala, Madhya Pradesh, Maharashtra,
-                      Manipur, Meghalaya, Mizoram, Nagaland, Odisha, Punjab,
-                      Rajasthan, Sikkim, Tamil Nadu, Telangana, Uttar Pradesh,
-                      Uttarakhand and West Bengal.
+                    <p className="text-sm font-medium leading-6 text-[#596579]">
+                      TravelIQ continues to support professionals across India with a strong network
+                      and practical service coverage from major booking workflows to local support.
                     </p>
                   </div>
                 </div>
-
-                {/* EXPERIENCE */}
-
-                <p>
-                  TravelIQ supports travel professionals with practical booking services and agent assistance.
-                </p>
-
-                {/* SERVICES */}
-
-                <p>
-                  TravelIQ supports railway, flight, hotel, bus and holiday bookings, IRCTC agent onboarding and Class 3 Digital Signature services.
-                </p>
               </div>
 
               {/* =================================================
