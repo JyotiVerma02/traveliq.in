@@ -47,6 +47,14 @@ export default function Page() {
           heading: "Hotel Search and Booking",
           body: "Search hotel options and submit booking requests through TravelIQ. Property availability, room details, rates, check-in conditions and booking terms depend on the selected property and supplier.",
         },
+        {
+          heading: "Select a Suitable Stay",
+          body: "Compare available properties by location, dates, guest count, room type and included amenities. Options can vary by destination, supplier and occupancy.",
+        },
+        {
+          heading: "Review Before Confirmation",
+          body: "Check check-in and check-out dates, taxes, meal or deposit details, property policies and the cancellation window before completing a reservation. Rates and room availability may change until confirmation.",
+        },
       ]}
     />
   );

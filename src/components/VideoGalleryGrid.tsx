@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import YouTubePlayer from "@/components/YouTubePlayer";
 
 interface VideoItem {
@@ -168,8 +167,10 @@ export default function VideoGalleryGrid({
 
               {/* LEARN MORE */}
               <div className="mt-auto pt-5">
-                <Link
-                  href="/contact-us"
+                <a
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     inline-flex
                     shrink-0
@@ -197,9 +198,9 @@ export default function VideoGalleryGrid({
                     hover:shadow-[5px_7px_14px_rgba(238,83,38,0.20),-4px_-4px_8px_rgba(255,255,255,0.9)]
                   "
                 >
-                  <span className="!text-current hover:!text-white">Learn More</span>
+                  <span className="!text-current hover:!text-white">Watch on YouTube</span>
                   <span aria-hidden="true" className="!text-current hover:!text-white">→</span>
-                </Link>
+                </a>
               </div>
             </div>
           </article>

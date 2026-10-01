@@ -51,6 +51,10 @@ export default function Page() {
           heading: "Package Information",
           body: "Contact TravelIQ to ask about the details and terms of a listed tour or holiday package.",
         },
+        {
+          heading: "How to Compare a Tour Package",
+          body: "Check the travel dates, itinerary, transport, accommodation, meals, inclusions and cancellation conditions. Confirm availability and final pricing for the selected departure before making payment.",
+        },
       ]}
     />
   );

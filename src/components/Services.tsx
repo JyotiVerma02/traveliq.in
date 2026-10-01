@@ -136,7 +136,7 @@ export default function Services() {
                     alt={title}
                     fill
                     loading="lazy"
-                    quality={60}
+                    quality={65}
                     className="object-cover transition duration-700 group-hover:scale-[1.05]"
                     sizes="(max-width: 639px) 88vw, (max-width: 1023px) 46vw, 31vw"
                   />

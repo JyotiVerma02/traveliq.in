@@ -560,7 +560,7 @@ export default function AboutPage() {
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 58vw"
-                  priority
+                  loading="eager"
                   fetchPriority="high"
                   quality={75}
                 />

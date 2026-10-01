@@ -47,6 +47,14 @@ export default function Page() {
           heading: "Domestic & International Flight Booking",
           body: "TravelIQ supports flight search and booking requests for domestic and international travel. Airline, route, schedule, fare and ticket conditions depend on current availability and supplier terms.",
         },
+        {
+          heading: "For Agents and Travellers",
+          body: "Travel agents can review supported flight options for customer requests, and individual travellers can enquire about available routes. Booking availability depends on airline and supplier inventory.",
+        },
+        {
+          heading: "Before You Book",
+          body: "Check passenger details against the travel document, departure and arrival airports, baggage allowance, connecting times and fare rules. Change, cancellation and refund conditions depend on the selected fare and airline.",
+        },
       ]}
     />
   );

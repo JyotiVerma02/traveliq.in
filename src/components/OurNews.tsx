@@ -173,7 +173,7 @@ export default function OurNews() {
                       alt={item.title}
                       fill
                       loading="lazy"
-                      quality={60}
+                      quality={65}
                       sizes="(max-width: 639px) 90vw, (max-width: 1023px) 46vw, 23vw"
                       className="
                         object-cover

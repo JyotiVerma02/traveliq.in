@@ -131,7 +131,7 @@ export default function VideoGalleryPage() {
             src="/images/video-gallery.webp"
             alt="TravelIQ Video Gallery"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-center"
           />

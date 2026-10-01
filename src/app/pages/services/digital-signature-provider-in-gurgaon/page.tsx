@@ -47,6 +47,14 @@ export default function Page() {
           heading: "Class 3 Digital Signature Certificate",
           body: "Contact TravelIQ to review the available Class 3 Digital Signature Certificate options and applicable provider requirements. Supported use cases, verification steps, hardware and delivery terms depend on the certificate provider.",
         },
+        {
+          heading: "Who May Need a Class 3 DSC",
+          body: "A Class 3 DSC may suit professionals or businesses that need a verified digital signature for a supported filing or online workflow. Confirm that the receiving platform accepts the certificate and provider type you choose.",
+        },
+        {
+          heading: "What to Confirm Before Applying",
+          body: "Review the issuer's eligibility and document checklist, verification steps, certificate validity, delivery method and renewal terms. Ask whether a USB token or other hardware is required for your intended use.",
+        },
       ]}
     />
   );

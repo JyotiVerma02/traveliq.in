@@ -245,7 +245,7 @@ export default function IRCTCPrincipalServiceProvidersPage() {
             src="/images/irctc_psp_hero.jpg"
             alt="IRCTC Vande Bharat Express Train"
             fill
-            priority
+            preload
             sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-center lg:object-right opacity-90 lg:opacity-100"
           />

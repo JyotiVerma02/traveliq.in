@@ -94,7 +94,7 @@ export default function PayNowPage() {
             src="/images/pay-now.webp"
             alt="TravelIQ secure online payment"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-center"
           />

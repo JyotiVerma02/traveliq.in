@@ -47,6 +47,14 @@ export default function Page() {
           heading: "Bus Ticket Booking",
           body: "Explore bus services for supported routes and operators through TravelIQ. Available schedules, fares, seat options and ticket conditions depend on the operator and route selected.",
         },
+        {
+          heading: "Who Can Use Bus Booking",
+          body: "Travel agents and travellers arranging supported intercity journeys can review bus options through TravelIQ. Available operators and routes depend on current service coverage.",
+        },
+        {
+          heading: "Before You Confirm a Ticket",
+          body: "Check the boarding and drop-off points, travel date, seat details, passenger information and the operator's change or cancellation terms before completing a booking.",
+        },
       ]}
     />
   );

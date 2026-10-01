@@ -109,7 +109,7 @@ export default function ContactPage() {
             src="/images/contact.webp"
             alt="Contact TravelIQ"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-center"
           />

@@ -371,7 +371,8 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 hover:-translate-y-0.5 hover:scale-105 ${className}`}
+      data-icon-button
+      className={`flex h-9 w-9 shrink-0 aspect-square items-center justify-center rounded-full transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:scale-105 motion-reduce:transition-none ${className}`}
     >
       {children}
     </a>

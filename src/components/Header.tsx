@@ -139,7 +139,7 @@ export default function Header() {
               width={1200}
               height={720}
               quality={70}
-              {...(isHome ? { loading: "eager" as const, fetchPriority: "high" as const } : { preload: true })}
+              {...(isHome ? { loading: "eager" as const, fetchPriority: "high" as const } : { loading: "eager" as const })}
               sizes="(max-width: 639px) 120px, (max-width: 1023px) 120px, (max-width: 1279px) 120px, 120px"
               className="h-auto w-[120px] object-contain"
             />

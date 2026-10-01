@@ -353,7 +353,7 @@ export default function IrcTcAgentRegistrationPage() {
                 alt=""
                 fill
                 aria-hidden="true"
-                priority
+                preload
                 className="object-cover object-center opacity-45 mix-blend-screen"
                 sizes="(max-width: 1024px) 100vw, 42vw"
               />

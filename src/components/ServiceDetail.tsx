@@ -66,7 +66,7 @@ export default function ServiceDetail({
               fill
               className="object-contain transition-transform duration-500 hover:scale-105 lg:object-cover"
               sizes="(max-width: 768px) 100vw, 900px"
-              priority
+              preload
             />
           </div>
         </div>
@@ -82,8 +82,8 @@ export default function ServiceDetail({
           ))}
           <div className="pt-4 text-center">
             <Link
-              href="/signup/registration_form/irctc-agent-registration/"
-              className="inline-flex rounded-full bg-[#EE5326] px-8 py-3.5 text-sm font-bold !text-white shadow-md hover:bg-[#D9471D] transition-transform hover:-translate-y-0.5"
+              href="/contact-us/"
+              className="inline-flex rounded-full bg-[#EE5326] px-8 py-3.5 text-sm font-bold !text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D9471D] hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none"
             >
               Enquire About This Service
             </Link>

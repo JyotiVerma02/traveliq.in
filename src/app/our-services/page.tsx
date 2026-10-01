@@ -194,20 +194,20 @@ export default function ServicesPage() {
 
             <div className="relative overflow-hidden rounded-[32px] border border-white/90 bg-white p-2 shadow-[12px_15px_34px_rgba(16,64,122,0.12),-10px_-10px_28px_rgba(255,255,255,0.95)]">
 
-              <div className="relative aspect-[16/7] min-h-[230px] overflow-hidden rounded-[25px] sm:min-h-[330px] lg:min-h-[430px]">
+              <div className="relative aspect-video w-full overflow-hidden rounded-[25px] sm:aspect-[16/7]">
 
                 <Image
                   src="/images/services.webp"
                   alt="TravelIQ travel services"
                   fill
-                  priority
-                  className="object-cover transition-transform duration-700 hover:scale-[1.02]"
+                  preload
+                  className="object-contain transition-transform duration-700 hover:scale-[1.02] sm:object-cover"
                   sizes="(max-width: 768px) 100vw, 1400px"
                 />
 
                 {/* Image overlay */}
 
-                <div className="absolute inset-0 bg-gradient-to-r from-[#071a35]/75 via-[#071a35]/30 to-[#071a35]/10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#071a35]/20 via-[#071a35]/10 to-transparent sm:from-[#071a35]/75 sm:via-[#071a35]/30 sm:to-[#071a35]/10" />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071a35]/45 via-transparent to-transparent" />
 

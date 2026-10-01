@@ -79,7 +79,7 @@ export default function RegistrationPage() {
                 src="/vande_bharat_hero.webp"
                 alt="IRCTC Vande Bharat Express Train"
                 fill
-                priority
+                preload
                 sizes="(max-width: 768px) 50vw, 340px"
                 className="object-cover object-right"
               />
