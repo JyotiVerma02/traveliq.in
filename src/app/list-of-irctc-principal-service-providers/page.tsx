@@ -287,7 +287,9 @@ export default function IRCTCPrincipalServiceProvidersPage() {
               </Link>
 
               <a
-                href="#official-pdf"
+                href={pdfPath}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-[#10407A] bg-white px-6 py-3.5 text-xs sm:text-sm font-bold text-[#10407A] shadow-sm transition-all hover:bg-slate-50"
               >
                 <FileText className="h-4 w-4" /> View Official PDF

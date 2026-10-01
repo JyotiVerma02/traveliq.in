@@ -344,10 +344,10 @@ function PartnerMark({ name, logo }: { name: string; logo: string }) {
         <Image
           src={src}
           alt={`${name} logo`}
-          width={280}
+          width={260}
           height={80}
-          sizes="(max-width: 640px) 40vw, (max-width: 1024px) 28vw, 280px"
-          className="h-auto max-h-[64px] w-full max-w-[250px] object-contain transition-transform duration-300 group-hover:scale-[1.04] sm:max-h-[70px]"
+          sizes="(max-width: 640px) 40vw, (max-width: 1024px) 28vw, 260px"
+          className="h-auto max-h-[64px] w-full max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:max-h-[70px] sm:max-w-[230px]"
         />
       )}
     </div>
