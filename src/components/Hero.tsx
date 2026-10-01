@@ -22,7 +22,7 @@ export default function Hero() {
     <section className="relative isolate flex min-h-[min(680px,calc(100svh-68px))] w-full overflow-hidden bg-[#F5F9FC] sm:min-h-[700px] lg:min-h-[720px]">
       <HeroMedia />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] items-center px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-12 xl:px-14 2xl:px-16">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] items-center px-4 pb-8 pt-[calc(68px+1.5rem)] sm:px-6 sm:pb-10 sm:pt-[calc(74px+1.75rem)] lg:px-10 lg:py-8 xl:px-14 xl:py-10 2xl:px-16">
         <div className="mx-auto w-full max-w-[620px] text-center lg:mx-0 lg:mr-4 lg:max-w-[520px] lg:pr-4 lg:text-left xl:mr-5 xl:max-w-[560px] xl:pr-5 wide:mr-6 wide:max-w-[700px] wide:pr-6 wide-xl:max-w-[760px] wide-xl:pr-8 ultra:max-w-[820px] ultra:pr-10 ultra-xl:max-w-[880px] ultra-xl:pr-12">
           <div className="mb-3 flex items-center justify-center gap-2 sm:mb-4 sm:gap-3 lg:justify-start">
             <span className="h-[2px] w-7 shrink-0 bg-[#EE5326] sm:w-10" />

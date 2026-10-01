@@ -9,7 +9,7 @@ export default function HeroMedia() {
         fill
         preload
         quality={65}
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 100vw"
         className="object-cover object-[70%_center] opacity-75 sm:object-[67%_center] sm:opacity-85 lg:object-[68%_center] lg:opacity-100"
       />
 
