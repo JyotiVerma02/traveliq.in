@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { JsonLd } from "@/components/JsonLd";
 import { agentFaqItems } from "@/lib/agent-faqs";
-import { canonicalUrl } from "@/lib/site";
+import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
 
 const allFaqs = agentFaqItems;
 
@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     siteName: "TravelIQ",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: absoluteUrl(OG_IMAGE_PATH),
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ IRCTC agent registration FAQs",
+      },
+    ],
   },
 
   twitter: {
@@ -36,6 +44,7 @@ export const metadata: Metadata = {
     title: "IRCTC Agent Registration FAQs | TravelIQ",
     description:
       "Find answers about IRCTC agent registration, fees, documents, booking rules and support.",
+    images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };
 

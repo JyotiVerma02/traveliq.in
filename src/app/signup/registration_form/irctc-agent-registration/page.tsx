@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Sparkles } from "lucide-react";
 
-import { canonicalUrl } from "@/lib/site";
+import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
 import RegistrationForm from "./registration-form";
 
 export const metadata: Metadata = {
@@ -24,6 +24,21 @@ export const metadata: Metadata = {
       "/signup/registration_form/irctc-agent-registration/"
     ),
     type: "website",
+    images: [
+      {
+        url: absoluteUrl(OG_IMAGE_PATH),
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ IRCTC agent registration plans",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IRCTC Agent Registration – Plans & Pricing | TravelIQ",
+    description:
+      "Explore IRCTC agent registration plans and pricing with TravelIQ.",
+    images: [absoluteUrl(OG_IMAGE_PATH)],
   },
 };
 

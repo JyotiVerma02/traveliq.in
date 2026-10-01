@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
-import Reveal from "@/components/Reveal";
 
 const news = [
   {

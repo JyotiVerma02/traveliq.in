@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { WhatsAppIcon } from "@/components/icons";
 import { WHATSAPP_URL } from "@/lib/site";
 
@@ -41,9 +41,25 @@ const services = [
 export default function Header() {
   const pathname = usePathname();
 
-  const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const [servicesOpenPath, setServicesOpenPath] = useState<string | null>(null);
+  const open = openPath === pathname;
+  const servicesOpen = servicesOpenPath === pathname;
   const isScrolled = false;
+
+  const setOpen = (next: boolean | ((current: boolean) => boolean)) => {
+    setOpenPath((currentPath) => {
+      const shouldOpen = typeof next === "function" ? next(currentPath === pathname) : next;
+      return shouldOpen ? pathname : null;
+    });
+  };
+
+  const setServicesOpen = (next: boolean | ((current: boolean) => boolean)) => {
+    setServicesOpenPath((currentPath) => {
+      const shouldOpen = typeof next === "function" ? next(currentPath === pathname) : next;
+      return shouldOpen ? pathname : null;
+    });
+  };
 
   /* =========================================================
      SCROLL DETECTION
@@ -52,15 +68,6 @@ export default function Header() {
      handleScroll() is NOT called immediately — avoids a
      post-hydration state update that can destabilise LCP.
   ========================================================= */
-
-  /* =========================================================
-     CLOSE MOBILE MENUS ON ROUTE CHANGE
-  ========================================================= */
-
-  useEffect(() => {
-    setOpen(false);
-    setServicesOpen(false);
-  }, [pathname]);
 
   /* =========================================================
      NORMALIZE PATH

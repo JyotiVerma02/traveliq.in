@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { WHATSAPP_URL } from "@/lib/site";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [whatsappLink, setWhatsappLink] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,6 +22,18 @@ export default function ContactForm() {
       setError("Please complete your name, email, and message.");
       return;
     }
+    const details = [
+      ["Name", formData.name.trim()],
+      ["Email", formData.email.trim()],
+      ["Phone", formData.phone.trim()],
+      ["Subject", formData.subject.trim()],
+      ["Message", formData.message.trim()],
+    ] as const;
+    const message = [
+      "TravelIQ website enquiry",
+      ...details.filter(([, value]) => value).map(([label, value]) => `${label}: ${value}`),
+    ].join("\n");
+    setWhatsappLink(`${WHATSAPP_URL}?text=${encodeURIComponent(message)}`);
     setSubmitted(true);
   };
 
@@ -31,21 +45,29 @@ export default function ContactForm() {
       </p>
 
       {submitted ? (
-        <div className="mt-8 rounded-lg bg-[#fff4ef] p-6 text-center border border-[#EE5326]/25">
+        <div role="status" className="mt-8 rounded-lg bg-[#fff4ef] p-6 text-center border border-[#EE5326]/25">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#EE5326]/15 text-[#EE5326]">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h4 className="mt-4 text-lg font-bold text-[#08090b]">Form Preview</h4>
+          <h4 className="mt-4 text-lg font-bold text-[#08090b]">Continue in WhatsApp</h4>
           <p className="mt-1 text-sm text-[#10407A]">
-            Your form is complete. This is a preview; your message has not been sent.
+            Your message is ready. Open WhatsApp and tap Send to contact TravelIQ.
           </p>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-[#117A3B] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0B7138]"
+          >
+            Open WhatsApp
+          </a>
           <button
             onClick={() => {
               setSubmitted(false);
               setError("");
-
+              setWhatsappLink("");
             }}
             className="mt-6 rounded-full bg-[#EE5326] px-6 py-2 text-xs font-bold text-white transition hover:bg-[#d7491d]"
           >
@@ -143,7 +165,7 @@ export default function ContactForm() {
             type="submit"
             className="w-full rounded-full bg-[#EE5326] py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#d7491d] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Send Message
+            Continue with WhatsApp
           </button>
         </form>
       )}

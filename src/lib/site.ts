@@ -3,9 +3,7 @@ export const CONTACT_PHONE = "+917835025030";
 export const CONTACT_PHONE_DISPLAY = "+91 78350 25030";
 export const WHATSAPP_URL = "https://wa.me/917835025025";
 
-export const IS_INDEXABLE_PRODUCTION =
-  process.env.VERCEL_ENV === "production" &&
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") === SITE_URL;
+export const IS_INDEXABLE_PRODUCTION = process.env.VERCEL_ENV === "production";
 
 export const OG_IMAGE_PATH = "/images/traveliq-og.webp";
 
@@ -125,6 +123,7 @@ export const staticSitemapPaths = [
   "/pages/services/online-hotel-booking",
   "/pages/services/digital-signature-provider-in-gurgaon",
   "/about-travel-iq",
+  "/frequently-asked-questions",
   "/contact-us",
   "/video-gallery",
   "/privacy-policy",

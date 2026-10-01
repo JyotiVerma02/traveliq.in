@@ -1,13 +1,34 @@
 import type { Metadata } from "next";
 import RegistrationDetailsForm from "@/components/RegistrationDetailsForm";
-import { canonicalUrl } from "@/lib/site";
+import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "IRCTC Agent Registration Form Details | TravelIQ",
   description: "Complete your IRCTC agent registration with your contact, PAN, agency and address details.",
   alternates: { canonical: canonicalUrl("/signup/registration_form/irctc-agent-registration-details/") },
   robots: { index: false, follow: true },
-  openGraph: { title: "IRCTC Agent Registration Form Details | TravelIQ", url: canonicalUrl("/signup/registration_form/irctc-agent-registration-details/"), type: "website" },
+  openGraph: {
+    title: "IRCTC Agent Registration Form Details | TravelIQ",
+    description:
+      "Complete your IRCTC agent registration enquiry with your contact, PAN, agency and address details.",
+    url: canonicalUrl("/signup/registration_form/irctc-agent-registration-details/"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(OG_IMAGE_PATH),
+        width: 1200,
+        height: 630,
+        alt: "TravelIQ IRCTC agent registration form",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IRCTC Agent Registration Form Details | TravelIQ",
+    description:
+      "Complete your IRCTC agent registration enquiry with TravelIQ.",
+    images: [absoluteUrl(OG_IMAGE_PATH)],
+  },
 };
 
 export default function RegistrationDetailsPage() {

@@ -41,6 +41,7 @@ const staticRouteMeta: Record<
     priority: 0.8,
   },
   "/about-travel-iq": { changeFrequency: "monthly", priority: 0.8 },
+  "/frequently-asked-questions": { changeFrequency: "monthly", priority: 0.7 },
   "/contact-us": { changeFrequency: "monthly", priority: 0.8 },
   "/video-gallery": { changeFrequency: "weekly", priority: 0.8 },
   "/pay-now": { changeFrequency: "monthly", priority: 0.7 },

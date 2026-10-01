@@ -1,6 +1,6 @@
 # URL Migration Validation
 
-Generated: 2026-09-29T10:58:58.701Z
+Generated: 2026-10-01T11:06:00.304Z
 Checked against: http://localhost:3000
 Legacy inventory entries: 154
 Additional required routes: 2

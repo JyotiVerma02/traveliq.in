@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { absoluteUrl, canonicalUrl, OG_IMAGE_PATH } from "@/lib/site";
+import {
+  absoluteUrl,
+  canonicalUrl,
+  IS_INDEXABLE_PRODUCTION,
+  OG_IMAGE_PATH,
+} from "@/lib/site";
 
 interface MetadataInput {
   title: string;
@@ -25,7 +30,7 @@ export function createMetadata({
     title,
     description,
     alternates: { canonical: url },
-    robots: { index: !noIndex, follow: true },
+    robots: { index: !noIndex && IS_INDEXABLE_PRODUCTION, follow: true },
     openGraph: {
       title,
       description,
