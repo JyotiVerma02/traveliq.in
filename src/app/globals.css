@@ -155,10 +155,35 @@ a {
   text-decoration: none;
 }
 
-/* Keep white labels on colored CTA links/buttons above inherited link styles. */
+/* Keep explicitly white CTA labels white without matching hover-only classes. */
 @layer utilities {
-  :is(a, button)[class*="bg-"][class*="text-white"] {
+  :is(a, button)[class~="text-white"],
+  :is(a, button)[class~="!text-white"],
+  :is(a, button)[class~="text-white!"] {
     color: #fff !important;
+  }
+
+  /* Keep button-style links and buttons readable at every width. */
+  :is(
+      a[class*="inline-flex"],
+      a[class*="inline-block"],
+      a[class*="flex"],
+      button
+    )[class*="bg-"] {
+    min-height: 2.75rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  /* Keep hover effects from shifting CTA labels into clipped rounded edges. */
+  :is(
+      a[class*="inline-flex"],
+      a[class*="inline-block"],
+      a[class*="flex"],
+      button
+    )[class*="bg-"]:hover {
+    translate: none !important;
+    scale: none !important;
   }
 }
 
@@ -239,6 +264,33 @@ a {
 body {
   width: 100%;
   overflow-x: clip;
+}
+
+/* Keep intrinsic media and long labels inside their responsive containers. */
+main,
+section,
+article,
+header,
+footer {
+  min-width: 0;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+pre,
+code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 359px) {
+  :is(h1, h2, h3) {
+    overflow-wrap: anywhere;
+  }
 }
 
 .service-slide,

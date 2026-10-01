@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -48,7 +48,7 @@ const pricingPlans = [
     name: "OTP Agent Login",
     tagline: "OTP-based authentication option",
     price: "₹ 500",
-    gst: "+ 18% GST",
+    gst: "+ GST",
     popular: true,
     activation: "Timeline on confirmation",
     features: [
@@ -66,7 +66,7 @@ const pricingPlans = [
     name: "DSC Agent Login",
     tagline: "USB digital-signature authentication option",
     price: "₹ 1,500",
-    gst: "+ 18% GST",
+    gst: "+ GST",
     popular: false,
     activation: "Timeline on confirmation",
     features: [
@@ -224,7 +224,7 @@ export default function IrcTcAgentRegistrationPage() {
       {/* ===================================================
           HERO SECTION
       ==================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#040C1A] via-[#0B2D5C] to-[#10407A] pb-20 pt-10 text-white sm:pb-28 sm:pt-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#040C1A] via-[#0B2D5C] to-[#10407A] pb-20 pt-8 text-white sm:pb-24 sm:pt-10">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
 
         <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#EE5326]/20 blur-[130px]" />
@@ -234,7 +234,7 @@ export default function IrcTcAgentRegistrationPage() {
         <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex items-center gap-2 text-xs font-semibold text-white/70 sm:text-sm"
+            className="mb-8 flex items-center gap-2 text-xs font-semibold text-white/70 sm:mb-6 sm:text-sm"
           >
             <Link
               href="/"
@@ -250,7 +250,7 @@ export default function IrcTcAgentRegistrationPage() {
             </span>
           </nav>
 
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-8">
             {/* LEFT */}
             <div className="space-y-6 lg:col-span-7">
               <div className="inline-flex items-center gap-2.5 rounded-full border border-orange-400/30 bg-[#EE5326]/15 px-4 py-2 shadow-inner backdrop-blur-md">
@@ -335,7 +335,7 @@ export default function IrcTcAgentRegistrationPage() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-bold !text-white shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50 sm:text-base"
+                  className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl border border-[#25D366] bg-[#25D366] px-6 py-3.5 text-sm font-bold !text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-[#20BD5A] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50 sm:text-base"
                 >
                   <WhatsAppIcon className="h-5 w-5 !text-white transition-transform duration-300 group-hover:scale-110" />
 
@@ -347,56 +347,26 @@ export default function IrcTcAgentRegistrationPage() {
             </div>
 
             {/* RIGHT */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-3xl border border-white/15 bg-gradient-to-b from-white/10 to-white/5 p-4 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/25 hover:shadow-[0_25px_60px_rgba(0,0,0,0.35)] sm:p-6">
-                <div className="absolute -right-0 -top-3.5 rounded-full bg-gradient-to-r from-[#EE5326] to-amber-500 px-4 py-1 text-xs font-black uppercase tracking-wider text-white shadow-md">
-                  Transparent pricing
-                </div>
-
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#06162d] p-5 sm:p-7">
-                  <div className="absolute -right-16 -top-12 h-48 w-48 rounded-full border border-sky-300/15" />
-
-                  <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-5">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#FFD966]">
-                        TravelIQ Agent
-                      </p>
-
-                      <h2 className="mt-1 text-xl font-bold text-white">
-                        Agent Dashboard
-                      </h2>
-                    </div>
-
-                    <span className="rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-300">
-                      Secure access
-                    </span>
-                  </div>
-
-                  <div className="relative mt-6 grid grid-cols-2 gap-3 text-sm">
-                    {[
-                      ["Railway booking", "Agent services"],
-                      ["Agent ID", "••••••"],
-                      ["Customer tickets", "Manage bookings"],
-                      ["Support", "TravelIQ assistance"],
-                    ].map(([label, value]) => (
-                      <div
-                        key={label}
-                        className="rounded-xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/10 hover:shadow-lg"
-                      >
-                        <p className="text-xs text-slate-400">{label}</p>
-
-                        <p className="mt-1 font-bold text-white">{value}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="relative mt-5 flex items-center gap-3 text-xs font-semibold text-sky-200">
-                    <span className="h-px flex-1 bg-sky-300/30" />
-                    Railway · Air · Bus · Hotel
-                    <span className="h-px flex-1 bg-sky-300/30" />
-                  </div>
-                </div>
-              </div>
+            <div className="relative isolate flex min-h-[380px] items-center justify-center overflow-hidden rounded-[2rem] lg:col-span-5 lg:min-h-[520px] lg:justify-end">
+              <Image
+                src="/images/irctc_psp_hero.jpg"
+                alt=""
+                fill
+                aria-hidden="true"
+                priority
+                className="object-cover object-center opacity-45 mix-blend-screen"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B2D5C] via-[#0B2D5C]/35 to-[#0B2D5C]/10" />
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.28),transparent_68%)]" />
+              <div aria-hidden="true" className="pointer-events-none absolute bottom-[12%] right-[4%] h-[72%] w-[82%] rounded-full bg-sky-400/25 blur-[90px]" />
+              <Image
+                src="/images/irctc-agent-character.png"
+                alt="TravelIQ IRCTC agent using a laptop"
+                fill
+                className="pointer-events-none object-contain object-bottom drop-shadow-2xl"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
             </div>
           </div>
         </div>
@@ -1214,14 +1184,6 @@ export default function IrcTcAgentRegistrationPage() {
         <div aria-hidden="true" className="pointer-events-none absolute -left-24 bottom-[-7rem] h-72 w-72 rounded-full bg-blue-100/60 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-orange-100/50 blur-3xl" />
         <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Image
-            src="/images/agent-support-character.png"
-            alt="TravelIQ support agent ready to help"
-            width={440}
-            height={330}
-            className="pointer-events-none absolute right-0 top-0 z-0 hidden w-[250px] object-contain xl:block 2xl:w-[290px]"
-            priority
-          />
           <div className="relative z-10 mx-auto mb-8 max-w-5xl text-center xl:mr-40 xl:max-w-4xl 2xl:mr-48">
             <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#FFF1E5] to-[#FFE9DC] px-5 py-2 text-xs font-extrabold uppercase tracking-wide text-[#E94716]">
               <Headphones className="h-4 w-4" />

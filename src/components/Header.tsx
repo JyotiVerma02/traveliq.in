@@ -211,7 +211,7 @@ export default function Header() {
                 ========================================= */}
 
                 <div
-                  className={`absolute left-1/2 top-full z-[300] w-[380px] -translate-x-1/2 pt-3 transition-all duration-200 ${
+                  className={`absolute left-1/2 top-full z-[300] w-[min(380px,calc(100vw-2rem))] -translate-x-1/2 pt-3 transition-all duration-200 ${
                     servicesOpen
                       ? "visible translate-y-0 opacity-100"
                       : "invisible -translate-y-1 opacity-0"

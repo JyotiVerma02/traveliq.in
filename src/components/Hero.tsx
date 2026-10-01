@@ -19,7 +19,7 @@ const reassurance = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[680px] w-full overflow-hidden bg-[#F5F9FC] sm:min-h-[700px] lg:min-h-[720px]">
+    <section className="relative isolate flex min-h-[min(680px,calc(100svh-68px))] w-full overflow-hidden bg-[#F5F9FC] sm:min-h-[700px] lg:min-h-[720px]">
       <HeroMedia />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1600px] items-center px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-12 xl:px-14 2xl:px-16">
@@ -32,7 +32,7 @@ export default function Hero() {
             <span className="h-[2px] w-7 shrink-0 bg-[#EE5326] sm:w-10" />
           </div>
 
-          <h1 className="text-[clamp(2.25rem,9vw,2.75rem)] font-bold leading-[0.98] tracking-[-0.045em] text-[#10407A] sm:text-[clamp(3rem,7vw,3.75rem)] lg:text-[clamp(3.25rem,4.4vw,4.75rem)]">
+          <h1 className="text-[clamp(2rem,9vw,2.75rem)] font-bold leading-[0.98] tracking-[-0.045em] text-[#10407A] sm:text-[clamp(3rem,7vw,3.75rem)] lg:text-[clamp(3.25rem,4.4vw,4.75rem)]">
             <span className="block">Grow Your Travel</span>
             <span className="block">Business</span>
             <span className="relative mt-1 inline-block text-[#EE5326] sm:mt-1.5">
@@ -47,10 +47,10 @@ export default function Hero() {
           <p className="mx-auto mt-4 max-w-[620px] text-[14px] font-medium leading-6 text-[#526174] sm:mt-5 sm:text-[15px] sm:leading-7 lg:mx-0 lg:text-base">
             Access railway, flight, hotel, bus and holiday services through a B2B platform designed for travel professionals. IRCTC agent onboarding and registration support is available through TravelIQ.
           </p>
-          <div className="mx-auto mt-5 flex w-full max-w-[460px] flex-col gap-2.5 min-[390px]:flex-row sm:mt-6 lg:mx-0 lg:justify-start">
+          <div className="mx-auto mt-5 flex w-full max-w-[460px] flex-col gap-2.5 min-[425px]:flex-row sm:mt-6 lg:mx-0 lg:justify-start">
             <Link
               href="/irctc-agent-registration" prefetch={false}
-                className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#C4320A] px-3 text-[13px] font-semibold !text-white shadow-[0_10px_25px_rgba(238,83,38,0.24)] transition-[transform,color,background-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:bg-[#A82907] hover:shadow-[0_14px_30px_rgba(238,83,38,0.32)] min-[390px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
+                className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#C4320A] px-3 text-[13px] font-semibold !text-white shadow-[0_10px_25px_rgba(238,83,38,0.24)] transition-[transform,color,background-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:bg-[#A82907] hover:shadow-[0_14px_30px_rgba(238,83,38,0.32)] min-[425px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
             >
               <span className="!text-white">Become an Agent</span>
               <ArrowRight size={18} strokeWidth={2.5} className="shrink-0 !text-white transition-transform duration-300 group-hover:translate-x-1" />
@@ -61,7 +61,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with TravelIQ on WhatsApp"
-              className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-[#117A3B] bg-[#117A3B] px-3 text-[13px] font-semibold !text-white shadow-[0_8px_20px_rgba(37,211,102,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0B7138] hover:bg-[#0B7138] hover:shadow-[0_12px_24px_rgba(37,211,102,0.3)] min-[390px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
+              className="group inline-flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-[#117A3B] bg-[#117A3B] px-3 text-[13px] font-semibold !text-white shadow-[0_8px_20px_rgba(37,211,102,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#0B7138] hover:bg-[#0B7138] hover:shadow-[0_12px_24px_rgba(37,211,102,0.3)] min-[425px]:px-3.5 sm:min-h-12 sm:flex-none sm:px-5 sm:text-sm"
             >
               <WhatsAppIcon className="h-5 w-5 shrink-0 !text-white" />
               <span className="!text-white">WhatsApp Us</span>

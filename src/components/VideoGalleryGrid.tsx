@@ -68,7 +68,7 @@ export default function VideoGalleryGrid({
                   className="
                     inline-flex
                     max-w-[calc(100%-1rem)]
-                    whitespace-nowrap
+                    whitespace-normal break-words
                     rounded-full
                     border
                     border-white/20
@@ -120,7 +120,7 @@ export default function VideoGalleryGrid({
                     border-white
                     bg-[#FFF5F1]
                     px-2
-                    whitespace-nowrap
+                    whitespace-normal break-words
                     text-[10px]
                     font-bold
                     tracking-[0.15em]
@@ -197,7 +197,7 @@ export default function VideoGalleryGrid({
                     hover:shadow-[5px_7px_14px_rgba(238,83,38,0.20),-4px_-4px_8px_rgba(255,255,255,0.9)]
                   "
                 >
-                  <span className="whitespace-nowrap !text-current hover:!text-white">Learn More</span>
+                  <span className="!text-current hover:!text-white">Learn More</span>
                   <span aria-hidden="true" className="!text-current hover:!text-white">→</span>
                 </Link>
               </div>
@@ -214,11 +214,11 @@ export default function VideoGalleryGrid({
           className="
             group
             inline-flex
-            shrink-0
+            max-w-full
             items-center
             justify-center
             gap-3
-            whitespace-nowrap
+            whitespace-normal
             rounded-[20px]
             border
             border-white
@@ -238,7 +238,7 @@ export default function VideoGalleryGrid({
             active:translate-y-0
           "
         >
-          <span className="whitespace-nowrap !text-current group-hover:!text-white">
+          <span className="!text-current group-hover:!text-white">
             {showAll ? "Show Less" : "See More Videos"}
           </span>
 

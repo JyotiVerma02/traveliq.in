@@ -338,7 +338,7 @@ export default function Page() {
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+              <table className="w-full min-w-[640px] border-collapse text-left text-sm sm:min-w-[760px]">
                 <thead className="bg-[#F8FBFF] text-[#0B2D5C]">
                   <tr>
                     <th className="w-[48%] px-5 py-4 font-extrabold">

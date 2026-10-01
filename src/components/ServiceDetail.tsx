@@ -59,12 +59,12 @@ export default function ServiceDetail({
       {/* Hero Image */}
       {image && (
         <div className="container mx-auto -mt-4 mb-6 max-w-5xl px-4 sm:-mt-6 sm:px-6 lg:px-8">
-          <div className="relative w-full overflow-hidden rounded-xl shadow-md" style={{ aspectRatio: "16/7" }}>
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl shadow-md sm:aspect-video lg:aspect-[16/7]">
             <Image
               src={image}
               alt={imageAlt ?? title}
               fill
-              className="object-cover transition-transform duration-500 hover:scale-105"
+              className="object-contain transition-transform duration-500 hover:scale-105 lg:object-cover"
               sizes="(max-width: 768px) 100vw, 900px"
               priority
             />
