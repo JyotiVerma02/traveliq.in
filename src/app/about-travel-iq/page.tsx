@@ -181,7 +181,7 @@ export default function AboutPage() {
           HERO
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-white">
+      <section className="inner-page-hero relative overflow-hidden bg-white">
         {/* =====================================================
       SUBTLE BACKGROUND
   ===================================================== */}
@@ -220,11 +220,11 @@ export default function AboutPage() {
       mx-auto
       max-w-7xl
       px-5
-      py-10
+      pb-10 pt-4
       sm:px-8
-      sm:py-14
+      sm:pb-14 sm:pt-5
       lg:px-8
-      lg:py-16
+      lg:pb-16
     "
         >
           {/* ===================================================

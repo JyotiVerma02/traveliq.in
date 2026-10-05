@@ -61,7 +61,7 @@ export default async function LegacyWordPressPage({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-[#f6f9fe] py-8 sm:py-12">
+    <main className="inner-page-hero bg-[#f6f9fe] pb-8 sm:pb-12">
       <JsonLd data={[breadcrumbSchema, articleSchema]} />
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-sm font-medium text-slate-500">
@@ -69,7 +69,7 @@ export default async function LegacyWordPressPage({ params }: PageProps) {
         </nav>
         <article className="rounded-3xl border border-sky-100 bg-white p-6 shadow-sm sm:p-10">
           <p className="text-xs font-bold uppercase tracking-wider text-[#EE5326]">{new Date(page.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}</p>
-          <h1 className="mt-3 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl" dangerouslySetInnerHTML={{ __html: sanitizeWordPressHtml(page.title.rendered) }} />
+          <h1 className="mt-3 break-words text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl" dangerouslySetInnerHTML={{ __html: sanitizeWordPressHtml(page.title.rendered) }} />
           <div className="wp-content mt-8 space-y-4 text-base leading-relaxed text-slate-700" dangerouslySetInnerHTML={{ __html: sanitizeWordPressHtml(page.content.rendered) }} />
         </article>
       </div>

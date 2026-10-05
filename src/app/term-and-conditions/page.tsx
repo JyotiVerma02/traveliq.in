@@ -23,7 +23,7 @@ function TermsPage({
   sections: Section[];
 }) {
   return (
-    <main className="terms-wrapper">
+    <main className="terms-wrapper inner-page-hero">
       {/* Scoped CSS for single-page presentation and print optimization */}
       <style
         dangerouslySetInnerHTML={{
@@ -38,8 +38,7 @@ function TermsPage({
               --tiq-border: #e6ecf5;
 
               position: relative;
-              min-height: 100vh;
-              padding: 4rem 1.25rem 5rem;
+              padding: 1rem 1.25rem 5rem;
               overflow: hidden;
               background: var(--tiq-bg);
               color: var(--tiq-text);
@@ -276,7 +275,7 @@ function TermsPage({
 
             @media (max-width: 720px) {
               .terms-wrapper {
-                padding: 2.5rem 1rem 3.5rem;
+                padding: 1rem 1rem 3.5rem;
               }
               .terms-header {
                 padding: 2rem 1.5rem;

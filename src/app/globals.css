@@ -11,6 +11,10 @@
    ========================================================= */
 
 :root {
+  --tiq-header-height: 68px;
+  --tiq-page-gutter: 1rem;
+  --tiq-content-width: 80rem;
+  --tiq-section-space: clamp(2.75rem, 5vw, 5rem);
   /* ---------------------------------------------------------
      BRAND
   --------------------------------------------------------- */
@@ -96,6 +100,26 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --tiq-header-height: 74px;
+    --tiq-page-gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  :root {
+    --tiq-header-height: 72px;
+    --tiq-page-gutter: 2rem;
+  }
+}
+
+@media (min-width: 100rem) {
+  :root {
+    --tiq-page-gutter: 3rem;
+  }
 }
 
 /* =========================================================
@@ -284,7 +308,21 @@ a {
 
 body {
   width: 100%;
-  overflow-x: clip;
+}
+
+/* The fixed navigation offset lives on the root page wrapper. These shared
+   primitives keep inner-page starts and wide-screen section grids consistent. */
+.inner-page-hero {
+  scroll-margin-top: var(--tiq-header-height);
+}
+
+.tiq-container {
+  width: min(100% - (2 * var(--tiq-page-gutter)), var(--tiq-content-width));
+  margin-inline: auto;
+}
+
+.tiq-section {
+  padding-block: var(--tiq-section-space);
 }
 
 /* Keep intrinsic media and long labels inside their responsive containers. */

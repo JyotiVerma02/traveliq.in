@@ -22,7 +22,7 @@ function PolicyPage({
   sections: Section[];
 }) {
   return (
-    <main className="privacy-wrapper">
+    <main className="privacy-wrapper inner-page-hero">
       {/* Scoped styles — safe in Server Components */}
       <style
         dangerouslySetInnerHTML={{
@@ -37,8 +37,7 @@ function PolicyPage({
               --tiq-border: #e6ecf5;
 
               position: relative;
-              min-height: 100vh;
-              padding: 4rem 1.25rem 5rem;
+              padding: 1rem 1.25rem 5rem;
               overflow: hidden;
               background: var(--tiq-bg);
               color: var(--tiq-text);
@@ -275,7 +274,7 @@ function PolicyPage({
 
             @media (max-width: 720px) {
               .privacy-wrapper {
-                padding: 2.5rem 1rem 3.5rem;
+                padding: 1rem 1rem 3.5rem;
               }
               .privacy-header {
                 padding: 2rem 1.5rem;

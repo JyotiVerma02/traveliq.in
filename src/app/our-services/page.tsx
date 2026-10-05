@@ -113,7 +113,7 @@ export default function ServicesPage() {
           HERO
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-[#f7f9fc]">
+      <section className="inner-page-hero relative overflow-hidden bg-[#f7f9fc]">
 
         {/* Background glow */}
 
@@ -121,7 +121,7 @@ export default function ServicesPage() {
 
         <div className="pointer-events-none absolute -bottom-52 -left-40 h-[500px] w-[500px] rounded-full bg-[#10407a]/10 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-[1400px] px-4 pb-16 pt-7 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
+        <div className="relative mx-auto max-w-[1400px] px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
 
           {/* Breadcrumb */}
 

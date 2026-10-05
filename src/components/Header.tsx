@@ -123,13 +123,13 @@ export default function Header() {
       ===================================================== */}
 
       <header
-        className={`fixed inset-x-0 top-0 z-[100] w-full border-b bg-white/95 backdrop-blur-md transition-[box-shadow,border-color,background-color] duration-300 ${isScrolled ? "border-[#10407A]/12 shadow-[0_5px_20px_rgba(4,12,26,0.10)]" : "border-[#10407A]/[0.06] shadow-[0_2px_10px_rgba(4,12,26,0.025)]"}`}
+        className={`fixed inset-x-0 top-0 z-[100] h-[var(--tiq-header-height)] w-full border-b bg-white/95 backdrop-blur-md transition-[box-shadow,border-color,background-color] duration-300 ${isScrolled ? "border-[#10407A]/12 shadow-[0_5px_20px_rgba(4,12,26,0.10)]" : "border-[#10407A]/[0.06] shadow-[0_2px_10px_rgba(4,12,26,0.025)]"}`}
       >
         {/* ===================================================
             HEADER INNER — STATIC 80px HEIGHT
         =================================================== */}
 
-        <div className="mx-auto flex h-[68px] w-full max-w-[1600px] items-center justify-between px-4 sm:h-[74px] sm:px-6 lg:px-10 xl:h-[72px] xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-14 2xl:px-16">
+        <div className="mx-auto flex h-full w-full max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-10 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-14 2xl:px-16">
           {/* =================================================
               LOGO
           ================================================= */}
@@ -577,7 +577,6 @@ export default function Header() {
           Header height scales with the screen size.
       ========================================================= */}
 
-      {!isHome && <div className="h-[68px] sm:h-[74px] xl:h-[72px]" aria-hidden="true" />}
     </>
   );
 }

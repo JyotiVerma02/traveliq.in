@@ -116,7 +116,7 @@ export default function AgentRegistrationBenefitsPage() {
     <main className="min-h-screen overflow-hidden bg-[#F4F7FC] text-[#0B1F3A]">
       <JsonLd data={[breadcrumb]} />
 
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#07182E] via-[#0B2D5C] to-[#10407A] px-4 pb-20 pt-12 text-white sm:px-6 sm:pb-28 sm:pt-16">
+      <section className="inner-page-hero relative isolate overflow-hidden bg-gradient-to-br from-[#07182E] via-[#0B2D5C] to-[#10407A] px-4 pb-20 text-white sm:px-6 sm:pb-28">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]" />
         <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-12 h-80 w-80 rounded-full bg-[#EE5326]/25 blur-[100px]" />
         <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-sky-400/20 blur-[110px]" />

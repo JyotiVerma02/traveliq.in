@@ -123,7 +123,7 @@ export default function VideoGalleryPage() {
       {/* =====================================================
           HERO
       ====================================================== */}
-      <section className="relative w-full overflow-hidden">
+      <section className="inner-page-hero relative w-full overflow-hidden">
 
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -150,7 +150,7 @@ export default function VideoGalleryPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-4 pb-12 pt-4 sm:px-6 sm:pb-16 sm:pt-5 lg:px-8">
 
           {/* Breadcrumb */}
           <div

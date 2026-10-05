@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -224,7 +224,7 @@ export default function IrcTcAgentRegistrationPage() {
       {/* ===================================================
           HERO SECTION
       ==================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#040C1A] via-[#0B2D5C] to-[#10407A] pb-20 pt-8 text-white sm:pb-24 sm:pt-10">
+      <section className="inner-page-hero relative overflow-hidden bg-gradient-to-b from-[#040C1A] via-[#0B2D5C] to-[#10407A] pb-20 text-white sm:pb-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
 
         <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#EE5326]/20 blur-[130px]" />

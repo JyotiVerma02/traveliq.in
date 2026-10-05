@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RegistrationPage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#E6F0FA] via-[#EBF3FC] to-[#E3EFFB] px-4 py-8 sm:px-6 lg:px-8">
+    <main className="relative flex min-h-[calc(100svh-var(--tiq-header-height))] flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#E6F0FA] via-[#EBF3FC] to-[#E3EFFB] px-4 py-8 sm:px-6 lg:px-8">
       {/* Outer Floating Decorative Elements */}
       <div
         aria-hidden="true"

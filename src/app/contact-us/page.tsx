@@ -102,7 +102,7 @@ export default function ContactPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative isolate min-h-[490px] overflow-hidden sm:min-h-[530px] md:min-h-[560px] lg:min-h-[580px]">
+      <section className="inner-page-hero relative isolate overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -126,7 +126,7 @@ export default function ContactPage() {
         <div className="absolute -right-24 bottom-10 -z-10 h-80 w-80 rounded-full bg-[#EE5326]/10 blur-3xl" />
 
         {/* Main hero content */}
-        <div className="mx-auto flex min-h-[490px] w-full max-w-7xl flex-col items-center justify-start px-4 pb-24 pt-11 text-center sm:min-h-[530px] sm:px-6 sm:pt-14 md:min-h-[560px] lg:min-h-[580px] lg:px-8 lg:pt-16">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-start px-4 pb-16 pt-6 text-center sm:px-6 sm:pb-20 sm:pt-8 lg:px-8">
           {/* Breadcrumb */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-4 py-2 shadow-[6px_7px_18px_rgba(16,64,122,0.08),-5px_-5px_15px_rgba(255,255,255,0.8)] backdrop-blur-md sm:px-5 sm:py-2.5">
             <Link

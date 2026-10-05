@@ -247,7 +247,7 @@ export default function FrequentlyAskedQuestionsPage() {
             CONTAINER
         =================================================== */}
 
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="inner-page-hero relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* =================================================
               BREADCRUMB
           ================================================= */}
@@ -260,7 +260,7 @@ export default function FrequentlyAskedQuestionsPage() {
               gap-2
               border-b
               border-slate-100
-              py-4
+              py-3
               text-xs
               sm:text-sm
             "
@@ -298,10 +298,10 @@ export default function FrequentlyAskedQuestionsPage() {
             className="
               mx-auto
               max-w-4xl
-              py-14
+              pb-14 pt-4
               text-center
-              sm:py-16
-              lg:py-20
+              sm:pb-16 sm:pt-5
+              lg:pb-20
             "
           >
             {/* Badge */}

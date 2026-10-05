@@ -87,7 +87,7 @@ export default function PayNowPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative isolate min-h-[470px] overflow-hidden sm:min-h-[510px] md:min-h-[540px] lg:min-h-[560px]">
+      <section className="inner-page-hero relative isolate overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -111,7 +111,7 @@ export default function PayNowPage() {
         <div className="absolute -right-24 bottom-10 -z-10 h-80 w-80 rounded-full bg-[#EE5326]/10 blur-3xl" />
 
         {/* Hero content */}
-        <div className="mx-auto flex min-h-[470px] w-full max-w-7xl flex-col items-center justify-start px-4 pb-24 pt-11 text-center sm:min-h-[510px] sm:px-6 sm:pt-14 md:min-h-[540px] lg:min-h-[560px] lg:px-8 lg:pt-16">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-start px-4 pb-16 pt-6 text-center sm:px-6 sm:pb-20 sm:pt-8 lg:px-8">
           {/* Breadcrumb */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/80 px-4 py-2 shadow-[6px_7px_18px_rgba(16,64,122,0.08),-5px_-5px_15px_rgba(255,255,255,0.9)] backdrop-blur-md sm:px-5 sm:py-2.5">
             <Link
@@ -185,7 +185,7 @@ export default function PayNowPage() {
         </div>
 
         {/* Bottom wave */}
-        <div className="absolute bottom-[-1px] left-0 right-0 h-14 sm:h-20">
+        <div className="absolute bottom-[-1px] left-0 right-0 h-8 sm:h-12 lg:h-14">
           <svg
             viewBox="0 0 1440 100"
             preserveAspectRatio="none"
@@ -288,7 +288,7 @@ export default function PayNowPage() {
               RIGHT — IMAGE
           ================================================= */}
 
-          <div className="relative min-h-[300px] w-full overflow-hidden bg-[#0E2A52] sm:min-h-[540px] lg:col-span-5 lg:min-h-[650px]">
+          <div className="relative min-h-[300px] w-full overflow-hidden bg-[#0E2A52] sm:min-h-[420px] lg:col-span-5 lg:min-h-[520px]">
             <Image
               src="/images/secure-payment.webp"
               alt="TravelIQ Online Payment"
@@ -314,7 +314,7 @@ export default function PayNowPage() {
             </div>
 
             {/* Image content */}
-            <div className="relative z-10 mt-auto flex min-h-[480px] w-full flex-col justify-end p-6 sm:min-h-[540px] sm:p-8">
+            <div className="relative z-10 flex min-h-[300px] w-full flex-col justify-end p-6 sm:min-h-[420px] sm:p-8 lg:min-h-[520px]">
               {/* Icon */}
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.18)]">
                 <CreditCard className="h-6 w-6 text-[#EE5326]" />
@@ -438,4 +438,3 @@ export default function PayNowPage() {
     </main>
   );
 }
-

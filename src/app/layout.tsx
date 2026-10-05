@@ -100,7 +100,7 @@ export default function RootLayout({
           <Header />
 
           {/* ================= PAGE CONTENT ================= */}
-          {children}
+          <div className="pt-[var(--tiq-header-height)]">{children}</div>
 
           {/* ================= FOOTER ================= */}
           <Footer />

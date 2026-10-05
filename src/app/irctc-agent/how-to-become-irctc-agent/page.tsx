@@ -38,7 +38,7 @@ const article = {
 
 export default function HowToBecomeIrtctAgentPage() {
   return (
-    <main className="min-h-screen bg-[#F4F7FB] px-4 py-10 text-[#071F3D] sm:px-6 sm:py-16">
+    <main className="inner-page-hero bg-[#F4F7FB] px-4 pb-10 pt-6 text-[#071F3D] sm:px-6 sm:pb-16 sm:pt-8">
       <JsonLd data={[breadcrumb, article]} />
       <article className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-[#10407A]/10 border-t-4 border-t-[#EE5326] bg-white p-5 shadow-[0_18px_55px_rgba(16,64,122,0.08)] sm:p-10 lg:p-14">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate-500">

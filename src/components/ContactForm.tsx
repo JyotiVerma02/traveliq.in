@@ -7,6 +7,7 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [whatsappLink, setWhatsappLink] = useState("");
+  const [pending, setPending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,13 +16,32 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (pending) return;
     setError("");
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setError("Please complete your name, email, and message.");
       return;
     }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    if (formData.phone.replace(/\D/g, "").slice(-10).length !== 10) {
+      setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+    setPending(true);
+    try {
+      const response = await fetch("/api/contact-leads/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ whatsappNumber: formData.phone, email: formData.email, action: formData.subject || formData.message }),
+      });
+      await response.json();
+      if (!response.ok) throw new Error("Unable to submit your enquiry right now. Please try again.");
+
     const details = [
       ["Name", formData.name.trim()],
       ["Email", formData.email.trim()],
@@ -35,6 +55,12 @@ export default function ContactForm() {
     ].join("\n");
     setWhatsappLink(`${WHATSAPP_URL}?text=${encodeURIComponent(message)}`);
     setSubmitted(true);
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch {
+      setError("Unable to submit your enquiry right now. Please try again.");
+    } finally {
+      setPending(false);
+    }
   };
 
   return (
@@ -109,8 +135,8 @@ export default function ContactForm() {
                 id="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="name@example.com"
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="mt-1.5 w-full rounded-lg border border-[#10407A]/15 bg-[#fff8f5] px-4 py-3 text-base text-[#08090b] outline-none transition focus:border-[#EE5326] focus:bg-white focus:ring-2 focus:ring-[#EE5326]/15"
               />
             </div>
@@ -124,6 +150,8 @@ export default function ContactForm() {
               <input
                 type="tel"
                 id="phone"
+                required
+                pattern="[+]?[0-9 ()-]{10,16}"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+91 9876543210"
@@ -163,9 +191,10 @@ export default function ContactForm() {
 
           <button
             type="submit"
+            disabled={pending}
             className="w-full rounded-full bg-[#EE5326] py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-[#d7491d] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Continue with WhatsApp
+            {pending ? "Submitting..." : "Continue with WhatsApp"}
           </button>
         </form>
       )}

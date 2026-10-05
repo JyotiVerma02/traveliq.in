@@ -239,7 +239,7 @@ export default function IRCTCPrincipalServiceProvidersPage() {
       {/* =====================================================
           HERO BANNER
       ===================================================== */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#E7F0FB] via-[#F4F8FD] to-[#EAF2FC] min-h-[480px] sm:min-h-[540px] flex items-center">
+      <section className="inner-page-hero relative overflow-hidden bg-gradient-to-r from-[#E7F0FB] via-[#F4F8FD] to-[#EAF2FC] flex items-center">
         <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[60%] -z-0 overflow-hidden">
           <Image
             src="/images/irctc_psp_hero.jpg"
@@ -253,7 +253,7 @@ export default function IRCTCPrincipalServiceProvidersPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#F4F7FB] via-transparent to-transparent lg:hidden" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 pt-4 sm:pb-16 sm:pt-5 w-full">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold text-slate-600 shadow-sm backdrop-blur-md mb-5">
               <Link href="/" className="hover:text-[#10407A] transition-colors">

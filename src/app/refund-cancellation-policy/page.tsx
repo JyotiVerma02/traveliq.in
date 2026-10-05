@@ -158,7 +158,7 @@ const policySections = [
 export default function Page() {
   return (
     <main className="min-h-screen bg-[#F5F8FC] text-[#10233F]">
-      <section className="relative overflow-hidden bg-[#0B2D5C] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8">
+      <section className="inner-page-hero relative overflow-hidden bg-[#0B2D5C] px-4 pb-16 text-white sm:px-6 sm:pb-20 lg:px-8">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(238,83,38,0.25),rgba(255,255,255,0)_42%)]" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F8FC] to-transparent" />
 

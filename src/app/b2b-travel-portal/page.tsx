@@ -25,7 +25,7 @@ const breadcrumb = getBreadcrumbSchema([
 
 export default function B2BTravelPortalPage() {
   return (
-    <main className="min-h-screen bg-[#F4F7FB] px-4 py-10 text-[#071F3D] sm:px-6 sm:py-16">
+    <main className="inner-page-hero bg-[#F4F7FB] px-4 pb-10 pt-6 text-[#071F3D] sm:px-6 sm:pb-16 sm:pt-8">
       <JsonLd data={breadcrumb} />
       <div className="mx-auto max-w-7xl">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate-500"><Link href="/" className="hover:text-[#10407A]">Home</Link><span className="mx-2 text-[#EE5326]">/</span><span className="font-semibold text-[#10407A]">B2B Travel Portal</span></nav>

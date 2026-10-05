@@ -106,11 +106,11 @@ export default function Footer() {
           <div className="min-w-0 lg:border-r lg:border-white/10 lg:pr-10 xl:pr-14">
             <Link href="/" className="inline-block">
               <Image
-                src="/logo.webp"
+                src="/logo1.webp"
                 alt="TravelIQ"
                 width={210}
                 height={52}
-                className="h-auto w-[170px] object-contain brightness-125 contrast-110 sm:w-[185px]"
+                className="h-auto w-[170px] object-contain sm:w-[185px]"
               />
             </Link>
 

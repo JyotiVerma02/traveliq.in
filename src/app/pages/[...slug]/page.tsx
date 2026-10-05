@@ -122,7 +122,7 @@ export default async function WordPressPostPage({ params }: PageProps) {
   };
 
   return (
-    <main className="bg-[#f6f9fe] min-h-screen py-8 sm:py-12">
+    <main className="inner-page-hero bg-[#f6f9fe] pb-8 sm:pb-12">
       <JsonLd data={[breadcrumbSchema, articleSchema]} />
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 sm:text-sm">
@@ -145,7 +145,7 @@ export default async function WordPressPostPage({ params }: PageProps) {
           </p>
 
           <h1
-            className="mt-3 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl"
+            className="mt-3 break-words text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl"
             dangerouslySetInnerHTML={{
               __html: safeTitle,
             }}

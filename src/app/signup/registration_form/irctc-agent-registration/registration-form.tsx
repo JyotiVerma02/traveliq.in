@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   useEffect,
   useRef,
@@ -105,7 +104,7 @@ export default function RegistrationForm() {
     email: string;
     action: string;
   }) {
-    const response = await fetch("/api/leads/", {
+    const response = await fetch("/api/contact-leads/", {
       method: "POST",
 
       headers: {
@@ -113,8 +112,6 @@ export default function RegistrationForm() {
       },
 
       body: JSON.stringify({
-        formType: "contact",
-
         loginPlan: getPlanName(plan),
 
         whatsappNumber: `+91${mobile}`,
@@ -216,11 +213,7 @@ export default function RegistrationForm() {
         err
       );
 
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Unable to submit your details. Please try again."
-      );
+      setError("Unable to submit your enquiry right now. Please try again.");
 
       setPending(false);
     }
@@ -356,14 +349,7 @@ export default function RegistrationForm() {
           role="alert"
           className="rounded-xl border border-red-200 bg-red-50 p-3 text-xs font-semibold text-red-800"
         >
-          {error}{" "}
-
-          <Link
-            href="/signup/registration_form/irctc-agent-registration-details/"
-            className="underline"
-          >
-            Open full registration form
-          </Link>
+          {error}
         </p>
       )}
 

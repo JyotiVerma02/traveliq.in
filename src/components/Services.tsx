@@ -38,7 +38,7 @@ const services = [
     "IRCTC Agent Registration",
     "Apply for IRCTC agent onboarding with supported OTP and DSC-based authentication options.",
     "/irctc-agent-registration",
-    "/images/services/railway-reservations.webp",
+    "/vande_bharat_hero.webp",
   ],
 ] as const;
 
@@ -137,7 +137,7 @@ export default function Services() {
                     fill
                     loading="lazy"
                     quality={65}
-                    className="object-cover transition duration-700 group-hover:scale-[1.05]"
+                    className={`object-cover transition duration-700 group-hover:scale-[1.05] ${title === "IRCTC Agent Registration" ? "object-[65%_center]" : ""}`}
                     sizes="(max-width: 639px) 88vw, (max-width: 1023px) 46vw, 31vw"
                   />
 
