@@ -32,13 +32,15 @@ function loadCredentials(): Required<ServiceAccountCredentials> {
   throw new Error("Google Sheets service account credentials are not configured");
 }
 
-export const sheets = google.sheets({
-  version: "v4",
-  auth: new google.auth.GoogleAuth({
-    credentials: loadCredentials(),
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  }),
-});
+function getSheetsClient() {
+  return google.sheets({
+    version: "v4",
+    auth: new google.auth.GoogleAuth({
+      credentials: loadCredentials(),
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    }),
+  });
+}
 
 export async function appendLeadRow(
   sheetName: string,
@@ -48,11 +50,18 @@ export async function appendLeadRow(
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;
   if (!spreadsheetId) throw new Error("Google Sheets spreadsheet ID is not configured");
 
-  return sheets.spreadsheets.values.append({
+  return getSheetsClient().spreadsheets.values.append({
     spreadsheetId,
     range: `${sheetName}!${columns}`,
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: { values: [values] },
   });
+}
+
+export async function getLeadRows(range: string) {
+  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+  if (!spreadsheetId) throw new Error("Google Sheets spreadsheet ID is not configured");
+
+  return getSheetsClient().spreadsheets.values.get({ spreadsheetId, range });
 }

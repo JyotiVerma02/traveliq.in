@@ -19,7 +19,7 @@ const reassurance = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[min(760px,calc(100svh-var(--tiq-header-height)))] w-full overflow-hidden bg-[#F5F9FC] max-lg:min-h-0">
+    <section className="relative isolate flex min-h-[min(760px,calc(100svh-var(--tiq-header-height)))] w-full overflow-hidden bg-[#F5F9FC] max-lg:min-h-0 lg:min-h-0 ultra:min-h-[min(760px,calc(100svh-var(--tiq-header-height)))]">
       <HeroMedia />
 
       <div className="tiq-container relative z-10 flex items-start py-8 sm:py-10 lg:items-center lg:py-10 ultra:items-start ultra:pt-12">

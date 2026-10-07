@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { appendLeadRow } from "@/lib/googleSheets";
-import { findRegisteredAccountConflicts } from "@/lib/registered-accounts";
+import { appendLeadRow, getLeadRows } from "@/lib/googleSheets";
+import {
+  findRegisteredAccountConflicts,
+  normalizeRegistrationEmail,
+  normalizeRegistrationMobile,
+  type RegistrationFieldErrors,
+} from "@/lib/registered-accounts";
 
 export async function POST(request: NextRequest) {
   try {
+    console.log("[REGISTRATION] submission received");
     const body = await request.json();
 
     const {
@@ -38,55 +44,62 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const fieldErrors = await findRegisteredAccountConflicts(
-      [email, uniqueEmail],
-      [whatsappNumber, uniqueMobileNumber],
-    );
+    const normalizedUniqueEmail = normalizeRegistrationEmail(uniqueEmail);
+    const normalizedUniqueMobile = normalizeRegistrationMobile(uniqueMobileNumber);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedUniqueEmail)) {
+      return NextResponse.json(
+        { success: false, fieldErrors: { uniqueEmail: "Enter a valid email address." } },
+        { status: 400 },
+      );
+    }
+    if (!normalizedUniqueMobile) {
+      return NextResponse.json(
+        { success: false, fieldErrors: { uniqueMobile: "Enter a valid 10-digit mobile number." } },
+        { status: 400 },
+      );
+    }
+
+    let fieldErrors: RegistrationFieldErrors;
+    try {
+      fieldErrors = await findRegisteredAccountConflicts(normalizedUniqueEmail, normalizedUniqueMobile);
+    } catch (error) {
+      console.error("Registration duplicate lookup failed:", error);
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Registration uniqueness checks are temporarily unavailable.",
+        },
+        { status: 503 },
+      );
+    }
+
     if (Object.keys(fieldErrors).length) {
+      const field = fieldErrors.uniqueMobile ? "uniqueMobile" : "uniqueEmail";
       return NextResponse.json(
         {
           success: false,
           statusCode: 409,
           fieldErrors,
-          ...(fieldErrors.email ? { field: "email", message: fieldErrors.email } : {}),
-          ...(fieldErrors.mobile ? { mobileMessage: fieldErrors.mobile } : {}),
+          field,
+          message: fieldErrors[field],
         },
         { status: 409 }
       );
     }
 
-    // ---------------------------------------
-    // Request details
-    // ---------------------------------------
-
-    const forwardedFor =
-      request.headers.get("x-forwarded-for");
-
+    const forwardedFor = request.headers.get("x-forwarded-for");
     const ipAddress =
       forwardedFor?.split(",")[0]?.trim() ||
       request.headers.get("x-real-ip") ||
       "";
+    const host = request.headers.get("host") || "";
+    const origin = request.headers.get("origin") || "";
+    const referer = request.headers.get("referer") || "";
+    const website = origin || host;
+    const sourceUrl = referer || origin || "";
 
-    const host =
-      request.headers.get("host") || "";
-
-    const origin =
-      request.headers.get("origin") || "";
-
-    const referer =
-      request.headers.get("referer") || "";
-
-    const website =
-      origin || host;
-
-    const sourceUrl =
-      referer || origin || "";
-
-    // ---------------------------------------
-    // Data must match A -> AF exactly
-    // ---------------------------------------
-
-    const values = [
+    // Match the live Registration Leads headers from A through AF.
+    const row = [
       // A - Date
       new Date().toLocaleString("en-IN", {
         timeZone: "Asia/Kolkata",
@@ -132,7 +145,7 @@ export async function POST(request: NextRequest) {
       postOffice || "",
 
       // O - Office Mobile
-      uniqueMobileNumber || "",
+      normalizedUniqueMobile,
 
       // P - Home Address
       "",
@@ -153,10 +166,10 @@ export async function POST(request: NextRequest) {
       whatsappNumber || "",
 
       // V - Unique No
-      uniqueMobileNumber || "",
+      normalizedUniqueMobile,
 
       // W - Unique Email
-      uniqueEmail || "",
+      normalizedUniqueEmail,
 
       // X - Office Email
       email || "",
@@ -186,32 +199,64 @@ export async function POST(request: NextRequest) {
       "",
     ];
 
-    if (values.length !== 32) {
+    if (row.length !== 32 || !row[0]) {
       throw new Error("Registration lead column mapping must contain exactly 32 values (A:AF)");
     }
 
-    const result = await appendLeadRow("'Registration Leads'", "A:AF", values);
+    // Find the last occupied row first. The existing sheet has older rows whose
+    // data starts in P; using A:AF as an append table range alone can make Sheets
+    // continue that misplaced table. Starting after the last used row anchors the
+    // append at column A without overwriting those rows.
+    const existing = await getLeadRows("'Registration Leads'!A:AF");
+    const existingRows = existing.data.values || [];
+    const lastOccupiedRow = existingRows.reduce(
+      (last, values, index) =>
+        values.some((value) => String(value ?? "").trim() !== "") ? index + 1 : last,
+      0,
+    );
+    const nextRow = Math.max(lastOccupiedRow + 1, 2);
+    const appendColumns = `A${nextRow}:AF`;
+    const range = `'Registration Leads'!${appendColumns}`;
+
+    console.log("[REGISTRATION] target", {
+      spreadsheetConfigured: Boolean(process.env.GOOGLE_SHEET_ID),
+      range,
+    });
+    console.log("ROW LENGTH:", row.length);
+    console.log("ROW FIRST 5 COLUMNS:", ["Date", "IP Address", "Website", "PAN Number", "Company Name"]);
+    console.log("ROW[0] is Date:", Boolean(row[0]));
+    console.log("ROW[1] has IP address:", Boolean(row[1]));
+    console.log("RANGE:", range);
+
+    const result = await appendLeadRow("'Registration Leads'", appendColumns, row);
+    const updatedRows = result.data.updates?.updatedRows ?? 0;
+    const updatedRange = result.data.updates?.updatedRange;
+    const updatedStart = updatedRange?.split("!").at(-1)?.split(":")[0]?.replace(/\$/g, "");
+
+    console.log("[REGISTRATION] Google append result", {
+      updatedRows,
+      updatedRange,
+    });
+
+    if (updatedRows < 1 || !updatedStart || !/^A\d+$/.test(updatedStart)) {
+      throw new Error("Google Sheets did not confirm that a registration row was appended from column A");
+    }
 
     return NextResponse.json({
       success: true,
-      message:
-        "Registration lead saved successfully",
-
-      updatedRange: result.data.updates?.updatedRange,
+      message: "Registration saved successfully",
+      updatedRows,
+      updatedRange,
     });
   } catch (error) {
-    console.error("Registration lead append failed:", error);
+    console.error("[REGISTRATION] Google Sheets append failed:", error);
 
-    const unavailable = error instanceof Error && error.message === "Registered accounts lookup is not configured";
     return NextResponse.json(
       {
         success: false,
-        message:
-          unavailable
-            ? "Registration uniqueness checks are temporarily unavailable."
-            : "Failed to save registration lead",
+        message: "Unable to save registration right now. Please try again.",
       },
-      { status: unavailable ? 503 : 500 }
+      { status: 500 }
     );
   }
 }

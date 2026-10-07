@@ -6,6 +6,9 @@ import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { WhatsAppIcon } from "@/components/icons";
 import { WHATSAPP_URL } from "@/lib/site";
 
+type UniqueField = "uniqueMobile" | "uniqueEmail";
+type AvailabilityStatus = "idle" | "checking" | "available" | "taken" | "error";
+
 export default function RegistrationDetailsForm() {
   const id = useId();
   const formRef = useRef<HTMLFormElement>(null);
@@ -15,8 +18,14 @@ export default function RegistrationDetailsForm() {
   const [pending, setPending] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const verificationIds = useRef<Record<string, number>>({});
-  const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  const isValidMobile = (value: string) => /^\d{10}$/.test(value.replace(/\D/g, "").slice(-10));
+  const checkTimers = useRef<Partial<Record<UniqueField, ReturnType<typeof setTimeout>>>>({});
+  const checkControllers = useRef<Partial<Record<UniqueField, AbortController>>>({});
+  const [availability, setAvailability] = useState<Record<UniqueField, AvailabilityStatus>>({
+    uniqueMobile: "idle",
+    uniqueEmail: "idle",
+  });
+  const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  const isValidMobile = (value: string) => /^\d{10}$/.test(value.trim());
 
   useEffect(() => {
     try {
@@ -43,6 +52,13 @@ export default function RegistrationDetailsForm() {
     } catch {
       // Form still works if sessionStorage is unavailable
     }
+  }, []);
+
+  useEffect(() => () => {
+    Object.values(checkTimers.current).forEach((timer) => {
+      if (timer) clearTimeout(timer);
+    });
+    Object.values(checkControllers.current).forEach((controller) => controller?.abort());
   }, []);
 
   function validationMessage(
@@ -107,13 +123,21 @@ export default function RegistrationDetailsForm() {
       : "";
     setFieldErrors((current) => ({ ...current, [name]: updatedError }));
 
-    const isEmail = name === "email" || name === "uniqueEmail";
-    const isMobile = name === "mobile" || name === "uniqueMobile";
-    const validEmail = isEmail && isValidEmail(value);
-    const validMobile = isMobile && isValidMobile(value);
-    if (validEmail || validMobile) {
-      void recheckRegistrationField(name, value, verificationId);
-    } else if (isEmail || isMobile) {
+    if (name === "uniqueEmail" || name === "uniqueMobile") {
+      const uniqueField = name as UniqueField;
+      checkControllers.current[uniqueField]?.abort();
+      if (checkTimers.current[uniqueField]) clearTimeout(checkTimers.current[uniqueField]);
+
+      const valid = uniqueField === "uniqueEmail" ? isValidEmail(value) : isValidMobile(value);
+      if (valid) {
+        setAvailability((current) => ({ ...current, [uniqueField]: "checking" }));
+        checkTimers.current[uniqueField] = setTimeout(() => {
+          void recheckRegistrationField(uniqueField, value, verificationId);
+        }, 500);
+      } else {
+        setAvailability((current) => ({ ...current, [uniqueField]: "idle" }));
+      }
+
       setFieldErrors((current) => {
         const next = { ...current };
         if (next[name]?.startsWith("This ") || next[name]?.startsWith("Unable to verify ")) delete next[name];
@@ -136,6 +160,7 @@ async function submit(
   setFormError("");
 
   if (Object.keys(validationErrors).length) return;
+  if (availability.uniqueMobile === "checking" || availability.uniqueEmail === "checking" || availability.uniqueMobile === "taken" || availability.uniqueEmail === "taken") return;
 
   setPending(true);
 
@@ -232,8 +257,7 @@ async function submit(
 
           panNumber: pan,
 
-          uniqueMobileNumber:
-            `+91${uniqueMobile}`,
+          uniqueMobileNumber: uniqueMobile,
 
           uniqueEmail,
 
@@ -263,30 +287,33 @@ async function submit(
     const data = await response.json();
 
     if (!response.ok) {
+      if (response.status === 400 && data?.fieldErrors) {
+        setFieldErrors((current) => ({ ...current, ...data.fieldErrors }));
+        return;
+      }
       if (response.status === 503) {
         setFieldErrors((current) => ({
           ...current,
-          email: isValidEmail(email) ? "Unable to verify email right now." : current.email,
           uniqueEmail: isValidEmail(uniqueEmail) ? "Unable to verify email right now." : current.uniqueEmail,
-          mobile: isValidMobile(mobile) ? "Unable to verify mobile number right now." : current.mobile,
           uniqueMobile: isValidMobile(uniqueMobile) ? "Unable to verify mobile number right now." : current.uniqueMobile,
+        }));
+        setAvailability((current) => ({
+          ...current,
+          ...(isValidEmail(uniqueEmail) ? { uniqueEmail: "error" as const } : {}),
+          ...(isValidMobile(uniqueMobile) ? { uniqueMobile: "error" as const } : {}),
         }));
         return;
       }
       if (response.status === 409) {
-        const conflicts = data?.fieldErrors ?? {
-          [data?.field === "email" ? "email" : "mobile"]: true,
-        };
+        const conflicts: Record<string, string> = data?.fieldErrors ?? {};
         setFieldErrors((current) => ({
           ...current,
-          ...(conflicts.email ? {
-            ...(isValidEmail(email) ? { email: "This email is already in use." } : {}),
-            ...(isValidEmail(uniqueEmail) ? { uniqueEmail: "This email is already in use." } : {}),
-          } : {}),
-          ...(conflicts.mobile ? {
-            ...(isValidMobile(mobile) ? { mobile: "This mobile number is already in use." } : {}),
-            ...(isValidMobile(uniqueMobile) ? { uniqueMobile: "This mobile number is already in use." } : {}),
-          } : {}),
+          ...conflicts,
+        }));
+        setAvailability((current) => ({
+          ...current,
+          ...(conflicts.uniqueEmail ? { uniqueEmail: "taken" as const } : {}),
+          ...(conflicts.uniqueMobile ? { uniqueMobile: "taken" as const } : {}),
         }));
         return;
       }
@@ -297,11 +324,23 @@ async function submit(
       );
     }
 
+    if (
+      data?.success !== true ||
+      !Number.isInteger(data?.updatedRows) ||
+      data.updatedRows < 1
+    ) {
+      throw new Error(
+        data?.message || "The registration was not confirmed as saved. Please try again."
+      );
+    }
+
     setMessage(
       "Your registration details have been submitted successfully."
     );
 
     formRef.current?.reset();
+    setFieldErrors({});
+    setAvailability({ uniqueMobile: "idle", uniqueEmail: "idle" });
 
     sessionStorage.removeItem(
       "traveliq-registration-contact"
@@ -316,44 +355,46 @@ async function submit(
 
 }
 
-  async function recheckRegistrationField(name: string, value: string, verificationId: number) {
-    const fieldName = name.toLowerCase().includes("email") ? "email" : "mobile";
+  async function recheckRegistrationField(name: UniqueField, value: string, verificationId: number) {
+    const fieldName = name === "uniqueEmail" ? "email" : "mobile";
     const input = formRef.current?.elements.namedItem(name);
     if (!(input instanceof HTMLInputElement) || validationMessage(name, name, value, input.validity.valid, input.required)) return;
+    const controller = new AbortController();
+    checkControllers.current[name] = controller;
     try {
-      const response = await fetch("/api/registration-uniqueness/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fieldName === "email" ? { email: value } : { mobile: value }),
+      const params = new URLSearchParams({ [fieldName]: value.trim() });
+      const response = await fetch(`/api/registration-uniqueness/?${params.toString()}`, {
+        signal: controller.signal,
       });
       const data = await response.json();
       if (verificationIds.current[name] !== verificationId) return;
 
-      let error = "";
-      if (response.status === 503 || !response.ok && response.status !== 409) {
-        error = fieldName === "email"
-          ? "Unable to verify email right now."
-          : "Unable to verify mobile number right now.";
-      } else if (data?.errors?.[fieldName]) {
-        error = fieldName === "email"
-          ? "This email is already in use."
-          : "This mobile number is already in use.";
+      if (verificationIds.current[name] !== verificationId || validationMessageForCurrentField(name)) return;
+      const existsKey = fieldName === "email" ? "emailExists" : "mobileExists";
+      if (!response.ok || data?.success !== true || typeof data[existsKey] !== "boolean") {
+        throw new Error("Unique value lookup returned an invalid response");
       }
 
-      // A stale request or newly invalid value must never restore a uniqueness error.
-      if (verificationIds.current[name] !== verificationId || validationMessageForCurrentField(name)) return;
-
+      const exists = data[existsKey] as boolean;
+      setAvailability((current) => ({ ...current, [name]: exists ? "taken" : "available" }));
       setFieldErrors((current) => {
         const next = { ...current };
-        if (error && !validationMessageForCurrentField(name)) next[name] = error;
-        else delete next[name];
+        if (exists) {
+          next[name] = name === "uniqueEmail"
+            ? "This email address is already in use. Please use a different email."
+            : "This mobile number is already in use. Please use a different number.";
+        } else {
+          delete next[name];
+        }
         return next;
       });
-    } catch {
+    } catch (error) {
+      if (error instanceof Error && error.name === "AbortError") return;
       if (verificationIds.current[name] !== verificationId || validationMessageForCurrentField(name)) return;
+      setAvailability((current) => ({ ...current, [name]: "error" }));
       setFieldErrors((current) => ({
         ...current,
-        [name]: fieldName === "email"
+        [name]: name === "uniqueEmail"
           ? "Unable to verify email right now."
           : "Unable to verify mobile number right now.",
       }));
@@ -382,6 +423,17 @@ async function submit(
       autoComplete?: string;
     } = {},
   ) {
+    const uniqueStatus = name === "uniqueEmail" || name === "uniqueMobile"
+      ? availability[name]
+      : "idle";
+    const statusMessage = uniqueStatus === "checking"
+      ? "Checking availability..."
+      : uniqueStatus === "available"
+        ? name === "uniqueEmail" ? "Email address is available." : "Mobile number is available."
+        : "";
+    const errorId = `${id}-${name}-error`;
+    const hasError = Boolean(fieldErrors[name]) || uniqueStatus === "taken";
+
     return (
       <div key={name}>
         <label
@@ -404,14 +456,19 @@ async function submit(
           type={options.type ?? "text"}
           {...options}
           maxLength={options.maxLength ?? 160}
-          aria-invalid={Boolean(fieldErrors[name])}
-          aria-describedby={fieldErrors[name] ? `${id}-${name}-error` : undefined}
+          aria-invalid={hasError}
+          aria-describedby={fieldErrors[name] || statusMessage ? errorId : undefined}
           onChange={(event) => handleFieldChange(name, event.currentTarget.value, event.currentTarget)}
-          className={`${inputClass} ${fieldErrors[name] ? "border-red-500 focus:border-red-500" : ""}`}
+          className={`${inputClass} ${hasError ? "border-red-500 focus:border-red-500" : uniqueStatus === "available" ? "border-emerald-500 focus:border-emerald-500" : ""}`}
         />
         {fieldErrors[name] && (
-          <p id={`${id}-${name}-error`} role="alert" className="mt-1.5 text-sm font-medium text-red-600">
+          <p id={errorId} role="alert" className="mt-1.5 text-sm font-medium text-red-600">
             {fieldErrors[name]}
+          </p>
+        )}
+        {!fieldErrors[name] && statusMessage && (
+          <p id={errorId} role="status" className={`mt-1.5 text-sm font-medium ${uniqueStatus === "available" ? "text-emerald-700" : "text-slate-500"}`}>
+            {statusMessage}
           </p>
         )}
       </div>
@@ -636,7 +693,7 @@ async function submit(
       <div className="flex flex-col justify-center gap-3 border-t border-[#10407A]/[0.08] pt-6 sm:flex-row sm:gap-4">
         <button
           type="submit"
-          disabled={pending}
+          disabled={pending || availability.uniqueMobile === "checking" || availability.uniqueEmail === "checking" || availability.uniqueMobile === "taken" || availability.uniqueEmail === "taken"}
           className="group inline-flex min-h-12 items-center justify-center rounded-full bg-[#EE5326] px-8 py-3 text-sm font-bold !text-white shadow-[0_9px_20px_rgba(238,83,38,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D9471D] hover:shadow-[0_13px_25px_rgba(238,83,38,0.30)] disabled:cursor-wait disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EE5326] focus-visible:ring-offset-2 motion-reduce:transform-none motion-reduce:transition-none"
         >
           {pending ? "Submitting..." : "Submit Registration Details"}
