@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function RegistrationDetailsPage() {
-  return <main className="inner-page-hero relative isolate overflow-hidden bg-[#F2F6FC] px-4 pb-10 sm:px-6 sm:pb-14">
+  return <main className="inner-page-hero relative isolate overflow-hidden bg-[#F2F6FC] px-4 pb-10 pt-5 sm:px-6 sm:pb-14 sm:pt-7 lg:pt-10">
     <div aria-hidden="true" className="pointer-events-none absolute -left-28 top-16 h-72 w-72 rounded-full bg-[#10407A]/[0.06] blur-3xl" />
     <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#EE5326]/[0.07] blur-3xl" />
     <div className="relative mx-auto max-w-5xl">

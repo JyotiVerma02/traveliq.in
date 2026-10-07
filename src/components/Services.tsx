@@ -45,10 +45,10 @@ const services = [
 export default function Services() {
   return (
     <section className="relative overflow-hidden bg-[#F4F7FB]">
-      <div className="relative mx-auto max-w-[1400px] bg-[#F4F7FB] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        {/* Section Header with Left/Right Controls */}
-        <div className="flex flex-col items-center gap-4 px-5 sm:px-8 lg:px-12">
-          <div className="mx-auto w-full max-w-none text-center">
+      <div className="relative w-full bg-[#F4F7FB] py-12 sm:py-14 lg:py-16">
+        {/* Section Header with aligned carousel controls */}
+        <div className="tiq-container">
+          <div className="w-full text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#C4320A]">
               Our Services
             </p>
@@ -62,11 +62,12 @@ export default function Services() {
           </div>
 
           {/* Carousel Control Buttons */}
-          <div className="self-end">
+          <div className="mt-4 flex min-h-12 justify-end">
             <CarouselControls
               targetId="home-services-carousel"
               previousLabel="Scroll services left"
               nextLabel="Scroll services right"
+              hideWhenNotScrollable
               className="flex items-center gap-3"
               buttonClassName="
                 flex h-12 w-12 items-center justify-center rounded-full border
@@ -79,34 +80,22 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Cards Carousel Container */}
-        <div
-          id="home-services-carousel"
-          className="
-            mt-8
-            flex
-            w-full
-            snap-x
-            snap-mandatory
-            gap-6
-            overflow-x-auto
-            pl-1
-            pr-0
-            pb-3
-            pt-2
-            scrollbar-none
-          "
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            overscrollBehaviorX: "contain",
-            touchAction: "pan-x pan-y",
-          }}
-        >
+        {/* Clipped slider viewport. The inner grid always stays on one row. */}
+        <div className="tiq-container mt-4 sm:mt-8">
+          <div
+            id="home-services-carousel"
+            className="grid grid-flow-col auto-cols-[100%] snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden pb-3 pt-2 scrollbar-none sm:auto-cols-[calc((100%-1.5rem)/2)] lg:auto-cols-[calc((100%-3rem)/3)]"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              overscrollBehaviorX: "contain",
+              touchAction: "pan-x pan-y",
+            }}
+          >
           {services.map(([title, description, href, image], index) => (
             <div
               key={title}
-              className="service-slide flex min-h-[420px] min-w-0 shrink-0 snap-start sm:min-h-[460px]"
+              className="service-slide flex min-h-[420px] min-w-0 snap-start sm:min-h-[460px]"
             >
               <Link
                 href={href} prefetch={false}
@@ -138,7 +127,7 @@ export default function Services() {
                     loading="lazy"
                     quality={65}
                     className={`object-cover transition duration-700 group-hover:scale-[1.05] ${title === "IRCTC Agent Registration" ? "object-[65%_center]" : ""}`}
-                    sizes="(max-width: 639px) 88vw, (max-width: 1023px) 46vw, 31vw"
+                    sizes="(max-width: 639px) 88vw, (max-width: 1023px) 46vw, (max-width: 1359px) 30vw, 420px"
                   />
 
                   {/* Soft bottom-only gradient for number tag legibility without darkening the main subject */}
@@ -197,6 +186,7 @@ export default function Services() {
               </Link>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type CarouselControlsProps = {
@@ -10,6 +11,7 @@ type CarouselControlsProps = {
   buttonClassName: string;
   iconSize?: number;
   iconStrokeWidth?: number;
+  hideWhenNotScrollable?: boolean;
 };
 
 export default function CarouselControls({
@@ -20,7 +22,28 @@ export default function CarouselControls({
   buttonClassName,
   iconSize = 20,
   iconStrokeWidth = 2,
+  hideWhenNotScrollable = false,
 }: CarouselControlsProps) {
+  const [isScrollable, setIsScrollable] = useState(!hideWhenNotScrollable);
+
+  useEffect(() => {
+    const container = document.getElementById(targetId);
+    if (!container) return;
+
+    const checkOverflow = () => {
+      setIsScrollable(container.scrollWidth > container.clientWidth + 1);
+    };
+    checkOverflow();
+
+    const observer = new ResizeObserver(checkOverflow);
+    observer.observe(container);
+    window.addEventListener("resize", checkOverflow);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", checkOverflow);
+    };
+  }, [targetId]);
+
   const scroll = (direction: -1 | 1) => {
     const container = document.getElementById(targetId);
     if (!container) return;
@@ -30,6 +53,8 @@ export default function CarouselControls({
       behavior: "smooth",
     });
   };
+
+  if (!isScrollable) return null;
 
   return (
     <div className={className}>

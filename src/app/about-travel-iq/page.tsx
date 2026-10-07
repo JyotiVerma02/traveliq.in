@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
+  BarChart2,
   Headphones,
   Plane,
   UsersRound,
@@ -220,11 +221,11 @@ export default function AboutPage() {
       mx-auto
       max-w-7xl
       px-5
-      pb-10 pt-4
+      pb-10 pt-5
       sm:px-8
-      sm:pb-14 sm:pt-5
+      sm:pb-14 sm:pt-7
       lg:px-8
-      lg:pb-16
+      lg:pb-16 lg:pt-10
     "
         >
           {/* ===================================================
@@ -1380,337 +1381,145 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================
-          SOLUTIONS
+          SOLUTIONS FOR OUR AGENTS
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-[#FFF8F3]">
-        <div
-          className="
-            pointer-events-none
-            absolute
-            -left-32
-            top-20
-            h-[450px]
-            w-[450px]
-            rounded-full
-            bg-[#EE5326]/[0.08]
-            blur-[130px]
-          "
-        />
+      <section className="relative overflow-hidden bg-[#FDF7F2] py-16 sm:py-20 lg:py-24">
+        {/* Organic radial background glow rings behind right character */}
+        <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-1/2 h-[600px] w-[600px] -translate-y-1/2 rounded-full bg-gradient-to-br from-[#FFEBE0]/80 via-[#FFF2EB]/40 to-transparent blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -left-32 top-10 h-[450px] w-[450px] rounded-full bg-[#EE5326]/[0.05] blur-3xl" />
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            bottom-[-100px]
-            right-[-200px]
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-[#10407A]/[0.07]
-            blur-[140px]
-          "
-        />
-
-        <div
-          className="
-            relative
-            mx-auto
-            max-w-7xl
-            px-5
-            py-24
-            sm:px-8
-            lg:py-32
-          "
-        >
-          <div
-            className="
-              grid
-              items-center
-              gap-16
-              lg:grid-cols-[1fr_0.9fr]
-              lg:gap-24
-            "
-          >
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-12">
             
-
-            <div className="animate-[fadeUp_0.8s_ease-out]">
-              <div className="flex items-center gap-3">
-                <span className="h-[2px] w-9 bg-[#EE5326]" />
-
-                <span
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.24em]
-                    text-[#EE5326]
-                  "
-                >
-                  Solutions for Our Agents
+            {/* ── LEFT COLUMN ── */}
+            <div className="lg:col-span-6 xl:col-span-7">
+              {/* Eyebrow badge */}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-[2px] w-8 bg-[#EE5326]" />
+                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#10407A]">
+                  SOLUTIONS FOR OUR AGENTS
                 </span>
+                <span className="h-[2px] w-8 bg-[#EE5326]" />
               </div>
 
-              <h2
-                className="
-                  mt-5
-                  max-w-2xl
-                  text-4xl
-                  font-bold
-                  leading-[1.02]
-                  tracking-[-0.025em]
-                  text-[#10407A]
-                  sm:text-5xl
-                "
-              >
+              {/* Title */}
+              <h2 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0E2954] sm:text-5xl lg:text-[3.25rem]">
                 Helping Agents Feel{" "}
-                <span className="text-[#EE5326]">Supported Again</span>
+                <span className="block text-[#EE5326]">Supported Again</span>
               </h2>
 
-              <p
-                className="
-                  mt-7
-                  max-w-2xl
-                  text-[15px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
-                Mr. Neeraj Garg has focused on thoughtful planning, professional relationships and putting strategies into practice.
-              </p>
+              {/* Paragraphs */}
+              <div className="mt-5 space-y-4 max-w-xl text-[15px] leading-7 text-[#5A687C] sm:text-base font-medium">
+                <p>
+                  Mr. Neeraj Garg has always been a visionary who does not hesitate in thinking out of the box. The man is known for making full-proof strategies and ascertaining that they are well executed along with his great networking skills.
+                </p>
+                <p>
+                  With an utmost endeavor of keeping up with the latest technology and techniques, the company is also investing in new verticals and niche products. Rather than just being concerned about client satisfaction, we aim at making our clients happy.
+                </p>
+                <p>
+                  With the primary goal of being process driven, we focus on providing high standard services to our clients at affordable prices.
+                </p>
+              </div>
 
-              <p
-                className="
-                  mt-5
-                  max-w-2xl
-                  text-[15px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
-                TravelIQ continues to explore relevant technology, services and product areas while working to provide a positive client experience.
-              </p>
+              {/* Feature Rows */}
+              <ul className="mt-8 space-y-6">
+                {[
+                  {
+                    icon: <Shield className="h-5 w-5 text-[#EE5326]" />,
+                    title: "Reliable Support",
+                    desc: "Dedicated assistance whenever you need it.",
+                  },
+                  {
+                    icon: <BarChart2 className="h-5 w-5 text-[#EE5326]" />,
+                    title: "Business Growth",
+                    desc: "Tools and services to help you scale faster.",
+                  },
+                  {
+                    icon: <UsersRound className="h-5 w-5 text-[#EE5326]" />,
+                    title: "Long-Term Partnership",
+                    desc: "Built on trust, service and mutual success.",
+                  },
+                ].map(({ icon, title, desc }) => (
+                  <li key={title} className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#FFDEC9]/70 bg-[#FFF0E9] shadow-sm">
+                      {icon}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-[#10407A]">{title}</h3>
+                      <p className="mt-0.5 text-xs text-[#64748B] sm:text-sm">{desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
 
-              <p
-                className="
-                  mt-5
-                  max-w-2xl
-                  text-[15px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
-                With a process-driven approach, TravelIQ focuses on providing dependable services at accessible prices.
-              </p>
+            </div>
 
+            {/* ── RIGHT COLUMN (Character & Floating Transport Icons) ── */}
+            <div className="relative flex items-center justify-center lg:col-span-6 xl:col-span-5">
               
-
-              <div
-                className="
-                  group
-                  mt-10
-                  flex
-                  items-center
-                  gap-5
-                  rounded-[20px]
-                  border
-                  border-white/90
-                  bg-white/80
-                  p-5
-                  shadow-[8px_10px_25px_rgba(16,64,122,0.07),-5px_-5px_12px_rgba(255,255,255,0.95)]
-                  backdrop-blur
-                  transition-all
-                  duration-500
-                  hover:-translate-y-2
-                  hover:shadow-[12px_16px_35px_rgba(16,64,122,0.11)]
-                "
+              {/* Dashed connector curve */}
+              <svg
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 z-0 h-full w-full"
+                viewBox="0 0 450 520"
+                fill="none"
+                preserveAspectRatio="none"
               >
-                <div
-                  className="
-                    flex
-                    h-12
-                    w-12
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-[14px]
-                    bg-[#FFF1EA]
-                    transition-transform
-                    duration-500
-                    group-hover:rotate-6
-                  "
-                >
-                  <Shield className="h-5 w-5 text-[#EE5326]" />
-                </div>
+                <path
+                  d="M 90 70 Q 230 160 320 240 Q 380 320 330 430"
+                  stroke="#EE5326"
+                  strokeWidth="1.5"
+                  strokeDasharray="5 5"
+                  strokeLinecap="round"
+                  opacity="0.35"
+                />
+              </svg>
 
-                <div>
-                  <div
-                    className="
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-[0.18em]
-                      text-[#EE5326]
-                    "
-                  >
-                    TravelIQ Advantage
-                  </div>
+              {/* Floating transport badges */}
+              {/* Airplane (Top-Left, Orange) */}
+              <div aria-hidden="true" className="absolute left-[2%] top-[4%] z-20 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/90 bg-white shadow-[0_10px_25px_rgba(16,64,122,0.08)] transition-transform duration-300 hover:scale-105 sm:left-[6%]">
+                <Plane className="h-7 w-7 text-[#EE5326]" />
+              </div>
 
-                  <div
-                    className="
-                      mt-1
-                      text-sm
-                      font-semibold
-                      tracking-[0.005em]
-                      text-[#10407A]
-                    "
-                  >
-                    Built around service, technology & relationships.
-                  </div>
-                </div>
+              {/* Hotel / Building (Top-Right, Navy) */}
+              <div aria-hidden="true" className="absolute right-[2%] top-[2%] z-20 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/90 bg-white shadow-[0_10px_25px_rgba(16,64,122,0.08)] transition-transform duration-300 hover:scale-105">
+                <Building2 className="h-7 w-7 text-[#10407A]" />
+              </div>
+
+              {/* Train (Middle-Right, Orange) */}
+              <div aria-hidden="true" className="absolute right-[0%] top-[42%] z-20 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/90 bg-white shadow-[0_10px_25px_rgba(16,64,122,0.08)] transition-transform duration-300 hover:scale-105">
+                <Train className="h-7 w-7 text-[#EE5326]" />
+              </div>
+
+              {/* Bus (Bottom-Right, Navy) */}
+              <div aria-hidden="true" className="absolute bottom-[8%] right-[4%] z-20 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/90 bg-white shadow-[0_10px_25px_rgba(16,64,122,0.08)] transition-transform duration-300 hover:scale-105">
+                <Bus className="h-7 w-7 text-[#10407A]" />
+              </div>
+
+              {/* Presenter Character Image (Standing directly on background, cropped at waist) */}
+              <div className="relative z-10 mx-auto flex h-[460px] w-full max-w-[440px] items-end justify-center overflow-hidden sm:h-[500px]">
+                <Image
+                  src="/images/irctc-agent-character.png"
+                  alt="TravelIQ travel agent holding laptop showing TravelIQ platform"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 440px"
+                  className="object-contain object-top drop-shadow-xl"
+                />
               </div>
             </div>
 
-            
-
-            <div
-              className="
-                group
-                relative
-                mx-auto
-                w-full
-                max-w-[500px]
-                animate-[fadeRight_0.9s_ease-out]
-              "
-            >
-              <div
-                className="
-                  absolute
-                  -inset-6
-                  bg-[#EE5326]/10
-                  blur-3xl
-                "
-              />
-
-              <div
-                className="
-                  absolute
-                  -right-4
-                  -top-4
-                  h-28
-                  w-28
-                  border-r
-                  border-t
-                  border-[#EE5326]/40
-                "
-              />
-
-              <div
-                className="
-                  absolute
-                  -bottom-4
-                  -left-4
-                  h-28
-                  w-28
-                  border-b
-                  border-l
-                  border-[#10407A]/25
-                "
-              />
-
-              <div
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[28px]
-                  border
-                  border-white/90
-                  bg-white
-                  p-2
-                  shadow-[18px_22px_50px_rgba(16,64,122,0.12),-10px_-10px_25px_rgba(255,255,255,0.95)]
-                "
-              >
-                <div className="relative aspect-[0.9/1] overflow-hidden rounded-[22px]">
-                  <Image
-                    src="/images/TravelIQ-IRCTC-Agent-Registration-Fees-Rs-1000-Only.png.webp"
-                    alt="TravelIQ representative holding a laptop"
-                    fill
-                    sizes="(max-width: 1024px) 90vw, 500px"
-                    className="object-cover"
-                  />
-
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      bg-gradient-to-t
-                      from-[#10407A]/45
-                      via-transparent
-                      to-transparent
-                    "
-                  />
-                </div>
-              </div>
-
-              
-
-              <div
-                className="
-                  absolute
-                  -bottom-7
-                  left-5
-                  right-5
-                  rounded-[18px]
-                  border
-                  border-white/90
-                  bg-white/95
-                  p-5
-                  shadow-[10px_15px_35px_rgba(16,64,122,0.13)]
-                  backdrop-blur
-                  transition-all
-                  duration-500
-                  hover:-translate-y-2
-                  sm:left-auto
-                  sm:right-[-25px]
-                  sm:w-[250px]
-                "
-              >
-                <div
-                  className="
-                    text-[9px]
-                    font-bold
-                    uppercase
-                    tracking-[0.20em]
-                    text-[#EE5326]
-                  "
-                >
-                  TravelIQ Advantage
-                </div>
-
-                <div
-                  className="
-                    mt-2
-                    text-lg
-                    font-semibold
-                    leading-snug
-                    tracking-[0.005em]
-                    text-[#10407A]
-                  "
-                >
-                  Quality services at affordable prices.
-                </div>
-              </div>
-            </div>
           </div>
+        </div>
+      </section>
 
-          {/* =====================================================
-              SOLUTION CARDS
-          ===================================================== */}
+      {/* =========================================================
+          SOLUTION CARDS (WHAT WE DO)
+      ========================================================= */}
 
-          <div className="mt-24">
+      <section className="relative overflow-hidden bg-[#FFF8F3] py-20 sm:py-24">
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
             <div className="mb-10 max-w-2xl">
               <div className="flex items-center gap-3">
                 <span className="h-[2px] w-9 bg-[#EE5326]" />
@@ -1908,8 +1717,7 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* =========================================================
           CTA

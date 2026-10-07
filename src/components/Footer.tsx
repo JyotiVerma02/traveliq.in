@@ -94,7 +94,7 @@ export default function Footer() {
         </svg>
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
+      <div className="tiq-container relative">
         {/* ===============================
             MAIN FOOTER
         ================================ */}

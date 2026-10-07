@@ -22,8 +22,8 @@ export default function Hero() {
     <section className="relative isolate flex min-h-[min(760px,calc(100svh-var(--tiq-header-height)))] w-full overflow-hidden bg-[#F5F9FC] max-lg:min-h-0">
       <HeroMedia />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1760px] items-start px-4 py-8 sm:px-6 sm:py-10 lg:items-center lg:px-10 lg:py-10 xl:px-14 2xl:px-16">
-        <div className="mx-auto w-full max-w-[720px] text-center lg:mx-0 lg:max-w-[min(58%,760px)] lg:pr-4 lg:text-left xl:pr-8 2xl:max-w-[min(58%,920px)]">
+      <div className="tiq-container relative z-10 flex items-start py-8 sm:py-10 lg:items-center lg:py-10 ultra:items-start ultra:pt-12">
+        <div className="mx-auto w-full max-w-[720px] text-center lg:mx-0 lg:max-w-[min(58%,760px)] lg:pr-4 lg:text-left xl:pr-8">
           <div className="mb-3 flex items-center justify-center gap-2 sm:mb-4 sm:gap-3 lg:justify-start">
             <span className="h-[2px] w-7 shrink-0 bg-[#EE5326] sm:w-10" />
             <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-[#10407A] min-[360px]:tracking-[0.16em] sm:text-[10px] sm:tracking-[0.22em]">
@@ -32,7 +32,7 @@ export default function Hero() {
             <span className="h-[2px] w-7 shrink-0 bg-[#EE5326] sm:w-10" />
           </div>
 
-          <h1 className="w-full text-[clamp(2.25rem,6vw,3.75rem)] font-bold leading-[1.02] tracking-[-0.045em] sm:text-[clamp(3.1rem,5vw,4.25rem)] lg:text-[clamp(2.9rem,3.4vw,4.5rem)] 2xl:text-[clamp(4.25rem,3vw,5rem)]">
+          <h1 className="w-full text-[clamp(2.25rem,6vw,3.75rem)] font-bold leading-[1.02] tracking-[-0.045em] sm:text-[clamp(3.1rem,5vw,4.25rem)] lg:text-[clamp(2.9rem,3.4vw,4.5rem)]">
             <span className="block text-[#10407A]">Grow Your Travel Business</span>
             <span className="relative mt-1 inline-block text-[#EE5326] sm:mt-1.5">
               With TravelIQ.

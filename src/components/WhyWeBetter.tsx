@@ -136,7 +136,7 @@ export default function WhyWeBetter() {
           MAIN CONTAINER
       ====================================================== */}
 
-      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+      <div className="tiq-container relative">
         {/* =====================================================
             SECTION HEADER
         ====================================================== */}

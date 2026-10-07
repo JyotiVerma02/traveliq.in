@@ -23,7 +23,7 @@ const news = [
   {
     title: "Become an authorized IRCTC travel agent",
     date: "Registration guide",
-    image: "/images/TravelIQ-IRCTC-Agent-Registration-Fees-Rs-1000-Only.png.webp",
+    image: "/images/irctc-agent-character.png",
     description:
       "Review onboarding steps, document requirements, authentication options, and support before applying.",
     href: "/irctc-agent-registration/",
@@ -55,7 +55,7 @@ export default function OurNews() {
 
       <div className="pointer-events-none absolute right-[10%] top-24 hidden h-14 w-14 rounded-full border border-[#EE5326]/10 lg:block" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="tiq-container relative">
         {/* =======================================================
             SECTION HEADER
         ======================================================= */}
@@ -174,13 +174,11 @@ export default function OurNews() {
                       loading="lazy"
                       quality={65}
                       sizes="(max-width: 639px) 90vw, (max-width: 1023px) 46vw, 23vw"
-                      className="
-                        object-cover
-                        transition-transform
-                        duration-700
-                        ease-out
-                        group-hover:scale-110
-                      "
+                      className={
+                        item.image === "/images/irctc-agent-character.png"
+                          ? "object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+                          : "object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      }
                     />
 
                     {/* Image overlay */}

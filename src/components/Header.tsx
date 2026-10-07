@@ -129,7 +129,7 @@ export default function Header() {
             HEADER INNER — STATIC 80px HEIGHT
         =================================================== */}
 
-        <div className="mx-auto flex h-full w-full max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-10 xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] xl:px-14 2xl:px-16">
+        <div className="tiq-container flex h-full items-center justify-between xl:grid xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
           {/* =================================================
               LOGO
           ================================================= */}

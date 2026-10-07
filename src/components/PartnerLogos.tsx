@@ -140,7 +140,7 @@ export default function PartnerLogos() {
         "
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-7 lg:px-8">
+      <div className="tiq-container relative">
         {/* HEADING */}
         <div className="mb-6 text-center sm:mb-7">
           <div className="mb-2.5 flex items-center justify-center gap-3">
@@ -165,7 +165,7 @@ export default function PartnerLogos() {
           className="
             mx-auto
             grid
-            max-w-7xl
+            max-w-full
             grid-cols-2
             gap-3
             sm:grid-cols-2

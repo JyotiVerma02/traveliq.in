@@ -247,7 +247,7 @@ export default function FrequentlyAskedQuestionsPage() {
             CONTAINER
         =================================================== */}
 
-        <div className="inner-page-hero relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="inner-page-hero relative mx-auto max-w-6xl px-4 pt-5 sm:px-6 sm:pt-7 lg:px-8 lg:pt-10">
           {/* =================================================
               BREADCRUMB
           ================================================= */}

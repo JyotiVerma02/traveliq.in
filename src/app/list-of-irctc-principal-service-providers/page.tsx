@@ -253,7 +253,7 @@ export default function IRCTCPrincipalServiceProvidersPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#F4F7FB] via-transparent to-transparent lg:hidden" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 pt-4 sm:pb-16 sm:pt-5 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl w-full px-4 pb-12 pt-5 sm:px-6 sm:pb-16 sm:pt-7 lg:px-8 lg:pt-10">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-4 py-1.5 text-xs font-semibold text-slate-600 shadow-sm backdrop-blur-md mb-5">
               <Link href="/" className="hover:text-[#10407A] transition-colors">

@@ -13,7 +13,7 @@
 :root {
   --tiq-header-height: 68px;
   --tiq-page-gutter: 1rem;
-  --tiq-content-width: 80rem;
+  --tiq-content-width: 85rem;
   --tiq-section-space: clamp(2.75rem, 5vw, 5rem);
   /* ---------------------------------------------------------
      BRAND
@@ -105,20 +105,25 @@
 @media (min-width: 40rem) {
   :root {
     --tiq-header-height: 74px;
-    --tiq-page-gutter: 1.5rem;
+    --tiq-page-gutter: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --tiq-page-gutter: 3rem;
   }
 }
 
 @media (min-width: 80rem) {
   :root {
-    --tiq-header-height: 72px;
-    --tiq-page-gutter: 2rem;
+    --tiq-page-gutter: 4rem;
   }
 }
 
-@media (min-width: 100rem) {
+@media (min-width: 96rem) {
   :root {
-    --tiq-page-gutter: 3rem;
+    --tiq-header-height: 72px;
   }
 }
 
@@ -317,7 +322,10 @@ body {
 }
 
 .tiq-container {
-  width: min(100% - (2 * var(--tiq-page-gutter)), var(--tiq-content-width));
+  width: 100%;
+  max-width: var(--tiq-content-width);
+  padding-inline: var(--tiq-page-gutter);
+  box-sizing: border-box;
   margin-inline: auto;
 }
 
@@ -352,20 +360,17 @@ code {
   }
 }
 
-.service-slide,
 .testimonial-slide {
   flex: 0 0 100%;
 }
 
 @media (min-width: 640px) {
-  .service-slide,
   .testimonial-slide {
     flex-basis: calc((100% - 1.5rem) / 2);
   }
 }
 
 @media (min-width: 1024px) {
-  .service-slide,
   .testimonial-slide {
     flex-basis: calc((100% - 3rem) / 3);
   }
