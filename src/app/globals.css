@@ -364,6 +364,31 @@ code {
   flex: 0 0 100%;
 }
 
+.admin-scrollbar {
+  scrollbar-color: rgba(100, 116, 139, 0.55) transparent;
+  scrollbar-width: thin;
+}
+
+.admin-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-track {
+  background: #091522;
+  border-radius: 999px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: #34465b;
+  border: 1px solid #091522;
+  border-radius: 999px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #52677f;
+}
+
 @media (min-width: 640px) {
   .testimonial-slide {
     flex-basis: calc((100% - 1.5rem) / 2);

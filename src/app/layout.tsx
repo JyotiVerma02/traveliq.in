@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 import {
   JsonLd,
   getOrganizationSchema,
@@ -95,16 +94,7 @@ export default function RootLayout({
         <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>
       <body className="min-h-screen bg-[#F4F7FB] font-sans text-[#071F3D] selection:bg-[#FFF1EB] selection:text-[#10407A]">
-        <div className="flex min-h-screen flex-col">
-          {/* ================= HEADER ================= */}
-          <Header />
-
-          {/* ================= PAGE CONTENT ================= */}
-          <div className="pt-[var(--tiq-header-height)]">{children}</div>
-
-          {/* ================= FOOTER ================= */}
-          <Footer />
-        </div>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

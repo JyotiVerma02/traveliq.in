@@ -16,6 +16,10 @@ import {
   Building2,
   Hotel,
   Bus,
+  Share2,
+  Rocket,
+  ChevronRight,
+  MapPin,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -94,16 +98,10 @@ const solutions: {
     icon: Hotel,
   },
   {
-    title: "TRAIN SERVICES",
+    title: "TRAIN & BUS SERVICES",
     description:
-      "Convenient railway booking assistance through our IRCTC travel network.",
+      "Convenient IRCTC rail and dependable bus booking assistance through our travel network.",
     icon: Train,
-  },
-  {
-    title: "BUS SERVICES",
-    description:
-      "Easy and dependable bus booking support for different travel requirements.",
-    icon: Bus,
   },
 ];
 
@@ -142,32 +140,6 @@ const stats: {
    JOURNEY
 ========================================================= */
 
-const journey = [
-  {
-    year: "2014",
-    title: "Company Established",
-    description:
-      "TravelIQ began its journey with a focus on supporting travel professionals and customers with travel services.",
-  },
-  {
-    year: "2016",
-    title: "Online B2B Portal",
-    description:
-      "TravelIQ expanded its technology-led services for travel professionals.",
-  },
-  {
-    year: "2017",
-    title: "Pan-India Expansion",
-    description:
-      "Additional travel and agent-focused services were introduced.",
-  },
-  {
-    year: "Today",
-    title: "Growing Travel Network",
-    description:
-      "TravelIQ continues to develop its travel technology, B2B services and customer support ecosystem.",
-  },
-];
 
 export default function AboutPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -742,496 +714,143 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================
-          STORY
+          OUR STORY — A Journey Built on Trust & Travel
       ========================================================= */}
+      <section className="relative overflow-hidden bg-[#FDF8F3] py-16 sm:py-20 lg:py-24">
+        {/* Background decorative curved wave rings & flight path overlay */}
+        <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-[650px] w-[650px] rounded-full bg-gradient-to-bl from-[#FFE8DA]/70 via-[#FFF2EA]/30 to-transparent blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -left-32 bottom-10 h-[500px] w-[500px] rounded-full bg-[#EE5326]/[0.04] blur-3xl" />
 
-      <section className="relative overflow-hidden bg-white">
-        <div
-          className="
-            pointer-events-none
-            absolute
-            left-[-180px]
-            top-20
-            h-[400px]
-            w-[400px]
-            rounded-full
-            bg-[#FFF0E8]
-            blur-[120px]
-          "
-        />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
 
-        <div
-          className="
-            pointer-events-none
-            absolute
-            right-[-180px]
-            bottom-10
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[#EEF4FA]
-            blur-[120px]
-          "
-        />
-
-        <div
-          className="
-            relative
-            mx-auto
-            max-w-7xl
-            px-5
-            py-14
-            sm:px-8
-            sm:py-18
-            lg:py-24
-          "
-        >
-          <div
-            className="
-              grid
-              gap-8
-              lg:grid-cols-[0.7fr_1.3fr]
-              lg:items-end
-              animate-[fadeUp_0.8s_ease-out]
-            "
-          >
+          <div className="relative grid items-start gap-y-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-x-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.25fr)_minmax(280px,0.85fr)]">
             <div>
               <div className="flex items-center gap-3">
-                <span className="h-[2px] w-9 bg-[#EE5326]" />
-
-                <span
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.24em]
-                    text-[#EE5326]
-                  "
-                >
-                  Our Story
-                </span>
+                <span className="h-[2px] w-8 bg-[#EE5326]" />
+                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#10407A]">OUR STORY</span>
+                <span className="h-[2px] w-8 bg-[#EE5326]" />
               </div>
 
-              <h2
-                className="
-                  mt-5
-                  text-4xl
-                  font-bold
-                  tracking-[-0.025em]
-                  text-[#10407A]
-                  sm:text-5xl
-                "
-              >
-                A Journey Built on{" "}
-                <span className="text-[#EE5326]">Trust & Travel</span>
+              <h2 className="mt-4 text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0E2954] sm:text-5xl lg:text-[3.25rem]">
+                <span className="block whitespace-nowrap">A Journey Built on</span>
+                <span className="block whitespace-nowrap text-[#EE5326]">Trust & Travel</span>
               </h2>
-            </div>
 
-            <p
-              className="
-                max-w-2xl
-                text-[15px]
-                leading-8
-                tracking-[0.015em]
-                text-[#526174]
-                lg:ml-auto
-              "
-            >
-              TravelIQ provides technology-enabled travel services designed for travel agents and businesses across India, with a focus on practical technology, accessible support and straightforward onboarding. {/* — to make travel
-              assistance smarter, more accessible and more reliable for travel
-              professionals across India. */}
-            </p>
-          </div>
+              <p className="mt-4 max-w-[420px] text-[14px] leading-7 text-[#5A687C] sm:text-[15px]">
+                TravelIQ provides technology-enabled travel services designed for travel agents and businesses across India, with a focus on practical technology, accessible support and straightforward onboarding.
+              </p>
 
-          
-
-          <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {journey.map((item, index) => (
-              <div
-                key={item.year}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[22px]
-                  border
-                  border-[#10407A]/10
-                  bg-[#FFFDFB]
-                  p-5
-                  sm:p-6
-                  shadow-[6px_8px_20px_rgba(16,64,122,0.04)]
-                  transition-all
-                  duration-500
-                  hover:-translate-y-3
-                  hover:border-[#EE5326]/25
-                  hover:bg-white
-                  hover:shadow-[12px_18px_35px_rgba(16,64,122,0.09)]
-                  animate-[fadeUp_0.8s_ease-out]
-                "
-                style={{
-                  animationDelay: `${index * 120}ms`,
-                }}
-              >
-                <div className="flex items-center justify-between">
-                  <span
-                    className="
-                      text-3xl
-                      font-bold
-                      tracking-[-0.025em]
-                      text-[#10407A]
-                      transition-colors
-                      group-hover:text-[#EE5326]
-                    "
-                  >
-                    {item.year}
-                  </span>
-
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      tracking-[0.10em]
-                      text-[#10407A]/15
-                    "
-                  >
-                    0{index + 1}
-                  </span>
-                </div>
-
-                <div
-                  className="
-                    mt-4
-                    h-[2px]
-                    w-8
-                    bg-[#EE5326]
-                    transition-all
-                    duration-500
-                    group-hover:w-16
-                  "
-                />
-
-                <h3
-                  className="
-                    mt-4
-                    text-lg
-                    font-semibold
-                    tracking-[0.005em]
-                    text-[#10407A]
-                  "
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  className="
-                    mt-3
-                    text-sm
-                    leading-7
-                    tracking-[0.01em]
-                    text-[#526174]
-                  "
-                >
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-10">
-            
-
-            <div className="relative hidden lg:block">
-              <div
-                className="
-                  absolute
-                  left-[13px]
-                  top-2
-                  bottom-0
-                  w-px
-                  bg-gradient-to-b
-                  from-[#EE5326]/40
-                  via-[#10407A]/15
-                  to-transparent
-                "
-              />
-
-              <div className="sticky top-32 space-y-10">
+              <div className="relative mt-7 space-y-5 border-l border-dashed border-[#EE5326]/40 pl-5 sm:space-y-6">
                 {[
-                  ["2014", "Established"],
-                  ["2016", "B2B Platform Growth"],
-                  ["2017", "Service Network Expansion"],
-                  ["Today", "Travel Services"],
-                ].map(([year, label]) => (
-                  <div key={year} className="group relative flex gap-5">
-                    <div
-                      className="
-                        relative
-                        z-10
-                        mt-1
-                        h-7
-                        w-7
-                        rounded-[8px]
-                        border
-                        border-[#EE5326]/30
-                        bg-white
-                        p-1
-                      "
-                    >
-                      <div
-                        className="
-                          h-full
-                          w-full
-                          rounded-[4px]
-                          bg-[#EE5326]
-                          transition-transform
-                          duration-300
-                          group-hover:scale-75
-                        "
-                      />
-                    </div>
-
-                    <div>
-                      <div
-                        className="
-                          text-2xl
-                          font-bold
-                          tracking-[-0.02em]
-                          text-[#10407A]
-                        "
-                      >
-                        {year}
-                      </div>
-
-                      <div
-                        className="
-                          mt-1
-                          text-[9px]
-                          font-semibold
-                          uppercase
-                          tracking-[0.17em]
-                          text-[#526174]
-                        "
-                      >
-                        {label}
-                      </div>
+                  { year: "2014", title: "Established", desc: "TravelIQ is based in Gurugram, Haryana, India.", icon: Building2 },
+                  { year: "2016", title: "B2B platform growth", desc: "Launched the online portal b2b.traveliq.in.", icon: BarChart2 },
+                  { year: "2017", title: "Service network expansion", desc: "Expanded our travel service network across India.", icon: Share2 },
+                  { year: "Today", title: "Travel services", desc: "Continuing to innovate and support travel professionals.", icon: Rocket },
+                ].map(({ year, title, desc, icon: Icon }) => (
+                  <div key={year} className="relative flex items-start gap-3 sm:gap-4">
+                    <span aria-hidden="true" className="absolute -left-[25px] top-4 h-2.5 w-2.5 rounded-full border-[2px] border-[#FFF8F3] bg-[#EE5326] shadow-[0_0_0_1px_rgba(238,83,38,0.18)]" />
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[20px] border border-[#FFDEC9]/60 bg-[#FFF0E9] text-[#EE5326] shadow-[0_5px_14px_rgba(238,83,38,0.06)] sm:h-[52px] sm:w-[52px]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0 pt-0.5">
+                      <p className="text-xl font-black leading-6 text-[#10407A]">{year}</p>
+                      <p className="mt-1 text-[9px] font-extrabold uppercase tracking-[0.16em] text-[#10407A] sm:text-[10px]">{title}</p>
+                      <p className="mt-1 text-xs leading-5 text-[#5A687C] sm:text-[13px]">{desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            
-
-            <div className="max-w-4xl">
-              <p
-                className="
-                  text-[16px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
+            <div className="min-w-0 space-y-5 text-[14px] leading-7 text-[#5A687C] sm:text-[15px] lg:pt-[205px]">
+              <p>
                 TravelIQ is based in Gurugram, Haryana, India, and supports travel professionals with railway, flight, hotel, bus and holiday services. IRCTC-related agent services are provided in accordance with applicable authorization, PSP and agent requirements.
               </p>
-
-              <p
-                className="
-                  mt-6
-                  text-[16px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
+              <p>
                 The platform brings together travel services and related support to help agents manage their operations more efficiently.
               </p>
 
-              
-
-              <div
-                className="
-                  group
-                  relative
-                  my-8
-                  overflow-hidden
-                  rounded-[20px]
-                  border
-                  border-[#EE5326]/10
-                  border-l-[3px]
-                  border-l-[#EE5326]
-                  bg-[#FFF8F3]
-                  px-5
-                  py-5
-                  shadow-[7px_9px_25px_rgba(238,83,38,0.04)]
-                  transition-all
-                  duration-500
-                  hover:-translate-y-1
-                  hover:shadow-[10px_15px_35px_rgba(238,83,38,0.08)]
-                  sm:px-8
-                "
-              >
-                <div
-                  className="
-                    absolute
-                    left-[-3px]
-                    top-0
-                    h-12
-                    w-[3px]
-                    bg-[#10407A]
-                    transition-all
-                    duration-500
-                    group-hover:h-full
-                  "
-                />
-
-                <p
-                  className="
-                    text-xl
-                    font-semibold
-                    leading-8
-                    tracking-[0.005em]
-                    text-[#10407A]
-                    sm:text-2xl
-                  "
-                >
-                  “Foreseeing the digital transformation that revolutionized the
-                  travel industry, the company started its online portal under
-                  the name b2b.traveliq.in in the year 2016.”
+              <blockquote className="relative overflow-hidden rounded-[18px] border border-[#FFDEC9] border-l-[3px] border-l-[#EE5326] bg-gradient-to-r from-[#FFF5EE]/95 to-white/70 px-5 py-5 shadow-[0_8px_22px_rgba(238,83,38,0.04)] sm:px-7">
+                <span aria-hidden="true" className="absolute left-4 top-2 text-5xl font-serif font-bold leading-none text-[#EE5326] sm:left-6">&ldquo;</span>
+                <p className="relative pl-9 pr-1 text-[15px] font-bold leading-6 text-[#10407A] sm:pl-11 sm:text-base sm:leading-7">
+                  Foreseeing the digital transformation that revolutionized the travel industry, the company started its online portal under the name b2b.traveliq.in in the year 2016.
                 </p>
-              </div>
+                <svg aria-hidden="true" className="pointer-events-none absolute bottom-2 right-3 h-14 w-16 text-[#EE5326]/75" viewBox="0 0 64 48" fill="none">
+                  <path d="M3 39c17 9 37-2 46-28" stroke="currentColor" strokeDasharray="3 4" />
+                  <path d="m43 13 7-5 1 9" stroke="currentColor" strokeWidth="2" />
+                </svg>
+                <Plane aria-hidden="true" className="absolute bottom-7 right-5 h-5 w-5 rotate-[-32deg] text-[#EE5326] sm:right-6" />
+              </blockquote>
 
-              <p
-                className="
-                  text-[16px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
+              <p>
                 The B2B platform is designed to help travel businesses access and manage multiple travel services from one ecosystem.
               </p>
-
-              <p
-                className="
-                  mt-6
-                  text-[16px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
+              <p>
                 Since 2014, TravelIQ has continued to develop travel services, technology and support for travel professionals.
               </p>
-
-              <p
-                className="
-                  mt-6
-                  text-[16px]
-                  leading-8
-                  tracking-[0.015em]
-                  text-[#526174]
-                "
-              >
+              <p>
                 TravelIQ focuses on practical technology, accessible support and a straightforward onboarding experience across confirmed booking services.
               </p>
+            </div>
 
-              
-
-              <div
-                className="
-                  mt-10
-                  overflow-hidden
-                  rounded-[22px]
-                  border
-                  border-[#10407A]/10
-                  bg-[#F2F6FB]
-                  shadow-[6px_8px_20px_rgba(16,64,122,0.04)]
-                  sm:grid-cols-3
-                  sm:grid
-                "
-              >
-                {[
-                  [Plane, "Flights", "Easy Air Booking"],
-                  [Building2, "Hospitality", "Hotels & Packages"],
-                  [Headphones, "Agent Support", "Onboarding & Service Help"],
-                ].map(([Icon, title, subtitle]) => {
-                  const ServiceIcon = Icon as LucideIcon;
-
-                  return (
-                    <div
-                      key={title as string}
-                      className="
-                        group
-                        border-b
-                        border-[#10407A]/10
-                        p-6
-                        transition-all
-                        duration-500
-                        hover:bg-white
-                        last:border-b-0
-                        sm:border-b-0
-                        sm:border-r
-                        sm:last:border-r-0
-                      "
-                    >
-                      <div
-                        className="
-                          flex
-                          h-10
-                          w-10
-                          items-center
-                          justify-center
-                          rounded-[12px]
-                          bg-[#FFF1EA]
-                          transition-all
-                          duration-500
-                          group-hover:scale-110
-                          group-hover:bg-[#EE5326]
-                        "
-                      >
-                        <ServiceIcon
-                          className="
-                            h-5
-                            w-5
-                            text-[#EE5326]
-                            transition-colors
-                            duration-500
-                            group-hover:text-white
-                          "
-                        />
-                      </div>
-
-                      <div
-                        className="
-                          mt-5
-                          text-[10px]
-                          font-semibold
-                          uppercase
-                          tracking-[0.15em]
-                          text-[#10407A]
-                        "
-                      >
-                        {title as string}
-                      </div>
-
-                      <div
-                        className="
-                          mt-1
-                          text-sm
-                          tracking-[0.01em]
-                          text-[#526174]
-                        "
-                      >
-                        {subtitle as string}
-                      </div>
-                    </div>
-                  );
-                })}
+            <div className="relative hidden h-[430px] min-w-0 overflow-visible xl:block xl:pt-3 xl:h-[470px]">
+              <div aria-hidden="true" className="absolute -right-3 -top-8 h-[310px] w-[310px] rounded-full border-[20px] border-[#FFEAD9]/80 bg-[#FFF3E9]" />
+              <div className="absolute right-0 top-2 h-[270px] w-[270px] overflow-hidden rounded-l-[145px] rounded-br-[135px] rounded-tr-[155px] border-[5px] border-white shadow-[0_15px_40px_rgba(16,64,122,0.1)]">
+                <Image
+                  src="/images/about.webp"
+                  alt="Travel across India by air and rail"
+                  fill
+                  sizes="270px"
+                  className="object-cover object-[70%_34%]"
+                />
+              </div>
+              <div className="absolute right-0 top-[215px] h-[205px] w-[220px] overflow-hidden rounded-[52%_0_46%_52%] border-[5px] border-white shadow-[0_15px_40px_rgba(16,64,122,0.12)]">
+                <Image
+                  src="/images/services/irctc-domestic-packages-bright.jpg"
+                  alt="Taj Mahal gardens"
+                  fill
+                  sizes="220px"
+                  className="object-cover object-center"
+                />
+              </div>
+              <div aria-hidden="true" className="absolute right-2 top-[180px] flex h-9 w-9 items-center justify-center rounded-full bg-[#EE6A3B] text-white shadow-md">
+                <MapPin aria-hidden="true" className="h-5 w-5" />
               </div>
             </div>
           </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3">
+            <article className="group relative min-h-[184px] overflow-hidden rounded-[20px] border border-white/90 bg-white/90 p-5 shadow-[0_8px_24px_rgba(16,64,122,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
+              <Plane aria-hidden="true" className="pointer-events-none absolute -right-1 top-3 h-16 w-16 text-[#F2ECE8] opacity-35 transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative z-10 grid grid-cols-[56px_minmax(0,1fr)] grid-rows-[56px_auto] items-start gap-x-4 gap-y-3">
+                <span className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#FFF0E9] text-[#EE5326]"><Plane className="h-7 w-7" /></span>
+                <div className="min-w-0"><p className="text-[10px] font-extrabold uppercase tracking-wider text-[#10407A]">Flights</p><h3 className="mt-1 break-words text-sm font-bold leading-5 text-[#10407A]">Easy Air Booking</h3></div>
+                <p className="col-start-2 min-w-0 pr-8 text-xs leading-5 text-[#657894]">Access a wide range of domestic and international flight options for your customers.</p>
+              </div>
+              <span aria-hidden="true" className="absolute bottom-5 right-5 flex h-8 w-8 items-center justify-center rounded-full border border-[#EE5326] text-[#EE5326] transition-transform group-hover:translate-x-1"><ChevronRight className="h-4 w-4" /></span>
+            </article>
+
+            <article className="group relative min-h-[184px] overflow-hidden rounded-[20px] border border-white/90 bg-white/90 p-5 shadow-[0_8px_24px_rgba(16,64,122,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
+              <Building2 aria-hidden="true" className="pointer-events-none absolute -right-1 top-3 h-16 w-16 text-[#F2ECE8] opacity-35 transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative z-10 grid grid-cols-[56px_minmax(0,1fr)] grid-rows-[56px_auto] items-start gap-x-4 gap-y-3">
+                <span className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#FFF0E9] text-[#EE5326]"><Building2 className="h-7 w-7" /></span>
+                <div className="min-w-0"><p className="text-[10px] font-extrabold uppercase tracking-wider text-[#10407A]">Hospitality</p><h3 className="mt-1 break-words text-sm font-bold leading-5 text-[#10407A]">Hotels & Packages</h3></div>
+                <p className="col-start-2 min-w-0 pr-8 text-xs leading-5 text-[#657894]">Explore a wide range of hotels and curated holiday packages across popular destinations.</p>
+              </div>
+              <span aria-hidden="true" className="absolute bottom-5 right-5 flex h-8 w-8 items-center justify-center rounded-full border border-[#EE5326] text-[#EE5326] transition-transform group-hover:translate-x-1"><ChevronRight className="h-4 w-4" /></span>
+            </article>
+
+            <article className="group relative min-h-[184px] overflow-hidden rounded-[20px] border border-white/90 bg-white/90 p-5 shadow-[0_8px_24px_rgba(16,64,122,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
+              <Headphones aria-hidden="true" className="pointer-events-none absolute -right-1 top-3 h-16 w-16 text-[#F2ECE8] opacity-35 transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative z-10 grid grid-cols-[56px_minmax(0,1fr)] grid-rows-[56px_auto] items-start gap-x-4 gap-y-3">
+                <span className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[#FFF0E9] text-[#EE5326]"><Headphones className="h-7 w-7" /></span>
+                <div className="min-w-0"><p className="text-[10px] font-extrabold uppercase tracking-wider text-[#10407A]">Agent support</p><h3 className="mt-1 break-words text-sm font-bold leading-5 text-[#10407A]">Onboarding & Service Help</h3></div>
+                <p className="col-start-2 min-w-0 pr-8 text-xs leading-5 text-[#657894]">Get started with simple onboarding and reliable support to manage your business smoothly.</p>
+              </div>
+              <span aria-hidden="true" className="absolute bottom-5 right-5 flex h-8 w-8 items-center justify-center rounded-full border border-[#EE5326] text-[#EE5326] transition-transform group-hover:translate-x-1"><ChevronRight className="h-4 w-4" /></span>
+            </article>
+          </div>
+
         </div>
       </section>
 
@@ -1245,7 +864,7 @@ export default function AboutPage() {
           overflow-hidden
           border-y
           border-[#10407A]/[0.08]
-          bg-[#F2F6FB]
+          bg-[linear-gradient(115deg,#f8fbff_0%,#f1f7ff_52%,#fff9f5_100%)]
         "
       >
         <div
@@ -1276,104 +895,91 @@ export default function AboutPage() {
           "
         />
 
+        <svg aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-44 w-full text-[#BBD2F1]/25" viewBox="0 0 1440 180" preserveAspectRatio="none">
+          <path fill="currentColor" d="M0 116h24V91h14v25h13V71h21v45h14V88h18v28h14V64h25v52h15V82h18v34h14V74h25v42h18V91h17v25h28V78h20v38h21V56h24v60h16V83h17v33h22V71h22v45h18V91h22v25h19V64h28v52h20V81h17v35h27V70h24v46h23V85h19v31h25V63h24v53h20V77h20v39h26V89h17v27h21V64h26v52h20V81h18v35h25V72h23v44h20V55h25v61h18V83h19v33h25V69h22v47h23V91h18v25h25V77h20v39h22V63h27v53h17V84h23v32h22V71h22v45h23V90h20v26h24V76h20v40h21V58h26v58h18V83h21v33h27V70h24v46h18V89h22v27h27v64H0z" />
+          <path d="M0 104c120 46 226-23 343 11s214 50 335 6 236-33 354 2 264 21 408-20v77H0z" fill="#fff" fillOpacity=".75" />
+        </svg>
+        <svg aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 1440 560" preserveAspectRatio="none">
+          <path d="M0 290c100 40 120-95 224-83s46 83 12 104" fill="none" stroke="#BCD8FF" strokeDasharray="5 8" strokeWidth="2" opacity=".55" />
+          <path d="M1440 145c-105 20-115 105-207 110s-66 69-120 108" fill="none" stroke="#BCD8FF" strokeDasharray="5 8" strokeWidth="2" opacity=".55" />
+        </svg>
+        <Plane aria-hidden="true" className="pointer-events-none absolute left-[11%] top-[29%] h-8 w-8 rotate-[-18deg] text-[#9FC7F5]/60" />
+        <MapPin aria-hidden="true" className="pointer-events-none absolute left-[3%] top-[48%] h-7 w-7 fill-[#EE5326]/20 text-[#EE5326]/40" />
+        <MapPin aria-hidden="true" className="pointer-events-none absolute right-[4%] top-[23%] h-7 w-7 fill-[#EE5326]/20 text-[#EE5326]/40" />
+
         <div
           className="
             relative
             mx-auto
-            max-w-7xl
+            max-w-[1360px]
             px-5
-            py-8
+            pb-12
+            pt-8
             sm:px-8
-            lg:py-10
+            sm:pb-14
+            sm:pt-8
+            lg:pb-20
+            lg:pt-8
           "
         >
-          <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+          <header className="mx-auto mb-7 max-w-6xl text-center sm:mb-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#FFE1D2] bg-white/80 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#526174] shadow-sm">
+              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#EE5326]" />
+              Our Journey
+            </span>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-[#173B68] sm:text-4xl lg:whitespace-nowrap lg:text-[2.75rem]">
+              Built for Travel. Empowering Growth.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-[#64748B] sm:text-base">
+              A trusted travel platform enabling agents and businesses across India.
+            </p>
+          </header>
+
+          <div className="relative z-10 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {stats.map(({ number, label, icon: Icon }, index) => (
               <div
                 key={number}
                 className={`
                   group
                   relative
-                  rounded-[18px]
+                  min-h-[220px]
+                  overflow-hidden
+                  rounded-[24px]
                   border
-                  border-[#10407A]/10
-                  bg-white/85
+                  border-white/90
+                  bg-white/80
                   p-5
-                  shadow-[5px_7px_18px_rgba(16,64,122,0.05)]
+                  shadow-[0_12px_30px_rgba(16,64,122,0.08)]
+                  backdrop-blur-sm
                   transition-all
                   duration-500
                   hover:-translate-y-1
-                  hover:border-[#EE5326]/25
+                  hover:border-[#EE5326]/20
                   hover:bg-white
+                  sm:p-6
                 `}
               >
-                <div className="flex items-start justify-between">
-                  <div
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-[13px]
-                      bg-[#FFF1EA]
-                      transition-all
-                      duration-500
-                      group-hover:scale-110
-                      group-hover:rotate-6
-                    "
-                  >
-                    <Icon className="h-5 w-5 text-[#EE5326]" />
+                <svg aria-hidden="true" className={`pointer-events-none absolute inset-x-0 bottom-0 h-[58px] w-full ${index === 2 ? "text-[#EAF2FF]" : "text-[#FFF0E8]"}`} viewBox="0 0 320 64" preserveAspectRatio="none">
+                  <path fill="currentColor" d="M0 42c48-21 78 13 128 5s78-36 122-27 48 17 70 11v33H0z" />
+                </svg>
+                <div className="relative z-10 flex items-start justify-between">
+                  <div className="flex h-[68px] w-[68px] items-center justify-center rounded-[24px] bg-[#FFF1EA] text-[#EE5326] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
+                    <Icon className="h-8 w-8" strokeWidth={1.9} />
                   </div>
-
-                  <span
-                    className="
-                      text-xs
-                      font-bold
-                      tracking-[0.10em]
-                      text-[#10407A]/20
-                    "
-                  >
+                  <span className="pt-1 text-xl font-extrabold tracking-tight text-[#10407A]/10">
                     0{index + 1}
                   </span>
                 </div>
 
-                <div
-                  className="
-                    mt-7
-                    text-3xl
-                    font-bold
-                    tracking-[-0.025em]
-                    text-[#10407A]
-                  "
-                >
+                <div className="relative z-10 mt-4 text-3xl font-extrabold tracking-[-0.03em] text-[#10407A] sm:text-[2rem]">
                   {number}
                 </div>
 
-                <div
-                  className="
-                    mt-2
-                    text-[9px]
-                    font-semibold
-                    uppercase
-                    tracking-[0.18em]
-                    text-[#526174]
-                  "
-                >
+                <div className="relative z-10 mt-1.5 text-[9px] font-bold uppercase tracking-[0.08em] text-[#526174] sm:text-[10px] lg:whitespace-nowrap lg:text-[9px] xl:text-[10px]">
                   {label}
                 </div>
 
-                <div
-                  className="
-                    mt-6
-                    h-[2px]
-                    w-8
-                    bg-[#EE5326]
-                    transition-all
-                    duration-500
-                    group-hover:w-16
-                  "
-                />
+                <div className="relative z-10 mt-6 h-[2px] w-10 bg-[#EE5326] transition-all duration-500 group-hover:w-16" />
               </div>
             ))}
           </div>
