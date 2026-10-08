@@ -30,7 +30,7 @@ export default function YouTubePlayer({ url }: YouTubePlayerProps) {
       <iframe
         src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
         title="TravelIQ video"
-        className="h-full w-full border-0"
+        className="absolute inset-0 h-full w-full border-0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         loading="lazy"
@@ -42,7 +42,7 @@ export default function YouTubePlayer({ url }: YouTubePlayerProps) {
     <button
       type="button"
       onClick={() => setPlaying(true)}
-      className="relative h-full w-full"
+      className="absolute inset-0 h-full w-full"
       aria-label="Play video"
     >
       <Image
@@ -50,6 +50,7 @@ export default function YouTubePlayer({ url }: YouTubePlayerProps) {
         alt=""
         width={480}
         height={360}
+        sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 1279px) 50vw, 33vw"
         className="h-full w-full object-cover"
       />
       <span className="absolute inset-0 bg-[#071A35]/25" />

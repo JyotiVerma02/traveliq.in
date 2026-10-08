@@ -53,7 +53,7 @@ export async function appendLeadRow(
   return getSheetsClient().spreadsheets.values.append({
     spreadsheetId,
     range: `${sheetName}!${columns}`,
-    valueInputOption: "USER_ENTERED",
+    valueInputOption: "RAW",
     insertDataOption: "INSERT_ROWS",
     requestBody: { values: [values] },
   });
@@ -64,4 +64,30 @@ export async function getLeadRows(range: string) {
   if (!spreadsheetId) throw new Error("Google Sheets spreadsheet ID is not configured");
 
   return getSheetsClient().spreadsheets.values.get({ spreadsheetId, range });
+}
+
+
+export async function updateLeadCells(range: string, values: string[]) {
+  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+  if (!spreadsheetId) throw new Error("Google Sheets spreadsheet ID is not configured");
+
+  return getSheetsClient().spreadsheets.values.update({
+    spreadsheetId,
+    range,
+    valueInputOption: "RAW",
+    requestBody: { values: [values] },
+  });
+}
+
+export async function updateLeadCellRanges(ranges: Array<{ range: string; value: string }>) {
+  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+  if (!spreadsheetId) throw new Error("Google Sheets spreadsheet ID is not configured");
+
+  return getSheetsClient().spreadsheets.values.batchUpdate({
+    spreadsheetId,
+    requestBody: {
+      valueInputOption: "RAW",
+      data: ranges.map(({ range, value }) => ({ range, values: [[value]] })),
+    },
+  });
 }

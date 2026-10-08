@@ -389,6 +389,194 @@ code {
   background: #52677f;
 }
 
+/* Admin workspace dark surfaces matching reference design */
+.admin-workspace {
+  background: #07101e;
+}
+
+.admin-sidebar {
+  overflow: hidden;
+  background: linear-gradient(180deg, #0b172a 0%, #07101e 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.admin-sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.clay-card,
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(145deg, #0e1c33 0%, #081224 100%);
+  box-shadow:
+    10px 16px 32px rgba(0, 0, 0, 0.5),
+    -4px -4px 14px rgba(255, 255, 255, 0.02),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.12),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.clay-card-inset {
+  background: linear-gradient(145deg, #060d19 0%, #091325 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 3px 4px 10px rgba(0, 0, 0, 0.65),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.03);
+}
+
+.clay-button {
+  background: linear-gradient(145deg, #132442 0%, #0b172a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    4px 6px 14px rgba(0, 0, 0, 0.4),
+    inset 1px 1px 0px rgba(255, 255, 255, 0.15),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.35);
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clay-button:hover:not(:disabled) {
+  background: linear-gradient(145deg, #182e54 0%, #0e1f3a 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    6px 8px 18px rgba(0, 0, 0, 0.45),
+    inset 1px 1px 0px rgba(255, 255, 255, 0.22),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-input {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #081120;
+  box-shadow:
+    inset 3px 4px 8px rgba(0, 0, 0, 0.55),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.03);
+}
+
+.dark-input:focus-within {
+  border-color: #1d6bf3;
+  box-shadow:
+    inset 3px 4px 8px rgba(0, 0, 0, 0.6),
+    0 0 0 2px rgba(29, 107, 243, 0.25);
+}
+
+/* Metric Cards with accent colors matching reference */
+.metric-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--metric-border);
+  background: var(--metric-bg);
+  box-shadow:
+    6px 10px 24px rgba(0, 0, 0, 0.45),
+    -3px -3px 10px rgba(255, 255, 255, 0.02),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.16),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.35);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    8px 14px 28px rgba(0, 0, 0, 0.55),
+    -4px -4px 14px rgba(255, 255, 255, 0.04),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.22),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.metric-blue {
+  --metric-bg: linear-gradient(145deg, #0e274e 0%, #091a38 100%);
+  --metric-border: rgba(29, 107, 243, 0.35);
+}
+
+.metric-cyan {
+  --metric-bg: linear-gradient(145deg, #092c3a 0%, #061e29 100%);
+  --metric-border: rgba(0, 184, 169, 0.35);
+}
+
+.metric-purple {
+  --metric-bg: linear-gradient(145deg, #241a45 0%, #17112f 100%);
+  --metric-border: rgba(139, 92, 246, 0.35);
+}
+
+.metric-amber {
+  --metric-bg: linear-gradient(145deg, #30240e 0%, #201708 100%);
+  --metric-border: rgba(245, 158, 11, 0.35);
+}
+
+.metric-sky {
+  --metric-bg: linear-gradient(145deg, #102d45 0%, #0a1c2d 100%);
+  --metric-border: rgba(56, 189, 248, 0.35);
+}
+
+.metric-green {
+  --metric-bg: linear-gradient(145deg, #0b3024 0%, #062017 100%);
+  --metric-border: rgba(16, 185, 129, 0.35);
+}
+
+.sidebar-item-active {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1d6bf3 0%, #1254cb 100%);
+  color: #ffffff;
+  box-shadow:
+    0 6px 18px rgba(29, 107, 243, 0.45),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.accent-button {
+  border: 1px solid rgba(137, 163, 195, 0.24);
+  background: linear-gradient(145deg, #3c4b60 0%, #2d3d52 100%);
+  color: #f1f5f9;
+}
+
+.accent-button:hover:not(:disabled) {
+  background: #4a5c74;
+}
+
+.dark-input {
+  border: 1px solid rgba(122, 151, 184, 0.25);
+  background: #1b2735;
+  box-shadow:
+    inset 3px 4px 8px rgba(0, 0, 0, 0.45),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.02);
+}
+
+.dark-input:focus,
+.dark-input:focus-within {
+  border-color: rgba(147, 197, 253, 0.55);
+  box-shadow:
+    inset 3px 4px 8px rgba(0, 0, 0, 0.5),
+    0 0 0 2px rgba(96, 165, 250, 0.14);
+}
+
+.status-pill {
+  border: 1px solid rgba(96, 165, 250, 0.32);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.22) 0%, rgba(59, 130, 246, 0.12) 100%);
+  color: #bfdbfe;
+  box-shadow:
+    3px 4px 8px rgba(0, 0, 0, 0.25),
+    inset 1px 1px 0px rgba(255, 255, 255, 0.09);
+}
+
+.admin-workspace thead {
+  background: linear-gradient(180deg, #202b38 0%, #18222e 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.admin-workspace th {
+  color: #8da2bd;
+  letter-spacing: 0.13em;
+}
+
+.admin-workspace tbody tr {
+  border-color: rgba(255, 255, 255, 0.04);
+  transition: background-color 150ms ease;
+}
+
+.admin-workspace tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
 @media (min-width: 640px) {
   .testimonial-slide {
     flex-basis: calc((100% - 1.5rem) / 2);

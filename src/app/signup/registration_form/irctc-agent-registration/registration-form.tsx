@@ -124,7 +124,7 @@ export default function RegistrationForm() {
 
     const data = await response.json();
 
-    if (!response.ok) {
+    if (!response.ok || data?.success !== true || data?.updatedRows !== 1) {
       throw new Error(
         data?.message ||
           "Unable to save your details. Please try again."

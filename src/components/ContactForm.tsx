@@ -37,10 +37,19 @@ export default function ContactForm() {
       const response = await fetch("/api/contact-leads/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ whatsappNumber: formData.phone, email: formData.email, action: formData.subject || formData.message }),
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          whatsappNumber: formData.phone.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          action: formData.subject.trim() || "Contact form enquiry",
+        }),
       });
-      await response.json();
-      if (!response.ok) throw new Error("Unable to submit your enquiry right now. Please try again.");
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.success !== true || result.updatedRows !== 1) {
+        throw new Error("Unable to submit your enquiry right now. Please try again.");
+      }
 
     const details = [
       ["Name", formData.name.trim()],

@@ -23,7 +23,7 @@ export default function VideoGalleryGrid({
   return (
     <>
       {/* VIDEO GRID */}
-      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 xl:gap-8">
         {visibleVideos.map((video, index) => (
           <article
             key={video.url}
@@ -42,8 +42,8 @@ export default function VideoGalleryGrid({
               shadow-[10px_12px_25px_rgba(16,64,122,0.13),-10px_-10px_25px_rgba(255,255,255,0.95),inset_1px_1px_2px_rgba(255,255,255,0.9)]
               transition-all
               duration-300
-              hover:-translate-y-2
-              hover:shadow-[14px_18px_35px_rgba(16,64,122,0.16),-12px_-12px_28px_rgba(255,255,255,1),inset_1px_1px_3px_rgba(255,255,255,0.95)]
+              md:hover:-translate-y-2
+              md:hover:shadow-[14px_18px_35px_rgba(16,64,122,0.16),-12px_-12px_28px_rgba(255,255,255,1),inset_1px_1px_3px_rgba(255,255,255,0.95)]
             "
           >
             {/* VIDEO */}
@@ -62,11 +62,11 @@ export default function VideoGalleryGrid({
               <YouTubePlayer url={video.url} />
 
               {/* VIDEO BADGE */}
-              <div className="pointer-events-none absolute left-4 top-4 z-10">
+              <div className="pointer-events-none absolute inset-x-3 top-3 z-10 sm:inset-x-4 sm:top-4">
                 <span
                   className="
                     inline-flex
-                    max-w-[calc(100%-1rem)]
+                    max-w-full
                     whitespace-normal break-words
                     rounded-full
                     border
@@ -96,9 +96,9 @@ export default function VideoGalleryGrid({
                 min-w-0
                 flex-col
                 rounded-[24px]
-                px-5
+                px-4
                 pb-5
-                pt-5
+                pt-4
                 sm:px-6
                 sm:pb-6
                 sm:pt-6
@@ -208,7 +208,7 @@ export default function VideoGalleryGrid({
       </div>
 
       {/* SEE MORE VIDEOS */}
-      <div className="mt-12 flex justify-center">
+      <div className="mt-8 flex justify-center sm:mt-10 lg:mt-12">
         <button
           type="button"
           onClick={() => setShowAll((current) => !current)}
@@ -224,8 +224,10 @@ export default function VideoGalleryGrid({
             border
             border-white
             bg-[#F8FAFD]
-            px-7
-            py-3.5
+            px-5
+            py-3
+            sm:px-7
+            sm:py-3.5
             text-sm
             font-bold
             !text-[#EE5326]

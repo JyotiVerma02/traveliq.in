@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { appendLeadRow, getLeadRows } from "@/lib/googleSheets";
+import { appendLeadRow, getLeadRows, updateLeadCells } from "@/lib/googleSheets";
 import {
   findRegisteredAccountConflicts,
   normalizeRegistrationEmail,
@@ -10,58 +10,53 @@ import {
 export async function POST(request: NextRequest) {
   try {
     console.log("[REGISTRATION] submission received");
-    const body = await request.json();
-
-    const {
-      whatsappNumber,
-      email,
-      panNumber,
-      uniqueMobileNumber,
-      uniqueEmail,
-      firstName,
-      middleName,
-      lastName,
-      travelAgencyName,
-      dateOfBirth,
-      pinCode,
-      city,
-      state,
-      postOffice,
-      address,
-      referenceId,
-      initialReferenceId,
-      transactionId,
-      plan,
-    } = body;
-
-    if (!whatsappNumber) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: "WhatsApp number is required",
-        },
-        { status: 400 }
-      );
+    const body = await request.json().catch(() => null);
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return NextResponse.json({ success: false, message: "Invalid registration submission." }, { status: 400 });
     }
+    const text = (value: unknown) => String(value ?? "").trim();
+    const whatsappNumber = text(body.whatsappNumber);
+    const email = text(body.email);
+    const panNumber = text(body.panNumber);
+    const uniqueMobileNumber = text(body.uniqueMobileNumber);
+    const uniqueEmail = text(body.uniqueEmail);
+    const firstName = text(body.firstName);
+    const middleName = text(body.middleName);
+    const lastName = text(body.lastName);
+    const travelAgencyName = text(body.travelAgencyName);
+    const dateOfBirth = text(body.dateOfBirth);
+    const pinCode = text(body.pinCode);
+    const city = text(body.city);
+    const state = text(body.state);
+    const postOffice = text(body.postOffice);
+    const address = text(body.address);
+    const referenceId = text(body.referenceId);
+    const initialReferenceId = text(body.initialReferenceId);
+    const transactionId = text(body.transactionId);
+    const plan = text(body.plan);
 
     const normalizedUniqueEmail = normalizeRegistrationEmail(uniqueEmail);
     const normalizedUniqueMobile = normalizeRegistrationMobile(uniqueMobileNumber);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedUniqueEmail)) {
-      return NextResponse.json(
-        { success: false, fieldErrors: { uniqueEmail: "Enter a valid email address." } },
-        { status: 400 },
-      );
-    }
-    if (!normalizedUniqueMobile) {
-      return NextResponse.json(
-        { success: false, fieldErrors: { uniqueMobile: "Enter a valid 10-digit mobile number." } },
-        { status: 400 },
-      );
+    const fieldErrors: RegistrationFieldErrors & Record<string, string> = {};
+    if (!normalizeRegistrationMobile(whatsappNumber)) fieldErrors.mobile = "Enter a valid 10-digit WhatsApp number.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) fieldErrors.email = "Enter a valid email address.";
+    if (!/^[A-Za-z]{5}[0-9]{4}[A-Za-z]$/.test(panNumber)) fieldErrors.pan = "Enter a valid PAN number.";
+    if (!normalizedUniqueMobile) fieldErrors.uniqueMobile = "Enter a valid 10-digit mobile number.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedUniqueEmail)) fieldErrors.uniqueEmail = "Enter a valid email address.";
+    if (!firstName) fieldErrors.firstName = "First name is required.";
+    if (!/^[1-9][0-9]{5}$/.test(pinCode)) fieldErrors.pin = "Enter a valid 6-digit PIN code.";
+    if (!city) fieldErrors.city = "City is required.";
+    if (!state) fieldErrors.state = "State is required.";
+    if (!postOffice) fieldErrors.postOffice = "Post Office is required.";
+    if (!address) fieldErrors.address = "Address is required.";
+    if (dateOfBirth && !/^\d{4}-\d{2}-\d{2}$/.test(dateOfBirth)) fieldErrors.dob = "Enter a valid date of birth.";
+    if (Object.keys(fieldErrors).length) {
+      return NextResponse.json({ success: false, message: "Please correct the registration details.", fieldErrors }, { status: 400 });
     }
 
-    let fieldErrors: RegistrationFieldErrors;
+    let duplicateErrors: RegistrationFieldErrors;
     try {
-      fieldErrors = await findRegisteredAccountConflicts(normalizedUniqueEmail, normalizedUniqueMobile);
+      duplicateErrors = await findRegisteredAccountConflicts(normalizedUniqueEmail, normalizedUniqueMobile);
     } catch (error) {
       console.error("Registration duplicate lookup failed:", error);
       return NextResponse.json(
@@ -73,15 +68,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (Object.keys(fieldErrors).length) {
-      const field = fieldErrors.uniqueMobile ? "uniqueMobile" : "uniqueEmail";
+    if (Object.keys(duplicateErrors).length) {
+      const field = duplicateErrors.uniqueMobile ? "uniqueMobile" : "uniqueEmail";
       return NextResponse.json(
         {
           success: false,
           statusCode: 409,
-          fieldErrors,
+          fieldErrors: duplicateErrors,
           field,
-          message: fieldErrors[field],
+          message: duplicateErrors[field],
         },
         { status: 409 }
       );
@@ -145,7 +140,7 @@ export async function POST(request: NextRequest) {
       postOffice || "",
 
       // O - Office Mobile
-      normalizedUniqueMobile,
+      uniqueMobileNumber,
 
       // P - Home Address
       "",
@@ -166,10 +161,10 @@ export async function POST(request: NextRequest) {
       whatsappNumber || "",
 
       // V - Unique No
-      normalizedUniqueMobile,
+      uniqueMobileNumber,
 
       // W - Unique Email
-      normalizedUniqueEmail,
+      uniqueEmail,
 
       // X - Office Email
       email || "",
@@ -209,6 +204,18 @@ export async function POST(request: NextRequest) {
     // append at column A without overwriting those rows.
     const existing = await getLeadRows("'Registration Leads'!A:AF");
     const existingRows = existing.data.values || [];
+    const registrationHeaders = [
+      "Date", "IP Address", "Website", "PAN Number", "Company Name", "First Name", "Middle Name", "Last Name",
+      "Date of Birth", "Office Address", "Office PIN Code", "Office State", "Office City", "Post Office", "Office Mobile",
+      "Home Address", "Home PIN Code", "Home State", "Home City", "Home Post Office", "WhatsApp Phone", "Unique No",
+      "Unique Email", "Office Email", "Reff ID", "Init ID", "Transaction ID", "Plan", "Source URL", "Comment 1", "Comment 2", "Comment Timestamp",
+    ];
+    const firstRow = existingRows[0] || [];
+    const pastedHeaders = firstRow.length === 1 ? String(firstRow[0] ?? "").split("\t").map((value) => value.trim()) : [];
+    if (pastedHeaders.length === registrationHeaders.length
+      && pastedHeaders.every((value, index) => value === registrationHeaders[index])) {
+      await updateLeadCells("'Registration Leads'!A1:AF1", registrationHeaders);
+    }
     const lastOccupiedRow = existingRows.reduce(
       (last, values, index) =>
         values.some((value) => String(value ?? "").trim() !== "") ? index + 1 : last,

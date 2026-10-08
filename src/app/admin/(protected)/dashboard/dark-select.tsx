@@ -7,7 +7,7 @@ import { Check, ChevronDown } from "lucide-react";
 export type SelectOption = { label: string; value: string; tone?: "blue" | "amber" | "green" | "red" };
 
 const toneClasses = {
-  blue: "bg-cyan-400",
+  blue: "bg-blue-300",
   amber: "bg-amber-400",
   green: "bg-emerald-400",
   red: "bg-rose-400",
@@ -116,7 +116,7 @@ export default function DarkSelect({
           if (!open) showMenu();
         }
       }}
-      className="flex h-10 w-full items-center justify-between gap-3 rounded-xl border border-slate-400/15 bg-[#0b1725] px-3 text-left text-xs text-slate-200 shadow-[inset_3px_3px_7px_rgba(0,0,0,.2),inset_-2px_-2px_6px_rgba(111,156,211,.025)] transition hover:border-slate-300/25 focus-visible:border-blue-400/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/15"
+      className="dark-input flex h-10 w-full items-center justify-between gap-3 rounded-xl px-3 text-left text-xs text-slate-200 transition hover:border-slate-300/30 focus-visible:border-slate-300/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300/10"
     >
       <span className="flex min-w-0 items-center gap-2">
         {options[selectedIndex]?.tone && <span className={`h-2 w-2 shrink-0 rounded-full ${toneClasses[options[selectedIndex].tone!]}`} />}
@@ -131,7 +131,7 @@ export default function DarkSelect({
         role="listbox"
         aria-label={ariaLabel}
         onKeyDown={handleMenuKeyDown}
-        className="fixed z-[100] max-h-64 overflow-y-auto rounded-xl border border-slate-300/15 bg-[#101e2e] p-1.5 shadow-[0_18px_44px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.045)] outline-none admin-scrollbar"
+        className="clay-card fixed z-[100] max-h-64 overflow-y-auto rounded-xl p-1.5 outline-none admin-scrollbar"
         style={{ top: position.top, left: Math.max(12, Math.min(position.left, window.innerWidth - position.width - 12)), width: position.width }}
       >
         {options.map((option, index) => <button
@@ -147,11 +147,11 @@ export default function DarkSelect({
               selectOption(option);
             }
           }}
-          className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/25 ${option.value === value ? "bg-[#20334a] text-white" : "text-slate-300 hover:bg-white/[0.055] hover:text-white"}`}
+          className={`flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/25 ${option.value === value ? "bg-[#2d4664] text-white shadow-[inset_1px_1px_0px_rgba(255,255,255,0.08)]" : "text-slate-300 hover:bg-white/[0.055] hover:text-white"}`}
         >
           {option.tone ? <span className={`h-2 w-2 shrink-0 rounded-full ${toneClasses[option.tone]}`} /> : <span className="h-2 w-2 shrink-0" />}
           <span className="min-w-0 flex-1 whitespace-nowrap">{option.label}</span>
-          {option.value === value && <Check size={14} className="shrink-0 text-orange-300" />}
+          {option.value === value && <Check size={14} className="shrink-0 text-slate-200" />}
         </button>)}
       </div>,
       document.body,

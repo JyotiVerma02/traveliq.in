@@ -11,9 +11,15 @@ export const metadata = {
 };
 
 export default async function AdminDashboardPage() {
-  const token = (await cookies()).get(ADMIN_SESSION_COOKIE)?.value;
+  const cookieStore = await cookies();
+  const token = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
   const session = token ? verifyAdminSessionToken(token) : null;
   if (!session) redirect("/admin/login/");
+
+  const savedView = cookieStore.get("traveliq_admin_dashboard_view")?.value;
+  const initialView = savedView === "all" || savedView === "contact" || savedView === "registration"
+    ? savedView
+    : "registration";
 
   let leads: AdminLead[] = [];
   let loadError = "";
@@ -24,5 +30,5 @@ export default async function AdminDashboardPage() {
     loadError = "Lead data could not be loaded. Check the Google Sheets connection and service account access.";
   }
 
-  return <AdminDashboard email={session.email} initialLeads={leads} initialError={loadError} />;
+  return <AdminDashboard email={session.email} initialLeads={leads} initialError={loadError} initialView={initialView} />;
 }
